@@ -124,34 +124,13 @@ export default function PrivacyPage() {
           <p style={{ fontWeight: 800, fontSize: '0.9rem', color: 'var(--text)', margin: 0 }}>Privacy questions?</p>
           <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '4px 0 0' }}>Reach out directly and I'll respond within 48 hours.</p>
         </div>
-        <a
-          href="mailto:pulkitgoel28@gmail.com"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            height: '40px', padding: '0 16px', borderRadius: '0.75rem',
-            background: 'var(--accent)', color: 'var(--accent-contrast)',
-            fontWeight: 700, fontSize: '0.82rem', textDecoration: 'none',
-            whiteSpace: 'nowrap',
-          }}
-        >
+        <a href="mailto:pulkitgoel28@gmail.com" className="btn btn-primary">
           Email Pulkit <ArrowRight size={14} />
         </a>
       </div>
 
       <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem' }}>
-        <Link
-          to="/"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            height: '44px', padding: '0 20px', borderRadius: '0.875rem',
-            background: 'var(--surface-soft)', color: 'var(--text)',
-            fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none',
-            border: '1px solid var(--border)',
-            transition: 'transform 180ms ease',
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'none')}
-        >
+        <Link to="/" className="btn btn-secondary">
           ← Back home
         </Link>
       </div>

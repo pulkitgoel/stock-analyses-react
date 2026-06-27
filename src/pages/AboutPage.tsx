@@ -110,48 +110,10 @@ export default function AboutPage() {
 
           {/* CTAs */}
           <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem', flexWrap: 'wrap' }}>
-            <Link
-              to="/"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                height: '46px', padding: '0 22px', borderRadius: '14px',
-                background: 'var(--accent)', color: 'var(--accent-contrast)',
-                fontWeight: 800, fontSize: '0.875rem', textDecoration: 'none',
-                transition: 'transform 180ms ease, box-shadow 180ms ease',
-                boxShadow: '0 4px 14px rgba(99,230,190,0.25)',
-                fontFamily: 'inherit',
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(99,230,190,0.35)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = '0 4px 14px rgba(99,230,190,0.25)';
-              }}
-            >
+            <Link to="/" className="btn btn-primary">
               Browse research <ArrowRight size={16} />
             </Link>
-            <a
-              href="mailto:pulkitgoel28@gmail.com"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                height: '46px', padding: '0 22px', borderRadius: '14px',
-                background: 'transparent', color: 'var(--text)',
-                fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none',
-                border: '1px solid var(--border)',
-                transition: 'border-color 180ms ease, transform 180ms ease',
-                fontFamily: 'inherit',
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.borderColor = 'var(--accent)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.borderColor = 'var(--border)';
-              }}
-            >
+            <a href="mailto:pulkitgoel28@gmail.com" className="btn btn-secondary">
               <Mail size={15} /> Say hello
             </a>
           </div>

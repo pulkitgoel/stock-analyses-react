@@ -106,18 +106,7 @@ export default function DisclaimerPage() {
 
       {/* CTA */}
       <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-        <Link
-          to="/"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            height: '44px', padding: '0 20px', borderRadius: '0.875rem',
-            background: 'var(--accent)', color: 'var(--accent-contrast)',
-            fontWeight: 800, fontSize: '0.875rem', textDecoration: 'none',
-            transition: 'transform 180ms ease',
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'none')}
-        >
+        <Link to="/" className="btn btn-primary">
           Read research <ArrowRight size={16} />
         </Link>
       </div>

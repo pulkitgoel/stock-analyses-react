@@ -101,49 +101,11 @@ export default function HomePage() {
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
-                <a
-                  href="#library"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '8px',
-                    height: '48px', padding: '0 24px', borderRadius: '14px',
-                    background: 'var(--accent)', color: 'var(--accent-contrast)',
-                    fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none',
-                    transition: 'transform 180ms ease, box-shadow 180ms ease',
-                    boxShadow: '0 4px 14px rgba(99,230,190,0.25)',
-                    fontFamily: 'inherit',
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(99,230,190,0.35)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = 'none';
-                    e.currentTarget.style.boxShadow = '0 4px 14px rgba(99,230,190,0.25)';
-                  }}
-                >
+                <a href="#library" className="btn btn-primary">
                   Explore research <ArrowRight size={16} />
                 </a>
                 {latest && (
-                  <Link
-                    to={`/analysis/${latest.slug}`}
-                    style={{
-                      display: 'inline-flex', alignItems: 'center', gap: '8px',
-                      height: '48px', padding: '0 24px', borderRadius: '14px',
-                      background: 'transparent', color: 'var(--text)',
-                      fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none',
-                      border: '1px solid var(--border)',
-                      transition: 'border-color 180ms ease, transform 180ms ease',
-                      fontFamily: 'inherit',
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.borderColor = 'var(--accent)';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.transform = 'none';
-                      e.currentTarget.style.borderColor = 'var(--border)';
-                    }}
-                  >
+                  <Link to={`/analysis/${latest.slug}`} className="btn btn-secondary">
                     Latest note <BookOpen size={16} />
                   </Link>
                 )}

@@ -39,13 +39,8 @@ export default function SubscribeCard({ subscribed, supported, loading, onSubscr
         <button
           onClick={subscribed ? onUnsubscribe : onSubscribe}
           disabled={loading}
-          className="focus-ring flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
-          style={{
-            background: subscribed ? 'var(--surface-soft)' : 'var(--accent)',
-            color: subscribed ? 'var(--green)' : 'var(--accent-contrast)',
-            border: subscribed ? '1px solid var(--border-light)' : '1px solid var(--accent)',
-            opacity: loading ? 0.6 : 1,
-          }}
+          className={`btn ${subscribed ? 'btn-success' : 'btn-primary'}`}
+          style={{ width: '100%', maxWidth: '200px' }}
         >
           {loading ? <Loader2 size={16} className="animate-spin" /> : subscribed ? <BellRing size={16} /> : <Bell size={16} />}
           {subscribed ? 'Subscribed' : 'Subscribe'}
