@@ -12,10 +12,13 @@ function urlBase64ToArrayBuffer(b: string): ArrayBuffer {
 
 let swRegistration: ServiceWorkerRegistration | null = null;
 
-export async function initPushNotifications(): Promise<boolean> {
-  if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
-    return false;
-  }
+export function isPushSupported(): boolean {
+  return 'serviceWorker' in navigator && 'PushManager' in window;
+}
+
+export async function initPushNotifications(): Promise<void> {
+  if (!isPushSupported()) return;
+  
   try {
     swRegistration = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
     const sub = await swRegistration.pushManager.getSubscription();
@@ -27,16 +30,16 @@ export async function initPushNotifications(): Promise<boolean> {
           body: JSON.stringify({ endpoint: sub.endpoint }),
         });
         const data = await resp.json();
-        if (data.valid) return true;
-        await sub.unsubscribe();
-        localStorage.removeItem('notify-subscribed');
+        if (!data.valid) {
+          await sub.unsubscribe();
+          localStorage.removeItem('notify-subscribed');
+        }
       } catch {
-        return true;
+        // Ignore network errors during verify
       }
     }
-    return false;
   } catch {
-    return false;
+    // Ignore registration errors
   }
 }
 

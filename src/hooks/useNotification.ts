@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { initPushNotifications, isSubscribed, subscribeToPush, unsubscribeFromPush } from '../services/notificationService';
+import { initPushNotifications, isSubscribed, subscribeToPush, unsubscribeFromPush, isPushSupported } from '../services/notificationService';
 
 export function useNotification() {
   const [subscribed, setSubscribed] = useState(false);
@@ -8,8 +8,13 @@ export function useNotification() {
 
   useEffect(() => {
     const check = async () => {
-      const hasSupport = await initPushNotifications();
-      setSupported(hasSupport || isSubscribed());
+      const hasSupport = isPushSupported();
+      setSupported(hasSupport);
+      
+      if (hasSupport) {
+        await initPushNotifications();
+      }
+      
       setSubscribed(isSubscribed());
       setLoading(false);
     };
