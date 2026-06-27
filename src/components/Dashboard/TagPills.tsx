@@ -6,56 +6,56 @@ interface TagPillsProps {
   onToggle: (tag: string) => void;
 }
 
-const tagIcons: Record<string, string> = {
-  fundamental: '📊', technical: '📈', earnings: '💰',
-  concall: '🎙️', 'deep-dive': '🔍', 'us-stocks': '🇺🇸',
-  'market-analysis': '📉', 'fii-dii': '🏛️', 'institutional-gems': '💎',
-  'ai': '🤖', 'defense': '🛡️', 'it-sector': '💻',
-  'retail': '🛍️', 'construction': '🏗️', 'infrastructure': '🏗️',
-  'crash': '⚠️', 'global': '🌍', 'valuation': '💰',
-};
-
 export default function TagPills({ allTags, activeTags, onToggle }: TagPillsProps) {
-  // Count occurrences and get unique tags sorted by frequency
   const tagCounts = allTags.reduce<Record<string, number>>((acc, t) => {
     acc[t] = (acc[t] || 0) + 1;
     return acc;
   }, {});
 
   const sortedTags = Object.entries(tagCounts)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 15)
-    .map(([tag]) => tag);
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 18);
+
+  const clearTags = () => {
+    activeTags.forEach(t => onToggle(t));
+  };
 
   return (
-    <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1" style={{ scrollbarWidth: 'none' }}>
+    <div className="flex flex-wrap gap-2">
       {activeTags.length > 0 && (
         <button
-          onClick={() => activeTags.forEach(t => onToggle(t))}
-          className="flex items-center gap-1 px-2 py-1 rounded-full text-[0.6rem] sm:text-xs font-medium whitespace-nowrap transition-all border shrink-0"
+          onClick={clearTags}
+          className="focus-ring flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition-all"
           style={{
-            background: 'var(--accent-glow)',
-            borderColor: 'var(--accent)',
-            color: 'var(--accent)',
+            background: 'var(--surface-soft)',
+            border: '1px solid var(--border-light)',
+            color: 'var(--text)',
           }}
         >
-          <X size={10} /> Clear
+          <X size={13} /> Clear
         </button>
       )}
-      {sortedTags.map((tag) => {
+      {sortedTags.map(([tag, count]) => {
         const active = activeTags.includes(tag);
         return (
           <button
             key={tag}
             onClick={() => onToggle(tag)}
-            className="px-2.5 sm:px-3 py-1 rounded-full text-[0.55rem] sm:text-xs font-medium whitespace-nowrap transition-all border shrink-0"
+            className="focus-ring flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 text-xs font-semibold whitespace-nowrap transition-all duration-200"
             style={{
-              background: active ? 'var(--accent)' : 'transparent',
-              borderColor: active ? 'var(--accent)' : 'var(--border)',
-              color: active ? '#fff' : 'var(--text-muted)',
+              background: active ? 'var(--accent)' : 'var(--bg-elevated)',
+              border: active ? '1px solid var(--accent)' : '1px solid var(--border)',
+              color: active ? 'var(--accent-contrast)' : 'var(--text-muted)',
             }}
           >
-            {tagIcons[tag] || '📌'} {tag}
+            {tag}
+            <span
+              className="rounded-full px-1.5 py-0.5 text-[0.6rem] font-bold leading-none"
+              style={{
+                background: active ? 'rgba(0,0,0,0.18)' : 'var(--surface-soft)',
+                color: active ? 'var(--accent-contrast)' : 'var(--text-dim)',
+              }}
+            >{count}</span>
           </button>
         );
       })}

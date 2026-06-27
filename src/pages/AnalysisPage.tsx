@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Clock } from 'lucide-react';
+import { ArrowLeft, Clock, FileText } from 'lucide-react';
 import { Analysis } from '../types/analysis';
 import { fetchAnalyses, fetchAnalysisContent } from '../services/analysisService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
@@ -24,13 +24,17 @@ export default function AnalysisPage() {
   useEffect(() => {
     if (!slug) return;
     setLoading(true);
+    setError(null);
     Promise.all([
       fetchAnalyses(),
       fetchAnalysisContent(slug).catch(() => ''),
     ])
       .then(([analyses, mdContent]) => {
         const found = analyses.find((a) => a.slug === slug);
-        if (!found) { setError('Analysis not found'); return; }
+        if (!found) {
+          setError('Analysis not found');
+          return;
+        }
         setAnalysis(found);
         setContent(mdContent || `# ${found.title}\n\n*Content not available.*`);
       })
@@ -42,12 +46,15 @@ export default function AnalysisPage() {
 
   if (error || !analysis) {
     return (
-      <div className="text-center py-16 sm:py-20">
-        <div className="text-4xl mb-4">📄</div>
-        <h2 className="text-lg sm:text-xl font-semibold mb-2" style={{ color: 'var(--text)' }}>Not Found</h2>
-        <p className="mb-6 text-sm" style={{ color: 'var(--text-muted)' }}>{error || "This analysis doesn't exist."}</p>
-        <Link to="/" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold no-underline"
-          style={{ background: 'var(--accent)', color: '#fff' }}>
+      <div className="soft-panel mx-auto max-w-xl rounded-2xl px-5 py-14 text-center">
+        <FileText size={36} className="mx-auto mb-4" style={{ color: 'var(--text-dim)' }} />
+        <h2 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Not Found</h2>
+        <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>{error || "This analysis doesn't exist."}</p>
+        <Link
+          to="/"
+          className="focus-ring mt-6 inline-flex h-11 items-center gap-2 rounded-xl px-4 text-sm font-bold no-underline"
+          style={{ background: 'var(--accent)', color: 'var(--accent-contrast)' }}
+        >
           <ArrowLeft size={16} /> Back Home
         </Link>
       </div>
@@ -57,62 +64,70 @@ export default function AnalysisPage() {
   const readTime = estimateReadTime(content);
 
   return (
-    <article>
+    <article className="article-shell">
       <Helmet>
-        <title>{analysis.title} — stocksfundamentals.online</title>
+        <title>{analysis.title} - stocksfundamentals.online</title>
         <meta name="description" content={analysis.summary} />
         <meta property="og:title" content={analysis.title} />
         <meta property="og:description" content={analysis.summary} />
       </Helmet>
 
-      {/* Back link */}
-      <Link to="/" className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium no-underline mb-5 sm:mb-8 transition-colors"
-        style={{ color: 'var(--text-dim)' }}
-        onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'}
-        onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-dim)'}>
-        <ArrowLeft size={14} /> Back to all analyses
+      <Link
+        to="/"
+        className="focus-ring mb-4 inline-flex items-center gap-2 rounded-lg py-2 pr-3 text-sm font-semibold no-underline sm:mb-6"
+        style={{ color: 'var(--text-muted)' }}
+      >
+        <ArrowLeft size={16} /> All analyses
       </Link>
 
-      {/* Article header */}
-      <header className="mb-6 sm:mb-8 pb-6 sm:pb-8" style={{ borderBottom: '1px solid var(--border)' }}>
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <h1 className="text-lg sm:text-xl md:text-2xl font-bold leading-snug flex-1" style={{ color: 'var(--text)' }}>
-            {analysis.title}
-          </h1>
-          <span className="text-[0.55rem] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md shrink-0 font-mono tracking-wider"
-            style={{ background: 'rgba(59,130,246,0.08)', color: '#60a5fa' }}>
+      <header className="page-panel surface-card animate-in rounded-[2rem]">
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span
+            className="rounded-lg px-2.5 py-1 font-mono text-xs font-bold"
+            style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}
+          >
             {analysis.ticker}
+          </span>
+          <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>{analysis.date}</span>
+          <span className="flex items-center gap-1 text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
+            <Clock size={13} /> {readTime} min read
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs sm:text-sm" style={{ color: 'var(--text-dim)' }}>
-          <span>{analysis.date}</span>
-          <span className="text-[0.4rem]">●</span>
-          <span className="flex items-center gap-1"><Clock size={12} /> {readTime} min read</span>
-          <span className="text-[0.4rem]">●</span>
-          <div className="flex flex-wrap gap-1">
-            {analysis.tags.map((tag) => (
-              <span key={tag} className="text-[0.5rem] sm:text-[0.65rem] font-medium px-1.5 sm:px-2 py-0.5 rounded-full"
-                style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
-                {tag}
-              </span>
-            ))}
-          </div>
+        <h1 className="text-3xl font-black leading-tight tracking-tight sm:text-5xl" style={{ color: 'var(--text)' }}>
+          {analysis.title}
+        </h1>
+        <p className="mt-4 text-sm leading-7 sm:text-base" style={{ color: 'var(--text-muted)' }}>
+          {analysis.summary}
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {analysis.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full px-2.5 py-1 text-xs font-semibold"
+              style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)' }}
+            >
+              {tag}
+            </span>
+          ))}
         </div>
       </header>
 
-      {/* Article body */}
-      <div className="article-body">
-        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-          {content}
-        </ReactMarkdown>
+      <div className="page-panel surface-card animate-in animate-in-delay-1 mt-6 overflow-hidden rounded-[2rem] sm:mt-8">
+        <div className="article-body">
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+            {content}
+          </ReactMarkdown>
+        </div>
       </div>
 
-      {/* Bottom nav */}
-      <div className="mt-10 sm:mt-14 pt-6 sm:pt-8" style={{ borderTop: '1px solid var(--border)' }}>
-        <Link to="/" className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg text-sm font-semibold no-underline transition-opacity"
-          style={{ background: 'rgba(59,130,246,0.1)', color: 'var(--accent)', border: '1px solid rgba(59,130,246,0.2)' }}>
-          <ArrowLeft size={16} /> All Analyses
+      <div className="mt-6">
+        <Link
+          to="/"
+          className="focus-ring inline-flex h-12 items-center gap-2 rounded-2xl px-5 text-sm font-black no-underline transition-transform duration-200 hover:-translate-y-0.5"
+          style={{ background: 'var(--surface-soft)', color: 'var(--text)' }}
+        >
+          <ArrowLeft size={16} /> Back to dashboard
         </Link>
       </div>
     </article>

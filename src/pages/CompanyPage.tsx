@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Building2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Building2 } from 'lucide-react';
 import { Analysis } from '../types/analysis';
 import { fetchAnalyses } from '../services/analysisService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
@@ -12,11 +12,12 @@ export default function CompanyPage() {
 
   useEffect(() => {
     if (!ticker) return;
+    setLoading(true);
     fetchAnalyses()
       .then((all) => {
         const matching = all.filter(
-          (a) => a.ticker.toLowerCase().includes(ticker!.toLowerCase()) ||
-          a.tags.some(t => t.toLowerCase() === ticker!.toLowerCase())
+          (a) => a.ticker.toLowerCase().includes(ticker.toLowerCase()) ||
+          a.tags.some(t => t.toLowerCase() === ticker.toLowerCase())
         );
         setAnalyses(matching);
       })
@@ -26,67 +27,74 @@ export default function CompanyPage() {
   if (loading) return <LoadingSpinner />;
 
   const tickerUpper = ticker?.toUpperCase() || '';
+  const sortedAnalyses = [...analyses].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
-    <div>
-      <Link to="/" className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium no-underline mb-5 sm:mb-8 transition-colors"
-        style={{ color: 'var(--text-dim)' }}
-        onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'}
-        onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-dim)'}>
-        <ArrowLeft size={14} /> Back to dashboard
+    <div className="mx-auto max-w-4xl">
+      <Link
+        to="/"
+        className="focus-ring mb-4 inline-flex items-center gap-2 rounded-lg py-2 pr-3 text-sm font-semibold no-underline sm:mb-6"
+        style={{ color: 'var(--text-muted)' }}
+      >
+        <ArrowLeft size={16} /> Dashboard
       </Link>
 
-      {/* Company header */}
-      <div className="p-4 sm:p-6 rounded-xl mb-5 sm:mb-8" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-        <div className="flex items-start justify-between gap-4 mb-3">
+      <header className="page-panel surface-card animate-in rounded-[2rem]">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <Building2 size={18} style={{ color: 'var(--accent)' }} />
-              <h1 className="text-lg sm:text-xl md:text-2xl font-bold" style={{ color: 'var(--text)' }}>{tickerUpper}</h1>
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: 'var(--accent-glow)' }}>
+              <Building2 size={22} style={{ color: 'var(--accent)' }} />
             </div>
-            <p className="text-xs sm:text-sm" style={{ color: 'var(--text-muted)' }}>
+            <h1 className="text-4xl font-black tracking-tight sm:text-5xl" style={{ color: 'var(--text)' }}>{tickerUpper}</h1>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>
               {analyses.length} deep-dive{analyses.length !== 1 ? 's' : ''} available
             </p>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Analysis list */}
-      {analyses.length === 0 ? (
-        <div className="text-center py-16 text-sm" style={{ color: 'var(--text-dim)' }}>
+      {sortedAnalyses.length === 0 ? (
+        <div className="surface-plain mt-5 rounded-2xl px-5 py-14 text-center text-sm" style={{ color: 'var(--text-dim)' }}>
           No deep-dives found for {tickerUpper}
         </div>
       ) : (
-        <div className="flex flex-col gap-2 sm:gap-3">
-          {analyses.sort((a, b) => b.date.localeCompare(a.date)).map((a) => (
-            <a
+        <div className="mt-5 grid gap-3">
+          {sortedAnalyses.map((a) => (
+            <Link
               key={a.slug}
-              href={`/analysis/${a.slug}`}
-              className="group block no-underline rounded-xl transition-all duration-200"
+              to={`/analysis/${a.slug}`}
+              className="analysis-card premium-card group rounded-[1.75rem] no-underline transition-all duration-300 hover:-translate-y-1"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
-              onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.background = 'var(--bg-card-hover)'; }}
-              onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--bg-card)'; }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border-light)';
+                e.currentTarget.style.background = 'var(--bg-card-hover)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border)';
+                e.currentTarget.style.background = 'var(--bg-card)';
+              }}
             >
-              <div className="p-3.5 sm:p-5">
-                <div className="flex items-start justify-between gap-3 mb-1">
-                  <h2 className="text-sm sm:text-base font-semibold leading-snug flex-1" style={{ color: 'var(--text)' }}>
-                    {a.title}
-                  </h2>
-                  <span className="text-[0.5rem] sm:text-xs shrink-0" style={{ color: 'var(--text-dim)' }}>{a.date}</span>
-                </div>
-                <p className="text-[0.7rem] sm:text-sm leading-relaxed line-clamp-2" style={{ color: 'var(--text-muted)' }}>
-                  {a.summary}
-                </p>
-                <div className="flex flex-wrap gap-1 mt-2">
-                  {a.tags.map((tag) => (
-                    <span key={tag} className="text-[0.4rem] sm:text-[0.55rem] font-medium px-1.5 py-0.5 rounded-full"
-                      style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
-                      {tag}
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div className="mb-2 flex flex-wrap items-center gap-2">
+                    <span className="rounded-lg px-2.5 py-1 font-mono text-xs font-bold" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
+                      {a.ticker}
                     </span>
-                  ))}
+                    <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>{a.date}</span>
+                  </div>
+                  <h2 className="text-lg font-bold leading-snug" style={{ color: 'var(--text)' }}>{a.title}</h2>
+                  <p className="mt-2 line-clamp-2 text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{a.summary}</p>
                 </div>
+                <ArrowUpRight size={18} className="hidden shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:block" style={{ color: 'var(--accent)' }} />
               </div>
-            </a>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {a.tags.slice(0, 5).map((tag) => (
+                  <span key={tag} className="rounded-full px-2 py-1 text-xs font-semibold" style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </Link>
           ))}
         </div>
       )}

@@ -1,12 +1,13 @@
 const PUBLIC_VAPID_KEY = 'BIdOd22mLpV5HMsHtmS4uIEl79-zYoJ5b7zpFAGZh000rX_Vx_4MpR9SbnuGUIW4K6YNS17081YMeYayJ1MdUH4';
 
-function urlBase64ToUint8Array(b: string): Uint8Array {
+function urlBase64ToArrayBuffer(b: string): ArrayBuffer {
   const padding = '='.repeat((4 - (b.length % 4)) % 4);
   const safe = (b + padding).replace(/-/g, '+').replace(/_/g, '/');
   const raw = window.atob(safe);
-  const arr = new Uint8Array(raw.length);
+  const buffer = new ArrayBuffer(raw.length);
+  const arr = new Uint8Array(buffer);
   for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
-  return arr;
+  return buffer;
 }
 
 let swRegistration: ServiceWorkerRegistration | null = null;
@@ -19,7 +20,6 @@ export async function initPushNotifications(): Promise<boolean> {
     swRegistration = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
     const sub = await swRegistration.pushManager.getSubscription();
     if (sub) {
-      // Verify subscription is still valid
       try {
         const resp = await fetch('/api/verify', {
           method: 'POST',
@@ -54,7 +54,7 @@ export async function subscribeToPush(): Promise<boolean> {
 
     sub = await swRegistration.pushManager.subscribe({
       userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array(PUBLIC_VAPID_KEY),
+      applicationServerKey: urlBase64ToArrayBuffer(PUBLIC_VAPID_KEY),
     });
 
     await fetch('/api/subscribe', {
@@ -65,14 +65,15 @@ export async function subscribeToPush(): Promise<boolean> {
 
     localStorage.setItem('notify-subscribed', 'true');
 
-    // Show local confirmation notification
-    swRegistration.showNotification('✅ Subscribed!', {
+    const notificationOptions: NotificationOptions & { vibrate?: number[] } = {
       body: "You'll get notified of new analyses.",
       icon: '/favicon.ico',
       badge: '/favicon.ico',
       tag: 'subscribed',
       vibrate: [200, 100, 200],
-    });
+    };
+
+    swRegistration.showNotification('Subscribed!', notificationOptions);
 
     return true;
   } catch {

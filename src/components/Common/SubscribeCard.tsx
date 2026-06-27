@@ -1,4 +1,4 @@
-import { Bell, BellRing, Loader2 } from 'lucide-react';
+import { Bell, BellRing, Loader2, Sparkles } from 'lucide-react';
 
 interface SubscribeCardProps {
   subscribed: boolean;
@@ -11,44 +11,46 @@ interface SubscribeCardProps {
 export default function SubscribeCard({ subscribed, supported, loading, onSubscribe, onUnsubscribe }: SubscribeCardProps) {
   if (!supported) {
     return (
-      <div className="mt-8 sm:mt-12 p-3.5 sm:p-5 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5"
-        style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-        <span className="text-xs sm:text-sm" style={{ color: 'var(--text-muted)' }}>
-          🔔 <span style={{ color: 'var(--text)' }}>Push notifications</span> not available in this browser.
-        </span>
-        <button disabled className="w-full sm:w-auto px-3.5 py-1.5 rounded-lg text-xs font-semibold cursor-not-allowed"
-          style={{ background: 'var(--text-dim)', color: '#fff', opacity: 0.4 }}>
-          Unavailable
-        </button>
+      <div className="subscribe-panel surface-card rounded-[1.75rem]">
+        <h2 className="text-xl font-black" style={{ color: 'var(--text)' }}>Push notifications unavailable</h2>
+        <p className="mt-2 text-sm leading-7" style={{ color: 'var(--text-muted)' }}>
+          This browser does not support push alerts.
+        </p>
       </div>
     );
   }
 
   return (
-    <div className="mt-8 sm:mt-12 p-3.5 sm:p-5 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5"
-      style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-      <span className="text-xs sm:text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        🔔 <span style={{ color: 'var(--text)' }}>Get notified</span> when new analyses drop.
-      </span>
-      <button
-        onClick={subscribed ? onUnsubscribe : onSubscribe}
-        disabled={loading}
-        className="w-full sm:w-auto px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold cursor-pointer transition-all border-none"
-        style={{
-          background: subscribed ? 'rgba(34,197,94,0.12)' : 'rgba(59,130,246,0.12)',
-          color: subscribed ? 'var(--green)' : 'var(--accent)',
-          border: subscribed ? '1px solid rgba(34,197,94,0.25)' : '1px solid rgba(59,130,246,0.25)',
-          opacity: loading ? 0.6 : 1,
-        }}
-      >
-        {loading ? (
-          <Loader2 size={13} className="inline animate-spin mr-1" />
-        ) : subscribed ? (
-          <><BellRing size={13} className="inline mr-1" /> Subscribed</>
-        ) : (
-          <><Bell size={13} className="inline mr-1" /> Subscribe</>
-        )}
-      </button>
+    <div className="subscribe-panel premium-card surface-card rounded-[1.75rem]">
+      <div className="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-start gap-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
+            {subscribed ? <BellRing size={22} /> : <Sparkles size={22} />}
+          </div>
+          <div>
+            <h2 className="text-xl font-black tracking-tight" style={{ color: 'var(--text)' }}>
+              {subscribed ? 'Research alerts are on' : 'Never miss a fresh note'}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-7" style={{ color: 'var(--text-muted)' }}>
+              Get a browser alert when a new deep-dive, market note, or institutional tracker is published.
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={subscribed ? onUnsubscribe : onSubscribe}
+          disabled={loading}
+          className="focus-ring flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
+          style={{
+            background: subscribed ? 'var(--surface-soft)' : 'var(--accent)',
+            color: subscribed ? 'var(--green)' : 'var(--accent-contrast)',
+            border: subscribed ? '1px solid var(--border-light)' : '1px solid var(--accent)',
+            opacity: loading ? 0.6 : 1,
+          }}
+        >
+          {loading ? <Loader2 size={16} className="animate-spin" /> : subscribed ? <BellRing size={16} /> : <Bell size={16} />}
+          {subscribed ? 'Subscribed' : 'Subscribe'}
+        </button>
+      </div>
     </div>
   );
 }

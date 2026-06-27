@@ -1,27 +1,20 @@
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, CalendarDays, FileText } from 'lucide-react';
 import { Analysis } from '../../types/analysis';
-import { ArrowUpRight } from 'lucide-react';
 
 interface AnalysisGridCardProps {
   analysis: Analysis;
 }
 
-const tagIcons: Record<string, string> = {
-  fundamental: '📊', technical: '📈', earnings: '💰',
-  concall: '🎙️', 'deep-dive': '🔍', deepdive: '🔍',
-};
-
-function getTagIcon(tag: string): string {
-  return tagIcons[tag.toLowerCase()] || '📌';
-}
-
 function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
   return (
-    <a
-      href={`/analysis/${analysis.slug}`}
-      className="group block no-underline rounded-xl transition-all duration-200 flex flex-col"
+    <Link
+      to={`/analysis/${analysis.slug}`}
+      className="analysis-card premium-card group relative flex min-h-[270px] flex-col rounded-[1.75rem] no-underline transition-all duration-300 hover:-translate-y-1 hover:z-10"
       style={{
         background: 'var(--bg-card)',
         border: '1px solid var(--border)',
+        boxShadow: 'var(--shadow-card)',
       }}
       onMouseOver={(e) => {
         e.currentTarget.style.borderColor = 'var(--border-light)';
@@ -32,41 +25,55 @@ function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
         e.currentTarget.style.background = 'var(--bg-card)';
       }}
     >
-      <div className="p-3.5 sm:p-4 flex flex-col flex-1">
-        {/* Ticker badge */}
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-[0.5rem] sm:text-[0.6rem] font-semibold px-1.5 py-0.5 rounded font-mono"
-            style={{ background: 'rgba(59,130,246,0.08)', color: '#60a5fa' }}>
-            {analysis.ticker}
-          </span>
-          <span className="text-[0.5rem] sm:text-xs" style={{ color: 'var(--text-dim)' }}>{analysis.date}</span>
+      <div className="card-content-offset mb-6 flex items-start justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
+            <FileText size={18} />
+          </div>
+          <div>
+            <span className="block font-mono text-xs font-black uppercase tracking-wide" style={{ color: 'var(--accent)' }}>
+              {analysis.ticker}
+            </span>
+            <span className="flex items-center gap-1 text-xs font-bold" style={{ color: 'var(--text-dim)' }}>
+              <CalendarDays size={12} /> {analysis.date}
+            </span>
+          </div>
         </div>
+        <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" style={{ color: 'var(--text-dim)' }} />
+      </div>
 
-        {/* Title */}
-        <h3 className="text-[0.8rem] sm:text-sm font-semibold leading-snug mb-1.5 flex-1" style={{ color: 'var(--text)' }}>
+      <div className="card-content-offset">
+        <h3 className="text-xl font-black leading-tight tracking-tight" style={{ color: 'var(--text)' }}>
           {analysis.title}
-          <ArrowUpRight size={11} className="inline ml-0.5 opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent)' }} />
         </h3>
-
-        {/* Summary - 2 lines only */}
-        <p className="text-[0.65rem] sm:text-xs leading-relaxed line-clamp-2 mb-2" style={{ color: 'var(--text-muted)' }}>
+        <p className="mt-4 line-clamp-3 text-sm leading-7" style={{ color: 'var(--text-muted)' }}>
           {analysis.summary}
         </p>
+      </div>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1 mt-auto">
-          {analysis.tags.slice(0, 2).map((tag) => (
-            <span key={tag} className="text-[0.4rem] sm:text-[0.55rem] font-medium px-1.5 py-0.5 rounded-full"
-              style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
-              {getTagIcon(tag)} {tag}
+      <div className="card-content-offset mt-auto pt-7">
+        <div className="mb-5 flex flex-wrap gap-2">
+          {analysis.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full px-2.5 py-1 text-[0.68rem] font-black"
+              style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)' }}
+            >
+              {tag}
             </span>
           ))}
-          {analysis.tags.length > 2 && (
-            <span className="text-[0.4rem] sm:text-[0.55rem]" style={{ color: 'var(--text-dim)' }}>+{analysis.tags.length - 2}</span>
+          {analysis.tags.length > 3 && (
+            <span className="px-1 py-1 text-xs font-black" style={{ color: 'var(--text-dim)' }}>
+              +{analysis.tags.length - 3}
+            </span>
           )}
         </div>
+        <span className="inline-flex items-center gap-2 text-sm font-black" style={{ color: 'var(--accent)' }}>
+          Read note
+          <ArrowUpRight size={15} />
+        </span>
       </div>
-    </a>
+    </Link>
   );
 }
 
@@ -76,10 +83,14 @@ interface AnalysisGridProps {
 
 export default function AnalysisGrid({ analyses }: AnalysisGridProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+    <div
+      className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
+      style={{ gap: '2rem' }}
+    >
       {analyses.map((a) => (
         <AnalysisGridCard key={a.slug} analysis={a} />
       ))}
     </div>
   );
 }
+
