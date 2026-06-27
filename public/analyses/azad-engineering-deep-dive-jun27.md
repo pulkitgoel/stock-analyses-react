@@ -293,6 +293,8 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 
 ### Multi-Source Forward PE Computation
 
+The simplest calculation: **Forward P/E = ₹2,020 / Forward EPS Estimate**.
+
 | Source | Metric | FY27E | FY28E |
 |--------|--------|-------|-------|
 | **ICICI Direct** | EPS Estimate | ₹24.2 | ₹34.3 |
@@ -302,18 +304,30 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 |  | Forward P/E (CMP ₹2,020) | **76.0x** | — |
 | **Way2Wealth** | EPS Estimate | ₹24.19 | ₹33.27 |
 |  | Forward P/E (CMP ₹2,020) | **83.5x** | **60.7x** |
-|  | Target P/E (60x FY28E) | — | **56.0x** (ICICI Dir) |
 
-### Forward PE Analysis
+### Credibility Check — Analyst Estimates vs Management Guidance
 
-- **Consensus FY27E Forward PE: ~80x** (range 76-84x depending on analyst)
-- **FY28E Forward PE: ~59x** (consensus range 56-61x)
-- **Multiple compression trajectory:** From 98x trailing → 80x FY27E → 59x FY28E — a **40% compression in 2 years** if EPS targets are met
-- **Verdict on forward PE:** Despite the 40% compression trajectory, FY27E PE of 80x is still **2.1x the industry PE of 38x**. The stock needs every bit of the 25%+ growth to justify this premium.
+All three analyst sources imply EBITDA margins of **40-43%** for FY27E. But management explicitly guided **33-35%** EBITDA margins in the May 16 concall. Here is the math:
 
-**Key check — ICICI Direct's target:** ₹2,060 implied at 60x FY28E EPS (₹34.3). This means even the brokerage's target price implies the stock should trade at a 58% premium to industry PE even 2 years out — and that premium is already baked into the current price.
+| | Mgmt Guidance | ICICI Direct | SimplyWallSt | Way2Wealth |
+|---|---|---|---|---|
+| FY27E Revenue (at 25% growth) | ₹754 Cr | ₹754 Cr | ₹754 Cr | ₹754 Cr |
+| Implied EBITDA | ₹256 Cr (34%) | ₹305 Cr (40.4%) | ₹326 Cr (43.2%) | ₹305 Cr (40.4%) |
+| Less: Depreciation (~₹64 Cr) | ₹64 Cr | ₹64 Cr | ₹64 Cr | ₹64 Cr |
+| Less: Interest (~₹30 Cr) | ₹30 Cr | ₹30 Cr | ₹30 Cr | ₹30 Cr |
+| PBT | ₹162 Cr | ₹211 Cr | ₹232 Cr | ₹211 Cr |
+| PAT (post-tax ~26%) | **₹120 Cr** | **₹156 Cr** | **₹172 Cr** | **₹156 Cr** |
+| EPS | **₹18.58** | **₹24.20** | **₹26.58** | **₹24.19** |
+| **Forward PE at ₹2,020** | **108.7x** | **83.5x** | **76.0x** | **83.5x** |
 
-**SimplyWallSt estimate divergence:** Their EPS of ₹26.58 (vs ICICI's ₹24.2) is 9.8% higher — suggesting some analysts are more optimistic than ICICI. The gap is worth monitoring in upcoming quarters.
+**Key discrepancy:** All three analyst estimates imply EBITDA margins **40-43%** — which is **5-8 percentage points above management's guided range of 33-35%**. That is a material gap. For a company in a ramp-up year (new facilities at ~70-80% completion), margin outperformance beyond guidance is possible but not guaranteed.
+
+**What could reconcile the gap:**
+1. Revenue could exceed 25% (management called their own guidance "conservative")
+2. Operating leverage from new facilities could kick in faster than expected
+3. Better product mix (MHI single-source contract, high-value components) could expand margins
+
+**However:** FY26 EBITDA margin was 37.4% — already above the guided 33-35% range. Analysts may be extrapolating this trend, while management may be conservative in guidance. **The true FY27E EPS is likely somewhere between ₹18.58 (management guidance base) and ₹24.20 (ICICI).**
 
 ### Revenue Trajectory from Order Book + Guidance
 
@@ -330,35 +344,18 @@ The ₹6,500 Cr order book (11x FY26 revenue) and management's 25%+ CAGR guidanc
 
 **Key insight:** At 25% CAGR, the order book covers **~6 years** of revenue. By FY30E, revenue crosses ₹1,472 Cr and order book coverage drops below 1.5x — meaning the company needs to win ₹1,500 Cr+ in new orders by FY29 just to maintain visibility. Management has historically refreshed the order book with new long-term contracts (MHI 8-year, Baker Hughes amendment to 2030), so this is a trackable risk rather than an immediate concern.
 
-### Order Book-Adjusted EPS Model
+### Forward PE Range — What is Reasonable?
 
-Using management's explicit guidance (25%+ revenue CAGR, 33-35% EBITDA margins) and adjusting for increasing depreciation from capex:
+| Scenario | Assumptions | FY27E EPS | Forward PE at ₹2,020 |
+|----------|------------|-----------|---------------------|
+| **Conservative** (Mgmt guidance midpoint) | 25% growth, 34% EBITDA margin | ₹18.58 | **108.7x** |
+| **Moderate** | 25% growth, 37% margin (FY26 level) | ₹21.60 | **93.5x** |
+| **Analyst consensus** (ICICI/Way2Wealth) | 25% growth, 40% margin | ₹24.20 | **83.5x** |
+| **Optimistic** (SimplyWallSt) | Higher growth + margin | ₹26.58 | **76.0x** |
 
-| Metric | FY26A | FY27E (Model) | FY28E (Model) |
-|--------|-------|--------------|--------------|
-| Revenue | ₹603 Cr | ₹754 Cr | ₹942 Cr |
-| EBITDA @ 35% | ₹225 Cr | ₹264 Cr | ₹330 Cr |
-| Depreciation | ₹53 Cr | ~₹64 Cr | ~₹76 Cr |
-| Interest | ₹31 Cr | ~₹30 Cr | ~₹28 Cr |
-| Estimated PAT | ₹134 Cr | ~₹128 Cr | ~₹170 Cr |
-| Estimated EPS | ₹20.58 | ~₹19.82 | ~₹26.32 |
-| **Model Forward PE** | 98.2x | **101.9x** | **76.7x** |
+The most reasonable forward PE for FY27E is **~94-109x** assuming management's guidance holds (34-37% margins). The analyst consensus of ~80x assumes margin expansion to 40%+ — which is above what management has committed to.
 
-**Why model EPS (₹19.82) is lower than ICICI estimate (₹24.2) for FY27E:**
-- My model uses a conservative 35% EBITDA margin (management guided 33-35%)
-- ICICI assumes higher margin expansion as new facilities stabilize and operating leverage kicks in
-- The gap means ICICI expects EBITDA margins closer to 37%+ by FY27, not just 35%
-- If margins expand to 37%, EPS would be ~₹22.5 and forward PE ~89.8x — closer to analyst consensus
-
-**Management's own guidance check:** "25%+ revenue growth, 33-35% EBITDA margins" — at 25% growth, FY27E revenue of ₹754 Cr and 34% EBITDA margin gives ₹256 Cr EBITDA. After interest + depreciation, PAT would be ~₹120-130 Cr. This implies EPS of ₹18.6-20.1 and forward PE of **100-108x** — even more expensive than analyst estimates suggest.
-
-**Conclusion on forward valuation:** The analyst consensus forward PE of 80x FY27E is **optimistic** because it assumes margin expansion beyond management's guided range. A conservative model using management's own guidance yields ~100x FY27E. The stock needs:
-1. EBITDA margin to expand to 37%+ (above guided range)
-2. Revenue to exceed 25% (management said "25%+" but also "conservative" — implying potential upside)
-3. Working capital to normalize by H2 FY27 as promised
-4. New order wins to refresh the order book beyond ~FY30
-
-Without all four, the current price of ₹2,020 offers limited margin of safety even on forward earnings.
+**ICICI Direct's target price sanity check:** Target ₹2,060 based on **60x FY28E EPS (₹34.3)**. This implies they expect the stock to still trade at a 58% premium to industry PE (38x) even two years out. At current price, that premium is already baked in with no upside for two years of execution.
 
 ### PEG with Forward Earnings
 
