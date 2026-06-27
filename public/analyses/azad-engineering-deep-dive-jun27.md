@@ -263,29 +263,15 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 
 ## Block Deals & Insider Activity
 
-### Bulk Deal History (Last 12 months)
+**No bulk or block deals in calendar 2026.** The last bulk deal for Azad Engineering was on **June 6, 2025** — over 12 months ago. No exchange-reported block transactions have occurred this year.
 
-**Most recent bulk deal: June 6, 2025** — No bulk/block deals recorded in NSE for AZAD in 2026.
-
-| Date | Client | Action | Qty | Avg Price | Notes |
-|------|--------|--------|-----|-----------|-------|
-| Jun 6, 2025 | RAKESH CHOPDAR (Promoter) | Sell | 31,67,702 | ₹1,623.78 | Promoter sold 3.17 Mn shares (~2.45% equity) |
-| Jun 6, 2025 | NOMURA INDIA INVESTMENT FUND MOTHER FUND | Buy | 4,10,515 | ₹1,616.85 | Institutional accumulation |
-| Jun 6, 2025 | IRAGE BROKING SERVICES LLP | Buy | 8,33,234 + 1,60,095 | ₹1,627/₹1,611 | Prop desk buying |
-| Jun 6, 2025 | F3 ADVISORS PRIVATE LIMITED | Buy | 4,31,123 | ₹1,620.23 | Prop desk buying |
-| Jun 6, 2025 | MANSI SHARE AND STOCK ADVISORS PVT LTD | Buy | 4,22,821 | ₹1,621.31 | Prop desk buying |
-
-**Interpretation:**
-
-- **Promoter Rakesh Chopdar sold 31.68 lakh shares (~2.45% of equity) at ₹1,623 on June 6, 2025** — this is a significant event. This single sale accounts for a large portion of the -10% promoter dilution seen from Mar'23 to Mar'26.
-- **No 2026 bulk/block deals found** — all recorded bulk deals are from mid-2025. The stock has been trading in a tight institutional flow pattern without visible exchange-reported block transactions this year.
-- **Nomura India Investment Fund Mother Fund** bought 4.1L shares at ₹1,617 in June 2025 — and subsequently filed a SAST disclosure in May 2026, suggesting continued accumulation.
-- **No institutional exit deals detected** — no large fund has sold via bulk/block route, suggesting the institutional holding increase (FIIs 6.98% → 14.75%, DIIs 5% → 11.71%) has been through gradual market purchases, not block transactions.
-
-**Key Missing Data:** Bulk deals are reported to exchanges when they cross specific thresholds. The promoter's 31.68L share sale was disclosed. However, smaller institutional accumulations that happened via negotiated/trade-to-trade blocks may not appear on NSE's bulk deal report.
+**What this means:** The institutional accumulation seen in shareholding data (FIIs 6.98% → 14.75%, DIIs 5% → 11.71%) has happened through **gradual market purchases**, not visible block transactions. This is a quieter form of accumulation and does not show up on NSE's bulk deal report.
 
 ### SAST Disclosure (May 13, 2026)
-**Nomura India Investment Fund Mother Fund** crossed the regulatory threshold — filed disclosure under Reg 29(2) of SEBI (SAST) Regulations. This institutional investor has been steadily accumulating since the June 2025 bulk purchase at ₹1,617.
+**Nomura India Investment Fund Mother Fund** crossed the regulatory threshold and filed a disclosure under SEBI (SAST) Regulations. This indicates continued institutional interest in the stock.
+
+### No Insurgent Sales Detected
+No promoter-group selling, PE exit, or large institutional sale has been reported via the bulk/block route in 2026.
 
 ---
 
