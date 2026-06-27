@@ -388,4 +388,64 @@ The bull case rests on Kavach execution sustaining at scale, battery margins sta
 
 ---
 
-*Disclaimer: This is not investment advice. Data from Screener.in (consolidated, logged-in), yfinance, TradingView, Tavily News API, StockGro (Sachin Kapoor CFA), SimplyWallSt, Lumionr Forensics, Trendlyne, Business Standard. Do your own due diligence.*
+# 🎯 Swing Trade Assessment — HBL Engineering
+
+**Date:** 27 June 2026 | **CMP:** ₹827 | **Scored against 25-point swing checklist**
+
+| # | Criteria | Verdict | Notes |
+|---|----------|---------|-------|
+| **1** | **Price Position** — within 25% of 52W high | ❌ FAIL (26.1%) | 52W high ₹1,119, currently at ₹827. At ₹839+ it enters the 25% zone. ₹31 away — keep on radar |
+| **2** | **Trend** — Higher highs/higher lows | ✅ PASS | Clear HH/HL visible on daily chart over last 50 sessions |
+| **3** | **Volume** — HVQ, HVY, HVE on breakout | ⚠️ CAUTION | 10D avg vol ₹13.3L vs 50D avg ₹15.8L — ratio 0.84x. Below average means no institutional accumulation spike yet |
+| **4** | **Clean Price Action** — smooth, orderly | ✅ PASS | ADR 3.2% — orderly, no erratic candles. Good for position sizing |
+| **5** | **EMA Alignment** — 9>20>50>200 | ✅ PASS | 811>801>786>785. All EMAs sloping up. Textbook bullish alignment |
+| **6** | **Chart Pattern** — clear base formation | ⚠️ CAUTION | 20-week base: high ₹875, low ₹613. Base depth 42.7% — too deep for ideal swing. Price ₹827, 5.5% below base high. Not yet at breakout |
+| **7** | **Base Quality** — tight consolidation | ❌ FAIL | 42.7% base depth is excessive. Ideal clean bases are 15-30%. Selling pressure clearly present during this consolidation |
+| **8** | **ADR** — suitable range | ✅ PASS | 3.19% ADR — sweet spot (1.5-4%). Position sizing works well at this volatility |
+| **9** | **Primary Uptrend** — broader trend bullish | ✅ PASS | 200 DMA rising at ₹785. Price 5.4% above 200 DMA. Trend intact |
+| **10** | **One Trading Model** — discipline | ✅ | Valid swing setup when conditions align |
+| **11** | **Sector Strength** — leading sector | ✅ PASS | Defence/Railways — government capex priority sector. Multi-year tailwind |
+| **12** | **Tailwind** — macro/industry support | ✅ PASS | Kavach v4.0 mandate, ₹4,000+ Cr order book, 6-year revenue visibility. Govt push for indigenous signalling |
+| **13** | **IPO Consideration** | N/A | Established company (BSE: 517271, listed since 1994) |
+| **14** | **Price Action Strength** — relative strength | ✅ PASS | 3M return +25.4% vs Nifty +5.4% — strong outperformance. 1M return +1.2% — recent consolidation |
+| **15** | **Sector & Govt Boost** | ✅ PASS | Railways Annual Plan ₹11L Cr capex, Kavach v4.0 is non-negotiable. One of only 2 approved vendors |
+| **16** | **Fundamental Quality** | ✅ PASS | ROCE 58.4%, ROE 45.3%, D/E 0.03, FCF ₹618 Cr. Near-textbook |
+| **17** | **Quarterly Earnings Growth** | ✅ PASS | Revenue +34.7% YoY, Profit +50.7% YoY. But Q4 OPM dropped to 12% from 18% |
+| **18** | **Delivery Percentage** | ✅ PASS | Latest: 35.47% delivery on 26-Jun — genuine buying, not speculation |
+| **19** | **News & Institutional Activity** | ✅ PASS | ₹4,000+ Cr Kavach contract wins. FII 5.5%→5.94%, DII 9.6% |
+| **20** | **Risk Management** | ⚠️ CAUTION | Stop-loss at ₹750 (9.3% risk). If market corrects, HBL could test ₹700 |
+| **21** | **Market Environment** | ⚠️ CAUTION | Nifty consolidation (+5.4% in 3M). No strong tailwind for aggressive entries |
+| **22** | **Liquidity** | ✅ PASS | Avg 50D vol 15.8L shares, daily turnover ₹17,262 Cr. Highly liquid |
+| **23** | **Relative Strength** vs benchmark | ✅ PASS | HBL +25.4% vs Nifty +5.4% (3M). Clear outperformance |
+| **24** | **Breakout Confirmation** | ❌ FAIL | Price ₹827, 5.5% below base high ₹875. No breakout yet |
+| **25** | **Trading Psychology** | ✅ | Checklist followed. No FOMO — waiting for confirmation |
+
+### 📊 Swing Score: **16/23 measurable points** (2 N/A)
+
+**Rating: ⚠️ MODERATE — needs catalyst for entry**
+
+### Critical Callouts:
+- ❌ Entry trigger NOT yet pulled — **Point 24 (Breakout) is a dealbreaker until >₹875 on volume**
+- ❌ Price is 26.1% below 52W high — violates Point 1. Only ₹31 away from passing
+- ❌ Base depth 42.7% (Point 7) is too loose — still in re-accumulation zone
+- ⚠️ Volume ratio 0.84x (Point 3) — no institutional buying surge yet
+- ⚠️ Market environment (Point 21) is neutral — reduces success probability
+
+### Trade Setup (Pre-requisites before entry):
+
+| Condition | Action |
+|-----------|--------|
+| ✅ Price breaks above ₹875 | Entry trigger |
+| ✅ Volume >20L on breakout day | Confirm institutional participation |
+| ✅ Delivery % >30 on breakout day | Confirm genuine buying |
+| ✅ Stop loss at ₹750 (9.3% risk) | Risk management |
+| ⏳ First target: ₹950 (8.6% upside) | When conditions met |
+| ⏳ Second target: ₹1,050 (20% upside) | Extension if momentum continues |
+| ⏳ Q1 FY27 results (Aug 2026) | Catalyst — margin recovery could trigger breakout |
+
+### Bottom Line:
+HBL scores **16/23** on fundamentals but fails on **price position** (Point 1) and **breakout confirmation** (Point 24) — two critical swing entry criteria. Stock is building a base but hasn't broken out yet. Keep on strict watchlist. **First valid swing entry: ₹875+ with 20L+ volume and >30% delivery.** Only ₹31 away from the 25%-of-52W-high threshold — could trigger around Q1 results.
+
+---
+
+*Disclaimer: This is not investment advice. Data from Screener.in (consolidated, logged-in), yfinance, NSE Bhavcopy, Tavily News API, StockGro (Sachin Kapoor CFA), SimplyWallSt, Lumionr Forensics, Trendlyne. Do your own due diligence.*
