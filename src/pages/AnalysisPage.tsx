@@ -50,7 +50,20 @@ export default function AnalysisPage() {
         <FileText size={36} className="mx-auto mb-4" style={{ color: 'var(--text-dim)' }} />
         <h2 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Not Found</h2>
         <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>{error || "This analysis doesn't exist."}</p>
-        <Link to="/" className="btn btn-primary mt-6">
+        <Link
+          to="/"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            height: '44px', padding: '0 20px', borderRadius: '12px',
+            background: 'var(--accent)', color: 'var(--accent-contrast)',
+            fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none',
+            marginTop: '1.5rem',
+            transition: 'transform 180ms ease',
+            whiteSpace: 'nowrap',
+          }}
+          onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+          onMouseOut={(e) => e.currentTarget.style.transform = 'none'}
+        >
           <ArrowLeft size={16} /> Back Home
         </Link>
       </div>
@@ -88,8 +101,21 @@ export default function AnalysisPage() {
         </script>
       </Helmet>
 
-      <Link to="/" className="btn btn-secondary">
-        <ArrowLeft size={16} /> All analyses
+      <Link
+        to="/"
+        style={{
+          display: 'inline-flex', alignItems: 'center', gap: '8px',
+          height: '40px', padding: '0 18px', borderRadius: '12px',
+          background: 'transparent', color: 'var(--text)',
+          fontWeight: 700, fontSize: '0.82rem', textDecoration: 'none',
+          border: '1px solid var(--border)',
+          transition: 'border-color 180ms ease, transform 180ms ease',
+          whiteSpace: 'nowrap',
+        }}
+        onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+        onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
+      >
+        <ArrowLeft size={14} /> All analyses
       </Link>
 
       <header className="page-panel surface-card animate-in rounded-[2rem]">
@@ -134,7 +160,20 @@ export default function AnalysisPage() {
       </div>
 
       <div>
-        <Link to="/" className="btn btn-secondary">
+        <Link
+          to="/"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            height: '44px', padding: '0 20px', borderRadius: '12px',
+            background: 'var(--surface-soft)', color: 'var(--text)',
+            fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none',
+            border: '1px solid var(--border)',
+            transition: 'border-color 180ms ease, transform 180ms ease',
+            whiteSpace: 'nowrap',
+          }}
+          onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
+        >
           <ArrowLeft size={16} /> Back to dashboard
         </Link>
       </div>

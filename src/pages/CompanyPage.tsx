@@ -42,8 +42,22 @@ export default function CompanyPage() {
         <meta property="og:type" content="website" />
       </Helmet>
       <div className="mx-auto max-w-4xl">
-      <Link to="/" className="btn btn-secondary mb-4 sm:mb-6">
-        <ArrowLeft size={16} /> Dashboard
+      <Link
+        to="/"
+        style={{
+          display: 'inline-flex', alignItems: 'center', gap: '8px',
+          height: '40px', padding: '0 18px', borderRadius: '12px',
+          background: 'transparent', color: 'var(--text)',
+          fontWeight: 700, fontSize: '0.82rem', textDecoration: 'none',
+          border: '1px solid var(--border)',
+          transition: 'border-color 180ms ease, transform 180ms ease',
+          whiteSpace: 'nowrap',
+          marginBottom: '1rem',
+        }}
+        onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+        onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
+      >
+        <ArrowLeft size={14} /> Dashboard
       </Link>
 
       <header className="page-panel surface-card animate-in rounded-[2rem]">
