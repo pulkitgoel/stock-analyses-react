@@ -165,6 +165,15 @@ const FALLBACK_ANALYSES: Analysis[] = [
     tags: ['ai', 'it-sector', 'fundamental'],
     summary: 'Analysis of HCL Tech investment in Sarvam AI and its strategic implications.',
   },
+  {
+    title: 'Azad Engineering — Deep Dive Analysis',
+    ticker: 'AZAD',
+    file: 'azad-engineering-deep-dive-jun27.html',
+    slug: 'azad-engineering-deep-dive-jun27',
+    date: '2026-06-27',
+    tags: ['deep-dive', 'fundamental', 'manufacturing', 'aerospace'],
+    summary: 'Comprehensive deep-dive on Azad Engineering — ₹6,500 Cr order book, MHI single-source contract, negative FCF concerns, and verdict with best entry zone.',
+  },
 ];
 
 export async function fetchAnalyses(): Promise<Analysis[]> {
