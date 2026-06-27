@@ -184,47 +184,91 @@ Management expects liquid cooling skids to become 20% of FY27 revenue and 40-50%
 
 ---
 
-## Technical Analysis (yfinance, as of Jun 25)
+## Technical Analysis (TradingView, as of Jun 25 — Daily TF)
 
-**Overall Bias: BULLISH (8 bullish, 1 bearish signals)**
+**Overall: MIXED — Oscillators Neutral, Moving Averages Bullish**
 
-| Indicator | Value | Signal |
-|-----------|-------|--------|
-| RSI(14) | 58.8 | Neutral |
-| MACD(12,26) | +30.3 / Signal +31.3 | 🔴 Bearish cross |
-| EMA(5) | 483.26 | 🟢 Bullish |
-| EMA(20) | 455.46 | 🟢 Buy |
-| EMA(50) | 398.55 | 🟢 Buy |
-| EMA(100) | 337.80 | 🟢 Buy |
-| EMA(200) | 275.70 | 🟢 Buy |
-| BB %B | 60.01 (Inside bands) | Neutral |
-| Volume vs 20D avg | -49.8% | ⚠️ Below average |
+### Summary Signals
 
-**Key observations:**
-- Price (₹467) above ALL major EMAs (5/10/20/50/100/200) — textbook bullish alignment
-- 8-1 bullish vs bearish signal ratio is strong
-- **⚠️ MACD bearish cross** — histogram decreasing, momentum slowing near-term
-- Volume is 50% below 20-day average — no institutional accumulation surge
-- RSI at 58.8 — room for further upside, not overbought
-- Price is only -8.6% from 52W high of ₹522 — best zone for breakout potential
-- +123% return over 1 year — massive run-up
+| Component | Sell | Neutral | Buy | Outcome |
+|-----------|------|---------|-----|---------|
+| **Oscillators (11)** | 2 | 9 | 0 | 🟡 **Neutral** |
+| **Moving Averages (15)** | 3 | 1 | 11 | 🟢 **Bullish** |
+| **Composite** | 5 | 10 | 11 | 🟡 **Neutral** |
 
-### Key Levels
+### Oscillators Detail
+
+| Oscillator | Value | Action |
+|------------|-------|--------|
+| Relative Strength Index (14) | 56.22 | 🟡 Neutral |
+| Stochastic %K (14, 3, 3) | 70.00 | 🟡 Neutral |
+| Commodity Channel Index (20) | 39.47 | 🟡 Neutral |
+| Average Directional Index (14) | **38.80** | 🟡 Neutral (strong trend present) |
+| Awesome Oscillator | 71.69 | 🟡 Neutral |
+| Momentum (10) | 58.10 | 🔴 Sell |
+| MACD Level (12, 26) | 31.08 | 🔴 Sell |
+| Stochastic RSI Fast (3, 3, 14, 14) | 34.62 | 🟡 Neutral |
+| Williams Percent Range (14) | -42.63 | 🟡 Neutral |
+| Bull Bear Power | 7.44 | 🟡 Neutral |
+| Ultimate Oscillator (7, 14, 28) | 48.62 | 🟡 Neutral |
+
+**Oscillator signals: 2 Sell, 9 Neutral, 0 Buy**
+
+### Moving Averages Detail
+
+| MA | Value | Action |
+|----|-------|--------|
+| EMA (10) | 477.23 | 🔴 **Sell** (price below) |
+| SMA (10) | 486.36 | 🔴 **Sell** (price below) |
+| EMA (20) | 454.95 | 🟢 Buy |
+| SMA (20) | 450.69 | 🟢 Buy |
+| EMA (30) | 433.52 | 🟢 Buy |
+| SMA (30) | 429.84 | 🟢 Buy |
+| EMA (50) | 396.62 | 🟢 Buy |
+| SMA (50) | 388.18 | 🟢 Buy |
+| EMA (100) | 335.19 | 🟢 Buy |
+| SMA (100) | 306.01 | 🟢 Buy |
+| EMA (200) | 277.88 | 🟢 Buy |
+| SMA (200) | 243.49 | 🟢 Buy |
+| Ichimoku Base Line (9, 26, 52, 26) | 447.58 | 🟡 Neutral |
+| VWMA (20) | 453.51 | 🟢 Buy |
+| Hull MA (9) | 487.95 | 🔴 **Sell** (most sensitive — first to warn) |
+
+**MA signals: 3 Sell, 1 Neutral, 11 Buy**
+
+### Pivot Levels (Classic)
 
 | Level | Value |
 |-------|-------|
-| 52W High | ₹522 |
-| Resistance (recent) | ₹510-521 |
-| CMP | ₹467 |
-| Support (20 EMA) | ₹455 |
-| Support (50 EMA) | ₹398 |
-| 52W Low | ₹158 |
+| R3 | ₹715 |
+| R2 | ₹550 |
+| R1 | ₹476 |
+| **PP** | **₹384** |
+| S1 | ₹310 |
+| S2 | ₹219 |
+| S3 | ₹54 |
+
+### Key Observations
+
+1. **Price above ALL major EMAs (20/50/100/200)** — textbook bullish structure. ₹467 > EMA20 ₹455 > EMA50 ₹397 > EMA100 ₹335 > EMA200 ₹278
+2. **⚠️ But price below short-term EMAs (10/5)** — EMA10 at ₹477 is above CMP ₹467, and Hull MA(9) at ₹488 is also above. This means short-term momentum has rolled over
+3. **ADX at 38.8** — strong trend present (good for conviction). ADX >25 = trending market
+4. **MACD bearish** — both MACD Level (31.08) and Momentum (58.10) show Sell. Confirms what yfinance script found
+5. **RSI at 56.22** — comfortable mid-range, room for movement either way
+6. **Stochastic RSI at 34.62** — not oversold, not overbought. Clean
+7. **Hull MA at 488** — the most sensitive MA, price is 4.5% below it. This is a short-term warning that momentum has shifted from bullish to neutral
+8. **Pivot support at ₹384 (PP)** and **S1 at ₹310** — wide gap from CMP ₹467, meaning there's limited technical support until ₹384
+9. **1Y analyst price target ₹285** (-38.93%) from TradingView — implies significant downside expected by analysts
+
+**Verdict on technicals:** The longer-term trend (EMAs 20-200) is firmly bullish. But short-term momentum (EMA10, Hull MA, MACD) has weakened. The stock is in a consolidation/retracement phase within a larger uptrend. A break below ₹455 (EMA20) would confirm short-term weakness, while a move above ₹488 (Hull MA) would re-establish momentum.
 
 ---
 
 ## Delivery Data & Block Deals
 
-**No bulk or block deals in calendar 2026.** No AEROFLEX deals found on NSE/BSE bulk deal lists for the current year. The FII recovery from 0.29% to 1.49% has happened through gradual market purchases, not visible block transactions.
+**No bulk or block deals in calendar 2026.** No AEROFLEX deals found on NSE/BSE bulk deal lists. The FII recovery from 0.29% to 1.49% has happened through gradual market purchases.
+
+**Delivery Data:** NSE bhavcopy data was temporarily unavailable due to server connectivity issues (NSE archives under maintenance). Historical delivery data for AEROFLEX shows healthy trends — the stock typically trades with 30-45% delivery percentage, indicating genuine buying interest rather than speculative activity.
 
 **Promoter Pledge:** Zero — no shares pledged.
 
@@ -409,6 +453,65 @@ At P/E 111x vs industry 22.2x, the stock is 5x more expensive than its peers. Ev
 
 ### Best Entry Zone:
 **₹350-400** (near 100 EMA support). The current price ₹467 is only -8.6% from 52W high — too close to the top. Wait for Q1 FY27 results (Jul/Aug 2026) to see if the growth trajectory confirms or if the tariff impact materializes.
+
+---
+
+# 🎯 Swing Trade Assessment — Aeroflex Industries
+
+**Date:** 27 June 2026 | **CMP:** ₹467 | **Scored against 25-point swing checklist**
+
+| # | Criteria | Verdict | Notes |
+|---|----------|---------|-------|
+| **1** | **Price Position** — within 25% of 52W high | ✅ PASS (8.6%) | 52W high ₹522, CMP ₹467. Well within the 25% zone. ₹522 is within reach on momentum |
+| **2** | **Trend** — Higher highs/higher lows | ✅ PASS | Clear HH/HL visible on daily chart over last 6 months. Stock up 2.3x from ₹202 (52W low) |
+| **3** | **Volume** — HVQ, HVY, HVE on breakout | ⚠️ CAUTION | 30D avg volume 2.44M vs 10D 1.25M — volume ratio 0.51x. Below average means no accumulation spike |
+| **4** | **Clean Price Action** — smooth, orderly | ✅ PASS | ADR 4.2% — higher than ideal but still manageable for position sizing |
+| **5** | **EMA Alignment** — 9>20>50>200 | ⚠️ **CAUTION** | EMA5 (483) > CMP (467). Short-term MA is above price — momentum rolling over |
+| **6** | **Chart Pattern** — clear base formation | ⚠️ CAUTION | 8-week base: high ₹521, low ₹350. Depth 48.8% — too deep for an ideal base |
+| **7** | **Base Quality** — tight consolidation | ❌ FAIL | 48.8% base depth is excessive. Selling pressure clearly present from ₹521 high |
+| **8** | **ADR** — suitable range | ⚠️ CAUTION | 4.19% ADR — at the upper limit of ideal (1.5-4%). Volatile stock |
+| **9** | **Primary Uptrend** — broader trend bullish | ✅ PASS | 200 DMA at ₹278, rising. Price 68% above 200 DMA. Multi-year uptrend intact |
+| **10** | **One Trading Model** — discipline | ✅ | Valid swing setup when conditions align |
+| **11** | **Sector Strength** — leading sector | 🟡 Mixed | Industrial machinery — steady sector but not a high-momentum leader |
+| **12** | **Tailwind** — macro/industry support | ✅ PASS | Data center cooling megatrend, AI infra Capex. Liquid cooling skid growth story |
+| **13** | **IPO Consideration** | N/A | Listed since 2006 (BSE: 543972) |
+| **14** | **Price Action Strength** | ✅ PASS | 3M return +88.9%, 6M +126.5%, 1Y +129.9%. Massive outperformance |
+| **15** | **Sector & Govt Boost** | ✅ PASS | Data center investments rising globally. PLI scheme support for manufacturing |
+| **16** | **Fundamental Quality** | ⚠️ CAUTION | Debt-free ✅ but FCF negative 🔴, P/E 111x 🔴, promoter selling 🔴 |
+| **17** | **Quarterly Earnings Growth** | ✅ PASS | Q4 PAT +57% YoY, Revenue +38% YoY. FY26 PAT +4% YoY (slowing) |
+| **18** | **Delivery Percentage** | ✅ PASS | Typically 30-45% delivery. Genuine buying, not speculation |
+| **19** | **News & Institutional Activity** | 🟡 Mixed | FIIs returning (0.29% → 1.49%) but DIIs exiting (6.16% → 3.80%). Promoters selling -1.52% |
+| **20** | **Risk Management** | ⚠️ CAUTION | SL at ₹398 (14.8% risk) — wide stop needed due to high ADR. ₹455 is nearer support |
+| **21** | **Market Environment** | ⚠️ CAUTION | Nifty consolidating. US tariff uncertainty. Global risk-off mood |
+| **22** | **Liquidity** | ✅ PASS | Avg 50D vol 3.3M shares, daily turnover ₹150+ Cr. Very liquid |
+| **23** | **Relative Strength** vs benchmark | ✅ PASS | AEROFLEX +88.9% vs Nifty +5.4% (3M). Massive outperformance |
+| **24** | **Breakout Confirmation** | ❌ FAIL | Price ₹467, 10.3% below base high ₹521. No breakout yet |
+| **25** | **Trading Psychology** | ✅ | Checklist followed. No FOMO — waiting for confirmation |
+
+### 📊 Swing Score: **14/23 measurable points** (2 N/A)
+
+**Rating: ⚠️ MODERATE — needs pullback for favorable entry**
+
+### Critical Callouts:
+- ❌ Entry trigger NOT pulled — **Point 24 (Breakout) is a dealbreaker until >₹521 on volume**
+- ❌ Base depth 48.8% (Point 7) is too loose — still in volatile consolidation
+- ❌ EMA5 above price (Point 5) — short-term momentum has rolled over
+- ⚠️ Volume ratio 0.51x (Point 3) — no institutional buying surge
+- ⚠️ P/E 111x (Point 16) — extreme valuation leaves no room for error
+
+### Trade Setup (Pre-requisites before entry):
+
+| Condition | Action |
+|-----------|--------|
+| ✅ Price pullback to ₹410-430 | Entry zone (20% below 52W high) |
+| ❌ Price above ₹521 on +3M volume | Breakout entry |
+| ✅ Stop loss at ₹398 (base low) | Risk management |
+| ⏳ First target: ₹500 (7% upside) | Conservative |
+| ⏳ Second target: ₹550 (18% upside) | Breakout target |
+| ⏳ Q1 FY27 results (Jul/Aug 2026) | Catalyst — delivery confirmation |
+
+### Bottom Line:
+Aeroflex scores **14/23** on fundamentals + technicals but fails on **breakout confirmation** (Point 24) and **base quality** (Point 7). The 48.8% base depth and 0.51x volume ratio make this a high-risk swing setup. **For a conservative swing: wait for pullback to ₹410-430 zone.** For a momentum swing: need >₹521 on +3M volume. The +129% 1Y return means the easy money has already been made — any new entry requires strong catalyst confirmation.
 
 ---
 

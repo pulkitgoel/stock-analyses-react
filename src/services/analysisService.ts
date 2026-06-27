@@ -4,6 +4,15 @@ const API_BASE = '/api';
 
 const FALLBACK_ANALYSES: Analysis[] = [
   {
+    title: 'Aeroflex Industries — Deep Dive Analysis',
+    ticker: 'AEROFLEX',
+    file: 'aeroflex-industries-deep-dive-jun27.html',
+    slug: 'aeroflex-industries-deep-dive-jun27',
+    date: '2026-06-27',
+    tags: ['deep-dive', 'fundamental', 'manufacturing', 'industrial', 'data-centers'],
+    summary: 'Deep-dive on Aeroflex Industries — debt-free niche manufacturer of flexible hoses expanding into AI data center liquid cooling skids. P/E 111x (extreme), FCF negative, promoter selling -1.52%. Verdict: CAUTION — expensive growth story with execution risk.',
+  },
+  {
     title: 'HBL Engineering — Deep Dive Analysis',
     ticker: 'HBLENGINE',
     file: 'hbl-engineering-deep-dive-jun27.html',
