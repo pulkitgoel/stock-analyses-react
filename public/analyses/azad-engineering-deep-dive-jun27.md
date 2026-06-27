@@ -12,7 +12,8 @@
 | Metric | Value | Metric | Value |
 |--------|-------|--------|-------|
 | CMP | ₹2,020 | Mkt Cap | ₹13,046 Cr |
-| P/E | 98.2x | Industry P/E | 38.0x |
+| P/E (Trailing TTM) | 98.2x | Forward P/E (FY27E) | **83.5x** |
+| Forward P/E (FY28E) | **58.9x** | Industry P/E | 38.0x |
 | PEG | 0.65 | BV | ₹237 |
 | ROCE | 11.9% | ROE | 9.09% |
 | Sales (FY26) | ₹603 Cr | PAT (FY26) | ₹134 Cr |
@@ -113,14 +114,14 @@ Azad Engineering is a global Tier-1 supplier of highly-engineered, complex, miss
 
 ## Shareholding Pattern
 
-| Holder | Dec'23 | Dec'24 | Mar'26 | Trend |
+| Holder | Mar'23 | Mar'24 | Mar'26 | Trend |
 |--------|--------|--------|--------|-------|
 | Promoters | 65.90% | 60.32% | 55.84% | 🔴 -10% in 2 years |
 | FIIs | 6.98% | 14.23% | 14.75% | 🟢 Doubled |
 | DIIs | 5.00% | 8.23% | 11.71% | 🟢 Doubled |
 | Public | 22.13% | 17.21% | 17.69% | 🟡 Stable |
 
-**Key insight:** Both FIIs and DIIs aggressively accumulating. Promoter dilution of ~10% in 2 years is notable — partly from QIP (raising funds) and partly from selling. Shareholder count grew from 106K to 127K.
+**Key insight:** Both FIIs and DIIs aggressively accumulating. Promoter dilution of ~10% over 3 years (Mar'23 to Mar'26) — partly from QIP (raising funds) and partly from selling. Shareholder count grew from 106K to 127K.
 
 ---
 
@@ -260,6 +261,151 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 
 ---
 
+## Block Deals & Insider Activity
+
+### Bulk Deal History (Last 12 months)
+
+**Most recent bulk deal: June 6, 2025** — No bulk/block deals recorded in NSE for AZAD in 2026.
+
+| Date | Client | Action | Qty | Avg Price | Notes |
+|------|--------|--------|-----|-----------|-------|
+| Jun 6, 2025 | RAKESH CHOPDAR (Promoter) | Sell | 31,67,702 | ₹1,623.78 | Promoter sold 3.17 Mn shares (~2.45% equity) |
+| Jun 6, 2025 | NOMURA INDIA INVESTMENT FUND MOTHER FUND | Buy | 4,10,515 | ₹1,616.85 | Institutional accumulation |
+| Jun 6, 2025 | IRAGE BROKING SERVICES LLP | Buy | 8,33,234 + 1,60,095 | ₹1,627/₹1,611 | Prop desk buying |
+| Jun 6, 2025 | F3 ADVISORS PRIVATE LIMITED | Buy | 4,31,123 | ₹1,620.23 | Prop desk buying |
+| Jun 6, 2025 | MANSI SHARE AND STOCK ADVISORS PVT LTD | Buy | 4,22,821 | ₹1,621.31 | Prop desk buying |
+
+**Interpretation:**
+
+- **Promoter Rakesh Chopdar sold 31.68 lakh shares (~2.45% of equity) at ₹1,623 on June 6, 2025** — this is a significant event. This single sale accounts for a large portion of the -10% promoter dilution seen from Mar'23 to Mar'26.
+- **No 2026 bulk/block deals found** — all recorded bulk deals are from mid-2025. The stock has been trading in a tight institutional flow pattern without visible exchange-reported block transactions this year.
+- **Nomura India Investment Fund Mother Fund** bought 4.1L shares at ₹1,617 in June 2025 — and subsequently filed a SAST disclosure in May 2026, suggesting continued accumulation.
+- **No institutional exit deals detected** — no large fund has sold via bulk/block route, suggesting the institutional holding increase (FIIs 6.98% → 14.75%, DIIs 5% → 11.71%) has been through gradual market purchases, not block transactions.
+
+**Key Missing Data:** Bulk deals are reported to exchanges when they cross specific thresholds. The promoter's 31.68L share sale was disclosed. However, smaller institutional accumulations that happened via negotiated/trade-to-trade blocks may not appear on NSE's bulk deal report.
+
+### SAST Disclosure (May 13, 2026)
+**Nomura India Investment Fund Mother Fund** crossed the regulatory threshold — filed disclosure under Reg 29(2) of SEBI (SAST) Regulations. This institutional investor has been steadily accumulating since the June 2025 bulk purchase at ₹1,617.
+
+---
+
+## Forward PE Valuation
+
+### Multi-Source Forward PE Computation
+
+| Source | Metric | FY27E | FY28E |
+|--------|--------|-------|-------|
+| **ICICI Direct** | EPS Estimate | ₹24.2 | ₹34.3 |
+|  | Forward P/E (CMP ₹2,020) | **83.5x** | **58.9x** |
+|  | Implied Forward P/E (Target ₹2,060) | 85.1x | 60.1x |
+| **SimplyWallSt (6 analysts)** | EPS Estimate | ₹26.58 | — |
+|  | Forward P/E (CMP ₹2,020) | **76.0x** | — |
+| **Way2Wealth** | EPS Estimate | ₹24.19 | ₹33.27 |
+|  | Forward P/E (CMP ₹2,020) | **83.5x** | **60.7x** |
+|  | Target P/E (60x FY28E) | — | **56.0x** (ICICI Dir) |
+
+### Forward PE Analysis
+
+- **Consensus FY27E Forward PE: ~80x** (range 76-84x depending on analyst)
+- **FY28E Forward PE: ~59x** (consensus range 56-61x)
+- **Multiple compression trajectory:** From 98x trailing → 80x FY27E → 59x FY28E — a **40% compression in 2 years** if EPS targets are met
+- **Verdict on forward PE:** Despite the 40% compression trajectory, FY27E PE of 80x is still **2.1x the industry PE of 38x**. The stock needs every bit of the 25%+ growth to justify this premium.
+
+**Key check — ICICI Direct's target:** ₹2,060 implied at 60x FY28E EPS (₹34.3). This means even the brokerage's target price implies the stock should trade at a 58% premium to industry PE even 2 years out — and that premium is already baked into the current price.
+
+**SimplyWallSt estimate divergence:** Their EPS of ₹26.58 (vs ICICI's ₹24.2) is 9.8% higher — suggesting some analysts are more optimistic than ICICI. The gap is worth monitoring in upcoming quarters.
+
+### PEG with Forward Earnings
+
+| Metric | Trailing | FY27E | FY28E |
+|--------|----------|-------|-------|
+| P/E | 98.2x | 83.5x | 58.9x |
+| EPS Growth | 54% (FY26) | ~28-34% | ~25-30% |
+| **PEG Ratio** | 0.65 | **~2.5-3.0x** | **~2.0-2.4x** |
+
+**⚠️ Critical warning on PEG:** The headline trailing PEG of **0.65** looks extremely cheap because FY26 had 54% PAT growth. But FY27E growth is guided at only 25%+ (EPS growth ~17-28% depending on analyst). On forward earnings:
+- FY27E PEG at 80x P/E and ~28% growth = **~2.9x** — no longer cheap
+- The trailing PEG is misleading because base effect (FY23/FY24 had IPO-related depressed EPS) inflates the 3-year CAGR Screener uses for its PEG calculation
+
+---
+
+## Recent News & Catalysts (Tavily + Multi-Source, Jun 2026)
+
+### 🟢 Positive Developments
+
+**1. Mitsubishi Heavy Industries (MHI) — 8-Year Single-Source Contract** *(Mar 2026)*
+- Azad selected as **single-source supplier partner** for hot-section Nozzle Vanes Segments of gas turbine engines
+- 8-year long-term contract and price agreement with MHI Japan
+- Competing head-on with Howmet Aerospace and PCC (global leaders) — a rare achievement for any Indian precision engineering company
+- Confirms Tier-1 technical capability at global level
+
+**2. Baker Hughes / Nuovo Pignone — Contract Amendment** *(Apr 24, 2026)*
+- Amendment No. 3 to existing strategic supply agreement signed
+- Covers critical turbomachinery components for power generation
+- Execution extending up to **December 2030**
+- Also: Azad **inaugurated an exclusive Lean Manufacturing Facility** for Baker Hughes in Hyderabad (Apr 23, 2026)
+
+**3. Dedicated OEM Facilities Ramping Up** *(Apr-May 2026)*
+- 4 dedicated lean manufacturing facilities inaugurated for global customers in FY26
+- 8 total facilities planned over 12-18 months, including a state-of-the-art forging plant
+- ₹450 Cr capex planned for FY27
+- ICICI Direct: "Strong execution-led growth through capacities and contracts with margin expansion"
+
+**4. FII & DII Accumulation Continues**
+- FIIs: 6.98% (Dec'23) → 14.75% (Mar'26) — **+111% increase**
+- DIIs: 5.00% (Dec'23) → 11.71% (Mar'26) — **+134% increase**
+- Both institutions doubling down despite promoter dilution
+
+**5. Analyst Coverage — Consensus "BUY"**
+- 7 analysts polled: consensus **Buy**, avg PT ₹2,071 (stockanalysis.com)
+- ICICI Direct: Maintains positive view, cites 33% revenue CAGR (FY22-FY26), margin expansion to ~37%
+- Management reiterated 25%+ growth guidance for FY27
+- SimplyWallSt: 5/6 on future growth criteria pass
+
+### 🟡 Neutral / In-Progress
+
+**6. Investor Meetings with Global Funds** *(Jun 2026)*
+- Attended Axis Capital investor conference in Mumbai (Jun 2)
+- Schedule of meets with Citigroup group (Jun 12, Hyderabad)
+- Met Bernstein (Jun 10)
+- Supply-demand for Azad stock remains high among institutional investors
+
+**7. GST Penalty Notice** *(Mar 25, 2026)*
+- Received communications imposing penalty under CGST/SGST Act
+- Management clarified: ₹100 Cr+ GST credit accumulated over 2 years; expects realization by H1 FY28
+- CFO framed this as working capital timing issue, not a compliance red flag
+
+**8. Q4 FY26 Results (May 15, 2026)**
+- Revenue: ₹161.5 Cr (YoY +27.3%, QoQ +1.8%)
+- EBITDA margin: 38% (+204 bps YoY, -124 bps QoQ)
+- PAT: ₹36.8 Cr (YoY +48.4%, QoQ +6%)
+- FY26 full year: Revenue ₹603 Cr (+31.8% YoY), PAT ₹133.6 Cr (+52.9% YoY)
+- Margins improving despite being a "stabilization year" — positive signal
+
+### 🔴 Risks / Concerns
+
+**9. Working Capital Tightness**
+- CFO turned negative -₹1,233 Mn in FY26 (from +₹629 Mn in FY25)
+- FCF deep negative at -₹1,934 Mn for the year
+- Management blames inventory buildup for new facilities; expects normalization H2 FY27
+- ICICI Direct notes: "Working capital management remains a challenge with elevated inventory levels"
+
+**10. Promoter Dilution — Key Data Point**
+- Promoters down from **65.90% (Dec'23) → 55.84% (Mar'26)** = -10.06%
+- Nomura India Investment Fund Mother filed SAST disclosure on May 13, 2026 (crossed threshold)
+- Part of this dilution is QIP (fundraising for capex), not pure selling — but needs verification
+
+**11. Analyst Price Target Adjustments**
+- SimplyWallSt: Price target **decreased by 10%** to ₹1,901 post-Q4 results
+- Another revision: target decreased by **8.4%** to ₹1,944
+- Suggests analysts see near-term headwinds despite long-term conviction
+
+**12. Nomura India Investment Fund Mother SAST Disclosure** *(May 13, 2026)*
+- Nomura crossed regulatory threshold — this could be a new institutional investor entering
+- Needs monitoring: FIIs are at 14.75% — Nomura entry would add to that
+
+---
+
 ## Key Risks
 
 | Risk | Severity | Detail |
@@ -271,9 +417,11 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 | Low ROE | 🟡 | 9.09% — new capex not yet generating adequate returns |
 | Technical Weakness | 🟡 | Price below all MAs (10-50) |
 | Capex-heavy | 🟡 | Asset turn needs significant improvement |
+| Analyst PT Cut | 🟡 | Targets reduced 8-10% post Q4 |
 | Earnings Yield | 🟢 | 1.64% — low for a manufacturing company |
 | No Dividend | 🟢 | Zero return to shareholders |
 | Piotroski Score | 🟢 | 4/9 — some warning flags |
+| GST Penalty | 🟢 | ~₹100 Cr credit timing issue, not structural |
 
 ---
 
@@ -311,6 +459,7 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 - **P/E 98x** at current price leaves zero margin for execution error
 - If MHI contract ramp-up disappoints, **multiple compression could be brutal**
 - "25%+" guidance implies **deceleration** from recent 54% PAT growth trajectory
+- **Analyst PT cuts of 8-10%** suggest near-term skepticism
 - **Low ROE (9.09%)** suggests new capex isn't yet generating adequate returns
 - **No dividend ever** = shareholder returns entirely dependent on price appreciation
 
@@ -335,4 +484,4 @@ The investment case rests entirely on management's ability to **normalize workin
 
 ---
 
-*Disclaimer: This is not investment advice. Data from Screener.in, TradingView, NSE Bhavcopy, and company concall transcripts. Do your own due diligence.*
+*Disclaimer: This is not investment advice. Data from Screener.in, TradingView, NSE Bhavcopy, company concall transcripts, Tavily News API, ICICI Direct, SimplyWallSt, Business Standard, ET Markets, Moneycontrol. Do your own due diligence.*
