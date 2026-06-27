@@ -50,11 +50,7 @@ export default function AnalysisPage() {
         <FileText size={36} className="mx-auto mb-4" style={{ color: 'var(--text-dim)' }} />
         <h2 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Not Found</h2>
         <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>{error || "This analysis doesn't exist."}</p>
-        <Link
-          to="/"
-          className="focus-ring mt-6 inline-flex h-11 items-center gap-2 rounded-xl px-4 text-sm font-bold no-underline"
-          style={{ background: 'var(--accent)', color: 'var(--accent-contrast)' }}
-        >
+        <Link to="/" className="btn btn-primary mt-6">
           <ArrowLeft size={16} /> Back Home
         </Link>
       </div>
@@ -92,11 +88,7 @@ export default function AnalysisPage() {
         </script>
       </Helmet>
 
-      <Link
-        to="/"
-        className="focus-ring mb-4 inline-flex items-center gap-2 rounded-lg py-2 pr-3 text-sm font-semibold no-underline sm:mb-6"
-        style={{ color: 'var(--text-muted)' }}
-      >
+      <Link to="/" className="btn btn-secondary mb-4 sm:mb-6">
         <ArrowLeft size={16} /> All analyses
       </Link>
 
@@ -142,11 +134,7 @@ export default function AnalysisPage() {
       </div>
 
       <div className="mt-6">
-        <Link
-          to="/"
-          className="focus-ring inline-flex h-12 items-center gap-2 rounded-2xl px-5 text-sm font-black no-underline transition-transform duration-200 hover:-translate-y-0.5"
-          style={{ background: 'var(--surface-soft)', color: 'var(--text)' }}
-        >
+        <Link to="/" className="btn btn-soft">
           <ArrowLeft size={16} /> Back to dashboard
         </Link>
       </div>

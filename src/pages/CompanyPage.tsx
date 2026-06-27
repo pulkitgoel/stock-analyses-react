@@ -42,11 +42,7 @@ export default function CompanyPage() {
         <meta property="og:type" content="website" />
       </Helmet>
       <div className="mx-auto max-w-4xl">
-      <Link
-        to="/"
-        className="focus-ring mb-4 inline-flex items-center gap-2 rounded-lg py-2 pr-3 text-sm font-semibold no-underline sm:mb-6"
-        style={{ color: 'var(--text-muted)' }}
-      >
+      <Link to="/" className="btn btn-secondary mb-4 sm:mb-6">
         <ArrowLeft size={16} /> Dashboard
       </Link>
 
@@ -69,7 +65,7 @@ export default function CompanyPage() {
           No deep-dives found for {tickerUpper}
         </div>
       ) : (
-        <div className="mt-5 grid gap-3">
+        <div className="mt-5 flex flex-col gap-4">
           {sortedAnalyses.map((a) => (
             <Link
               key={a.slug}
