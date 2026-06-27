@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/hbl-engineering-deep-dive-jun27</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/pltr-why-falling-jun26</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -119,6 +124,11 @@
     <loc>https://stocksfundamentals.online/analysis/azad-engineering-deep-dive-jun27</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/hblengine</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/pltr</loc>

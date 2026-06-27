@@ -4,6 +4,15 @@ const API_BASE = '/api';
 
 const FALLBACK_ANALYSES: Analysis[] = [
   {
+    title: 'HBL Engineering — Deep Dive Analysis',
+    ticker: 'HBLENGINE',
+    file: 'hbl-engineering-deep-dive-jun27.html',
+    slug: 'hbl-engineering-deep-dive-jun27',
+    date: '2026-06-27',
+    tags: ['deep-dive', 'fundamental', 'defence', 'railways', 'batteries'],
+    summary: 'Comprehensive deep-dive on HBL Engineering — ₹4,000+ Cr Kavach order book, 58.4% ROCE, record FCF ₹618 Cr, PEG 0.26, Q4 margin compression risks.',
+  },
+  {
     title: 'Palantir (PLTR) - Why Is It Falling & What Should Investors Do?',
     ticker: 'PLTR',
     file: 'pltr-why-falling-jun26.html',
