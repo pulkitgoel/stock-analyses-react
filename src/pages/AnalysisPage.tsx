@@ -60,7 +60,7 @@ export default function AnalysisPage() {
   const readTime = estimateReadTime(content);
 
   return (
-    <article className="article-shell">
+    <article className="article-shell flex flex-col gap-6 sm:gap-8">
       <Helmet>
         <title>{analysis.title} — stocksfundamentals.online</title>
         <meta name="description" content={analysis.summary} />
@@ -88,7 +88,7 @@ export default function AnalysisPage() {
         </script>
       </Helmet>
 
-      <Link to="/" className="btn btn-secondary mb-4 sm:mb-6">
+      <Link to="/" className="btn btn-secondary">
         <ArrowLeft size={16} /> All analyses
       </Link>
 
@@ -125,7 +125,7 @@ export default function AnalysisPage() {
         </div>
       </header>
 
-      <div className="page-panel surface-card animate-in animate-in-delay-1 mt-6 overflow-hidden rounded-[2rem] sm:mt-8">
+      <div className="page-panel surface-card animate-in animate-in-delay-1 overflow-hidden rounded-[2rem]">
         <div className="article-body">
           <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {content}
@@ -133,7 +133,7 @@ export default function AnalysisPage() {
         </div>
       </div>
 
-      <div className="mt-6">
+      <div>
         <Link to="/" className="btn btn-soft">
           <ArrowLeft size={16} /> Back to dashboard
         </Link>
