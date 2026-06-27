@@ -173,47 +173,112 @@ HBL Engineering (formerly HBL Power Systems) designs, manufactures, and services
 
 ---
 
-## Technical Analysis (yfinance, as of Jun 25)
+## TradingView Technical Analysis (Live, Jun 25)
 
-**Overall Bias: BULLISH (9 bullish, 0 bearish signals)**
+**Overall Composite: STRONG BUY** (Oscillators: Neutral 1 / Sell 2 / Buy 15 • Moving Averages: Sell 1 / Neutral 1 / Buy 13)
 
+### Oscillators
 | Indicator | Value | Signal |
 |-----------|-------|--------|
-| RSI(14) | 59.6 | Neutral |
-| MACD(12,26) | +9.81 / Signal +3.85 | 🟢 Bullish |
-| EMA(5) | 819.17 | 🟢 Bullish cross |
-| EMA(10) | 812.81 | 🟢 Buy |
-| EMA(20) | 808.15 | 🟢 Buy |
-| EMA(50) | 786.38 | 🟢 Buy |
-| EMA(100) | 773.13 | 🟢 Buy |
-| EMA(200) | 788.24 | 🟢 Buy |
-| BB %B | 85.02 (Inside bands) | Neutral |
+| **Summary** | — | **Buy (2 Sell, 9 Neutral, 15 Buy)** |
+| RSI(14) | 60.55 | Neutral |
+| Stochastic %K(14,3,3) | 83.61 | Neutral |
+| CCI(20) | 123.69 | Neutral |
+| ADX(14) | 12.82 | Neutral |
+| Awesome Oscillator | 29.20 | Neutral |
+| Momentum(10) | 81.25 | 🟢 Buy |
+| MACD Level(12,26) | 10.38 | 🟢 Buy |
+| Stoch RSI Fast(3,3,14,14) | 100.00 | Neutral |
+| Williams %R(14) | −15.65 | 🔴 Sell |
+| Bull Bear Power | 56.40 | Neutral |
+| Ultimate Oscillator(7,14,28) | 39.75 | Neutral |
 
-**Key observations:**
-- Price (₹827) above ALL major EMAs (5/10/20/50/100/200) — textbook bullish alignment
-- 9-0 bullish vs bearish signal ratio is extraordinarily strong
-- MACD bullish but histogram decreasing — momentum may be slowing near-term
-- Volume is 43% above 20-day average — institutional participation likely
-- 52W high is ₹1,122 — current price is -24.5% from peak, suggesting room to recover
-- RSI at 59.6 — neither overbought nor oversold, room for further upside
+### Moving Averages (All 12 MAs)
+| MA | Value | Signal |
+|----|-------|--------|
+| EMA(10) | 809.63 | 🟢 Buy |
+| SMA(10) | 807.14 | 🟢 Buy |
+| EMA(20) | 800.21 | 🟢 Buy |
+| SMA(20) | 796.03 | 🟢 Buy |
+| EMA(30) | 794.35 | 🟢 Buy |
+| SMA(30) | 789.24 | 🟢 Buy |
+| EMA(50) | 785.10 | 🟢 Buy |
+| SMA(50) | 795.63 | 🟢 Buy |
+| EMA(100) | 778.33 | 🟢 Buy |
+| SMA(100) | 751.94 | 🟢 Buy |
+| EMA(200) | 763.94 | 🟢 Buy |
+| SMA(200) | 816.46 | 🟢 Buy |
+| Ichimoku Base(9,26,52,26) | 803.55 | Neutral |
+| VWMA(20) | 804.03 | 🟢 Buy |
+| Hull MA(9) | 829.39 | 🔴 Sell |
+
+### Key Observations
+- **Price ₹827 is above ALL 10+ EMAs/SMAs** — textbook bullish alignment across every timeframe
+- **14 of 15 MAs are BUY** — overwhelming bullish consensus among moving averages
+- **Momentum is bullish** (MACD Buy, Momentum Buy) but **Williams %R at −15.65 indicates overbought**
+- **Stochastic %K at 83.61** — approaching overbought zone (>80), caution for near-term pullback
+- **Stoch RSI Fast at 100.00** — extremely overbought on a short-term basis, pullback likely
+- **ADX at 12.82** — very low, meaning **no strong trend**. The current rally lacks directional conviction despite all MAs screaming buy
+- **Hull MA(9) at 829.39 gives a SELL** — the most sensitive MA already hinting at exhaustion above ₹829
+- **Volume: 2.07M vs 30D avg 1.58M** — 31% above average, healthy but not exceptional
+- **Key discrepancy:** Oscillators are divided (2 Sell, 9 Neutral, 15 Buy) while MAs are overwhelmingly buy (13 Buy). The MAs reflect the established uptrend; the oscillators show waning momentum
+
+### Pivot Levels (Classic)
+| Level | Price |
+|-------|-------|
+| R3 | ₹1,089 |
+| R2 | ₹950 |
+| R1 | ₹886 |
+| **PP** | **₹811** |
+| S1 | ₹747 |
+| S2 | ₹672 |
+| S3 | ₹533 |
 
 ### Key Levels
 | Level | Value |
 |-------|-------|
 | 52W High | ₹1,122 |
-| Resistance (recent) | ₹854-870 |
+| Resistance (recent) | ₹854-870 / R1 ₹886 |
 | CMP | ₹827 |
-| Support (50 EMA) | ₹786 |
-| Support (200 EMA) | ₹788 |
+| Pivot Point | ₹811 |
+| Support (50 EMA) | ₹785 |
+| Support (200 EMA) | ₹764 |
 | 52W Low | ₹552 |
 
 ---
 
-## Delivery Data & Block Deals
+## Delivery Data & Block Deals (NSE Bhavcopy)
 
-**No bulk or block deals in calendar 2026.** The most recent bulk deal was Graviton Research LLP (prop desk) on November 10, 2025 at ₹1,090 — intraday buy/sell, no net position change. All 2025 bulk deals were prop desk arbitrage (Graviton, QE Securities), not institutional accumulation or exit.
+**No bulk or block deals in calendar 2026.** The most recent bulk deal was Graviton Research LLP (prop desk) on November 10, 2025 at ₹1,090 — intraday buy/sell. All 2025 bulk deals were prop desk arbitrage, not institutional accumulation or exit.
 
-**What this means:** The FII recovery from 0.91% (Mar'23) to 5.94% (Mar'26) has happened through gradual market purchases, not visible block transactions. No promoter selling, no PE exit, no institutional distress sale detected.
+### Last 10 Days Delivery Trend (12-Jun to 25-Jun 2026)
+
+| Date | Close | Volume | Delivery Qty | Del% | Signal |
+|------|-------|--------|-------------|:----:|:------:|
+| 12-Jun | ₹774 | 8,87,179 | 3,94,638 | **44.5%** 🟢 | Accumulation |
+| 15-Jun | ₹793 | 11,85,407 | 5,50,948 | **46.5%** 🟢 | Accumulation |
+| 16-Jun | ₹800 | 8,62,006 | 4,07,993 | **47.3%** 🟢 | Accumulation |
+| 17-Jun | ₹796 | 6,72,540 | 2,84,935 | **42.4%** 🟢 | Accumulation |
+| 18-Jun | ₹804 | 14,00,631 | 5,00,982 | **35.8%** 🟡 | Mixed |
+| 19-Jun | ₹816 | 21,38,130* | 8,17,095 | **38.2%** 🟡 | Mixed |
+| 22-Jun | ₹818 | 14,07,743 | 4,96,653 | **35.3%** 🟡 | Mixed |
+| 23-Jun | ₹821 | 16,65,159 | 6,43,132 | **38.6%** 🟡 | Mixed |
+| 24-Jun | ₹823 | 10,35,594 | 3,70,867 | **35.8%** 🟡 | Mixed |
+| 25-Jun | ₹827 | 20,70,034* | 7,34,138 | **35.5%** 🟡 | Mixed |
+*Volume spike days (>1.5x 50D avg)
+
+### Analysis
+- **Avg Delivery %: 40.0%** — healthy overall, indicating genuine buying
+- **Trend: Declining** — first 5 days avg 43.3% vs last 5 days avg 36.7%
+- **4 accumulation days** (>40% del) in first half — stock was being accumulated in ₹774-800 zone
+- **0 distribution days** (<30% del) — no panic selling or heavy churn
+- **Price up 6.8%** over the period (₹774→₹827), but delivery % has steadily declined
+- **Volume spikes** on 19-Jun and 25-Jun (2.1M each) with mid-range delivery (35-38%) — suggests institutional activity but with profit-taking component
+- **Pattern:** Strong accumulation at lower levels (₹774-800), transitioning to mixed/higher-volume churn as price approaches ₹830+
+
+**Verdict:** The stock was being accumulated below ₹800. As price approaches resistance at ₹854-870, delivery % is dropping — some holders are booking profits. This is normal near resistance, but a break above ₹870 with >40% delivery would confirm the next leg up.
+
+**What the FII recovery means:** FII holding going from 0.91% (Mar'23) → 5.94% (Mar'26) has happened through gradual market purchases, not visible block transactions. No promoter selling, no PE exit, no institutional distress sale detected.
 
 ---
 
@@ -248,33 +313,35 @@ HBL's FY26 PAT was ₹814 Cr (EPS ₹29.40). Management guidance states FY27 wil
 
 ---
 
-## Recent News & Catalysts (Tavily, Jun 2026)
+## Recent News & Catalysts (Tavily + NSE Filings, Jun 2026)
 
 ### 🟢 Positive
 
-**1. ₹4,000+ Cr Kavach Order Inflow in FY26**
-- Largest order ever: ₹1,710 Cr from Chittaranjan Locomotive Works
-- Followed by ₹762 Cr (Central Railway), ₹575 Cr (ICF), ₹499 Cr (Western/NCR), ₹179 Cr (Banaras), ₹163 Cr (SCR), ₹133 Cr (other zones)
+**1. ₹4,000+ Cr Kavach Order Inflow in FY26** *(Multiple sources)*
+- **₹1,714 Cr order from Chittaranjan Locomotive Works (May 28)** — largest single order in company history for Kavach v4.0 locomotive equipment. Execution within 12 months
+- Followed by ₹762 Cr (Central Railway, 5 contracts), ₹575 Cr (ICF), ₹499 Cr (Western/NCR), ₹179 Cr (Banaras), ₹163 Cr (SCR), ₹133 Cr (other zones), ₹101.55 Cr (IRCON)
 - HBL is one of only 2 qualified vendors for Kavach v4.0 — strong competitive moat
+- Source: NSE filings, AxisDirect, Ventura Securities
 
-**2. Institutional Interest Recovering**
+**2. Cochin Shipyard JV for Green Maritime Propulsion (Jun 11)** *(MarketScreener)*
+- HBL and Cochin Shipyard formed a 50:50 JV — **Green Maritime Propulsion Private Limited**
+- Opens a new TAM in maritime electrification (a parallel to the Kavach story in defence & railways)
+
+**3. Institutional Interest Recovering**
 - FIIs: 0.91% (Mar'23) → 5.94% (Mar'26) — recovering from near-total exit
 - StockGro analyst: Buy with 12m PT ₹974 (+24% upside)
-- Strong buy technical signal from multiple platforms
+- Strong buy technical signal on TradingView
 
-**3. FY26 Full Year Results — Record Performance**
-- Revenue: ₹3,303 Cr (+68% YoY)
-- PAT: ₹814 Cr (+195% YoY)
-- FCF: ₹618 Cr (76% of PAT)
-- CFO/OP: 93% — exceptional cash conversion
+**4. FY26 Full Year Results — Record Performance** *(May 23)*
+- Revenue: ₹3,303 Cr (+68% YoY) • PAT: ₹814 Cr (+195% YoY)
+- FCF: ₹618 Cr (76% of PAT) • CFO/OP: 93% — exceptional cash conversion
+- EPS: ₹29.40 (vs ₹9.99 in FY25)
+- **Dividend declared:** ₹1/share (0.36% yield TTM)
 
-**4. Debt-Free Balance Sheet with High Returns**
-- D/E: 0.03, ROCE: 58.4%, ROE: 45.3%
-- Piotroski Score: 8/9 — very high quality score
+**5. Debt-Free Balance Sheet with High Returns**
+- D/E: 0.03, ROCE: 58.4%, ROE: 45.3%, Piotroski: 8/9
 
-**5. PEG of 0.26**
-- Among the lowest PEG ratios in the Indian market
-- If 3Y profit CAGR of 105% sustains even partially, the stock is deeply undervalued on growth-adjusted basis
+**6. PEG of 0.26** — among the lowest PEG ratios in the Indian market
 
 ### 🟡 Neutral / In-Progress
 
@@ -290,7 +357,7 @@ HBL's FY26 PAT was ₹814 Cr (EPS ₹29.40). Management guidance states FY27 wil
 
 ### 🔴 Risks / Concerns
 
-**8. Extreme Quarterly Volatility**
+**8. Extreme Quarterly Volatility** *(Confirmed by CNBC-TV18: Q4 EBITDA margin contracted to 12.37% from 16.80% YoY despite 27% revenue growth)*
 - OPM swung from 44% (Sep'25) to 12% (Mar'26) — 32 percentage points in 2 quarters
 - Revenue swung from ₹451 Cr (Dec'24) to ₹1,223 Cr (Sep'25) — 2.7x difference
 - This makes any single-quarter PE or EPS figure unreliable for valuation
@@ -352,6 +419,7 @@ HBL's FY26 PAT was ₹814 Cr (EPS ₹29.40). Management guidance states FY27 wil
 ### Bull Case 🐂
 - **PEG 0.26** — among the cheapest growth-adjusted stocks in India. 3Y profit CAGR of 105% at 27.4x P/E is objectively cheap
 - **₹4,000+ Cr Kavach order book** — multi-year visibility. One of only 2 qualified vendors for v4.0
+- **Cochin Shipyard JV** — Green Maritime Propulsion opens a parallel growth vector in maritime electrification
 - **Record FCF of ₹618 Cr** — 93% CFO/OP ratio. This is real cash, not accounting profit
 - **58.4% ROCE, 45.3% ROE, D/E 0.03** — among the best return ratios in Indian manufacturing
 - **Battery transition to lithium** opens new TAM in defence, railways, and grid storage
@@ -411,8 +479,8 @@ The bull case rests on Kavach execution sustaining at scale, battery margins sta
 | **15** | **Sector & Govt Boost** | ✅ PASS | Railways Annual Plan ₹11L Cr capex, Kavach v4.0 is non-negotiable. One of only 2 approved vendors |
 | **16** | **Fundamental Quality** | ✅ PASS | ROCE 58.4%, ROE 45.3%, D/E 0.03, FCF ₹618 Cr. Near-textbook |
 | **17** | **Quarterly Earnings Growth** | ✅ PASS | Revenue +34.7% YoY, Profit +50.7% YoY. But Q4 OPM dropped to 12% from 18% |
-| **18** | **Delivery Percentage** | ✅ PASS | Latest: 35.47% delivery on 26-Jun — genuine buying, not speculation |
-| **19** | **News & Institutional Activity** | ✅ PASS | ₹4,000+ Cr Kavach contract wins. FII 5.5%→5.94%, DII 9.6% |
+| **18** | **Delivery Percentage** | ✅ PASS | NSE Bhavcopy 10D avg delivery: 40.0%. Latest: 35.5% on 25-Jun. Healthy — indicates genuine buying |
+| **19** | **News & Institutional Activity** | ✅ PASS | ₹4,000+ Cr Kavach contract wins + Cochin Shipyard JV. FII 5.5%→5.94%, DII 9.6%. Institutional confidence present |
 | **20** | **Risk Management** | ⚠️ CAUTION | Stop-loss at ₹750 (9.3% risk). If market corrects, HBL could test ₹700 |
 | **21** | **Market Environment** | ⚠️ CAUTION | Nifty consolidation (+5.4% in 3M). No strong tailwind for aggressive entries |
 | **22** | **Liquidity** | ✅ PASS | Avg 50D vol 15.8L shares, daily turnover ₹17,262 Cr. Highly liquid |
