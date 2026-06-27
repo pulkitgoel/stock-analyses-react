@@ -251,6 +251,10 @@ HBL Engineering (formerly HBL Power Systems) designs, manufactures, and services
 
 **No bulk or block deals in calendar 2026.** The most recent bulk deal was Graviton Research LLP (prop desk) on November 10, 2025 at ₹1,090 — intraday buy/sell. All 2025 bulk deals were prop desk arbitrage, not institutional accumulation or exit.
 
+**Insider Trading (SEBI PIT):** Last insider disclosure was Aluru Jagadish Prasad acquiring 2,67,584 shares at ₹51 (Nov 2021). No promoter/insider transactions in current year.
+
+**Promoter Pledge:** Zero — no shares pledged.
+
 ### Last 10 Days Delivery Trend (12-Jun to 25-Jun 2026)
 
 | Date | Close | Volume | Delivery Qty | Del% | Signal |
