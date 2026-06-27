@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { FileText, Bell, BarChart2, Mail, CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -29,7 +30,16 @@ const promises = [
 
 export default function PrivacyPage() {
   return (
-    <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+    <>
+      <Helmet>
+        <title>Privacy Policy — StockFundamentals</title>
+        <meta name="description" content="Privacy policy for StockFundamentals. We collect almost nothing and respect your privacy completely." />
+        <link rel="canonical" href="https://stocksfundamentals.online/privacy" />
+        <meta property="og:title" content="Privacy Policy — StockFundamentals" />
+        <meta property="og:description" content="Privacy policy for StockFundamentals. We collect almost nothing and respect your privacy completely." />
+        <meta property="og:url" content="https://stocksfundamentals.online/privacy" />
+      </Helmet>
+      <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
       {/* Header */}
       <section
@@ -135,6 +145,7 @@ export default function PrivacyPage() {
         </Link>
       </div>
 
-    </div>
+      </div>
+    </>
   );
 }

@@ -39,8 +39,16 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>stocksfundamentals.online - Premium Stock Research</title>
+        <title>stocksfundamentals.online — Premium Stock Research</title>
         <meta name="description" content="Premium stock research library with deep-dives, market notes, institutional activity, and valuation views." />
+        <link rel="canonical" href="https://stocksfundamentals.online/" />
+        <meta property="og:title" content="stocksfundamentals.online — Premium Stock Research" />
+        <meta property="og:description" content="Premium stock research library with deep-dives, market notes, institutional activity, and valuation views." />
+        <meta property="og:url" content="https://stocksfundamentals.online/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="stocksfundamentals.online — Premium Stock Research" />
+        <meta name="twitter:description" content="Premium stock research library with deep-dives, market notes, institutional activity, and valuation views." />
       </Helmet>
 
       <div className="mx-auto max-w-7xl">

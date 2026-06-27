@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowUpRight, Building2 } from 'lucide-react';
 import { Analysis } from '../types/analysis';
 import { fetchAnalyses } from '../services/analysisService';
@@ -30,7 +31,17 @@ export default function CompanyPage() {
   const sortedAnalyses = [...analyses].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <>
+      <Helmet>
+        <title>{tickerUpper} Stock Analysis & Research — StockFundamentals</title>
+        <meta name="description" content={`Deep-dive fundamental analysis, market notes, and research for ${tickerUpper}.`} />
+        <link rel="canonical" href={`https://stocksfundamentals.online/company/${tickerUpper.toLowerCase()}`} />
+        <meta property="og:title" content={`${tickerUpper} Stock Analysis & Research — StockFundamentals`} />
+        <meta property="og:description" content={`Deep-dive fundamental analysis, market notes, and research for ${tickerUpper}.`} />
+        <meta property="og:url" content={`https://stocksfundamentals.online/company/${tickerUpper.toLowerCase()}`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <div className="mx-auto max-w-4xl">
       <Link
         to="/"
         className="focus-ring mb-4 inline-flex items-center gap-2 rounded-lg py-2 pr-3 text-sm font-semibold no-underline sm:mb-6"
@@ -99,5 +110,6 @@ export default function CompanyPage() {
         </div>
       )}
     </div>
+    </>
   );
 }

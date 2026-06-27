@@ -66,10 +66,30 @@ export default function AnalysisPage() {
   return (
     <article className="article-shell">
       <Helmet>
-        <title>{analysis.title} - stocksfundamentals.online</title>
+        <title>{analysis.title} — stocksfundamentals.online</title>
         <meta name="description" content={analysis.summary} />
+        <link rel="canonical" href={`https://stocksfundamentals.online/analysis/${analysis.slug}`} />
         <meta property="og:title" content={analysis.title} />
         <meta property="og:description" content={analysis.summary} />
+        <meta property="og:url" content={`https://stocksfundamentals.online/analysis/${analysis.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={analysis.title} />
+        <meta name="twitter:description" content={analysis.summary} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": analysis.title,
+            "description": analysis.summary,
+            "datePublished": analysis.date,
+            "author": [{
+                "@type": "Person",
+                "name": "Pulkit Goel",
+                "url": "https://stocksfundamentals.online/about"
+            }]
+          })}
+        </script>
       </Helmet>
 
       <Link

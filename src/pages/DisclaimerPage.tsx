@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, AlertTriangle, BookOpen, TrendingDown, ArrowRight } from 'lucide-react';
 
@@ -27,7 +28,16 @@ const points = [
 
 export default function DisclaimerPage() {
   return (
-    <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+    <>
+      <Helmet>
+        <title>Risk Disclaimer — StockFundamentals</title>
+        <meta name="description" content="Risk disclaimer and terms of use for StockFundamentals research." />
+        <link rel="canonical" href="https://stocksfundamentals.online/disclaimer" />
+        <meta property="og:title" content="Risk Disclaimer — StockFundamentals" />
+        <meta property="og:description" content="Risk disclaimer and terms of use for StockFundamentals research." />
+        <meta property="og:url" content="https://stocksfundamentals.online/disclaimer" />
+      </Helmet>
+      <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
       {/* Header */}
       <section
@@ -111,6 +121,7 @@ export default function DisclaimerPage() {
         </Link>
       </div>
 
-    </div>
+      </div>
+    </>
   );
 }

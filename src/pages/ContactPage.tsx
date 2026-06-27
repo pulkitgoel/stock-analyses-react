@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Mail, MessageCircle, Clock, ArrowUpRight } from 'lucide-react';
 
 const channels = [
@@ -28,7 +29,17 @@ const faqs = [
 
 export default function ContactPage() {
   return (
-    <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+    <>
+      <Helmet>
+        <title>Contact & Stock Requests — StockFundamentals</title>
+        <meta name="description" content="Get in touch for stock analysis requests, feedback, or collaborations. Reach out to Pulkit Goel directly." />
+        <link rel="canonical" href="https://stocksfundamentals.online/contact" />
+        <meta property="og:title" content="Contact & Stock Requests — StockFundamentals" />
+        <meta property="og:description" content="Get in touch for stock analysis requests, feedback, or collaborations. Reach out to Pulkit Goel directly." />
+        <meta property="og:url" content="https://stocksfundamentals.online/contact" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
       {/* Header */}
       <section
@@ -150,6 +161,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-    </div>
+      </div>
+    </>
   );
 }

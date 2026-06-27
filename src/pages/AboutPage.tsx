@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { BarChart3, TrendingUp, FileSearch, Lightbulb, ArrowRight, Mail, User } from 'lucide-react';
 
@@ -34,7 +35,17 @@ const cardBase: React.CSSProperties = {
 
 export default function AboutPage() {
   return (
-    <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <>
+      <Helmet>
+        <title>About Pulkit & StockFundamentals</title>
+        <meta name="description" content="Learn about Pulkit Goel and the research methodology behind StockFundamentals. Independent, data-backed stock analysis." />
+        <link rel="canonical" href="https://stocksfundamentals.online/about" />
+        <meta property="og:title" content="About Pulkit & StockFundamentals" />
+        <meta property="og:description" content="Learn about Pulkit Goel and the research methodology behind StockFundamentals. Independent, data-backed stock analysis." />
+        <meta property="og:url" content="https://stocksfundamentals.online/about" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
       {/* ── Hero ── */}
       <section
@@ -220,6 +231,7 @@ export default function AboutPage() {
         </a>
       </div>
 
-    </div>
+      </div>
+    </>
   );
 }
