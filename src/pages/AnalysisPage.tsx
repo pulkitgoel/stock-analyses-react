@@ -134,7 +134,7 @@ export default function AnalysisPage() {
       </div>
 
       <div>
-        <Link to="/" className="btn btn-soft">
+        <Link to="/" className="btn btn-secondary">
           <ArrowLeft size={16} /> Back to dashboard
         </Link>
       </div>
