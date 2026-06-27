@@ -315,6 +315,51 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 
 **SimplyWallSt estimate divergence:** Their EPS of ₹26.58 (vs ICICI's ₹24.2) is 9.8% higher — suggesting some analysts are more optimistic than ICICI. The gap is worth monitoring in upcoming quarters.
 
+### Revenue Trajectory from Order Book + Guidance
+
+The ₹6,500 Cr order book (11x FY26 revenue) and management's 25%+ CAGR guidance together paint a clear trajectory:
+
+| Year | Est. Revenue | Order Book Remaining | Coverage (x) | Cumulative % of OB Consumed |
+|------|-------------|--------------------|-------------|---------------------------|
+| FY26A | ₹603 Cr | ₹5,900 Cr | 10.8x | 9% |
+| FY27E | ₹754 Cr | ₹5,746 Cr | 7.6x | 20% |
+| FY28E | ₹942 Cr | ₹4,804 Cr | 5.1x | 34% |
+| FY29E | ₹1,178 Cr | ₹3,626 Cr | 3.1x | 52% |
+| FY30E | ₹1,472 Cr | ₹2,154 Cr | 1.5x | 74% |
+| FY31E | ₹1,840 Cr | ₹314 Cr | 0.2x | 100%+ |
+
+**Key insight:** At 25% CAGR, the order book covers **~6 years** of revenue. By FY30E, revenue crosses ₹1,472 Cr and order book coverage drops below 1.5x — meaning the company needs to win ₹1,500 Cr+ in new orders by FY29 just to maintain visibility. Management has historically refreshed the order book with new long-term contracts (MHI 8-year, Baker Hughes amendment to 2030), so this is a trackable risk rather than an immediate concern.
+
+### Order Book-Adjusted EPS Model
+
+Using management's explicit guidance (25%+ revenue CAGR, 33-35% EBITDA margins) and adjusting for increasing depreciation from capex:
+
+| Metric | FY26A | FY27E (Model) | FY28E (Model) |
+|--------|-------|--------------|--------------|
+| Revenue | ₹603 Cr | ₹754 Cr | ₹942 Cr |
+| EBITDA @ 35% | ₹225 Cr | ₹264 Cr | ₹330 Cr |
+| Depreciation | ₹53 Cr | ~₹64 Cr | ~₹76 Cr |
+| Interest | ₹31 Cr | ~₹30 Cr | ~₹28 Cr |
+| Estimated PAT | ₹134 Cr | ~₹128 Cr | ~₹170 Cr |
+| Estimated EPS | ₹20.58 | ~₹19.82 | ~₹26.32 |
+| **Model Forward PE** | 98.2x | **101.9x** | **76.7x** |
+
+**Why model EPS (₹19.82) is lower than ICICI estimate (₹24.2) for FY27E:**
+- My model uses a conservative 35% EBITDA margin (management guided 33-35%)
+- ICICI assumes higher margin expansion as new facilities stabilize and operating leverage kicks in
+- The gap means ICICI expects EBITDA margins closer to 37%+ by FY27, not just 35%
+- If margins expand to 37%, EPS would be ~₹22.5 and forward PE ~89.8x — closer to analyst consensus
+
+**Management's own guidance check:** "25%+ revenue growth, 33-35% EBITDA margins" — at 25% growth, FY27E revenue of ₹754 Cr and 34% EBITDA margin gives ₹256 Cr EBITDA. After interest + depreciation, PAT would be ~₹120-130 Cr. This implies EPS of ₹18.6-20.1 and forward PE of **100-108x** — even more expensive than analyst estimates suggest.
+
+**Conclusion on forward valuation:** The analyst consensus forward PE of 80x FY27E is **optimistic** because it assumes margin expansion beyond management's guided range. A conservative model using management's own guidance yields ~100x FY27E. The stock needs:
+1. EBITDA margin to expand to 37%+ (above guided range)
+2. Revenue to exceed 25% (management said "25%+" but also "conservative" — implying potential upside)
+3. Working capital to normalize by H2 FY27 as promised
+4. New order wins to refresh the order book beyond ~FY30
+
+Without all four, the current price of ₹2,020 offers limited margin of safety even on forward earnings.
+
 ### PEG with Forward Earnings
 
 | Metric | Trailing | FY27E | FY28E |
@@ -412,7 +457,7 @@ Avg Delivery %: **42.9%** (moderate — mixed accumulation)
 |------|----------|--------|
 | Negative FCF | 🔴 | -₹1,934 Mn FY26 — CFO deteriorating sharply |
 | Working Capital | 🔴 | Debtor days 189, Inventory up 73% YoY |
-| Promoter Dilution | 🔴 | 10% in 2 years (55.84% from 65.90%) |
+| Promoter Dilution | 🔴 | 10% over 3 years (55.84% from 65.90%) |
 | High P/E | 🟡 | 98x vs Industry 38x — 2.6x premium demands execution |
 | Low ROE | 🟡 | 9.09% — new capex not yet generating adequate returns |
 | Technical Weakness | 🟡 | Price below all MAs (10-50) |

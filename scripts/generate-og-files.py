@@ -6,10 +6,12 @@ with proper og:title, og:description, twitter:card, and schema.org markup.
 
 These files let WhatsApp, Telegram, Twitter/X show rich link previews
 instead of generic site info when sharing analysis links.
+
+CRITICAL: Reads JS/CSS asset hashes from dist/index.html so OG files
+stay in sync with each build's unique filenames.
 """
 import json, os, re, sys
 
-# Resolve dist/ relative to repo root (parent of scripts/)
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPTS_DIR)
 DIST_DIR = os.path.join(REPO_ROOT, "dist")
@@ -22,11 +24,25 @@ def load_analyses():
         return data.get("analyses", [])
     return []
 
-def generate_og_html(slug, title, summary):
+def load_asset_hashes():
+    """Read dist/index.html to extract current JS/CSS asset filenames."""
+    index_path = os.path.join(DIST_DIR, "index.html")
+    if not os.path.exists(index_path):
+        return {"js": "/assets/index.js", "css": "/assets/index.css"}
+    with open(index_path) as f:
+        content = f.read()
+    js_match = re.search(r'src="(/assets/index-[^"]+\.js)"', content)
+    css_match = re.search(r'href="(/assets/index-[^"]+\.css)"', content)
+    return {
+        "js": js_match.group(1) if js_match else "/assets/index.js",
+        "css": css_match.group(1) if css_match else "/assets/index.css",
+    }
+
+def generate_og_html(slug, title, summary, assets):
     """Generate full HTML with per-analysis OG tags that still loads the SPA JS bundle."""
     clean_title = re.sub(r'[^\x00-\x7F]+', ' ', title).strip()
     clean_title = re.sub(r'\s+', ' ', clean_title)
-    summary_escaped = summary[:160].replace('"', '&quot;').replace("'", "&#39;")
+    summary_escaped = summary[:160].replace('"', '&quot;').replace("'", '&#39;')
 
     return f'''<!doctype html>
 <html lang="en">
@@ -67,8 +83,8 @@ def generate_og_html(slug, title, summary):
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" crossorigin src="/assets/index-tD8K2ul9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-sD1sh7px.css">
+    <script type="module" crossorigin src="{assets['js']}"></script>
+    <link rel="stylesheet" crossorigin href="{assets['css']}">
   </body>
 </html>'''
 
@@ -77,6 +93,9 @@ def main():
     if not analyses:
         print("No analyses found in %s" % ANALYSES_FILE)
         sys.exit(1)
+
+    assets = load_asset_hashes()
+    print("Asset hashes: JS=%s CSS=%s" % (assets["js"], assets["css"]))
 
     output_dir = os.path.join(DIST_DIR, "analysis")
     os.makedirs(output_dir, exist_ok=True)
@@ -89,14 +108,14 @@ def main():
         title = a.get("title", "Stock Analysis")
         summary = a.get("summary", "Deep-dive fundamental analysis of Indian stocks.")
         
-        html = generate_og_html(slug, title, summary)
+        html = generate_og_html(slug, title, summary, assets)
         filepath = os.path.join(output_dir, f"{slug}.html")
         
         with open(filepath, "w") as f:
             f.write(html)
         count += 1
 
-    print(f"Generated {count} per-analysis OG HTML files in {output_dir}")
+    print("Generated %d per-analysis OG HTML files in %s" % (count, output_dir))
 
 if __name__ == "__main__":
     main()
