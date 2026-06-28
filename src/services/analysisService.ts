@@ -4,6 +4,15 @@ const API_BASE = '/api';
 
 const FALLBACK_ANALYSES: Analysis[] = [
   {
+    title: 'Anant Raj Ltd — Deep Dive Analysis',
+    ticker: 'ANANTRAJ',
+    file: 'anant-raj-deep-dive-jun28.html',
+    slug: 'anant-raj-deep-dive-jun28',
+    date: '2026-06-28',
+    tags: ['deep-dive', 'fundamental', 'real-estate', 'data-centers'],
+    summary: 'Deep-dive on Anant Raj — zero-debt real estate developer pivoting to data centers (28 MW operational, 357 MW target). 80% PAT CAGR, ₹25,000 Cr Haryana DC MoU, demerger potential. PEG 0.63 but ED investigation overhang. Verdict: CAUTION — strong fundamentals, wait for technical clarity.',
+  },
+  {
     title: 'Aeroflex Industries — Deep Dive Analysis',
     ticker: 'AEROFLEX',
     file: 'aeroflex-industries-deep-dive-jun27.html',
