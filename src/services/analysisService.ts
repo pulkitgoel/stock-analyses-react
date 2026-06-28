@@ -4,6 +4,15 @@ const API_BASE = '/api';
 
 const FALLBACK_ANALYSES: Analysis[] = [
   {
+    title: 'Techno Electric & Engineering Co Ltd — Deep Dive Analysis',
+    ticker: 'TECHNOE',
+    file: 'techno-electric-deep-dive-jun28.html',
+    slug: 'techno-electric-deep-dive-jun28',
+    date: '2026-06-28',
+    tags: ['deep-dive', 'fundamental', 'epc', 'power-transmission', 'data-centers'],
+    summary: 'Deep-dive on Techno Electric — near zero-debt EPC leader with ₹9,600 Cr order book and data center pivot. Strong delivery (47.8% avg, 10/10 acc days) but negative FCF (-₹657 Cr). Verdict: CAUTION — good business, poor stock momentum.',
+  },
+  {
     title: 'Sanghvi Movers Ltd — Deep Dive Analysis',
     ticker: 'SANGHVIMOV',
     file: 'sanghvi-movers-deep-dive-jun28.html',

@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/techno-electric-deep-dive-jun28</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/sanghvi-movers-deep-dive-jun28</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -139,6 +144,11 @@
     <loc>https://stocksfundamentals.online/analysis/azad-engineering-deep-dive-jun27</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/technoe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/sanghvimov</loc>
