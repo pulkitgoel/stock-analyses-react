@@ -4,6 +4,15 @@ const API_BASE = '/api';
 
 const FALLBACK_ANALYSES: Analysis[] = [
   {
+    title: 'Sanghvi Movers Ltd — Deep Dive Analysis',
+    ticker: 'SANGHVIMOV',
+    file: 'sanghvi-movers-deep-dive-jun28.html',
+    slug: 'sanghvi-movers-deep-dive-jun28',
+    date: '2026-06-28',
+    tags: ['deep-dive', 'fundamental', 'crane-rental', 'wind-energy', 'infrastructure'],
+    summary: 'Deep-dive on Sanghvi Movers — Asia\'s largest crane rental company (5th globally, 485+ cranes). Record revenue ₹1,070 Cr but OPM collapsed 69%→37%. KSA expansion working (90% utilization), ₹1,053 Cr order book. Verdict: CAUTION — fairly valued, margin dilution risk.',
+  },
+  {
     title: 'Anant Raj Ltd — Deep Dive Analysis',
     ticker: 'ANANTRAJ',
     file: 'anant-raj-deep-dive-jun28.html',
