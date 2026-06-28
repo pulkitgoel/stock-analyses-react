@@ -448,14 +448,165 @@ However, the stock is **technically weak** (below 200 DMA, ADX near zero, 29.7% 
 
 ---
 
-## 17. Swing Trade Assessment
+## 17. Swing Trade Assessment — Full 25-Point Checklist
 
-Based on the 25-point checklist:
-- **Score: 11/23 measurable points** — NOT RECOMMENDED for swing
-- **ADX at 9.15** — no trend to trade
-- **Price below all short-term MAs** — bearish setup
-- **Low volume** — no participation signal
-- Better to wait for a base formation above ₹540 with volume expansion
+### 1. Price Position
+**CMP ₹523 vs 52W High ₹744 | Distance from 52W High: -29.7%**
+The stock is trading **29.7% below its 52-week high** of ₹744 (Oct 2025). The 52W low is ₹403 (Mar 2025).
+**✗ FAIL** — Rule says "within 25% of 52W high or at ATH." At -29.7%, this misses the mark. Price has corrected significantly and is nowhere near ATH territory.
+
+### 2. Trend
+**Daily chart shows: Lower Highs from ₹744 (Oct'25) → ₹595 (Apr'26) → ₹545 (Jun'26). Support at ₹403 (Mar'26 low).**
+The stock has been making **lower highs and lower lows** since October 2025. The downtrend from ₹744 is intact. No higher highs or higher lows visible.
+**✗ FAIL** — Clear downtrend, not an uptrend.
+
+### 3. Volume Characteristics
+**10-day avg volume: 16,00,292 | Latest volume: 10,46,591 (-34.6% vs avg)**
+Volume has been **declining** over the past 10 trading sessions. Mid-June had some accumulation on volume but the last 4 sessions show reducing participation. No volume spike or expansion pattern.
+**⚠️ CAUTION** — Volume quality is mediocre. No High Volume Yield or Expansion visible.
+
+### 4. Clean Price Action
+**Recent candles: ₹534 → ₹537 → ₹540 → ₹530 → ₹528 → ₹520 → ₹532 → ₹522 → ₹528 → ₹522**
+Price action is **choppy** — the stock is oscillating between ₹520-540 with no clear direction. Small-bodied candles, no follow-through.
+**✗ FAIL** — Choppy sideways range, erratic movement within a narrow band.
+
+### 5. EMA Alignment
+**CMP ₹522.55 | EMA(10): 528.23 | EMA(20): 527.92 | EMA(50): 519.92 | EMA(100): 521.16 | EMA(200): 533.98**
+- CMP (522) < EMA(10) — price below short-term EMA ✗
+- CMP (522) < EMA(200) 533 — below long-term EMA ✗
+- EMAs are **flat/sideways** — no clear slope direction
+**✗ FAIL** — The 9 > 20 > 50 > 200 alignment is broken. Opposite of what swing rules require.
+
+### 6. Chart Pattern & Base Formation
+**Pattern identified: Descending Triangle / Bear Flag**
+From ₹744 high → a series of lower highs. The base from ₹403 to ₹545 could be a potential bottom, but recovery has failed at progressively lower levels (₹595 → ₹545).
+**⚠️ CAUTION** — ~9-month basing zone, but not a classic cup-handle or flat base. Premature to call completed base.
+
+### 7. Base Quality
+**Base range ₹403-545 (~35% range):**
+A 35% range base is **moderately deep**. Tightening is not visible. Accumulation was visible in mid-June but the last 4 sessions show neutral delivery.
+**⚠️ CAUTION** — Base too wide and deep for quality swing setup. No clear tightening pattern.
+
+### 8. ADR (Average Daily Range)
+**Approximate ADR: ₹13-15 (~2.5-3% of CMP)**
+**✅ PASS** — ADR is reasonable and tradeable.
+
+### 9. Primary Uptrend
+**Nifty 50 near highs, but Anant Raj is deeply underperforming.**
+**✗ FAIL** — Stock has broken its primary uptrend. Trading against the stock's own trend is not recommended.
+
+### 10. Follow One Trading Model
+**This setup does not fit the classic swing model:**
+- No breakout above a base ✅
+- No uptrend confirmed ✗
+- No EMA alignment ✗
+**✅ PASS (by abstention)** — The correct decision per model is to NOT take this trade.
+
+### 11. Sector Strength
+**Realty index (Nifty Realty):** Corrected from highs. DLF, Oberoi, Godrej Properties all corrected 15-40%.
+**⚠️ CAUTION** — Not a leading sector currently. No strong sector tailwind.
+
+### 12. Tailwind
+🟢 DC + cloud (structural growth), ₹25,000 Cr Haryana MoU, potential demerger
+🔴 ED investigation (negative tailwind)
+**⚠️ CAUTION** — Strong long-term tailwinds offset by ED overhang.
+
+### 13. IPO Consideration
+**Not an IPO.** Established company.
+**✅ PASS** — N/A.
+
+### 14. Price Action Strength
+**Relative to peers: Similar to DLF (-36%), Oberoi (-27%), Brigade (-42%).**
+**⚠️ CAUTION** — No outperformance. In-line with weak sector.
+
+### 15. Sector & Government Boost
+**DC tax holiday proposed in Union Budget 2026.** Digital India, data localization laws.
+**✅ PASS** — Clear government tailwind for DC pivot.
+
+### 16. Fundamental Quality
+**Zero-debt | 80% PAT CAGR | 26% OPM | Net Worth ₹5,789 Cr**
+**✅ PASS** — Fundamentals are stellar.
+
+### 17. Quarterly Earnings Growth
+**Q4 FY26: Sales +19.6% YoY | PAT +25.2% YoY | 12 consecutive quarterly growth**
+**⚠️ CAUTION** — Growth is good (20-25%) but below the 30-50% threshold the checklist prefers.
+
+### 18. Delivery Percentage
+**10-day avg: 38.2% | Accumulation days: 4/10 | Distribution days: 0/10**
+**⚠️ CAUTION** — Mid-June strong but recent trend weakening.
+
+### 19. News & Institutional Activity
+**Good news flow (MoU, Q4 beat, demerger) but ED overhang and FII/DII selling.**
+**⚠️ CAUTION** — Mixed.
+
+### 20. Risk Management
+**No clear entry signal defined. If buying at support (₹470): SL ₹440 (-6.4%), T1 ₹545, T2 ₹595.**
+**⚠️ CAUTION** — R/R is good but entry is NOT confirmed.
+
+### 21. Market Environment
+**Nifty strong but Anant Raj in downtrend — diverging from market.**
+**✗ FAIL** — Stock failing to rally in a rising market is a red flag.
+
+### 22. Liquidity
+**Avg daily value: ~₹85 Cr — excellent liquidity.**
+**✅ PASS**
+
+### 23. Relative Strength
+**1-year return: Anant Raj -5.68% vs Nifty 500 ~+15%**
+**✗ FAIL** — Severe underperformance.
+
+### 24. Breakout Confirmation
+**No breakout. Stuck in ₹403-545 range.**
+**✗ FAIL** — Wait for decisive breakout with volume.
+
+### 25. Trading Psychology
+**Patience test — exciting story but wrong setup.**
+**✅ PASS** — Disciplined decision is to WAIT.
+
+---
+
+### 📊 Scoring Summary
+
+| # | Criteria | Score |
+|---|----------|-------|
+| 1 | Price Position | ✗ |
+| 2 | Trend | ✗ |
+| 3 | Volume | ⚠️ |
+| 4 | Clean Price Action | ✗ |
+| 5 | EMA Alignment | ✗ |
+| 6 | Chart Pattern | ⚠️ |
+| 7 | Base Quality | ⚠️ |
+| 8 | ADR | ✅ |
+| 9 | Primary Uptrend | ✗ |
+| 10 | Follow Model | ✅ |
+| 11 | Sector Strength | ⚠️ |
+| 12 | Tailwind | ⚠️ |
+| 13 | IPO (N/A) | ✅ |
+| 14 | Price Action Strength | ⚠️ |
+| 15 | Sector/ Govt Boost | ✅ |
+| 16 | Fundamentals | ✅ |
+| 17 | Earnings Growth | ⚠️ |
+| 18 | Delivery % | ⚠️ |
+| 19 | News/ Institutional | ⚠️ |
+| 20 | Risk Management | ⚠️ |
+| 21 | Market Environment | ✗ |
+| 22 | Liquidity | ✅ |
+| 23 | Relative Strength | ✗ |
+| 24 | Breakout Confirmation | ✗ |
+| 25 | Trading Psychology | ✅ |
+
+**Score: 8/23 (measurable) — ✗ WEAK**  
+**✅ 7 | ⚠️ 9 | ✗ 7**
+
+**Critical fails (must-pass items 1, 2, 24):** All three fail ❌
+
+### Verdict: ❌ DO NOT SWING TRADE
+
+Anant Raj is a compelling long-term story but is **not a swing trade**. The technical structure is broken — below 200 DMA, ADX near zero, lower highs. Swing traders should wait for:
+1. Base tightening (narrow range weeks)
+2. Volume expansion + breakout above ₹545-550
+3. ED overhang resolution
+4. Institutional accumulation resume
 
 ---
 
