@@ -1,3 +1,12 @@
+---
+title: "💎 Institutional Gems — Weekly Tracker (Jun 19-25, 2026)"
+ticker: "GEMS"
+date: "2026-06-25"
+tags: ["institutional-gems","mf-buying","fii-buying"]
+summary: "Full week institutional activity analysis. Top gems: Craftsman Automation (4 MFs buying ₹348 Cr), Pine Labs (Axis MF buying ₹148 Cr), Gokaldas Exports (SBI Life Insurance buying), JTL Industries (FII buying)."
+model: "deepseek-chat"
+---
+
 # 💎 Institutional Gems — Weekly Tracker (June 19–25, 2026)
 
 *Analysis by deepseek-chat*

@@ -1,3 +1,12 @@
+---
+title: "Azad Engineering — Deep Dive Analysis"
+ticker: "AZAD"
+date: "2026-06-27"
+tags: ["deep-dive","fundamental","manufacturing","aerospace"]
+summary: "Comprehensive deep-dive on Azad Engineering — ₹6,500 Cr order book, MHI single-source contract, negative FCF concerns, and verdict with best entry zone."
+model: "deepseek-chat"
+---
+
 # Azad Engineering — Deep Dive Analysis
 
 **Date:** 27 June 2026

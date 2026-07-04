@@ -1,9 +1,10 @@
 ---
-title: Sanghvi Movers Ltd — Deep Dive Analysis
-date: 2026-06-28
-tags: [deep-dive, fundamental-analysis, sanghvi-movers, crane-rental, wind-energy, infrastructure]
-symbol: SANGHVIMOV
-model: deepseek-chat
+title: "Sanghvi Movers Ltd — Deep Dive Analysis"
+ticker: "SANGHVIMOV"
+date: "2026-06-28"
+tags: ["deep-dive","fundamental","crane-rental","wind-energy","infrastructure"]
+summary: "Deep-dive on Sanghvi Movers — Asia's largest crane rental company (5th globally, 485+ cranes). Record revenue ₹1,070 Cr but OPM collapsed 69%→37%. KSA expansion working (90% utilization), ₹1,053 Cr order book. Verdict: CAUTION — fairly valued, margin dilution risk."
+model: "deepseek-chat"
 ---
 
 # Sanghvi Movers Ltd (SANGHVIMOV) — Deep Dive Analysis

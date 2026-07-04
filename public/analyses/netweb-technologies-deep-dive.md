@@ -1,3 +1,12 @@
+---
+title: "Netweb Technologies — Why the Stock is Rising | Deep Dive"
+ticker: "NETWEB:NSE"
+date: "2026-06-16"
+tags: ["netweb","ai","deep-dive"]
+summary: "Netweb Technologies analysis — Make in India supercomputing play, AI server demand, and growth catalysts."
+model: "deepseek-chat"
+---
+
 # Netweb Technologies — Why the Stock is Rising
 
 📅 June 16, 2026 | Updated: 4:30 PM IST 🏷️ fundamental technical 📈 Model: deepseek-chat 🏢 NSE: NETWEB | BSE: 543945

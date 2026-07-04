@@ -1,3 +1,12 @@
+---
+title: "AMD — AI GPU Battle Heats Up, But Is the Price Right?"
+ticker: "AMD:NASDAQ"
+date: "2026-06-17"
+tags: ["amd","us-stocks","ai","deep-dive"]
+summary: "AMD deep dive — AI GPU competition with NVIDIA, MI400 series, Radeon 9000 vs Blackwell Ultra, valuation analysis, and entry/exit strategy."
+model: "deepseek-chat"
+---
+
 # AMD — AI GPU Battle Heats Up, But Is the Price Right?
 
 📅 June 17, 2026 | Updated: 11:00 AM IST 🏷️ fundamental technical 📈 Model: deepseek-chat 🏢 NASDAQ: AMD | MCap: $827B

@@ -1,10 +1,10 @@
 ---
 title: "Policy Pulse — Trump / US — 03 Jul 2026"
+ticker: "AAPL:MSFT:NVDA:AMZN:GOOGL:META:AVGO:PLTR"
 date: "2026-07-03"
-tags: ["trump", "stock-trades", "financial-disclosure", "insider-trading", "policy-pulse", "us-only"]
-slug: "policy-pulse-trump-03jul"
-ticker: "AAPL:MSFT:NVDA:AMZN:GOOGL:META:AVGO:PLTR:DELL:LMT:RTX:BA:INTC"
-excerpt: "Trump's 927-page financial disclosure reveals 21,000+ securities trades in Year 1, 327 stock purchases day before tariff pause, and $1-5M buys in AAPL/MSFT/NVDA/AMZN/META/AVGO on AI Action Plan day — signal for mega-cap tech."
+tags: ["trump","stock-trades","financial-disclosure","insider-trading","policy-pulse","us-only"]
+summary: "Trump 927-page financial disclosure reveals 21,000+ securities trades in Year 1, 327 stock purchases day before tariff pause, and $1-5M buys in AAPL, MSFT, NVDA, AMZN, META, AVGO on AI Action Plan day — signal for mega-cap tech."
+model: "deepseek-chat"
 ---
 
 # Policy Pulse — Trump / US — 03 Jul 2026

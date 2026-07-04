@@ -1,3 +1,12 @@
+---
+title: "Policy Pulse — Global Spillover — 01 Jul 2026"
+ticker: "TATASTEEL:JSWSTEEL:SAIL:HINDALCO:INFY"
+date: "2026-07-01"
+tags: ["policy-tracker","global","metals","steel","it","stocks"]
+summary: "Fed hawkish (FII outflow → IT drag on INFY, TCS). OPEC+ output hike → crude down → positive for BPCL, IOC. EU steel tariffs + US market access → trade diversion for TATASTEEL, JSWSTEEL. China chip curbs → semicon import substitution for KAYNES, CGPOWER. Stock-specific BUY/HOLD/REDUCE calls inside."
+model: "deepseek-chat"
+---
+
 # Policy Pulse — Global Spillover — 01 Jul 2026
 
 **Date:** 01 Jul 2026  

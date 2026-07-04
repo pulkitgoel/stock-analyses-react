@@ -1,3 +1,12 @@
+---
+title: "Kaynes Tech & CG Power — Deep Dive Analysis"
+ticker: "KAYNES:CGPOWER"
+date: "2026-06-18"
+tags: ["kaynes","cg-power","deep-dive"]
+summary: "Comparative analysis of Kaynes and CG Power across growth, valuation, and execution risk."
+model: "deepseek-chat"
+---
+
 # Kaynes Technology & CG Power — Deep Dive Analysis
 
 **Date:** June 18, 2026  

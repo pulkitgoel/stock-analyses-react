@@ -1,3 +1,12 @@
+---
+title: "Aeroflex Industries — Deep Dive Analysis"
+ticker: "AEROFLEX"
+date: "2026-06-27"
+tags: ["deep-dive","fundamental","manufacturing","industrial","data-centers"]
+summary: "Deep-dive on Aeroflex Industries — debt-free niche manufacturer of flexible hoses expanding into AI data center liquid cooling skids. P/E 111x (extreme), FCF negative, promoter selling -1.52%. Verdict: CAUTION — expensive growth story with execution risk."
+model: "deepseek-chat"
+---
+
 # Aeroflex Industries — Deep Dive Analysis
 
 **Date:** 27 June 2026

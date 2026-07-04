@@ -1,3 +1,12 @@
+---
+title: "Action Construction Equipment (ACE) — Deep Dive Analysis"
+ticker: "ACE:NSE"
+date: "2026-06-23"
+tags: ["construction","capital-goods","cranes"]
+summary: "Deep dive on ACE — market leader in cranes with 63%+ share, ACE-KATO JV, debt-free balance sheet, and record Q4 revenue. PEG 0.75, verdict: Favorable with Caution."
+model: "deepseek-chat"
+---
+
 # Action Construction Equipment (ACE) — Deep Dive (CORRECTED)
 
 *Analysis by deepseek-chat*

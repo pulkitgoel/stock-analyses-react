@@ -1,3 +1,12 @@
+---
+title: "CG Power — Deep Dive Analysis"
+ticker: "CGPOWER:NSE"
+date: "2026-06-18"
+tags: ["cg-power","deep-dive","fundamental"]
+summary: "CG Power analysis — revenue driven by Industrial, Power, and Railway segments. P/E 120+, PEG 11.8x, promoter holding 56.77%. Concerns: low ROE (2.06%), negative FCF, subsidiary losses."
+model: "deepseek-chat"
+---
+
 # CG Power & Industrial Solutions Ltd — Deep Dive Analysis
 
 *Analysis by deepseek-chat*

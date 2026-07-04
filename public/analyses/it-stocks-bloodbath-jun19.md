@@ -1,3 +1,12 @@
+---
+title: "IT Stocks Bloodbath — Why Nifty IT Crashed 6% (June 19, 2026)"
+ticker: "NIFTY_IT"
+date: "2026-06-19"
+tags: ["it-sector","market-analysis","accenture"]
+summary: "Nifty IT crashed 6.18% to a fresh 52-week low of 26,634.50 triggered by Accenture's guidance cut (-3% to -4%), outsourcing bookings down 15% YoY. Infosys -8.27%, TCS -6.10%, HCLTech -5.28%."
+model: "deepseek-chat"
+---
+
 # IT Stocks Bloodbath — The Full Story (June 19, 2026)
 
 **Date:** Friday, June 19, 2026

@@ -1,3 +1,12 @@
+---
+title: "Insolation Energy Ltd (INA) — Deep Dive Analysis"
+ticker: "INA"
+date: "2026-07-01"
+tags: ["deep-dive","fundamental","solar","renewable-energy","manufacturing"]
+summary: "Deep-dive on Insolation Energy (INA) — India's top-10 solar module manufacturer, largest in North India. FY26 sales ₹2,146 Cr (+61%), PAT ₹201 Cr (+60%). P/E 12.6x, PEG 0.08, forward FY27E P/E 3.3x under management guidance. But -58% from 52W high, D/E 1.10, CFO negative. Verdict: SPECULATIVE — high risk, high reward."
+model: "deepseek-chat"
+---
+
 # Insolation Energy Ltd (INA) — Deep Dive Analysis
 
 **Ticker:** INA (NSE: INA, BSE: 543620)  

@@ -1,3 +1,12 @@
+---
+title: "Oriana Power Ltd — Deep Dive Post FY26 Concall Analysis"
+ticker: "ORIANA"
+date: "2026-06-28"
+tags: ["deep-dive","fundamental","renewable-energy","solar","bess","green-hydrogen"]
+summary: "Deep-dive on Oriana Power based on FY26 concall transcript (June 10, 2026). Revenue ₹1,814 Cr (+84%), PAT ₹252 Cr (+59%). ₹7,000 Cr order book, Actis monetization (238 MWp) in H1 FY27, BESS to be 40% of FY27 revenue, green ammonia PPA signed. P/E 12.8x vs industry 31x — deep discount. Verdict: CAUTION — Selectively Bullish long-term but NOT swingable (bearish technicals, -48% from high)."
+model: "deepseek-chat"
+---
+
 # Oriana Power Ltd — Deep Dive Post FY26 Concall Analysis
 
 **Analysis Date:** June 28, 2026

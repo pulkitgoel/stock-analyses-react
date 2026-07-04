@@ -4,8 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/generate-analyses-data.js",
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.js && tsc -b && vite build && python3.12 scripts/generate-og-files.py",
+    "data": "node scripts/generate-analyses-data.js",
+    "new-analysis": "node scripts/new-analysis.js",
+    "build": "node scripts/generate-analyses-data.js && node scripts/generate-sitemap.js && tsc -b && vite build && python3.12 scripts/generate-og-files.py",
     "lint": "oxlint",
     "preview": "vite preview"
   },

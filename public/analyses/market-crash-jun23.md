@@ -1,3 +1,12 @@
+---
+title: "📉 Market Crash Analysis — Why Markets Crashed on June 23, 2026"
+ticker: "NIFTY:SENSEX"
+date: "2026-06-23"
+tags: ["market-analysis","crash","global"]
+summary: "Deep-dive analysis of the June 23 market crash driven by KOSPI circuit breaker (-9%), Accenture weak outlook, IT stocks hammered -2%, metals -3%, FII selling, and Fed rate hike fears."
+model: "deepseek-chat"
+---
+
 # 📉 Why Markets Crashed Today — June 23, 2026
 
 *Analysis by deepseek-chat*

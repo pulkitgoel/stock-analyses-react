@@ -1,10 +1,10 @@
 ---
 title: "Policy Pulse — Modi — 03 Jul 2026"
-date: "2026-07-03"
-tags: ["modi", "india-japan-summit", "defence", "semiconductor", "policy-pulse", "stocks"]
-slug: "policy-pulse-modi-03jul"
 ticker: "MARUTI:CGPOWER:HAL:BEL:DIXON:KAYNES:SYRMA"
-excerpt: "India-Japan Summit yields first defence co-development pact, Maruti Suzuki fourth plant, Fujifilm semiconductor unit, and ¥10 trillion investment target — HAL, BEL, MARUTI, CG Power, Dixon among key beneficiaries."
+date: "2026-07-03"
+tags: ["policy-tracker","modi","defence","semiconductor","india-japan-summit","stocks"]
+summary: "India-Japan Summit: First-ever defence co-development pact → HAL, BEL, MAZDOCK. Maruti Suzuki fourth plant → MARUTI. CG Semi JV production Jul 4 → CGPOWER. Fujifilm semicon plant + AI cooperation → DIXON, KAYNES, TCS, INFY. ¥10 trillion target → LT, IRCON."
+model: "deepseek-chat"
 ---
 
 # Policy Pulse — Modi — 03 Jul 2026

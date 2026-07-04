@@ -1,3 +1,12 @@
+---
+title: "Ather Energy — Deep Dive Analysis"
+ticker: "ATHERENERG"
+date: "2026-07-03"
+tags: ["EV","E2W","Ather","electric-vehicles","auto"]
+summary: "Comprehensive deep-dive on Ather Energy — revenue accelerating at 70% YoY, EBITDA improving to -2.5%, DIIs accumulating, but low delivery % and stretched valuation warrant caution for swing entry."
+model: "deepseek-chat"
+---
+
 # Ather Energy — Deep Dive Analysis
 
 **Ticker:** ATHERENERG (NSE: ATHERENERG, BSE: 544397)  

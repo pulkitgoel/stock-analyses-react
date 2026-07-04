@@ -6,6 +6,7 @@ export interface Analysis {
   date: string;
   tags: string[];
   summary: string;
+  model?: string;
 }
 
 export type PushSubscriptionData = {

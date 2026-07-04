@@ -1,3 +1,12 @@
+---
+title: "NALCO — Why the Stock is Down Today"
+ticker: "NATIONALUM:NSE"
+date: "2026-06-16"
+tags: ["nalco","aluminium","market-analysis"]
+summary: "NALCO root cause analysis — aluminium prices, secondary pressures, and bull case."
+model: "deepseek-chat"
+---
+
 # NALCO — Why the Stock is Down Today
 
 📅 June 16, 2026 🏷️ fundamental technical 📈 Model: deepseek-chat

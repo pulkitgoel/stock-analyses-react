@@ -1,3 +1,12 @@
+---
+title: "Ideaforge Technology — Deep Dive Analysis"
+ticker: "IDEAFORGE:NSE"
+date: "2026-06-18"
+tags: ["ideaforge","deep-dive","fundamental"]
+summary: "Deep-dive on Ideaforge (India's largest drone maker). Q4 FY26 revenue ₹141Cr (+595% YoY), EBITDA margin 52.6%, ₹310Cr executable order book. High risk/reward turnaround play."
+model: "deepseek-chat"
+---
+
 # Ideaforge Technology Ltd — Deep Dive Analysis
 
 *Analysis by deepseek-chat*

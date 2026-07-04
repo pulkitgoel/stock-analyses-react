@@ -1,3 +1,12 @@
+---
+title: "Policy Pulse — Trump / US — 01 Jul 2026"
+ticker: "JPM:GS:BAC:F:GM:NUE:X:CLF:AAPL:MSFT"
+date: "2026-07-01"
+tags: ["policy-tracker","trump","us-stocks","trade-war","banking","steel","auto","us-only"]
+summary: "USMCA threat → F, GM sell; NUE, X, CLF buy. SC birthright citizenship → MSFT, AAPL moderate risk; PLTR benefits. Fed hawkish → JPM, GS buy; PLTR sell. US stocks only — this is a US policy analysis."
+model: "deepseek-chat"
+---
+
 # Policy Pulse — Trump / US — 01 Jul 2026
 
 **Date:** 01 Jul 2026  

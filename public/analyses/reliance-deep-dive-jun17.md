@@ -1,3 +1,12 @@
+---
+title: "Reliance Industries — AGM 2026 Preview | Is ₹1,333 a Buy?"
+ticker: "RELIANCE:NSE"
+date: "2026-06-17"
+tags: ["reliance","deep-dive","fundamental"]
+summary: "Reliance analysis ahead of AGM 2026 — P/E 25.9, 3D P/E 19.1, Delayed telecom tariff hike, Jio Financial demerger gains. Entry zones ₹1,285-1,300, ₹1,190-1,210."
+model: "deepseek-chat"
+---
+
 # Reliance Industries Ltd — Deep Dive — Jun 17, 2026
 
 **CMP:** ₹1,332.70 (+0.29%) | **MCap:** ₹17.97T | **P/E:** 22.25x (Reported), ~89x (Core)

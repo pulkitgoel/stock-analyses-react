@@ -1,3 +1,12 @@
+---
+title: "Policy Pulse — Modi / India Govt — 02 Jul 2026"
+ticker: "BEL:MAZDOCK:HAL:CGPOWER:KAYNES:LT:DIXON:TCS:RELIANCE"
+date: "2026-07-02"
+tags: ["policy-tracker","modi","japan","defence","semiconductor","ai","stocks"]
+summary: "India-Japan Summit: $10B+ investment pledge, first defence co-development pact (UNICORN naval mast) for BEL, MAZDOCK, HAL. Japan Renesas JV boosts CGPOWER OSAT. AI joint statement lifts TCS, INFY. Critical minerals pact + clean energy helps RELIANCE. Stock-specific BUY/HOLD calls inside."
+model: "deepseek-chat"
+---
+
 # Policy Pulse — Modi / India Govt — 02 Jul 2026
 
 **Date:** 02 Jul 2026  

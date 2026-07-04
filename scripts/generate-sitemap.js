@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
 const SITEMAP_FILE = path.resolve(PUBLIC_DIR, 'sitemap.xml');
+const ANALYSES_JSON = path.resolve(PUBLIC_DIR, 'analyses.json');
 const BASE_URL = 'https://stocksfundamentals.online';
 
 const staticRoutes = [
@@ -17,29 +18,32 @@ const staticRoutes = [
   '/privacy'
 ];
 
-let dynamicRoutes = [];
-let companyRoutes = new Set();
+// Index / exchange tokens that appear inside ticker strings but are not
+// company pages worth listing (CompanyPage matches ticker substrings).
+const NON_COMPANY = new Set([
+  'NSE', 'BSE', 'NASDAQ', 'NYSE', 'NIFTY', 'NIFTY_IT', 'BANKNIFTY', 'SENSEX',
+  'US', 'IT', 'SPX', 'NDX', 'DJI', 'FII', 'DII', 'GEMS',
+]);
+
+const dynamicRoutes = [];
+const companyRoutes = new Set();
 
 try {
-  const tsContent = fs.readFileSync(path.resolve(__dirname, '../src/services/analysisService.ts'), 'utf8');
-  const slugRegex = /slug:\s*'([^']+)'/g;
-  const tickerRegex = /ticker:\s*'([^']+)'/g;
-  
-  let match;
-  while ((match = slugRegex.exec(tsContent)) !== null) {
-    dynamicRoutes.push(`/analysis/${match[1]}`);
-  }
-  
-  while ((match = tickerRegex.exec(tsContent)) !== null) {
-    const tickers = match[1].split('/');
-    for (const t of tickers) {
-      if (t && !['NSE', 'NIFTY', 'US', 'IT'].includes(t)) {
+  const { analyses } = JSON.parse(fs.readFileSync(ANALYSES_JSON, 'utf8'));
+  for (const a of analyses) {
+    dynamicRoutes.push(`/analysis/${a.slug}`);
+    // Tickers are delimited by ':' (e.g. "AAPL:MSFT:NVDA"); some legacy
+    // entries also used '/'.
+    for (const token of String(a.ticker).split(/[:/]/)) {
+      const t = token.trim();
+      if (t && !NON_COMPANY.has(t.toUpperCase())) {
         companyRoutes.add(`/company/${t.toLowerCase()}`);
       }
     }
   }
 } catch (e) {
-  console.error('Failed to parse analysisService.ts for routes:', e);
+  console.error('Failed to read analyses.json for routes (run generate-analyses-data.js first):', e.message);
+  process.exit(1);
 }
 
 const allRoutes = [...staticRoutes, ...dynamicRoutes, ...Array.from(companyRoutes)];

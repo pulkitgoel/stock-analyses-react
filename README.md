@@ -79,6 +79,18 @@ npm run build      # Production build to dist/
 
 ## 📊 Data Sources
 
-- **Analyses**: Markdown files in `public/analyses/`
-- **Market data**: API endpoints from Python backend
+- **Analyses**: Markdown files in `public/analyses/`. Each file's **frontmatter is the single source of truth** for its metadata. At build time `scripts/generate-analyses-data.js` scans them and generates `src/data/analyses.generated.ts` (imported by the app) and `public/analyses.json` — plus the sitemap and per-analysis OG tags. Nothing is hand-maintained in sync.
+- **Market data**: `src/services/marketService.ts` (currently simulated placeholder values).
 - **FII/DII tracking**: Inline data from analysis markdown
+
+## ✍️ Publishing a new analysis
+
+See **[PUBLISHING.md](./PUBLISHING.md)** for the full contract. TL;DR:
+
+```bash
+node scripts/new-analysis.js --title "..." --ticker "TICKER" --tags "a,b" \
+  --summary "..." --body-file draft.md
+npm run build && ./deploy.sh
+```
+
+Never hand-edit `src/data/analyses.generated.ts` or `public/analyses.json` — they are regenerated on every build.

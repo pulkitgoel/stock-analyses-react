@@ -1,3 +1,12 @@
+---
+title: "Palantir (PLTR) — Why Is It Falling & What Should Investors Do?"
+ticker: "PLTR:NASDAQ"
+date: "2026-06-26"
+tags: ["us-stocks","ai","valuation"]
+summary: "Comprehensive analysis of why PLTR is down ~32% in 2026 despite 85% revenue growth. Analyst ratings breakdown, bear/bull cases, and action plan for existing vs new investors."
+model: "deepseek-chat"
+---
+
 # 📉 Palantir (PLTR) — Why Is It Falling & What Should Investors Do?
 
 **Date:** June 26, 2026  

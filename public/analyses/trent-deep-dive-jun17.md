@@ -1,3 +1,12 @@
+---
+title: "Trent Ltd — Can You Enter After the 28% Correction?"
+ticker: "TRENT:NSE"
+date: "2026-06-17"
+tags: ["trent","retail","deep-dive"]
+summary: "Trent analysis — 28% correction, P/E 90, PEG 2.47, promoter stable, FIIs decreasing, Zudio scaling. Entry zone ₹4,200-4,600. Verdict: Favorable with Caution."
+model: "deepseek-chat"
+---
+
 # Trent Ltd — Deep Dive Analysis
 
 **Date:** 17 June 2026

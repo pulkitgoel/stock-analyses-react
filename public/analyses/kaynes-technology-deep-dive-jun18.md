@@ -1,3 +1,12 @@
+---
+title: "Kaynes Technology — Deep Dive Analysis"
+ticker: "KAYNES:NSE"
+date: "2026-06-18"
+tags: ["kaynes","deep-dive","electronics"]
+summary: "Kaynes Technology deep dive — OSAT and PCB catalysts, PEG 1.10, P/E 62.1. Revenue CAGR 31.4%. Concerns: ₹600 Cr CFO risk, promoter/FIIs exiting."
+model: "deepseek-chat"
+---
+
 # Kaynes Technology India Ltd — Deep Dive Analysis
 
 *Analysis by deepseek-chat*

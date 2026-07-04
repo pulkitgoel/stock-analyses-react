@@ -1,0 +1,629 @@
+{
+  "analyses": [
+    {
+      "title": "Ather Energy — Deep Dive Analysis",
+      "ticker": "ATHERENERG",
+      "file": "ather-energy-deep-dive.md",
+      "slug": "ather-energy-deep-dive",
+      "date": "2026-07-03",
+      "tags": [
+        "EV",
+        "E2W",
+        "Ather",
+        "electric-vehicles",
+        "auto"
+      ],
+      "summary": "Comprehensive deep-dive on Ather Energy — revenue accelerating at 70% YoY, EBITDA improving to -2.5%, DIIs accumulating, but low delivery % and stretched valuation warrant caution for swing entry.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 03 Jul 2026",
+      "ticker": "SUNPHARMA:DRREDDY:CIPLA:AUROPHARMA:WELSPUN:TRIDENT:TCS:INFY",
+      "file": "policy-pulse-global-03jul.md",
+      "slug": "policy-pulse-global-03jul",
+      "date": "2026-07-03",
+      "tags": [
+        "global",
+        "ustr",
+        "section-301",
+        "tariffs",
+        "india",
+        "trade-war",
+        "policy-pulse",
+        "stocks"
+      ],
+      "summary": "USTR proposes 12.5% Section 301 tariffs on India over forced labor findings — hearings Jul 7. Major risk for Indian pharma (Sun Pharma, Dr Reddy's, Cipla, Aurobindo), textiles (Welspun, Trident), and IT (TCS, Infosys).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries — 03 Jul 2026",
+      "ticker": "CGPOWER:DIXON:KAYNES:SYRMA:AMBER:TATAELXSI",
+      "file": "policy-pulse-ministries-03jul.md",
+      "slug": "policy-pulse-ministries-03jul",
+      "date": "2026-07-03",
+      "tags": [
+        "policy-tracker",
+        "ministries",
+        "semiconductor",
+        "semiconductor-mission-2.0",
+        "electronics",
+        "stocks"
+      ],
+      "summary": "₹1.25 lakh crore ISM 2.0 cleared + CG Semi commercial production Jul 4 + chip exports to Malaysia → CGPOWER, DIXON, KAYNES, SYRMA, AMBER, TATAELXSI key beneficiaries.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi — 03 Jul 2026",
+      "ticker": "MARUTI:CGPOWER:HAL:BEL:DIXON:KAYNES:SYRMA",
+      "file": "policy-pulse-modi-03jul.md",
+      "slug": "policy-pulse-modi-03jul",
+      "date": "2026-07-03",
+      "tags": [
+        "policy-tracker",
+        "modi",
+        "defence",
+        "semiconductor",
+        "india-japan-summit",
+        "stocks"
+      ],
+      "summary": "India-Japan Summit: First-ever defence co-development pact → HAL, BEL, MAZDOCK. Maruti Suzuki fourth plant → MARUTI. CG Semi JV production Jul 4 → CGPOWER. Fujifilm semicon plant + AI cooperation → DIXON, KAYNES, TCS, INFY. ¥10 trillion target → LT, IRCON.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 03 Jul 2026",
+      "ticker": "AAPL:MSFT:NVDA:AMZN:GOOGL:META:AVGO:PLTR",
+      "file": "policy-pulse-trump-03jul.md",
+      "slug": "policy-pulse-trump-03jul",
+      "date": "2026-07-03",
+      "tags": [
+        "trump",
+        "stock-trades",
+        "financial-disclosure",
+        "insider-trading",
+        "policy-pulse",
+        "us-only"
+      ],
+      "summary": "Trump 927-page financial disclosure reveals 21,000+ securities trades in Year 1, 327 stock purchases day before tariff pause, and $1-5M buys in AAPL, MSFT, NVDA, AMZN, META, AVGO on AI Action Plan day — signal for mega-cap tech.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi / India Govt — 02 Jul 2026",
+      "ticker": "BEL:MAZDOCK:HAL:CGPOWER:KAYNES:LT:DIXON:TCS:RELIANCE",
+      "file": "policy-pulse-modi-02jul.md",
+      "slug": "policy-pulse-modi-02jul",
+      "date": "2026-07-02",
+      "tags": [
+        "policy-tracker",
+        "modi",
+        "japan",
+        "defence",
+        "semiconductor",
+        "ai",
+        "stocks"
+      ],
+      "summary": "India-Japan Summit: $10B+ investment pledge, first defence co-development pact (UNICORN naval mast) for BEL, MAZDOCK, HAL. Japan Renesas JV boosts CGPOWER OSAT. AI joint statement lifts TCS, INFY. Critical minerals pact + clean energy helps RELIANCE. Stock-specific BUY/HOLD calls inside.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 02 Jul 2026",
+      "ticker": "F:GM:STLA:NUE:X:CLF:LNG:XOM:WMT",
+      "file": "policy-pulse-trump-02jul.md",
+      "slug": "policy-pulse-trump-02jul",
+      "date": "2026-07-02",
+      "tags": [
+        "policy-tracker",
+        "trump",
+        "us-stocks",
+        "trade-war",
+        "steel",
+        "auto",
+        "energy",
+        "us-only"
+      ],
+      "summary": "USMCA not renewed → F, GM, STLA sell; NUE, X, CLF buy (domestic steel). USTR Section 301 forced labor tariff hearings Jul 7 → WMT, TGT sell (import exposure). LNG permits fast-tracked → LNG, XOM, KMI buy. US stocks only analysis.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Genus Power Infrastructures Ltd — Deep Dive Analysis",
+      "ticker": "GENUSPOWER",
+      "file": "genus-power-deep-dive-jul01.md",
+      "slug": "genus-power-deep-dive-jul01",
+      "date": "2026-07-01",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "smart-meter",
+        "electrical-equipment",
+        "rdss"
+      ],
+      "summary": "Deep-dive on Genus Power — India's leading smart metering company with ₹25,173 Cr order book, 5.3x revenue visibility, 95% FY26 revenue growth, and PEG 0.09. Madhu Kela led ₹600 Cr block deal at ₹290. Verdict: FAVORABLE WITH CAUTION — cheap on fundamentals but negative FCF and rising debt need monitoring.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Insolation Energy Ltd (INA) — Deep Dive Analysis",
+      "ticker": "INA",
+      "file": "insolation-energy-deep-dive-jul01.md",
+      "slug": "insolation-energy-deep-dive-jul01",
+      "date": "2026-07-01",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "solar",
+        "renewable-energy",
+        "manufacturing"
+      ],
+      "summary": "Deep-dive on Insolation Energy (INA) — India's top-10 solar module manufacturer, largest in North India. FY26 sales ₹2,146 Cr (+61%), PAT ₹201 Cr (+60%). P/E 12.6x, PEG 0.08, forward FY27E P/E 3.3x under management guidance. But -58% from 52W high, D/E 1.10, CFO negative. Verdict: SPECULATIVE — high risk, high reward.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 01 Jul 2026",
+      "ticker": "TATASTEEL:JSWSTEEL:SAIL:HINDALCO:INFY",
+      "file": "policy-pulse-global-01jul.md",
+      "slug": "policy-pulse-global-01jul",
+      "date": "2026-07-01",
+      "tags": [
+        "policy-tracker",
+        "global",
+        "metals",
+        "steel",
+        "it",
+        "stocks"
+      ],
+      "summary": "Fed hawkish (FII outflow → IT drag on INFY, TCS). OPEC+ output hike → crude down → positive for BPCL, IOC. EU steel tariffs + US market access → trade diversion for TATASTEEL, JSWSTEEL. China chip curbs → semicon import substitution for KAYNES, CGPOWER. Stock-specific BUY/HOLD/REDUCE calls inside.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 01 Jul 2026",
+      "ticker": "KAYNES:CGPOWER:LT:TATASTEEL:FAZETHREE",
+      "file": "policy-pulse-ministries-01jul.md",
+      "slug": "policy-pulse-ministries-01jul",
+      "date": "2026-07-01",
+      "tags": [
+        "policy-tracker",
+        "ministries",
+        "semicon",
+        "infrastructure",
+        "steel",
+        "stocks"
+      ],
+      "summary": "ISM 2.0 ₹1.25L Cr EFC nod (+64%) → direct boost for KAYNES, CGPOWER. NIIF ₹30K Cr infra fund → LT, KNR, PNCINFRA. US steel market access → TATASTEEL, JSWSTEEL. Faze Three PLI → FAZETHREE. RBI capital norms → SBIN, HDFCBANK. Delhi EV Policy → OLAELEC. Stock picks with targets.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi / India Govt — 01 Jul 2026",
+      "ticker": "MARUTI:TATAMOTORS:TCS:HCLTECH:INFY:PAYTM",
+      "file": "policy-pulse-modi-01jul.md",
+      "slug": "policy-pulse-modi-01jul",
+      "date": "2026-07-01",
+      "tags": [
+        "policy-tracker",
+        "modi",
+        "japan",
+        "digital-india",
+        "auto",
+        "stocks"
+      ],
+      "summary": "Japan PM summit with Rupee-Yen settlement discussion → export boost for MARUTI, TATAMOTORS. Digital India 11-yr → INFY, TATACONSUM, PAYTM. Deregulation push → compliance cost reduction for all large caps. Country-specific stock recommendations.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 01 Jul 2026",
+      "ticker": "JPM:GS:BAC:F:GM:NUE:X:CLF:AAPL:MSFT",
+      "file": "policy-pulse-trump-01jul.md",
+      "slug": "policy-pulse-trump-01jul",
+      "date": "2026-07-01",
+      "tags": [
+        "policy-tracker",
+        "trump",
+        "us-stocks",
+        "trade-war",
+        "banking",
+        "steel",
+        "auto",
+        "us-only"
+      ],
+      "summary": "USMCA threat → F, GM sell; NUE, X, CLF buy. SC birthright citizenship → MSFT, AAPL moderate risk; PLTR benefits. Fed hawkish → JPM, GS buy; PLTR sell. US stocks only — this is a US policy analysis.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Apollo Micro Systems — Deep Dive Analysis",
+      "ticker": "APOLLO",
+      "file": "apollo-micro-systems-deep-dive-jun30.md",
+      "slug": "apollo-micro-systems-deep-dive-jun30",
+      "date": "2026-06-30",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "defence",
+        "aerospace"
+      ],
+      "summary": "Deep-dive on Apollo Micro Systems — defence technology leader with ₹1,432 Cr order book, 41% revenue CAGR, but P/E 134x, negative CFO (-₹130 Cr) and 22.5% avg delivery. Verdict: CAUTION — expensive growth story with cash flow problems.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Kaynes Technology — Deep Dive Analysis",
+      "ticker": "KAYNES",
+      "file": "kaynes-technology-deep-dive-jun30.md",
+      "slug": "kaynes-technology-deep-dive-jun30",
+      "date": "2026-06-30",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "electronics",
+        "ems",
+        "osat",
+        "semiconductor"
+      ],
+      "summary": "Deep-dive on Kaynes Technology — India's leading integrated EMS player with ₹8,366 Cr order book and OSAT pivot. But CFO -₹600 Cr, guidance miss (₹4,500→₹3,626 Cr), stock -49% from ATH. Verdict: AVOID — broken guidance, broken chart, broken cash flow.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Anant Raj Ltd — Deep Dive Analysis",
+      "ticker": "ANANTRAJ",
+      "file": "anant-raj-deep-dive-jun28.md",
+      "slug": "anant-raj-deep-dive-jun28",
+      "date": "2026-06-28",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "real-estate",
+        "data-centers"
+      ],
+      "summary": "Deep-dive on Anant Raj — zero-debt real estate developer pivoting to data centers (28 MW operational, 357 MW target). 80% PAT CAGR, ₹25,000 Cr Haryana DC MoU, demerger potential. PEG 0.63 but ED investigation overhang. Verdict: CAUTION — strong fundamentals, wait for technical clarity.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Oriana Power Ltd — Deep Dive Post FY26 Concall Analysis",
+      "ticker": "ORIANA",
+      "file": "oriana-power-deep-dive-jun28.md",
+      "slug": "oriana-power-deep-dive-jun28",
+      "date": "2026-06-28",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "renewable-energy",
+        "solar",
+        "bess",
+        "green-hydrogen"
+      ],
+      "summary": "Deep-dive on Oriana Power based on FY26 concall transcript (June 10, 2026). Revenue ₹1,814 Cr (+84%), PAT ₹252 Cr (+59%). ₹7,000 Cr order book, Actis monetization (238 MWp) in H1 FY27, BESS to be 40% of FY27 revenue, green ammonia PPA signed. P/E 12.8x vs industry 31x — deep discount. Verdict: CAUTION — Selectively Bullish long-term but NOT swingable (bearish technicals, -48% from high).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Sanghvi Movers Ltd — Deep Dive Analysis",
+      "ticker": "SANGHVIMOV",
+      "file": "sanghvi-movers-deep-dive-jun28.md",
+      "slug": "sanghvi-movers-deep-dive-jun28",
+      "date": "2026-06-28",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "crane-rental",
+        "wind-energy",
+        "infrastructure"
+      ],
+      "summary": "Deep-dive on Sanghvi Movers — Asia's largest crane rental company (5th globally, 485+ cranes). Record revenue ₹1,070 Cr but OPM collapsed 69%→37%. KSA expansion working (90% utilization), ₹1,053 Cr order book. Verdict: CAUTION — fairly valued, margin dilution risk.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Techno Electric & Engineering Co Ltd — Deep Dive Analysis",
+      "ticker": "TECHNOE",
+      "file": "techno-electric-deep-dive-jun28.md",
+      "slug": "techno-electric-deep-dive-jun28",
+      "date": "2026-06-28",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "epc",
+        "power-transmission",
+        "data-centers"
+      ],
+      "summary": "Deep-dive on Techno Electric — near zero-debt EPC leader with ₹9,600 Cr order book and data center pivot. Strong delivery (47.8% avg, 10/10 acc days) but negative FCF (-₹657 Cr). Verdict: CAUTION — good business, poor stock momentum.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Aeroflex Industries — Deep Dive Analysis",
+      "ticker": "AEROFLEX",
+      "file": "aeroflex-industries-deep-dive-jun27.md",
+      "slug": "aeroflex-industries-deep-dive-jun27",
+      "date": "2026-06-27",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "manufacturing",
+        "industrial",
+        "data-centers"
+      ],
+      "summary": "Deep-dive on Aeroflex Industries — debt-free niche manufacturer of flexible hoses expanding into AI data center liquid cooling skids. P/E 111x (extreme), FCF negative, promoter selling -1.52%. Verdict: CAUTION — expensive growth story with execution risk.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Azad Engineering — Deep Dive Analysis",
+      "ticker": "AZAD",
+      "file": "azad-engineering-deep-dive-jun27.md",
+      "slug": "azad-engineering-deep-dive-jun27",
+      "date": "2026-06-27",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "manufacturing",
+        "aerospace"
+      ],
+      "summary": "Comprehensive deep-dive on Azad Engineering — ₹6,500 Cr order book, MHI single-source contract, negative FCF concerns, and verdict with best entry zone.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "HBL Engineering — Deep Dive Analysis",
+      "ticker": "HBLENGINE",
+      "file": "hbl-engineering-deep-dive-jun27.md",
+      "slug": "hbl-engineering-deep-dive-jun27",
+      "date": "2026-06-27",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "defence",
+        "railways",
+        "batteries"
+      ],
+      "summary": "Comprehensive deep-dive on HBL Engineering — ₹4,000+ Cr Kavach order book, 58.4% ROCE, record FCF ₹618 Cr, PEG 0.26, Q4 margin compression risks.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Palantir (PLTR) — Why Is It Falling & What Should Investors Do?",
+      "ticker": "PLTR:NASDAQ",
+      "file": "pltr-why-falling-jun26.md",
+      "slug": "pltr-why-falling-jun26",
+      "date": "2026-06-26",
+      "tags": [
+        "us-stocks",
+        "ai",
+        "valuation"
+      ],
+      "summary": "Comprehensive analysis of why PLTR is down ~32% in 2026 despite 85% revenue growth. Analyst ratings breakdown, bear/bull cases, and action plan for existing vs new investors.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "📊 FII & DII Activity — Institutional Attraction Tracker (Jun 25, 2026)",
+      "ticker": "FII:DII",
+      "file": "fii-dii-institutional-attraction-june25.md",
+      "slug": "fii-dii-institutional-attraction-june25",
+      "date": "2026-06-25",
+      "tags": [
+        "fii-dii",
+        "institutional-flows",
+        "bulk-deals"
+      ],
+      "summary": "Comprehensive FII/DII activity report with bulk/block deals, NSDL fortnightly sectoral data, and stocks getting maximum institutional attraction. FIIs +₹383.76 Cr, DIIs +₹5,747 Cr buying on June 25.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "💎 Institutional Gems — Weekly Tracker (Jun 19-25, 2026)",
+      "ticker": "GEMS",
+      "file": "institutional-gems-weekly-jun25.md",
+      "slug": "institutional-gems-weekly-jun25",
+      "date": "2026-06-25",
+      "tags": [
+        "institutional-gems",
+        "mf-buying",
+        "fii-buying"
+      ],
+      "summary": "Full week institutional activity analysis. Top gems: Craftsman Automation (4 MFs buying ₹348 Cr), Pine Labs (Axis MF buying ₹148 Cr), Gokaldas Exports (SBI Life Insurance buying), JTL Industries (FII buying).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Action Construction Equipment (ACE) — Deep Dive Analysis",
+      "ticker": "ACE:NSE",
+      "file": "ace-deep-dive-jun23.md",
+      "slug": "ace-deep-dive-jun23",
+      "date": "2026-06-23",
+      "tags": [
+        "construction",
+        "capital-goods",
+        "cranes"
+      ],
+      "summary": "Deep dive on ACE — market leader in cranes with 63%+ share, ACE-KATO JV, debt-free balance sheet, and record Q4 revenue. PEG 0.75, verdict: Favorable with Caution.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "📉 Market Crash Analysis — Why Markets Crashed on June 23, 2026",
+      "ticker": "NIFTY:SENSEX",
+      "file": "market-crash-jun23.md",
+      "slug": "market-crash-jun23",
+      "date": "2026-06-23",
+      "tags": [
+        "market-analysis",
+        "crash",
+        "global"
+      ],
+      "summary": "Deep-dive analysis of the June 23 market crash driven by KOSPI circuit breaker (-9%), Accenture weak outlook, IT stocks hammered -2%, metals -3%, FII selling, and Fed rate hike fears.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "🇺🇸 US Markets Crashed — Fed, KOSPI & AI Fatigue Explained",
+      "ticker": "SPX:NDX:DJI",
+      "file": "us-market-crash-jun23.md",
+      "slug": "us-market-crash-jun23",
+      "date": "2026-06-23",
+      "tags": [
+        "us-markets",
+        "crash",
+        "fed",
+        "semiconductors",
+        "ai-fatigue",
+        "nifty"
+      ],
+      "summary": "Deep-dive on the June 23 US market crash. Nasdaq futures -2.1%, S&P 500 -1.04%. KOSPI circuit breaker #4, Fed rate hike odds at 90% by Sep, AI capex fatigue, and impact on your portfolio.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "IT Stocks Bloodbath — Why Nifty IT Crashed 6% (June 19, 2026)",
+      "ticker": "NIFTY_IT",
+      "file": "it-stocks-bloodbath-jun19.md",
+      "slug": "it-stocks-bloodbath-jun19",
+      "date": "2026-06-19",
+      "tags": [
+        "it-sector",
+        "market-analysis",
+        "accenture"
+      ],
+      "summary": "Nifty IT crashed 6.18% to a fresh 52-week low of 26,634.50 triggered by Accenture's guidance cut (-3% to -4%), outsourcing bookings down 15% YoY. Infosys -8.27%, TCS -6.10%, HCLTech -5.28%.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "CG Power — Deep Dive Analysis",
+      "ticker": "CGPOWER:NSE",
+      "file": "cg-power-deep-dive-jun18.md",
+      "slug": "cg-power-deep-dive-jun18",
+      "date": "2026-06-18",
+      "tags": [
+        "cg-power",
+        "deep-dive",
+        "fundamental"
+      ],
+      "summary": "CG Power analysis — revenue driven by Industrial, Power, and Railway segments. P/E 120+, PEG 11.8x, promoter holding 56.77%. Concerns: low ROE (2.06%), negative FCF, subsidiary losses.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Ideaforge Technology — Deep Dive Analysis",
+      "ticker": "IDEAFORGE:NSE",
+      "file": "ideaforge-deep-dive-jun18.md",
+      "slug": "ideaforge-deep-dive-jun18",
+      "date": "2026-06-18",
+      "tags": [
+        "ideaforge",
+        "deep-dive",
+        "fundamental"
+      ],
+      "summary": "Deep-dive on Ideaforge (India's largest drone maker). Q4 FY26 revenue ₹141Cr (+595% YoY), EBITDA margin 52.6%, ₹310Cr executable order book. High risk/reward turnaround play.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Kaynes Tech & CG Power — Deep Dive Analysis",
+      "ticker": "KAYNES:CGPOWER",
+      "file": "kaynes-cg-power-deep-dive-jun18.md",
+      "slug": "kaynes-cg-power-deep-dive-jun18",
+      "date": "2026-06-18",
+      "tags": [
+        "kaynes",
+        "cg-power",
+        "deep-dive"
+      ],
+      "summary": "Comparative analysis of Kaynes and CG Power across growth, valuation, and execution risk.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Kaynes Technology — Deep Dive Analysis",
+      "ticker": "KAYNES:NSE",
+      "file": "kaynes-technology-deep-dive-jun18.md",
+      "slug": "kaynes-technology-deep-dive-jun18",
+      "date": "2026-06-18",
+      "tags": [
+        "kaynes",
+        "deep-dive",
+        "electronics"
+      ],
+      "summary": "Kaynes Technology deep dive — OSAT and PCB catalysts, PEG 1.10, P/E 62.1. Revenue CAGR 31.4%. Concerns: ₹600 Cr CFO risk, promoter/FIIs exiting.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Palantir Technologies — Deep Dive Analysis",
+      "ticker": "PLTR:NASDAQ",
+      "file": "palantir-pltr-deep-dive-jun18.md",
+      "slug": "palantir-pltr-deep-dive-jun18",
+      "date": "2026-06-18",
+      "tags": [
+        "pltr",
+        "us-stocks",
+        "deep-dive",
+        "ai"
+      ],
+      "summary": "Palantir deep dive — 41% of US federal revenue, AIP bootcamp model, regulatory risks, valuation scenarios, and action plan for entry and exit.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "AMD — AI GPU Battle Heats Up, But Is the Price Right?",
+      "ticker": "AMD:NASDAQ",
+      "file": "amd-deep-dive-jun17.md",
+      "slug": "amd-deep-dive-jun17",
+      "date": "2026-06-17",
+      "tags": [
+        "amd",
+        "us-stocks",
+        "ai",
+        "deep-dive"
+      ],
+      "summary": "AMD deep dive — AI GPU competition with NVIDIA, MI400 series, Radeon 9000 vs Blackwell Ultra, valuation analysis, and entry/exit strategy.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Reliance Industries — AGM 2026 Preview | Is ₹1,333 a Buy?",
+      "ticker": "RELIANCE:NSE",
+      "file": "reliance-deep-dive-jun17.md",
+      "slug": "reliance-deep-dive-jun17",
+      "date": "2026-06-17",
+      "tags": [
+        "reliance",
+        "deep-dive",
+        "fundamental"
+      ],
+      "summary": "Reliance analysis ahead of AGM 2026 — P/E 25.9, 3D P/E 19.1, Delayed telecom tariff hike, Jio Financial demerger gains. Entry zones ₹1,285-1,300, ₹1,190-1,210.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Trent Ltd — Can You Enter After the 28% Correction?",
+      "ticker": "TRENT:NSE",
+      "file": "trent-deep-dive-jun17.md",
+      "slug": "trent-deep-dive-jun17",
+      "date": "2026-06-17",
+      "tags": [
+        "trent",
+        "retail",
+        "deep-dive"
+      ],
+      "summary": "Trent analysis — 28% correction, P/E 90, PEG 2.47, promoter stable, FIIs decreasing, Zudio scaling. Entry zone ₹4,200-4,600. Verdict: Favorable with Caution.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "HCL Tech invests ₹1,427 Cr in Sarvam AI — Strategic Breakdown",
+      "ticker": "HCLTECH:NSE",
+      "file": "hcltech-sarvam-ai-acquisition.md",
+      "slug": "hcltech-sarvam-ai-acquisition",
+      "date": "2026-06-16",
+      "tags": [
+        "hcltech",
+        "ai",
+        "it-sector"
+      ],
+      "summary": "HCL Tech's ₹1,427 Cr investment in Sarvam AI — strategic rationale, Sarvam's Indic LLM capabilities, and implications for the IT sector.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "NALCO — Why the Stock is Down Today",
+      "ticker": "NATIONALUM:NSE",
+      "file": "nalco-down-root-cause-jun16.md",
+      "slug": "nalco-down-root-cause-jun16",
+      "date": "2026-06-16",
+      "tags": [
+        "nalco",
+        "aluminium",
+        "market-analysis"
+      ],
+      "summary": "NALCO root cause analysis — aluminium prices, secondary pressures, and bull case.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Netweb Technologies — Why the Stock is Rising | Deep Dive",
+      "ticker": "NETWEB:NSE",
+      "file": "netweb-technologies-deep-dive.md",
+      "slug": "netweb-technologies-deep-dive",
+      "date": "2026-06-16",
+      "tags": [
+        "netweb",
+        "ai",
+        "deep-dive"
+      ],
+      "summary": "Netweb Technologies analysis — Make in India supercomputing play, AI server demand, and growth catalysts.",
+      "model": "deepseek-chat"
+    }
+  ]
+}

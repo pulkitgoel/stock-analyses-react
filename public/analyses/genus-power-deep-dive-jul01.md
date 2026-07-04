@@ -1,3 +1,12 @@
+---
+title: "Genus Power Infrastructures Ltd — Deep Dive Analysis"
+ticker: "GENUSPOWER"
+date: "2026-07-01"
+tags: ["deep-dive","fundamental","smart-meter","electrical-equipment","rdss"]
+summary: "Deep-dive on Genus Power — India's leading smart metering company with ₹25,173 Cr order book, 5.3x revenue visibility, 95% FY26 revenue growth, and PEG 0.09. Madhu Kela led ₹600 Cr block deal at ₹290. Verdict: FAVORABLE WITH CAUTION — cheap on fundamentals but negative FCF and rising debt need monitoring."
+model: "deepseek-chat"
+---
+
 # Genus Power Infrastructures Ltd — Deep Dive Analysis
 
 **Ticker:** GENUSPOWER (NSE: GENUSPOWER, BSE: 530343)  

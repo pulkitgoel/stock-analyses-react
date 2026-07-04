@@ -1,10 +1,10 @@
 ---
 title: "Policy Pulse — Global Spillover — 03 Jul 2026"
+ticker: "SUNPHARMA:DRREDDY:CIPLA:AUROPHARMA:WELSPUN:TRIDENT:TCS:INFY"
 date: "2026-07-03"
-tags: ["global", "ustr", "section-301", "tariffs", "india", "trade-war", "policy-pulse", "stocks"]
-slug: "policy-pulse-global-03jul"
-ticker: "SUNPHARMA:DRREDDY:CIPLA:AUROPHARMA:DIVISLAB:WELSPUN:TRIDENT:VARDHMAN:TCS:INFY:WIPRO:HCLTECH"
-excerpt: "USTR proposes 12.5% Section 301 tariffs on India over forced labor findings — hearings Jul 7, comments due Jul 6. Major risk for Indian pharma (Sun Pharma, Dr Reddy's, Cipla), textiles (Welspun, Trident), and IT (TCS, Infosys)."
+tags: ["global","ustr","section-301","tariffs","india","trade-war","policy-pulse","stocks"]
+summary: "USTR proposes 12.5% Section 301 tariffs on India over forced labor findings — hearings Jul 7. Major risk for Indian pharma (Sun Pharma, Dr Reddy's, Cipla, Aurobindo), textiles (Welspun, Trident), and IT (TCS, Infosys)."
+model: "deepseek-chat"
 ---
 
 # Policy Pulse — Global Spillover — 03 Jul 2026

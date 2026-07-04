@@ -1,9 +1,10 @@
 ---
-title: Techno Electric & Engineering Co Ltd — Deep Dive Analysis
-date: 2026-06-28
-tags: [deep-dive, fundamental-analysis, techno-electric, epc, power-transmission, data-centers]
-symbol: TECHNOE
-model: deepseek-chat
+title: "Techno Electric & Engineering Co Ltd — Deep Dive Analysis"
+ticker: "TECHNOE"
+date: "2026-06-28"
+tags: ["deep-dive","fundamental","epc","power-transmission","data-centers"]
+summary: "Deep-dive on Techno Electric — near zero-debt EPC leader with ₹9,600 Cr order book and data center pivot. Strong delivery (47.8% avg, 10/10 acc days) but negative FCF (-₹657 Cr). Verdict: CAUTION — good business, poor stock momentum."
+model: "deepseek-chat"
 ---
 
 # Techno Electric & Engineering Co Ltd (TECHNOE) — Deep Dive Analysis

@@ -1,3 +1,12 @@
+---
+title: "HCL Tech invests ₹1,427 Cr in Sarvam AI — Strategic Breakdown"
+ticker: "HCLTECH:NSE"
+date: "2026-06-16"
+tags: ["hcltech","ai","it-sector"]
+summary: "HCL Tech's ₹1,427 Cr investment in Sarvam AI — strategic rationale, Sarvam's Indic LLM capabilities, and implications for the IT sector."
+model: "deepseek-chat"
+---
+
 # HCL Tech invests ₹1,427 Cr in Sarvam AI
 
 📅 June 16, 2026 🏷️ fundamental 📈 Model: deepseek-chat

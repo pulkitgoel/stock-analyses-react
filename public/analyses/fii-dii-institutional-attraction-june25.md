@@ -1,3 +1,12 @@
+---
+title: "📊 FII & DII Activity — Institutional Attraction Tracker (Jun 25, 2026)"
+ticker: "FII:DII"
+date: "2026-06-25"
+tags: ["fii-dii","institutional-flows","bulk-deals"]
+summary: "Comprehensive FII/DII activity report with bulk/block deals, NSDL fortnightly sectoral data, and stocks getting maximum institutional attraction. FIIs +₹383.76 Cr, DIIs +₹5,747 Cr buying on June 25."
+model: "deepseek-chat"
+---
+
 # FII & DII Activity Report — June 25, 2026
 
 *Analysis by deepseek-chat*

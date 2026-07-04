@@ -1,3 +1,12 @@
+---
+title: "🇺🇸 US Markets Crashed — Fed, KOSPI & AI Fatigue Explained"
+ticker: "SPX:NDX:DJI"
+date: "2026-06-23"
+tags: ["us-markets","crash","fed","semiconductors","ai-fatigue","nifty"]
+summary: "Deep-dive on the June 23 US market crash. Nasdaq futures -2.1%, S&P 500 -1.04%. KOSPI circuit breaker #4, Fed rate hike odds at 90% by Sep, AI capex fatigue, and impact on your portfolio."
+model: "deepseek-chat"
+---
+
 # 🇺🇸 US Markets Crashed — June 23, 2026
 
 *Analysis by deepseek-chat*

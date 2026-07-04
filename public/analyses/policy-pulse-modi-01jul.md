@@ -1,3 +1,12 @@
+---
+title: "Policy Pulse — Modi / India Govt — 01 Jul 2026"
+ticker: "MARUTI:TATAMOTORS:TCS:HCLTECH:INFY:PAYTM"
+date: "2026-07-01"
+tags: ["policy-tracker","modi","japan","digital-india","auto","stocks"]
+summary: "Japan PM summit with Rupee-Yen settlement discussion → export boost for MARUTI, TATAMOTORS. Digital India 11-yr → INFY, TATACONSUM, PAYTM. Deregulation push → compliance cost reduction for all large caps. Country-specific stock recommendations."
+model: "deepseek-chat"
+---
+
 # Policy Pulse — Modi / India Govt — 01 Jul 2026
 
 **Date:** 01 Jul 2026  

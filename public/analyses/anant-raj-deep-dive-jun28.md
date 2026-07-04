@@ -1,9 +1,10 @@
 ---
-title: Anant Raj Ltd — Deep Dive Analysis
-date: 2026-06-28
-tags: [deep-dive, fundamental-analysis, anantraj, real-estate, data-centers]
-symbol: ANANTRAJ
-model: deepseek-chat
+title: "Anant Raj Ltd — Deep Dive Analysis"
+ticker: "ANANTRAJ"
+date: "2026-06-28"
+tags: ["deep-dive","fundamental","real-estate","data-centers"]
+summary: "Deep-dive on Anant Raj — zero-debt real estate developer pivoting to data centers (28 MW operational, 357 MW target). 80% PAT CAGR, ₹25,000 Cr Haryana DC MoU, demerger potential. PEG 0.63 but ED investigation overhang. Verdict: CAUTION — strong fundamentals, wait for technical clarity."
+model: "deepseek-chat"
 ---
 
 # Anant Raj Ltd (ANANTRAJ) — Deep Dive Analysis

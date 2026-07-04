@@ -1,3 +1,12 @@
+---
+title: "Palantir Technologies — Deep Dive Analysis"
+ticker: "PLTR:NASDAQ"
+date: "2026-06-18"
+tags: ["pltr","us-stocks","deep-dive","ai"]
+summary: "Palantir deep dive — 41% of US federal revenue, AIP bootcamp model, regulatory risks, valuation scenarios, and action plan for entry and exit."
+model: "deepseek-chat"
+---
+
 # Palantir Technologies Inc. (PLTR) — Deep Dive Analysis
 
 *Analysis by deepseek-chat*

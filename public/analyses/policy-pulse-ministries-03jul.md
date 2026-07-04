@@ -1,10 +1,10 @@
 ---
 title: "Policy Pulse — Ministries — 03 Jul 2026"
+ticker: "CGPOWER:DIXON:KAYNES:SYRMA:AMBER:TATAELXSI"
 date: "2026-07-03"
-tags: ["ministry-of-finance", "semiconductor", "semiconductor-mission-2.0", "cg-power", "electronics", "policy-pulse", "stocks"]
-slug: "policy-pulse-ministries-03jul"
-ticker: "CGPOWER:DIXON:KAYNES:SYRMA:AMBER"
-excerpt: "Finance Ministry clears ₹1.25 lakh crore India Semiconductor Mission 2.0; CG Semi starts commercial production July 4 — CG Power, Dixon, Kaynes, Syrma SGS, Amber Enterprises key beneficiaries."
+tags: ["policy-tracker","ministries","semiconductor","semiconductor-mission-2.0","electronics","stocks"]
+summary: "₹1.25 lakh crore ISM 2.0 cleared + CG Semi commercial production Jul 4 + chip exports to Malaysia → CGPOWER, DIXON, KAYNES, SYRMA, AMBER, TATAELXSI key beneficiaries."
+model: "deepseek-chat"
 ---
 
 # Policy Pulse — Ministries — 03 Jul 2026

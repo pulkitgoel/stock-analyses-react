@@ -1,3 +1,12 @@
+---
+title: "Policy Pulse — Ministries & Regulators — 01 Jul 2026"
+ticker: "KAYNES:CGPOWER:LT:TATASTEEL:FAZETHREE"
+date: "2026-07-01"
+tags: ["policy-tracker","ministries","semicon","infrastructure","steel","stocks"]
+summary: "ISM 2.0 ₹1.25L Cr EFC nod (+64%) → direct boost for KAYNES, CGPOWER. NIIF ₹30K Cr infra fund → LT, KNR, PNCINFRA. US steel market access → TATASTEEL, JSWSTEEL. Faze Three PLI → FAZETHREE. RBI capital norms → SBIN, HDFCBANK. Delhi EV Policy → OLAELEC. Stock picks with targets."
+model: "deepseek-chat"
+---
+
 # Policy Pulse — Ministries & Regulators — 01 Jul 2026
 
 **Date:** 01 Jul 2026  

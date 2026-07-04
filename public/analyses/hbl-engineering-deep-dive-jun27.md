@@ -1,3 +1,12 @@
+---
+title: "HBL Engineering — Deep Dive Analysis"
+ticker: "HBLENGINE"
+date: "2026-06-27"
+tags: ["deep-dive","fundamental","defence","railways","batteries"]
+summary: "Comprehensive deep-dive on HBL Engineering — ₹4,000+ Cr Kavach order book, 58.4% ROCE, record FCF ₹618 Cr, PEG 0.26, Q4 margin compression risks."
+model: "deepseek-chat"
+---
+
 # HBL Engineering — Deep Dive Analysis
 
 **Date:** 27 June 2026

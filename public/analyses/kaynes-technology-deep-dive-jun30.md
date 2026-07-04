@@ -1,3 +1,12 @@
+---
+title: "Kaynes Technology — Deep Dive Analysis"
+ticker: "KAYNES"
+date: "2026-06-30"
+tags: ["deep-dive","fundamental","electronics","ems","osat","semiconductor"]
+summary: "Deep-dive on Kaynes Technology — India's leading integrated EMS player with ₹8,366 Cr order book and OSAT pivot. But CFO -₹600 Cr, guidance miss (₹4,500→₹3,626 Cr), stock -49% from ATH. Verdict: AVOID — broken guidance, broken chart, broken cash flow."
+model: "deepseek-chat"
+---
+
 # Kaynes Technology — Deep Dive Analysis
 
 **Ticker:** KAYNES (NSE: KAYNES, BSE: 543664)  

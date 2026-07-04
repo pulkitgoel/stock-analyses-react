@@ -1,3 +1,12 @@
+---
+title: "Apollo Micro Systems — Deep Dive Analysis"
+ticker: "APOLLO"
+date: "2026-06-30"
+tags: ["deep-dive","fundamental","defence","aerospace"]
+summary: "Deep-dive on Apollo Micro Systems — defence technology leader with ₹1,432 Cr order book, 41% revenue CAGR, but P/E 134x, negative CFO (-₹130 Cr) and 22.5% avg delivery. Verdict: CAUTION — expensive growth story with cash flow problems."
+model: "deepseek-chat"
+---
+
 # Apollo Micro Systems — Deep Dive Analysis
 
 **Ticker:** APOLLO (NSE: APOLLO, BSE: 540879)  

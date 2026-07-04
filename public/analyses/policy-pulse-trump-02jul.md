@@ -1,3 +1,12 @@
+---
+title: "Policy Pulse — Trump / US — 02 Jul 2026"
+ticker: "F:GM:STLA:NUE:X:CLF:LNG:XOM:WMT"
+date: "2026-07-02"
+tags: ["policy-tracker","trump","us-stocks","trade-war","steel","auto","energy","us-only"]
+summary: "USMCA not renewed → F, GM, STLA sell; NUE, X, CLF buy (domestic steel). USTR Section 301 forced labor tariff hearings Jul 7 → WMT, TGT sell (import exposure). LNG permits fast-tracked → LNG, XOM, KMI buy. US stocks only analysis."
+model: "deepseek-chat"
+---
+
 # Policy Pulse — Trump / US — 02 Jul 2026
 
 **Date:** 02 Jul 2026  
