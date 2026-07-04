@@ -5,6 +5,13 @@ date: "2026-06-28"
 tags: ["deep-dive","fundamental","crane-rental","wind-energy","infrastructure"]
 summary: "Deep-dive on Sanghvi Movers — Asia's largest crane rental company (5th globally, 485+ cranes). Record revenue ₹1,070 Cr but OPM collapsed 69%→37%. KSA expansion working (90% utilization), ₹1,053 Cr order book. Verdict: CAUTION — fairly valued, margin dilution risk."
 model: "deepseek-chat"
+watchlist: true
+priceAtAnalysis: 411
+support: 406
+resistance: 425
+supports: [375, 393, 406]
+resistances: [425, 443]
+verdict: "CAUTION"
 ---
 
 # Sanghvi Movers Ltd (SANGHVIMOV) — Deep Dive Analysis

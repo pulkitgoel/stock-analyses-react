@@ -1,0 +1,78 @@
+{
+  "watchlist": [
+    {
+      "slug": "ather-energy-deep-dive",
+      "ticker": "ATHERENERG",
+      "title": "Ather Energy — Deep Dive Analysis",
+      "date": "2026-07-03",
+      "yahooSymbol": "ATHERENERG.NS",
+      "priceAtAnalysis": 1144,
+      "support": 1050,
+      "resistance": 1216,
+      "supports": [
+        950,
+        1050
+      ],
+      "resistances": [
+        1216
+      ],
+      "verdict": "CAUTION"
+    },
+    {
+      "slug": "sanghvi-movers-deep-dive-jun28",
+      "ticker": "SANGHVIMOV",
+      "title": "Sanghvi Movers Ltd — Deep Dive Analysis",
+      "date": "2026-06-28",
+      "yahooSymbol": "SANGHVIMOV.NS",
+      "priceAtAnalysis": 411,
+      "support": 406,
+      "resistance": 425,
+      "supports": [
+        375,
+        393,
+        406
+      ],
+      "resistances": [
+        425,
+        443
+      ],
+      "verdict": "CAUTION"
+    },
+    {
+      "slug": "techno-electric-deep-dive-jun28",
+      "ticker": "TECHNOE",
+      "title": "Techno Electric & Engineering Co Ltd — Deep Dive Analysis",
+      "date": "2026-06-28",
+      "yahooSymbol": "TECHNOE.NS",
+      "priceAtAnalysis": 1067,
+      "support": 1000,
+      "resistance": 1150,
+      "supports": [
+        960,
+        1000
+      ],
+      "resistances": [
+        1150
+      ],
+      "verdict": "CAUTION"
+    },
+    {
+      "slug": "reliance-deep-dive-jun17",
+      "ticker": "RELIANCE:NSE",
+      "title": "Reliance Industries — AGM 2026 Preview | Is ₹1,333 a Buy?",
+      "date": "2026-06-17",
+      "yahooSymbol": "RELIANCE.NS",
+      "priceAtAnalysis": 1333,
+      "support": 1210,
+      "resistance": 1400,
+      "supports": [
+        1190,
+        1300
+      ],
+      "resistances": [
+        1400
+      ],
+      "verdict": "ACCUMULATE ON DIPS"
+    }
+  ]
+}

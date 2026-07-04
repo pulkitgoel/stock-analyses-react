@@ -15,6 +15,34 @@ const REPO = path.resolve(__dirname, '..');
 const ANALYSES_DIR = path.join(REPO, 'public', 'analyses');
 const TS_OUT = path.join(REPO, 'src', 'data', 'analyses.generated.ts');
 const JSON_OUT = path.join(REPO, 'public', 'analyses.json');
+const WATCHLIST_OUT = path.join(REPO, 'public', 'watchlist.json');
+
+// Derive a Yahoo Finance symbol from a ticker string. US listings keep the bare
+// symbol; everything else is assumed NSE and gets the ".NS" suffix. An explicit
+// `yahooSymbol` in frontmatter always wins.
+function deriveYahooSymbol(ticker) {
+  const primary = String(ticker).split(/[:/]/)[0].trim().toUpperCase();
+  if (/\b(NASDAQ|NYSE|NMS|US)\b/i.test(ticker)) return primary;
+  return `${primary}.NS`;
+}
+
+function validateWatchlist(data) {
+  const errors = [];
+  for (const key of ['priceAtAnalysis', 'support', 'resistance']) {
+    if (typeof data[key] !== 'number' || !Number.isFinite(data[key])) {
+      errors.push(`watchlist entry needs numeric "${key}" (got ${JSON.stringify(data[key])})`);
+    }
+  }
+  if (typeof data.support === 'number' && typeof data.resistance === 'number' && data.support >= data.resistance) {
+    errors.push(`"support" (${data.support}) must be below "resistance" (${data.resistance})`);
+  }
+  for (const key of ['supports', 'resistances']) {
+    if (data[key] !== undefined && (!Array.isArray(data[key]) || data[key].some((n) => typeof n !== 'number'))) {
+      errors.push(`"${key}" must be an array of numbers`);
+    }
+  }
+  return errors;
+}
 
 const { parseFrontmatter } = await import(
   pathToFileURL(path.join(__dirname, 'lib', 'frontmatter.js')).href
@@ -44,6 +72,7 @@ const files = fs
   .sort();
 
 const analyses = [];
+const watchlist = [];
 const problems = [];
 
 for (const file of files) {
@@ -67,6 +96,27 @@ for (const file of files) {
     summary: data.summary,
     ...(data.model ? { model: data.model } : {}),
   });
+
+  if (data.watchlist === true) {
+    const wlErrors = validateWatchlist(data);
+    if (wlErrors.length) {
+      problems.push(`  • ${file} (watchlist):\n      - ${wlErrors.join('\n      - ')}`);
+      continue;
+    }
+    watchlist.push({
+      slug,
+      ticker: data.ticker,
+      title: data.title,
+      date: data.date,
+      yahooSymbol: data.yahooSymbol || deriveYahooSymbol(data.ticker),
+      priceAtAnalysis: data.priceAtAnalysis,
+      support: data.support,
+      resistance: data.resistance,
+      ...(data.supports ? { supports: data.supports } : {}),
+      ...(data.resistances ? { resistances: data.resistances } : {}),
+      ...(data.verdict ? { verdict: data.verdict } : {}),
+    });
+  }
 }
 
 if (problems.length) {
@@ -89,10 +139,14 @@ const ts =
   "import type { Analysis } from '../types/analysis';\n\n" +
   `export const ANALYSES: Analysis[] = ${JSON.stringify(analyses, null, 2)};\n`;
 
+watchlist.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.slug.localeCompare(b.slug)));
+
 fs.mkdirSync(path.dirname(TS_OUT), { recursive: true });
 fs.writeFileSync(TS_OUT, ts, 'utf8');
 fs.writeFileSync(JSON_OUT, JSON.stringify({ analyses }, null, 2) + '\n', 'utf8');
+fs.writeFileSync(WATCHLIST_OUT, JSON.stringify({ watchlist }, null, 2) + '\n', 'utf8');
 
-console.log(`✓ generate-analyses-data: wrote ${analyses.length} analyses`);
+console.log(`✓ generate-analyses-data: wrote ${analyses.length} analyses, ${watchlist.length} watchlist entries`);
 console.log(`    → ${path.relative(REPO, TS_OUT)}`);
 console.log(`    → ${path.relative(REPO, JSON_OUT)}`);
+console.log(`    → ${path.relative(REPO, WATCHLIST_OUT)}`);

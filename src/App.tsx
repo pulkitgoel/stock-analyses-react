@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import DisclaimerPage from './pages/DisclaimerPage';
 import PrivacyPage from './pages/PrivacyPage';
+import WatchlistPage from './pages/WatchlistPage';
 
 export default function App() {
   return (
@@ -22,6 +23,8 @@ export default function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+            {/* Unlisted: reachable only by direct URL, not linked in any nav or sitemap. */}
+            <Route path="/watchlist" element={<WatchlistPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

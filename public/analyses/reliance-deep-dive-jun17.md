@@ -5,6 +5,13 @@ date: "2026-06-17"
 tags: ["reliance","deep-dive","fundamental"]
 summary: "Reliance analysis ahead of AGM 2026 — P/E 25.9, 3D P/E 19.1, Delayed telecom tariff hike, Jio Financial demerger gains. Entry zones ₹1,285-1,300, ₹1,190-1,210."
 model: "deepseek-chat"
+watchlist: true
+priceAtAnalysis: 1333
+support: 1210
+resistance: 1400
+supports: [1190, 1300]
+resistances: [1400]
+verdict: "ACCUMULATE ON DIPS"
 ---
 
 # Reliance Industries Ltd — Deep Dive — Jun 17, 2026

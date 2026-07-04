@@ -5,6 +5,13 @@ date: "2026-07-03"
 tags: ["EV","E2W","Ather","electric-vehicles","auto"]
 summary: "Comprehensive deep-dive on Ather Energy — revenue accelerating at 70% YoY, EBITDA improving to -2.5%, DIIs accumulating, but low delivery % and stretched valuation warrant caution for swing entry."
 model: "deepseek-chat"
+watchlist: true
+priceAtAnalysis: 1144
+support: 1050
+resistance: 1216
+supports: [950, 1050]
+resistances: [1216]
+verdict: "CAUTION"
 ---
 
 # Ather Energy — Deep Dive Analysis
