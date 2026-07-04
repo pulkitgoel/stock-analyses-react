@@ -26,12 +26,12 @@ function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
       }}
     >
       <div className="card-content-offset mb-6 flex items-start justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
             <FileText size={18} />
           </div>
-          <div>
-            <span className="block font-mono text-xs font-black uppercase tracking-wide" style={{ color: 'var(--accent)' }}>
+          <div className="min-w-0">
+            <span className="block truncate font-mono text-xs font-black uppercase tracking-wide" style={{ color: 'var(--accent)' }} title={analysis.ticker}>
               {analysis.ticker}
             </span>
             <span className="flex items-center gap-1 text-xs font-bold" style={{ color: 'var(--text-dim)' }}>
@@ -39,7 +39,7 @@ function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
             </span>
           </div>
         </div>
-        <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" style={{ color: 'var(--text-dim)' }} />
+        <ArrowUpRight size={18} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" style={{ color: 'var(--text-dim)' }} />
       </div>
 
       <div className="card-content-offset">
