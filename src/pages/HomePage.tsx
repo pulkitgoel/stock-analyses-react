@@ -9,12 +9,13 @@ import { useNotification } from '../hooks/useNotification';
 import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import SubscribeCard from '../components/Common/SubscribeCard';
 import SearchBar from '../components/Home/SearchBar';
+import CategoryTabs from '../components/Home/CategoryTabs';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
 import heroImage from '../assets/hero.png';
 
 export default function HomePage() {
   const { analyses, loading, error } = useAnalyses();
-  const { query, setQuery, sortMode, setSortMode, filtered } = useSearch(analyses);
+  const { query, setQuery, sortMode, setSortMode, category, setCategory, counts, filtered } = useSearch(analyses);
   const { subscribed, supported, loading: notifLoading, subscribe, unsubscribe } = useNotification();
   const allTags = useMemo(() => analyses.flatMap(a => a.tags), [analyses]);
   const latest = useMemo(() => [...analyses].sort((a, b) => b.date.localeCompare(a.date))[0], [analyses]);
@@ -31,10 +32,13 @@ export default function HomePage() {
   }
 
   const stats = [
-    { label: 'Deep dives', value: analyses.filter(a => a.tags.includes('deep-dive')).length },
-    { label: 'Market notes', value: analyses.filter(a => a.tags.includes('market-analysis')).length },
+    { label: 'Stock research', value: counts.stocks },
+    { label: 'Policy Pulse', value: counts.policy },
     { label: 'Themes tracked', value: new Set(allTags).size },
   ];
+
+  const categoryTotal = category === 'all' ? counts.all : category === 'stocks' ? counts.stocks : counts.policy;
+  const categoryLabel = category === 'policy' ? 'Policy Pulse notes' : category === 'stocks' ? 'research notes' : 'notes';
 
   return (
     <>
@@ -169,10 +173,13 @@ export default function HomePage() {
                   <h2 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text)' }}>Research library</h2>
                 </div>
                 <p className="mt-1 text-sm font-semibold" style={{ color: 'var(--text-dim)' }}>
-                  {filtered.length} result{filtered.length !== 1 ? 's' : ''} of {analyses.length} notes
+                  {filtered.length} result{filtered.length !== 1 ? 's' : ''} of {categoryTotal} {categoryLabel}
                 </p>
               </div>
               <SearchBar query={query} onQueryChange={setQuery} sortMode={sortMode} onSortChange={setSortMode} />
+            </div>
+            <div style={{ marginTop: '1.5rem' }}>
+              <CategoryTabs category={category} onCategoryChange={setCategory} counts={counts} />
             </div>
           </div>
         </section>
