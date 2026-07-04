@@ -139,6 +139,56 @@ curl -X POST https://stocksfundamentals.online/api/notify \
 
 ---
 
+## Adding a stock to the Watchlist (`/watchlist`)
+
+The watchlist is a **private page** (reachable only by direct URL — not linked in
+any nav and excluded from the sitemap / search engines) that tracks **live prices
+against the support & resistance you called** in an analysis.
+
+To put a stock on it, add these fields to that stock's analysis frontmatter:
+
+```markdown
+---
+title: "Sanghvi Movers Ltd — Deep Dive Analysis"
+ticker: "SANGHVIMOV"
+date: "2026-06-28"
+tags: ["deep-dive","fundamental","crane-rental"]
+summary: "..."
+model: "deepseek-chat"
+watchlist: true
+priceAtAnalysis: 411
+support: 406
+resistance: 425
+supports: [375, 393, 406]      # optional extra levels
+resistances: [425, 443]        # optional extra levels
+verdict: "CAUTION"             # optional badge
+---
+```
+
+| Field | Required | Type | Notes |
+|---|---|---|---|
+| `watchlist` | ✅ | boolean | Must be `true` to appear on the page. |
+| `priceAtAnalysis` | ✅ | number | Price when you published — the baseline for "since analysis %". Numbers only, no `₹`. |
+| `support` | ✅ | number | Primary support. Must be **less than** `resistance`. |
+| `resistance` | ✅ | number | Primary resistance. |
+| `supports` / `resistances` | optional | number[] | Extra levels (currently used for future ticks). |
+| `verdict` | optional | string | Short badge, e.g. `"CAUTION"`, `"ACCUMULATE ON DIPS"`. |
+| `yahooSymbol` | optional | string | Override the live-quote symbol. |
+
+**Live price / Yahoo symbol.** The live price comes from the backend `/api/quote`
+endpoint (yfinance → Yahoo Finance, ~15 min delayed). The Yahoo symbol is derived
+automatically from `ticker`:
+- NSE (default) → `SYMBOL.NS` (e.g. `SANGHVIMOV` → `SANGHVIMOV.NS`)
+- US (`ticker` contains `NASDAQ`/`NYSE`) → bare symbol (e.g. `PLTR:NASDAQ` → `PLTR`)
+- Anything unusual → set `yahooSymbol` explicitly (e.g. `"TATAMOTORS.NS"`, BSE uses `.BO`).
+
+**Rules**
+- `priceAtAnalysis`, `support`, `resistance` are **plain numbers** (no `₹`, no `"1,144"` strings). `support < resistance` or the build fails.
+- To **remove** a stock from the watchlist, set `watchlist: false` or delete the fields, then rebuild.
+- `npm run build` regenerates `public/watchlist.json`. The backend must be running (with `yfinance` installed) for live prices; without it the page shows the analysis price labelled "live feed unavailable".
+
+---
+
 ## Checklist (agent should self-verify before deploy)
 
 - [ ] File is `public/analyses/<slug>.md` and `<slug>` is URL-safe (lowercase, hyphens).

@@ -49,7 +49,25 @@ generated from it. Never hand-edit `src/data/analyses.generated.ts` or
 4. **Deploy** with `./deploy.sh`, and optionally notify subscribers via
    `POST /api/notify` (see PUBLISHING.md for the curl command).
 
+## Optional: add the stock to the private Watchlist
+
+To track a stock's live price against your called levels on `/watchlist` (a
+private, unlisted page), add these fields to its analysis frontmatter and rebuild:
+
+```
+watchlist: true
+priceAtAnalysis: 411      # plain number, price when published
+support: 406              # must be < resistance
+resistance: 425
+verdict: "CAUTION"        # optional badge
+```
+
+Live prices are served by the backend `/api/quote` endpoint (yfinance); the Yahoo
+symbol is derived from the ticker (NSE → `.NS`), overridable via `yahooSymbol`.
+See PUBLISHING.md → "Adding a stock to the Watchlist" for the full field table.
+
 ## Guardrails
 - `date` must be exactly `YYYY-MM-DD`; `tags` must be a JSON array.
 - The slug is the file name — do not put `slug:` in frontmatter.
 - The scaffolder won't overwrite an existing file without `--force`.
+- Watchlist numbers are plain (no `₹`), and `support` must be below `resistance`.
