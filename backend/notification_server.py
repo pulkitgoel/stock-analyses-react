@@ -16,9 +16,10 @@ Uses pywebpush for proper Web Push Protocol encryption.
 import json
 import os
 import sys
+import time
 import logging
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from urllib.parse import urlparse, unquote
+from urllib.parse import urlparse, unquote, parse_qs
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 log = logging.getLogger('api')
@@ -88,6 +89,72 @@ def send_push(subscription, title, body, url):
         return False, error_str
 
 
+# ---------------------------------------------------------------------------
+# Live quotes via yfinance (Yahoo Finance). NSE symbols use the ".NS" suffix,
+# BSE uses ".BO". Data is ~15 min delayed and free. Results are cached briefly
+# so polling the watchlist page does not hammer Yahoo / trip rate limits.
+# ---------------------------------------------------------------------------
+QUOTE_CACHE = {}   # symbol -> (payload, expiry_epoch)
+QUOTE_TTL = 30     # seconds
+
+
+def fetch_quote(symbol):
+    """Fetch a single quote via yfinance. Returns a dict or None on failure."""
+    try:
+        import yfinance as yf
+    except ImportError:
+        log.error("yfinance not available. Install: pip3.12 install yfinance --break-system-packages")
+        return None
+    try:
+        fi = yf.Ticker(symbol).fast_info
+
+        def g(*names):
+            for n in names:
+                try:
+                    v = fi[n]
+                except (KeyError, TypeError):
+                    v = getattr(fi, n, None)
+                if v is not None:
+                    return v
+            return None
+
+        last = g('last_price', 'lastPrice')
+        prev = g('previous_close', 'previousClose', 'regularMarketPreviousClose')
+        currency = g('currency') or 'INR'
+        if last is None:
+            return None
+        last = float(last)
+        prev = float(prev) if prev else last
+        change = last - prev
+        change_pct = (change / prev * 100) if prev else 0.0
+        return {
+            'price': round(last, 2),
+            'change': round(change, 2),
+            'changePct': round(change_pct, 2),
+            'currency': currency,
+            'ts': int(time.time()),
+        }
+    except Exception as e:
+        log.warning(f"quote fetch failed for {symbol}: {e}")
+        return None
+
+
+def get_quotes(symbols):
+    """Return {symbol: quote|None}, served from a short-lived cache."""
+    now = time.time()
+    out = {}
+    for sym in symbols:
+        cached = QUOTE_CACHE.get(sym)
+        if cached and cached[1] > now:
+            out[sym] = cached[0]
+            continue
+        q = fetch_quote(sym)
+        if q is not None:
+            QUOTE_CACHE[sym] = (q, now + QUOTE_TTL)
+        out[sym] = q
+    return out
+
+
 class Handler(BaseHTTPRequestHandler):
 
     def _read_body(self):
@@ -136,6 +203,14 @@ class Handler(BaseHTTPRequestHandler):
                     self._json_response(200, a)
                     return
             self._json_response(404, {'error': 'Not found'})
+            return
+
+        # GET /api/quote?symbols=RELIANCE.NS,ATHERENERG.NS
+        if path == '/api/quote':
+            qs = parse_qs(urlparse(self.path).query)
+            raw = qs.get('symbols', [''])[0]
+            symbols = [s.strip() for s in raw.split(',') if s.strip()][:50]
+            self._json_response(200, {'quotes': get_quotes(symbols)})
             return
 
         # GET /api/subscribers

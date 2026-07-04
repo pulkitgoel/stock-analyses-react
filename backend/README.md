@@ -6,8 +6,10 @@ Python-based notification and API server for the Stock Analyses Dashboard.
 
 ```bash
 cd backend
-pip install flask flask-cors pywebpush
+pip install flask flask-cors pywebpush yfinance
 ```
+
+`yfinance` powers the `/api/quote` live-price endpoint used by the Watchlist page.
 
 ## Usage
 
@@ -20,6 +22,7 @@ python3 notification_server.py <port>
 | Endpoint | Method | Description |
 |---|---|---|
 | `/api/analyses` | GET | List all analyses with metadata |
+| `/api/quote?symbols=RELIANCE.NS,...` | GET | Live quotes via yfinance (30s cache) for the Watchlist |
 | `/api/subscribe` | POST | Subscribe to push notifications |
 | `/api/unsubscribe` | POST | Unsubscribe from push notifications |
 | `/api/notify` | POST | Send push notification to all subscribers |
