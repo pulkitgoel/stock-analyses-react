@@ -38,8 +38,9 @@ export default function AnalysisCard({ analysis }: AnalysisCardProps) {
             {analysis.title}
             <ArrowUpRight size={13} className="inline ml-1 opacity-0 group-hover:opacity-100 transition-opacity -mt-0.5" style={{ color: 'var(--accent)' }} />
           </h2>
-          <span className="text-[0.5rem] sm:text-[0.65rem] font-semibold px-1.5 sm:px-2 py-0.5 rounded shrink-0 font-mono"
-            style={{ background: 'rgba(59,130,246,0.08)', color: '#60a5fa' }}>
+          <span className="text-[0.5rem] sm:text-[0.65rem] font-semibold px-1.5 sm:px-2 py-0.5 rounded truncate max-w-[130px] sm:max-w-[200px] shrink-0 font-mono"
+            style={{ background: 'rgba(59,130,246,0.08)', color: '#60a5fa' }}
+            title={analysis.ticker}>
             {analysis.ticker}
           </span>
         </div>

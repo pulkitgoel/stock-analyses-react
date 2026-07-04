@@ -98,7 +98,8 @@ export default function CompanyPage() {
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <div className="mb-2 flex flex-wrap items-center gap-2">
-                    <span className="rounded-lg px-2.5 py-1 font-mono text-xs font-bold" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
+                    <span className="rounded-lg px-2.5 py-1 font-mono text-xs font-bold truncate max-w-[150px] sm:max-w-[250px]" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}
+                      title={a.ticker}>
                       {a.ticker}
                     </span>
                     <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>{a.date}</span>
