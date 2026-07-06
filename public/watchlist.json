@@ -1,6 +1,16 @@
 {
   "watchlist": [
     {
+      "slug": "shakti-pumps-deep-dive-jul06",
+      "ticker": "SHAKTIPUMP",
+      "title": "Shakti Pumps — Deep Dive Analysis",
+      "date": "2026-07-06",
+      "yahooSymbol": "SHAKTIPUMP.NS",
+      "priceAtAnalysis": 593,
+      "support": 500,
+      "resistance": 650
+    },
+    {
       "slug": "ather-energy-deep-dive",
       "ticker": "ATHERENERG",
       "title": "Ather Energy — Deep Dive Analysis",

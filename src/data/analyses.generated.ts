@@ -5,6 +5,22 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Shakti Pumps — Deep Dive Analysis",
+    "ticker": "SHAKTIPUMP",
+    "file": "shakti-pumps-deep-dive-jul06.md",
+    "slug": "shakti-pumps-deep-dive-jul06",
+    "date": "2026-07-06",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "pumps",
+      "solar",
+      "renewable"
+    ],
+    "summary": "Deep-dive on Shakti Pumps (SHAKTIPUMP) — solar pump market leader with ₹2,698 Cr revenue, ₹353 Cr MSEDCL order win on 4 Jul, but OPM collapsed from 25% to 10% and PAT down 37% YoY. Verdict: CAUTION — margin compression in progress with strong order book support.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Ather Energy — Deep Dive Analysis",
     "ticker": "ATHERENERG",
     "file": "ather-energy-deep-dive.md",
