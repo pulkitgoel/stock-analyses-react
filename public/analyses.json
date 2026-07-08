@@ -1,6 +1,152 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Ministries — 08 Jul 2026",
+      "ticker": "TRIDENT:WELSPUN:HDFCBANK:ICICIBANK:RELIANCE:TCS:INFY",
+      "file": "policy-pulse-ministries-08-jul-2026.md",
+      "slug": "policy-pulse-ministries-08-jul-2026",
+      "date": "2026-07-08",
+      "tags": [
+        "policy-pulse",
+        "ministries",
+        "sebi",
+        "finance-ministry",
+        "insider-trading",
+        "fpi",
+        "fm-sitharaman",
+        "buyback"
+      ],
+      "summary": "FM Sitharaman pushes toy exports to capture 25% of 79B global market. SEBI mandates FPI fees in INR, issues insider trading warning to Reliance, and reintroduces open market buyback framework.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump — 08 Jul 2026",
+      "ticker": "AAPL:MSFT:NVDA:AMZN:GOOGL:PLTR:HOOD:BK:STT",
+      "file": "policy-pulse-trump-08-jul-2026.md",
+      "slug": "policy-pulse-trump-08-jul-2026",
+      "date": "2026-07-08",
+      "tags": [
+        "policy-pulse",
+        "trump",
+        "us-only",
+        "leader-trades",
+        "trump-accounts",
+        "tariffs",
+        "section-301",
+        "disclosure"
+      ],
+      "summary": "Trump's 2025 financial disclosure reveals 327 stock purchases worth 2.8M the day before his tariff pause — including AAPL, MSFT, NVDA, AMZN, GOOGL. Plus: Trump Accounts launch, Section 301 forced labour hearings targeting India.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 07 Jul 2026",
+      "ticker": "INFY:TCS:WIPRO:SUNPHARMA:DRREDDY:DIXON:WMT:TGT",
+      "file": "policy-pulse-global-07Jul.md",
+      "slug": "policy-pulse-global-07Jul",
+      "date": "2026-07-07",
+      "tags": [
+        "stocks",
+        "us-only",
+        "global",
+        "tariff",
+        "section-301",
+        "china",
+        "trade-war",
+        "new-zealand-fta"
+      ],
+      "summary": "USTR Section 301 forced-labor tariff hearings begin Jul 7 — 60 economies targeted. China adds 20 Japanese entities to export control list. NZ-India FTA passes first reading. Digital customs cuts electronic clearance to 6 hrs. Key: INFY, TCS, SUNPHARMA, DIXON."
+    },
+    {
+      "title": "Policy Pulse — Ministries — 07 Jul 2026",
+      "ticker": "BEL:HAL:BDL:BEML:PARAS:DATAPATTERNS:TRIDENT:WELSPUN:PAGEIND:DRREDDY",
+      "file": "policy-pulse-ministries-07Jul.md",
+      "slug": "policy-pulse-ministries-07Jul",
+      "date": "2026-07-07",
+      "tags": [
+        "stocks",
+        "india",
+        "defence",
+        "sebi",
+        "ministry-of-defence",
+        "eu-fta",
+        "textiles"
+      ],
+      "summary": "DAC approves ₹52,000 Cr defence procurement (BEL, HAL, BDL, PARAS). India-EU FTA legal scrubbing accelerated — textile/pharma boost (TRIDENT, WELSPUN, DRREDDY). SEBI buyback cap at 15% from Aug 1. SEZ RoDTEP extension."
+    },
+    {
+      "title": "Policy Pulse — Modi — 07 Jul 2026",
+      "ticker": "HAL:BEL:BDL:SOLARINDS:TATASTEEL:JSWSTEEL:RIL:DIXON:KAYNES:RVNL",
+      "file": "policy-pulse-modi-07Jul.md",
+      "slug": "policy-pulse-modi-07Jul",
+      "date": "2026-07-07",
+      "tags": [
+        "stocks",
+        "india",
+        "modi",
+        "defence",
+        "brahmos",
+        "critical-minerals",
+        "infrastructure"
+      ],
+      "summary": "PM Modi in Indonesia: BrahMos & Astra missile export deal, critical minerals pact, steel supply chain cooperation, UPI integration. CG Semi OSAT inaugurated. ₹1.06L Cr projects in Rajasthan/Gujarat. Key: HAL, BDL, BEL, RIL, DIXON."
+    },
+    {
+      "title": "Policy Pulse — Trump — 07 Jul 2026",
+      "ticker": "AAPL:NVDA:MSFT:AMZN:GOOGL:META:PLTR:LMT:GEO:CXW:DJT",
+      "file": "policy-pulse-trump-07Jul.md",
+      "slug": "policy-pulse-trump-07Jul",
+      "date": "2026-07-07",
+      "tags": [
+        "stocks",
+        "us-only",
+        "trump",
+        "tariff",
+        "disclosure",
+        "financial-filing"
+      ],
+      "summary": "Section 122 tariffs expire Jul 24; Section 301 hearings begin. Trump 2025 disclosure shows 21K+ trades, $1.4B crypto, $5-25M buys in AAPL, NVDA, MSFT. USMCA not renewed. Stock impact: AAPL, NVDA, MSFT buy signals; DJT sell."
+    },
+    {
+      "title": "Policy Pulse — Global Trade — 06 Jul 2026",
+      "ticker": "SUNPHARMA:DRREDDY:CIPLA:DIVIS:AUROPHARMA:TCS:INFY:WIPRO:HCLTECH:TATASTEEL:JSWSTEEL:WELSPUN:TRIDENT:PAGEIND:RAYMOND",
+      "file": "policy-pulse-global-06jul.md",
+      "slug": "policy-pulse-global-06jul",
+      "date": "2026-07-06",
+      "tags": [
+        "policy-pulse",
+        "global-trade",
+        "ustr",
+        "tariffs",
+        "forced-labour",
+        "india-us-trade",
+        "pharma",
+        "textiles",
+        "stocks"
+      ],
+      "summary": "USTR forced labor tariff hearings Jul 7-9 propose 12.5% duty on 60 economies including India; US pharma tariffs (100% on patented) exclude generics — Neutral for Indian API exporters; USMCA not renewed; Brazil tariff deadline Jul 15. Stocks: SUNPHARMA, DRREDDY, DIVIS, TCS, INFY, TATASTEEL, WELSPUN, RAYMOND.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 06 Jul 2026",
+      "ticker": "RAYMOND:WELSPUN:PAGEIND:VTL:TRIDENT:INDOCOUNT:CEAT:MOTHERSON:BHARATFORG:TITAN:KALYANKJ:PCJEWELLER:SUNPHARMA:DRREDDY:DIVIS:TCS:INFY",
+      "file": "policy-pulse-ministries-06jul.md",
+      "slug": "policy-pulse-ministries-06jul",
+      "date": "2026-07-06",
+      "tags": [
+        "policy-pulse",
+        "india-uk-ceta",
+        "trade-deal",
+        "textiles",
+        "auto-components",
+        "sebi",
+        "buyback",
+        "exports",
+        "stocks"
+      ],
+      "summary": "India-UK CETA effective Jul 15 — CFOs expanding capacity for textile, auto components, gems & jewellery export boom. SEBI reintroduces open market buyback from Aug 1. India exports set to cross $500B in FY27. Stocks: RAYMOND, WELSPUN, INDOCOUNT, CEAT, BHARATFORG, TITAN, PCJEWELLER.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Shakti Pumps — Deep Dive Analysis",
       "ticker": "SHAKTIPUMP",
       "file": "shakti-pumps-deep-dive-jul06.md",
