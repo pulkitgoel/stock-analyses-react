@@ -5,6 +5,247 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 13 Jul 2026",
+    "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:BP:SHEL:USO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:SPY:GLD:TCS:INFY:WELSPUN:SUNPHARMA",
+    "file": "policy-pulse-global-13-jul-2026.md",
+    "slug": "policy-pulse-global-13-jul-2026",
+    "date": "2026-07-13",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "us-only",
+      "iran-war",
+      "oil",
+      "strait-of-hormuz",
+      "energy",
+      "airlines",
+      "cruises",
+      "safe-haven"
+    ],
+    "summary": "Trump says US will get 'paid to guard' Strait of Hormuz — oil at 5-78 sustained. Iran tensions escalate with fresh strikes. Oil/gas stocks up (XOM, CVX, OXY), airlines down (DAL, UAL), cruises down (CCL, RCL). India-US trade talks stall adds EM uncertainty.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 13 Jul 2026",
+    "ticker": "WELSPUN:TRIDENT:VARDHMAN:PAGEND:SUNPHARMA:DRREDDY:HDFCBANK:ICICIBANK:SBI:BAJFINANCE:NSE:BSE:ITC:HINDUNILVR",
+    "file": "policy-pulse-ministries-13-jul-2026.md",
+    "slug": "policy-pulse-ministries-13-jul-2026",
+    "date": "2026-07-13",
+    "tags": [
+      "policy-pulse",
+      "ministries",
+      "india",
+      "ustr",
+      "tariffs",
+      "textiles",
+      "inflation",
+      "rbi",
+      "banking",
+      "nbfc",
+      "consumer-staples"
+    ],
+    "summary": "USTR proposes 12.5% forced labor tariffs on 44 countries including India — textiles hit hardest (WELSPUN, TRIDENT). June retail inflation rises to 4.38%, breaches RBI target. SEBI tightens employee conduct rules (governance only).",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi — 13 Jul 2026",
+    "ticker": "TCS:INFY:WIPRO:HCLTECH:SUNPHARMA:DRREDDY:CIPLA:DIVISLAB:WELSPUN:TRIDENT:VARDHMAN:TATASTEEL:JSWSTEEL:HAL:BEL:DATAPATTERNS:APOLLOMICRO",
+    "file": "policy-pulse-modi-13-jul-2026.md",
+    "slug": "policy-pulse-modi-13-jul-2026",
+    "date": "2026-07-13",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "india",
+      "trade",
+      "tariffs",
+      "it-services",
+      "pharma",
+      "textiles",
+      "defence",
+      "aerospace"
+    ],
+    "summary": "India rejects rushed US trade deal — demands tariff edge over China. Risk of steeper tariffs later this month. IT (TCS, INFY) and textiles (WELSPUN, TRIDENT) exposed. HAL receives 7th GE engine — Tejas Mk1A programme gains momentum.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump — 13 Jul 2026",
+    "ticker": "BA:GE:RTX:SPR:HWM:LMT:XOM:CVX:OXY:EOG:HAL:SLB:BP:SHEL:USO:DAL:UAL:AAL:CCL:RCL:SPY:GOOGL:AAPL:NVDA:AVGO:MSFT:AMZN:META:DJT",
+    "file": "policy-pulse-trump-13-jul-2026.md",
+    "slug": "policy-pulse-trump-13-jul-2026",
+    "date": "2026-07-13",
+    "tags": [
+      "policy-pulse",
+      "trump",
+      "us-only",
+      "leader-trades",
+      "section-232",
+      "aerospace",
+      "iran-war",
+      "oil",
+      "energy",
+      "crypto",
+      "strait-of-hormuz"
+    ],
+    "summary": "Trump signs aircraft Section 232 EO boosting US aerospace (BA, GE, RTX). Says US will get 'paid to guard' Strait of Hormuz — oil stocks up, airlines down. Crypto disclosure analyzed: .4B income invested in mega-cap tech (GOOGL, AAPL, NVDA, AVGO).",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 10 Jul 2026",
+    "ticker": "XOM:CVX:OXY:HAL:SLB:BP:SHEL:DAL:UAL:AAL:CCL:RCL:SPY:USO:SPACE:DWTX",
+    "file": "policy-pulse-global-10jul2026.md",
+    "slug": "policy-pulse-global-10jul2026",
+    "date": "2026-07-10",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "us-only",
+      "iran-war",
+      "oil",
+      "strait-of-hormuz",
+      "crude",
+      "energy"
+    ],
+    "summary": "Iran ceasefire 'over' as US-Iran trade strikes — oil surges to $78 amid renewed Hormuz disruption. Oil prices slid 2% on Jul 10 but remain elevated. IEA warns supply recovery uncertain. Treasury revokes Iranian oil waiver effective Jul 17. Airlines and cruise stocks hit hard.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 10 Jul 2026",
+    "ticker": "RELAXO:BATAINDIA:METROBRAND:HDFCBANK:ICICIBANK:SBI:BAJFINANCE:NSE:BSE:MCX:HAL:BEL:MAZDOCK:COCHINSHIP:APOLLOMICRO:DATAPATTERNS:IDEAFORGE:SOLARINDS:PARASDEF:NBCC:IRCON:RVNL:LT:TITAGARH",
+    "file": "policy-pulse-ministries-10jul2026.md",
+    "slug": "policy-pulse-ministries-10jul2026",
+    "date": "2026-07-10",
+    "tags": [
+      "policy-pulse",
+      "ministries",
+      "india",
+      "sebi",
+      "rbi",
+      "dpiit",
+      "defence",
+      "infrastructure",
+      "banking"
+    ],
+    "summary": "RBI's new collateral norms (100% margin on bank guarantees to brokers) squeeze trading volumes since Jul 1. SEBI revives open-market buyback route effective Aug 1. SEBI reforms ETF pricing framework. Defence Ministry confirms ₹2L Cr contract signing target for FY26. NBCC reports ₹1.2L Cr order book.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi — 10 Jul 2026",
+    "ticker": "TATAPOWER:LT:NTPC:GSPT:IRCON:RVNL:RITES:TITAGARH:HBLPOWER:NBCC",
+    "file": "policy-pulse-modi-10jul2026.md",
+    "slug": "policy-pulse-modi-10jul2026",
+    "date": "2026-07-10",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "india",
+      "semiconductor",
+      "defence",
+      "infrastructure"
+    ],
+    "summary": "India's semiconductor mission hits $18B in investments across 10 projects; commercial chip packaging begins at Sanand. Defence exports reach record ₹38,424 Cr. NBCC reports ₹1.2L Cr order book. Modi-Indonesia BrahMos missile deal sealed with new applications discussed.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump — 10 Jul 2026",
+    "ticker": "PLTR:LMT:GD:NOC:RTX:GE:KRATOS:HON:HWM:TDG:AAPL:MSFT:NVDA:AMZN:GOOGL:META:AVGO:BA:XOM:CVX:DAL:UAL:AAL:CCL:RCL:HOOD:BK:STT:WMT:TGT:SPY",
+    "file": "policy-pulse-trump-10jul2026.md",
+    "slug": "policy-pulse-trump-10jul2026",
+    "date": "2026-07-10",
+    "tags": [
+      "policy-pulse",
+      "trump",
+      "us-only",
+      "leader-trades",
+      "defence",
+      "tariffs",
+      "ai",
+      "iran-war",
+      "section-232",
+      "ieepa",
+      "usmca"
+    ],
+    "summary": "Trump's portfolio beats S&P 500 with 37.3% return; top holdings GOOGL, AAPL, NVDA, AVGO. Brokers bought $10M-$24M in defence stocks. Aircraft Section 232 probe launched. Spain trade threat via IEEPA escalates. USMCA non-renewed. AI E.O. 14409 signed.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global Spillover — 09 Jul 2026",
+    "ticker": "XOM:CVX:OXY:LMT:NOC:RTX:ONGC:COALINDIA:HAL:BEL:SPACE",
+    "file": "policy-pulse-global-09jul2026.md",
+    "slug": "policy-pulse-global-09jul2026",
+    "date": "2026-07-09",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "iran-war",
+      "oil",
+      "defence",
+      "strait-of-hormuz",
+      "tomahawk"
+    ],
+    "summary": "Iran-US conflict escalates as Trump declares MoU 'over'. Iran strikes 85 US sites; oil surges to 8/barrel. Global markets sell off (Nifty -2.23%, KOSPI -5.35%). US approves Tomahawk missile sale to Germany. India's defence stocks and oil producers emerge as relative winners.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 09 Jul 2026",
+    "ticker": "RELAXO:BATAINDIA:TATAMOTORS:NIBE:APOLLO MICRO:DATAPATTERNS:IDEA FORGE:HDFCBANK:ICICIBANK:SBI",
+    "file": "policy-pulse-ministries-09jul2026.md",
+    "slug": "policy-pulse-ministries-09jul2026",
+    "date": "2026-07-09",
+    "tags": [
+      "policy-pulse",
+      "ministries",
+      "dpiit",
+      "footwear",
+      "defence",
+      "drones",
+      "acquisition",
+      "liquidity",
+      "rbi"
+    ],
+    "summary": "DPIIT amends footwear QCOs (legacy stock clearance extended to 2027). Army fast-tracks ₹1,500Cr drone procurement — Tata/Nibe win. Apollo Micro nears ₹2,500Cr Premier Explosives acquisition. RBI injects ₹5.6L Cr liquidity.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi — 09 Jul 2026",
+    "ticker": "TATAPOWER:LT:NTPC:ADANIGREEN:HAL:BEL:IRCON:RVNL:SOLARINDS",
+    "file": "policy-pulse-modi-09jul2026.md",
+    "slug": "policy-pulse-modi-09jul2026",
+    "date": "2026-07-09",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "india",
+      "australia",
+      "uranium",
+      "defence",
+      "clean-energy",
+      "infrastructure"
+    ],
+    "summary": "PM Modi in Australia: uranium supply deal signed, A00M NIIF investment from AustralianSuper, new defence declaration, clean energy cooperation, and CECA push. Key beneficiary stocks across nuclear, defence, renewables, and infrastructure.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump — 09 Jul 2026",
+    "ticker": "PLTR:LMT:GD:NOC:RTX:HII:XOM:CVX:OXY:HAL:HOOD:BK:STT:WMT:TGT",
+    "file": "policy-pulse-trump-09jul2026.md",
+    "slug": "policy-pulse-trump-09jul2026",
+    "date": "2026-07-09",
+    "tags": [
+      "policy-pulse",
+      "trump",
+      "us-only",
+      "leader-trades",
+      "iran-war",
+      "defence",
+      "trump-accounts",
+      "tariffs",
+      "section-301"
+    ],
+    "summary": "Trump's brokers bought 0M-4M in defence stocks (Palantir, Lockheed Martin, GD). Iran MoU declared 'over' — oil surges to 8. Trump Accounts launch with 0B expected inflow. India defends against Section 301 tariffs on Day 3 of USTR hearings.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Policy Pulse — Ministries — 08 Jul 2026",
     "ticker": "TRIDENT:WELSPUN:HDFCBANK:ICICIBANK:RELIANCE:TCS:INFY",
     "file": "policy-pulse-ministries-08-jul-2026.md",
