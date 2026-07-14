@@ -1,6 +1,26 @@
 {
   "watchlist": [
     {
+      "slug": "kalyan-jewellers-india-ltd-deep-dive-analysis",
+      "ticker": "KALYANKJIL",
+      "title": "Kalyan Jewellers India Ltd — Deep Dive Analysis",
+      "date": "2026-07-14",
+      "yahooSymbol": "KALYANKJIL.NS",
+      "priceAtAnalysis": 526,
+      "support": 450,
+      "resistance": 535,
+      "supports": [
+        380,
+        410,
+        450
+      ],
+      "resistances": [
+        535,
+        618
+      ],
+      "verdict": "CAUTION"
+    },
+    {
       "slug": "shakti-pumps-deep-dive-jul06",
       "ticker": "SHAKTIPUMP",
       "title": "Shakti Pumps — Deep Dive Analysis",

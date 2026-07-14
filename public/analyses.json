@@ -1,6 +1,20 @@
 {
   "analyses": [
     {
+      "title": "Kalyan Jewellers India Ltd — Deep Dive Analysis",
+      "ticker": "KALYANKJIL",
+      "file": "kalyan-jewellers-india-ltd-deep-dive-analysis.md",
+      "slug": "kalyan-jewellers-india-ltd-deep-dive-analysis",
+      "date": "2026-07-14",
+      "tags": [
+        "deep-dive",
+        "jewellery",
+        "consumer-durables"
+      ],
+      "summary": "Kalyan Jewellers delivered exceptional FY26 with PAT of ₹1,350 Cr (+89% YoY), aggressive store expansion (129 new showrooms), Candere turning profitable, and management targeting zero non-GML debt in FY27. However, the stock has rallied 46% in 4 sessions with delivery % collapsing from 35% to 13%, RSI at 80+, and FIIs reducing stake from 29.65% to 14.55% over 3 years. Citi targets ₹750 while technicals flash overbought warnings. Verdict: CAUTION.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse — Global — 13 Jul 2026",
       "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:BP:SHEL:USO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:SPY:GLD:TCS:INFY:WELSPUN:SUNPHARMA",
       "file": "policy-pulse-global-13-jul-2026.md",
