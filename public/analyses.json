@@ -16,6 +16,23 @@
       "model": "deepseek-chat"
     },
     {
+      "title": "Ideaforge Technology — What Changed? QIP Makes It a Whole New Story",
+      "ticker": "IDEAFORGE",
+      "file": "ideaforge-what-changed-qip-analysis.md",
+      "slug": "ideaforge-what-changed-qip-analysis",
+      "date": "2026-07-22",
+      "tags": [
+        "deep-dive",
+        "defense",
+        "drones",
+        "qip",
+        "turnaround",
+        "update"
+      ],
+      "summary": "Game changer: Ideaforge raised ₹500 Cr via QIP at ₹795. Working capital solved, debt cleared, HDFC MF & others invested. Promoter dilution to 25.3% is the sticking point. Full analysis.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Indo-MIM Ltd — IPO Analysis",
       "ticker": "INDO-MIM",
       "file": "indo-mim-ltd-ipo-analysis.md",
@@ -28,6 +45,85 @@
         "precision-engineering"
       ],
       "summary": "Indo-MIM — world's largest MIM manufacturer — opens IPO at ₹485. 45x P/E, 21% ROE, accelerating growth, but 86% OFS and US export concentration warrant caution. Detailed analysis inside.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 22 Jul 2026",
+      "ticker": "XOM:CVX:OXY:HAL:SLB:DAL:UAL:AAL:CCL:RCL:LMT:NOC:GD:RTX:TEVA:MYL:LLY:MRK:JNJ:ABBV:MSFT:NVDA:GOOGL:AMZN:PLTR:ORCL:ONGC:OIL:IOC:BPCL:HPCL:MRPL",
+      "file": "policy-pulse-global-spillover-22-jul-2026.md",
+      "slug": "policy-pulse-global-spillover-22-jul-2026",
+      "date": "2026-07-22",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "hormuz",
+        "oil",
+        "pharma",
+        "defence",
+        "ai",
+        "genesis-mission",
+        "jordan-trade"
+      ],
+      "summary": "US-Iran war enters 11th night of strikes; Trump threatens Iranian infrastructure. Hormuz closed — oil 5+, ONGC/OCD gain, refiners bleed. Trump generic drug tariff timeline hits TEVA, MYL globally. US-Jordan trade deal signed. Genesis B AI-for-science unveiled.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 22 Jul 2026",
+      "ticker": "NSE:BSE:MCX:ANGELONE:ZERODHA:IIFL:MOTILALOFS:HDFCBANK:ICICIBANK:SBIN:TCS:INFY:ITC:COALINDIA:ONGC",
+      "file": "policy-pulse-ministries-regulators-22-jul-2026.md",
+      "slug": "policy-pulse-ministries-regulators-22-jul-2026",
+      "date": "2026-07-22",
+      "tags": [
+        "policy-pulse",
+        "ministries",
+        "rbi",
+        "sebi",
+        "regulatory",
+        "brokerages",
+        "banks",
+        "buyback"
+      ],
+      "summary": "RBI collateral norms (100% BG) ongoing impact — negative for exchanges (BSE, MCX) & brokerages (Angel One, Zerodha, IIFL), positive for banks (HDFC Bank, ICICI). SEBI buyback rule amendment positive for cash-rich cos (TCS, Infy, ITC, Coal India). SEBI enforcement action on Pace Stock Broking.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi / India — 22 Jul 2026",
+      "ticker": "ONGC:OIL:IOC:BPCL:HPCL:MRPL:SUNPHARMA:LUPIN:CIPLA:DRREDDY:AUROPHARMA:ZYDUSLIFE:BAJAJ-AUTO:TVSMOTOR:NESTLEIND:HUL:TATACONSUM:BANDHANBNK",
+      "file": "policy-pulse-modi-india-22-jul-2026.md",
+      "slug": "policy-pulse-modi-india-22-jul-2026",
+      "date": "2026-07-22",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "india",
+        "pharma",
+        "oil",
+        "hormuz",
+        "earnings",
+        "market-roundup"
+      ],
+      "summary": "Nifty below 24,000 on Brent 5, IOCs halt Iraq oil loadings due to Hormuz (ONGC gains, IOC/BPCL/HPCL pressured). Trump generic drug tariff crushes Sun Pharma, Lupin, Cipla. Nestlé, Bajaj Auto shine on stellar Q1. Bandhan Bank -19% on RoA cut.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US Watch — 22 Jul 2026",
+      "ticker": "XOM:CVX:OXY:HAL:SLB:DAL:UAL:AAL:CCL:RCL:LLY:JNJ:PFE:MRK:TEVA:MYL:MSFT:NVDA:GOOGL:AMZN:PLTR:ORCL:LMT:NOC:GD:RTX",
+      "file": "policy-pulse-trump-us-watch-22-jul-2026.md",
+      "slug": "policy-pulse-trump-us-watch-22-jul-2026",
+      "date": "2026-07-22",
+      "tags": [
+        "policy-pulse",
+        "trump",
+        "us-only",
+        "pharma",
+        "oil",
+        "defence",
+        "ai",
+        "genesis-mission",
+        "hormuz",
+        "tariffs"
+      ],
+      "summary": "Trump escalates Hormuz (threatens Iranian infrastructure), announces generic drug tariff timeline (0%→100%→200%), unveils B Genesis AI Mission. Oil, defence, branded pharma gain; airlines, generic pharma under pressure.",
       "model": "deepseek-chat"
     },
     {

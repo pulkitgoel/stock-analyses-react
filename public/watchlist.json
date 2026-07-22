@@ -22,6 +22,27 @@
       "verdict": "FAVORABLE"
     },
     {
+      "slug": "ideaforge-what-changed-qip-analysis",
+      "ticker": "IDEAFORGE",
+      "title": "Ideaforge Technology — What Changed? QIP Makes It a Whole New Story",
+      "date": "2026-07-22",
+      "yahooSymbol": "IDEAFORGE.NS",
+      "priceAtAnalysis": 862,
+      "support": 795,
+      "resistance": 997,
+      "supports": [
+        366,
+        722,
+        795
+      ],
+      "resistances": [
+        920,
+        997,
+        1216
+      ],
+      "verdict": "FAVORABLE"
+    },
+    {
       "slug": "websol-energy-system-ltd-deep-dive-analysis",
       "ticker": "WEBELSOLAR",
       "title": "Websol Energy System Ltd — Deep Dive Analysis",
