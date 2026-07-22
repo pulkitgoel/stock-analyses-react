@@ -1,6 +1,21 @@
 {
   "analyses": [
     {
+      "title": "Fiem Industries Ltd — Deep Dive Analysis",
+      "ticker": "FIEMIND",
+      "file": "fiem-industries-ltd-deep-dive-analysis.md",
+      "slug": "fiem-industries-ltd-deep-dive-analysis",
+      "date": "2026-07-22",
+      "tags": [
+        "deep-dive",
+        "auto-components",
+        "automotive-led",
+        "manufacturing"
+      ],
+      "summary": "Fiem Industries — a debt-free auto lighting leader riding the LED revolution. 29% ROCE, 24x P/E, DIIs accumulating heavily. Customer concentration is the risk to watch. Full analysis inside.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Indo-MIM Ltd — IPO Analysis",
       "ticker": "INDO-MIM",
       "file": "indo-mim-ltd-ipo-analysis.md",

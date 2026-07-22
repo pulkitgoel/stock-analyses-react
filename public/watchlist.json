@@ -1,6 +1,27 @@
 {
   "watchlist": [
     {
+      "slug": "fiem-industries-ltd-deep-dive-analysis",
+      "ticker": "FIEMIND",
+      "title": "Fiem Industries Ltd — Deep Dive Analysis",
+      "date": "2026-07-22",
+      "yahooSymbol": "FIEMIND.NS",
+      "priceAtAnalysis": 2344,
+      "support": 2200,
+      "resistance": 2555,
+      "supports": [
+        1794,
+        2197,
+        2259
+      ],
+      "resistances": [
+        2555,
+        2769,
+        3050
+      ],
+      "verdict": "FAVORABLE"
+    },
+    {
       "slug": "websol-energy-system-ltd-deep-dive-analysis",
       "ticker": "WEBELSOLAR",
       "title": "Websol Energy System Ltd — Deep Dive Analysis",
