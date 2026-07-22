@@ -20,6 +20,21 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-chat"
   },
   {
+    "title": "Websol Energy System Ltd — Deep Dive Analysis",
+    "ticker": "WEBELSOLAR",
+    "file": "websol-energy-system-ltd-deep-dive-analysis.md",
+    "slug": "websol-energy-system-ltd-deep-dive-analysis",
+    "date": "2026-07-22",
+    "tags": [
+      "deep-dive",
+      "solar",
+      "renewable",
+      "manufacturing"
+    ],
+    "summary": "Websol Energy — a remarkable turnaround from near-zero revenue to ₹1,049 Cr in FY26. 67% ROE, 63% ROCE, near net cash, but 89% promoter pledge casts a long shadow. Full analysis inside.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Policy Pulse — Global — 21 Jul 2026",
     "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:BP:SHEL:USO:DAL:UAL:AAL:LUV:SAVE:CCL:RCL:NCLH:TSLA:STLA:GM:F:WMT:TGT:COST:AMZN:HD:LOW:ROST:TJX:FIVE:MP:PLTR:LMT:GD:NOC:RTX:HWM:GE:HII:AA:KALU:CENX:CLF",
     "file": "policy-pulse-global-21jul.md",

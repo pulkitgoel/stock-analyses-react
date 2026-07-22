@@ -1,6 +1,27 @@
 {
   "watchlist": [
     {
+      "slug": "websol-energy-system-ltd-deep-dive-analysis",
+      "ticker": "WEBELSOLAR",
+      "title": "Websol Energy System Ltd — Deep Dive Analysis",
+      "date": "2026-07-22",
+      "yahooSymbol": "WEBELSOLAR.NS",
+      "priceAtAnalysis": 101,
+      "support": 90,
+      "resistance": 115,
+      "supports": [
+        50,
+        75,
+        90
+      ],
+      "resistances": [
+        115,
+        130,
+        157
+      ],
+      "verdict": "CAUTION"
+    },
+    {
       "slug": "kalyan-jewellers-india-ltd-deep-dive-analysis",
       "ticker": "KALYANKJIL",
       "title": "Kalyan Jewellers India Ltd — Deep Dive Analysis",
