@@ -313,11 +313,40 @@ The order book provides **12+ months of revenue visibility** — strong for a pr
 
 ### Bulk/Block Deals
 
-No major bulk/block deals flagged in calendar 2026. The stock is majority retail-held with minimal institutional activity.
+**Significant bulk deal activity in March 2026** — here's what was found:
 
-### Promoter Pledge Verdict
+#### HRTI Private Limited (Largest Participant)
 
-🔴 **High Concern:** 89.4% of promoter shares pledged. This is the single largest overhang. Management's commitment to resolve this (via IREDA repayment) needs to be executed. Until pledge is materially reduced, this will cap institutional interest.
+HRTI conducted **matching buy+sell** across multiple days in March 2026, suggesting **prop desk / arbitrage activity** rather than genuine accumulation:
+
+| Date | Buy Qty | Sell Qty | Avg Price | Nature |
+|------|---------|----------|-----------|--------|
+| **20 Mar 2026** | 22,86,665 (Buy) | 21,33,325 (Sell) | ₹69.29-69.78 | **Arb/Prop Desk** ⚠️ |
+| **23 Mar 2026** | 27,78,542 (Buy) | 28,83,039 (Sell) | ₹74.13-74.19 | **Arb/Prop Desk** ⚠️ |
+| **24 Mar 2026** | 21,50,307 (Buy) | 21,54,414 (Sell) | ₹76.45-76.57 | **Arb/Prop Desk** ⚠️ |
+
+**🔑 Insight:** Nearly identical buy+sell quantities at similar prices on the same days = classic prop desk arbitrage, NOT genuine institutional accumulation. HRTI is a known proprietary trading firm — these trades generate profits from price discrepancies, not a directional bet on Websol.
+
+#### Other Participants (20 Mar 2026)
+
+| Entity | Side | Qty | Avg Price |
+|--------|------|-----|-----------|
+| **Junomoneta Finsol Pvt Ltd** | Buy | 21,56,382 | ₹70.21 |
+| **Junomoneta Finsol Pvt Ltd** | Sell | 22,31,317 | ₹70.31 |
+| **Mathisys Advisors LLP** | Buy | 22,01,531 | ₹71.02 |
+| **Mathisys Advisors LLP** | Sell | 20,92,715 | ₹70.67 |
+
+**Verdict:** All participants show **matching buy+sell** patterns — this was a **multi-party arbitrage/prop desk cluster**, not directional institutional buying. No genuine mutual fund, FII, or long-only institutional accumulation visible in bulk deals. The stock remains majority retail-held.
+
+#### Insider Trading / SAST Disclosures
+
+No significant promoter/director/KMP buying or selling through SEBI SAST or PIT disclosures found in calendar 2026. This is consistent with the promoter pledge situation — pledged shares cannot be freely traded.
+
+#### Promoter Pledge Status
+
+🔴 **89.4% of promoter shares remain pledged** as of the latest data (Q1 FY27). Management stated (in Apr 2026 concall) that ₹92 Cr IREDA debt needs to be repaid for pledge release, targeting completion in "1-2 months" — but this has **not yet been resolved** as of Jul 2026. The unresolved pledge continues to be the single biggest overhang on the stock.
+
+
 
 ---
 
