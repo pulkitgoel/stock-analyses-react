@@ -5,6 +5,348 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Indo-MIM Ltd — IPO Analysis",
+    "ticker": "INDO-MIM",
+    "file": "indo-mim-ltd-ipo-analysis.md",
+    "slug": "indo-mim-ltd-ipo-analysis",
+    "date": "2026-07-22",
+    "tags": [
+      "ipo",
+      "deep-dive",
+      "manufacturing",
+      "precision-engineering"
+    ],
+    "summary": "Indo-MIM — world's largest MIM manufacturer — opens IPO at ₹485. 45x P/E, 21% ROE, accelerating growth, but 86% OFS and US export concentration warrant caution. Detailed analysis inside.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 21 Jul 2026",
+    "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:BP:SHEL:USO:DAL:UAL:AAL:LUV:SAVE:CCL:RCL:NCLH:TSLA:STLA:GM:F:WMT:TGT:COST:AMZN:HD:LOW:ROST:TJX:FIVE:MP:PLTR:LMT:GD:NOC:RTX:HWM:GE:HII:AA:KALU:CENX:CLF",
+    "file": "policy-pulse-global-21jul.md",
+    "slug": "policy-pulse-global-21jul",
+    "date": "2026-07-21",
+    "tags": [
+      "us-only",
+      "stocks",
+      "global",
+      "iran",
+      "oil",
+      "hormuz",
+      "canada-tariffs",
+      "section122",
+      "defence"
+    ],
+    "summary": "🌍 Hormuz crisis: Day 9 of US strikes on Iran, Houthis blockade Saudi, Brent at 9.22, US gas at /gal. Canada hit with 50% Section 338 tariffs on 0B of goods. Section 122 expires in 3 days (Jul 24). Impact: 🟢 BUY XOM, CVX, OXY, WMT, TGT, COST, TSLA, MP | 🔴 SELL DAL, UAL, AAL, CCL, STLA",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 21 Jul 2026",
+    "ticker": "TCS:INFY:ITC:HDFCBANK:COALINDIA:ONGC:NTPC:BSE:ANGELONE:ZERODHA:DIXON:AMBER:KAYNES:SYRMA:SOLARINDS:HAL:BEL:DIVISLAB:CIPLA:LAURUSLAB:SBI:ICICIBANK",
+    "file": "policy-pulse-ministries-21jul.md",
+    "slug": "policy-pulse-ministries-21jul",
+    "date": "2026-07-21",
+    "tags": [
+      "stocks",
+      "india",
+      "sebi",
+      "buyback",
+      "regulatory",
+      "rbi",
+      "indigenisation",
+      "make-in-india"
+    ],
+    "summary": "SEBI operationalises promoter share freeze for buybacks (Aug 1 deadline) — revived open market route; RBI FCNR flows at 0.72B; 230 products shortlisted for indigenisation (89B import substitution target). Impact: 🟢 BUY TCS, INFY, ITC, HDFCBANK (buyback), DIXON, HAL, BEL (indigenisation), SBI (FCNR)",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi/India Govt — 21 Jul 2026",
+    "ticker": "TVSMOTOR:BAJAJ-AUTO:MARUTI:DIXON:AMBER:KAYNES:SOLARINDS:HAL:BEL:TCS:INFY:ITC:COALINDIA:ONGC:HDFCBANK:INDIGO:SPICEJET:DIVISLAB:CIPLA:SONACOMS",
+    "file": "policy-pulse-modi-21jul.md",
+    "slug": "policy-pulse-modi-21jul",
+    "date": "2026-07-21",
+    "tags": [
+      "stocks",
+      "india",
+      "modi",
+      "auto",
+      "indigenisation",
+      "q1-earnings",
+      "crude",
+      "market"
+    ],
+    "summary": "Nifty ends at 24,187.70 (-0.21%). TVS Motor (+51% PAT) & Bajaj Auto (+42% PAT) lead auto Q1; Govt shortlists 230 products for import substitution (89B); Maruti hikes prices ₹30K from Aug; SEBI operationalises buyback freeze. Crude at 9/bbl weighs. Impact: 🟢 BUY TVS, BAJAJ-AUTO, DIXON, HAL, TCS, ITC | 🔴 SELL INDIGO, SPICEJET, TITAN",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump/US Watch — 21 Jul 2026",
+    "ticker": "GOOGL:AAPL:NVDA:AVGO:PLTR:LMT:GD:KTOS:GE:HON:TDG:BA:HWM:LHX:XOM:CVX:OXY:DAL:UAL:AAL:WMT:TGT:COST:AMZN:HD:LOW:FIVE:TSLA:STLA:GM:F:MP:AA:CLF",
+    "file": "policy-pulse-trump-21jul.md",
+    "slug": "policy-pulse-trump-21jul",
+    "date": "2026-07-21",
+    "tags": [
+      "us-only",
+      "stocks",
+      "trump",
+      "trump-trades",
+      "canada-tariffs",
+      "defence-eo",
+      "section122"
+    ],
+    "summary": "Trump's portfolio beats S&P (37.3% vs 23.5%); Canada slapped with 50% Section 338 tariffs on autos/booze/dairy; Defense Supply Chain EO cuts China waivers. Section 122 expiry in 3 days. Impact: 🟢 BUY GOOGL, AAPL, NVDA, PLTR, XOM, WMT, TGT, MP | 🔴 SELL DAL, UAL, STLA",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 20 Jul 2026",
+    "ticker": "XOM:CVX:OXY:DAL:UAL:AAL:WMT:TGT:COST:AMZN:LMT:GD:RTX",
+    "file": "policy-pulse-global-20jul.md",
+    "slug": "policy-pulse-global-20jul",
+    "date": "2026-07-20",
+    "tags": [
+      "us-only",
+      "stocks",
+      "global",
+      "iran",
+      "oil",
+      "section122",
+      "defence",
+      "retail"
+    ],
+    "summary": "🌍 Iran declares 'full-scale war' as US strikes 9th night. Houthis blockade Saudi ports. Brent at 8, US gas at /gal. Section 122 tariff expires Jul 24 (4 days). Impact: 🟢 BUY oil majors and retailers | 🔴 SELL airlines and cruises.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 20 Jul 2026",
+    "ticker": "PNB:UNIONBANK:IOB:BANKBARODA:AXISBANK:HDFCBANK:SUNPHARMA:CIPLA:MTAR:NSE:BSE:ANGELONE",
+    "file": "policy-pulse-ministries-20jul.md",
+    "slug": "policy-pulse-ministries-20jul",
+    "date": "2026-07-20",
+    "tags": [
+      "stocks",
+      "india",
+      "rbi",
+      "sebi",
+      "psu-banks",
+      "private-banks",
+      "pharma",
+      "space"
+    ],
+    "summary": "📉 Indian markets: Nifty -0.39% amid Iran tension. PSU banks rally on Q1 beats (PNB +5.7%, Union Bank +4.4%). Private banks tank (Axis -5.4%, HDFC -5.1%). Pharma defensive rotation +1%. Space sector boost from Skyroot launch. RBI capital norms still pressuring NSE/BSE/brokerages.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump — 20 Jul 2026",
+    "ticker": "XOM:CVX:OXY:HAL:SLB:DAL:UAL:AAL:WMT:TGT:COST:AMZN",
+    "file": "policy-pulse-trump-20jul.md",
+    "slug": "policy-pulse-trump-20jul",
+    "date": "2026-07-20",
+    "tags": [
+      "us-only",
+      "stocks",
+      "trump",
+      "tariffs",
+      "iran",
+      "oil",
+      "section122",
+      "retail"
+    ],
+    "summary": "🔴 Iran war escalation: 9th night of US strikes, Brent breaks 0, Houthis blockade Saudi ports. 📅 Section 122 tariff expires Jul 24 in 4 days. Impact: 🟢 BUY XOM, CVX, OXY, WMT, TGT | 🔴 SELL DAL, UAL, AAL",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "SBI Funds Management IPO — Should You Hold or Sell on Listing?",
+    "ticker": "SBIFUNDS:NSE",
+    "file": "sbi-funds-management-ipo-analysis.md",
+    "slug": "sbi-funds-management-ipo-analysis",
+    "date": "2026-07-18",
+    "tags": [
+      "ipo",
+      "amc",
+      "mutual-fund"
+    ],
+    "summary": "Deep analysis of India's largest AMC IPO — ₹9,813 Cr OFS at 36-38x P/E, 41.73x subscription, GMP at 16%. We compare with HDFC AMC, ICICI Pru AMC & Nippon AMC and give a hold/sell verdict.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 17 Jul 2026",
+    "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:BP:SHEL:USO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:WMT:TGT:COST:AMZN:HD:LOW:TCS:INFY:WIPRO:HCLTECH:TATASTEEL:JSWSTEEL:SUNPHARMA:DRREDDY:DIVISLAB:ONGC:RELIANCE:INDIGO",
+    "file": "policy-pulse-global-17jul.md",
+    "slug": "policy-pulse-global-17jul",
+    "date": "2026-07-17",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "hormuz",
+      "oil",
+      "iran",
+      "section-301",
+      "tariffs",
+      "middle-east"
+    ],
+    "summary": "Strait of Hormuz escalation: buy XOM, CVX, OXY, EOG; sell DAL, UAL, AAL, CCL, RCL. Section 301 deadline Jul 20: buy WMT, TGT, COST if Section 122 lapses; sell TCS, INFY, WIPRO, SUNPHARMA if 12.5% tariff hits.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 17 Jul 2026",
+    "ticker": "TCS:INFY:ITC:COALINDIA:ONGC:NTPC:HDFCBANK:BAJFINANCE:BSE:NSE:MCX:ANGELONE:ZERODHA:IIFL:MOTILALOFS:360 ONE",
+    "file": "policy-pulse-ministries-17jul.md",
+    "slug": "policy-pulse-ministries-17jul",
+    "date": "2026-07-17",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "rbi",
+      "buyback",
+      "regulation",
+      "capital-market",
+      "earnings"
+    ],
+    "summary": "SEBI buyback amendment (Aug 1) positive for TCS, INFY, ITC, COALINDIA, ONGC. RBI CME norms negative for BSE, ANGELONE, ZERODHA, IIFL, MOTILALOFS. Markets rally 1.25% ahead of bank earnings.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi/Cabinet — 17 Jul 2026",
+    "ticker": "JSL:IRCON:BHEL:L&T:TITAGARH:RVNL:NCC:HEROMOTOCO:JSWSTEEL:JIOFIN:HAVELS",
+    "file": "policy-pulse-modi-17jul.md",
+    "slug": "policy-pulse-modi-17jul",
+    "date": "2026-07-17",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "cabinet",
+      "hydrogen-train",
+      "infrastructure",
+      "ev",
+      "earnings"
+    ],
+    "summary": "PM flags off India's first hydrogen train — buy Jindal Stainless (40% steel supply), IRCON, BHEL, L&T. Ather Energy ₹200 Cr govt investment — buy Hero MotoCorp. JSW Steel profit doubles, BHEL first profit in 8 years.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump/US — 17 Jul 2026",
+    "ticker": "WMT:TGT:COST:AMZN:HD:LOW:XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:AAL:CCL:RCL:NCLH",
+    "file": "policy-pulse-trump-17jul.md",
+    "slug": "policy-pulse-trump-17jul",
+    "date": "2026-07-17",
+    "tags": [
+      "policy-pulse",
+      "trump",
+      "tariffs",
+      "oil",
+      "middle-east",
+      "section-122",
+      "section-301"
+    ],
+    "summary": "Section 122 tariff expires Jul 24 (7 days) — buy WMT, TGT, COST, AMZN, HD, LOW. Strait of Hormuz escalates — buy XOM, CVX, OXY; sell DAL, UAL, AAL, CCL, RCL. USTR Section 301 deadline Jul 20.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 16 Jul 2026",
+    "ticker": "TCS:INFY:ITC:COALINDIA:HAL:BEL:BHARAT DYNAMICS:DATAPATTERNS:APOLLO MICRO:PARAS DEFENCE",
+    "file": "policy-pulse-ministries-16jul.md",
+    "slug": "policy-pulse-ministries-16jul",
+    "date": "2026-07-16",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "defence",
+      "dac",
+      "ministries",
+      "buyback",
+      "regulation"
+    ],
+    "summary": "SEBI buyback amendment (Aug 1) positive for cash-rich TCS, INFY, ITC. DAC clears ₹52K cr defence — buy HAL, BEL, BDL, Data Patterns, Apollo Micro.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi/Cabinet — 16 Jul 2026",
+    "ticker": "CG POWER:DIXON:KAYNES:AMBER:SYRMA SGS:IRCON:RVNL:L&T",
+    "file": "policy-pulse-modi-16jul.md",
+    "slug": "policy-pulse-modi-16jul",
+    "date": "2026-07-16",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "cabinet",
+      "semiconductor",
+      "pli",
+      "electronics",
+      "infrastructure"
+    ],
+    "summary": "Cabinet approves Semicon 2.0 (₹1.27L cr) + MPMS mobile PLI (₹62,500 cr) — buy Dixon Tech (+6.2%), CG Power, Kaynes Tech. Infra package buy L&T, IRCON.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump/US — 16 Jul 2026",
+    "ticker": "WMT:TGT:COST:AMZN:XOM:CVX:OXY:DAL:UAL:CCL",
+    "file": "policy-pulse-trump-16jul.md",
+    "slug": "policy-pulse-trump-16jul",
+    "date": "2026-07-16",
+    "tags": [
+      "policy-pulse",
+      "trump",
+      "tariffs",
+      "oil",
+      "middle-east",
+      "us-markets"
+    ],
+    "summary": "Section 122 tariff expiry (Jul 24) just 8 days away — buy WMT, TGT, COST on import relief. Strait of Hormuz oil crisis intensifies — buy XOM, CVX, OXY, sell DAL, UAL, CCL.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 15 Jul 2026",
+    "ticker": "TSLA:F:GM:CAT:XOM:CVX:OXY:AAPL:MSFT:NVDA:TCS:INFY:WIPRO:SUNPHARMA:DRREDDY:CIPLA:TATASTEEL:JSWSTEEL:DIXON:AMBER:SYRMA:BA:GE:AMZN:LLY",
+    "file": "policy-pulse-global-15jul2026.md",
+    "slug": "policy-pulse-global-15jul2026",
+    "date": "2026-07-15",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "tariffs",
+      "section-122",
+      "section-301",
+      "eu-deal",
+      "usmca",
+      "trade"
+    ],
+    "summary": "EU-US deal (15% ceiling) in effect, Section 301 deadline July 20, Section 122 expires July 24, USMCA enters annual review — TSLA, TCS, SUNPHARMA positioned across multi-tier tariff shifts.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi — 15 Jul 2026",
+    "ticker": "KAYNES:DIXON:CG:SYRMA:AMBER:TATAELXSI:L&T:RVNL:IRCON:HAL:BEL",
+    "file": "policy-pulse-modi-15jul2026.md",
+    "slug": "policy-pulse-modi-15jul2026",
+    "date": "2026-07-15",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "semiconductor",
+      "electronics-manufacturing",
+      "hydrogen-train",
+      "india"
+    ],
+    "summary": "Cabinet approves Semicon 2.0 (₹1.27 lakh cr) + MPMS (₹62,500 cr) + hydrogen train launch — KAYNES, DIXON, CG Semi, L&T key beneficiaries across semiconductor design, mobile manufacturing, and green rail.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump — 15 Jul 2026",
+    "ticker": "SPY:XOM:CVX:OXY:DAL:UAL:AAL:BA:GE:LMT:GD:COIN:MSTR:XLK:QQQ:AAPL:MSFT:NVDA:AMZN:GOOGL:META:LLY:JNJ:PFE:JPM:GS:MS",
+    "file": "policy-pulse-trump-15jul2026.md",
+    "slug": "policy-pulse-trump-15jul2026",
+    "date": "2026-07-15",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "trump",
+      "tariffs",
+      "section-122",
+      "iran",
+      "pharma"
+    ],
+    "summary": "Trump primetime address July 16 + Section 122 tariff expiry July 24 + pharma onshoring deadline July 31 create 9-day policy window — XOM, LLY, BA positioned for key outcomes.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Kalyan Jewellers India Ltd — Deep Dive Analysis",
     "ticker": "KALYANKJIL",
     "file": "kalyan-jewellers-india-ltd-deep-dive-analysis.md",
@@ -16,6 +358,76 @@ export const ANALYSES: Analysis[] = [
       "consumer-durables"
     ],
     "summary": "Kalyan Jewellers delivered exceptional FY26 with PAT of ₹1,350 Cr (+89% YoY), aggressive store expansion (129 new showrooms), Candere turning profitable, and management targeting zero non-GML debt in FY27. However, the stock has rallied 46% in 4 sessions with delivery % collapsing from 35% to 13%, RSI at 80+, and FIIs reducing stake from 29.65% to 14.55% over 3 years. Citi targets ₹750 while technicals flash overbought warnings. Verdict: CAUTION.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 14 Jul 2026",
+    "ticker": "XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:GLD:BPCL:HPCL:IOC:ONGC:TCS:INFY:WIPRO:HCLTECH:SUNPHARMA:DRREDDY:CIPLA:TATASTEEL:JSWSTEEL:WELSPUN:TRIDENT:HAL:BEL:SOLARINDS:MAZDOCK:JPM:GS:AAPL",
+    "file": "policy-pulse-global-14-jul-2026.md",
+    "slug": "policy-pulse-global-14-jul-2026",
+    "date": "2026-07-14",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "iran-war",
+      "oil",
+      "strait-of-hormuz",
+      "us-india-trade",
+      "defence-exports",
+      "energy"
+    ],
+    "summary": "Global cross-currents: Iran blockade drives oil stocks (XOM, ONGC) higher while hitting airlines (DAL, UAL); US-India trade talks progress; Indian defence exports surge 62% to record (HAL, BEL, SOLARINDS).",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 14 Jul 2026",
+    "ticker": "HDFCBANK:ICICIBANK:BAJFINANCE:NSE:BSE:RELIANCE",
+    "file": "policy-pulse-ministries-14-jul-2026.md",
+    "slug": "policy-pulse-ministries-14-jul-2026",
+    "date": "2026-07-14",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "dpiit",
+      "regulation",
+      "fdi",
+      "india"
+    ],
+    "summary": "SEBI\\'s stricter conflict-of-interest rules and DPIIT\\'s enhanced FDI approval SOP improve India\\'s regulatory transparency — banking stocks (HDFCBANK, ICICIBANK, BAJFINANCE) benefit from clearer foreign investment pathways.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi — 14 Jul 2026",
+    "ticker": "DIXON:KAYNES:HAL:BEL:L&T:AMBER:SYRMA:RVNL",
+    "file": "policy-pulse-modi-14-jul-2026.md",
+    "slug": "policy-pulse-modi-14-jul-2026",
+    "date": "2026-07-14",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "semiconductor",
+      "defence",
+      "india"
+    ],
+    "summary": "Modi-Austria semiconductor/defence partnership plus Micron\\'s Gujarat facility mark India\\'s accelerating semiconductor ecosystem — key beneficiaries: DIXON, HAL, KAYNES, L&T.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump — 14 Jul 2026",
+    "ticker": "AAPL:MSFT:NVDA:LLY:JNJ:PFE:COIN:MSTR:HOOD:BLK:XOM:CVX:OXY:BA:GE:JPM:GS:TSLA:GM:F:FSLR:ENPH:DJT:SPY",
+    "file": "policy-pulse-trump-14-jul-2026.md",
+    "slug": "policy-pulse-trump-14-jul-2026",
+    "date": "2026-07-14",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "trump",
+      "tariffs",
+      "refunds",
+      "crypto",
+      "clarity-act"
+    ],
+    "summary": "Trump\\'s $81B tariff refunds and new exemption EO signal shifting trade stance — tailwinds for mega-cap importers (AAPL, MSFT, LLY), crypto platforms (COIN, MSTR), and energy (XOM).",
     "model": "deepseek-chat"
   },
   {
