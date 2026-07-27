@@ -1,6 +1,167 @@
 {
   "analyses": [
     {
+      "title": "Zen Technologies Q1 FY27 — Deep Dive: Weak Quarter, Strong Order Book",
+      "ticker": "ZENTEC",
+      "file": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book.md",
+      "slug": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book",
+      "date": "2026-07-27",
+      "tags": [
+        "deep-dive",
+        "defence",
+        "quarterly-results",
+        "simulation",
+        "anti-drone"
+      ],
+      "summary": "Zen Technologies Q1 FY27 revenue fell 10.5% YoY to ₹141.64 Cr as execution back-loaded to Q2-Q3. Order book remains robust at ₹1,239 Cr with new ₹177.5 Cr MoD order secured in July. Management commentary, QIP extension, and 7 new product launches analyzed.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 24 Jul 2026",
+      "ticker": "XOM:CVX:OXY:EOG:HAL:SLB:COP:IOC:BPCL:HPCL:MRPL:ONGC:OIL:INDIGO:ADANIGREEN:TATAPOWER:NTPC:SUNPHARMA:DRREDDY:CIPLA:LUPIN:AUROPHARMA:LLY:MRK:JNJ:PFE:ABBV",
+      "file": "policy-pulse-global-spillover-24-jul-2026.md",
+      "slug": "policy-pulse-global-spillover-24-jul-2026",
+      "date": "2026-07-24",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil",
+        "iran",
+        "hormuz",
+        "pharma",
+        "tariffs",
+        "energy"
+      ],
+      "summary": "Strait of Hormuz crisis at peak — 13th night of US strikes, Iran rejects ceasefire, oil above 00. Generic drug tariff timeline begins Aug 1. Section 122 expiry relief for importers. Stock impact: BUY oil/gas/defence/renewables, SELL airlines/refiners/generic pharma.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries — 24 Jul 2026",
+      "ticker": "MOTILALOFS:HDFCAMC:NIPPONLIFE:BSE:ANGELONE:ZERODHA:IIFL:HCLTECH:INFY:ITC:INDIGO",
+      "file": "policy-pulse-ministries-24-jul-2026.md",
+      "slug": "policy-pulse-ministries-24-jul-2026",
+      "date": "2026-07-24",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "pms",
+        "portfolio-managers",
+        "hcltech",
+        "ai",
+        "data-centre",
+        "markets"
+      ],
+      "summary": "SEBI proposes PMS overhaul — foreign investments, unhedged shorts, MF-only PMS. HCL Tech announces ₹14,257 cr AI data centre in Odisha. Markets fall for 5th straight day. Stock impact: BUY PMS providers/AMCs/exchanges/HCLTech, SELL INFY/INDIGO.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi/Govt — 24 Jul 2026",
+      "ticker": "SRF:AARTIIND:GSPL:GUJALKALI:PIDILITIND:VEDL:RVNL:IRCON:JSWSTEEL:TATASTEEL:L&T:SUNPHARMA:DRREDDY",
+      "file": "policy-pulse-modi-govt-24-jul-2026.md",
+      "slug": "policy-pulse-modi-govt-24-jul-2026",
+      "date": "2026-07-24",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "pib",
+        "cabinet",
+        "chemicals",
+        "railways",
+        "pharma",
+        "import-substitution"
+      ],
+      "summary": "Cabinet approves ₹3,030 cr BHAVYA Rasayan chemical parks scheme + ₹1,264 cr rail project. India secures lower 10% US tariff under Section 301. Stock impact: BUY chemicals/infra/pharma, SELL steel (US export).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 24 Jul 2026",
+      "ticker": "WMT:TGT:COST:AMZN:HD:LOW:XOM:CVX:OXY:EOG:HAL:SLB:DAL:UAL:AAL:SAVE:CCL:RCL:NCLH:PLTR:LMT:GD:NOC:RTX:HII:LLY:MRK:JNJ:PFE:ABBV:TEVA:MYL",
+      "file": "policy-pulse-trump-us-24-jul-2026.md",
+      "slug": "policy-pulse-trump-us-24-jul-2026",
+      "date": "2026-07-24",
+      "tags": [
+        "policy-pulse",
+        "trump",
+        "us-only",
+        "section122",
+        "tariffs",
+        "iran",
+        "oil",
+        "hormuz",
+        "defence",
+        "pharma"
+      ],
+      "summary": "Section 122 expires, replaced by Section 301 (10-12.5%) forced labor tariffs on 60 economies. Iran tariff EO signed. Hormuz crisis deepens — oil above $100. Generic drug tariff timeline begins. Stock impact: BUY oil/defence/retail, SELL airlines/cruises/generic pharma.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 23 Jul 2026",
+      "ticker": "XOM:CVX:OXY:HAL:SLB:DAL:UAL:AAL:LMT:NOC:GD:RTX:ONGC:OIL:IOC:BPCL:HPCL:MRPL:INFY:TCS:WIPRO:HCLTECH:INDIGO:CIPLA:DRREDDY:SUNPHARMA:LUPIN:WELSPUN:TRIDENT:VARDHMAN:TEVA:MYL:LLY:MRK:JNJ:ABBV:CCL:RCL",
+      "file": "policy-pulse-global-spillover-23-jul-2026.md",
+      "slug": "policy-pulse-global-spillover-23-jul-2026",
+      "date": "2026-07-23",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "hormuz",
+        "oil",
+        "defence",
+        "earnings",
+        "infy",
+        "indigo",
+        "cipla",
+        "pharma",
+        "it",
+        "textiles",
+        "tariffs",
+        "section-122"
+      ],
+      "summary": "INFY Q1: +12% PAT, guidance trimmed, ADR -4.85%. INDIGO: ₹238cr net loss on fuel costs (85% rise). CIPLA: -39% PAT. Hormuz: 12th night, Brent near 8. IOC/MRPL halt Iraq loadings. Section 122 expiry tomorrow benefits Indian IT/Textiles. ONGC gains, refiners bleed.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 23 Jul 2026",
+      "ticker": "MOTILALOFS:ANGELONE:HDFCAMC:NIPPONLIFE:SBIN:ZERODHA:IIFL:HDFCBANK:BSE:MCX:ICICIPRULI",
+      "file": "policy-pulse-ministries-regulators-23-jul-2026.md",
+      "slug": "policy-pulse-ministries-regulators-23-jul-2026",
+      "date": "2026-07-23",
+      "tags": [
+        "policy-pulse",
+        "ministries",
+        "sebi",
+        "pms",
+        "regulatory",
+        "odr",
+        "margins",
+        "mutual-funds",
+        "brokerages"
+      ],
+      "summary": "SEBI proposes sweeping PMS overhaul — foreign securities, MF-only PMS, higher derivatives flexibility. Major positive for MOTILALOFS (largest listed PMS), HDFCAMC, NIPPONLIFE (MF-PMS channel), brokerages (ANGELONE, ZERODHA). SEBI also proposes ODR revamp (BSE beneficiary) and considers reducing upfront cash margins.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US Watch — 23 Jul 2026",
+      "ticker": "WMT:TGT:COST:AMZN:HD:LOW:XOM:CVX:OXY:HAL:SLB:DAL:UAL:AAL:CCL:RCL:LMT:NOC:GD:RTX:TEVA:MYL:LLY:JNJ:PFE:MRK:ABBV:CAT:DE:DJT",
+      "file": "policy-pulse-trump-us-watch-23-jul-2026.md",
+      "slug": "policy-pulse-trump-us-watch-23-jul-2026",
+      "date": "2026-07-23",
+      "tags": [
+        "policy-pulse",
+        "trump",
+        "us-only",
+        "tariffs",
+        "hormuz",
+        "section-122",
+        "oil",
+        "defence",
+        "pharma",
+        "retail",
+        "earnings"
+      ],
+      "summary": "Section 122 tariff expires TOMORROW (Jul 24) — USTR missed replacement deadline, Wyden bill to repeal. Hormuz 12th night, Brent near 8. Generic drug tariff structural overhang continues. US retailers (WMT, TGT, COST, AMZN) biggest beneficiaries of Section 122 expiry.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Fiem Industries Ltd — Deep Dive Analysis",
       "ticker": "FIEMIND",
       "file": "fiem-industries-ltd-deep-dive-analysis.md",

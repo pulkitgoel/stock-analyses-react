@@ -1,6 +1,26 @@
 {
   "watchlist": [
     {
+      "slug": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book",
+      "ticker": "ZENTEC",
+      "title": "Zen Technologies Q1 FY27 — Deep Dive: Weak Quarter, Strong Order Book",
+      "date": "2026-07-27",
+      "yahooSymbol": "ZENTEC.NS",
+      "priceAtAnalysis": 1698,
+      "support": 1460,
+      "resistance": 1770,
+      "supports": [
+        1460,
+        1580
+      ],
+      "resistances": [
+        1770,
+        1850,
+        2024
+      ],
+      "verdict": "CAUTION"
+    },
+    {
       "slug": "fiem-industries-ltd-deep-dive-analysis",
       "ticker": "FIEMIND",
       "title": "Fiem Industries Ltd — Deep Dive Analysis",
