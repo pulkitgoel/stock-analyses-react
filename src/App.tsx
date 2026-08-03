@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
@@ -25,6 +25,8 @@ export default function App() {
             <Route path="/privacy" element={<PrivacyPage />} />
             {/* Unlisted: reachable only by direct URL, not linked in any nav or sitemap. */}
             <Route path="/watchlist" element={<WatchlistPage />} />
+            {/* Alias: also accept the plural spelling /watchlists -> /watchlist */}
+            <Route path="/watchlists" element={<Navigate to="/watchlist" replace />} />
           </Route>
         </Routes>
       </BrowserRouter>
