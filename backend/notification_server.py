@@ -150,17 +150,32 @@ def fetch_quote(symbol):
         meta = result[0].get('meta', {})
         prev = meta.get('chartPreviousClose')
 
-        # Prefer last valid close from series (accurate for ORIANA; regularMarketPrice is corrupt)
-        last = meta.get('regularMarketPrice')
+        # ── Corruption safeguard ──────────────────────────────────────────────
+        # Yahoo's "regularMarketPrice" is occasionally corrupt/stale for some
+        # SME tickers (e.g. ORIANA.NS reports ~₹2,077 when the real close is
+        # ~₹1,474), while the daily `close` series stays accurate. So:
+        #   1. always prefer the last valid close from the series, and
+        #   2. if regularMarketPrice diverges >15% from that close, trust the
+        #      series close instead of the live quote field.
         closes = result[0].get('indicators', {}).get('quote', [{}])[0].get('close', [])
+        rmp = meta.get('regularMarketPrice')
+        series_close = None
         for c in reversed(closes):
             if c is not None:
-                last = c
+                series_close = float(c)
                 break
+
+        if series_close is not None:
+            last = series_close
+            # Sanity-check the live quote field against the close series.
+            if rmp is not None and abs(float(rmp) - last) / last <= 0.15:
+                last = float(rmp)  # live field is sane -> use it
+        else:
+            # No series data; fall back to the live field if present.
+            last = float(rmp) if rmp is not None else None
 
         if last is None or prev is None:
             return None
-        last = float(last)
         prev = float(prev)
         change = last - prev
         change_pct = (change / prev * 100) if prev else 0.0
