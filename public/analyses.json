@@ -1,6 +1,388 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 03 Aug 2026",
+      "ticker": "IOC:BPCL:HPCL:RELIANCE:INDIGO:IGL:ADANIGAS:ASIANPAINT:ONGC:OIL:OILINDIA:XOM:CVX:DAL:UAL:CCL:SPY",
+      "file": "policy-pulse-global-03-aug-2026.md",
+      "slug": "policy-pulse-global-03-aug-2026",
+      "date": "2026-08-03",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "iran",
+        "oil",
+        "omc",
+        "aviation",
+        "energy",
+        "trump"
+      ],
+      "summary": "US-Iran de-escalation crashes crude 6%. India rallies: refiners (BPCL, HPCL, IOC), airlines (INDIGO), gas pure. US energy sells off (XOM, CVX); airlines gain.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 03 Aug 2026",
+      "ticker": "HDFCBANK:ICICIBANK:SBIN:BAJFINANCE:HDFC:LT:SIEMENS:BHEL:MARUTI:TCS:INFY:ITC:COALINDIA",
+      "file": "policy-pulse-ministries-regulators-03-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-03-aug-2026",
+      "date": "2026-08-03",
+      "tags": [
+        "policy-pulse",
+        "rbi",
+        "mpc",
+        "pmi",
+        "sebi",
+        "buyback",
+        "india"
+      ],
+      "summary": "RBI MPC begins (Aug 5 decision), India PMI at near-5-yr low (53.5), SEBI open-market buybacks live (Aug 1). Watch banks, buyback cash-rich TCS/INFY/ITC.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 03 Aug 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:SAVE:CCL:RCL:NCLH:SPY:QQQ:WMT:COST:AMZN",
+      "file": "policy-pulse-trump-us-03-aug-2026.md",
+      "slug": "policy-pulse-trump-us-03-aug-2026",
+      "date": "2026-08-03",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "iran",
+        "oil",
+        "energy",
+        "airlines",
+        "trump"
+      ],
+      "summary": "Trump cancels Iran strike, opens Hormuz talks — oil crashes ~6%. SELL energy (XOM, CVX, OXY), BUY airlines/cruises (DAL, UAL, CCL) and consumer.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 31 Jul 2026",
+      "ticker": "ONGC:OIL:SUNPHARMA:DRREDDY:CIPLA:TATAPOWER:SJVN:NHPC:EXIDEIND:AMARAJABAT:LLY:MRK:JNJ:PFE:XOM:SPY:QQQ",
+      "file": "policy-pulse-global-31-jul-2026.md",
+      "slug": "policy-pulse-global-31-jul-2026",
+      "date": "2026-07-31",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "pharma",
+        "energy-security",
+        "solar",
+        "fed"
+      ],
+      "summary": "US pharma Section 232 tariffs live (branded protected, generics exempt). India Samudra Manthan energy-security capex (ONGC, OIL). Markets stabilize post-Fed.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 31 Jul 2026",
+      "ticker": "SUNPHARMA:DRREDDY:CIPLA:LUPIN:AUROPHARMA:TORRENTPHARM:ANGELONE:ZERODHA:BSE:HDFCBANK",
+      "file": "policy-pulse-ministries-regulators-31-jul-2026.md",
+      "slug": "policy-pulse-ministries-regulators-31-jul-2026",
+      "date": "2026-07-31",
+      "tags": [
+        "policy-pulse",
+        "pharma",
+        "sebi",
+        "rbi",
+        "regulatory"
+      ],
+      "summary": "India-US pharma deal exempts Indian generics from Section 232 (BUY SUNPHARMA, DRREDDY, CIPLA). SEBI Stock Brokers Regulations 2026. Nifty Pharma +0.7%.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — PM Modi / India Govt — 31 Jul 2026",
+      "ticker": "ONGC:OIL:TATAPOWER:SJVN:NHPC:BOROSIL:WEBSOLENERGY:EXIDEIND:AMARAJABAT:UPL:PIIND",
+      "file": "policy-pulse-pm-modi-india-govt-31-jul-2026.md",
+      "slug": "policy-pulse-pm-modi-india-govt-31-jul-2026",
+      "date": "2026-07-31",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "energy-security",
+        "offshore",
+        "solar"
+      ],
+      "summary": "Cabinet approves Samudra Manthan ₹84,084 cr offshore exploration (BUY ONGC, OIL) and PM-SSY ₹5,070 cr floating solar+storage (TATAPOWER, SJVN, NHPC, EXIDEIND).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 31 Jul 2026",
+      "ticker": "LLY:MRK:JNJ:PFE:ABBV:F:GM:TAP:STZ:SPY:QQQ",
+      "file": "policy-pulse-trump-us-31-jul-2026.md",
+      "slug": "policy-pulse-trump-us-31-jul-2026",
+      "date": "2026-07-31",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "pharma",
+        "tariffs"
+      ],
+      "summary": "US Pharmaceutical Section 232 tariffs take effect today: 100% on branded patented drugs, generics exempt. Structural BUY for LLY, MRK, JNJ, PFE, ABBV. Watch Sept 29 expansion.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 30 Jul 2026",
+      "ticker": "SPY:QQQ:XOM:CVX:OXY:DAL:UAL:CCL:TCS:INFY:HCLTECH:COFORGE:NVDA:AMD:MU:ONGC:IOC:BPCL:MRPL:AAPL:GOOGL:ADDYY",
+      "file": "policy-pulse-global-30jul.md",
+      "slug": "policy-pulse-global-30jul",
+      "date": "2026-07-30",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "fed",
+        "oil",
+        "adidas",
+        "apple",
+        "reverse-ai-trade",
+        "hormuz"
+      ],
+      "summary": "Fed hawkish hold sends yields to 2007 highs. Hormuz crude +7%. Adidas -19% record crash. Apple Siri AI upgrade. Reverse AI trade continues benefiting Indian IT. FII buying ₹2,982 Cr.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 30 Jul 2026",
+      "ticker": "VEDL:BAJFINANCE:BAJAJFINSV:TATASTEEL:JSWSTEEL:SAIL:GRSE:MANKIND:IRB:NLCINDIA:AJANTPHARM:DEEPAKFERT:MARUTI:MM:ONGC",
+      "file": "policy-pulse-ministries-30jul.md",
+      "slug": "policy-pulse-ministries-30jul",
+      "date": "2026-07-30",
+      "tags": [
+        "policy-pulse",
+        "q1-earnings",
+        "defence",
+        "auto",
+        "solar",
+        "pharma"
+      ],
+      "summary": "Q1 earnings heavy day: Vedanta +152% PAT, Bajaj Finance +29%, Tata Steel +19%. Nifty Auto +1.63% leads markets. GRSE ₹1,032 Cr order. NLC India 900 MW solar win. FIIs net buyers at ₹2,982 Cr.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — PM Modi — 30 Jul 2026",
+      "ticker": "BEL:HAL:GRSE:COCHINSHIP:ONGC:SOLARINDS:MAZDOCK",
+      "file": "policy-pulse-modi-30jul.md",
+      "slug": "policy-pulse-modi-30jul",
+      "date": "2026-07-30",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "defence",
+        "energy-security"
+      ],
+      "summary": "PM chairs 2nd high-level meeting with Secretaries on Iran War response. Defence and energy security remain top priorities. GRSE ₹1,032 Cr order adds defence tailwind.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 30 Jul 2026",
+      "ticker": "SPY:QQQ:AAPL:GOOGL:XOM:CVX:OXY:DAL:ADDYY:QCOM:LLY",
+      "file": "policy-pulse-trump-30jul.md",
+      "slug": "policy-pulse-trump-30jul",
+      "date": "2026-07-30",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "fed",
+        "oil",
+        "apple",
+        "adidas"
+      ],
+      "summary": "Fed holds rates steady, 30-yr yields hit 2007 highs. Apple Siri AI upgrade. Adidas -19% crash on World Cup margins. Crude +7% on Hormuz tensions. Sector rotation from tech to energy.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 29 Jul 2026",
+      "ticker": "NVDA:AMD:MU:ASML:TCS:INFY:HCLTECH:COFORGE:GOOGL:MSFT:XOM:CVX:OXY:DAL:UAL:CCL",
+      "file": "policy-pulse-global-29jul.md",
+      "slug": "policy-pulse-global-29jul",
+      "date": "2026-07-29",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "kospi",
+        "ai-crash",
+        "hormuz",
+        "fed",
+        "reverse-ai-trade"
+      ],
+      "summary": "KOSPI back-to-back circuit breakers (first ever). SK Hynix misses despite record profit. China DUV competition fears. Reverse AI Trade lifts Indian IT. Hormuz oil surge +7%. Fed decision day.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 29 Jul 2026",
+      "ticker": "MOTILALOFS:HDFCAMC:NIPPONLIFE:BSE:ANGELONE:INFY:TCS:HCLTECH:HUL:KAYNES:DIVISLAB:EXIDEIND",
+      "file": "policy-pulse-ministries-29jul.md",
+      "slug": "policy-pulse-ministries-29jul",
+      "date": "2026-07-29",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "pms",
+        "it",
+        "fmcg",
+        "regulatory"
+      ],
+      "summary": "SEBI PMS overhaul consultation paper. Market rallies +889 pts led by IT (+2.55%), HUL (+4.70%), INFY (+4.50%). NSE removes Exide from F&O.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump — 29 Jul 2026",
+      "ticker": "JPM:SCHW:AAPL:MSFT:NVDA:GOOGL:AVGO:PLTR:LMT:BA:GE:HON:HOOD:BK",
+      "file": "policy-pulse-trump-29jul.md",
+      "slug": "policy-pulse-trump-29jul",
+      "date": "2026-07-29",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "leader-trades",
+        "trump-portfolio"
+      ],
+      "summary": "Trump's financial disclosure reveals 58M portfolio, 21,000+ trades. CNBC links JPM, Schwab, UBS as custodians. Copy-trade signals on AAPL, NVDA, GOOGL, PLTR.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 28 Jul 2026",
+      "ticker": "LMT:GD:PLTR:HAL:BEL:INFY:TCS:HCLTECH:IOC:BPCL:ONGC",
+      "file": "policy-pulse-global-28jul.md",
+      "slug": "policy-pulse-global-28jul",
+      "date": "2026-07-28",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "geopolitics",
+        "defence",
+        "north-korea",
+        "iran",
+        "it"
+      ],
+      "summary": "North Korea to send 30,000 more troops to Russia (LMT, GD, PLTR bullish); KOSPI -10.8% triggers rotation to Indian IT; Iran ceasefire holds, crude basket down 32% from peak (IOC, BPCL benefit). Full geopolitical stock mapping inside.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & India Markets — 28 Jul 2026",
+      "ticker": "MOTILALOFS:HDFCAMC:NIPPONLIFE:BSE:TCS:INFY:HCLTECH:COFORGE:BEL:HAL:MAZDOCK:HUL:COALINDIA:ONGC",
+      "file": "policy-pulse-ministries-28jul.md",
+      "slug": "policy-pulse-ministries-28jul",
+      "date": "2026-07-28",
+      "tags": [
+        "policy-pulse",
+        "india",
+        "markets",
+        "defence",
+        "it",
+        "pms",
+        "sebi",
+        "q1-results"
+      ],
+      "summary": "SEBI PMS overhaul opens MF-only category (MOTILALOFS, HDFCAMC bullish); Nifty IT rallies 3.7% on reverse AI trade (TCS, INFY, COFORGE); BEL Q1 profit +8.2% with ₹72K cr order book; HUL -7% on profit miss; Coal India flat. Full stock impact inside.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 28 Jul 2026",
+      "ticker": "DJT:HOOD:BK:GOOGL:MSFT:NVDA:AMD:MU:DAL:UAL:CCL:XOM",
+      "file": "policy-pulse-trump-28jul.md",
+      "slug": "policy-pulse-trump-28jul",
+      "date": "2026-07-28",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "tech",
+        "tariffs",
+        "ai-chips"
+      ],
+      "summary": "Trump Media's Truth API launches Aug 1 (DJT catalyst); KOSPI -10.8% on China DUV chip fears triggers AI rotation to software (GOOGL, MSFT); Iran ceasefire holds easing oil — BUY DAL, UAL, CCL. Full stock impact analysis inside.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 27 Jul 2026",
+      "ticker": "XOM:CVX:OXY:EOG:HAL:SLB:IOC:BPCL:HPCL:MRPL:ONGC:OIL:RELIANCE:INDIGO:TATACONSUM:ADANIGREEN:NTPC:BEL:TATAPOWER:CANBK:COALINDIA:CONCOR:IEX:DAL:UAL:AAL:CCL:RCL:PLTR:LMT:AAPL:MSFT:META:AMZN:SPY",
+      "file": "policy-pulse-global-spillover-27-jul-2026.md",
+      "slug": "policy-pulse-global-spillover-27-jul-2026",
+      "date": "2026-07-27",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil",
+        "iran",
+        "hormuz",
+        "ceasefire",
+        "india",
+        "refiners",
+        "airlines",
+        "defence",
+        "fed",
+        "big-tech"
+      ],
+      "summary": "Global markets rally on US-Iran war pause — Sensex +776, S&P 500 +1%, oil crashes 7%. Indian refiners reverse from SELL to BUY. ONGC biggest loser. BEL strong Q1. Fed meeting + Big Tech earnings this week. Saudi strikes Houthis — Red Sea risk persists.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 27 Jul 2026",
+      "ticker": "IEX:BEL:COALINDIA:TATAPOWER:CANBK:CONCOR",
+      "file": "policy-pulse-ministries-regulators-27-jul-2026.md",
+      "slug": "policy-pulse-ministries-regulators-27-jul-2026",
+      "date": "2026-07-27",
+      "tags": [
+        "policy-pulse",
+        "ministries",
+        "regulators",
+        "supreme-court",
+        "iex",
+        "market-coupling",
+        "defence",
+        "psu",
+        "q1-results",
+        "coal",
+        "tata-power",
+        "canara-bank",
+        "concor"
+      ],
+      "summary": "Supreme Court denies IEX interim relief in market coupling case — structural risk. BEL Q1 PAT +8%, orderbook Rs 72,258 Cr. Coal India PAT flat, Tata Power PAT +11%. CONCOR hikes FY27 volume guidance. No new RBI/SEBI/FM announcements.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi/Govt — 27 Jul 2026",
+      "ticker": "INFY:INDIGO:BAJFINANCE:ONGC:BEL:TATAPOWER:COALINDIA:CONCOR:IEX",
+      "file": "policy-pulse-modi-govt-27-jul-2026.md",
+      "slug": "policy-pulse-modi-govt-27-jul-2026",
+      "date": "2026-07-27",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "india",
+        "iran",
+        "oil",
+        "ceasefire",
+        "sensex",
+        "nifty",
+        "it",
+        "airlines",
+        "defence"
+      ],
+      "summary": "India relief rally — Sensex +776 pts breaks 5-day losing streak. Crude crash + US-Iran pause drive broad gains. INFY +3.65%, INDIGO +4.51%, ONGC -3.96%. No new cabinet decisions today. Existing Semicon 2.0/BHAVYA Rasayan tailwinds remain.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 27 Jul 2026",
+      "ticker": "XOM:CVX:OXY:EOG:HAL:SLB:COP:DAL:UAL:AAL:SAVE:CCL:RCL:NCLH:PLTR:LMT:GD:NOC:AAPL:MSFT:AMZN:META:WMT:TGT:COST:HD:LOW",
+      "file": "policy-pulse-trump-us-27-jul-2026.md",
+      "slug": "policy-pulse-trump-us-27-jul-2026",
+      "date": "2026-07-27",
+      "tags": [
+        "policy-pulse",
+        "trump",
+        "us-only",
+        "iran",
+        "oil",
+        "hormuz",
+        "ceasefire",
+        "airlines",
+        "defence",
+        "big-tech",
+        "fed"
+      ],
+      "summary": "US-Iran war pause holds — oil crashes 7%, S&P 500 rallies 1%. Brent at 85. Airlines/cruises reverse to BUY. Defence stocks dial back to HOLD. Fed week + Big Tech earnings in focus. Trump meets Netanyahu tomorrow on Iran trajectory.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Zen Technologies Q1 FY27 — Deep Dive: Weak Quarter, Strong Order Book",
       "ticker": "ZENTEC",
       "file": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book.md",
