@@ -177,18 +177,50 @@ def fetch_quote(symbol):
 
 
 def get_quotes(symbols):
-    """Return {symbol: quote|None}, served from a short-lived cache."""
+    """Return {symbol: quote|None}, served from a short-lived cache.
+
+    Fetch uncached symbols in PARALLEL (threads) so the first page load resolves
+    fast (~2-3s) instead of sequentially hammering Yahoo for each symbol, which
+    could take tens of seconds and intermittently time out (UI showed
+    "Live feed unavailable").
+    """
+    import threading
+
     now = time.time()
     out = {}
+    to_fetch = []
     for sym in symbols:
         cached = QUOTE_CACHE.get(sym)
         if cached and cached[1] > now:
             out[sym] = cached[0]
-            continue
-        q = fetch_quote(sym)
-        if q is not None:
-            QUOTE_CACHE[sym] = (q, now + QUOTE_TTL)
-        out[sym] = q
+        else:
+            to_fetch.append(sym)
+
+    if not to_fetch:
+        return out
+
+    results = {}
+    lock = threading.Lock()
+
+    def worker(sym):
+        try:
+            q = fetch_quote(sym)
+            with lock:
+                results[sym] = q
+                if q is not None:
+                    QUOTE_CACHE[sym] = (q, time.time() + QUOTE_TTL)
+        except Exception:
+            with lock:
+                results[sym] = None
+
+    threads = [threading.Thread(target=worker, args=(s,)) for s in to_fetch]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+
+    for sym in to_fetch:
+        out[sym] = results.get(sym)
     return out
 
 
