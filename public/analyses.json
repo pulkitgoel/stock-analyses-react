@@ -1,6 +1,24 @@
 {
   "analyses": [
     {
+      "title": "Oriana Power — What Changed Post-Q1 FY27 Concall & Technical Breakdown",
+      "ticker": "ORIANA",
+      "file": "oriana-power-what-changed-aug03.md",
+      "slug": "oriana-power-what-changed-aug03",
+      "date": "2026-08-03",
+      "tags": [
+        "follow-up",
+        "what-changed",
+        "fundamental",
+        "renewable-energy",
+        "solar",
+        "bess",
+        "green-hydrogen"
+      ],
+      "summary": "What Changed since the Jun 28 deep-dive. Stock fell to a fresh 52-week low (₹1,342) then bounced +6.9% to ₹1,474 on Aug 3 on the ₹3,135 Cr SECI green-ammonia PPA. Q1 FY27 concall reaffirms 40-50% revenue/PAT CAGR target with ₹7,000 Cr order book. P/E compressed to 11.9x vs industry 30.8x. Verdict: CAUTION — structurally intact, technically still bearish; early relief-rally only.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse — Global — 03 Aug 2026",
       "ticker": "IOC:BPCL:HPCL:RELIANCE:INDIGO:IGL:ADANIGAS:ASIANPAINT:ONGC:OIL:OILINDIA:XOM:CVX:DAL:UAL:CCL:SPY",
       "file": "policy-pulse-global-03-aug-2026.md",

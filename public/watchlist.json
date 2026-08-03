@@ -1,6 +1,16 @@
 {
   "watchlist": [
     {
+      "slug": "oriana-power-what-changed-aug03",
+      "ticker": "ORIANA",
+      "title": "Oriana Power — What Changed Post-Q1 FY27 Concall & Technical Breakdown",
+      "date": "2026-08-03",
+      "yahooSymbol": "ORIANA.NS",
+      "priceAtAnalysis": 1474,
+      "support": 1342,
+      "resistance": 1555
+    },
+    {
       "slug": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book",
       "ticker": "ZENTEC",
       "title": "Zen Technologies Q1 FY27 — Deep Dive: Weak Quarter, Strong Order Book",
