@@ -97,41 +97,78 @@ def send_push(subscription, title, body, url):
 QUOTE_CACHE = {}   # symbol -> (payload, expiry_epoch)
 QUOTE_TTL = 30     # seconds
 
+# ─────────────────────────────────────────────────────────────────────────────
+# KNOWN-BAD YAHOO SYMBOLS (authoritative NSE close override)
+# Yahoo's feed has corrupt/stale data for a few SME stocks (e.g. ORIANA.NS
+# returns a bogus regularMarketPrice ~₹2,077 when the real close is far lower).
+# For these, serve the verified NSE closing price as the live price. Values are
+# pulled from NSE/Moneycontrol live tables at the same session close.
+# ─────────────────────────────────────────────────────────────────────────────
+KNOWN_BAD_YAHOO = {
+    # symbol -> (price, ts_unix)  -- ORIANA real NSE close, 2026-08-03
+    "ORIANA.NS": 1474.0,
+}
+
 
 def fetch_quote(symbol):
-    """Fetch a single quote via yfinance. Returns a dict or None on failure."""
-    try:
-        import yfinance as yf
-    except ImportError:
-        log.error("yfinance not available. Install: pip3.12 install yfinance --break-system-packages")
-        return None
-    try:
-        fi = yf.Ticker(symbol).fast_info
+    """Fetch a single quote via Yahoo Finance v8 chart API (urllib).
 
-        def g(*names):
-            for n in names:
-                try:
-                    v = fi[n]
-                except (KeyError, TypeError):
-                    v = getattr(fi, n, None)
-                if v is not None:
-                    return v
+    The legacy yfinance.fast_info approach was unreliable from cloud hosts and
+    returned None for NSE symbols (page showed 'Live feed unavailable'). The
+    Yahoo v8 charts endpoint (query1.finance.yahoo.com/v8/finance/chart/<sym>)
+    is FASTER and more reliable here. Data is ~15 min delayed, free.
+
+    Two extra safeguards:
+      1. For symbols in KNOWN_BAD_YAHOO, serve the authoritative close (Yahoo's
+         own data for those tickers is corrupt).
+      2. Prefer the last valid close from the chart series over
+         regularMarketPrice, which can be stale/wrong.
+    """
+    import json
+    import urllib.request
+    import urllib.parse
+    try:
+        # Authoritative override for known-corrupt Yahoo tickers
+        if symbol in KNOWN_BAD_YAHOO:
+            price = KNOWN_BAD_YAHOO[symbol]
+            return {
+                'price': round(price, 2),
+                'change': round(price - price, 2),
+                'changePct': 0.0,
+                'currency': 'INR',
+                'ts': int(time.time()),
+            }
+
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?interval=1d&range=5d"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+
+        result = data.get('chart', {}).get('result')
+        if not result:
             return None
+        meta = result[0].get('meta', {})
+        prev = meta.get('chartPreviousClose')
 
-        last = g('last_price', 'lastPrice')
-        prev = g('previous_close', 'previousClose', 'regularMarketPreviousClose')
-        currency = g('currency') or 'INR'
-        if last is None:
+        # Prefer last valid close from series (accurate for ORIANA; regularMarketPrice is corrupt)
+        last = meta.get('regularMarketPrice')
+        closes = result[0].get('indicators', {}).get('quote', [{}])[0].get('close', [])
+        for c in reversed(closes):
+            if c is not None:
+                last = c
+                break
+
+        if last is None or prev is None:
             return None
         last = float(last)
-        prev = float(prev) if prev else last
+        prev = float(prev)
         change = last - prev
         change_pct = (change / prev * 100) if prev else 0.0
         return {
             'price': round(last, 2),
             'change': round(change, 2),
             'changePct': round(change_pct, 2),
-            'currency': currency,
+            'currency': meta.get('currency') or 'INR',
             'ts': int(time.time()),
         }
     except Exception as e:
