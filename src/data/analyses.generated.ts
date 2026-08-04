@@ -5,6 +5,22 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Syrma SGS Technology — Deep Dive Analysis",
+    "ticker": "SYRMA",
+    "file": "syrma-sgs-technology-deep-dive-analysis.md",
+    "slug": "syrma-sgs-technology-deep-dive-analysis",
+    "date": "2026-08-04",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "EMS",
+      "electronics",
+      "manufacturing"
+    ],
+    "summary": "Syrma SGS (EMS) Q1 FY27: revenue +68%, PAT +112%, ₹6,770 Cr order book, IND AA rating, 30-35% growth guidance. But 52-65x forward PE vs 31.6x industry, Q1 margin miss, ₹1,000 Cr QIP dilution, and -4.99% promoter dilution. Verdict: CAUTION — growth priced for perfection; wait for pullback to ₹1,260-1,300 or breakout >₹1,471.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Oriana Power — What Changed Post-Q1 FY27 Concall & Technical Breakdown",
     "ticker": "ORIANA",
     "file": "oriana-power-what-changed-aug03.md",

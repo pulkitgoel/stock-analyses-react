@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/syrma-sgs-technology-deep-dive-analysis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/oriana-power-what-changed-aug03</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -634,6 +639,11 @@
     <loc>https://stocksfundamentals.online/analysis/netweb-technologies-deep-dive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/syrma</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/oriana</loc>
@@ -1512,11 +1522,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/amber</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/syrma</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

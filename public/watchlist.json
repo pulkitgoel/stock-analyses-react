@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "syrma-sgs-technology-deep-dive-analysis",
+      "ticker": "SYRMA",
+      "title": "Syrma SGS Technology — Deep Dive Analysis",
+      "date": "2026-08-04",
+      "yahooSymbol": "SYRMA.NS",
+      "priceAtAnalysis": 1403,
+      "support": 1290,
+      "resistance": 1470,
+      "supports": [
+        1260,
+        1290
+      ],
+      "resistances": [
+        1471,
+        1518
+      ],
+      "verdict": "CAUTION"
+    },
+    {
       "slug": "oriana-power-what-changed-aug03",
       "ticker": "ORIANA",
       "title": "Oriana Power — What Changed Post-Q1 FY27 Concall & Technical Breakdown",
