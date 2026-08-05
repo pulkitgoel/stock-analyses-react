@@ -1,6 +1,123 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 05 Aug 2026",
+      "ticker": "HDFCBANK:ICICIBANK:SBIN:BAJFINANCE:INDIGO:IOC:BPCL:ONGC:TCS:ULTRACEMCO:XOM:USO:DAL:UAL:CCL:AMZN:SPY",
+      "file": "policy-pulse-global-05-aug-2026.md",
+      "slug": "policy-pulse-global-05-aug-2026",
+      "date": "2026-08-05",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "iran",
+        "oil",
+        "energy",
+        "aviation",
+        "rbi",
+        "mpc",
+        "fii",
+        "india",
+        "us-markets"
+      ],
+      "summary": "Hormuz deal as early as Wednesday, Brent <$80; US records (AMZN >$3T). India firms (Sensex +152) as RBI holds. HSBC sees $25B FII inflows. SELL energy (XOM, ONGC), BUY airlines (DAL, INDIGO).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 05 Aug 2026",
+      "ticker": "HDFCBANK:ICICIBANK:SBIN:KOTAKBANK:BAJFINANCE:ITC:NSE:BSE:ANGELONE:ZERODHA:IIFL:EMBASSY:TITAN:M&M:ADANIPORTS:TCS:HCLTECH:ULTRACEMCO",
+      "file": "policy-pulse-ministries-regulators-05-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-05-aug-2026",
+      "date": "2026-08-05",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "rbi",
+        "mpc",
+        "exchanges",
+        "cas",
+        "reits",
+        "invits",
+        "india",
+        "regulator"
+      ],
+      "summary": "RBI holds repo at 5.25% (neutral), raises FY27 GDP to 6.7%, cuts CPI to ~5%. SEBI CAS divergences; REIT/InvIT DR consultation. Banks neutral (ICICIBANK, KOTAKBANK, SBIN), BSE positive, TCS/HCL weak.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 05 Aug 2026",
+      "ticker": "XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:AAL:CCL:RCL:WMT:AMZN:MSFT:NVDA:GOOGL:META:SPY:QQQ",
+      "file": "policy-pulse-trump-us-05-aug-2026.md",
+      "slug": "policy-pulse-trump-us-05-aug-2026",
+      "date": "2026-08-05",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "iran",
+        "oil",
+        "energy",
+        "aviation",
+        "us-markets"
+      ],
+      "summary": "Trump says Hormuz-reopening deal could come as early as Wednesday; Brent <$80. US stocks at records (S&P 500 7,736, Amazon >$3T). SELL energy (XOM, OXY, USO), BUY airlines/cruises (DAL, CCL, WMT).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 04 Aug 2026",
+      "ticker": "IOC:BPCL:RELIANCE:INDIGO:ONGC:ATHERENERG:XOM:USO:DAL:UAL:SPY",
+      "file": "policy-pulse-global-04-aug-2026.md",
+      "slug": "policy-pulse-global-04-aug-2026",
+      "date": "2026-08-04",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "iran",
+        "oil",
+        "omc",
+        "aviation",
+        "energy",
+        "trump"
+      ],
+      "summary": "Hormuz talks stall, oil rebounds 1.4% (Brent ~5), India consolidates (Nifty -159 to 24,615) ahead of RBI Aug 5. Q1 earnings Ather +14%, BSE +62% drive select moves.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 04 Aug 2026",
+      "ticker": "NSE:BSE:MCX:ANGELONE:ZERODHA:IIFL:IOC:BPCL:HPCL:RELIANCE:ATHERENERG:PIDILITIND:MARICO:ONGC:LICI",
+      "file": "policy-pulse-ministries-regulators-04-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-04-aug-2026",
+      "date": "2026-08-04",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "exchange",
+        "windfall-tax",
+        "earnings",
+        "rbi",
+        "india"
+      ],
+      "summary": "SEBI Closing Auction Session (CAS) live from Aug 3; windfall tax raised on fuel exports (negative for IOC, BPCL, HPCL, RELIANCE). BSE Q1 profit +62%, Ather +14%, Pidilite +27.7%.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 04 Aug 2026",
+      "ticker": "DJT:HOOD:BK:COIN:XOM:CVX:OXY:HAL:USO:DAL:UAL:SPY",
+      "file": "policy-pulse-trump-us-04-aug-2026.md",
+      "slug": "policy-pulse-trump-us-04-aug-2026",
+      "date": "2026-08-04",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "iran",
+        "oil",
+        "djt",
+        "crypto"
+      ],
+      "summary": "Trump Media (DJT) -4% on 0M Q2 loss and delayed crypto-ETF; Trump warns Iran talks are 'last chance' as oil rebounds 1.4%. DJT Hold, energy bounces (XOM), airlines dip (DAL).",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Syrma SGS Technology — Deep Dive Analysis",
       "ticker": "SYRMA",
       "file": "syrma-sgs-technology-deep-dive-analysis.md",
