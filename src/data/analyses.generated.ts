@@ -5,6 +5,20 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "APL Apollo Tubes — Deep Dive Analysis",
+    "ticker": "APLAPOLLO",
+    "file": "apl-apollo-tubes-deep-dive-analysis.md",
+    "slug": "apl-apollo-tubes-deep-dive-analysis",
+    "date": "2026-08-06",
+    "tags": [
+      "deep-dive",
+      "steel",
+      "stock-analysis"
+    ],
+    "summary": "Deep-dive on APL Apollo Tubes — fortress balance sheet (near debt-free, ₹1,400 Cr net cash), ROCE 31.6%, FY26 PAT +59%, 52% avg delivery indicating genuine institutional accumulation. Verdict: FAVORABLE — high-quality compounder, buy on pullbacks to ₹1,800-1,850; valuation 44.8x P/E is the only concern.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Policy Pulse — Global — 05 Aug 2026",
     "ticker": "HDFCBANK:ICICIBANK:SBIN:BAJFINANCE:INDIGO:IOC:BPCL:ONGC:TCS:ULTRACEMCO:XOM:USO:DAL:UAL:CCL:AMZN:SPY",
     "file": "policy-pulse-global-05-aug-2026.md",

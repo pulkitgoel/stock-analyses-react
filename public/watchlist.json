@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "apl-apollo-tubes-deep-dive-analysis",
+      "ticker": "APLAPOLLO",
+      "title": "APL Apollo Tubes — Deep Dive Analysis",
+      "date": "2026-08-06",
+      "yahooSymbol": "APLAPOLLO.NS",
+      "priceAtAnalysis": 1986,
+      "support": 1744,
+      "resistance": 1984,
+      "supports": [
+        1744,
+        1826
+      ],
+      "resistances": [
+        1984,
+        2142
+      ],
+      "verdict": "FAVORABLE"
+    },
+    {
       "slug": "syrma-sgs-technology-deep-dive-analysis",
       "ticker": "SYRMA",
       "title": "Syrma SGS Technology — Deep Dive Analysis",

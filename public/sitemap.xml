@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/apl-apollo-tubes-deep-dive-analysis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/policy-pulse-global-05-aug-2026</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -669,6 +674,11 @@
     <loc>https://stocksfundamentals.online/analysis/netweb-technologies-deep-dive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/aplapollo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hdfcbank</loc>
