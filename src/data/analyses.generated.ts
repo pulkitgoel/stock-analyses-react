@@ -5,6 +5,94 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "US Rare-Earth & Magnet Plays: USA Rare Earth (USAR) vs MP Materials (MP)",
+    "ticker": "USAR:MP",
+    "file": "us-rare-earth-magnet-plays-usa-rare-earth-usar-vs-mp-materials-mp.md",
+    "slug": "us-rare-earth-magnet-plays-usa-rare-earth-usar-vs-mp-materials-mp",
+    "date": "2026-08-08",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "us-stocks",
+      "rare-earth",
+      "magnets"
+    ],
+    "summary": "Trump's Aug 7 mining roundtable lit up magnets/rare-earths. Deep-dive on USAR (govt-backed mine-to-magnet, +29% on week, pre-revenue) vs MP (real +89% rev growth, EBITDA positive, magnets ship Q4'26). MP = core FAVOURABLE; USAR = high-risk momentum CAUTION.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 07 Aug 2026",
+    "ticker": "FSLR:SEDG:JKS:XOM:CVX:OXY:USO:DAL:UAL:CCL:RCL:IOC:INDIGO",
+    "file": "policy-pulse-global-07-aug-2026.md",
+    "slug": "policy-pulse-global-07-aug-2026",
+    "date": "2026-08-07",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "tariffs",
+      "solar",
+      "oil",
+      "energy",
+      "aviation",
+      "hormuz"
+    ],
+    "summary": "US polysilicon tariffs reshuffle global solar (SELL China c-Si exporters JKS/LONGI, BUY FSLR/SEDG); crude stays two-way as Hormuz deal is 'close but not signed'. India refiners/airlines benefit from softer crude.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 07 Aug 2026",
+    "ticker": "ANGELONE:ZERODHA:IIFL:MOTILALOFS:BSE:SBIN:HDFCBANK:ICICIBANK:RELIANCE",
+    "file": "policy-pulse-ministries-regulators-07-aug-2026.md",
+    "slug": "policy-pulse-ministries-regulators-07-aug-2026",
+    "date": "2026-08-07",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "brokerages",
+      "regulatory",
+      "rbi",
+      "banking",
+      "psu"
+    ],
+    "summary": "NSE issues Authorised Persons consultation (comments by Aug 27) — AP-heavy brokers face compliance reshuffle, exchanges/incumbents benefit. RBI on hold (recap). PSU banks +2% led Aug 6 close.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Modi / India — 07 Aug 2026",
+    "ticker": "IGL:MGL:GUJGAS:ADANIGAS:GSPL:IOC:BPCL:HPCL",
+    "file": "policy-pulse-modi-india-07-aug-2026.md",
+    "slug": "policy-pulse-modi-india-07-aug-2026",
+    "date": "2026-08-07",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "cabinet",
+      "renewable",
+      "clean-energy",
+      "biogas",
+      "cgd"
+    ],
+    "summary": "Cabinet approves GOBARdhan, Rs 23,731 cr compressed biogas scheme (FY27-FY36, Min of Petroleum). CGD entities (IGL, MGL, GUJGAS, ADANIGAS) are mandated CBG offtakers; refiners IOC/BPCL/HPCL co-invest.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 07 Aug 2026",
+    "ticker": "FSLR:ENPH:SEDG:RUN:NOVA:SPWR",
+    "file": "policy-pulse-trump-us-07-aug-2026.md",
+    "slug": "policy-pulse-trump-us-07-aug-2026",
+    "date": "2026-08-07",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "trump",
+      "solar",
+      "tariffs",
+      "section232"
+    ],
+    "summary": "Trump signs Section 232 tariffs + price floors on polysilicon (15% on derivatives, effective Dec 4). First Solar (FSLR) the clear winner; US solar manufacturing structurally repriced vs China.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "APL Apollo Tubes — Deep Dive Analysis",
     "ticker": "APLAPOLLO",
     "file": "apl-apollo-tubes-deep-dive-analysis.md",
@@ -16,6 +104,72 @@ export const ANALYSES: Analysis[] = [
       "stock-analysis"
     ],
     "summary": "Deep-dive on APL Apollo Tubes — fortress balance sheet (near debt-free, ₹1,400 Cr net cash), ROCE 31.6%, FY26 PAT +59%, 52% avg delivery indicating genuine institutional accumulation. Verdict: FAVORABLE — high-quality compounder, buy on pullbacks to ₹1,800-1,850; valuation 44.8x P/E is the only concern.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global — 06 Aug 2026",
+    "ticker": "HAL:BEL:SBIN:TRENT:POWERGRID:IOC:BPCL:INDIGO:ONGC:NVDA:XOM:USO:DAL:CCL:SPY",
+    "file": "policy-pulse-global-06-aug-2026.md",
+    "slug": "policy-pulse-global-06-aug-2026",
+    "date": "2026-08-06",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "iran",
+      "oil",
+      "energy",
+      "aviation",
+      "hormuz",
+      "fii",
+      "india",
+      "us-markets",
+      "earnings"
+    ],
+    "summary": "Hormuz draft finalized but path unclear; Brent rebounded (two-way, no longer a straight crash). India mixed: Sensex +374, defence charges (HAL, GRSE), PSU banks lead, FIIs turn net-bullish on futures. Q1 earnings top driver (Trent +26%). Energy/airlines event-driven.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 06 Aug 2026",
+    "ticker": "BSE:NSE:MCX:ANGELONE:ZERODHA:IIFL:MOTILALOFS:TCS:INFY:ITC:HDFCBANK:COALINDIA:ONGC:HAL:BEL:MAZDOCK:GRSE:POWERGRID:SBIN:TRENT:NEULAND",
+    "file": "policy-pulse-ministries-regulators-06-aug-2026.md",
+    "slug": "policy-pulse-ministries-regulators-06-aug-2026",
+    "date": "2026-08-06",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "rbi",
+      "exchanges",
+      "brokerages",
+      "buyback",
+      "aif",
+      "bonds",
+      "defence",
+      "india",
+      "regulator",
+      "earnings"
+    ],
+    "summary": "SEBI FY27 agenda: LODR review, SLB revamp, fast-track AIF, corporate-bond tokenisation pilot, Jagrook. Buy-back open-market route live (Aug 1, <15% cap). Defence stocks fire (HAL, BEL, GRSE); PSU banks lead; Sensex +374, Nifty flat on CAS/expiry. Q1 earnings drive moves (Trent +26%).",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 06 Aug 2026",
+    "ticker": "XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:AAL:CCL:RCL:WMT:NVDA:AMZN:SPY:QQQ",
+    "file": "policy-pulse-trump-us-06-aug-2026.md",
+    "slug": "policy-pulse-trump-us-06-aug-2026",
+    "date": "2026-08-06",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "trump",
+      "iran",
+      "oil",
+      "energy",
+      "aviation",
+      "hormuz",
+      "us-markets",
+      "ai"
+    ],
+    "summary": "Hormuz draft deal finalized; Trump says deal near, but US position unclear and oil rebounded (two-way). S&P record 7,736.52, Dow first close above 54,000. NVDA up on SpaceX AI deal. Energy/airlines now event-driven.",
     "model": "deepseek-chat"
   },
   {
