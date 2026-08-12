@@ -1,6 +1,21 @@
 {
   "analyses": [
     {
+      "title": "Jeena Sikho Lifecare — Deep Dive Analysis",
+      "ticker": "JSLL",
+      "file": "jeena-sikho-lifecare-deep-dive-analysis.md",
+      "slug": "jeena-sikho-lifecare-deep-dive-analysis",
+      "date": "2026-08-12",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "wellness",
+        "ayurveda"
+      ],
+      "summary": "Deep-dive on Jeena Sikho Lifecare — integrated Ayurveda hospital+products leader with FY26 revenue +71%, PAT +144%, ROCE 71%, ROE 60%. Trailing P/E ~29x is reasonable, but price is technically broken (below all MAs, Strong Sell), rich on P/B ~14x, and Q1 profit quality is flattered by other income. Verdict: CAUTION.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse — Global — 11 Aug 2026",
       "ticker": "XOM:CVX:DAL:UAL:CCL:IOC:BPCL:INDIGO:NVDA:MSFT",
       "file": "policy-pulse-global-11-aug-2026.md",

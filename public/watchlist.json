@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "jeena-sikho-lifecare-deep-dive-analysis",
+      "ticker": "JSLL",
+      "title": "Jeena Sikho Lifecare — Deep Dive Analysis",
+      "date": "2026-08-12",
+      "yahooSymbol": "JSLL.NS",
+      "priceAtAnalysis": 519,
+      "support": 492,
+      "resistance": 577,
+      "supports": [
+        461,
+        492
+      ],
+      "resistances": [
+        552,
+        577
+      ],
+      "verdict": "CAUTION"
+    },
+    {
       "slug": "apl-apollo-tubes-deep-dive-analysis",
       "ticker": "APLAPOLLO",
       "title": "APL Apollo Tubes — Deep Dive Analysis",

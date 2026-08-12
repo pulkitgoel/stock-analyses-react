@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/jeena-sikho-lifecare-deep-dive-analysis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/policy-pulse-global-11-aug-2026</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -744,6 +749,11 @@
     <loc>https://stocksfundamentals.online/analysis/netweb-technologies-deep-dive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/jsll</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/xom</loc>
