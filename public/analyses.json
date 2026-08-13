@@ -16,6 +16,64 @@
       "model": "deepseek-chat"
     },
     {
+      "title": "Policy Pulse — Global — 13 Aug 2026",
+      "ticker": "NVDA:MSFT:GOOGL:META:SMCI:CRWV:XOM:CVX:OXY:DAL:UAL:CCL:TATAMOTORS:HINDALCO:ICICIBANK:BSE",
+      "file": "policy-pulse-global-13-aug-2026.md",
+      "slug": "policy-pulse-global-13-aug-2026",
+      "date": "2026-08-13",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "ai",
+        "fed",
+        "crude",
+        "hormuz",
+        "india",
+        "auto",
+        "brokerages"
+      ],
+      "summary": "AI buying + easing oil carry global equities; Hormuz stays unsigned two-way (Brent ~87.7); India's Tata Motors +83% Q1 offsets metals/bank drag",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 13 Aug 2026",
+      "ticker": "TATAMOTORS:TATACONSUM:TCS:HUL:LNT:NTPC:BSE:ZERODHA:ANGELONE:SHIPROCKETBSE:HINDALCO:ICICIBANK",
+      "file": "policy-pulse-ministries-regulators-13-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-13-aug-2026",
+      "date": "2026-08-13",
+      "tags": [
+        "policy-pulse",
+        "india",
+        "sebi",
+        "esg",
+        "ipo",
+        "brokerages",
+        "auto",
+        "metals"
+      ],
+      "summary": "Tata Motors Q1 PAT +83% lifts Tata complex; SEBI BRSR value-chain ESG mandate (FY26-27); Shiprocket IPO closes Aug 14 at retail ~10x, GMP ~35%",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 13 Aug 2026",
+      "ticker": "QQQ:SMCI:NVDA:MSFT:GOOGL:META:CRWV:DJT:XOM:CVX:OXY:DAL:UAL:CCL",
+      "file": "policy-pulse-trump-us-13-aug-2026.md",
+      "slug": "policy-pulse-trump-us-13-aug-2026",
+      "date": "2026-08-13",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "ai",
+        "fed",
+        "crude",
+        "hormuz",
+        "djt"
+      ],
+      "summary": "AI rally carries US stocks toward records as oil eases (Brent ~87.7); Truth API hit by a First-Amendment lawsuit; S&P near record, Nasdaq 100 +1.2%",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse — Global — 12 Aug 2026",
       "ticker": "CRWV:SMCI:NVDA:MSFT:XOM:CVX:OXY:DAL:UAL:HINDALCO:NATIONALUM:SBIN:PNB:BEL:ZENTEC",
       "file": "policy-pulse-global-12-aug-2026.md",
