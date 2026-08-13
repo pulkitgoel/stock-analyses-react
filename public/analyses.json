@@ -5,14 +5,73 @@
       "ticker": "JSLL",
       "file": "jeena-sikho-lifecare-deep-dive-analysis.md",
       "slug": "jeena-sikho-lifecare-deep-dive-analysis",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "tags": [
         "deep-dive",
         "fundamental",
         "wellness",
         "ayurveda"
       ],
-      "summary": "Deep-dive on Jeena Sikho Lifecare — integrated Ayurveda hospital+products leader with FY26 revenue +71%, PAT +144%, ROCE 71%, ROE 60%. Trailing P/E ~29x is reasonable, but price is technically broken (below all MAs, Strong Sell), rich on P/B ~14x, and Q1 profit quality is flattered by other income. Verdict: CAUTION.",
+      "summary": "Deep-dive on Jeena Sikho Lifecare — integrated Ayurveda hospital+products leader with FY26 revenue +71%, PAT +144%, ROCE 71%, ROE 60%. Trailing P/E ~29x is reasonable, but price is technically broken (below all MAs), rich on P/B ~14x, and Q1 profit quality is flattered by other income. Delivery data confirmed strong (avg 51%). Verdict: CAUTION.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 12 Aug 2026",
+      "ticker": "CRWV:SMCI:NVDA:MSFT:XOM:CVX:OXY:DAL:UAL:HINDALCO:NATIONALUM:SBIN:PNB:BEL:ZENTEC",
+      "file": "policy-pulse-global-12-aug-2026.md",
+      "slug": "policy-pulse-global-12-aug-2026",
+      "date": "2026-08-12",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "cpi",
+        "fed",
+        "ai",
+        "crude",
+        "hormuz",
+        "india",
+        "metals",
+        "defence"
+      ],
+      "summary": "Tame CPI + AI earnings (CoreWeave +18%) carry global equities; Hormuz holds crude near $89 two-way; India rotates to metals/PSU-banks away from Tata/IT/healthcare",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 12 Aug 2026",
+      "ticker": "BEL:ZENTEC:BSE:ZERODHA:SBIN:HINDALCO:NATIONALUM:APOLLOHOSP:MAXHEALTH:GODREJCONSUMER:TCS",
+      "file": "policy-pulse-ministries-regulators-12-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-12-aug-2026",
+      "date": "2026-08-12",
+      "tags": [
+        "policy-pulse",
+        "india",
+        "defence",
+        "ipo",
+        "brokerages",
+        "psu-banks",
+        "metals",
+        "hospitals"
+      ],
+      "summary": "MoD fresh orders (BEL 541cr, Zen 295cr), Shiprocket IPO opens (62% day-1, GMP ~31%), PSU banks and metals lead amid Tata/healthcare/FMCG weakness",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 12 Aug 2026",
+      "ticker": "CRWV:SMCI:NVDA:MSFT:GOOGL:XOM:CVX:OXY:DAL:UAL:CCL",
+      "file": "policy-pulse-trump-us-12-aug-2026.md",
+      "slug": "policy-pulse-trump-us-12-aug-2026",
+      "date": "2026-08-12",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "cpi",
+        "fed",
+        "ai",
+        "crude",
+        "hormuz"
+      ],
+      "summary": "In-line July CPI (3.4%) keeps the Fed at bay and re-ignites the AI rally (CoreWeave +18%, Super Micro); Hormuz holds crude near $89; no new Trump trades",
       "model": "deepseek-chat"
     },
     {

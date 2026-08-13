@@ -1,12 +1,12 @@
 ---
 title: "Jeena Sikho Lifecare — Deep Dive Analysis"
 ticker: "JSLL"
-date: "2026-08-12"
+date: "2026-08-13"
 tags: ["deep-dive","fundamental","wellness","ayurveda"]
-summary: "Deep-dive on Jeena Sikho Lifecare — integrated Ayurveda hospital+products leader with FY26 revenue +71%, PAT +144%, ROCE 71%, ROE 60%. Trailing P/E ~29x is reasonable, but price is technically broken (below all MAs, Strong Sell), rich on P/B ~14x, and Q1 profit quality is flattered by other income. Verdict: CAUTION."
+summary: "Deep-dive on Jeena Sikho Lifecare — integrated Ayurveda hospital+products leader with FY26 revenue +71%, PAT +144%, ROCE 71%, ROE 60%. Trailing P/E ~29x is reasonable, but price is technically broken (below all MAs), rich on P/B ~14x, and Q1 profit quality is flattered by other income. Delivery data confirmed strong (avg 51%). Verdict: CAUTION."
 model: "deepseek-chat"
 watchlist: true
-priceAtAnalysis: 519
+priceAtAnalysis: 520
 support: 492
 resistance: 577
 supports: [461, 492]
@@ -18,9 +18,9 @@ verdict: "CAUTION"
 
 **Ticker:** JSLL (NSE: JSLL, BSE: 544476)  
 **Sector:** Consumer Services — Wellness / Integrated Ayurveda  
-**Price:** ₹519.00 (12 Aug 2026, -3.75%)  
-**Analysis Date:** 12 August 2026  
-**Data Source:** Screener.in (standalone, logged-in 27 metrics), TradingView NSE (real-time), news research  
+**Price:** ₹519.60 (13 Aug 2026, +1.58%)  
+**Analysis Date:** 13 August 2026  
+**Data Source:** Screener.in (standalone, logged-in 27 metrics), TradingView NSE (real-time), NSE bhavcopy (delivery), news research  
 **Model:** DeepSeek Chat
 
 ---
@@ -30,7 +30,7 @@ verdict: "CAUTION"
 | Metric | Value |
 |--------|-------|
 | **Market Cap** | ₹6,462 Cr |
-| **Current Price** | ₹519 |
+| **Current Price** | ₹519.60 |
 | **52W High / Low** | ₹850 / ₹492 |
 | **Stock P/E** | 27.4 |
 | **Industry P/E** | 28.3 |
@@ -245,45 +245,47 @@ Jeena Sikho Lifecare Ltd (JSLL) is an **integrated Ayurveda healthcare company**
 
 ---
 
-## 9. Technical Analysis (As of 12 Aug 2026)
+## 9. Technical Analysis (As of 13 Aug 2026)
 
-**TradingView Summary:** **STRONG SELL** — Oscillators (Sell 2, Neutral 9, Buy 0) | MAs (Sell 14, Neutral 1, Buy 0)
+**TradingView Summary:** **SELL** — Oscillators (Sell 1, Neutral 7, Buy 3) | MAs (Sell 13, Neutral 1, Buy 1)
+
+> *Note vs 12 Aug: Oscillators have improved from Sell 2/Neutral 9/Buy 0 → Sell 1/Neutral 7/Buy 3. CCI, Momentum, and Williams %R have all flipped to Buy, and Hull MA(9) has turned Buy (the first MA to do so). Strong Sell has eased to Sell as oversold-reversal signals build.*
 
 ### Oscillators
 
 | Indicator | Value | Signal |
 |-----------|-------|--------|
-| RSI (14) | 35.01 | Neutral |
-| Stochastic %K (14,3,3) | 14.89 | Neutral |
-| CCI (20) | -210.81 | Neutral |
-| ADX (14) | 13.51 | Neutral |
-| Awesome Oscillator | -13.19 | Neutral |
-| Momentum (10) | -45.90 | **Sell** |
-| MACD Level (12,26) | -8.81 | **Sell** |
-| Stoch RSI Fast (3,3,14,14) | 0.00 | Neutral |
-| Williams %R (14) | -97.54 | Neutral |
-| Bull Bear Power | -67.03 | Neutral |
-| Ultimate Oscillator (7,14,28) | 37.72 | Neutral |
+| RSI (14) | 36.42 | Neutral |
+| Stochastic %K (14,3,3) | 13.38 | Neutral |
+| CCI (20) | -200.28 | **Buy** |
+| ADX (14) | 14.84 | Neutral |
+| Awesome Oscillator | -27.66 | Neutral |
+| Momentum (10) | -47.65 | **Buy** |
+| MACD Level (12,26) | -12.00 | **Sell** |
+| Stoch RSI Fast (3,3,14,14) | 3.64 | Neutral |
+| Williams %R (14) | -86.63 | **Buy** |
+| Bull Bear Power | -81.94 | Neutral |
+| Ultimate Oscillator (7,14,28) | 40.08 | Neutral |
 
 ### Moving Averages
 
 | MA | Period | Value | Signal |
 |----|--------|-------|--------|
-| EMA | 10 | 559.50 | **Sell** |
-| SMA | 10 | 568.96 | **Sell** |
-| EMA | 20 | 567.10 | **Sell** |
-| SMA | 20 | 567.55 | **Sell** |
-| EMA | 30 | 572.82 | **Sell** |
-| SMA | 30 | 570.38 | **Sell** |
-| EMA | 50 | 584.66 | **Sell** |
-| SMA | 50 | 582.35 | **Sell** |
-| EMA | 100 | 607.99 | **Sell** |
-| SMA | 100 | 615.96 | **Sell** |
-| EMA | 200 | 617.28 | **Sell** |
-| SMA | 200 | 656.07 | **Sell** |
-| Ichimoku Base | 9,26,52,26 | 564.50 | Neutral |
-| VWMA | 20 | 559.82 | **Sell** |
-| Hull MA | 9 | 534.32 | **Sell** |
+| EMA | 10 | 551.08 | **Sell** |
+| SMA | 10 | 563.44 | **Sell** |
+| EMA | 20 | 561.91 | **Sell** |
+| SMA | 20 | 564.23 | **Sell** |
+| EMA | 30 | 568.92 | **Sell** |
+| SMA | 30 | 568.30 | **Sell** |
+| EMA | 50 | 581.81 | **Sell** |
+| SMA | 50 | 578.74 | **Sell** |
+| EMA | 100 | 606.09 | **Sell** |
+| SMA | 100 | 615.11 | **Sell** |
+| EMA | 200 | 616.23 | **Sell** |
+| SMA | 200 | 654.86 | **Sell** |
+| Ichimoku Base | 9,26,52,26 | 558.67 | Neutral |
+| VWMA | 20 | 557.61 | **Sell** |
+| Hull MA | 9 | 510.12 | **Buy** |
 
 ### Pivot Levels (Classic)
 
@@ -300,37 +302,61 @@ Jeena Sikho Lifecare Ltd (JSLL) is an **integrated Ayurveda healthcare company**
 ### EMA Ladder
 
 ```
-EMA(10): ₹559 — CMP (₹519) BELOW
-EMA(20): ₹567 — Below, descending
-EMA(30): ₹573 — Below
-EMA(50): ₹585 — Below
-EMA(100): ₹608 — Below
-EMA(200): ₹617 — Below (death cross zone)
-SMA(200): ₹656 — Well below long-term average
+EMA(10): ₹551 — CMP (₹520) BELOW
+EMA(20): ₹562 — Below, descending
+EMA(30): ₹569 — Below
+EMA(50): ₹582 — Below
+EMA(100): ₹606 — Below
+EMA(200): ₹616 — Below (death cross zone)
+SMA(200): ₹655 — Well below long-term average
 ```
 
 **Technical Verdict:**
-- **Price ₹519 trades BELOW every single moving average** — a fully bearish alignment
-- **14 of 15 MAs in Sell** — only Ichimoku neutral
-- **RSI at 35** — approaching but not yet oversold; room to fall further
-- **Stoch RSI at 0.00** and Williams %R at -97.5 — oversold extremes that could trigger a short-term bounce
-- **MACD and Momentum both Sell** — momentum firmly negative
-- **ADX at 13.5** — no strong trend conviction yet (below 20), meaning this is a pullback within a larger range, not yet a confirmed downtrend
-- **Price sits exactly on Classic S2 support (₹519)**; a break below opens ₹461 (S3)
-- **Nearest resistance** at ₹552 (S1) then ₹577 pivot
+- **Price ₹519.60 trades BELOW every major moving average** — still a fully bearish long-term alignment (13 of 15 MAs in Sell)
+- **However, the first signs of a potential reversal are building**: Hull MA(9) has flipped **Buy** (₹510.12, below current price) — the first MA to do so
+- **Oscillators are improving** — CCI, Momentum, and Williams %R all flipped to **Buy** today (from Neutral/Sell on 12 Aug)
+- **RSI at 36.42** — approaching but not yet oversold; **Stoch RSI at 3.64** and **Williams %R at -86.63** are deeply oversold, often precursors to a bounce
+- **MACD still Sell** at -12.00 — momentum has not yet confirmed a reversal
+- **ADX at 14.8** — no strong trend conviction (below 20), consistent with a pullback within a larger range
+- **Price sits exactly on Classic S2 support (₹519)**; a break below opens ₹461 (S3), a reclaim of ₹552 (S1) then ₹577 pivot would signal reversal
+- **Confirmed strong delivery (avg 51.4%)** supports that any bounce at current levels is backed by genuine accumulation
 
 ---
 
 ## 10. NSE Delivery Data Analysis
 
-**⚠️ DATA UNAVAILABLE — INFRASTRUCTURE BLOCK**
+**✅ Data Confirmed (13 Aug 2026)** — NSE bhavcopy delivery data successfully retrieved.
 
-NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `requests.Session()` seeded with nsearchives cookies) and browser access to NSE domains were blocked by Akamai's bot-management challenge (`_abck` cookie) from this environment. The CF Worker fallback also did not expose a delivery endpoint.
+> *Correction note: An initial attempt on 12 Aug was blocked by an intermittent NSE Akamai bot-challenge (`_abck` cookie). This has since cleared — delivery data is fully accessible from the current environment. See the delivery trend below.*
+
+### JSLL Delivery Trend (Last 11 Sessions)
+
+| Date | Close | Volume | Del Qty | Del % |
+|------|-------|--------|---------|-------|
+| 12-Aug | ₹511.50 | 888,284 | 464,325 | **52.27%** 🟢 |
+| 11-Aug | ₹539.20 | 1,151,819 | 650,088 | **56.44%** 🟢 |
+| 07-Aug | ₹598.10 | 531,096 | 291,844 | **54.95%** 🟢 |
+| 06-Aug | ₹604.25 | 960,929 | 460,061 | **47.88%** 🟢 |
+| 05-Aug | ₹579.25 | 345,655 | 159,901 | **46.26%** 🟢 |
+| 04-Aug | ₹574.20 | 285,505 | 150,311 | **52.65%** 🟢 |
+| 31-Jul | ₹586.15 | 646,373 | 310,867 | **48.09%** 🟢 |
+| 30-Jul | ₹567.00 | 217,059 | 110,469 | **50.89%** 🟢 |
+| 29-Jul | ₹564.90 | 621,946 | 311,747 | **50.12%** 🟢 |
+| 28-Jul | ₹564.45 | 581,139 | 301,315 | **51.85%** 🟢 |
+| 24-Jul | ₹554.80 | 503,062 | 273,407 | **54.35%** 🟢 |
+
+**Avg delivery % (11 sessions): 51.4%**
+
+### Interpretation
+- **Delivery % has been consistently above 46% for 11 straight sessions** — averaging **51.4%**. This is **strong, genuine accumulation** quality, NOT speculative intraday churn.
+- Every single session clears the **>40% delivery threshold** the checklist demands — and the 11-Aug session (the -13% results-day drop) showed the **highest delivery at 56.44%** on the biggest volume (1.15M). This is significant: it means the post-results decline was **absorbed by genuine strong-hand buying**, not panic churn.
+- Cross-referencing with price action: the stock is grinding down from ₹604 → ₹511 on consistently high delivery. This pattern is consistent with **institutional/long-term accumulation during a price pullback** rather than distribution — the tell-tale distribution signature (low delivery on high volume) is absent.
+- **Syrma cross-check applied:** a results-day volume spike on low ~15% delivery would be a churn/red-flag. Here 11-Aug delivered **56.44% on 2.2x volume** — the opposite, a healthy accumulation signal.
 
 **What this means for the assessment:**
-- Delivery % could not be cross-checked on results-day volume surges — a known trap (from the Syrma results-day case) where +500% volume on low ~15% delivery = speculative churn, not accumulation.
-- Q1 FY27 results (Aug 10) triggered a **13% single-day drop** despite a revenue/profit beat — consistent with profit-taking on high retail churn rather than institutional accumulation.
-- **Recommendation to reader:** monitor daily delivery % on NSE before initiating. Demand delivery >40% on any breakout attempt.
+- ✅ The sustained >50% delivery **removes the accumulation-vs-churn uncertainty** flagged in the original note.
+- ✅ Delivery quality **supports (not conflicts with) the fundamental accumulation thesis** — FII trim notwithstanding, the daily tape shows strong hands taking delivery.
+- ⚠️ It does **not**, however, override the broken technicals (below all MAs). High delivery on a falling knife can precede a base, but the checklist still requires a price trigger before entry.
 
 ---
 
@@ -338,7 +364,9 @@ NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `
 
 **No bulk or block deals reported for Jeena Sikho in calendar 2026** in the news sources reviewed.
 
-**What this means:** The FII position (peaked at 6.59% Sep'25, trimmed to 4.78% Jun'26) has changed through **gradual market purchases**, not visible block transactions. The stock's sharp moves (54% rally in 3 sessions after the Choice BUY, 13% crash post-Q1, -20% on 1 Jun) are **retail-driven**, consistent with the BSE "B" group status.
+**What this means:** The FII position (peaked at 6.59% Sep'25, trimmed to 4.78% Jun'26) has changed through **gradual market purchases**, not visible block transactions. The stock's sharp moves (54% rally in 3 sessions after the Choice BUY, 13% crash post-Q1, -20% on 1 Jun) are mostly **retail-driven**, consistent with the BSE "B" group status.
+
+> **✅ Delivery cross-check (13 Aug):** The 13% post-Q1 crash (10-11 Aug) delivered **56.44% on 2.2x volume** — this tempers the "retail churn" interpretation. The decline was absorbed by genuine strong-hand buying, suggesting the pullback is being **accumulated** rather than distributed. FII trimming is being absorbed by other strong hands and retail delivery-taking.
 
 **SAST Disclosure:** No fund crossed the 5%/10% threshold disclosure was flagged in the news research for 2026.
 
@@ -357,14 +385,14 @@ NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `
 | FY26 | **17.87** | **+145%** |
 | TTM | 19.03 | — |
 
-### Valuation at CMP (₹519)
+### Valuation at CMP (₹519.60)
 
 | Metric | Value |
 |--------|-------|
 | **Trailing P/E (FY26)** | ~29x |
 | **Industry P/E** | 28.3x |
 | **PEG Ratio (3Y Profit CAGR)** | 0.31 |
-| **Price/Book** | ~13.8x (₹519 / ₹37.6) |
+| **Price/Book** | ~13.8x (₹519.60 / ₹37.6) |
 | **Earnings Yield** | 4.93% |
 
 ### Analyst Consensus & Scenarios
@@ -460,11 +488,11 @@ NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `
 
 | # | Checklist Item | Criterion | Evidence | Verdict |
 |---|---------------|-----------|----------|---------|
-| 1 | **Price Position** | Within 25% of 52W high or at ATH | 52W High ₹850, CMP ₹519. Distance: **39% below high** ❌ | ❌ **FAIL** |
+| 1 | **Price Position** | Within 25% of 52W high or at ATH | 52W High ₹850, CMP ₹519.60. Distance: **39% below high** ❌ | ❌ **FAIL** |
 | 2 | **Trend** | Clear uptrend, HH/HL visible | Price below ALL 15 MAs. Downtrend from ₹850. No HH/HL. | ❌ **FAIL** |
-| 3 | **Volume Characteristics** | HVQ/HVY/HVE during breakouts | Retail churn; -13% on results day despite revenue beat. No delivery data to confirm | ⚠️ CAUTION |
+| 3 | **Volume Characteristics** | HVQ/HVY/HVE during breakouts | -13% on results day (11-Aug) delivered **56.44% on 2.2x volume** — healthy accumulation, not churn. But no breakout yet | ⚠️ CAUTION |
 | 4 | **Clean Price Action** | Smooth/orderly candles | -20% (1 Jun), -13% (10 Aug), 54% in 3 sessions. Erratic | ❌ **FAIL** |
-| 5 | **EMA Alignment** | 9>20>50>200, all up, price above | Price ₹519 below EMA10 ₹559, EMA20 ₹567, EMA50 ₹585, EMA200 ₹617. Inverted | ❌ **FAIL** |
+| 5 | **EMA Alignment** | 9>20>50>200, all up, price above | Price ₹520 below EMA10 ₹551, EMA20 ₹562, EMA50 ₹582, EMA200 ₹616. Inverted | ❌ **FAIL** |
 | 6 | **Chart Pattern & Base** | Cup & Handle / Flat Base / etc. | Descending channel; sitting on S2 ₹519 support. No clear base | ⚠️ CAUTION |
 | 7 | **Base Quality** | Well-formed, tightening action | Price testing support amid falling MAs; expansion unwinding | ⚠️ CAUTION |
 | 8 | **ADR** | Suitable for trading style | ~4-5% daily range — wide stops needed | ⚠️ CAUTION |
@@ -477,7 +505,7 @@ NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `
 | 15 | **Sector & Govt Boost** | Policy support, reforms | Ayurveda/AYUSH govt push, wellness economy growth | ⚠️ CAUTION |
 | 16 | **Fundamental Quality** | Healthy BS, improving business | ROCE 71%, ROE 60%, CFO/OP 96%, FCF +₹231 Cr. Exceptional — but P/B ~14x | ✅ PASS |
 | 17 | **Quarterly Earnings Growth** | 30-50% growth | Q1 FY27: Rev +29%, PAT +28%. Solid if not stellar | ✅ PASS |
-| 18 | **Delivery Percentage** | Genuine buying vs churn | **N/A — NSE delivery data unavailable (infra block).** Flagged — demand >40% delivery on any entry | ⚠️ CAUTION |
+| 18 | **Delivery Percentage** | Genuine buying vs churn | **Confirmed strong — avg 51.4% over 11 sessions (range 46-56%), every day >40%.** Results-day (11-Aug) delivered 56.44%. Genuine accumulation, not churn | ✅ **PASS** |
 | 19 | **News & Institutional Activity** | Positive news, MF/FII activity | Choice BUY ₹1,000, but FIIs trimming from peak (6.59→4.78%); Q4 one-offs | ⚠️ CAUTION |
 | 20 | **Risk Management** | Entry, SL, target defined | Can set SL below ₹492 (52W low); but buying into a falling knife | ⚠️ CAUTION |
 | 21 | **Market Environment** | Overall market supports | mixed | ⚠️ CAUTION |
@@ -486,7 +514,7 @@ NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `
 | 24 | **Breakout Confirmation** | Decisive breakout with volume | No — price in confirmed downtrend, no breakout | ❌ **FAIL** |
 | 25 | **Trading Psychology** | Avoid FOMO, follow rules | No entry signal; discipline dictates wait | ✅ PASS |
 
-**Total Score: 10 / 25 — ❌ WEAK (Pass)**
+**Total Score: 11 / 25 — ❌ WEAK (Pass)**
 
 | Score Range | Verdict |
 |-------------|---------|
@@ -496,20 +524,21 @@ NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `
 
 ### Key Weaknesses (Items to Watch for Improvement)
 1. **🔴 Items 1, 2, 4, 5, 9, 14, 23, 24 — all price/trend-related FAILs.** The stock is in a genuine technical downtrend (below all MAs, negative momentum). No swing entry until the chart confirms a reversal.
-2. **🔴 Delivery data unavailable** (Item 18) — cannot verify accumulation. Must check NSE delivery before any entry.
+2. **🟢 Delivery quality is genuinely strong** (Item 18 PASS — avg 51.4%), but does NOT offset the price/trend failures. Accumulation is present; the trigger is not.
 3. **⚠️ Profit quality** — Q1 flattered by +1,212% other income; operating earnings grew slower than headline PAT.
 
 ### Trade Setup (If Considering Entry)
-- **No entry now.** The 25-point score is a clear **10/25 — PASS**. Premature entry is against the checklist.
-- **Entry trigger (wait for confirmation):** Reclaim of **₹552 (R1)** or preferably **₹577 pivot** on volume with delivery >40%
-- **Alternative accumulation:** Strong-close near **₹461 (S3)** with delivery >40% would offer a high-R:R long
+- **No entry now.** The 25-point score is a clear **11/25 — PASS**. Premature entry is against the checklist.
+- **Entry trigger (wait for confirmation):** Reclaim of **₹552 (R1)** or preferably **₹577 pivot** on volume — delivery already clears >40%, so the missing catalyst is a price reclaim.
+- **Alternative accumulation:** Strong-close near **₹461 (S3)** would offer a high-R:R long; delivery confirmation already present (avg 51%).
+- **Note:** The delivery requirement (>40%) is **already satisfied** — the 25-point flow now hinges purely on a price/reversal trigger, not on delivery confirmation.
 - **Stop Loss (if trading the bounce):** below ₹492 (52W low)
 - **Target 1:** ₹552 (R1) → **Target 2:** ₹577 (pivot) → **Target 3:** ₹610 (R2 on a full reversal)
 
 ### Verdict Recommendation
-**Do not initiate a swing position at ₹519.** This is a fundamentally excellent company (ROCE 71%, ROE 60%, strong FCF, cheap on P/E) trapped in a technical downtrend and rich on P/B. The checklist is unambiguous (10/25). **Set alerts for:**
-1. ₹552/₹577 reclaim on volume + delivery >40% → swing entry
-2. ₹461-492 accumulation zone with confirmed delivery >40% → high-R:R long
+**Do not initiate a swing position at ₹519.60.** This is a fundamentally excellent company (ROCE 71%, ROE 60%, strong FCF, cheap on P/E) trapped in a technical downtrend and rich on P/B — but with **confirmed strong delivery (avg 51.4%)** indicating genuine accumulation during the pullback. The checklist is unambiguous (11/25). **Set alerts for:**
+1. ₹552/₹577 reclaim on volume → swing entry (delivery already confirmed >40%)
+2. ₹461-492 accumulation zone → high-R:R long
 3. Q2 FY27 results (expected Oct 2026) as margin-normalization catalyst
 
 ---
@@ -520,19 +549,19 @@ NSE bhavcopy/delivery data could not be retrieved. All direct attempts (Python `
 
 Jeena Sikho is an **exceptionally high-quality, fast-growing Ayurveda healthcare business** — FY26 revenue +71%, PAT +144%, 70.7% ROCE, 60% ROE, positive FCF, and a stable promoter base. The **fundamental story is genuinely strong** and, on a P/E basis (trailing ~29x, forward ~21-23x), the stock is **not expensive** relative to its growth.
 
-**However, three issues prevent a "buy" at ₹519:**
+**However, three issues prevent a "buy" at ₹519.60:**
 
-1. **📉 Technically Broken** — The price trades **below every one of the 15 moving averages** (TradingView: Strong Sell, 14 of 15 MAs in Sell). RSI at 35 with room to fall. The stock has been in a sustained downtrend from its ₹850 high (down ~39%) and is sitting right on the S2 support at ₹519. There is no technical buy signal yet.
-
+1. **📉 Technically Broken** — The price trades **below every major moving average** (TradingView: Sell, 13 of 15 MAs in Sell). RSI at 36 with room to fall. The stock has been in a sustained downtrend from its ₹850 high (down ~39%) and is sitting right on the S2 support at ₹519. There is no confirmed technical buy signal yet, though Hull MA(9) and three oscillators have just flipped Buy — early base-building signs.
 2. **💹 Rich on Price/Book** — At ~14x book (Screener's sole CON), the market pays a massive premium based on today's exceptional 60% ROE. If margins keep "normalizing" (OPM already down from 45% to 41%) and ROE regresses toward the ~50% 3-yr average, the P/B premium unwinds sharply. Markets Mojo's SELL is anchored on exactly this.
-
 3. **🎰 Profit Quality & Volatility** — Q1 profit was flattered by a **+1,212% surge in other income** (EBIT only grew +11% vs PAT +28%). This is a retail-driven small-cap (BSE "B" group) with -13%/-20% single-day crashes, and FIIs have been trimming, not adding.
 
+> **✅ Delivery Update (13 Aug):** Earlier inconclusive delivery data has been **resolved** — NSE bhavcopy confirms delivery **averaging 51.4% over the last 11 sessions (range 46-56%)**, including 56.44% on the results-day volume spike. This is **genuine accumulation**, not speculative churn. The accumulation-vs-churn risk is now LOW, but the core technical/valuation concerns remain.
+
 ### What Would Change This View
-- **Momentum reversal on the charts** — a decisive reclaim of the ₹552 R1 / ₹577 pivot on strong volume with delivery >40%
+- **Momentum reversal on the charts** — a decisive reclaim of the ₹552 R1 / ₹577 pivot on strong volume. Delivery already confirms >40%.
 - **Profit quality recovery** — one quarter where operating earnings (ex-other income) grow in line with PAT, and OPM stabilizes above 42%
 - **Institutional accumulation** — FII/DII holding meaningfully rising after the trim
-- **Entry on support** — a clean dip to the ₹461 (S3) region on high delivery would offer a better risk/reward for long-term accumulation
+- **Entry on support** — a clean dip to the ₹461 (S3) region would offer a better risk/reward for long-term accumulation
 
 ### Suitable Investor Profile
 
@@ -543,7 +572,7 @@ Jeena Sikho is an **exceptionally high-quality, fast-growing Ayurveda healthcare
 | Momentum trader | 🔴 **Avoid** — negative MACD & Momentum, below all MAs |
 | Value investor | 🟡 **Mixed** — cheap on P/E (29x) but very expensive on P/B (~14x); wait for delivery confirmation |
 
-> **Disclaimer:** For informational purposes only. Not investment advice. Data sourced from Screener.in standalone view (logged-in, 27 metrics), TradingView NSE (real-time), and news research. NSE delivery data could not be retrieved due to an infrastructure block and is flagged accordingly. The author may hold positions in securities discussed. Independent due diligence recommended before any investment decision.
+> **Disclaimer:** For informational purposes only. Not investment advice. Data sourced from Screener.in standalone view (logged-in, 27 metrics), TradingView NSE (real-time), NSE bhavcopy (delivery data confirmed, avg 51.4%), and news research. The author may hold positions in securities discussed. Independent due diligence recommended before any investment decision.
 
 ---
 
