@@ -1,6 +1,73 @@
 {
   "analyses": [
     {
+      "title": "KPI Green Energy — Deep Dive Analysis",
+      "ticker": "KPIGREEN",
+      "file": "kpi-green-energy-deep-dive-analysis.md",
+      "slug": "kpi-green-energy-deep-dive-analysis",
+      "date": "2026-08-17",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "renewable-energy",
+        "power"
+      ],
+      "summary": "KPI Green (KPIGREEN): 6.94 GW renewable pipeline, 104% 5-yr PAT CAGR, cheap 13.2x P/E. But Q1 FY27 PAT -15% on soaring interest/depreciation, borrowings 3.5x to ₹5,197 Cr, 44.7% promoter pledge, and a technically-broken downtrend (Strong Sell, below all MAs). Verdict: CAUTION — fundamental value but EPS-dilutive until post-FY28, not a swing entry now.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 14 Aug 2026",
+      "ticker": "XOM:CVX:OXY:HAL:SLB:COP:DAL:UAL:AAL:CCL:RCL:SPY:QQQ:ONGC:OIL:IOC:BPCL:HPCL:RELIANCE:INDIGO",
+      "file": "policy-pulse-global-14-aug-2026.md",
+      "slug": "policy-pulse-global-14-aug-2026",
+      "date": "2026-08-14",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "hormuz",
+        "crude",
+        "oil",
+        "india"
+      ],
+      "summary": "US indefinite-Hormuz-blockade threat + IEA supply cut (4.3M bpd) fuel a ~6% weekly oil rally — BUY XOM/CVX/OXY, SELL DAL/UAL; India refiners under pressure as rupee dips; only a signed deal flips the trade",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 14 Aug 2026",
+      "ticker": "MOTILALOFS:HDFCAMC:NIPPONLIFE:ANGELONE:ZERODHA:IIFL:BSE:NSE:TATAMOTORS:SBIN:TCS:BHARTIARTL:ICICIBANK:WIPRO:LGEL",
+      "file": "policy-pulse-ministries-regulators-14-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-14-aug-2026",
+      "date": "2026-08-14",
+      "tags": [
+        "policy-pulse",
+        "india",
+        "sebi",
+        "ipo",
+        "brokerages",
+        "pms",
+        "ai"
+      ],
+      "summary": "SEBI's accredited-investor consultation (manager-led, 4-lakh pool) + OBPP bond-platform circular + Shiprocket/Behari Lal IPOs close at 80x subscription — BUY BSE, watch MOTILALOFS/ZERODHA; Nifty down 4th day on crude",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 14 Aug 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:SPY:QQQ:NVDA:MSFT:GOOGL:META:DJT",
+      "file": "policy-pulse-trump-us-14-aug-2026.md",
+      "slug": "policy-pulse-trump-us-14-aug-2026",
+      "date": "2026-08-14",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "hormuz",
+        "crude",
+        "oil"
+      ],
+      "summary": "US threatens an indefinite Hormuz blockade; oil jumps ~2% toward a 6% weekly gain (Brent ~87-88, IEA cuts supply 4.3M bpd) — BUY XOM/CVX/OXY, SELL DAL/UAL/CCL; S&P pauses near record",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Jeena Sikho Lifecare — Deep Dive Analysis",
       "ticker": "JSLL",
       "file": "jeena-sikho-lifecare-deep-dive-analysis.md",

@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "kpi-green-energy-deep-dive-analysis",
+      "ticker": "KPIGREEN",
+      "title": "KPI Green Energy — Deep Dive Analysis",
+      "date": "2026-08-17",
+      "yahooSymbol": "KPIGREEN.NS",
+      "priceAtAnalysis": 305,
+      "support": 281,
+      "resistance": 357,
+      "supports": [
+        281,
+        303
+      ],
+      "resistances": [
+        357,
+        386
+      ],
+      "verdict": "CAUTION"
+    },
+    {
       "slug": "jeena-sikho-lifecare-deep-dive-analysis",
       "ticker": "JSLL",
       "title": "Jeena Sikho Lifecare — Deep Dive Analysis",
