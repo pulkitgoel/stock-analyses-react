@@ -1,6 +1,54 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global Spillover — 18 Aug 2026",
+      "ticker": "XOM:CVX:OXY:USO:DAL:UAL:CCL:SPY:QQQ:NVDA:MSFT",
+      "file": "policy-pulse-global-18-aug-2026.md",
+      "slug": "policy-pulse-global-18-aug-2026",
+      "date": "2026-08-18",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "crude",
+        "hormuz",
+        "fomc"
+      ],
+      "summary": "Brent crude tops $90 on Hormuz blockade concerns; markets await Wed FOMC minutes; AI rally pauses at records",
+      "model": "kimi-k2.5"
+    },
+    {
+      "title": "Policy Pulse — Ministries/Regulators — 18 Aug 2026",
+      "ticker": "HAL:BEL:BHARATDYN:MAZDOCK:COCHINSHIP:DATAPATT:ZENTEC:AXISBANK:RELIANCE:BAJFINANCE:ONGC:MM",
+      "file": "policy-pulse-ministries-regulators-18-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-18-aug-2026",
+      "date": "2026-08-18",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "drone",
+        "mq-9b",
+        "market-close"
+      ],
+      "summary": "MoD signs Rs 1,943 cr MQ-9B drone lease with General Atomics; Nifty falls 6th straight session to 24,155 on crude above $90",
+      "model": "kimi-k2.5"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 18 Aug 2026",
+      "ticker": "WMT:HD:LOW:COST:TGT:CCL:RCL:NCLH",
+      "file": "policy-pulse-trump-us-18-aug-2026.md",
+      "slug": "policy-pulse-trump-us-18-aug-2026",
+      "date": "2026-08-18",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "section-338",
+        "tariffs",
+        "canada"
+      ],
+      "summary": "Trump signs EO for 50% Canada tariffs effective Aug 19 using Section 338; retail beneficiaries WMT HD LOW, cruise lines CCL RCL at risk",
+      "model": "kimi-k2.5"
+    },
+    {
       "title": "KPI Green Energy — Deep Dive Analysis",
       "ticker": "KPIGREEN",
       "file": "kpi-green-energy-deep-dive-analysis.md",
@@ -13,6 +61,77 @@
         "power"
       ],
       "summary": "KPI Green (KPIGREEN): 6.94 GW renewable pipeline, 104% 5-yr PAT CAGR, cheap 13.2x P/E. But Q1 FY27 PAT -15% on soaring interest/depreciation, borrowings 3.5x to ₹5,197 Cr, 44.7% promoter pledge, and a technically-broken downtrend (Strong Sell, below all MAs). Verdict: CAUTION — fundamental value but EPS-dilutive until post-FY28, not a swing entry now.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 17 Aug 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:DAL:UAL:AAL:CCL:RCL:SPY:QQQ:NVDA:MSFT:GOOGL:META:IOC:BPCL:HPCL:MRPL:ONGC:OIL:INFY:TCS:WIPRO:HCLTECH:HAL:BEL:MAZDOCK:BHEL:LT:NTPC",
+      "file": "policy-pulse-global-17-aug-2026.md",
+      "slug": "policy-pulse-global-17-aug-2026",
+      "date": "2026-08-17",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "fomc",
+        "crude",
+        "hormuz",
+        "india"
+      ],
+      "summary": "Crude ~$89.50 on the indefinite Hormuz blockade + Wednesday FOMC minutes loom; India gets a sector catalyst from Modi's I-Day AI/defence agenda — BUY energy (XOM), SELL airlines; BUY Indian IT/defence",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 17 Aug 2026",
+      "ticker": "TATAMOTORS:BEL:ZENTEC:DATAPATT:BSE:ZERODHA:ANGELONE:MOTILALOFS:IIFL:GREAVESCOT",
+      "file": "policy-pulse-ministries-regulators-17-aug-2026.md",
+      "slug": "policy-pulse-ministries-regulators-17-aug-2026",
+      "date": "2026-08-17",
+      "tags": [
+        "policy-pulse",
+        "india",
+        "defence",
+        "mod",
+        "ipo",
+        "brokerages"
+      ],
+      "summary": "MoD names ₹1,577 cr loiter-munition orders (TASL + NIBE) for the Indian Army — BUY TATAMOTORS proxy; Lalithaa Jewellery IPO opens ~45%, Shiprocket lists Aug 19 — BUY BSE; Nifty down 5th day on crude",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi / India Govt — 17 Aug 2026",
+      "ticker": "TCS:INFY:WIPRO:HCLTECH:LTIM:TECHM:HAL:BEL:BEML:MAZDOCK:DATAPATT:ZENTEC:PARAS:BHEL:LT:NTPC:TATAPOWER:DIXON:AMBER:KAYNES:SYRMA:ONGC:OIL",
+      "file": "policy-pulse-modi-17-aug-2026.md",
+      "slug": "policy-pulse-modi-17-aug-2026",
+      "date": "2026-08-17",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "india",
+        "ai",
+        "defence",
+        "semiconductor",
+        "nuclear",
+        "energy"
+      ],
+      "summary": "PM Modi's Aug 15 Independence Day address: train 1 crore youth in AI, defence self-reliance (Sudarshan Chakra), nuclear + semiconductor build-out — BUY IT (TCS/INFY) and defence (HAL/BEL), watch nuclear (BHEL/LT)",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 17 Aug 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:OIH:DAL:UAL:AAL:LUV:SAVE:CCL:RCL:NCLH:SPY:QQQ:NVDA:MSFT:GOOGL:META:DJT",
+      "file": "policy-pulse-trump-us-17-aug-2026.md",
+      "slug": "policy-pulse-trump-us-17-aug-2026",
+      "date": "2026-08-17",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "crude",
+        "oil",
+        "fomc",
+        "hormuz"
+      ],
+      "summary": "Crude climbs ~1.1% to ~$89.50 on the indefinite Hormuz blockade; July retail sales -0.6% pulls yields off highs ahead of Wednesday FOMC minutes — BUY XOM/CVX/OXY, SELL DAL/UAL/CCL; AI rally pauses",
       "model": "deepseek-chat"
     },
     {
