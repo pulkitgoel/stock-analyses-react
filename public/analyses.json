@@ -1,6 +1,21 @@
 {
   "analyses": [
     {
+      "title": "Ramkrishna Forgings Ltd — Deep Dive Analysis",
+      "ticker": "RKFORGE",
+      "file": "ramkrishna-forgings-deep-dive-aug19.md",
+      "slug": "ramkrishna-forgings-deep-dive-aug19",
+      "date": "2026-08-19",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "forgings",
+        "auto-ancillaries",
+        "mid-cap"
+      ],
+      "summary": "Ramkrishna Forgings (RKFORGE) shows strong Q1 FY27 profit growth of 297% YoY with ₹9,635 Cr order book providing 4-year visibility. However, elevated valuation (P/E ~119x), low ROCE (5.6%), and promoter pledge (15.56%) warrant caution. Trading near 52-week high with mixed analyst consensus."
+    },
+    {
       "title": "Policy Pulse — Global Spillover — 18 Aug 2026",
       "ticker": "XOM:CVX:OXY:USO:DAL:UAL:CCL:SPY:QQQ:NVDA:MSFT",
       "file": "policy-pulse-global-18-aug-2026.md",

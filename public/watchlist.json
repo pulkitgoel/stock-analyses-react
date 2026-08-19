@@ -1,6 +1,16 @@
 {
   "watchlist": [
     {
+      "slug": "ramkrishna-forgings-deep-dive-aug19",
+      "ticker": "RKFORGE",
+      "title": "Ramkrishna Forgings Ltd — Deep Dive Analysis",
+      "date": "2026-08-19",
+      "yahooSymbol": "RKFORGE.NS",
+      "priceAtAnalysis": 749,
+      "support": 680,
+      "resistance": 775
+    },
+    {
       "slug": "kpi-green-energy-deep-dive-analysis",
       "ticker": "KPIGREEN",
       "title": "KPI Green Energy — Deep Dive Analysis",
