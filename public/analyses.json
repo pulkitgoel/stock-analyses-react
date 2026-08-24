@@ -1,6 +1,85 @@
 {
   "analyses": [
     {
+      "title": "Siemens Ltd — Deep Dive Analysis",
+      "ticker": "SIEMENS",
+      "file": "siemens-ltd-deep-dive-analysis.md",
+      "slug": "siemens-ltd-deep-dive-analysis",
+      "date": "2026-08-24",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "capital-goods",
+        "industrial",
+        "infrastructure"
+      ],
+      "summary": "Deep-dive on Siemens Ltd — industrial giant with ₹45,033 Cr order backlog, 14.6% revenue growth, but P/E ~93x and margin pressures.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global — 21 Aug 2026",
+      "ticker": "BSE:NSE:ZERODHA:ANGELONE",
+      "file": "policy-pulse-global-21-aug-2026.md",
+      "slug": "policy-pulse-global-21-aug-2026",
+      "date": "2026-08-21",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "market-close",
+        "crude",
+        "ipo"
+      ],
+      "summary": "Nifty ends 7-day losing streak with 0.64% gain; Brent crude tops 3 on Hormuz concerns; Shiprocket IPO lists; US-Canada trade deadline looms",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries/Regulators — 21 Aug 2026",
+      "ticker": "DATAPATT:BEL:APOLLO:MICRO:ANGELONE:ZERODHA:IIFL:BSE:NSE",
+      "file": "policy-pulse-ministries-21-aug-2026.md",
+      "slug": "policy-pulse-ministries-21-aug-2026",
+      "date": "2026-08-21",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "sebi",
+        "ipo"
+      ],
+      "summary": "Data Patterns wins Rs 586 cr BEL radar order; Apollo Micro gets Rs 81 cr defence order; SEBI study shows 88.5% of young F&O traders lost money in FY26",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 21 Aug 2026",
+      "ticker": "F:GM:TSLA:X:AA:WMT:HD:LOW:DJT:HOOD:BK:COIN",
+      "file": "policy-pulse-trump-us-21-aug-2026.md",
+      "slug": "policy-pulse-trump-us-21-aug-2026",
+      "date": "2026-08-21",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "canada",
+        "crypto"
+      ],
+      "summary": "Canada trade deal deadline looms with 50% Section 338 tariffs set for Aug 22; deal very close with auto tariffs potentially cut to 15%; Trump hosts crypto summit, DJT Truth API generating revenue",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Modi & Trump — 19-20 Aug 2026",
+      "ticker": "F:GM:TATASTEEL:ONGC:BEL:BSE:HDFCBANK",
+      "file": "policy-pulse-modi-trump-19-20-aug-2026.md",
+      "slug": "policy-pulse-modi-trump-19-20-aug-2026",
+      "date": "2026-08-20",
+      "tags": [
+        "policy-pulse",
+        "trump",
+        "modi",
+        "tariffs",
+        "sebi",
+        "rbi"
+      ],
+      "summary": "Trump pauses 50% Canada tariffs (Section 338), Modi appeals for economic self-reliance, SEBI modifies disclosure framework, RBI MPC minutes signal possible rate hike"
+    },
+    {
       "title": "Ramkrishna Forgings Ltd — Deep Dive Analysis",
       "ticker": "RKFORGE",
       "file": "ramkrishna-forgings-deep-dive-aug19.md",
