@@ -5,6 +5,63 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Ministries & Regulators — 25 Aug 2026",
+    "ticker": "DIXON:AMBER:SYRMA:KAYNES:ANGELONE:IIFL:MOTILALOFS:BSE",
+    "file": "policy-pulse-ministries-25-aug-2026.md",
+    "slug": "policy-pulse-ministries-25-aug-2026",
+    "date": "2026-08-25",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "pli"
+    ],
+    "summary": "SEBI study reveals 88% F&O trader losses; PLI 2.0 mobile scheme favors scale players like Dixon",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump/US — 25 Aug 2026",
+    "ticker": "BA:BRK.B:V:MA:HD:META:DJT:GM:F",
+    "file": "policy-pulse-trump-us-25-aug-2026.md",
+    "slug": "policy-pulse-trump-us-25-aug-2026",
+    "date": "2026-08-25",
+    "tags": [
+      "policy-pulse",
+      "us-only"
+    ],
+    "summary": "Trump disclosed 1,051 June trades including Boeing same-day as Navy contract; US-Canada trade war escalates with 50% tariffs",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Global Spillover — US-Canada Trade War & Commodity Shifts — 24 Aug 2026",
+    "ticker": "TATASTEEL:JSWSTEEL:SAIL:HINDALCO:TCS:INFY:HD:LOW:GM:F:NUE:STLD",
+    "file": "policy-pulse-global-24-aug-2026.md",
+    "slug": "policy-pulse-global-24-aug-2026",
+    "date": "2026-08-24",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "trade-war",
+      "commodities"
+    ],
+    "summary": "US-Canada 50% tariff trade war escalates; India Sensex -171 to 77,369; metals gain on supply realignment; gold hits 3-month highs; TATASTEEL, JSWSTEEL beneficiaries",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse — Trump Stock Trades & US-Canada Trade War — 24 Aug 2026",
+    "ticker": "META:BRK.B:V:MA:HD:COIN:HOOD:DJT:X:NUE:STLD",
+    "file": "policy-pulse-trump-us-24-aug-2026.md",
+    "slug": "policy-pulse-trump-us-24-aug-2026",
+    "date": "2026-08-24",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "trump-trades",
+      "trade-war"
+    ],
+    "summary": "Trump's June disclosure reveals 1,051 trades worth 8M-63M: sold META, bought BRK.B/V/MA/HD; DJT Q2 loss 38M; US-Canada 50% tariffs escalate trade war",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Siemens Ltd — Deep Dive Analysis",
     "ticker": "SIEMENS",
     "file": "siemens-ltd-deep-dive-analysis.md",

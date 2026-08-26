@@ -26,6 +26,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-ministries-25-aug-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-trump-us-25-aug-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-global-24-aug-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-trump-us-24-aug-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/siemens-ltd-deep-dive-analysis</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -866,17 +886,152 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/company/dixon</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/amber</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/syrma</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/kaynes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/angelone</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/iifl</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/motilalofs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/ba</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/brk.b</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/ma</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/hd</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/meta</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/djt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/gm</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/f</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/tatasteel</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/jswsteel</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/sail</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/hindalco</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/tcs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/infy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/low</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/nue</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/stld</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/coin</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/hood</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/x</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/company/siemens</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/zerodha</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/angelone</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -901,27 +1056,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://stocksfundamentals.online/company/iifl</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/f</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/gm</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://stocksfundamentals.online/company/tsla</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/x</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -936,37 +1071,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://stocksfundamentals.online/company/hd</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/low</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/djt</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/hood</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://stocksfundamentals.online/company/bk</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/coin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/tatasteel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1136,11 +1241,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://stocksfundamentals.online/company/meta</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://stocksfundamentals.online/company/ioc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1162,16 +1262,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/oil</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/infy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/tcs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1206,11 +1296,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://stocksfundamentals.online/company/motilalofs</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://stocksfundamentals.online/company/greavescot</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1237,26 +1322,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/tatapower</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/dixon</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/amber</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/kaynes</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/syrma</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1322,11 +1387,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/crwv</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/hindalco</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1746,16 +1806,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://stocksfundamentals.online/company/jswsteel</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/sail</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://stocksfundamentals.online/company/mankind</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1822,11 +1872,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/lmt</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/ba</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2382,11 +2427,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/cgpower</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/nue</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
