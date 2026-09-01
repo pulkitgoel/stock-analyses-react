@@ -1,6 +1,166 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global - 01 Sep 2026",
+      "ticker": "XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:CCL:ONGC:IOC:BPCL:INDIGO",
+      "file": "policy-pulse-global-01-sep-2026.md",
+      "slug": "policy-pulse-global-01-sep-2026",
+      "date": "2026-09-01",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil"
+      ],
+      "summary": "Brent +2% to $92 on Hormuz re-escalation (Day 186); India Q1 GDP 7.8% beats all forecasts; Fed hike bets. BUY XOM, ONGC; SELL DAL, INDIGO.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Ministries/Regulators - 01 Sep 2026",
+      "ticker": "BSE:ZERODHA:ANGELONE:MOTILALOFS:IIFL:MCX",
+      "file": "policy-pulse-ministries-01-sep-2026.md",
+      "slug": "policy-pulse-ministries-01-sep-2026",
+      "date": "2026-09-01",
+      "tags": [
+        "policy-pulse",
+        "regulatory",
+        "exchanges"
+      ],
+      "summary": "SEBI grants NSE IPO NOC (valuation up to Rs 5.26 lakh cr, September listing target); ETF framework deferred to Sep 7. Positive for BSE, ZERODHA, ANGELONE.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Modi/Govt - 01 Sep 2026",
+      "ticker": "HDFCBANK:ICICIBANK:SBIN:LT:ULTRACEMCO:ITC:DIXON:AMBER:KAYNES:CGPOWER:MOSCHIP",
+      "file": "policy-pulse-modi-01-sep-2026.md",
+      "slug": "policy-pulse-modi-01-sep-2026",
+      "date": "2026-09-01",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "macroeconomy"
+      ],
+      "summary": "PM Modi hails 7.8% Q1 GDP 'herculean feat'; SCO bilaterals with Putin and Iran. SEMICON India Sep 17-19. Positive for HDFCBANK, LT, DIXON, KAYNES.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Trump/US - 01 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:DJT:SPY:QQQ",
+      "file": "policy-pulse-trump-us-01-sep-2026.md",
+      "slug": "policy-pulse-trump-us-01-sep-2026",
+      "date": "2026-09-01",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump"
+      ],
+      "summary": "Brent tops $92 as US-Iran fighting resumes (Day 186); supertankers struck in Hormuz. BUY XOM, CVX, HAL; SELL DAL, UAL. Fed Sep 16 hike bets, DJT -3%.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Ministries/Regulators - 28 Aug 2026",
+      "ticker": "BEL:TEJASNET:BSE:HAL",
+      "file": "policy-pulse-ministries-28-aug-2026.md",
+      "slug": "policy-pulse-ministries-28-aug-2026",
+      "date": "2026-08-28",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "regulatory"
+      ],
+      "summary": "BEL secured Rs 730 crore new orders; SEBI Chairman says NSE IPO close to approval; Tejas Networks gets Rs 1,537 crore BSNL order.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Modi/Govt - 28 Aug 2026",
+      "ticker": "BEL:HAL:BDL:DATAPATTNS",
+      "file": "policy-pulse-modi-28-aug-2026.md",
+      "slug": "policy-pulse-modi-28-aug-2026",
+      "date": "2026-08-28",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "modi"
+      ],
+      "summary": "India-Kuwait Joint Defence Committee held inaugural meeting in New Delhi; defence export opportunities for BEL, HAL, BDL.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Trump/US - 28 Aug 2026",
+      "ticker": "LMT:NOC:GD:RTX:PLTR:NFLX:DIS:WBD:CMCSA:COIN:DJT:MU",
+      "file": "policy-pulse-trump-us-28-aug-2026.md",
+      "slug": "policy-pulse-trump-us-28-aug-2026",
+      "date": "2026-08-28",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "leader-trades"
+      ],
+      "summary": "Trump disclosed 1000+ trades in June including LMT, NOC, GD, RTX, PLTR, NFLX, DIS. Also signed Lake America EO amid Canada trade war.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 27 Aug 2026",
+      "ticker": "XOM:CVX:COP",
+      "file": "policy-pulse-trump-us-27-aug-2026.md",
+      "slug": "policy-pulse-trump-us-27-aug-2026",
+      "date": "2026-08-27",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump",
+        "leader-trades",
+        "oil-gas",
+        "iran-war",
+        "xom",
+        "cvx",
+        "cop"
+      ],
+      "summary": "Trump oil/gas trades during Iran war: XOM, CVX, COP active; $500K-$1M XOM sold pre-ceasefire. Holdings up 39% ($4.6M-$15.5M gain).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Global Spillover — 26 Aug 2026",
+      "ticker": "F:GM:STLA:XOM:CVX:OXY:DAL:UAL:CCL:TCS:INFY:HCLTECH:COFORGE:ONGC:OIL",
+      "file": "policy-pulse-global-26-aug-2026.md",
+      "slug": "policy-pulse-global-26-aug-2026",
+      "date": "2026-08-26",
+      "tags": [
+        "policy-pulse",
+        "global"
+      ],
+      "summary": "US-Canada trade war threatens North American supply chains; Hormuz remains two-way risk; G20 Trade Ministerial preview",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 26 Aug 2026",
+      "ticker": "HDFCBANK:ICICIBANK:SBIN:KOTAKBANK:BAJFINANCE:TCS:INFY:WIPRO:HCLTECH:COFORGE:SUNPHARMA:DRREDDY:CIPLA:LUPIN",
+      "file": "policy-pulse-ministries-26-aug-2026.md",
+      "slug": "policy-pulse-ministries-26-aug-2026",
+      "date": "2026-08-26",
+      "tags": [
+        "policy-pulse",
+        "banking",
+        "it",
+        "pharma"
+      ],
+      "summary": "RBI MPC holds repo at 5.25% with GDP raised to 6.7%; Piyush Goyal to visit US for G20 trade meet and USTR talks",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse — Trump/US — 26 Aug 2026",
+      "ticker": "F:GM:STLA:SPCX:HD:MA:V:BRK.B:DJT:XOM:CVX:OXY:DAL:UAL",
+      "file": "policy-pulse-trump-us-26-aug-2026.md",
+      "slug": "policy-pulse-trump-us-26-aug-2026",
+      "date": "2026-08-26",
+      "tags": [
+        "policy-pulse",
+        "us-only"
+      ],
+      "summary": "Trump invokes Section 338 for 50% Canada tariffs; New disclosure reveals SpaceX investment, heavy buying of HD, MA, V, BRK.B",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse — Ministries & Regulators — 25 Aug 2026",
       "ticker": "DIXON:AMBER:SYRMA:KAYNES:ANGELONE:IIFL:MOTILALOFS:BSE",
       "file": "policy-pulse-ministries-25-aug-2026.md",

@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, CalendarDays, FileText } from 'lucide-react';
+import { ArrowUpRight, CalendarDays, FileText, Plus } from 'lucide-react';
 import { Analysis } from '../../types/analysis';
+
+const ITEMS_PER_PAGE = 9;
 
 interface AnalysisGridCardProps {
   analysis: Analysis;
@@ -82,14 +85,37 @@ interface AnalysisGridProps {
 }
 
 export default function AnalysisGrid({ analyses }: AnalysisGridProps) {
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  
+  const visibleAnalyses = analyses.slice(0, visibleCount);
+  const hasMore = visibleCount < analyses.length;
+  
+  const handleLoadMore = () => {
+    setVisibleCount(prev => Math.min(prev + ITEMS_PER_PAGE, analyses.length));
+  };
+
   return (
-    <div
-      className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
-      style={{ gap: '2rem' }}
-    >
-      {analyses.map((a) => (
-        <AnalysisGridCard key={a.slug} analysis={a} />
-      ))}
+    <div className="flex flex-col gap-8">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
+        style={{ gap: '2rem' }}
+      >
+        {visibleAnalyses.map((a) => (
+          <AnalysisGridCard key={a.slug} analysis={a} />
+        ))}
+      </div>
+      
+      {hasMore && (
+        <div className="flex justify-center pt-6">
+          <button
+            onClick={handleLoadMore}
+            className="btn btn-secondary"
+          >
+            <Plus size={16} />
+            Show more
+          </button>
+        </div>
+      )}
     </div>
   );
 }
