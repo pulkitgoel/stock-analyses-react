@@ -5,6 +5,48 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse - Global - 02 Sep 2026",
+    "ticker": "ONGC:COALINDIA:NTPC:POWERGRID:RELIANCE:IOC:BPCL:INDIGO:TCS:INFY:WIPRO:HCLTECH:XOM:CVX:DAL:UAL:SPY:QQQ",
+    "file": "policy-pulse-global-02-sep-2026.md",
+    "slug": "policy-pulse-global-02-sep-2026",
+    "date": "2026-09-02",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil"
+    ],
+    "summary": "Global risk-off Day 187: KOSPI -4%, Nikkei -2.9%, bond rout (US 10-yr 4.8%, JGB 3%). Brent $95. India Sensex -374 but FIIs net buy Rs 6,688 cr. BUY ONGC, COALINDIA; SELL INDIGO, WIPRO.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Ministries/Regulators - 02 Sep 2026",
+    "ticker": "DIXON:KAYNES:AMBER:CGPOWER:MOSCHIP:TATAELXSI:COALINDIA:TATAPOWER:NTPC:JSWENERGY:ADANIGREEN:EXIDEIND:BSE:ZERODHA:ANGELONE",
+    "file": "policy-pulse-ministries-02-sep-2026.md",
+    "slug": "policy-pulse-ministries-02-sep-2026",
+    "date": "2026-09-02",
+    "tags": [
+      "policy-pulse",
+      "ministries",
+      "semiconductors"
+    ],
+    "summary": "Semicon 2.0 six-pillar notifications issued (MeitY); Coal India +4% on Mahanadi Coalfields IPO filing; curtailed renewable sale via BESS allowed. BUY DIXON, KAYNES, CGPOWER, COALINDIA.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Trump/US - 02 Sep 2026",
+    "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:DJT:SPY:QQQ",
+    "file": "policy-pulse-trump-us-02-sep-2026.md",
+    "slug": "policy-pulse-trump-us-02-sep-2026",
+    "date": "2026-09-02",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "trump"
+    ],
+    "summary": "Brent tops $95 on Day 187 of the Iran war as US strikes IRGC targets; bond rout lifts 10-yr to 4.8%. BUY XOM, CVX, HAL, SLB; SELL DAL, UAL. Fed hike odds 68%.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Policy Pulse - Global - 01 Sep 2026",
     "ticker": "XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:CCL:ONGC:IOC:BPCL:INDIGO",
     "file": "policy-pulse-global-01-sep-2026.md",
