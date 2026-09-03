@@ -1,6 +1,62 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global - 03 Sep 2026",
+      "ticker": "XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:ONGC:OIL:RELIANCE:IOC:BPCL:INDIGO:HDFCBANK:ICICIBANK:SBIN:SPY:QQQ",
+      "file": "policy-pulse-global-03-sep-2026.md",
+      "slug": "policy-pulse-global-03-sep-2026",
+      "date": "2026-09-03",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil"
+      ],
+      "summary": "Day 188: Brent tops USD 97, touches USD 99 - BUY XOM, ONGC; SELL DAL, INDIGO. Asia mixed (KOSPI rebounds). US hike odds slide to 54%. Sensex -417, Bank Nifty +0.36%, rupee 94.59.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Ministries/Regulators - 03 Sep 2026",
+      "ticker": "BSE:ZERODHA:ANGELONE:MOTILALOFS:IIFL:HINDZINC:HDFCBANK:ICICIBANK:SBIN",
+      "file": "policy-pulse-ministries-03-sep-2026.md",
+      "slug": "policy-pulse-ministries-03-sep-2026",
+      "date": "2026-09-03",
+      "tags": [
+        "policy-pulse",
+        "ministries",
+        "regulatory"
+      ],
+      "summary": "SC disposes SEBI pleas vs NSE after Rs 1,500 cr settlement - NSE IPO path cleared (Sep window). SEBI accredited-investor comments close today. Hindustan Zinc wins Karnataka REE LoI. BUY BSE, ZERODHA, HINDZINC.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Modi/Govt - 03 Sep 2026",
+      "ticker": "LT:BHARATFORGE:BEL",
+      "file": "policy-pulse-modi-03-sep-2026.md",
+      "slug": "policy-pulse-modi-03-sep-2026",
+      "date": "2026-09-03",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "defence"
+      ],
+      "summary": "India-Belgium summit: 10 defence-industry pacts. L&T named for mine-warfare (Exail) and Zorawar turrets (John Cockerill); Bharat Forge-Kalyani for 70mm rockets. BUY LT, BHARATFORGE.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Trump/US - 03 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:RCAT:AVAV:KTOS:SNOW:AVGO:SPY:QQQ",
+      "file": "policy-pulse-trump-us-03-sep-2026.md",
+      "slug": "policy-pulse-trump-us-03-sep-2026",
+      "date": "2026-09-03",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump"
+      ],
+      "summary": "Section 232 drone tariffs (up to 100%) take effect Sep 3 - BUY RCAT, AVAV, KTOS. Brent tops USD 97 intraday USD 99; Fed hike odds slide to 54%. SELL DAL, UAL.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse - Global - 02 Sep 2026",
       "ticker": "ONGC:COALINDIA:NTPC:POWERGRID:RELIANCE:IOC:BPCL:INDIGO:TCS:INFY:WIPRO:HCLTECH:XOM:CVX:DAL:UAL:SPY:QQQ",
       "file": "policy-pulse-global-02-sep-2026.md",
