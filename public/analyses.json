@@ -1,6 +1,48 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global - 04 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:ONGC:OIL:RELIANCE:IOC:BPCL:INDIGO:HDFCBANK:SBILIFE:TATASTEEL:HINDZINC:SPY:QQQ",
+      "file": "policy-pulse-global-04-sep-2026.md",
+      "slug": "policy-pulse-global-04-sep-2026",
+      "date": "2026-09-04",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil"
+      ],
+      "summary": "Asia rallies Friday (Nikkei back above 65,000, Kospi +1.6%) on Waller hold hopes; then US jobs beat lifts Sept hike odds to 63%. Brent ~USD 95 on Day 189. India snaps 4-day fall: Sensex +363, metals/financials lead.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Ministries/Regulators - 04 Sep 2026",
+      "ticker": "BSE:ZERODHA:ANGELONE:MOTILALOFS:IIFL:IGL:MGL:GUJGAS:ADANIGAS:GSPL:ADANIENT:ADANIPORTS:KOTAKBANK:HDFCBANK",
+      "file": "policy-pulse-ministries-04-sep-2026.md",
+      "slug": "policy-pulse-ministries-04-sep-2026",
+      "date": "2026-09-04",
+      "tags": [
+        "policy-pulse",
+        "ministries",
+        "regulatory"
+      ],
+      "summary": "SEBI to review derivatives settlement pricing after CAS volatility (PR 53/2026) - BSE +3%. NSE IPO global roadshows on, listing window firms (~Sep 25). Army-CGD PNG LoUs (PIB). HDFC Bank raises ~USD 12B via FCNR(B).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Trump/US - 04 Sep 2026",
+      "ticker": "QQQ:SPY:SNOW:PLTR:CRWD:NOW:NVDA:TSLA:LULU:XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:COIN:GLD",
+      "file": "policy-pulse-trump-us-04-sep-2026.md",
+      "slug": "policy-pulse-trump-us-04-sep-2026",
+      "date": "2026-09-04",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "trump"
+      ],
+      "summary": "Hot Aug jobs report (+162K vs 53K est) lifts Sept rate-hike odds to 63% - stocks open lower, yields jump. SNOW +17% and PLTR +8% keep software bid. Brent eases to ~USD 95; BUY XOM, SELL DAL.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse - Global - 03 Sep 2026",
       "ticker": "XOM:CVX:OXY:HAL:SLB:USO:DAL:UAL:ONGC:OIL:RELIANCE:IOC:BPCL:INDIGO:HDFCBANK:ICICIBANK:SBIN:SPY:QQQ",
       "file": "policy-pulse-global-03-sep-2026.md",
