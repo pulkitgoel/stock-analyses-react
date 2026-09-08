@@ -5,6 +5,65 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse - Global - 08 Sep 2026",
+    "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:GLD:ONGC:OIL:IOC:BPCL:HPCL:RELIANCE:INDIGO:SPY:QQQ",
+    "file": "policy-pulse-global-08-sep-2026.md",
+    "slug": "policy-pulse-global-08-sep-2026",
+    "date": "2026-09-08",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil"
+    ],
+    "summary": "Day 193 of Hormuz conflict: US strikes on 3 Iranian tankers and Houthi attacks on Saudi energy push Brent to ~USD 98; Goldman lifts Brent to USD 85 (Dec-26), disruptions seen into 2027. Rupee -0.35% to 94.81; BUY ONGC/OIL, SELL IOC/BPCL/INDIGO.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Ministries/Regulators - 08 Sep 2026",
+    "ticker": "HAL:BEL:BEML:LT:ASHOKLEY:BHARATFORGE:ASTRAMICRO:BSE:ZERODHA:ANGELONE:MOTILALOFS:IIFL:BANKBARODA",
+    "file": "policy-pulse-ministries-08-sep-2026.md",
+    "slug": "policy-pulse-ministries-08-sep-2026",
+    "date": "2026-09-08",
+    "tags": [
+      "policy-pulse",
+      "ministries",
+      "defence",
+      "sebi"
+    ],
+    "summary": "DAC clears Rs 1.1 lakh crore of AoNs (98% domestic, Sep 7): HAL and BEL are the key beneficiaries, defence stocks +2.5%. SEBI ETF framework live Sep 7, FPI G-Sec compliance eased; BoB to sell 35% NSE stake; Deepa Jewellers lists +25%.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Modi - 08 Sep 2026",
+    "ticker": "CONCOR:JWL:TITAGARH:RVNL:IRCON:RITES:LT:TATAPOWER:DIXON:AMBER:KAYNES:CGPOWER:MOSCHIP",
+    "file": "policy-pulse-modi-08-sep-2026.md",
+    "slug": "policy-pulse-modi-08-sep-2026",
+    "date": "2026-09-08",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "infrastructure",
+      "railways"
+    ],
+    "summary": "PM Modi completes the 2,800-km Dedicated Freight Corridor and unveils Rs 35,000+ cr rail/highway/urban/floating-solar projects in Vadodara. CONCOR, JWL, RVNL, LT in focus (inferred); SEMICON India CEO roundtable Sep 16 is the next policy catalyst.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Trump/US - 08 Sep 2026",
+    "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:X:NUE:STLD:HOG:DAL:UAL:AAL:LUV:CCL:RCL:SPY:QQQ:DJT",
+    "file": "policy-pulse-trump-us-08-sep-2026.md",
+    "slug": "policy-pulse-trump-us-08-sep-2026",
+    "date": "2026-09-08",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "oil",
+      "trade"
+    ],
+    "summary": "Oil near USD 98 after US strikes on 3 Iranian tankers and Houthi hits on Saudi energy, plus Canada 15-50% retaliatory tariffs and 58% Sept-hike odds, drag the Dow ~600 pts on the first session back. BUY XOM/CVX, SELL DAL, watch X/HOG and DJT.",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Policy Pulse - Global - 04 Sep 2026",
     "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:ONGC:OIL:RELIANCE:IOC:BPCL:INDIGO:HDFCBANK:SBILIFE:TATASTEEL:HINDZINC:SPY:QQQ",
     "file": "policy-pulse-global-04-sep-2026.md",
