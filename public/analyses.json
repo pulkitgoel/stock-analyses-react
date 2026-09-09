@@ -1,6 +1,66 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global - 09 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:ONGC:OIL:IOC:BPCL:HPCL:RELIANCE:INDIGO:INFY:TCS:HCLTECH:SPY:QQQ",
+      "file": "policy-pulse-global-09-sep-2026.md",
+      "slug": "policy-pulse-global-09-sep-2026",
+      "date": "2026-09-09",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil",
+        "geopolitics"
+      ],
+      "summary": "Day 194: Brent tops USD 100 as the tanker war widens (5 more tankers destroyed, Iran threatens Gulf ports). India: Sensex -813 to a 3-month low, IT -3%, rupee 95.08; metals and energy gain. BUY ONGC/OIL/XOM, SELL IOC/INDIGO/DAL.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Ministries/Regulators - 09 Sep 2026",
+      "ticker": "BSE:ZERODHA:ANGELONE:MOTILALOFS:IIFL:IGL:MGL:GUJGAS:ADANIGAS",
+      "file": "policy-pulse-ministries-09-sep-2026.md",
+      "slug": "policy-pulse-ministries-09-sep-2026",
+      "date": "2026-09-09",
+      "tags": [
+        "policy-pulse",
+        "ministries",
+        "ipo",
+        "sebi"
+      ],
+      "summary": "Record day: six mainboards open together (~Rs 4,400 cr, first time in ~30 yrs); Manipal Payment 0.17x on day 1 (GMP +10%); Torrent Gas files 100%-OFS IPO papers. BSE, ZERODHA, ANGELONE benefit (inferred).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Modi - 09 Sep 2026",
+      "ticker": "IRCON:RVNL:RITES:JWL:TITAGARH:LT:HBLPOWER:TATASTEEL:JSWSTEEL",
+      "file": "policy-pulse-modi-09-sep-2026.md",
+      "slug": "policy-pulse-modi-09-sep-2026",
+      "date": "2026-09-09",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "railways",
+        "infrastructure"
+      ],
+      "summary": "CCEA clears 8 railway multi-tracking projects worth Rs 20,804 cr across 9 states (~1,196 km, +74 MTPA freight): coal-belt fourth lines (Rs 10,783 cr) plus five southern corridors (Rs 10,021 cr). IRCON, RVNL, JWL, TITAGARH in focus (inferred).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Trump/US - 09 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:SAVE:CCL:RCL:NCLH:SPY:QQQ:DJT",
+      "file": "policy-pulse-trump-us-09-sep-2026.md",
+      "slug": "policy-pulse-trump-us-09-sep-2026",
+      "date": "2026-09-09",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "oil",
+        "geopolitics"
+      ],
+      "summary": "Brent crosses USD 100 as the US destroys 5 more Iranian tankers and Iran threatens Gulf ports; Dow closes -628 (S&P -0.6%) into Thursday CPI with ~55% Sept-hike odds. BUY XOM/CVX/HAL, SELL DAL/UAL/CCL, watch SPY/QQQ.",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse - Global - 08 Sep 2026",
       "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:GLD:ONGC:OIL:IOC:BPCL:HPCL:RELIANCE:INDIGO:SPY:QQQ",
       "file": "policy-pulse-global-08-sep-2026.md",
