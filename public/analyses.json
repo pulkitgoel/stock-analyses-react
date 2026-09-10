@@ -1,6 +1,66 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global Spillover - 10 Sep 2026",
+      "ticker": "XOM:CVX:OXY:COP:SLB:USO:VLO:MPC:PSX:DAL:UAL:AAL:LUV:CCL:RCL:ONGC:IOC:BPCL:HINDPETRO:RELIANCE:INDIGO:ASIANPAINT:MRF:APOLLOTYRE",
+      "file": "policy-pulse-global-10-sep-2026.md",
+      "slug": "policy-pulse-global-10-sep-2026",
+      "date": "2026-09-10",
+      "tags": [
+        "policy-pulse",
+        "oil",
+        "ecb",
+        "global"
+      ],
+      "summary": "ECB hikes 25bp to a 2.50% deposit rate, its second hike of 2026, blaming Middle East energy costs. Brent holds above USD 100-102 after the US sank five Iranian tankers and Iran struck 10 vessels, with Hormuz flows below 2 mbpd. Buy energy (XOM, CVX, OXY, VLO), sell airlines (DAL, UAL) and India's OMCs (IOC, BPCL, HINDPETRO); ONGC benefits.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Ministries/Regulators - 10 Sep 2026",
+      "ticker": "BSE:ANGELONE:MOTILALOFS:IIFL:MCX:MANINDS:HINDZINC:AUBANK:DCB",
+      "file": "policy-pulse-ministries-10-sep-2026.md",
+      "slug": "policy-pulse-ministries-10-sep-2026",
+      "date": "2026-09-10",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "ipo",
+        "markets"
+      ],
+      "summary": "SEBI keeps the Closing Auction Session but will rework derivatives settlement pricing, and revises commodity derivatives position limits (MCX). NSE IPO price band due Sep 11 with the issue trimmed to about Rs 23,000 crore and an ISIN freeze from Sep 11 (BSE, ANGELONE, MOTILALOFS). Man Industries won about Rs 600 crore of orders. Sensex +138 to 74,902.59; defence was the worst sector.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - PM Modi / India Govt - 10 Sep 2026",
+      "ticker": "AXISCADES:MTARTECH:DATAPATTNS:PARAS:WALCHANNAG:HAL:BEL:LT:DIXON:KAYNES",
+      "file": "policy-pulse-modi-10-sep-2026.md",
+      "slug": "policy-pulse-modi-10-sep-2026",
+      "date": "2026-09-10",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "space",
+        "semiconductor"
+      ],
+      "summary": "PM Modi told the Paris International Space Summit that India will build a space station by 2035 and put an Indian on the Moon by 2040. Three India-France space deals were signed, including AXISCADES with France's U-Space on microsatellites and Safran's EUR 5M+ supply into India's 52-satellite SBS-3 constellation (MTARTECH, DATAPATTNS inferred).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 10 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:SLB:USO:VLO:MPC:PSX:KMI:WMB:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:AA:F:GM:STLA:HOG:AAPL:META:JPM:GS:SPY:QQQ:DJT",
+      "file": "policy-pulse-trump-us-10-sep-2026.md",
+      "slug": "policy-pulse-trump-us-10-sep-2026",
+      "date": "2026-09-10",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "fed"
+      ],
+      "summary": "Hot August PPI (headline +5.4% y/y, energy +4.2%, diesel +24.1%) and crude back above USD 100 pushed the 10-year to a 2023 high and September hike odds near 66%. Trump's top-9 energy holdings gained USD 1.5-4.4M during the Iran war (CVX, COP, XOM, OXY); Canada tariffs escalate to import bans on dairy, alcohol and motorcycles (F, GM, STLA, HOG) while aluminium bars and rods face 50% (AA).",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse - Global - 09 Sep 2026",
       "ticker": "XOM:CVX:OXY:EOG:COP:HAL:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:ONGC:OIL:IOC:BPCL:HPCL:RELIANCE:INDIGO:INFY:TCS:HCLTECH:SPY:QQQ",
       "file": "policy-pulse-global-09-sep-2026.md",
