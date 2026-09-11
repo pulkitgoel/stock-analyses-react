@@ -1,6 +1,70 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global Spillover - 11 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:SLB:USO:VLO:MPC:PSX:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:ONGC:OIL:IOC:BPCL:HINDPETRO:MRPL:RELIANCE:INDIGO:INFY:TCS:HCLTECH:GLD:V:MA:USAR:MP:HDFCBANK:ICICIBANK:SBIN:HINDZINC:NMDC",
+      "file": "policy-pulse-global-11-sep-2026.md",
+      "slug": "policy-pulse-global-11-sep-2026",
+      "date": "2026-09-11",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil",
+        "fed",
+        "brics"
+      ],
+      "summary": "Brent's surge to a USD 107.63 close (highest since May 19) and a hot 0.3% core CPI pushed the US 10-year to about 4.95% and the 30-year to 19-year highs - buy energy (XOM, CVX, ONGC), sell airlines (DAL, UAL, INDIGO). BRICS opens in New Delhi with CBDC payment links and critical minerals on the agenda, not a common currency.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Ministries/Regulators - 11 Sep 2026",
+      "ticker": "BSE:MCX:ANGELONE:MOTILALOFS:IIFL:HDFCAMC:NAM-INDIA:UTIAMC:CAMS:CDSL:KFINTECH:HDFCBANK:IOC:BPCL:HINDPETRO:MRPL:ONGC:OIL:RELIANCE:LT:RECLTD:SBIN:BANKBARODA:NIACL:ULTRACEMCO:AMBUJACEM:SHREECEM:DALBHARAT:TATAPOWER:NTPC:ADANIGREEN:SUZLON:INOXWIND:DIXON:KAYNES:SYRMA:CGPOWER:AMBER:ETERNAL:NYKAA:DMART",
+      "file": "policy-pulse-ministries-11-sep-2026.md",
+      "slug": "policy-pulse-ministries-11-sep-2026",
+      "date": "2026-09-11",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "ipo",
+        "market-structure",
+        "semiconductor"
+      ],
+      "summary": "NSE priced its IPO at Rs 1,700-1,785 (~Rs 22,562 crore, opens Sep 17, listing circa Sep 24) with the issue down about 15% - a re-rating trigger for BSE and ANGELONE. Record August SIP flows of Rs 32,297 crore and Rs 87.08 trillion MF AUM lift HDFCAMC and NAM-INDIA, while Brent above USD 100 drives oil-marketing margins to Rs -5/litre petrol and Rs -23/litre diesel (IOC, BPCL, HINDPETRO negative).",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - PM Modi / India Govt - 11 Sep 2026",
+      "ticker": "HAL:BEL:BDL:MAZDOCK:COCHINSHIP:HINDZINC:NMDC:VEDL:IRCON:RVNL:TITAGARH:TATASTEEL:JSWSTEEL:SAIL:HDFCBANK:ICICIBANK:SBIN:AXISBANK:PAYTM:PINELABS:IIFL:INDIGO:IOC:BPCL:HINDPETRO:MRPL:ONGC:OIL:LT",
+      "file": "policy-pulse-modi-11-sep-2026.md",
+      "slug": "policy-pulse-modi-11-sep-2026",
+      "date": "2026-09-11",
+      "tags": [
+        "policy-pulse",
+        "modi",
+        "brics",
+        "defence",
+        "critical-minerals"
+      ],
+      "summary": "Modi hosts the 18th BRICS Summit (Sep 12-13) after a bilateral with Putin covering defence, nuclear, fertilisers, critical minerals and railways: HAL is the one named company, with IL-114 and Sukhoi Superjet 100 local manufacturing expanded (BEL, BDL inferred). India's digital-rupee CBDC settlement push lifts HDFCBANK and SBIN; discounted Russian crude at a record 51% import share helps IOC and BPCL.",
+      "model": "deepseek-chat"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 11 Sep 2026",
+      "ticker": "XOM:CVX:OXY:EOG:COP:SLB:USO:VLO:MPC:PSX:KMI:WMB:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:F:GM:STLA:HOG:AA:TXT:ERJ:GD:ORCL:ADBE:AAPL:NVDA:AVGO:MU:INTC:AMD:META:MSI:V:MA:CTAS:JPM:GS:MS:HOOD:GLD:SPY:QQQ:TLT:DJT",
+      "file": "policy-pulse-trump-us-11-sep-2026.md",
+      "slug": "policy-pulse-trump-us-11-sep-2026",
+      "date": "2026-09-11",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "fed",
+        "tariffs",
+        "leader-trades"
+      ],
+      "summary": "August CPI matched at 3.4% y/y but core ran 0.3% m/m, holding September Fed hike odds near 60% and the 10-year near 4.95% - a headwind for NVDA, MU and INTC into ORCL's AI cloud beat. Trump's USD 5,000 dividend pledge costs an estimated USD 1.2-1.35 trillion (TLT risk, GLD bid) and Canada's Section 338 scope changes land September 15 (F, GM, STLA).",
+      "model": "deepseek-chat"
+    },
+    {
       "title": "Policy Pulse - Global Spillover - 10 Sep 2026",
       "ticker": "XOM:CVX:OXY:COP:SLB:USO:VLO:MPC:PSX:DAL:UAL:AAL:LUV:CCL:RCL:ONGC:IOC:BPCL:HINDPETRO:RELIANCE:INDIGO:ASIANPAINT:MRF:APOLLOTYRE",
       "file": "policy-pulse-global-10-sep-2026.md",
