@@ -15,11 +15,15 @@ import json, os, re, sys
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPTS_DIR)
 DIST_DIR = os.path.join(REPO_ROOT, "dist")
-ANALYSES_FILE = "/var/www/stock-analyses/analyses.json"
+# Prefer the repo's OWN generated data so OG files never lag a fresh publish.
+# (The legacy static-site copy is only a fallback; it goes stale after each publish.)
+ANALYSES_FILE = os.path.join(REPO_ROOT, "public", "analyses.json")
+LEGACY_ANALYSES_FILE = "/var/www/stock-analyses/analyses.json"
 
 def load_analyses():
-    if os.path.exists(ANALYSES_FILE):
-        with open(ANALYSES_FILE) as f:
+    path = ANALYSES_FILE if os.path.exists(ANALYSES_FILE) else LEGACY_ANALYSES_FILE
+    if os.path.exists(path):
+        with open(path) as f:
             data = json.load(f)
         return data.get("analyses", [])
     return []

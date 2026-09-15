@@ -1,6 +1,24 @@
 {
   "analyses": [
     {
+      "title": "ESDS Software Solution — Deep Dive Analysis",
+      "ticker": "ESDS",
+      "file": "esds-software-solution-deep-dive-analysis.md",
+      "slug": "esds-software-solution-deep-dive-analysis",
+      "date": "2026-09-15",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "cloud",
+        "data-centre",
+        "ai",
+        "gpu",
+        "ipo"
+      ],
+      "summary": "Up 309% from its ₹429 IPO in seven sessions on the AI/GPU story — but ESDS is the paying customer in the $1.25bn SharonAI deal. 25-point checklist score 16.5/25: avoid at CMP.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse - Global Spillover - 11 Sep 2026",
       "ticker": "XOM:CVX:OXY:EOG:COP:SLB:USO:VLO:MPC:PSX:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:ONGC:OIL:IOC:BPCL:HINDPETRO:MRPL:RELIANCE:INDIGO:INFY:TCS:HCLTECH:GLD:V:MA:USAR:MP:HDFCBANK:ICICIBANK:SBIN:HINDZINC:NMDC",
       "file": "policy-pulse-global-11-sep-2026.md",

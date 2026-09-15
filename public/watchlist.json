@@ -1,6 +1,24 @@
 {
   "watchlist": [
     {
+      "slug": "esds-software-solution-deep-dive-analysis",
+      "ticker": "ESDS",
+      "title": "ESDS Software Solution — Deep Dive Analysis",
+      "date": "2026-09-15",
+      "yahooSymbol": "ESDS.NS",
+      "priceAtAnalysis": 1754,
+      "support": 1582,
+      "resistance": 1828,
+      "supports": [
+        1438,
+        1308
+      ],
+      "resistances": [
+        1900
+      ],
+      "verdict": "AVOID AT CMP"
+    },
+    {
       "slug": "ramkrishna-forgings-deep-dive-aug19",
       "ticker": "RKFORGE",
       "title": "Ramkrishna Forgings Ltd — Deep Dive Analysis",
