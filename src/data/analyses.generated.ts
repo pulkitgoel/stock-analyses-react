@@ -23,6 +23,71 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Policy Pulse - Global Spillover - 15 Sep 2026",
+    "ticker": "HCLTECH:INFY:TCS:TECHM:WIPRO:MPHASIS:COFORGE:PERSISTENT:ONGC:OIL:COALINDIA:IOC:BPCL:HINDPETRO:MRPL:INDIGO:XOM:CVX:OXY:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:NVDA:AMD:MU:MRVL:SMCI:VRT:GEV:APLD:GLD:SPY:QQQ:TLT",
+    "file": "policy-pulse-global-15-sep-2026.md",
+    "slug": "policy-pulse-global-15-sep-2026",
+    "date": "2026-09-15",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil",
+      "ai",
+      "rates"
+    ],
+    "summary": "Saudi Arabia's East-West pipeline is out for weeks, leaving Hormuz as the only channel and Brent above USD 107 - bullish ONGC and XOM, painful for IOC, BPCL, HINDPETRO and INDIGO. The US 10-year crossed 5% and sank the Sensex 778 points to 74,003.82, but the reverse-AI rotation finally fired: Nifty IT +2.19% led by HCLTECH, INFY and TCS.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Ministries/Regulators - 15 Sep 2026",
+    "ticker": "BSE:ANGELONE:MOTILALOFS:IIFL:CDSL:KFINTECH:CAMS:PNCINFRA:DBL:KNRCON:GRINFRA:HGINFRA:IRB:NCC:LT:HDFCBANK:ICICIBANK:SBIN:BAJFINANCE:SHRIRAMFIN:ASIANPAINT:BERGEPAINT:INDIGO:IOC:BPCL:HINDPETRO:ONGC:OIL:COALINDIA:TCS:TATASTEEL:TATAPOWER:TITAN:TATAINVEST:TATATECH:PAYTM",
+    "file": "policy-pulse-ministries-15-sep-2026.md",
+    "slug": "policy-pulse-ministries-15-sep-2026",
+    "date": "2026-09-15",
+    "tags": [
+      "policy-pulse",
+      "rbi",
+      "market-structure",
+      "ipo",
+      "inflation"
+    ],
+    "summary": "The RBI rejected Tata Sons' CIC surrender on September 11, putting the Rs 2.01 lakh crore holding company on a mandatory listing path - a generational fee event for BSE, ANGELONE and MOTILALOFS. August CPI hit an 8-month high of 4.82% and WPI 9.92% (IOC, BPCL, HINDPETRO pressure) while NHAI debarred PNCINFRA for three years, sending it down 20%.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Modi - 15 Sep 2026",
+    "ticker": "CGPOWER:UNOMINDA:DIXON:KAYNES:SYRMA:AMBER:TATAELXSI:MOSCHIP",
+    "file": "policy-pulse-modi-15-sep-2026.md",
+    "slug": "policy-pulse-modi-15-sep-2026",
+    "date": "2026-09-15",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "semiconductor",
+      "electronics",
+      "pli"
+    ],
+    "summary": "PM Modi opens SEMICON India 2026 at Yashobhoomi on September 17 - 600+ exhibitors, 300 international companies and 40+ countries, with CG Power and Uno Minda named in the exhibitor lineup. It is the delivery test for Semicon 2.0's Rs 1,27,500 crore and 12 approved projects; DIXON, KAYNES, SYRMA and AMBER are inferred beneficiaries.",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 15 Sep 2026",
+    "ticker": "NVDA:AMD:AVGO:MU:MRVL:LRCX:SMCI:TSM:VRT:GEV:APLD:MSFT:GOOGL:META:AMZN:INTC:PII:TXT:HOG:DOOO:VMC:MLM:DHI:LEN:PHM:JPM:GS:BAC:C:WFC:XOM:CVX:OXY:SLB:USO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:COIN:HOOD:CRCL:MSTR:GLD:SPY:QQQ:TLT:DJT",
+    "file": "policy-pulse-trump-us-15-sep-2026.md",
+    "slug": "policy-pulse-trump-us-15-sep-2026",
+    "date": "2026-09-15",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "ai",
+      "fed",
+      "tariffs",
+      "crypto"
+    ],
+    "summary": "Trump rejected Anthropic's AI slowdown call outright - 'whoever wins AI wins' - removing policy risk from the NVDA/AVGO/VRT capex trade even as the 10-year crossed 5% and hike odds topped 90% into tomorrow's FOMC. Canada's Section 338 product changes took effect today (ATVs and dairy in, road salt and cement out) and the Senate holds its 60-vote CLARITY Act test this afternoon (COIN, HOOD).",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Policy Pulse - Global Spillover - 11 Sep 2026",
     "ticker": "XOM:CVX:OXY:EOG:COP:SLB:USO:VLO:MPC:PSX:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:ONGC:OIL:IOC:BPCL:HINDPETRO:MRPL:RELIANCE:INDIGO:INFY:TCS:HCLTECH:GLD:V:MA:USAR:MP:HDFCBANK:ICICIBANK:SBIN:HINDZINC:NMDC",
     "file": "policy-pulse-global-11-sep-2026.md",
