@@ -18,6 +18,75 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Policy Pulse - Global Spillover - 16 Sep 2026",
+      "ticker": "ONGC:OIL:IOC:BPCL:HINDPETRO:RELIANCE:GAIL:PETRONET:INDIGO:COALINDIA:NTPC:VTL:TRIDENT:PAGEIND:WELSPUNLIV:BHARATFORG:TMCV:MARUTI:APOLLO:XOM:CVX:OXY:COP:EOG:SLB:HAL:USO:VLO:MPC:PSX:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:SPY:QQQ:TLT:JPM:GS:BAC:C:NVDA:AVGO:MSFT:AMZN:GOOGL:META:COIN:CRCL:HOOD:MSTR:MARA:RIOT:GLD",
+      "file": "policy-pulse-global-16-sep-2026.md",
+      "slug": "policy-pulse-global-16-sep-2026",
+      "date": "2026-09-16",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil",
+        "fed",
+        "boj",
+        "fta",
+        "crypto"
+      ],
+      "summary": "Brent held above USD 108 after Saudi Arabia's East-West pipeline went offline, the Fed is set to deliver its first hike since 2023 with a 25bp move 94% priced, and the BoJ meets September 17-18 expected to lift rates to a 31-year high of 1.25%. ONGC and OIL gain on the crude bid while IOC, BPCL and HINDPETRO absorb negative marketing margins.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Ministries / Regulators - 16 Sep 2026",
+      "ticker": "PAYTM:SBIN:HDFCBANK:ICICIBANK:AXISBANK:BANKBARODA:PNB:CANBK:HFCL:BSE:MCX:ANGELONE:MOTILALOFS:IIFL:HDFCAMC:NAM-INDIA:UTIAMC:ABSLAMC:KALYANKJIL:PCJEWELLER:SENCO:THANGAMAYL:RAJESHEXPO:TITAN:CDSL:KFINTECH:CAMS",
+      "file": "policy-pulse-ministries-16-sep-2026.md",
+      "slug": "policy-pulse-ministries-16-sep-2026",
+      "date": "2026-09-16",
+      "tags": [
+        "policy-pulse",
+        "upi",
+        "payments",
+        "sebi",
+        "market-structure",
+        "regulation"
+      ],
+      "summary": "NPCI's 0.4% MDR on merchant UPI above Rs 2,000 from October 15 opens a Rs 22,000 crore revenue pool by FY28 - PAYTM hit a 52-week high of Rs 1,855.50 while acquiring banks SBIN and AXISBANK led the gainers. SEBI gave arbitrage funds a 1% unhedged leeway to revive the closing auction, and BIS's 67% hallmarking fee hike sent KALYANKJIL and PCJEWELLER down 4-5%.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Modi / India Govt - 16 Sep 2026",
+      "ticker": "DIXON:CGPOWER:UNOMINDA:AMBER:KAYNES:SYRMA:TATAELXSI:MOSCHIP:PGEL:BEL:HAL:DATAPATTNS:TEAMLEASE:HDFCAMC:NAM-INDIA:UTIAMC:ITC:HINDUNILVR:NESTLEIND:BRITANNIA:DABUR:MARICO:SBIN:AXISBANK:BANKBARODA:PNB:TMCV:MARUTI:BHARATFORG:VTL:TRIDENT:PAGEIND:WELSPUNLIV:TTKPRESTIG:HAWKINCOOK:HDFCLIFE:SBILIFE:JSWSTEEL:HINDALCO:TRENT:TCS:INFY",
+      "file": "policy-pulse-modi-16-sep-2026.md",
+      "slug": "policy-pulse-modi-16-sep-2026",
+      "date": "2026-09-16",
+      "tags": [
+        "policy-pulse",
+        "semiconductor",
+        "semicon-india",
+        "epfo",
+        "formalisation",
+        "fta"
+      ],
+      "summary": "PM Modi chaired the annual global semiconductor CEO roundtable today and opens SEMICON India 2026 tomorrow - 600+ companies, 300 international, 52 countries, with DIXON, CGPOWER and UNOMINDA named at the event. The Cabinet also cleared the first EPFO wage ceiling hike in 12 years to Rs 25,000 effective September 17, lifting TEAMLEASE and the AMC cohort while raising statutory costs for VTL and TRIDENT.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 16 Sep 2026",
+      "ticker": "COIN:CRCL:HOOD:MSTR:MARA:RIOT:JPM:GS:BAC:C:TLT:NVDA:AVGO:MSFT:AMZN:GOOGL:META:XOM:CVX:OXY:COP:EOG:SLB:HAL:USO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:GLD:SPY:QQQ:DJT:PLTR:RTX:NOC:BA",
+      "file": "policy-pulse-trump-us-16-sep-2026.md",
+      "slug": "policy-pulse-trump-us-16-sep-2026",
+      "date": "2026-09-16",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "crypto",
+        "fed",
+        "leader-trades",
+        "tariffs"
+      ],
+      "summary": "The Senate kills the CLARITY Act 49-50, sending COIN down ~10% and CRCL 8-11% and closing crypto's legislative route for 2026, while a 25bp Fed hike is 94% priced into tonight's decision with the 10-year at 4.995%. Trump's $1.4bn crypto income and the bill's blind-trust ethics clause made this a leader-trade story.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "ESDS Software Solution — Deep Dive Analysis",
       "ticker": "ESDS",
       "file": "esds-software-solution-deep-dive-analysis.md",
