@@ -1,6 +1,24 @@
 {
   "watchlist": [
     {
+      "slug": "leap-india-deep-dive-analysis",
+      "ticker": "LEAPIND",
+      "title": "LEAP India — Deep Dive Analysis",
+      "date": "2026-09-16",
+      "yahooSymbol": "LEAPIND.NS",
+      "priceAtAnalysis": 130.5,
+      "support": 128.55,
+      "resistance": 144.5,
+      "supports": [
+        120
+      ],
+      "resistances": [
+        153.6,
+        168.4
+      ],
+      "verdict": "WAIT FOR BASE"
+    },
+    {
       "slug": "esds-software-solution-deep-dive-analysis",
       "ticker": "ESDS",
       "title": "ESDS Software Solution — Deep Dive Analysis",

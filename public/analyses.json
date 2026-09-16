@@ -1,6 +1,23 @@
 {
   "analyses": [
     {
+      "title": "LEAP India — Deep Dive Analysis",
+      "ticker": "LEAPIND",
+      "file": "leap-india-deep-dive-analysis.md",
+      "slug": "leap-india-deep-dive-analysis",
+      "date": "2026-09-16",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "logistics",
+        "asset-pooling",
+        "supply-chain",
+        "ipo"
+      ],
+      "summary": "Down 18% from its ₹159 IPO and at all-time lows: a 90%-share pallet-pooling leader at 91x earnings, where interest exceeds PBT. 25-point score 12.5/25 — wait for a base.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "ESDS Software Solution — Deep Dive Analysis",
       "ticker": "ESDS",
       "file": "esds-software-solution-deep-dive-analysis.md",
