@@ -1,6 +1,23 @@
 {
   "watchlist": [
     {
+      "slug": "cg-power-what-changed-since-june-with-forward-valuation",
+      "ticker": "CGPOWER:NSE",
+      "title": "CG Power — What Changed Since June (with Forward Valuation)",
+      "date": "2026-09-17",
+      "yahooSymbol": "CGPOWER.NS",
+      "priceAtAnalysis": 882,
+      "support": 858,
+      "resistance": 935,
+      "supports": [
+        786
+      ],
+      "resistances": [
+        981
+      ],
+      "verdict": "ACCUMULATE ON DIPS"
+    },
+    {
       "slug": "leap-india-deep-dive-analysis",
       "ticker": "LEAPIND",
       "title": "LEAP India — Deep Dive Analysis",

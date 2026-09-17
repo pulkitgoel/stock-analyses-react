@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/cg-power-what-changed-since-june-with-forward-valuation</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/leap-india-deep-dive-analysis</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1121,6 +1126,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/company/cgpower</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/company/leapind</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1542,11 +1552,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/dixon</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/company/cgpower</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

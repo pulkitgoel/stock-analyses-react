@@ -1,6 +1,24 @@
 {
   "analyses": [
     {
+      "title": "CG Power — What Changed Since June (with Forward Valuation)",
+      "ticker": "CGPOWER:NSE",
+      "file": "cg-power-what-changed-since-june-with-forward-valuation.md",
+      "slug": "cg-power-what-changed-since-june-with-forward-valuation",
+      "date": "2026-09-17",
+      "tags": [
+        "cg-power",
+        "what-changed",
+        "update",
+        "fundamental",
+        "capital-goods",
+        "semiconductor",
+        "valuation"
+      ],
+      "summary": "Q1 FY27 missed on EPS but the order book grew 45% and G1 OSAT is now commercially producing. First forward valuation: 87x FY27E, 63x FY28E, forward PEG ~1.7. Rating upgraded to accumulate on dips.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "LEAP India — Deep Dive Analysis",
       "ticker": "LEAPIND",
       "file": "leap-india-deep-dive-analysis.md",
