@@ -5,6 +5,71 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse - Global Spillover - 30 Sep 2026",
+    "ticker": "QQQ:SPY:NVDA:AVGO:AMD:MU:TCS:INFY:WIPRO:HCLTECH:TECHM:TLT:JPM:MS:BAC:GLD:XOM:CVX:OXY:COP:EOG:SLB:BKR:FICO:KMX:GO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:USO:VLO:PSX:MPC:HINDPETRO:BPCL:IOC:WMT:TGT:COST:HD:LOW:AMZN:MAT:HAS:BTU:ARCH:CEIX:GM:F:LEA:BA:CAT:DE:AGCO:MP:USAR:AREC:FEAM:TM:HMC:MUFG:SMFG:MFG:SUNPHARMA:DRREDDY:CIPLA:DIVISLAB:TORNTPHARM:ALKEM:BIOCON:LUPIN:AUROPHARMA:ZYDUSLIFE:GLENMARK:IPCALAB:PPLPHARMA:LLY:MRK:JNJ:PFE:ABBV:TEVA:VTRS:GSK:NVS:AZN:SNY:NUE:STLD:CLF:X:JINDALSTEL:SAIL",
+    "file": "policy-pulse-global-30-sep-2026.md",
+    "slug": "policy-pulse-global-30-sep-2026",
+    "date": "2026-09-30",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "fed",
+      "boj",
+      "oil",
+      "pharma"
+    ],
+    "summary": "The G20 Trade Ministerial opened in Milwaukee on steel excess capacity, MFN erosion and forced labour - the same ground as the Section 301 tariffs under challenge at the Court of International Trade - while core PCE at 3.0% cut October Fed hike odds from 71% to 35% and eased the front end. Saudi Arabia restarted the East-West pipeline and Yanbu loadings, Gulf exports recovered to 23.3 mbpd with Brent near $103, and India kept 0% Section 232 tariffs on specialty drugs, supporting SUNPHARMA and DRREDDY.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Ministries & Regulators - 30 Sep 2026",
+    "ticker": "MOTILALOFS:360ONE:IIFL:HDFCAMC:NAM-INDIA:UTIAMC:CAMS:KFINTECH:ANGELONE:BSE:MCX:CDSL:RELIANCE:TATACHEM:ADANIENT:ADANIPORTS:OMAXE:ABSLAMC:SBIN:HINDPETRO:BPCL:IOC:ONGC:OIL:GAIL:PETRONET:MRPL:CHENNPETRO:COALINDIA:NTPC:TITAN:KALYANKJIL:PCJEWELLER:SENCO:BANKBARODA:PNB:MUTHOOTFIN:CHOLAFIN:BAJFINANCE:TATASTEEL:TATAPOWER:TATATECH:TATAINVEST:TCS:LT:KEC:KPIL:HGINFRA:NCC:IRFC:RECLTD:MOIL:NMDC:GMDCLTD:HINDZINC:WIPRO:POWERINDIA:POLYCAB:HDFCBANK:ICICIBANK:KOTAKBANK:AXISBANK:DRREDDY:CIPLA:SUNPHARMA",
+    "file": "policy-pulse-ministries-30-sep-2026.md",
+    "slug": "policy-pulse-ministries-30-sep-2026",
+    "date": "2026-09-30",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "market-structure",
+      "ipo",
+      "omc"
+    ],
+    "summary": "The CGA put the fiscal deficit at 41.9% of the FY27 target with five months gone, the RBI reported a record $200bn net forward dollar book as the concessional FCNR(B) window closed, and SEBI's Pandey rebuilt FPI onboarding rails while confirming no exchange interoperability and no changes outside the CAS paper. BSE replaced Wipro in the Nifty 50, the Andaman offshore mineral auction returns on October 1, and SEBI's 215th Board rewrote PMS regulations for MOTILALOFS and BSE.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Modi / India Govt - 30 Sep 2026",
+    "ticker": "GAIL:PETRONET:ATGL:IGL:MGL:CONCOR:RVNL:IRCON:RITES:TEXRAIL:TITAGARH:JWL:HBLENGINE:KAYNES:RELIANCE:ADANIPORTS:NTPC:NLCINDIA:SUZLON:IREDA:PAYTM:SBIN:AXISBANK:HDFCBANK:ICICIBANK:KOTAKBANK:BANKBARODA:PNB:IDFCFIRSTB:FEDERALBNK:FIVESTAR:CHOLAFIN:BAJFINANCE:BSE:ANGELONE:MOTILALOFS:IIFL:POWERGRID:KEC:KPIL:POWERINDIA:APARINDS:TDPOWERSYS:VOLTAMP:TARIL:CGPOWER:SIEMENS:ABB:EXIDEIND:ARE&M:WAAREEENER:PREMIERENE:SWSOLAR:JSWENERGY:INOXWIND:NHPC:SJVN:HAL:BEL:BHARATFORG:SOLARINDS:SUNPHARMA:DRREDDY:CIPLA:WELSPUNLIV:TRIDENT:PAGEIND:JSWSTEEL:SAIL:COALINDIA:UPL:WIPRO",
+    "file": "policy-pulse-modi-30-sep-2026.md",
+    "slug": "policy-pulse-modi-30-sep-2026",
+    "date": "2026-09-30",
+    "tags": [
+      "policy-pulse",
+      "upi-mdr",
+      "fintech",
+      "green-energy",
+      "railways"
+    ],
+    "summary": "The Cabinet approved the Rs 1.86 lakh crore PM-DHARA scheme - 135 GW of renewable evacuation plus 50 GWh of battery storage - as part of a Rs 2.79 lakh crore package with the Rabi MSP policy and a Delhi traffic system, drawing POWERGRID, KEC, KPIL and the transformer and storage complex into focus. Modi also spoke with Trump as Goyal met Greer in Milwaukee on the interim trade deal, the Supreme Court kept the 0.4% UPI MDR on track for October 15, and the Sabarmati LNG train and Kandla e-methanol plant carried the green-fuel push.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 30 Sep 2026",
+    "ticker": "MSTR:SPCX:NVDA:CRWD:DDOG:INTU:MRVL:AMZN:MSFT:META:NFLX:ORCL:IBM:COST:PEP:MCD:ACN:AMT:PSKY:ISRG:COIN:BUD:TAP:STZ:SAM:HOG:MO:PM:WMT:KR:TGT:ADM:BG:GM:F:STLA:LEA:APTV:CAT:DE:MAT:HAS:BTU:ARCH:CEIX:MP:USAR:AREC:FEAM:AAPL:QCOM:SPY:QQQ:FICO:JPM:MS:BAC:XLF:LAMR:PLD:O:SPG:TLT:XOM:CVX:OXY:COP:GLD:KMX:GO:NUE:STLD:CLF:X:TSLA:LLY:BA",
+    "file": "policy-pulse-trump-us-30-sep-2026.md",
+    "slug": "policy-pulse-trump-us-30-sep-2026",
+    "date": "2026-09-30",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "leader-trades",
+      "tariffs",
+      "trade"
+    ],
+    "summary": "Core PCE cooled to 3.0% and cut the priced odds of an October hike from 71% to 35%, sending short-dated yields lower and equity indices higher, while the Section 301 forced-labour tariffs - 10-12.5% on 86 countries covering 99.4% of US imports - went before the Court of International Trade and Trump credited a $15bn Iowa steel mill to his 50% steel tariffs. Canada's $1bn alcohol and dairy import ban is live, and the July 278-T showed 1,156 trades including Strategy bought at the 2026 lows.",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "CG Power — What Changed Since June (with Forward Valuation)",
     "ticker": "CGPOWER:NSE",
     "file": "cg-power-what-changed-since-june-with-forward-valuation.md",
