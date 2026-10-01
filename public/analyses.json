@@ -1,6 +1,71 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global Spillover - 01 Oct 2026",
+      "ticker": "NUE:STLD:CLF:X:WMT:TGT:COST:AMZN:HD:LOW:BA:CAT:DE:GM:F:STLA:SUNPHARMA:DRREDDY:CIPLA:AUROPHARMA:LUPIN:TORNTPHARM:WELSPUNLIV:TRIDENT:VTL:KPRMILL:ARVIND:GOKEX:PAGEIND:BHARATFORG:MOTHERSON:SANSERA:LUMAXTECH:APOLLOTYRE:TATASTEEL:JSWSTEEL:SAIL:JINDALSTEL:APLAPOLLO:JSL:WELCORP:HOOD:COIN:CRCL:TLT:IEF:XLF:JPM:GS:MS:BAC:CEG:VST:NEE:DUK:SO:GLD:INFY:TCS:HCLTECH:WIPRO:TECHM:XOM:CVX:OXY:COP:EOG:HAL:SLB:VLO:PSX:MPC:DINO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:IOC:BPCL:HINDPETRO:MRPL:RELIANCE:MU:NVDA:AVGO:AMAT:LRCX:KLAC:GOOGL:MSFT:SNPS:CDNS:HINDALCO:VEDL:NATIONALUM:HINDCOPPER:SPY:QQQ",
+      "file": "policy-pulse-global-01-oct-2026.md",
+      "slug": "policy-pulse-global-01-oct-2026",
+      "date": "2026-10-01",
+      "tags": [
+        "policy-pulse",
+        "tariffs",
+        "oil",
+        "global-markets",
+        "section-301"
+      ],
+      "summary": "G20 trade ministers endorsed a Milwaukee Framework on steel overcapacity as Greer put the MFN principle itself up for review, while a Section 301 overcapacity probe covering 16 economies including India remains the unexercised risk to SUNPHARMA, WELSPUNLIV and BHARATFORG. Brent went back above $100 on China's fuel-export halt, lifting XOM and CVX against DAL and CCL, the US 10-year held near 5.28% after its biggest quarterly gain since 1994, and Micron's blowout quarter drove a 2.9-3.3% Nikkei rally.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Ministries & Regulators - 01 Oct 2026",
+      "ticker": "IOC:BPCL:HINDPETRO:MRPL:RELIANCE:ONGC:OIL:INDIGO:HINDUNILVR:ITC:NESTLEIND:DABUR:MARICO:TORNTPHARM:LT:SIEMENS:ABB:CGPOWER:CUMMINSIND:THERMAX:AIAENG:KAYNES:DIXON:AMBER:SYRMA:UNOMINDA:MOSCHIP:HDFCBANK:ICICIBANK:SBIN:BANKBARODA:PNB:AXISBANK:KOTAKBANK:FEDERALBNK:IDFCFIRSTB:BSE:MCX:ANGELONE:MOTILALOFS:IIFL:IEX:CDSL:KFINTECH:CAMS:PFC:RECLTD:IRFC:HUDCO:IREDA:WELSPUNLIV:TRIDENT:VTL:KPRMILL:ARVIND:GOKEX:PAGEIND:DIVISLAB:LAURUSLABS:SYNGENE:SUNPHARMA:DRREDDY:CIPLA:AUROPHARMA:LUPIN:AJANTPHARM:IPCALAB:MANKIND:EMCURE:NATCOPHARM:GRANULES:NEULANDLAB:HIKAL:JUBLPHARMA:BEL:BHARATFORG:BEML:DATAPATTNS:HAL:SOLARINDS:PREMEXPLN:MTARTECH:MIDHANI:PARAS:ASTRAMICRO:ZENTEC:IDEAFORGE:GRSE:MAZDOCK:COCHINSHIP:BDL:BAJFINANCE:CHOLAFIN:SHRIRAMFIN:FIVESTAR:MUTHOOTFIN:MANAPPURAM:TITAN:KALYANKJIL:SENCO:PAYTM:JSWSTEEL:TATASTEEL:SAIL:JINDALSTEL:APLAPOLLO:COALINDIA:INFY:HCLTECH:TCS:APOLLOHOSP:MAXHEALTH:BAJAJ-AUTO:ESCORTS:IRCON:SANSERA:LUMAXTECH:MPHASIS",
+      "file": "policy-pulse-ministries-01-oct-2026.md",
+      "slug": "policy-pulse-ministries-01-oct-2026",
+      "date": "2026-10-01",
+      "tags": [
+        "policy-pulse",
+        "oil-gas",
+        "taxation",
+        "sebi",
+        "defence",
+        "ipo"
+      ],
+      "summary": "The Finance Ministry cut the diesel and ATF export levy for a second fortnight, positive for IOC, BPCL and RELIANCE, as GST crossed Rs 2 lakh crore for a third month and the manufacturing PMI hit a seven-month high of 55.1. SEBI cleared corporate bond index futures for the NSE, the AMCA prototype RFP closed on 30 October with LT, BEL, BHARATFORG, BEML and DATAPATTNS named in the three shortlisted consortia while HAL did not qualify, and the rupee closed at 96.31 into a live RBI hike risk on October 7.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Modi / India Govt - 01 Oct 2026",
+      "ticker": "TARIL:ADANIENSOL:POWERGRID:KEC:KPIL:POWERINDIA:APARINDS:TDPOWERSYS:VOLTAMP:CGPOWER:SIEMENS:ABB:EXIDEIND:ARE&M:HBLENGINE:WAAREEENER:PREMIERENE:SWSOLAR:SUZLON:INOXWIND:NTPC:TATAPOWER:JSWENERGY:NHPC:SJVN:IREDA:NTPCGREEN:TORNTPOWER:ADANIGREEN:NLCINDIA:COALINDIA:LT:NCC:HGINFRA:GRINFRA:PNCINFRA:KNRCON:ULTRACEMCO:AMBUJACEM:SHREECEM:DALBHARAT:INDIACEM:JKCEMENT:RAMCOCEM:BIRLACORPN:GODREJPROP:DLF:OBEROIRLTY:PRESTIGE:THERMAX:VGUARD:HAVELLS:POLYCAB:KEI:INDIGO:HAL:BEL:DATAPATTNS:ASTRAMICRO:IDEAFORGE:ZENTEC:IRCTC:LEMONTREE:BSE:ANGELONE:MOTILALOFS:IIFL:PAYTM:HDFCBANK:ICICIBANK:SBIN:KOTAKBANK:AXISBANK:FEDERALBNK:IDFCFIRSTB:CHOLAFIN:BAJFINANCE:SHRIRAMFIN:FIVESTAR",
+      "file": "policy-pulse-modi-01-oct-2026.md",
+      "slug": "policy-pulse-modi-01-oct-2026",
+      "date": "2026-10-01",
+      "tags": [
+        "policy-pulse",
+        "green-energy",
+        "defence",
+        "infrastructure",
+        "urbanisation"
+      ],
+      "summary": "PM-DHARA's first trading session priced the Rs 1.86 lakh crore transmission and storage programme selectively, with TARIL up 9.29% as the top BSE gainer and ADANIENSOL up 4.31% while the Nifty fell 0.88% to an eighth straight weekly loss. Prime Minister Modi's UPSC centenary address set out a 2047 that is more urban, Captain Smit Machchhar's rescue drew national tribute, and the October 5-7 RBI meeting now carries live hike risk on a rupee near 96.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 01 Oct 2026",
+      "ticker": "DJT:CEG:VST:GEV:OKLO:SMR:NNE:BWXT:NVDA:MSFT:GOOGL:AMZN:META:AVGO:MU:PLTR:ORCL:CRWV:NBIS:VRT:TLT:SPY:QQQ:JPM:GS:MS:BAC:XLF:SO:PSA:DUK:NEE:AEP:EXR:CUBE:GLD:BA:RTX:NOC:LMT:KTOS:AVAV:RCAT:HOOD:COIN:CRCL:WMT:TGT:COST:HD:LOW:XOM:CVX:OXY:COP:HAL:SLB:DAL:UAL:AAL:LUV:CCL:RCL:NKE:ACN",
+      "file": "policy-pulse-trump-us-01-oct-2026.md",
+      "slug": "policy-pulse-trump-us-01-oct-2026",
+      "date": "2026-10-01",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "leader-trades",
+        "ai",
+        "defence"
+      ],
+      "summary": "Trump Media filed the S-4 for its all-stock merger with TAE Technologies, turning DJT into one of the first publicly listed commercial fusion developers. The White House Super Intelligence order added no compliance burden on NVDA, AVGO and MSFT, while the Senate killed the Stop Insider Trading Act 53-47 and the July disclosure showed pure buys in SO and PSA. Boeing took a $20bn-plus Navy F/A-XX award against NOC, and Micron's blowout quarter lifted Nasdaq futures as Brent went back above $100.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse - Global Spillover - 30 Sep 2026",
       "ticker": "QQQ:SPY:NVDA:AVGO:AMD:MU:TCS:INFY:WIPRO:HCLTECH:TECHM:TLT:JPM:MS:BAC:GLD:XOM:CVX:OXY:COP:EOG:SLB:BKR:FICO:KMX:GO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:USO:VLO:PSX:MPC:HINDPETRO:BPCL:IOC:WMT:TGT:COST:HD:LOW:AMZN:MAT:HAS:BTU:ARCH:CEIX:GM:F:LEA:BA:CAT:DE:AGCO:MP:USAR:AREC:FEAM:TM:HMC:MUFG:SMFG:MFG:SUNPHARMA:DRREDDY:CIPLA:DIVISLAB:TORNTPHARM:ALKEM:BIOCON:LUPIN:AUROPHARMA:ZYDUSLIFE:GLENMARK:IPCALAB:PPLPHARMA:LLY:MRK:JNJ:PFE:ABBV:TEVA:VTRS:GSK:NVS:AZN:SNY:NUE:STLD:CLF:X:JINDALSTEL:SAIL",
       "file": "policy-pulse-global-30-sep-2026.md",
