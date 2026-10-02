@@ -5,6 +5,78 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse - Global Spillover - 02 Oct 2026",
+    "ticker": "XOM:CVX:OXY:DAL:UAL:AAL:LUV:CCL:RCL:MU:NVDA:AVGO:TSM:TCS:INFY:MP:GAIL:IOC:BPCL:HINDPETRO:TATASTEEL:JSWSTEEL:SAIL:WMT:TGT:COST:GLD",
+    "file": "policy-pulse-global-02-oct-2026.md",
+    "slug": "policy-pulse-global-02-oct-2026",
+    "date": "2026-10-02",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil",
+      "rates",
+      "semiconductors",
+      "trade"
+    ],
+    "summary": "A 29,000 US payroll print against a 90,000 consensus removed the October Fed hike and reversed the global bond selloff that had driven the 10-year Treasury to a 24-year high — a positive for TCS, INFY and QQQ and a relief valve for emerging markets. Trump said Europe agreed to release emergency diesel stocks, sending Brent below $100 and lifting DAL, UAL, CCL and RCL while pressuring XOM and CVX, even as the Iran ceasefire expired and three Hormuz tankers were struck. G20 Milwaukee produced a steel framework and no China tariff timetable, French spreads hit their widest over Germany since 2012, and Micron's blowout quarter drove a memory-led Asian relief rally.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Ministries & Regulators - 02 Oct 2026",
+    "ticker": "MAZDOCK:BDL:HAL:BEL:COALINDIA:NTPC:TATAPOWER:ADANIPOWER:PTC:NTPCGREEN:IREDA:PFC:RECLTD:HDFCBANK:ICICIBANK:SBIN:AXISBANK:KOTAKBANK:BSE:ANGELONE:MOTILALOFS:CDSL:CAMS:KFINTECH:WELSPUNLIV:TRIDENT:VTL:DLF:OBEROIRLTY:PRESTIGE:ULTRACEMCO:AMBUJACEM:SHREECEM:DALBHARAT:THERMAX:VGUARD:HAVELLS:POLYCAB:RELIANCE:MRPL:IOC:BPCL:HINDPETRO",
+    "file": "policy-pulse-ministries-02-oct-2026.md",
+    "slug": "policy-pulse-ministries-02-oct-2026",
+    "date": "2026-10-02",
+    "tags": [
+      "policy-pulse",
+      "defence",
+      "power",
+      "gst",
+      "rbi",
+      "sebi",
+      "realty",
+      "cement",
+      "ipo"
+    ],
+    "summary": "India is in the final stages of approving a ₹80,000 crore Project-75(I) submarine deal with Germany to be built by MAZDOCK with ThyssenKrupp, while the MoD inked a ₹810.79 crore SAT-SAAW contract with BDL. September power shortages hit a three-year high at 560 million kWh, and the Section 11 order forcing 112 private captive coal plants to run flat out and sell into exchanges is now live — positive for COALINDIA, NTPC and TATAPOWER. September GST rose 14.7% to ₹2,03,521 crore but on a record-high import share, and RBI eased bank shareholding norms for mutual funds, insurers and pension funds.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Modi / India Govt - 02 Oct 2026",
+    "ticker": "GAIL:IGL:MGL:ATGL:PRAJIND:DABUR:INDIGO:IOC:BPCL:HINDPETRO:RELIANCE:MRPL",
+    "file": "policy-pulse-modi-02-oct-2026.md",
+    "slug": "policy-pulse-modi-02-oct-2026",
+    "date": "2026-10-02",
+    "tags": [
+      "policy-pulse",
+      "energy",
+      "gas",
+      "cbg",
+      "defence",
+      "refiners"
+    ],
+    "summary": "GOBARdhan, the ₹23,731 crore National Unified Scheme for Compressed Biogas approved by the Cabinet chaired by PM Modi on August 6, was launched on October 1 with a ten-year runway to raise CBG output tenfold to about 5 MMSCMD at an administered price of ₹2,110 per MMBTU — a structural positive for GAIL, IGL, MGL, ATGL and PRAJIND. The People's Plan Campaign 2026-27 launched on Gandhi Jayanti, PM Modi paid tributes at Rajghat and spoke to flydubai hero Captain Smit Machchhar, and Putin praised the PM's Ukraine peace effort. India's markets were closed for Gandhi Jayanti after an eighth straight weekly loss, the longest in 25 years.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 02 Oct 2026",
+    "ticker": "DJT:AMZN:MSFT:GOOGL:NVDA:AVGO:MU:NKE:XOM:CVX:OXY:DAL:UAL:AAL:LUV:CCL:RCL:PLTR:LMT:RTX:NOC:GD:HOOD:BK:COIN:MP",
+    "file": "policy-pulse-trump-us-02-oct-2026.md",
+    "slug": "policy-pulse-trump-us-02-oct-2026",
+    "date": "2026-10-02",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "leader-trades",
+      "defence",
+      "energy",
+      "semiconductors",
+      "tariffs"
+    ],
+    "summary": "September payrolls came in at just 29,000 against an 84,000-90,000 consensus with unemployment at 4.2% and July revised into a loss, taking the October Fed hike off the table and sending Treasury yields tumbling from a 24-year high. Trump announced on Truth Social that Europe will release emergency diesel stocks, pushing Brent below $100 and lifting DAL, UAL, CCL and RCL while pressuring XOM and CVX. Greer closed the G20 in Milwaukee with no timetable for US-China tariff cuts, and the July disclosure showed Trump's team sold up to $25 million each of AMZN and MSFT.",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse - Global Spillover - 01 Oct 2026",
     "ticker": "NUE:STLD:CLF:X:WMT:TGT:COST:AMZN:HD:LOW:BA:CAT:DE:GM:F:STLA:SUNPHARMA:DRREDDY:CIPLA:AUROPHARMA:LUPIN:TORNTPHARM:WELSPUNLIV:TRIDENT:VTL:KPRMILL:ARVIND:GOKEX:PAGEIND:BHARATFORG:MOTHERSON:SANSERA:LUMAXTECH:APOLLOTYRE:TATASTEEL:JSWSTEEL:SAIL:JINDALSTEL:APLAPOLLO:JSL:WELCORP:HOOD:COIN:CRCL:TLT:IEF:XLF:JPM:GS:MS:BAC:CEG:VST:NEE:DUK:SO:GLD:INFY:TCS:HCLTECH:WIPRO:TECHM:XOM:CVX:OXY:COP:EOG:HAL:SLB:VLO:PSX:MPC:DINO:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:IOC:BPCL:HINDPETRO:MRPL:RELIANCE:MU:NVDA:AVGO:AMAT:LRCX:KLAC:GOOGL:MSFT:SNPS:CDNS:HINDALCO:VEDL:NATIONALUM:HINDCOPPER:SPY:QQQ",
     "file": "policy-pulse-global-01-oct-2026.md",
