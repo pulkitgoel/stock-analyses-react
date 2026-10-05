@@ -5,6 +5,80 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse - Global - 05 Oct 2026",
+    "ticker": "RELIANCE:IOC:BPCL:HINDPETRO:MRPL:ONGC:OIL:INDIGO:TATASTEEL:JSWSTEEL:SAIL:MOIL:NMDC:GMDCLTD:HINDCOPPER:NATIONALUM:MIDHANI:KEC:TITAN:KALYANKJIL:TCS:INFY:DAL:UAL:CCL:RCL:VLO:PSX:MPC:XOM:CVX:USAR:MP:AREC:NUE:STLD:CLF:X:NVDA:AVGO",
+    "file": "policy-pulse-global-05-oct-2026.md",
+    "slug": "policy-pulse-global-05-oct-2026",
+    "date": "2026-10-05",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil",
+      "g7",
+      "sanctions",
+      "critical-minerals",
+      "steel",
+      "rare-earth"
+    ],
+    "summary": "The G7 began a coordinated 100-million-barrel IEA release with a frontloaded diesel leg after Trump's export-ban threat, splitting the crude market - Brent near $101.5 against WTI below $90 and Murban at $110.80 - which is positive for DAL, UAL and INDIGO and negative for VLO and PSX. The Lindsey Graham Act's secondary sanctions on Russian-crude buyers could be decided by October 18, a live risk for RELIANCE, IOC and BPCL, while the US-Ukraine fund's first $30 million minerals deal and China's rare-earth suspension extension to January 2027 lift MP and USAR.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Ministries & Regulators - 05 Oct 2026",
+    "ticker": "MUTHOOTFIN:MANAPPURAM:BAJFINANCE:CHOLAFIN:SHRIRAMFIN:LICHSGFIN:PNBHOUSING:DLF:OBEROIRLTY:PRESTIGE:GODREJPROP:MARUTI:TMPV:TVSMOTOR:HDFCBANK:ICICIBANK:SBIN:AXISBANK:KOTAKBANK:PNB:ANGELONE:MOTILALOFS:IIFL:BSE:MCX:CDSL:PAYTM:MAZDOCK:COCHINSHIP:GRSE:BEL:HAL:DATAPATTNS:MTARTECH:ASTRAMICRO:APOLLO:MIDHANI:SUNPHARMA:DRREDDY:TCS:INFY:WELSPUNLIV:TRIDENT:KPRMILL",
+    "file": "policy-pulse-ministries-05-oct-2026.md",
+    "slug": "policy-pulse-ministries-05-oct-2026",
+    "date": "2026-10-05",
+    "tags": [
+      "policy-pulse",
+      "india",
+      "rbi",
+      "gst",
+      "sebi",
+      "defence",
+      "rates"
+    ],
+    "summary": "The RBI's MPC opened a three-day meeting with roughly 60% of polled economists expecting the first repo hike since February 2023 - a 25bp move to 5.50% on October 7 that would pressure LICHSGFIN, DLF and MARUTI - while the 57th GST Council meets the same day with a pre-announced compliance, refunds and ITC package that is positive for SUNPHARMA, WELSPUNLIV and PAYTM. SEBI's Project Jagrook went live on every broker website today, and the Rs 80,000 crore Project-75(I) submarine programme with TKMS reached final approval stage as the clearest single positive for MAZDOCK.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Modi / India Govt - 05 Oct 2026",
+    "ticker": "SUNPHARMA:DRREDDY:CIPLA:LUPIN:AJANTPHARM:WELSPUNLIV:TRIDENT:KPRMILL:VTL:PAGEIND:KRBL:DABUR:MARICO:LT:THERMAX:NESTLEIND:ABB:HDFCBANK:ICICIBANK:SBILIFE:HDFCLIFE:ICICIGI:ICICIPRULI:BEL:HAL:MAZDOCK:TITAGARH:IRCON:RVNL:KPIL:KEC:TCS:INFY",
+    "file": "policy-pulse-modi-05-oct-2026.md",
+    "slug": "policy-pulse-modi-05-oct-2026",
+    "date": "2026-10-05",
+    "tags": [
+      "policy-pulse",
+      "india",
+      "efta",
+      "trade",
+      "pharma",
+      "textiles",
+      "defence",
+      "nuclear"
+    ],
+    "summary": "PM Modi and Swiss President Guy Parmelin signed five agreements at Hyderabad House on Monday, pairing expanded market access for Indian agriculture, pharma, textiles and engineering goods with a $100 billion EFTA investment target and fresh channels in biotech, life sciences, banking and insurance - a positive read-through for SUNPHARMA, WELSPUNLIV and NESTLEIND - alongside a Migration and Mobility Partnership and a Young Professionals Agreement. The PMO named no company, so every mapping here is inferred and confidence-marked. Forward catalyst: Chennai Metro Phase II's first 14 km on October 11.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 05 Oct 2026",
+    "ticker": "DJT:NVDA:AVGO:VRT:SMCI:ANET:AMZN:MSFT:GOOGL:META:EFOR:PLTR:LMT:NOC:RTX:GD:BA:HOOD:UNH:HUM:CVS:WMT:COST:TGT:DG:DLTR:COP:XOM:CVX:VLO:PSX:MPC:DAL:UAL:CCL:RCL:NUE:STLD:CLF:LNG:SPY:QQQ",
+    "file": "policy-pulse-trump-us-05-oct-2026.md",
+    "slug": "policy-pulse-trump-us-05-oct-2026",
+    "date": "2026-10-05",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "leader-trades",
+      "ai",
+      "defence",
+      "energy",
+      "tariffs"
+    ],
+    "summary": "Trump stood up the Super Intelligence Force on Sunday - a White House task force chaired by DNI Jay Clayton, with FTC Chair Andrew Ferguson and Pentagon CTO Emil Michael, and a charter written to prevent overregulation - a capex-permission signal for NVDA, AVGO and VRT. USTR Greer said negotiated tariff caps will be credited against the Section 301 excess-capacity probe, the July disclosure showed $5-25 million sales each of AMZN and MSFT alongside a June buy of small-cap defence name EFOR, and $90 Medicare payments to 20.8 million beneficiaries plus a renewed $5,000 cheque pledge read as a transfer positive for WMT, DG and UNH.",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse - Global Spillover - 02 Oct 2026",
     "ticker": "XOM:CVX:OXY:DAL:UAL:AAL:LUV:CCL:RCL:MU:NVDA:AVGO:TSM:TCS:INFY:MP:GAIL:IOC:BPCL:HINDPETRO:TATASTEEL:JSWSTEEL:SAIL:WMT:TGT:COST:GLD",
     "file": "policy-pulse-global-02-oct-2026.md",
