@@ -1,6 +1,74 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global - 06 Oct 2026",
+      "ticker": "IOC:BPCL:HINDPETRO:INDIGO:ONGC:OIL:ASIANPAINT:MRF:RELIANCE:COALINDIA:GAIL:DAL:UAL:CCL:RCL:XOM:CVX:OXY:SLB:AAPL:MSFT:NVDA:GOOGL:AMZN:COIN:HOOD",
+      "file": "policy-pulse-global-06-oct-2026.md",
+      "slug": "policy-pulse-global-06-oct-2026",
+      "date": "2026-10-06",
+      "tags": [
+        "policy-pulse",
+        "energy",
+        "oil",
+        "rates",
+        "macro",
+        "markets"
+      ],
+      "summary": "Brent fell back below USD 100 to USD 98.33 as Hormuz transits and the Saudi East-West pipeline recovered and the G7's 100-million-barrel release began flowing - a cost tailwind for IOC, BPCL and INDIGO and a headwind for ONGC and XOM. The S&P 500 and Nasdaq printed new records on Tuesday as the 10-year Treasury eased to 5.26% from a 19-year high of 5.35%, the euro hit a 17-month low on French fiscal stress, and BMI Research raised its Q4 2026 Brent forecast to USD 107 a barrel while Kenanga went to USD 91 for 2026.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Ministries & Regulators - 06 Oct 2026",
+      "ticker": "BEL:LT:BDL:MTARTECH:APOLLO:DATAPATTNS:PARAS:SOLARINDS:MAZDOCK:COCHINSHIP:GRSE:HAL:HDFCBANK:ICICIBANK:SBIN:KOTAKBANK:AXISBANK:LICHSGFIN:PNBHOUSING:MUTHOOTFIN:MANAPPURAM:DLF:MARUTI:TMPV:M&M:TVSMOTOR:BAJAJ-AUTO:HEROMOTOCO:EICHERMOT:BAJFINANCE:CHOLAFIN:SUNPHARMA:DRREDDY:CIPLA:TCS:INFY:PAYTM:AUROPHARMA:ICICIPRULI:TATAINVEST:INDIGO:COALINDIA:TECHM:ITC:NESTLEIND:HINDUNILVR:JIOFIN:RELIANCE:ASIANPAINT:HDFCLIFE:MAXHEALTH:ULTRACEMCO:APOLLOHOSP:BSE:ANGELONE:MOTILALOFS:IIFL",
+      "file": "policy-pulse-ministries-06-oct-2026.md",
+      "slug": "policy-pulse-ministries-06-oct-2026",
+      "date": "2026-10-06",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "rbi",
+        "sebi",
+        "gst",
+        "markets"
+      ],
+      "summary": "The Ministry of Defence signed a Rs 661.50 crore BrahMos fire-control and launcher contract for Indian Navy ships at a minimum 68% indigenous content - BEL and LT are the inferred beneficiaries because PIB names no listed company. The RBI decides rates tomorrow with a 25 basis point hike to 5.50% near-fully priced, the 57th GST Council was rescheduled for a second time to October 8, and SEBI is reported to be partly reversing the Closing Auction Session for derivatives settlement, a positive for BSE, ANGELONE and MOTILALOFS. Trent's 23% Q2 revenue beat drove a 12.6% surge to a Rs 1.5 trillion market cap while Coal India and Tech Mahindra led the day's losses as the Sensex closed 685 points higher at 73,067.81.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Modi / India Govt - 06 Oct 2026",
+      "ticker": "BSE:SBIN:BANKBARODA:PNB:BAJFINANCE:CHOLAFIN:SHRIRAMFIN:CRISIL:ICRA:MOTILALOFS:IIFL:CONCOR:LT:IRB:KNRCON:GRINFRA:HGINFRA:NCC:BLUEDART:TCI:MAHLOG:ADANIPORTS:JSWINFRA:RVNL:IRCON:TITAGARH:RITES:ANGELONE:HINDCOPPER:IEX:IOC:BPCL:HINDPETRO:RELIANCE",
+      "file": "policy-pulse-modi-06-oct-2026.md",
+      "slug": "policy-pulse-modi-06-oct-2026",
+      "date": "2026-10-06",
+      "tags": [
+        "policy-pulse",
+        "infrastructure",
+        "logistics",
+        "msme",
+        "ipo",
+        "economy"
+      ],
+      "summary": "The Cabinet approved a Rs 10,000 crore SME Growth Fund to supply patient growth equity to high-potential SMEs - BSE, SBIN and CHOLAFIN are the inferred beneficiaries - and cleared the Integrated Transport and Logistics Authority as an SPV that will write a long-term National Transport Plan and appraise every government infrastructure project worth Rs 500 crore or more, a positive read-through for LT, IRB and CONCOR. The World Bank raised India's FY27 growth forecast 50 basis points to 7.1%, and the primary market stayed open with SRIT India listing at a 13.85% premium while AceVector debuted at an 11.5% discount.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 06 Oct 2026",
+      "ticker": "DJT:PTC:ASTS:AMZN:MSFT:META:GOOGL:NVDA:AVGO:XOM:CVX:VLO:PSX:MPC:WMT:TGT:HD:LOW:NKE:FDX:UPS:ODFL:CSX:DE:AGCO:NTR:MOS:ADM:DAL:UAL:CCL:RCL",
+      "file": "policy-pulse-trump-us-06-oct-2026.md",
+      "slug": "policy-pulse-trump-us-06-oct-2026",
+      "date": "2026-10-06",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "leader-trades",
+        "tariffs",
+        "energy",
+        "midterms"
+      ],
+      "summary": "Trump signed an Emergency Tax Relief on Diesel Fuel order deferring the federal diesel excise tax from October 5 to December 31 for highway use - a per-mile cost cut for ODFL, CSX and DAL rather than a supply fix, with pump diesel still at USD 6.32 a gallon. CBP opened CAPE Phase 3 today, releasing roughly USD 20.6 billion of IEEPA tariff refunds to about 3,700 court plaintiffs - a cash event for WMT, TGT and AMZN. The copy-trade signal of the session was PTC Inc, up 30% in a day on disclosed presidential holdings of up to USD 6.15 million, while the July filing's USD 5-25 million sales each of AMZN and MSFT remain the largest non-DJT equity exits.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse - Global - 05 Oct 2026",
       "ticker": "RELIANCE:IOC:BPCL:HINDPETRO:MRPL:ONGC:OIL:INDIGO:TATASTEEL:JSWSTEEL:SAIL:MOIL:NMDC:GMDCLTD:HINDCOPPER:NATIONALUM:MIDHANI:KEC:TITAN:KALYANKJIL:TCS:INFY:DAL:UAL:CCL:RCL:VLO:PSX:MPC:XOM:CVX:USAR:MP:AREC:NUE:STLD:CLF:X:NVDA:AVGO",
       "file": "policy-pulse-global-05-oct-2026.md",
