@@ -1,6 +1,23 @@
 {
   "watchlist": [
     {
+      "slug": "balaji-amines-deep-dive-analysis",
+      "ticker": "BALAMINES:NSE",
+      "title": "Balaji Amines — Deep Dive Analysis",
+      "date": "2026-10-07",
+      "yahooSymbol": "BALAMINES.NS",
+      "priceAtAnalysis": 2175,
+      "support": 1958,
+      "resistance": 2203,
+      "supports": [
+        1665
+      ],
+      "resistances": [
+        2567
+      ],
+      "verdict": "CAUTION — FULLY VALUED"
+    },
+    {
       "slug": "cg-power-what-changed-since-june-with-forward-valuation",
       "ticker": "CGPOWER:NSE",
       "title": "CG Power — What Changed Since June (with Forward Valuation)",

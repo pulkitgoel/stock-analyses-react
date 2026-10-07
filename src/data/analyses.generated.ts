@@ -5,6 +5,24 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Balaji Amines — Deep Dive Analysis",
+    "ticker": "BALAMINES:NSE",
+    "file": "balaji-amines-deep-dive-analysis.md",
+    "slug": "balaji-amines-deep-dive-analysis",
+    "date": "2026-10-07",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "speciality-chemicals",
+      "amines",
+      "acetonitrile",
+      "dme",
+      "cyclical"
+    ],
+    "summary": "Q1 FY27 PAT up 111% with margins at 26%, but volumes fell 22% YoY - the recovery is price-led, not demand-led. The stock is up 66% in a year, trades above the average analyst price target, and carries a September 2026 SEBI warning for non-disclosure of a DGFT blacklisting and an FDA warning. Rating: CAUTION - fully valued.",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse - Global - 06 Oct 2026",
     "ticker": "IOC:BPCL:HINDPETRO:INDIGO:ONGC:OIL:ASIANPAINT:MRF:RELIANCE:COALINDIA:GAIL:DAL:UAL:CCL:RCL:XOM:CVX:OXY:SLB:AAPL:MSFT:NVDA:GOOGL:AMZN:COIN:HOOD",
     "file": "policy-pulse-global-06-oct-2026.md",
