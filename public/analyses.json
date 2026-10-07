@@ -19,6 +19,73 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Policy Pulse - Global Spillover - 07 Oct 2026",
+      "ticker": "XOM:CVX:OXY:SLB:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:VLO:PSX:MPC:NVDA:AVGO:MRVL:AMD:MU:INTC:JPM:GS:IOC:BPCL:HINDPETRO:ONGC:OIL:INDIGO:ASIANPAINT:MRF:TCS:INFY:TITAN:KALYANKJIL:SENCO:MUTHOOTFIN:MANAPPURAM",
+      "file": "policy-pulse-global-07-oct-2026.md",
+      "slug": "policy-pulse-global-07-oct-2026",
+      "date": "2026-10-07",
+      "tags": [
+        "policy-pulse",
+        "oil",
+        "rates",
+        "global",
+        "currency"
+      ],
+      "summary": "The EIA raised its 2026 Brent forecast 8 percent to about USD 98 and lifted Q4 2026 to USD 105 with 4.5 million barrels per day still shut in, positive for XOM, CVX and ONGC and negative for DAL, UAL and Indian refiners IOC and BPCL. The 30-year Treasury yield held near its highest since 2002 with the September FOMC minutes due tonight and CME pricing an October hike near 20 percent, while French OAT yields kept rising and the euro sat near a 17-month low. Spot gold above USD 4,167 with the rupee at a five-month low of 97.03 is a translation positive for TCS and INFY and an input-cost negative for TITAN and MRF.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Ministries & Regulators - 07 Oct 2026",
+      "ticker": "HDFCBANK:ICICIBANK:SBIN:KOTAKBANK:AXISBANK:LICHSGFIN:PNBHOUSING:MUTHOOTFIN:MANAPPURAM:DLF:OBEROIRLTY:MARUTI:TMPV:BAJFINANCE:CHOLAFIN:TITAN:SUNPHARMA:DRREDDY:CIPLA:TCS:INFY:PAYTM:BSE:ANGELONE:MOTILALOFS:IIFL:PFC:RECLTD:IREDA:HUDCO:NTPC:LT:COALINDIA:BHEL:THERMAX:KEC:HAL:MIDHANI:BEL:MAZDOCK:COCHINSHIP:GRSE:PNCINFRA:KNRCON:HGINFRA:GRINFRA:NCC:APLAPOLLO:JINDALSAW:ULTRACEMCO:AMBUJACEM:DALBHARAT:HINDUNILVR:DABUR:MARICO:M&M:ESCORTS:HEROMOTOCO:TVSMOTOR",
+      "file": "policy-pulse-ministries-07-oct-2026.md",
+      "slug": "policy-pulse-ministries-07-oct-2026",
+      "date": "2026-10-07",
+      "tags": [
+        "policy-pulse",
+        "rbi",
+        "gst",
+        "sebi",
+        "defence",
+        "power"
+      ],
+      "summary": "The RBI hiked the repo rate 25 basis points to 5.50 percent, changed its stance to calibrated tightening and revised FY27 GDP up 40 basis points to 7.1 percent, sending the Sensex down 429 points to 72,638.70 - negative for LICHSGFIN, PNBHOUSING, DLF and MARUTI but positive for HDFCBANK, ICICIBANK and SBIN on net interest margin. The 57th GST Council slipped a second time to October 8 with a proposed 17-day export refund clock, positive for SUNPHARMA, CIPLA and INFY, SEBI exempted eligible AA-minus issuers from the merchant-banker requirement on private-placement debt, positive for PFC, RECLTD and BSE, and L&T won a 5,000-10,000 crore main-plant notice to proceed for the 2x800 MW Chandrapura thermal project.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Modi / India Govt - 07 Oct 2026",
+      "ticker": "BHARTIARTL:IDEA:INDUSTOWER:TATACOMM:TEJASNET:HFCL:STLTECH:ITI:TATAELXSI:DIXON:KAYNES:SYRMA:MOSCHIP:CGPOWER:NESTLEIND:ABB:SUNPHARMA:DRREDDY:CIPLA:LUPIN:WELSPUNLIV:TRIDENT:KPRMILL:LT:THERMAX:HDFCBANK:ICICIBANK:SBILIFE:HDFCLIFE:PNCINFRA:KNRCON:HGINFRA:GRINFRA:NCC:HINDUNILVR:DABUR:MARICO:M&M:ESCORTS:HEROMOTOCO:TVSMOTOR",
+      "file": "policy-pulse-modi-07-oct-2026.md",
+      "slug": "policy-pulse-modi-07-oct-2026",
+      "date": "2026-10-07",
+      "tags": [
+        "policy-pulse",
+        "telecom",
+        "semiconductors",
+        "efta",
+        "rural"
+      ],
+      "summary": "PM Modi inaugurates India Mobile Congress 2026 on October 8 at Yashobhoomi and met the GSMA board, with Starlink declaring its India launch ready after building 20 gateway sites, a mixed signal for BHARTIARTL and IDEA and a positive for INDUSTOWER, TEJASNET and HFCL on densification and backhaul. Modi and Swiss President Parmelin address the second India-EFTA Prosperity Summit with the USD 100 billion TEPA investment target, the direct read-through for NESTLEIND and ABB. The Rural Development Ministry notified 375 permissible works under VB-G RAM G in a 41 percent expansion supporting PNCINFRA, HINDUNILVR and M&M.",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 07 Oct 2026",
+      "ticker": "HII:GD:NUE:STLD:CLF:LDOS:RTX:KTOS:LMT:PLTR:INTC:MP:USAR:WMT:TGT:HD:LOW:NKE:AMZN:NVDA:AMD:AVGO:MU:NEM:AEM:VLO:PSX:COIN:HOOD:BULL:DJT:FDX:UPS",
+      "file": "policy-pulse-trump-us-07-oct-2026.md",
+      "slug": "policy-pulse-trump-us-07-oct-2026",
+      "date": "2026-10-07",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "defence",
+        "shipbuilding",
+        "tariffs",
+        "state-capitalism",
+        "crypto"
+      ],
+      "summary": "Trump unveiled Anduril's USD 3.7 billion Arsenal-2 submarine shipyard at Sparrows Point with a Navy contract of up to USD 2.9 billion and announced a 40 percent US government stake in the operating subsidiary, a 15 percent lift to Virginia-class production capacity that is positive for NUE and STLD on naval steel while leaving incumbents GD and HII two-sided as a new component competitor enters. The August trade deficit widened to USD 105.6 billion, the widest since Liberation Day, on record imports led by semiconductors and nonmonetary gold, positive for NVDA, AMD and NEM. The IRS issued a staking safe harbour, positive for COIN and HOOD.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse - Global - 06 Oct 2026",
       "ticker": "IOC:BPCL:HINDPETRO:INDIGO:ONGC:OIL:ASIANPAINT:MRF:RELIANCE:COALINDIA:GAIL:DAL:UAL:CCL:RCL:XOM:CVX:OXY:SLB:AAPL:MSFT:NVDA:GOOGL:AMZN:COIN:HOOD",
       "file": "policy-pulse-global-06-oct-2026.md",
