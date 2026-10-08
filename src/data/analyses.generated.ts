@@ -5,6 +5,79 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse - Global Spillover - 08 Oct 2026",
+    "ticker": "XOM:CVX:OXY:BKR:SLB:VLO:PSX:MPC:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:COIN:MSTR:NVDA:AVGO:AMD:MU:JPM:GS:CAT:DE:IOC:BPCL:HINDPETRO:ONGC:OIL:RELIANCE:INDIGO:ASIANPAINT:MRF:TITAN:KALYANKJIL:MUTHOOTFIN:MANAPPURAM:TCS:INFY:HCLTECH:TMPV:MARUTI:M&M:HEROMOTOCO:TVSMOTOR:EXIDEIND:ARE&M:DIXON:TATACHEM:DEEPAKNTR",
+    "file": "policy-pulse-global-08-oct-2026.md",
+    "slug": "policy-pulse-global-08-oct-2026",
+    "date": "2026-10-08",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil",
+      "bonds",
+      "fed",
+      "trade",
+      "currency",
+      "crypto"
+    ],
+    "summary": "Brent rose 4.25 percent to USD 104.5 after Axios reported the Pentagon has been told to prepare for a possible resumption of major combat operations in Iran and Tropical Storm Isaias shut in a quarter of Gulf of Mexico output, positive for XOM, CVX and ONGC and negative for DAL, IOC and BPCL; hawkish September FOMC minutes kept the 10-year near 5.28 percent and the 30-year at 2002 levels, and India joined the US-led 15-country excess-capacity initiative while a Section 301 investigation into India's own industrial policies remains live.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Ministries & Regulators - 08 Oct 2026",
+    "ticker": "TCS:INFY:HCLTECH:WIPRO:TECHM:PAYTM:MOBIKWIK:PINELABS:HDFCBANK:ICICIBANK:AXISBANK:KOTAKBANK:SBIN:BAJFINANCE:JSWSTEEL:ADANIENT:ITC:HINDUNILVR:TITAN:INDIGO:MAXHEALTH:RELIANCE:ADANIPORTS:NTPC:MARUTI:WELSPUNLIV:TRIDENT:KPRMILL:SUNPHARMA:DRREDDY:CIPLA:BSE:ANGELONE:MOTILALOFS:CAMS:KFINTECH:ULTRACEMCO:APLAPOLLO:JINDALSAW:BSOFT:NAUKRI:ICICIGI:GICRE",
+    "file": "policy-pulse-ministries-08-oct-2026.md",
+    "slug": "policy-pulse-ministries-08-oct-2026",
+    "date": "2026-10-08",
+    "tags": [
+      "policy-pulse",
+      "gst",
+      "regulation",
+      "markets",
+      "payments",
+      "it-services",
+      "primary-market"
+    ],
+    "summary": "The 57th GST Council left rates untouched but recommended removing GST officers' arrest powers, raising the prosecution threshold to Rs 5 crore, cutting the general penalty to Rs 10,000 and automating refunds and ITC, positive for SUNPHARMA, DRREDDY and CIPLA and for TCS and INFY on services-export facilitation; the reported deferral of the UPI merchant fee to January 2027 took 5.2 percent off PAYTM and 4.5 percent off MOBIKWIK, while TCS opened Q2 FY27 with profit up 15 percent to Rs 13,884 crore and a further Rs 12 dividend.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Modi / India Govt - 08 Oct 2026",
+    "ticker": "BHARTIARTL:IDEA:INDUSTOWER:TATACOMM:TEJASNET:HFCL:STLTECH:ITI:TATAELXSI:DIXON:KAYNES:CGPOWER:SYRMA:AMBER:MOSCHIP:TATATECH:PAYTM:DATAPATTNS:PARAS:HAL:BEL:AXISCADES:MTARTECH:GESHIP:COCHINSHIP:MAZDOCK:GRSE:ADANIPORTS:HINDUNILVR:NESTLEIND:DABUR:ITC:INFY:TECHM",
+    "file": "policy-pulse-modi-08-oct-2026.md",
+    "slug": "policy-pulse-modi-08-oct-2026",
+    "date": "2026-10-08",
+    "tags": [
+      "policy-pulse",
+      "telecom",
+      "6g",
+      "semiconductors",
+      "space",
+      "defence",
+      "blue-economy"
+    ],
+    "summary": "PM Modi opened India Mobile Congress 2026 with a stated target of one billion 5G users by 2030, a call for a global anti-cyber-fraud framework and USD 15 billion of BharatNet middle-mile connectivity, positive for BHARTIARTL and INDUSTOWER on the demand commitment and for DIXON and KAYNES on a mobile phone industry now worth USD 63 billion with USD 29 billion of exports. The PM separately amplified a space self-reliance piece by Digantara's founders, and Indian equities closed at their lowest level since April 2025 with ITC and JSW Steel among the worst hit.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 08 Oct 2026",
+    "ticker": "META:T:COP:ABT:NFLX:CVX:AMD:CHD:BA:HD:TMUS:DDOG:DELL:PANW:NVDA:MSFT:MCD:CMCSA:TSN:SPCX:HOOD:SCHW:BK:STT:BLK:DJT:LLY:MRK:PFE:ABBV:TEVA:VTRS:WMT:TGT:AMZN:ETSY:FDX:UPS:AVGO:CAT:DE:AAPL:COIN:MSTR:DAL",
+    "file": "policy-pulse-trump-us-08-oct-2026.md",
+    "slug": "policy-pulse-trump-us-08-oct-2026",
+    "date": "2026-10-08",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "leader-trades",
+      "disclosure",
+      "space",
+      "tariffs",
+      "crypto"
+    ],
+    "summary": "Trump's August financial disclosure showed 517 trades including the largest single position of the month, up to USD 25 million of META, plus USD 1-5 million of SPCX notes bought two days before a national space transportation policy targeting 1,000 launches a year by 2030; completion of Trump Accounts auto-enrolment for nearly 70 million children is positive for HOOD and SCHW. The indefinite de minimis suspension reaches its October 22 compliance date, positive for LLY, MRK and PFE by removing personal-importation arbitrage and negative for WMT and TGT on per-parcel cost.",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Balaji Amines — Deep Dive Analysis",
     "ticker": "BALAMINES:NSE",
     "file": "balaji-amines-deep-dive-analysis.md",
