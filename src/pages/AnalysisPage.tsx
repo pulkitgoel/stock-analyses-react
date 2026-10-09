@@ -8,10 +8,48 @@ import { ArrowLeft, Clock, FileText } from 'lucide-react';
 import { Analysis } from '../types/analysis';
 import { fetchAnalyses, fetchAnalysisContent } from '../services/analysisService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
+import { ANALYSES } from '../data/analyses.generated';
+import { tickerTokens, companyHubPath } from '../utils/tickers';
 
 function estimateReadTime(text: string): number {
   const words = text.split(/\s+/).length;
   return Math.max(1, Math.ceil(words / 200));
+}
+
+// How many ticker tokens become links to their company hub. Some articles list
+// 40+; linking every one turns the page into a link farm, so the tail is
+// collapsed into a counter. The first N are real crawlable links (AGENTS 7.4).
+const TICKER_LINK_LIMIT = 12;
+
+/**
+ * Related research, scored on shared tickers then shared tags (AGENTS 7.4).
+ *
+ * A shared ticker is a far stronger signal than a shared tag, so it is weighted
+ * 3:1. The daily policy series is excluded from tag matching: every policy
+ * article shares the policy-pulse tag, which would relate all 199 of them to
+ * each other and say nothing.
+ *
+ * These render as real anchors, so the prerender in scripts/prerender-body.py
+ * captures them and a non-executing crawler can follow them.
+ */
+function relatedAnalyses(current: Analysis, all: Analysis[], limit = 6): Analysis[] {
+  const mine = new Set(tickerTokens(current.ticker));
+  const myTags = new Set(
+    (current.tags ?? []).map((t) => String(t).toLowerCase()).filter((t) => t !== 'policy-pulse'),
+  );
+  return all
+    .filter((a) => a.slug && a.slug !== current.slug)
+    .map((a) => {
+      const sharedTickers = tickerTokens(a.ticker).filter((t) => mine.has(t)).length;
+      const sharedTags = (a.tags ?? [])
+        .map((t) => String(t).toLowerCase())
+        .filter((t) => myTags.has(t)).length;
+      return { a, score: sharedTickers * 3 + sharedTags };
+    })
+    .filter((s) => s.score > 0)
+    .sort((x, y) => y.score - x.score || (y.a.date > x.a.date ? 1 : -1))
+    .slice(0, limit)
+    .map((s) => s.a);
 }
 
 export default function AnalysisPage() {
@@ -71,6 +109,9 @@ export default function AnalysisPage() {
   }
 
   const readTime = estimateReadTime(content);
+  const tickers = tickerTokens(analysis.ticker);
+  const related = relatedAnalyses(analysis, ANALYSES);
+  const primaryHub = tickers.length === 1 ? tickers[0] : null;
 
   return (
     <article className="article-shell flex flex-col gap-6 sm:gap-8">
@@ -114,14 +155,57 @@ export default function AnalysisPage() {
         <ArrowLeft size={14} /> All analyses
       </Link>
 
+      {/* Breadcrumb (AGENTS 7.4). Prerendered with the rest of the body, so a
+          crawler that does not run JavaScript still sees the hierarchy. */}
+      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs" style={{ color: 'var(--text-dim)' }}>
+        <Link to="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Home</Link>
+        {primaryHub && (
+          <>
+            <span>/</span>
+            <Link to={companyHubPath(primaryHub)} style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+              {primaryHub}
+            </Link>
+          </>
+        )}
+        <span>/</span>
+        <span style={{ color: 'var(--text-dim)' }}>{analysis.title}</span>
+      </nav>
+
       <header className="page-panel surface-card animate-in rounded-[2rem]">
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          <span
-            className="rounded-lg px-2.5 py-1 font-mono text-xs font-bold"
-            style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}
-          >
-            {analysis.ticker}
-          </span>
+          {/* Each ticker token links to its company hub (AGENTS 7.4). Chips wrap,
+              which is also the fix for the 292-character unbroken ticker string
+              that used to widen this page to ~2468px. */}
+          {tickers.length > 0 ? (
+            <div className="flex flex-wrap items-center gap-1.5" style={{ maxWidth: '100%' }}>
+              {tickers.slice(0, TICKER_LINK_LIMIT).map((t) => (
+                <Link
+                  key={t}
+                  to={companyHubPath(t)}
+                  className="rounded-lg px-2 py-0.5 font-mono text-xs font-bold"
+                  style={{ background: 'var(--accent-glow)', color: 'var(--accent)', textDecoration: 'none' }}
+                >
+                  {t}
+                </Link>
+              ))}
+              {tickers.length > TICKER_LINK_LIMIT && (
+                <span className="font-mono text-xs" style={{ color: 'var(--text-dim)' }}>
+                  +{tickers.length - TICKER_LINK_LIMIT} more
+                </span>
+              )}
+            </div>
+          ) : (
+            <span
+              className="rounded-lg px-2.5 py-1 font-mono text-xs font-bold"
+              style={{
+                background: 'var(--accent-glow)', color: 'var(--accent)',
+                maxWidth: '100%', overflowWrap: 'anywhere', wordBreak: 'break-word',
+                whiteSpace: 'normal',
+              }}
+            >
+              {analysis.ticker}
+            </span>
+          )}
           <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>{analysis.date}</span>
           <span className="flex items-center gap-1 text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
             <Clock size={13} /> {readTime} min read
@@ -167,6 +251,49 @@ export default function AnalysisPage() {
           </ReactMarkdown>
         </div>
       </div>
+
+      {/* A disclaimer line on every article (AGENTS 7.6). Only 70 of 250 had
+          one in the body; doing it in the template covers all of them, and
+          every future publish, without editing 250 markdown files. Wording
+          stays factually narrow on purpose: it claims nothing about holdings
+          and does not assert a regulatory position (AGENTS 6). It matches the
+          footer's existing stance rather than inventing a stronger one. */}
+      <p
+        className="page-panel surface-card rounded-[2rem]"
+        style={{
+          margin: 0, padding: '1.1rem 1.35rem', fontSize: '0.78rem',
+          lineHeight: 1.75, color: 'var(--text-dim)',
+        }}
+      >
+        <strong style={{ color: 'var(--text-muted)' }}>Not investment advice.</strong>{' '}
+        This note records the author's view as of {analysis.date} and is published for
+        information and education only. Figures are drawn from the sources named in the
+        article and should be verified independently before you act on them. Nothing
+        here is a recommendation to buy or sell any security.
+      </p>
+
+      {related.length > 0 && (
+        <section className="page-panel surface-card animate-in rounded-[2rem]" style={{ padding: '1.75rem' }}>
+          <h2 className="text-lg font-black" style={{ color: 'var(--text)', margin: '0 0 1rem' }}>
+            Related research
+          </h2>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            {related.map((a) => (
+              <li key={a.slug}>
+                <Link
+                  to={`/analysis/${a.slug}`}
+                  style={{ color: 'var(--accent)', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem' }}
+                >
+                  {a.title}
+                </Link>
+                <div style={{ color: 'var(--text-dim)', fontSize: '0.75rem', marginTop: '0.2rem' }}>
+                  {a.date}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <div>
         <Link

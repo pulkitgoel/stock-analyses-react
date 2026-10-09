@@ -255,6 +255,19 @@ button { touch-action: manipulation; }
 .article-body hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 .article-body a { color: var(--accent); text-decoration: underline; word-break: break-word; }
 
+/* Data tables readable on a phone without widening the page.
+   Several deep dives carry a single 292-character ticker cell (40+ tickers
+   colon-delimited). `width: max-content` plus a nowrap header used to stretch
+   the article to ~2468px. Cells wrap now; only headers stay nowrap, and the
+   block still scrolls horizontally if something genuinely overflows. */
+.article-body td { word-break: break-word; overflow-wrap: anywhere; }
+.article-body table { max-width: 100%; }
+@media (max-width: 640px) {
+  .article-body table { font-size: 0.78rem; }
+  .article-body th, .article-body td { padding: 0.5rem 0.55rem; }
+  .article-body { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
 /* ── Button System ── */
 .btn {
     display: inline-flex;

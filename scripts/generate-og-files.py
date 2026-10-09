@@ -24,7 +24,15 @@ import sys
 
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPTS_DIR)
+# Output root. Defaults to dist/, but a deploy can pass `--dist dir` to generate
+# into a staging directory and swap it in, so the live document root is never
+# emptied while this runs.
 DIST_DIR = os.path.join(REPO_ROOT, "dist")
+for _i, _arg in enumerate(sys.argv):
+    if _arg == "--dist" and _i + 1 < len(sys.argv):
+        DIST_DIR = os.path.abspath(sys.argv[_i + 1])
+    elif _arg.startswith("--dist="):
+        DIST_DIR = os.path.abspath(_arg.split("=", 1)[1])
 PUBLIC_DIR = os.path.join(REPO_ROOT, "public")
 # Prefer the repo's OWN generated data so OG files never lag a fresh publish.
 # (The legacy static-site copy is only a fallback; it goes stale after each publish.)

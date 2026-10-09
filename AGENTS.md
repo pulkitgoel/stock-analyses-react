@@ -37,20 +37,32 @@ One command runs the whole pipeline. Never run `vite build` on its own.
 npm run build
 ```
 
-That expands to five steps, in order, and each depends on the previous one:
+That expands to six steps, in order, and each depends on the previous one:
 
 | Step | Script | Produces |
 |---|---|---|
 | 1 | `generate-analyses-data.js` | `public/analyses.json`, `src/data/analyses.generated.ts` |
 | 2 | `generate-sitemap.js` | `public/sitemap.xml` with `lastmod` |
 | 3 | `tsc -b` | typecheck |
-| 4 | `vite build` | `dist/` bundle |
-| 5 | `generate-og-files.py` | `dist/analysis/*.html`, `dist/company/*.html`, `dist/{about,contact,disclaimer,privacy}.html` |
+| 4 | `vite build` | the bundle |
+| 5 | `generate-og-files.py` | `analysis/*.html`, `company/*.html`, `{about,contact,disclaimer,privacy}.html` |
+| 6 | `prerender-body.py` | injects the rendered article body into the step-5 files |
 
-Step 5 reads the hashed asset filenames out of `dist/index.html`, so it must run after
+Step 5 reads the hashed asset filenames out of `index.html`, so it must run after
 step 4 or every prerendered page will point at a stale bundle.
 
-Deploy with `./deploy.sh` on the server. It calls `npm run build`.
+Step 6 renders every route in the sitemap with headless Chrome and injects only
+the `#root` markup, so the step-5 head survives byte-for-byte. Without it a
+non-executing crawler reads about seven words per page. It needs Playwright plus
+a Chrome binary, and takes roughly seven minutes over 409 routes.
+
+**Deploy with `./deploy.sh` on the server.** Do not run `npm run build` against
+the live root: `vite build` empties its output directory, so an in-place build
+404s every article page for the length of step 6. `deploy.sh` builds into
+`dist.next`, runs steps 5 and 6 there, then swaps it in with two renames
+(`dist` -> `dist.previous`, `dist.next` -> `dist`). The exposed window is
+milliseconds and any failure before the swap leaves the live site untouched.
+Both scripts take `--dist <dir>` / `--outDir <dir>` for this reason.
 
 The server runs `python3.12`; a local machine may only have `python`. If step 5 fails
 on the Python command, that is why.
@@ -246,30 +258,52 @@ Do not decide these autonomously. Surface them and wait.
 
 ## 7. Open work, in priority order
 
-### 7.1 Prerender the article body (largest remaining item)
+### 7.1 Prerender the article body — DONE 2026-10-09
 
-The prerendered files currently carry head metadata only; the body is still
-`<div id="root"></div>`. A crawler that does not execute JavaScript receives about 7
-words where a reader sees 8,338 — 88 to 97% of a 415,000-word corpus is invisible to
-ChatGPT, Perplexity, Claude and Bing. Googlebot renders JavaScript and is the exception.
+`scripts/prerender-body.py` (build step 6) serves the build over a local HTTP
+server, renders every route in the sitemap in headless Chrome via Playwright, and
+injects **only** the rendered `#root` markup back into the file step 5 produced.
 
-Approach: `vite-react-ssg`, or drive Playwright over the route list that
-`generate-sitemap.js` already computes and write the rendered HTML into `dist/`.
+Injecting only `#root` is the whole point: dumping the rendered document would
+reintroduce the duplicate crawler metadata that section 3.2 exists to prevent
+(the React components emit their own Helmet tags). The step-5 head survives
+byte-for-byte — one `<title>`, one canonical, one JSON-LD block per page.
 
-Acceptance: `curl -s -A Googlebot <url> | wc -c` exceeds 20,000.
+Measured: homepage 2,553 → 72,628 bytes; a policy article now exposes about 1,900
+visible words to a non-executing crawler, against roughly 7 before. Acceptance was
+`curl -s -A Googlebot <url> | wc -c` above 20,000. It runs 409 routes in roughly
+five minutes, so it is the bulk of deploy time.
 
-This also fixes LCP, because it removes the markdown fetch and client-side parse from
-the critical path. The SEO fix and the performance fix are the same fix.
+It also improves LCP, because the markdown fetch and client-side parse leave the
+critical path.
 
-### 7.2 Apply the nginx configuration — needs server access
+Caveat: the app still mounts with `createRoot`, not `hydrateRoot`, so a browser
+discards this markup on load. That is acceptable — the goal is what a
+non-executing crawler receives — but switching to `hydrateRoot` would also remove
+the client-side re-render. Do not switch until the client render is verified to
+match the prerender, or React will log hydration mismatches.
 
-`docs/nginx-seo.conf` is written but **not applied**. It carries the soft-404 fix, the
-www redirect, security headers, the duplicate `Cache-Control` fix, `text/markdown` for
-the raw articles, and routing to the prerendered `/company/*` and static files.
+### 7.2 Apply the nginx configuration — DONE 2026-10-09
 
-Until it is applied, every nonexistent URL still returns HTTP 200 with the SPA shell.
+Applied to `/etc/nginx/sites-enabled/stocksfundamentals.online`. All five checks in
+section 5 now pass: nonexistent paths return 404, www 301s to the apex, raw markdown
+is `text/markdown`, hashed assets carry exactly one `Cache-Control`, and the five
+security headers are present. The previous config is at
+`/etc/nginx/sites-available/stocksfundamentals.online.bak-20261009`.
 
-Read it before applying and run `sudo nginx -t` first. A bad config takes the site down.
+Two things that file got wrong and this application corrected:
+
+- **`docs/nginx-seo.conf` declared `location = /index.html` twice** — once as the 301
+  to `/` and once as the internal 404 page. nginx rejects that pair with
+  "duplicate location" at `nginx -t` time, so the file could not be applied as
+  written. The 404 body is now served through `/_spa404.html`. Fixed in the doc too.
+- **`add_header Content-Type` on `/analyses/` is not needed and is harmful.**
+  `mime.types` has no `.md` mapping, so `default_type text/markdown` already
+  governs. Adding the header as well emits a second conflicting Content-Type.
+
+The live config is a real file, not a symlink. The catch-all `location /` is
+`try_files $uri =404`, which means **every new route needs its own location block**
+before it will be reachable — this applies directly to section 7.5.
 
 ### 7.3 Verify Search Console — needs a human
 
@@ -313,11 +347,10 @@ sitemap. A sitemap says a URL exists; internal links say it matters.
 These are tracked in git, so they were committed deliberately, but nothing references
 them:
 
-- `og_injector.py` — a second, older nginx-side prerender path. Its route regex is
-  `^/analysis/([^/]+)/?$`, it emits no JSON-LD, it reads the legacy path
-  `/var/www/stock-analyses/analyses.json`, and it ASCII-strips titles. The live pages
-  contain JSON-LD, so `generate-og-files.py` is what is actually serving. Confirm against
-  the live nginx config, then delete it.
+- `og_injector.py` — **removed 2026-10-09.** Verified unreferenced by the nginx
+  config, every cron job, every systemd unit and every script before deletion, and
+  it read the legacy `/var/www/stock-analyses/analyses.json`. The live pages carry
+  JSON-LD, so `generate-og-files.py` is what serves.
 - `chat.docx` (2.7 MB) — purpose unknown.
 - `redesign-plan.md` — may be superseded by the audit.
 

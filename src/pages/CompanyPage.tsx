@@ -5,13 +5,11 @@ import { ArrowLeft, ArrowUpRight, Building2 } from 'lucide-react';
 import { Analysis } from '../types/analysis';
 import { fetchAnalyses } from '../services/analysisService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
+import { tickerTokens } from '../utils/tickers';
 
-// Index / exchange tokens that appear inside ticker strings but are not
-// companies. Kept in sync with the same list in scripts/generate-sitemap.js.
-const NON_COMPANY = new Set([
-  'NSE', 'BSE', 'NASDAQ', 'NYSE', 'NIFTY', 'NIFTY_IT', 'BANKNIFTY', 'SENSEX',
-  'US', 'IT', 'SPX', 'NDX', 'DJI', 'FII', 'DII', 'GEMS',
-]);
+// Ticker tokenisation and the NON_COMPANY exclusion set live in
+// src/utils/tickers.ts (AGENTS.md invariant 3.6) so the article pages can link
+// tickers to their hubs without a second copy drifting out of sync.
 
 // Tag that marks the daily policy-commentary series.
 const NEWS_TAG = 'policy-pulse';
@@ -19,24 +17,6 @@ const NEWS_TAG = 'policy-pulse';
 // A hub needs at least this many non-series articles to be worth indexing.
 // Kept in sync with MIN_RESEARCH_ARTICLES in scripts/generate-sitemap.js.
 const MIN_RESEARCH_ARTICLES = 1;
-
-/**
- * Split the colon-delimited ticker field into exact company tokens.
- *
- * This replaces a substring match (`a.ticker.includes(ticker)`) that matched
- * unrelated companies: /company/ge listed 74 articles when 8 mentioned GE, and
- * /company/mu listed Muthoot Finance under Micron. Tickers must match whole
- * tokens, never substrings.
- */
-function tickerTokens(raw: string | undefined): string[] {
-  const out: string[] = [];
-  // Legacy entries used '/' as a delimiter as well as ':'.
-  for (const token of String(raw ?? '').split(/[:/]/)) {
-    const t = token.trim().toUpperCase();
-    if (t && !NON_COMPANY.has(t)) out.push(t);
-  }
-  return out;
-}
 
 function isSeriesArticle(a: Analysis): boolean {
   return (a.tags ?? []).map((t) => String(t).toLowerCase()).includes(NEWS_TAG);

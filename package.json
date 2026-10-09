@@ -8,7 +8,7 @@
     "dev": "vite",
     "data": "node scripts/generate-analyses-data.js",
     "new-analysis": "node scripts/new-analysis.js",
-    "build": "node scripts/generate-analyses-data.js && node scripts/generate-sitemap.js && tsc -b && vite build && python3.12 scripts/generate-og-files.py",
+    "build": "node scripts/generate-analyses-data.js && node scripts/generate-sitemap.js && python3.12 scripts/generate-discovery-files.py && tsc -b && vite build && python3.12 scripts/generate-og-files.py && python3.12 scripts/prerender-body.py",
     "lint": "oxlint",
     "preview": "vite preview"
   },
