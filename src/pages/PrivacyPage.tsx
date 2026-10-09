@@ -32,11 +32,11 @@ export default function PrivacyPage() {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy — StockFundamentals</title>
-        <meta name="description" content="Privacy policy for StockFundamentals. We collect almost nothing and respect your privacy completely." />
+        <title>Privacy Policy — StocksFundamentals</title>
+        <meta name="description" content="Privacy policy for StocksFundamentals. We collect almost nothing and respect your privacy completely." />
         <link rel="canonical" href="https://stocksfundamentals.online/privacy" />
-        <meta property="og:title" content="Privacy Policy — StockFundamentals" />
-        <meta property="og:description" content="Privacy policy for StockFundamentals. We collect almost nothing and respect your privacy completely." />
+        <meta property="og:title" content="Privacy Policy — StocksFundamentals" />
+        <meta property="og:description" content="Privacy policy for StocksFundamentals. We collect almost nothing and respect your privacy completely." />
         <meta property="og:url" content="https://stocksfundamentals.online/privacy" />
       </Helmet>
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>

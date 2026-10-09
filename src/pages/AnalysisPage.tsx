@@ -75,30 +75,26 @@ export default function AnalysisPage() {
   return (
     <article className="article-shell flex flex-col gap-6 sm:gap-8">
       <Helmet>
-        <title>{analysis.title} — stocksfundamentals.online</title>
-        <meta name="description" content={analysis.summary} />
-        <link rel="canonical" href={`https://stocksfundamentals.online/analysis/${analysis.slug}`} />
-        <meta property="og:title" content={analysis.title} />
-        <meta property="og:description" content={analysis.summary} />
-        <meta property="og:url" content={`https://stocksfundamentals.online/analysis/${analysis.slug}`} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={analysis.title} />
-        <meta name="twitter:description" content={analysis.summary} />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": analysis.title,
-            "description": analysis.summary,
-            "datePublished": analysis.date,
-            "author": [{
-                "@type": "Person",
-                "name": "Pulkit Goel",
-                "url": "https://stocksfundamentals.online/about"
-            }]
-          })}
-        </script>
+        {/* Only the title is set here, and only so the browser tab updates
+            during client-side navigation.
+
+            Everything else a crawler needs (description, canonical, OG,
+            Twitter, JSON-LD) is in the prerendered file that
+            scripts/generate-og-files.py writes for this route. Emitting those
+            here as well produced two of every tag.
+
+            The title must be a SINGLE expression. Writing
+            `<title>{analysis.title} — suffix</title>` passes Helmet an array of
+            children, which it renders as an EMPTY <title> — that is what put a
+            blank title ahead of the real one on every analysis page. The suffix
+            is gone regardless: it pushed 246 of 250 titles past the length
+            Google renders. This now matches the prerendered title exactly. */}
+        <title>{analysis.title}</title>
+        {/* No JSON-LD here on purpose. These routes are prerendered by
+            scripts/generate-og-files.py, which emits the single Article (or
+            NewsArticle) block with datePublished, publisher, image and section.
+            A second block here produced two conflicting Article entities per
+            page, with two different author names. */}
       </Helmet>
 
       <Link
@@ -153,7 +149,20 @@ export default function AnalysisPage() {
 
       <div className="page-panel surface-card animate-in animate-in-delay-1 overflow-hidden rounded-[2rem]">
         <div className="article-body">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+          {/* An h1 in the markdown body is rendered as an h2.
+              106 of 250 articles open with their own `# Title`, which produced a
+              second <h1> duplicating the page heading above. In all 106 that h1
+              is the first heading in the body, so demoting it leaves one h1 per
+              page with no content lost and no heading levels skipped.
+              h2 and below are deliberately left alone: 144 articles have no body
+              h1, and shifting their h2s would create a gap under the page h1. */}
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+            components={{
+              h1: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
+            }}
+          >
             {content}
           </ReactMarkdown>
         </div>

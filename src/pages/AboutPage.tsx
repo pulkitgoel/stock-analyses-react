@@ -37,11 +37,11 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Pulkit & StockFundamentals</title>
-        <meta name="description" content="Learn about Pulkit Goel and the research methodology behind StockFundamentals. Independent, data-backed stock analysis." />
+        <title>About Pulkit & StocksFundamentals</title>
+        <meta name="description" content="Learn about Pulkit Goel and the research methodology behind StocksFundamentals. Independent, data-backed stock analysis." />
         <link rel="canonical" href="https://stocksfundamentals.online/about" />
-        <meta property="og:title" content="About Pulkit & StockFundamentals" />
-        <meta property="og:description" content="Learn about Pulkit Goel and the research methodology behind StockFundamentals. Independent, data-backed stock analysis." />
+        <meta property="og:title" content="About Pulkit & StocksFundamentals" />
+        <meta property="og:description" content="Learn about Pulkit Goel and the research methodology behind StocksFundamentals. Independent, data-backed stock analysis." />
         <meta property="og:url" content="https://stocksfundamentals.online/about" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -114,7 +114,7 @@ export default function AboutPage() {
             color: 'var(--text-muted)',
             maxWidth: '580px',
           }}>
-            StockFundamentals is a personal research library built by{' '}
+            StocksFundamentals is a personal research library built by{' '}
             <strong style={{ color: 'var(--text)', fontWeight: 800 }}>Pulkit Goel</strong>{' '}
             for investors who want data-backed notes — without noisy dashboards or clickbait headlines.
           </p>

@@ -3,11 +3,11 @@ title: "Policy Pulse — Modi — 14 Jul 2026"
 ticker: "DIXON:KAYNES:HAL:BEL:L&T:AMBER:SYRMA:RVNL"
 date: "2026-07-14"
 tags: ["policy-pulse","modi","semiconductor","defence","india"]
-summary: "Modi-Austria semiconductor/defence partnership plus Micron\\'s Gujarat facility mark India\\'s accelerating semiconductor ecosystem — key beneficiaries: DIXON, HAL, KAYNES, L&T."
+summary: "Modi-Austria semiconductor/defence partnership plus Micron's Gujarat facility mark India's accelerating semiconductor ecosystem — key beneficiaries: DIXON, HAL, KAYNES, L&T."
 model: "deepseek-chat"
 ---
 
-**PM Modi and Austrian Chancellor Christian Stocker announce enhanced cooperation in semiconductors, defence, quantum computing, and biotechnology. India\'s semiconductor mission hits milestone with Micron ATMP facility in Gujarat — first "Made in India" chips expected by year-end.**
+**PM Modi and Austrian Chancellor Christian Stocker announce enhanced cooperation in semiconductors, defence, quantum computing, and biotechnology. India's semiconductor mission hits milestone with Micron ATMP facility in Gujarat — first "Made in India" chips expected by year-end.**
 
 ## 1. India-Austria Semiconductor & Defence Partnership
 
@@ -24,7 +24,7 @@ PM Modi and Austrian Chancellor Christian Stocker announced a strengthened partn
 
 ## 2. Micron ATMP Facility Inaugurated in Gujarat
 
-PM Modi inaugurated Micron Technology\'s ATMP facility in Sanand, Gujarat, manufacturing SSD storage devices, DRAM, and NAND products. PM Modi stated "Made in India" semiconductor chips will hit the market by year-end. Six semiconductor units planned, four already approved.
+PM Modi inaugurated Micron Technology's ATMP facility in Sanand, Gujarat, manufacturing SSD storage devices, DRAM, and NAND products. PM Modi stated "Made in India" semiconductor chips will hit the market by year-end. Six semiconductor units planned, four already approved.
 
 | Stock | Direction | Reason |
 |-------|-----------|--------|

@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import DisclaimerPage from './pages/DisclaimerPage';
 import PrivacyPage from './pages/PrivacyPage';
 import WatchlistPage from './pages/WatchlistPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
   return (
@@ -27,6 +28,10 @@ export default function App() {
             <Route path="/watchlist" element={<WatchlistPage />} />
             {/* Alias: also accept the plural spelling /watchlists -> /watchlist */}
             <Route path="/watchlists" element={<Navigate to="/watchlist" replace />} />
+            {/* Catch-all. Renders a noindex page so unmatched URLs are not
+                indexed. nginx must also return a real 404 status for these:
+                see docs/nginx-seo.conf. */}
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

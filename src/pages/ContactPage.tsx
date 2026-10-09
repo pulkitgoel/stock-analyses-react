@@ -31,10 +31,10 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact & Stock Requests — StockFundamentals</title>
+        <title>Contact & Stock Requests — StocksFundamentals</title>
         <meta name="description" content="Get in touch for stock analysis requests, feedback, or collaborations. Reach out to Pulkit Goel directly." />
         <link rel="canonical" href="https://stocksfundamentals.online/contact" />
-        <meta property="og:title" content="Contact & Stock Requests — StockFundamentals" />
+        <meta property="og:title" content="Contact & Stock Requests — StocksFundamentals" />
         <meta property="og:description" content="Get in touch for stock analysis requests, feedback, or collaborations. Reach out to Pulkit Goel directly." />
         <meta property="og:url" content="https://stocksfundamentals.online/contact" />
         <meta property="og:type" content="website" />

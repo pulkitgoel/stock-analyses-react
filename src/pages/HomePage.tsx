@@ -42,17 +42,61 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Title and description are kept identical to the fallback tags in
+          index.html. They previously disagreed ("Deep-Dive Stock Research by
+          Pulkit" vs "Premium Stock Research"), which put two different
+          positioning statements on the same page. */}
       <Helmet>
-        <title>stocksfundamentals.online — Premium Stock Research</title>
-        <meta name="description" content="Premium stock research library with deep-dives, market notes, institutional activity, and valuation views." />
+        <title>StocksFundamentals — Deep-Dive Indian Stock Research</title>
+        <meta name="description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis." />
         <link rel="canonical" href="https://stocksfundamentals.online/" />
-        <meta property="og:title" content="stocksfundamentals.online — Premium Stock Research" />
-        <meta property="og:description" content="Premium stock research library with deep-dives, market notes, institutional activity, and valuation views." />
+        <meta property="og:title" content="StocksFundamentals — Deep-Dive Indian Stock Research" />
+        <meta property="og:description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis." />
         <meta property="og:url" content="https://stocksfundamentals.online/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://stocksfundamentals.online/og-default.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="stocksfundamentals.online — Premium Stock Research" />
-        <meta name="twitter:description" content="Premium stock research library with deep-dives, market notes, institutional activity, and valuation views." />
+        <meta name="twitter:title" content="StocksFundamentals — Deep-Dive Indian Stock Research" />
+        <meta name="twitter:description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis." />
+        <meta name="twitter:image" content="https://stocksfundamentals.online/og-default.png" />
+        {/* One graph giving Google and AI systems a single consistent publisher
+            and author entity. Add profile URLs to `sameAs` as they exist: an
+            author an AI cannot resolve is the main limit on being cited. */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'WebSite',
+                '@id': 'https://stocksfundamentals.online/#website',
+                name: 'StocksFundamentals',
+                url: 'https://stocksfundamentals.online/',
+                description: 'Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis.',
+                inLanguage: 'en-IN',
+                publisher: { '@id': 'https://stocksfundamentals.online/#organization' },
+              },
+              {
+                '@type': 'Organization',
+                '@id': 'https://stocksfundamentals.online/#organization',
+                name: 'StocksFundamentals',
+                url: 'https://stocksfundamentals.online/',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://stocksfundamentals.online/og-default.png',
+                },
+                founder: { '@id': 'https://stocksfundamentals.online/#author' },
+              },
+              {
+                '@type': 'Person',
+                '@id': 'https://stocksfundamentals.online/#author',
+                name: 'Pulkit Goel',
+                url: 'https://stocksfundamentals.online/about',
+                jobTitle: 'Independent investor and researcher',
+                knowsAbout: ['Indian equities', 'Fundamental analysis', 'NSE delivery data', 'Promoter holdings'],
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div className="mx-auto max-w-7xl">
@@ -101,7 +145,10 @@ export default function HomePage() {
                 letterSpacing: '-0.03em', color: 'var(--text)',
                 margin: 0
               }}>
-                Markets move fast.<br />
+                {/* The trailing space matters: without it, text extractors read
+                    the heading as "fast.Research" because <br /> contributes no
+                    whitespace. It does not change the rendered layout. */}
+                Markets move fast.{' '}<br />
                 <span style={{ color: 'var(--accent)' }}>Research should stay sharp.</span>
               </h1>
               

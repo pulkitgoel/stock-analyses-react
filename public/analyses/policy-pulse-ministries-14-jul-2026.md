@@ -3,7 +3,7 @@ title: "Policy Pulse — Ministries — 14 Jul 2026"
 ticker: "HDFCBANK:ICICIBANK:BAJFINANCE:NSE:BSE:RELIANCE"
 date: "2026-07-14"
 tags: ["policy-pulse","sebi","dpiit","regulation","fdi","india"]
-summary: "SEBI\\'s stricter conflict-of-interest rules and DPIIT\\'s enhanced FDI approval SOP improve India\\'s regulatory transparency — banking stocks (HDFCBANK, ICICIBANK, BAJFINANCE) benefit from clearer foreign investment pathways."
+summary: "SEBI's stricter conflict-of-interest rules and DPIIT's enhanced FDI approval SOP improve India's regulatory transparency — banking stocks (HDFCBANK, ICICIBANK, BAJFINANCE) benefit from clearer foreign investment pathways."
 model: "deepseek-chat"
 ---
 

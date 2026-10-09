@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# SEO audit output: large (8.7MB of screenshots), not needed on the server
+stocksfundamentals.online-audit/

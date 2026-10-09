@@ -33,7 +33,7 @@ US military launched strikes on Iran as Trump reinstates Hormuz blockade, threat
 
 ## 2. US-India Trade Talks Progressing
 
-Trade Secretary Rajesh Agrawal confirms talks "progressing well." Current 10% Section 122 tariffs expire July 24. Proposed framework: 18% on Indian imports. India\'s effective tariff rate dropped to 7.4% after Supreme Court IEEPA ruling. USTR proposed additional 12.5% duties if forced labor issues unresolved.
+Trade Secretary Rajesh Agrawal confirms talks "progressing well." Current 10% Section 122 tariffs expire July 24. Proposed framework: 18% on Indian imports. India's effective tariff rate dropped to 7.4% after Supreme Court IEEPA ruling. USTR proposed additional 12.5% duties if forced labor issues unresolved.
 
 **Indian Stocks:**
 
@@ -49,11 +49,11 @@ Trade Secretary Rajesh Agrawal confirms talks "progressing well." Current 10% Se
 | Stock | Direction | Reason |
 |-------|-----------|--------|
 | JPM:GS | 🟢 BUY | US financial firms benefit from stable India trade relationship |
-| AAPL | 🟢 BUY | India\'s 18% tariff on electronics could fall, improving iPhone margins |
+| AAPL | 🟢 BUY | India's 18% tariff on electronics could fall, improving iPhone margins |
 
 ## 3. Indian Defence Exports Surge to Record ₹38,424 Crore
 
-Ministry of Defence data: India\'s defence exports reached ₹38,424 crore in FY26, up 62% YoY. DAC approved 55 proposals worth ₹9.80 lakh crore since Operation Sindoor. Key deals: BrahMos exports ₹12,500 crore, Akash missile deal with Armenia ₹6,100 crore.
+Ministry of Defence data: India's defence exports reached ₹38,424 crore in FY26, up 62% YoY. DAC approved 55 proposals worth ₹9.80 lakh crore since Operation Sindoor. Key deals: BrahMos exports ₹12,500 crore, Akash missile deal with Armenia ₹6,100 crore.
 
 | Stock | Direction | Reason |
 |-------|-----------|--------|

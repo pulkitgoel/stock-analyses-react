@@ -58,7 +58,7 @@ export default function Header() {
               </div>
               <div className="min-w-0 leading-tight">
                 <span className="block truncate text-sm font-black tracking-tight sm:text-base" style={{ color: 'var(--text)' }}>
-                  StockFundamentals
+                  StocksFundamentals
                 </span>
                 <span className="hidden truncate text-xs font-semibold sm:block" style={{ color: 'var(--text-dim)' }}>
                   Institutional-style research

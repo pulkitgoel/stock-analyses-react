@@ -53,7 +53,7 @@ export default function Footer() {
                 <BarChart3 size={18} />
               </div>
               <span style={{ fontWeight: 900, fontSize: '0.95rem', color: 'var(--text)', letterSpacing: '-0.02em' }}>
-                StockFundamentals
+                StocksFundamentals
               </span>
             </Link>
             <p style={{
@@ -113,7 +113,7 @@ export default function Footer() {
           justifyContent: 'space-between', gap: '0.75rem',
         }}>
           <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0 }}>
-            © {year} StockFundamentals · Built by <strong style={{ color: 'var(--text-muted)' }}>Pulkit Goel</strong>
+            © {year} StocksFundamentals · Built by <strong style={{ color: 'var(--text-muted)' }}>Pulkit Goel</strong>
           </p>
           <p style={{ fontSize: '0.75rem', color: 'var(--text-dim)', margin: 0 }}>
             Not financial advice · Educational only

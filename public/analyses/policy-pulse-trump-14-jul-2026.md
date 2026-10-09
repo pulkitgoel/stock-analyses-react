@@ -3,7 +3,7 @@ title: "Policy Pulse — Trump — 14 Jul 2026"
 ticker: "AAPL:MSFT:NVDA:LLY:JNJ:PFE:COIN:MSTR:HOOD:BLK:XOM:CVX:OXY:BA:GE:JPM:GS:TSLA:GM:F:FSLR:ENPH:DJT:SPY"
 date: "2026-07-14"
 tags: ["policy-pulse","us-only","trump","tariffs","refunds","crypto","clarity-act"]
-summary: "Trump\\'s $81B tariff refunds and new exemption EO signal shifting trade stance — tailwinds for mega-cap importers (AAPL, MSFT, LLY), crypto platforms (COIN, MSTR), and energy (XOM)."
+summary: "Trump's $81B tariff refunds and new exemption EO signal shifting trade stance — tailwinds for mega-cap importers (AAPL, MSFT, LLY), crypto platforms (COIN, MSTR), and energy (XOM)."
 model: "deepseek-chat"
 ---
 
@@ -11,7 +11,7 @@ model: "deepseek-chat"
 
 ## 1. US Refunds $81 Billion in Trump Tariffs After Supreme Court Ruling
 
-The US government has paid out $81 billion in tariff refunds so far this fiscal year after the Supreme Court struck down tariffs imposed under IEEPA authority in February 2026. Most refunds occurred in May and June. Deficit hit $1.367 trillion in the first 9 months, up 2%. Interest on debt exceeded $1 trillion (+14%). The administration\'s current temporary 10% global tariff expires July 24.
+The US government has paid out $81 billion in tariff refunds so far this fiscal year after the Supreme Court struck down tariffs imposed under IEEPA authority in February 2026. Most refunds occurred in May and June. Deficit hit $1.367 trillion in the first 9 months, up 2%. Interest on debt exceeded $1 trillion (+14%). The administration's current temporary 10% global tariff expires July 24.
 
 **Stock Impact: US Stocks Only**
 
@@ -44,7 +44,7 @@ Trump posted on Truth Social urging passage of the Clarity Act in honor of Sen. 
 | Stock | Direction | Reason |
 |-------|-----------|--------|
 | COIN:MSTR:HOOD | 🟢 BUY | Clear crypto regulation framework bullish for US-based crypto platforms |
-| BLK | 🟢 BUY | BlackRock\'s Bitcoin ETF benefits from regulatory clarity |
+| BLK | 🟢 BUY | BlackRock's Bitcoin ETF benefits from regulatory clarity |
 | DJT | 🟡 HOLD | Crypto pivot may get tailwind from Clarity Act, but fundamentals very weak |
 
 ## 📊 Stocks to Watch (Trump-Driven)

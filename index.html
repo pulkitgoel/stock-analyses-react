@@ -3,27 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" sizes="48x48" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>stocksfundamentals.online — Deep-Dive Stock Research by Pulkit</title>
-    <meta name="description" content="Deep-dive fundamental analysis of Indian stocks by Pulkit. Delivery data, promoter trends, quarterly results, and actionable insights.">
-    <meta property="og:title" content="stocksfundamentals.online — Deep-Dive Stock Research">
-    <meta property="og:description" content="Fundamental analysis of Indian stocks with NSE delivery data, promoter trends, quarterly results, and actionable insights.">
-    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "StocksFundamentals",
-        "url": "https://stocksfundamentals.online",
-        "description": "Deep-dive fundamental analysis of Indian stocks with NSE delivery data, promoter trends, quarterly results, and actionable insights.",
-        "author": {
-            "@type": "Person",
-            "name": "Pulkit"
-        }
-    }
-    </script>
+    <!-- No-JS fallback head tags. Every route that is not prerendered is served
+         this file, so these must stay generic. Per-page title, description and
+         canonical come from react-helmet-async; prerendered analysis pages get
+         their own from scripts/generate-og-files.py.
+         Keep this wording identical to HomePage.tsx so the two never disagree. -->
+    <title>StocksFundamentals — Deep-Dive Indian Stock Research</title>
+    <meta name="description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis.">
+    <meta property="og:title" content="StocksFundamentals — Deep-Dive Indian Stock Research">
+    <meta property="og:description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="StocksFundamentals">
+    <meta property="og:locale" content="en_IN">
+    <!-- The WebSite/Person/Organization graph lives in HomePage.tsx. It must not
+         be here: this file is served for ~400 URLs, and a WebSite block on every
+         company and article URL describes the wrong thing. -->
+    <!-- Search Console verification: add the real token via DNS or a meta tag
+         here. The previous placeholder ("YOUR_VERIFICATION_CODE") was shipped to
+         production and verified nothing, so it was removed. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script>
       try {
         const saved = localStorage.getItem('sf-theme-v2');

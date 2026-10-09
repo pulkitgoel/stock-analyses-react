@@ -3209,7 +3209,7 @@ export const ANALYSES: Analysis[] = [
       "fdi",
       "india"
     ],
-    "summary": "SEBI\\'s stricter conflict-of-interest rules and DPIIT\\'s enhanced FDI approval SOP improve India\\'s regulatory transparency — banking stocks (HDFCBANK, ICICIBANK, BAJFINANCE) benefit from clearer foreign investment pathways.",
+    "summary": "SEBI's stricter conflict-of-interest rules and DPIIT's enhanced FDI approval SOP improve India's regulatory transparency — banking stocks (HDFCBANK, ICICIBANK, BAJFINANCE) benefit from clearer foreign investment pathways.",
     "model": "deepseek-chat"
   },
   {
@@ -3225,7 +3225,7 @@ export const ANALYSES: Analysis[] = [
       "defence",
       "india"
     ],
-    "summary": "Modi-Austria semiconductor/defence partnership plus Micron\\'s Gujarat facility mark India\\'s accelerating semiconductor ecosystem — key beneficiaries: DIXON, HAL, KAYNES, L&T.",
+    "summary": "Modi-Austria semiconductor/defence partnership plus Micron's Gujarat facility mark India's accelerating semiconductor ecosystem — key beneficiaries: DIXON, HAL, KAYNES, L&T.",
     "model": "deepseek-chat"
   },
   {
@@ -3243,7 +3243,7 @@ export const ANALYSES: Analysis[] = [
       "crypto",
       "clarity-act"
     ],
-    "summary": "Trump\\'s $81B tariff refunds and new exemption EO signal shifting trade stance — tailwinds for mega-cap importers (AAPL, MSFT, LLY), crypto platforms (COIN, MSTR), and energy (XOM).",
+    "summary": "Trump's $81B tariff refunds and new exemption EO signal shifting trade stance — tailwinds for mega-cap importers (AAPL, MSFT, LLY), crypto platforms (COIN, MSTR), and energy (XOM).",
     "model": "deepseek-chat"
   },
   {

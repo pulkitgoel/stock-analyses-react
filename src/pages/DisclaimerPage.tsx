@@ -30,11 +30,11 @@ export default function DisclaimerPage() {
   return (
     <>
       <Helmet>
-        <title>Risk Disclaimer — StockFundamentals</title>
-        <meta name="description" content="Risk disclaimer and terms of use for StockFundamentals research." />
+        <title>Risk Disclaimer — StocksFundamentals</title>
+        <meta name="description" content="Risk disclaimer and terms of use for StocksFundamentals research." />
         <link rel="canonical" href="https://stocksfundamentals.online/disclaimer" />
-        <meta property="og:title" content="Risk Disclaimer — StockFundamentals" />
-        <meta property="og:description" content="Risk disclaimer and terms of use for StockFundamentals research." />
+        <meta property="og:title" content="Risk Disclaimer — StocksFundamentals" />
+        <meta property="og:description" content="Risk disclaimer and terms of use for StocksFundamentals research." />
         <meta property="og:url" content="https://stocksfundamentals.online/disclaimer" />
       </Helmet>
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>

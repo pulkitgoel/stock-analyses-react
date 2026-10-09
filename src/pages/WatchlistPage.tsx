@@ -208,7 +208,7 @@ export default function WatchlistPage() {
       <Helmet>
         {/* Private page: reachable only by direct URL, never indexed or linked. */}
         <meta name="robots" content="noindex,nofollow" />
-        <title>Watchlist — stocksfundamentals.online</title>
+        <title>Watchlist — StocksFundamentals</title>
       </Helmet>
 
       <div className="mx-auto max-w-6xl">
