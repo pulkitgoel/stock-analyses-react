@@ -67,6 +67,17 @@ python3.12 manage_audio.py check <slug>
 python3.12 manage_audio.py remove <slug>
 ```
 
+**No restart and no rebuild are needed.** The mapping is re-read every 30 seconds, and
+a change to it invalidates the cached index immediately (the index is derived from the
+mapping, so the cache records which mapping version produced it). New audio therefore
+appears on the article within about half a minute, and the frontend picks it up on the
+next page view because it asks `/api/audio-index` at runtime rather than being built
+with the audio baked in.
+
+If you pass a full signed URL, its signature is stored as a per-file override. Prefer a
+bare blob name when the container credential can already read the file — one credential
+to rotate instead of one per file.
+
 ### Credentials
 
 The storage SAS is a bearer token. **It must never reach the browser, a

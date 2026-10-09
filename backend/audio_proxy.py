@@ -71,7 +71,7 @@ _config_cache: dict | None = None
 _index_lock = threading.Lock()
 _index_cache: dict = {"at": 0.0, "slugs": {}}
 _map_lock = threading.Lock()
-_map_cache: dict = {"at": 0.0, "map": {}}
+_map_cache: dict = {"at": 0.0, "map": {}, "version": 0}
 _log = None
 
 
@@ -145,7 +145,19 @@ def _audio_map() -> dict:
         if now - _map_cache["at"] > MAP_TTL_SECONDS:
             _map_cache["map"] = settings_store.audio_map()
             _map_cache["at"] = now
+            _map_cache["version"] += 1
         return _map_cache["map"]
+
+
+def _map_version() -> int:
+    """Bumped every time the mapping is re-read.
+
+    The audio index is built FROM the mapping, so a cached index becomes invalid
+    the moment the mapping changes. Without this the index TTL (5 minutes) would
+    hide newly added audio, and restarting the service would look like the only
+    way to make it appear.
+    """
+    return _map_cache["version"]
 
 
 def _candidates(slug: str) -> list[tuple[str, str]]:
@@ -256,9 +268,16 @@ def audio_index() -> dict:
     if not enabled():
         return {"slugs": {}, "error": "audio not configured"}
 
+    # Refresh the mapping before consulting the index cache: the index is derived
+    # from the mapping, so a changed mapping must invalidate it at once.
+    mapping = _audio_map()
+    version = _map_version()
+
     now = time.time()
     with _index_lock:
-        if now - _index_cache["at"] < INDEX_TTL_SECONDS and _index_cache["slugs"] is not None:
+        if (now - _index_cache["at"] < INDEX_TTL_SECONDS
+                and _index_cache["slugs"] is not None
+                and _index_cache.get("map_version") == version):
             return {
                 "slugs": _index_cache["slugs"],
                 "checked": _index_cache.get("checked", 0),
@@ -267,11 +286,10 @@ def audio_index() -> dict:
                 "cached": True,
             }
 
-    # 1. Mapped blobs. Names are arbitrary - the first real one is Devanagari
-    #    prose - so only the map can find them. Each is HEAD-verified, so a
-    #    deleted blob stops advertising itself on the page.
+    # 1. Mapped blobs. Names are chosen by whoever uploads them - the first was
+    #    Devanagari prose, the second plain ASCII - so only the map can find them.
+    #    Each is HEAD-verified, so a deleted blob stops advertising itself.
     cfg = _config()
-    mapping = _audio_map()
     found: dict = {}
     method = "probe"
     if mapping:
@@ -309,7 +327,8 @@ def audio_index() -> dict:
         checked = len(mapping) + len(recent)
 
     with _index_lock:
-        _index_cache.update({"at": now, "slugs": found, "checked": checked, "method": method})
+        _index_cache.update({"at": now, "slugs": found, "checked": checked,
+                             "method": method, "map_version": version})
     _log_info(f"audio-index: {method} mode, {checked} checked, {len(found)} have audio")
     return {"slugs": found, "checked": checked, "method": method,
             "cached_at": int(now), "cached": False}
