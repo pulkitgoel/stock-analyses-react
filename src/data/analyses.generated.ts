@@ -20,6 +20,79 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Policy Pulse - Global Spillover - 09 Oct 2026",
+    "ticker": "XOM:CVX:OXY:SLB:DAL:UAL:AAL:LUV:IOC:BPCL:HINDPETRO:INDIGO:ONGC:OIL:JPM:GS:BK:DHI:LEN:NVDA:AMD:MSFT:GOOGL:WMT:TGT:AMZN:HD:DE:CAT:AGCO:LLY:MRK:PFE:MU:AVGO:NEM:GOLD:VOD:DTEGY:TMPV:MARUTI:M&M:HEROMOTOCO:TVSMOTOR:EXIDEIND:ARE&M:ASIANPAINT:MRF",
+    "file": "policy-pulse-global-09-oct-2026.md",
+    "slug": "policy-pulse-global-09-oct-2026",
+    "date": "2026-10-09",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil",
+      "iran",
+      "bonds",
+      "fed",
+      "trade",
+      "currency"
+    ],
+    "summary": "Brent slipped to about USD 103 after Trump ruled out an Iran strike before the November 3 midterms, negative for XOM and CVX and positive for airlines and Indian oil marketers; a strong 30-year auction pulled the US long end back from a 24-year high; and the US-China 30-for-30 tariff lists named toys and appliances and medical devices, with the truce extended to January 10, 2027.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Ministries & Regulators - 09 Oct 2026",
+    "ticker": "HDFCBANK:ICICIBANK:SBIN:KOTAKBANK:AXISBANK:BAJFINANCE:CHOLAFIN:SHRIRAMFIN:PFC:RECLTD:IREDA:HUDCO:DLF:OBEROIRLTY:CRISIL:ICRA:BSE:CDSL:ANGELONE:MOTILALOFS:IIFL:APOLLOHOSP:FORTIS:MAXHEALTH:MEDANTA:KIMS:YATHARTH:HCG:SUNPHARMA:CIPLA:DRREDDY:LUPIN:NIBE:BDL:HAL:BEL:DATAPATTNS:PARAS:SOLARINDS:MAZDOCK:COCHINSHIP:BEML:MTARTECH:ASTRAMICRO:IDEAFORGE:ZENTEC:TCS:INFY:HCLTECH:WIPRO:TECHM:COFORGE:PERSISTENT:LTM",
+    "file": "policy-pulse-ministries-09-oct-2026.md",
+    "slug": "policy-pulse-ministries-09-oct-2026",
+    "date": "2026-10-09",
+    "tags": [
+      "policy-pulse",
+      "rbi",
+      "sebi",
+      "regulation",
+      "pharma",
+      "defence",
+      "it-services",
+      "primary-market"
+    ],
+    "summary": "The RBI raised daily CRR maintenance to 99% and lined up Rs 25,000 crore of bond sales, negative for rate-sensitive NBFCs and bond-funded lenders; SEBI mandated a colour-coded credit risk-o-meter, positive for CRISIL and ICRA; and a 30% cap on cancer-drug trade margins lifted Apollo Hospitals and Fortis while TCS led a 3% Nifty IT rally.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Modi / India Govt - 09 Oct 2026",
+    "ticker": "BPCL:OIL:GAIL:RCF:CHAMBLFERT:LT:IRB:KNRCON:GRINFRA:DIXON:KAYNES:CGPOWER:SYRMA:AMBER:HINDUNILVR:NESTLEIND:DABUR:GMRAIRPORT:INDIGO",
+    "file": "policy-pulse-modi-09-oct-2026.md",
+    "slug": "policy-pulse-modi-09-oct-2026",
+    "date": "2026-10-09",
+    "tags": [
+      "policy-pulse",
+      "semiconductors",
+      "infrastructure",
+      "northeast",
+      "nutrition",
+      "aviation"
+    ],
+    "summary": "The Assam Cabinet adopted 75 resolutions marking PM Modi's 25 years, restating a Rs 27,000-crore Tata semiconductor plant at Jagiroad and a Rs 28,000-crore Numaligarh Refinery expansion, positive for BPCL and OIL and for the listed electronics names; the PM closed the Women and Child Development summit, and UP renamed Noida airport after him.",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 09 Oct 2026",
+    "ticker": "META:MSFT:NVDA:DELL:AMD:T:COP:CVX:ABT:NFLX:TMUS:VZ:AMT:CCI:SBAC:GOOGL:ADBE:MSTR:COIN:BA:HD:DDOG:PANW:MCD:CMCSA",
+    "file": "policy-pulse-trump-us-09-oct-2026.md",
+    "slug": "policy-pulse-trump-us-09-oct-2026",
+    "date": "2026-10-09",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "leader-trades",
+      "disclosure",
+      "h-1b",
+      "space",
+      "telecom"
+    ],
+    "summary": "Trump's August disclosure logged 517 trades, including a Dell sale on the same day he handed Dell a medal and Nvidia bought before he decorated Jensen Huang; Washington simultaneously froze Microsoft and Adobe out of the green-card PERM programme, and SpaceX's USD 8 billion spectrum buy hit T-Mobile, Verizon and AT&T while lifting tower REITs.",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse - Global Spillover - 08 Oct 2026",
     "ticker": "XOM:CVX:OXY:BKR:SLB:VLO:PSX:MPC:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:COIN:MSTR:NVDA:AVGO:AMD:MU:JPM:GS:CAT:DE:IOC:BPCL:HINDPETRO:ONGC:OIL:RELIANCE:INDIGO:ASIANPAINT:MRF:TITAN:KALYANKJIL:MUTHOOTFIN:MANAPPURAM:TCS:INFY:HCLTECH:TMPV:MARUTI:M&M:HEROMOTOCO:TVSMOTOR:EXIDEIND:ARE&M:DIXON:TATACHEM:DEEPAKNTR",
     "file": "policy-pulse-global-08-oct-2026.md",
