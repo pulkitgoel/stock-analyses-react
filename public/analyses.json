@@ -1,20 +1,18 @@
 {
   "analyses": [
     {
-      "title": "Azad Engineering: Up 44% Since June, Profits Have Plateaued",
+      "title": "Azad Engineering — Deep Dive Analysis",
       "ticker": "AZAD",
-      "file": "azad-engineering-what-changed-since-june.md",
-      "slug": "azad-engineering-what-changed-since-june",
+      "file": "azad-engineering-deep-dive-jun27.md",
+      "slug": "azad-engineering-deep-dive-jun27",
       "date": "2026-10-09",
       "tags": [
         "deep-dive",
         "fundamental",
         "manufacturing",
-        "aerospace",
-        "follow-up",
-        "what-changed"
+        "aerospace"
       ],
-      "summary": "Follow-up on our 27 June deep dive: the stock is up 44% to Rs 2,910 while TTM profit is below FY26, both FIIs and DIIs cut holdings, and the working capital cycle worsened to 344 days. Includes the full 25-point technical read and updated levels.",
+      "summary": "Revised deep dive: the stock is up 44% to Rs 2,910 since our 27 June note while TTM profit sits below FY26, FIIs and DIIs both cut holdings, and the working capital cycle widened to 344 days. Includes the full 25-point technical checklist and updated levels.",
       "model": "deepseek-v4-flash"
     },
     {
@@ -3998,22 +3996,6 @@
       ],
       "summary": "Deep-dive on Aeroflex Industries — debt-free niche manufacturer of flexible hoses expanding into AI data center liquid cooling skids. P/E 111x (extreme), FCF negative, promoter selling -1.52%. Verdict: CAUTION — expensive growth story with execution risk.",
       "model": "deepseek-chat"
-    },
-    {
-      "title": "Azad Engineering — Deep Dive Analysis",
-      "ticker": "AZAD",
-      "file": "azad-engineering-deep-dive-jun27.md",
-      "slug": "azad-engineering-deep-dive-jun27",
-      "date": "2026-06-27",
-      "tags": [
-        "deep-dive",
-        "fundamental",
-        "manufacturing",
-        "aerospace"
-      ],
-      "summary": "Comprehensive deep-dive on Azad Engineering — ₹6,500 Cr order book, MHI single-source contract, negative FCF concerns, and verdict with best entry zone.",
-      "model": "deepseek-chat",
-      "updated": "2026-10-09"
     },
     {
       "title": "HBL Engineering — Deep Dive Analysis",
