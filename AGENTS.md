@@ -202,6 +202,47 @@ Then run `npm run build` and deploy.
 
 ---
 
+## 4b. Audio summaries
+
+Articles can carry an audio summary. Nothing is configured per article and no
+rebuild is needed to add one:
+
+- Upload the file to the storage container named **exactly after the slug**, e.g.
+  `yatharth-hospital-trauma-care-services-deep-dive-analysis.mp3`. Extensions
+  probed: `mp3`, `m4a`, `wav` (order set by the `audio.exts` setting).
+- `GET /api/audio-index` reports which slugs have audio; the article page renders
+  a player for those and nothing otherwise.
+- `GET /api/audio/<slug>` streams the bytes, relaying Range requests so seeking
+  works. `HEAD` answers existence.
+
+**The storage credential must never reach the browser.** It is a container SAS -
+a bearer token. The page only ever references the token-free `/api/audio/<slug>`;
+the backend attaches the signature. Pointing an `<audio>` element at a blob URL
+would publish the signature in the HTML of every article.
+
+It is held in the SQLite settings store at `/var/www/stock-analyses/api.db`
+(mode 600, owned by the service user) - not in a config file, not in this
+repository. Rotate it with:
+
+```bash
+python3.12 /var/www/stock-analyses/manage_settings.py set audio.sas '<sas query string>'
+python3.12 /var/www/stock-analyses/manage_settings.py list      # masked
+```
+
+**Operational caveat.** The current SAS grants read only (`sp=r`), so the
+container cannot be listed and the index must probe one HEAD per slug per
+extension - about nine seconds cold. That is cached for 15 minutes and refreshed
+by a background warmer, so no visitor waits. Granting the `l` permission makes it
+a single LIST request; `_list_blobs()` already prefers that path and falls back
+automatically, so only the SAS needs to change.
+
+The player is deliberately client-side, so it is **not** in the prerendered HTML
+(the prerender server serves `dist/` only and does not proxy `/api/`). That is
+acceptable: audio is not indexable content, and the player resolves before the
+article body paints, so its arrival does not shift the layout.
+
+---
+
 ## 5. Verifying a change
 
 After any build, confirm the prerendered output is still correct:

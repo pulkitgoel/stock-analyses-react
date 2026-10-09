@@ -10,6 +10,7 @@ import { fetchAnalyses, fetchAnalysisContent } from '../services/analysisService
 import LoadingSpinner from '../components/Common/LoadingSpinner';
 import { ANALYSES } from '../data/analyses.generated';
 import { tickerTokens, companyHubPath } from '../utils/tickers';
+import AudioSummary from '../components/Analysis/AudioSummary';
 
 function estimateReadTime(text: string): number {
   const words = text.split(/\s+/).length;
@@ -230,6 +231,13 @@ export default function AnalysisPage() {
           ))}
         </div>
       </header>
+
+      {/* Audio summary, when this article has one. No per-article setup: the
+          backend reports which slugs have audio (src/services/audioService.ts),
+          and the file is named after the slug. Placed above the body because both
+          resolve asynchronously and this one is a small cached JSON response, so
+          it paints first and does not push the article down once loaded. */}
+      <AudioSummary slug={analysis.slug} />
 
       <div className="page-panel surface-card animate-in animate-in-delay-1 overflow-hidden rounded-[2rem]">
         <div className="article-body">

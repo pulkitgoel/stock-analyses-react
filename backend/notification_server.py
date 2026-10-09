@@ -7,6 +7,8 @@ Web Push Notification + API Server for Stock Analysis Vault
 - POST /api/verify              - Verify subscription exists
 - POST /api/unsubscribe         - Remove push subscription
 - GET  /api/subscribers         - Count subscribers
+- GET  /api/audio-index          - Which article slugs have an audio summary
+- GET  /api/audio/:slug          - Stream that audio (Range requests supported)
 - POST /api/notify              - Send push notification (X-Auth-Token required)
 
 Runs alongside Nginx on port 8081.
@@ -23,6 +25,18 @@ from urllib.parse import urlparse, unquote, parse_qs
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 log = logging.getLogger('api')
+
+# Audio summaries live in their own module: it streams bytes from Azure Blob
+# Storage, and the container SAS it holds must stay server-side. The browser only
+# ever sees /api/audio/<slug>, never a signed URL.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import audio_proxy  # noqa: E402
+
+audio_proxy.set_logger(log)
+# Refresh the audio index in the background so an article view never waits on the
+# container probe (a read-only SAS cannot list, so the first build costs one HEAD
+# per slug per extension).
+audio_proxy.start_warmer()
 
 BASE_DIR = '/var/www/stock-analyses'
 SUBS_FILE = os.path.join(BASE_DIR, 'subscriptions.json')
@@ -303,7 +317,22 @@ class Handler(BaseHTTPRequestHandler):
             self._json_response(200, {'count': len(subs)})
             return
 
+        # GET /api/audio-index and /api/audio/<slug> -- article audio summaries.
+        # Kept in audio_proxy.py so the container SAS stays server-side and never
+        # appears in a page, a response body, or a redirect.
+        if audio_proxy.try_handle(self, path, parts):
+            return
+
         self._json_response(404, {'error': 'Not found'})
+
+    def do_HEAD(self):
+        """Headers only. The audio proxy probes by HEAD; nginx needs this for /api/."""
+        path = urlparse(self.path).path.rstrip('/')
+        parts = self._parse_path(path)
+        if audio_proxy.try_handle(self, path, parts, head_only=True):
+            return
+        self.send_response(404)
+        self.end_headers()
 
     def do_POST(self):
         path = urlparse(self.path).path.rstrip('/')
@@ -362,6 +391,18 @@ class Handler(BaseHTTPRequestHandler):
             title = data.get('title', '📈 New Analysis Published')
             body = data.get('body', 'Check out the latest analysis on the vault.')
             url = data.get('url', '/')
+
+            # Normalize relative URLs to the public domain so the notification
+            # click always opens stocksfundamentals.online, never a cloudflared
+            # tunnel / dev origin where a subscriber may have registered.
+            PUBLIC_SITE = 'https://stocksfundamentals.online'
+            if url.startswith('/'):
+                url = PUBLIC_SITE + url
+            elif url.startswith('http') and any(d in url for d in
+                    ('trycloudflare.com', 'localhost', '127.0.0.1', '.workers.dev')):
+                # Redirect tunnel/dev URLs back to the public site.
+                parts = url.split('/', 3)
+                url = PUBLIC_SITE + (('/' + parts[3]) if len(parts) > 3 else '/')
 
             subs = load_subs()
             sent = 0
