@@ -1,6 +1,23 @@
 {
   "watchlist": [
     {
+      "slug": "yatharth-hospital-trauma-care-services-deep-dive-analysis",
+      "ticker": "YATHARTH:NSE",
+      "title": "Yatharth Hospital & Trauma Care Services — Deep Dive Analysis",
+      "date": "2026-10-08",
+      "yahooSymbol": "YATHARTH.NS",
+      "priceAtAnalysis": 1014,
+      "support": 958,
+      "resistance": 1057,
+      "supports": [
+        793
+      ],
+      "resistances": [
+        1162
+      ],
+      "verdict": "CAUTION — WAIT FOR DIPS"
+    },
+    {
       "slug": "balaji-amines-deep-dive-analysis",
       "ticker": "BALAMINES:NSE",
       "title": "Balaji Amines — Deep Dive Analysis",

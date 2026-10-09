@@ -46,6 +46,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://stocksfundamentals.online/analysis/yatharth-hospital-trauma-care-services-deep-dive-analysis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stocksfundamentals.online/analysis/balaji-amines-deep-dive-analysis</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -2012,6 +2017,11 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/aapl</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/company/yatharth</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

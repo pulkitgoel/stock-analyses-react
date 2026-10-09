@@ -74,6 +74,24 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Yatharth Hospital & Trauma Care Services — Deep Dive Analysis",
+      "ticker": "YATHARTH:NSE",
+      "file": "yatharth-hospital-trauma-care-services-deep-dive-analysis.md",
+      "slug": "yatharth-hospital-trauma-care-services-deep-dive-analysis",
+      "date": "2026-10-08",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "hospitals",
+        "healthcare",
+        "private-equity",
+        "arpob",
+        "expansion"
+      ],
+      "summary": "Revenue up 52% but net profit flat for five straight quarters as depreciation and interest consume the growth. Advent International is buying 24.87% at Rs 985 - diluting EPS by up to 25% versus the published consensus. The market price sits above both the average analyst target and Advent's own entry price. Rating: CAUTION - wait for dips.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Balaji Amines — Deep Dive Analysis",
       "ticker": "BALAMINES:NSE",
       "file": "balaji-amines-deep-dive-analysis.md",
