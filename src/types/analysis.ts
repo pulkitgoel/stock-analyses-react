@@ -4,6 +4,13 @@ export interface Analysis {
   file: string;
   slug?: string;
   date: string;
+  /**
+   * Revision date, from the optional `updated:` frontmatter. Distinct from
+   * `date`, which is the publication date and never changes. When present it
+   * becomes dateModified in the prerendered JSON-LD and is shown beside the
+   * publication date on the article page.
+   */
+  updated?: string;
   tags: string[];
   summary: string;
   model?: string;

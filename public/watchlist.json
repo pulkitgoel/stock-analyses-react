@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "azad-engineering-what-changed-since-june",
+      "ticker": "AZAD",
+      "title": "Azad Engineering: Up 44% Since June, Profits Have Plateaued",
+      "date": "2026-10-09",
+      "yahooSymbol": "AZAD.NS",
+      "priceAtAnalysis": 2910,
+      "support": 2716,
+      "resistance": 3128,
+      "supports": [
+        2636,
+        2505
+      ],
+      "resistances": [
+        3209,
+        3455
+      ],
+      "verdict": "CAUTION — PRICED FOR PERFECTION"
+    },
+    {
       "slug": "yatharth-hospital-trauma-care-services-deep-dive-analysis",
       "ticker": "YATHARTH:NSE",
       "title": "Yatharth Hospital & Trauma Care Services — Deep Dive Analysis",

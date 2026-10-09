@@ -208,6 +208,11 @@ export default function AnalysisPage() {
             </span>
           )}
           <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>{analysis.date}</span>
+          {analysis.updated && analysis.updated !== analysis.date && (
+            <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
+              updated {analysis.updated}
+            </span>
+          )}
           <span className="flex items-center gap-1 text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
             <Clock size={13} /> {readTime} min read
           </span>

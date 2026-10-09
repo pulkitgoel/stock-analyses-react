@@ -95,6 +95,10 @@ for (const file of files) {
     tags: data.tags,
     summary: data.summary,
     ...(data.model ? { model: data.model } : {}),
+    // Revision date. Must be emitted here or scripts/generate-og-files.py can
+    // never see it: that script reads this JSON, not the markdown, so its
+    // `updated` -> dateModified lookup silently does nothing without this line.
+    ...(data.updated ? { updated: data.updated } : {}),
   });
 
   if (data.watchlist === true) {

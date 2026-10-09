@@ -31,6 +31,7 @@ log = logging.getLogger('api')
 # ever sees /api/audio/<slug>, never a signed URL.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import audio_proxy  # noqa: E402
+import settings_store  # noqa: E402
 
 audio_proxy.set_logger(log)
 # Refresh the audio index in the background so an article view never waits on the
@@ -384,7 +385,12 @@ class Handler(BaseHTTPRequestHandler):
         # POST /api/notify
         if path == '/api/notify':
             auth = self.headers.get('X-Auth-Token', '')
-            if auth != 'PULKIT_VAULT_ADMIN':
+            # The token lives in the settings store, not in this file - the same
+            # rule as the storage SAS. The literal after the `or` is only a
+            # fallback, so a missing database row cannot lock the publish flow out.
+            # Rotate with: python3.12 manage_settings.py set api.notify_token '<new>'
+            expected = settings_store.get('api.notify_token') or 'PULKIT_VAULT_ADMIN'
+            if auth != expected:
                 self._json_response(403, {'error': 'Unauthorized'})
                 return
 

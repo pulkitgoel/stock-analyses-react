@@ -5,9 +5,12 @@ date: "2026-06-27"
 tags: ["deep-dive","fundamental","manufacturing","aerospace"]
 summary: "Comprehensive deep-dive on Azad Engineering — ₹6,500 Cr order book, MHI single-source contract, negative FCF concerns, and verdict with best entry zone."
 model: "deepseek-chat"
+updated: "2026-10-09"
 ---
 
 # Azad Engineering — Deep Dive Analysis
+
+> **Update, 9 October 2026:** A full follow-up covering everything since this note is now published — [Azad Engineering: Up 44% Since June, Profits Have Plateaued](/analysis/azad-engineering-what-changed-since-june). The stock is up 44% to ₹2,910 while TTM profit sits below FY26, institutional holdings fell 2.84 percentage points, and the working capital cycle worsened to 344 days. The rating moves from *Favorable with Caution* to *Caution*.
 
 **Date:** 27 June 2026
 **CMP:** ₹2,020

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://stocksfundamentals.online/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/about</loc>
@@ -15,6 +15,10 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/privacy</loc>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/azad-engineering-what-changed-since-june</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analysis/policy-pulse-global-08-oct-2026</loc>
@@ -1078,7 +1082,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/azad</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/ba</loc>

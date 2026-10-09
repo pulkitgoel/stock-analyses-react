@@ -1,6 +1,23 @@
 {
   "analyses": [
     {
+      "title": "Azad Engineering: Up 44% Since June, Profits Have Plateaued",
+      "ticker": "AZAD",
+      "file": "azad-engineering-what-changed-since-june.md",
+      "slug": "azad-engineering-what-changed-since-june",
+      "date": "2026-10-09",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "manufacturing",
+        "aerospace",
+        "follow-up",
+        "what-changed"
+      ],
+      "summary": "Follow-up on our 27 June deep dive: the stock is up 44% to Rs 2,910 while TTM profit is below FY26, both FIIs and DIIs cut holdings, and the working capital cycle worsened to 344 days. Includes the full 25-point technical read and updated levels.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse - Global Spillover - 08 Oct 2026",
       "ticker": "XOM:CVX:OXY:BKR:SLB:VLO:PSX:MPC:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:COIN:MSTR:NVDA:AVGO:AMD:MU:JPM:GS:CAT:DE:IOC:BPCL:HINDPETRO:ONGC:OIL:RELIANCE:INDIGO:ASIANPAINT:MRF:TITAN:KALYANKJIL:MUTHOOTFIN:MANAPPURAM:TCS:INFY:HCLTECH:TMPV:MARUTI:M&M:HEROMOTOCO:TVSMOTOR:EXIDEIND:ARE&M:DIXON:TATACHEM:DEEPAKNTR",
       "file": "policy-pulse-global-08-oct-2026.md",
@@ -3995,7 +4012,8 @@
         "aerospace"
       ],
       "summary": "Comprehensive deep-dive on Azad Engineering — ₹6,500 Cr order book, MHI single-source contract, negative FCF concerns, and verdict with best entry zone.",
-      "model": "deepseek-chat"
+      "model": "deepseek-chat",
+      "updated": "2026-10-09"
     },
     {
       "title": "HBL Engineering — Deep Dive Analysis",
