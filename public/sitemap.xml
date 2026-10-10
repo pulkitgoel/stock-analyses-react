@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://stocksfundamentals.online/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/about</loc>
@@ -15,6 +15,10 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/privacy</loc>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/syrma-sgs-technology-deep-dive-analysis</loc>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analysis/azad-engineering-deep-dive-jun27</loc>
@@ -542,10 +546,6 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analysis/policy-pulse-trump-us-04-aug-2026</loc>
-    <lastmod>2026-08-04</lastmod>
-  </url>
-  <url>
-    <loc>https://stocksfundamentals.online/analysis/syrma-sgs-technology-deep-dive-analysis</loc>
     <lastmod>2026-08-04</lastmod>
   </url>
   <url>
@@ -1550,7 +1550,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/syrma</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/tataelxsi</loc>
