@@ -258,6 +258,18 @@ export default function AnalysisPage() {
             rehypePlugins={[rehypeRaw]}
             components={{
               h1: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
+              // Each table owns its own horizontal scroll. Making the whole
+              // .article-body scroll instead stops the page overflowing, but it
+              // drags the prose sideways with the table and gives no sign that
+              // a table is cut off. A deep dive carries ~23 tables that render
+              // ~740px wide inside a 278px phone column, so the affordance
+              // matters: .table-scroll adds an edge fade and a sticky first
+              // column (see index.css).
+              table: ({ children, ...props }) => (
+                <div className="table-scroll" role="region" tabIndex={0} aria-label="Data table, scrolls horizontally">
+                  <table {...props}>{children}</table>
+                </div>
+              ),
             }}
           >
             {content}

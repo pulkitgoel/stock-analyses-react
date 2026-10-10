@@ -45,6 +45,7 @@ from __future__ import annotations
 import argparse
 import functools
 import http.server
+import os
 import re
 import socketserver
 import sys
@@ -62,11 +63,30 @@ SKIP_PREFIXES = ("/watchlist", "/watchlists")
 
 
 def find_chrome() -> str | None:
+    """Locate a system Chrome, or return None to use Playwright's own browser.
+
+    Returning None is a valid result, not a failure: `chromium.launch()` without
+    an `executable_path` uses the Chromium that `playwright install` downloaded.
+    The server has a system Chrome and keeps using it; a developer machine
+    usually has only the Playwright one, and probing a fixed list of Linux paths
+    made the build unrunnable anywhere else.
+
+    Set CHROME_PATH to force a specific binary.
+    """
+    override = os.environ.get("CHROME_PATH")
+    if override:
+        if not Path(override).exists():
+            sys.exit(f"prerender-body: CHROME_PATH does not exist: {override}")
+        return override
+
     for candidate in (
         "/usr/bin/google-chrome",
         "/usr/bin/google-chrome-stable",
         "/usr/bin/chromium",
         "/usr/bin/chromium-browser",
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+        r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
     ):
         if Path(candidate).exists():
             return candidate
@@ -156,8 +176,6 @@ def main() -> int:
         sys.exit(f"prerender-body: {dist} is not a directory")
 
     chrome = find_chrome()
-    if not chrome:
-        sys.exit("prerender-body: no Chrome/Chromium binary found")
 
     try:
         from playwright.sync_api import sync_playwright
@@ -195,6 +213,7 @@ def main() -> int:
     started = time.time()
 
     with sync_playwright() as pw:
+        # executable_path=None makes Playwright use its own bundled Chromium.
         browser = pw.chromium.launch(
             executable_path=chrome,
             headless=True,

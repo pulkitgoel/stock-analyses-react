@@ -262,10 +262,60 @@ button { touch-action: manipulation; }
    block still scrolls horizontally if something genuinely overflows. */
 .article-body td { word-break: break-word; overflow-wrap: anywhere; }
 .article-body table { max-width: 100%; }
+
+/* Each table scrolls inside its own box rather than scrolling the whole
+   article. Scrolling .article-body stops the page overflowing but drags the
+   prose sideways with the table, and nothing tells the reader a table is cut
+   off. These tables run ~740px inside a 278px phone column, so the cue is the
+   point: a fade on the right edge that disappears once scrolled to the end. */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Mask fades the right edge while there is more to scroll. `local` tracks the
+     scroll position, so the fade clears at the end; `scroll` stays fixed. */
+  background:
+    linear-gradient(to right, var(--bg-card) 30%, transparent) left center / 24px 100% no-repeat local,
+    linear-gradient(to left, var(--bg-card) 30%, transparent) right center / 24px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.28), transparent) left center / 14px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.28), transparent) right center / 14px 100% no-repeat scroll;
+}
+.table-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.article-body .table-scroll { margin: 1.35rem 0; }
+
+/* Inside the scroll box the table takes its natural width and the box scrolls.
+   Capping it at 100% instead would squeeze a six-column financial table into a
+   277px phone column, wrapping every cell to two or three lines. Scrolling with
+   a pinned first column reads far better for this kind of data. */
+.table-scroll > table { margin: 0; width: auto; max-width: none; min-width: 100%; }
+/* Caps any one column so a pathological cell cannot stretch the table. Some
+   deep dives carry a single 292-character ticker cell (40+ colon-delimited
+   tickers); uncapped it used to drag the article out to ~2468px.
+
+   `overflow-wrap: break-word` rather than `anywhere`: `anywhere` lets a column
+   shrink to one character, which rendered labels as "Opera ting profit" and
+   "Intere st". `break-word` only breaks a word that cannot fit on its own line,
+   so the 292-character cell still wraps while ordinary labels stay whole. */
+.table-scroll > table :is(th, td) {
+  max-width: 24ch;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+/* The label column needs room to hold a word like "Depreciation" unbroken. */
+.table-scroll > table :is(th, td):first-child { min-width: 11ch; }
+
 @media (max-width: 640px) {
   .article-body table { font-size: 0.78rem; }
   .article-body th, .article-body td { padding: 0.5rem 0.55rem; }
-  .article-body { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* The first column holds the row label (usually the metric or the ticker).
+     Pinning it keeps the label on screen while the numbers scroll past. */
+  .article-body .table-scroll th:first-child,
+  .article-body .table-scroll td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--bg-card);
+  }
+  .article-body .table-scroll tr:nth-child(even) td:first-child { background: var(--bg-elevated); }
 }
 
 /* ── Button System ── */
