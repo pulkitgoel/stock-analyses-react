@@ -428,14 +428,33 @@ rendering — the opposite of what 3.7 requires. Ending the directive with `=404
 `/index.html` a *file* candidate, so the shell is served with a 200. Measured after:
 thin hub 200, thin tag page 200, generic 404 still 404.
 
-### 7.4 Internal linking — largely DONE 2026-10-09
+### 7.4 Internal linking — DONE 2026-10-10
 
-Ticker links to company hubs (capped at `TICKER_LINK_LIMIT`), breadcrumbs and a
-per-article disclaimer all shipped. A live deep dive now exposes 7 internal
-`/analysis/` and `/company/` links, against 0 before.
+Ticker links to company hubs (capped at `TICKER_LINK_LIMIT`), breadcrumbs, a
+related-analyses block keyed on shared tickers then shared tags, and a per-article
+disclaimer all shipped. A live deep dive now exposes 7 internal `/analysis/` and
+`/company/` links, against 0 before.
 
-Still open: a related-analyses block keyed on shared ticker then shared tags, and a
-table of contents on long articles.
+**Table of contents added 2026-10-10**, shown on the 74 longest articles (at least 10
+`##`/`###` headings). That floor is measured, not guessed: Policy Pulse notes run a
+median of 6 headings against 33 for deep dives, so a floor of 4 would have put a
+contents panel on 93% of the library. It is a collapsed `<details>`, so it costs no
+vertical space while the section anchors stay in the prerendered HTML.
+
+`rehype-slug` is not installed, so `src/utils/toc.ts` assigns ids in ONE pass over the
+markdown, injects an `<a id>` inside each heading, and returns the contents list from
+that same pass — the hrefs and the ids cannot drift apart. Each alternative was
+measured and rejected:
+
+- Rewriting a heading to raw `<h2 id>` renders `**bold**` literally in the 20 articles
+  that use inline formatting in a heading.
+- A rehype plugin assigning ids needs render-order state, and StrictMode's double
+  render would desynchronise ids from the list.
+- 23 articles (9%) repeat a heading, so the document-order counter adds `-2` suffixes
+  rather than emitting colliding ids.
+
+Verified against the real pipeline before shipping (react-markdown + remark-gfm +
+rehype-raw): the inline anchor survives inside a heading and bold/code still render.
 
 ### 7.5 Crawlable archive, category and tag URLs — DONE 2026-10-10
 
