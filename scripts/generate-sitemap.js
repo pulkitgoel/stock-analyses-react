@@ -160,6 +160,28 @@ const archiveRoutes = Array.from({ length: archivePageCount }, (_, i) => ({
   lastmod: newestArticleDate,
 }));
 
+// Section archives. Each beat gets its own paginated index so the two
+// accumulate separate topical authority instead of diluting each other; see
+// scripts/lib/market.js. Page 1 is the bare /india or /global URL, so there is
+// no /page/1 duplicate to canonicalise away.
+const sectionRoutes = [];
+const sectionCounts = {};
+for (const market of ['india', 'global']) {
+  const inMarket = analyses.filter((a) => a.market === market);
+  sectionCounts[market] = inMarket.length;
+  const latest = inMarket.reduce((acc, a) => {
+    const d = isoDate(a.date);
+    return d && (!acc || d > acc) ? d : acc;
+  }, null);
+  const pages = Math.max(1, Math.ceil(inMarket.length / ARCHIVE_PAGE_SIZE));
+  for (let i = 1; i <= pages; i += 1) {
+    sectionRoutes.push({
+      loc: i === 1 ? `/${market}` : `/${market}/page/${i}`,
+      lastmod: latest,
+    });
+  }
+}
+
 // The homepage changes whenever the newest article does.
 const staticRouteEntries = staticRoutes.map((loc) => ({
   loc,
@@ -172,6 +194,7 @@ const allRoutes = [
   ...companyRoutes,
   ...tagRoutes,
   ...archiveRoutes,
+  ...sectionRoutes,
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -195,3 +218,4 @@ console.log(`  analysis: ${analysisRoutes.length}`);
 console.log(`  company:  ${companyRoutes.length} listed, ${excludedCompanies.length} excluded (< ${MIN_RESEARCH_ARTICLES} research article)`);
 console.log(`  tag:      ${tagRoutes.length} listed, ${tagStats.size - tagRoutes.length} excluded (< ${MIN_TAG_ARTICLES} articles)`);
 console.log(`  archive:  ${archiveRoutes.length} pages of ${ARCHIVE_PAGE_SIZE}`);
+console.log(`  sections: ${sectionRoutes.length} pages (india ${sectionCounts.india}, global ${sectionCounts.global} articles)`);

@@ -1,3 +1,5 @@
+import type { MarketKey } from '../utils/market';
+
 export interface Analysis {
   title: string;
   ticker: string;
@@ -14,6 +16,12 @@ export interface Analysis {
   tags: string[];
   summary: string;
   model?: string;
+  /**
+   * Which beat the article belongs to. Derived at build time by
+   * scripts/lib/market.js from the edition name, tags and tickers, and
+   * overridable with an explicit `market:` in frontmatter.
+   */
+  market?: MarketKey;
 }
 
 // A curated watchlist entry, derived from an analysis whose frontmatter opts in

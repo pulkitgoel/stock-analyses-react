@@ -11,6 +11,7 @@ import LoadingSpinner from '../components/Common/LoadingSpinner';
 import { ANALYSES } from '../data/analyses.generated';
 import { tickerTokens, companyHubPath } from '../utils/tickers';
 import { tagPath } from '../utils/tags';
+import { MARKET_HEADING, sectionPath } from '../utils/market';
 import AudioSummary from '../components/Analysis/AudioSummary';
 
 function estimateReadTime(text: string): number {
@@ -229,6 +230,17 @@ export default function AnalysisPage() {
           {/* Tags link to their topic page. The page exists for every tag, but
               only the ones clearing MIN_TAG_ARTICLES are indexable, so a link
               here is a crawl path rather than a promise of a rich page. */}
+          {/* Which beat this belongs to, linked. Tells a reader (and a
+              crawler) that the article sits in a section, not a flat pile. */}
+          {analysis.market && (
+            <Link
+              to={sectionPath(analysis.market)}
+              className="rounded-full px-2.5 py-1 text-xs font-bold no-underline"
+              style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}
+            >
+              {MARKET_HEADING[analysis.market]}
+            </Link>
+          )}
           {analysis.tags.map((tag) => (
             <Link
               key={tag}

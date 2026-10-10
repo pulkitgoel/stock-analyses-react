@@ -8,6 +8,10 @@ const navGroups = [
       { to: '/', label: 'Home' },
       // Site-wide crawl entry point to the archive (AGENTS.md 7.5). The
       // homepage links nine articles; this is how a crawler reaches the rest.
+      // The two beats get their own entry points, so a reader (and a crawler)
+      // can follow one without wading through the other. See utils/market.ts.
+      { to: '/india', label: 'India research' },
+      { to: '/global', label: 'Global macro' },
       { to: '/analyses/page/1', label: 'All analysis' },
       // The only falsifiable public record on the site: 21 calls with the price
       // at the time of each, tracked against live quotes. Nothing linked to it.

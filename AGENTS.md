@@ -501,6 +501,68 @@ robots tag, matching AnalysisPage.
 
 ---
 
+### 7.7 India / Global split — DONE 2026-10-10
+
+**Owner decision, taken 2026-10-10: option C, split the beats.** The site publishes
+two things and will keep publishing both, because the author invests in US equities as
+well as Indian ones and so do many readers. They now live in separate sections instead
+of one undifferentiated pile.
+
+The problem this solves, measured: 107 of 254 articles were US or global, the seven
+most-mentioned tickers were American (XOM 88, CVX 84, DAL 78 — TCS first appeared at
+#8), and Search Console showed the site at **position 7.2 in the United States against
+25.1 in India**, on a site whose stated purpose was Indian stocks. Google was reading
+the aggregate, not the tagline.
+
+**`market`, derived once at build time.** `scripts/lib/market.js` classifies each
+article as `india` or `global`; `generate-analyses-data.js` writes it onto every record
+in `analyses.json`, so the sitemap, the prerender and the app all read one value rather
+than re-deriving it. Current split: **139 India, 115 Global.**
+
+Classification order, each beating the next:
+
+1. Explicit `market:` in frontmatter. Always wins — the classifier is a backfill for
+   254 existing articles, not a permanent guess. Set it when publishing anything
+   ambiguous.
+2. Policy Pulse edition name in the title. Trump or Global to `global`; Modi,
+   Ministries or Cabinet to `india`. Global is tested first so a "Modi & Trump" piece
+   lands in global. This is the most reliable signal, which matters because the series
+   has shipped under 22 different title spellings.
+3. An Indian index ticker (NIFTY, SENSEX, BANKNIFTY) to `india`. Deliberately ahead of
+   tags: a piece on an Indian selloff is often tagged `global` because the cause was
+   global, but "Why Markets Crashed on June 23" with ticker `NIFTY:SENSEX` is India
+   coverage.
+4. Tags: `us-only`/`global` to `global`, `india`/`modi`/`rbi`/`sebi` to `india`.
+5. A US primary ticker to `global`. Catches the few non-Indian deep dives — Palantir
+   and AMD are the only three articles currently reaching this rule.
+6. Default `india`, because an unclassified piece is overwhelmingly an Indian deep dive.
+
+**Routes.** `/india` and `/global`, each paginated at `/{market}/page/N`, 9 per page
+(16 and 13 pages). Page 1 is the bare section URL with no `/page/1` alias.
+`/analyses/page/N` stays as the combined archive. `ArchivePage` serves all three: it
+takes an optional `market` prop, and one component covers them because the only
+differences are scope, base path and copy. Topic hubs on a section page are scoped to
+that section, so `/india` never advertises a tag only global articles carry. Each
+section cross-links the other, and every article carries a linked section badge.
+
+Sitemap is now **498 URLs**.
+
+**Positioning copy changed to match.** "StocksFundamentals — Indian Stock Research &
+Global Macro", described as Indian deep-dive research "plus daily US and global macro
+for investors holding both". Kept identical in `index.html` and `HomePage.tsx` per 3.1.
+Do not quietly revert this to India-only: the content is 45% global and the claim has
+to match what is published.
+
+**Keep in sync** (same hazard as 3.6): `scripts/lib/market.js`, `src/utils/market.ts`
+and the `MARKET_HEADING`/`MARKET_BLURB` copy in `scripts/generate-og-files.py`.
+
+**Not done, deliberate:** `/company/{ticker}` hubs still merge markets, so
+`/company/hal` serves both Hindustan Aeronautics and Halliburton. The owner chose to
+fix only genuinely clashing symbols rather than re-scheme all 155 URLs. HAL is the
+known clash; find the rest before changing anything.
+
+---
+
 ## 8. Files that still need an owner decision
 
 These are tracked in git, so they were committed deliberately, but nothing references

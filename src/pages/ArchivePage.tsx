@@ -7,6 +7,10 @@ import { fetchAnalyses } from '../services/analysisService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
 import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import { indexableTags, tagPath } from '../utils/tags';
+import {
+  MarketKey, MARKET_BLURB, MARKET_HEADING,
+  articlesForMarket, otherMarket, sectionPath,
+} from '../utils/market';
 
 /**
  * Articles per archive page.
@@ -30,7 +34,16 @@ function displayTag(raw: string): string {
     .join(' ');
 }
 
-export default function ArchivePage() {
+/**
+ * Serves three routes: the combined archive at /analyses/page/N, and one
+ * section each at /india and /global.
+ *
+ * One component rather than three, because the only differences are which
+ * articles are in scope, the base path and the copy. The sections exist so the
+ * two beats accumulate separate topical authority instead of diluting each
+ * other; see src/utils/market.ts.
+ */
+export default function ArchivePage({ market = null }: { market?: MarketKey | null }) {
   const { page } = useParams<{ page: string }>();
   const [analyses, setAnalyses] = useState<Analysis[]>([]);
   const [loading, setLoading] = useState(true);
@@ -43,16 +56,28 @@ export default function ArchivePage() {
 
   if (loading) return <LoadingSpinner />;
 
-  const sorted = [...analyses].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+  const inScope = market ? articlesForMarket(analyses, market) : analyses;
+  const sorted = [...inScope].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const current = Math.min(Math.max(1, parseInt(page ?? '1', 10) || 1), totalPages);
   const pageArticles = sorted.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
-  const topics = indexableTags(analyses);
+  // Topics are scoped to the section, so an India page never advertises a tag
+  // that only global articles carry.
+  const topics = indexableTags(inScope);
 
-  const title =
-    current === 1
-      ? 'All Analysis, Research & Policy Notes'
-      : `All Analysis — Page ${current} of ${totalPages}`;
+  const heading = market ? MARKET_HEADING[market] : 'All analysis';
+  const blurb = market ? MARKET_BLURB[market] : 'Every analysis, newest first.';
+  // Must match the prerendered title in generate-og-files.py, and stay short:
+  // the blurb belongs in the meta description, not the title (invariant 3.4).
+  const title = market
+    ? (current === 1
+        ? `${MARKET_HEADING[market]} — StocksFundamentals`
+        : `${MARKET_HEADING[market]} — Page ${current} of ${totalPages}`)
+    : (current === 1
+        ? 'All Analysis, Research & Policy Notes'
+        : `All Analysis — Page ${current} of ${totalPages}`);
+  const pageHref = (n: number) => sectionPath(market, n);
+  const other = market ? otherMarket(market) : null;
 
   const pagerStyle = (active: boolean) => ({
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
@@ -93,13 +118,30 @@ export default function ArchivePage() {
             <Library size={22} style={{ color: 'var(--accent)' }} />
           </div>
           <h1 className="text-4xl font-black tracking-tight sm:text-5xl" style={{ color: 'var(--text)' }}>
-            All analysis
+            {heading}
           </h1>
           <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>
+            {blurb}
+          </p>
+          <p className="mt-1 text-sm" style={{ color: 'var(--text-dim)' }}>
             {sorted.length} articles, newest first
             {totalPages > 1 && ` · page ${current} of ${totalPages}`}
           </p>
         </header>
+
+        {/* Cross-link to the sibling beat. Keeps both sections one hop apart
+            for a reader, and gives each a crawlable link to the other. */}
+        {other && (
+          <div className="mt-4">
+            <Link
+              to={sectionPath(other)}
+              className="text-sm font-bold no-underline"
+              style={{ color: 'var(--accent)' }}
+            >
+              {MARKET_HEADING[other]} &rarr;
+            </Link>
+          </div>
+        )}
 
         <section className="mt-6">
           <AnalysisGrid analyses={pageArticles} />
@@ -108,14 +150,14 @@ export default function ArchivePage() {
         {totalPages > 1 && (
           <nav className="mt-10 flex flex-wrap items-center justify-center gap-2" aria-label="Archive pages">
             {current > 1 && (
-              <Link to={`/analyses/page/${current - 1}`} style={pagerStyle(false)} aria-label="Previous page">
+              <Link to={pageHref(current - 1)} style={pagerStyle(false)} aria-label="Previous page">
                 <ArrowLeft size={15} />
               </Link>
             )}
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
               <Link
                 key={n}
-                to={`/analyses/page/${n}`}
+                to={pageHref(n)}
                 style={pagerStyle(n === current)}
                 aria-current={n === current ? 'page' : undefined}
               >
@@ -123,7 +165,7 @@ export default function ArchivePage() {
               </Link>
             ))}
             {current < totalPages && (
-              <Link to={`/analyses/page/${current + 1}`} style={pagerStyle(false)} aria-label="Next page">
+              <Link to={pageHref(current + 1)} style={pagerStyle(false)} aria-label="Next page">
                 <ArrowRight size={15} />
               </Link>
             )}

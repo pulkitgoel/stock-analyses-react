@@ -9,6 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { classifyMarket } from './lib/market.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -94,6 +95,10 @@ for (const file of files) {
     date: data.date,
     tags: data.tags,
     summary: data.summary,
+    // Which beat this belongs to: 'india' or 'global'. Derived once here so the
+    // sitemap, the prerender and the app all read the same value instead of
+    // each re-deriving it. An explicit `market:` in frontmatter always wins.
+    market: classifyMarket(data),
     ...(data.model ? { model: data.model } : {}),
     // Revision date. Must be emitted here or scripts/generate-og-files.py can
     // never see it: that script reads this JSON, not the markdown, so its

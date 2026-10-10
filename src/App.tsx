@@ -27,6 +27,13 @@ export default function App() {
                 without these 245 articles had no internal link pointing at them. */}
             <Route path="/tag/:tag" element={<TagPage />} />
             <Route path="/analyses/page/:page" element={<ArchivePage />} />
+            {/* The two beats, kept apart so each accumulates its own topical
+                authority instead of diluting the other (src/utils/market.ts).
+                Page 1 is the bare section URL; no /page/1 duplicate. */}
+            <Route path="/india" element={<ArchivePage market="india" />} />
+            <Route path="/india/page/:page" element={<ArchivePage market="india" />} />
+            <Route path="/global" element={<ArchivePage market="global" />} />
+            <Route path="/global/page/:page" element={<ArchivePage market="global" />} />
             <Route path="/analyses" element={<Navigate to="/analyses/page/1" replace />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />

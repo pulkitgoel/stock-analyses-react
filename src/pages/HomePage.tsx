@@ -47,17 +47,17 @@ export default function HomePage() {
           Pulkit" vs "Premium Stock Research"), which put two different
           positioning statements on the same page. */}
       <Helmet>
-        <title>StocksFundamentals — Deep-Dive Indian Stock Research</title>
-        <meta name="description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis." />
+        <title>StocksFundamentals — Indian Stock Research & Global Macro</title>
+        <meta name="description" content="Independent deep-dive research on Indian stocks - NSE delivery data, promoter trends, quarterly results - plus daily US and global macro for investors holding both." />
         <link rel="canonical" href="https://stocksfundamentals.online/" />
-        <meta property="og:title" content="StocksFundamentals — Deep-Dive Indian Stock Research" />
-        <meta property="og:description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis." />
+        <meta property="og:title" content="StocksFundamentals — Indian Stock Research & Global Macro" />
+        <meta property="og:description" content="Independent deep-dive research on Indian stocks - NSE delivery data, promoter trends, quarterly results - plus daily US and global macro for investors holding both." />
         <meta property="og:url" content="https://stocksfundamentals.online/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://stocksfundamentals.online/og-default.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="StocksFundamentals — Deep-Dive Indian Stock Research" />
-        <meta name="twitter:description" content="Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis." />
+        <meta name="twitter:title" content="StocksFundamentals — Indian Stock Research & Global Macro" />
+        <meta name="twitter:description" content="Independent deep-dive research on Indian stocks - NSE delivery data, promoter trends, quarterly results - plus daily US and global macro for investors holding both." />
         <meta name="twitter:image" content="https://stocksfundamentals.online/og-default.png" />
         {/* One graph giving Google and AI systems a single consistent publisher
             and author entity. Add profile URLs to `sameAs` as they exist: an
@@ -71,7 +71,7 @@ export default function HomePage() {
                 '@id': 'https://stocksfundamentals.online/#website',
                 name: 'StocksFundamentals',
                 url: 'https://stocksfundamentals.online/',
-                description: 'Independent deep-dive research on Indian stocks: NSE delivery data, promoter trends, quarterly results and daily policy analysis.',
+                description: 'Independent deep-dive research on Indian stocks - NSE delivery data, promoter trends, quarterly results - plus daily US and global macro for investors holding both.',
                 inLanguage: 'en-IN',
                 publisher: { '@id': 'https://stocksfundamentals.online/#organization' },
               },

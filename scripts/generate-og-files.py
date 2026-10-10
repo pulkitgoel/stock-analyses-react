@@ -563,6 +563,62 @@ def generate_archive_html(page, total_pages, total_articles, newest_date, assets
     )
 
 
+# Reader-facing copy for the two beats. KEEP IN SYNC with src/utils/market.ts
+# and scripts/lib/market.js.
+MARKET_HEADING = {"india": "India research", "global": "Global macro"}
+MARKET_BLURB = {
+    "india": "Deep-dive research on Indian companies, plus the policy and "
+             "regulatory decisions that move them.",
+    "global": "US and global macro, read for what it means to an investor "
+              "holding Indian and American names side by side.",
+}
+
+
+def generate_section_html(market, page, total_pages, count, newest_date, assets, image_url):
+    """Prerender one page of a section archive (/india or /global).
+
+    The sections exist so each beat accumulates its own topical authority rather
+    than diluting the other; see scripts/lib/market.js for why.
+    """
+    path = "/%s" % market if page == 1 else "/%s/page/%d" % (market, page)
+    url = SITE_URL + path
+    heading = MARKET_HEADING[market]
+    if page == 1:
+        title = "%s — %s" % (heading, SITE_NAME)
+        description = smart_truncate("%s %d articles, newest first."
+                                     % (MARKET_BLURB[market], count))
+    else:
+        title = "%s — Page %d of %d — %s" % (heading, page, total_pages, SITE_NAME)
+        description = smart_truncate("Page %d of %d of %s on %s."
+                                     % (page, total_pages, heading.lower(), SITE_NAME))
+
+    data = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": title,
+        "description": description,
+        "url": url,
+        "inLanguage": "en-IN",
+        "isPartOf": {"@type": "WebSite", "@id": "%s/#website" % SITE_URL},
+        "mainEntity": {"@type": "ItemList", "numberOfItems": count},
+    }
+    if newest_date:
+        data["dateModified"] = newest_date
+
+    extra = ""
+    if page > 1:
+        prev = "%s/%s" % (SITE_URL, market) if page == 2 else "%s/%s/page/%d" % (SITE_URL, market, page - 1)
+        extra += '\n    <link rel="prev" href="%s" />' % prev
+    if page < total_pages:
+        extra += '\n    <link rel="next" href="%s/%s/page/%d" />' % (SITE_URL, market, page + 1)
+
+    return render_shell(
+        title=title, description=description, canonical=url,
+        jsonld=json.dumps(data, indent=2, ensure_ascii=False),
+        assets=assets, image_url=image_url, og_type="website", extra_head=extra,
+    )
+
+
 def main():
     analyses = load_analyses()
     if not analyses:
@@ -662,6 +718,23 @@ def main():
                  os.path.join(archive_dir, "%d.html" % page), "analyses/page/%d" % page):
             n_archive += 1
     print("Generated %d archive pages in %s" % (n_archive, archive_dir))
+
+    # --- Section archives (/india, /global) ---
+    n_section = 0
+    for market in ("india", "global"):
+        in_market = [a for a in analyses if a.get("market") == market]
+        if not in_market:
+            continue
+        latest = max((clean_text(a.get("date")) for a in in_market if a.get("date")), default=None)
+        pages = max(1, -(-len(in_market) // ARCHIVE_PAGE_SIZE))
+        for page in range(1, pages + 1):
+            out = (os.path.join(DIST_DIR, "%s.html" % market) if page == 1
+                   else os.path.join(DIST_DIR, market, "page", "%d.html" % page))
+            if write(generate_section_html(market, page, pages, len(in_market),
+                                           latest, assets, image_url),
+                     out, "%s p%d" % (market, page)):
+                n_section += 1
+    print("Generated %d section pages (/india, /global)" % n_section)
 
     if invalid:
         print("\nERROR: %d page(s) produced invalid JSON-LD and were not written:" % len(invalid))
