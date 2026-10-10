@@ -1,6 +1,22 @@
 {
   "analyses": [
     {
+      "title": "Syrma SGS Technology — Deep Dive Analysis",
+      "ticker": "SYRMA",
+      "file": "syrma-sgs-technology-deep-dive-analysis.md",
+      "slug": "syrma-sgs-technology-deep-dive-analysis",
+      "date": "2026-10-10",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "EMS",
+        "electronics",
+        "manufacturing"
+      ],
+      "summary": "Revised deep dive: Syrma is up 22.6% to Rs 1,720 since our 4 August note, the trailing P/E has expanded to 89.3x, and average delivery has fallen to 28.2% from 37.3%. Q2 FY27 is not yet reported. Clarifies the two Rs 1,000 Cr QIPs and adds the Exchange Filings section. Verdict: CAUTION — priced for perfection.",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Azad Engineering — Deep Dive Analysis",
       "ticker": "AZAD",
       "file": "azad-engineering-deep-dive-jun27.md",
@@ -2199,22 +2215,6 @@
         "crypto"
       ],
       "summary": "Trump Media (DJT) -4% on 0M Q2 loss and delayed crypto-ETF; Trump warns Iran talks are 'last chance' as oil rebounds 1.4%. DJT Hold, energy bounces (XOM), airlines dip (DAL).",
-      "model": "deepseek-chat"
-    },
-    {
-      "title": "Syrma SGS Technology — Deep Dive Analysis",
-      "ticker": "SYRMA",
-      "file": "syrma-sgs-technology-deep-dive-analysis.md",
-      "slug": "syrma-sgs-technology-deep-dive-analysis",
-      "date": "2026-08-04",
-      "tags": [
-        "deep-dive",
-        "fundamental",
-        "EMS",
-        "electronics",
-        "manufacturing"
-      ],
-      "summary": "Syrma SGS (EMS) Q1 FY27: revenue +68%, PAT +112%, ₹6,770 Cr order book, IND AA rating, 30-35% growth guidance. But 52-65x forward PE vs 31.6x industry, Q1 margin miss, ₹1,000 Cr QIP dilution, and -4.99% promoter dilution. Verdict: CAUTION — growth priced for perfection; wait for pullback to ₹1,260-1,300 or breakout >₹1,471.",
       "model": "deepseek-chat"
     },
     {

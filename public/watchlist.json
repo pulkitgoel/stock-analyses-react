@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "syrma-sgs-technology-deep-dive-analysis",
+      "ticker": "SYRMA",
+      "title": "Syrma SGS Technology — Deep Dive Analysis",
+      "date": "2026-10-10",
+      "yahooSymbol": "SYRMA.NS",
+      "priceAtAnalysis": 1720,
+      "support": 1670,
+      "resistance": 1823,
+      "supports": [
+        1570,
+        1519
+      ],
+      "resistances": [
+        1933,
+        2084
+      ],
+      "verdict": "CAUTION — PRICED FOR PERFECTION"
+    },
+    {
       "slug": "azad-engineering-deep-dive-jun27",
       "ticker": "AZAD",
       "title": "Azad Engineering — Deep Dive Analysis",
@@ -172,25 +191,6 @@
         2142
       ],
       "verdict": "FAVORABLE"
-    },
-    {
-      "slug": "syrma-sgs-technology-deep-dive-analysis",
-      "ticker": "SYRMA",
-      "title": "Syrma SGS Technology — Deep Dive Analysis",
-      "date": "2026-08-04",
-      "yahooSymbol": "SYRMA.NS",
-      "priceAtAnalysis": 1403,
-      "support": 1290,
-      "resistance": 1470,
-      "supports": [
-        1260,
-        1290
-      ],
-      "resistances": [
-        1471,
-        1518
-      ],
-      "verdict": "CAUTION"
     },
     {
       "slug": "oriana-power-what-changed-aug03",
