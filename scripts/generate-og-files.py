@@ -431,6 +431,138 @@ def generate_static_html(route, title, description, assets, image_url):
     )
 
 
+# --- Tag and archive routes (AGENTS.md section 7.5) -------------------------
+#
+# The homepage renders nine cards and hides the other 245 articles behind a
+# JavaScript "load more", so nothing linked to them and they were reachable
+# through the sitemap alone. /analyses/page/N lists them nine at a time in plain
+# crawlable HTML, and /tag/{tag} gathers a topic in one place.
+#
+# Keep both constants in sync with MIN_TAG_ARTICLES / ARCHIVE_PAGE_SIZE in
+# scripts/generate-sitemap.js and src/utils/tags.ts.
+MIN_TAG_ARTICLES = 12
+ARCHIVE_PAGE_SIZE = 9
+
+
+def tag_slug(tag):
+    """URL-safe form of a tag. Mirrors tagSlug() in src/utils/tags.ts."""
+    return re.sub(r"^-+|-+$", "", re.sub(r"[^a-z0-9]+", "-", str(tag or "").strip().lower()))
+
+
+def display_tag(raw):
+    """`policy-pulse` reads as `Policy Pulse`. Mirrors displayTag() in the pages."""
+    if raw != raw.lower():
+        return raw
+    words = [w for w in re.split(r"[-_]", raw) if w]
+    return " ".join(w if w.isdigit() else w[:1].upper() + w[1:] for w in words)
+
+
+def tag_stats(analyses):
+    """Aggregate tag coverage, matching the rules in generate-sitemap.js."""
+    stats = {}
+    for a in analyses:
+        date = clean_text(a.get("date"))
+        seen = set()
+        for raw in a.get("tags") or []:
+            slug = tag_slug(raw)
+            if not slug or slug in seen:
+                continue
+            seen.add(slug)
+            stat = stats.setdefault(slug, {"tag": str(raw), "count": 0, "latest": None})
+            stat["count"] += 1
+            if date and (not stat["latest"] or date > stat["latest"]):
+                stat["latest"] = date
+    return stats
+
+
+def newest_article_date(analyses):
+    dates = [clean_text(a.get("date")) for a in analyses]
+    dates = [d for d in dates if re.match(r"^\d{4}-\d{2}-\d{2}$", d)]
+    return max(dates) if dates else None
+
+
+def generate_tag_html(slug, stat, assets, image_url):
+    """Prerender one tag page.
+
+    Same reason as the company hubs: a route with no prerendered file serves the
+    generic homepage title to any crawler that does not execute JavaScript.
+    """
+    url = "%s/tag/%s" % (SITE_URL, slug)
+    label = display_tag(stat["tag"])
+    count = stat["count"]
+
+    title = "%s — Analysis & Research" % label
+    description = smart_truncate(
+        "%d article%s tagged %s: company deep dives, delivery data and policy "
+        "notes on StocksFundamentals." % (count, "" if count == 1 else "s", label)
+    )
+
+    data = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": title,
+        "description": description,
+        "url": url,
+        "inLanguage": "en-IN",
+        "isPartOf": {"@type": "WebSite", "@id": "%s/#website" % SITE_URL},
+        "mainEntity": {"@type": "ItemList", "numberOfItems": count},
+    }
+    if stat["latest"]:
+        data["dateModified"] = stat["latest"]
+
+    return render_shell(
+        title=title,
+        description=description,
+        canonical=url,
+        jsonld=json.dumps(data, indent=2, ensure_ascii=False),
+        assets=assets,
+        image_url=image_url,
+        og_type="website",
+        extra_head="",
+    )
+
+
+def generate_archive_html(page, total_pages, total_articles, newest_date, assets, image_url):
+    """Prerender one page of the crawlable archive."""
+    url = "%s/analyses/page/%d" % (SITE_URL, page)
+    if page == 1:
+        title = "All Analysis, Research & Policy Notes"
+        description = smart_truncate(
+            "Every analysis published on StocksFundamentals, newest first: %d "
+            "company deep dives and policy notes." % total_articles
+        )
+    else:
+        title = "All Analysis — Page %d of %d" % (page, total_pages)
+        description = smart_truncate(
+            "Page %d of %d of the StocksFundamentals research library."
+            % (page, total_pages)
+        )
+
+    data = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": title,
+        "description": description,
+        "url": url,
+        "inLanguage": "en-IN",
+        "isPartOf": {"@type": "WebSite", "@id": "%s/#website" % SITE_URL},
+        "mainEntity": {"@type": "ItemList", "numberOfItems": total_articles},
+    }
+    if newest_date:
+        data["dateModified"] = newest_date
+
+    return render_shell(
+        title=title,
+        description=description,
+        canonical=url,
+        jsonld=json.dumps(data, indent=2, ensure_ascii=False),
+        assets=assets,
+        image_url=image_url,
+        og_type="website",
+        extra_head="",
+    )
+
+
 def main():
     analyses = load_analyses()
     if not analyses:
@@ -501,6 +633,35 @@ def main():
                  os.path.join(DIST_DIR, "%s.html" % route), route):
             n_static += 1
     print("Generated %d static pages in %s" % (n_static, DIST_DIR))
+
+    # --- Tag pages ---
+    # Only tags that clear the coverage floor are prerendered. A thinner tag
+    # still renders client-side with `noindex, follow`, so linking to one is
+    # harmless but it never becomes an indexable page.
+    tstats = tag_stats(analyses)
+    tag_dir = os.path.join(DIST_DIR, "tag")
+    n_tag = 0
+    for slug in sorted(tstats):
+        stat = tstats[slug]
+        if stat["count"] < MIN_TAG_ARTICLES:
+            continue
+        if write(generate_tag_html(slug, stat, assets, image_url),
+                 os.path.join(tag_dir, "%s.html" % slug), "tag/%s" % slug):
+            n_tag += 1
+    print("Generated %d tag pages in %s (%d left client-only, noindex)"
+          % (n_tag, tag_dir, sum(1 for s in tstats.values() if s["count"] < MIN_TAG_ARTICLES)))
+
+    # --- Archive pages ---
+    total_pages = max(1, -(-len(analyses) // ARCHIVE_PAGE_SIZE))
+    newest = newest_article_date(analyses)
+    archive_dir = os.path.join(DIST_DIR, "analyses", "page")
+    n_archive = 0
+    for page in range(1, total_pages + 1):
+        if write(generate_archive_html(page, total_pages, len(analyses), newest,
+                                       assets, image_url),
+                 os.path.join(archive_dir, "%d.html" % page), "analyses/page/%d" % page):
+            n_archive += 1
+    print("Generated %d archive pages in %s" % (n_archive, archive_dir))
 
     if invalid:
         print("\nERROR: %d page(s) produced invalid JSON-LD and were not written:" % len(invalid))

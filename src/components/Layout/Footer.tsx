@@ -6,6 +6,9 @@ const navGroups = [
     label: 'Research',
     links: [
       { to: '/', label: 'Home' },
+      // Site-wide crawl entry point to the archive (AGENTS.md 7.5). The
+      // homepage links nine articles; this is how a crawler reaches the rest.
+      { to: '/analyses/page/1', label: 'All analysis' },
       { to: '/about', label: 'About' },
       { to: '/contact', label: 'Contact' },
     ],

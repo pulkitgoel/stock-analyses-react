@@ -9,6 +9,8 @@ import ContactPage from './pages/ContactPage';
 import DisclaimerPage from './pages/DisclaimerPage';
 import PrivacyPage from './pages/PrivacyPage';
 import WatchlistPage from './pages/WatchlistPage';
+import TagPage from './pages/TagPage';
+import ArchivePage from './pages/ArchivePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -20,6 +22,12 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/analysis/:slug" element={<AnalysisPage />} />
             <Route path="/company/:ticker" element={<CompanyPage />} />
+            {/* Crawlable archive and topic routes (AGENTS.md 7.5). The homepage
+                renders nine cards and hides the rest behind a "load more", so
+                without these 245 articles had no internal link pointing at them. */}
+            <Route path="/tag/:tag" element={<TagPage />} />
+            <Route path="/analyses/page/:page" element={<ArchivePage />} />
+            <Route path="/analyses" element={<Navigate to="/analyses/page/1" replace />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />

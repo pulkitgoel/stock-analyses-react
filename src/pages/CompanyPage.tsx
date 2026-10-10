@@ -99,43 +99,28 @@ export default function CompanyPage() {
   // the index and out of the sitemap rather than adding near-duplicate pages.
   const indexable = research.length >= MIN_RESEARCH_ARTICLES;
 
+  // Only the title is built here. The description, canonical, Open Graph tags
+  // and JSON-LD a crawler reads are written into the prerendered file by
+  // generate_company_html() in scripts/generate-og-files.py, which owns the
+  // head on this route (AGENTS.md invariant 3.2).
   const title = `${tickerUpper} Stock Analysis & Research — StocksFundamentals`;
-  const description = research.length
-    ? `${research.length} deep-dive${research.length !== 1 ? 's' : ''} on ${tickerUpper}, plus ${mentions.length} policy note${mentions.length !== 1 ? 's' : ''} that reference it.`
-    : `Policy and market notes referencing ${tickerUpper}.`;
 
   return (
     <>
       <Helmet>
+        {/* Only the title is set here, and only so the browser tab updates
+            during client-side navigation.
+
+            Emitting description, canonical, og:* and JSON-LD here as well gave
+            every indexable company hub TWO canonicals and TWO CollectionPage
+            entities at runtime, because the prerendered file already carries
+            them (AGENTS.md invariant 3.2).
+
+            The robots tag is safe: an indexable hub is prerendered without one,
+            and a hub below the research-coverage floor is not prerendered at
+            all, so this appears exactly once and only where it is wanted. */}
         <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={`https://stocksfundamentals.online/company/${tickerUpper.toLowerCase()}`} />
         {!indexable && <meta name="robots" content="noindex, follow" />}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={`https://stocksfundamentals.online/company/${tickerUpper.toLowerCase()}`} />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: title,
-            description,
-            url: `https://stocksfundamentals.online/company/${tickerUpper.toLowerCase()}`,
-            inLanguage: 'en-IN',
-            about: { '@type': 'Corporation', tickerSymbol: tickerUpper },
-            mainEntity: {
-              '@type': 'ItemList',
-              numberOfItems: research.length + mentions.length,
-              itemListElement: [...research, ...mentions].slice(0, 20).map((a, i) => ({
-                '@type': 'ListItem',
-                position: i + 1,
-                url: `https://stocksfundamentals.online/analysis/${a.slug}`,
-                name: a.title,
-              })),
-            },
-          })}
-        </script>
       </Helmet>
       <div className="mx-auto max-w-4xl">
       <Link

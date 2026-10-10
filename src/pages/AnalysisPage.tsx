@@ -10,6 +10,7 @@ import { fetchAnalyses, fetchAnalysisContent } from '../services/analysisService
 import LoadingSpinner from '../components/Common/LoadingSpinner';
 import { ANALYSES } from '../data/analyses.generated';
 import { tickerTokens, companyHubPath } from '../utils/tickers';
+import { tagPath } from '../utils/tags';
 import AudioSummary from '../components/Analysis/AudioSummary';
 
 function estimateReadTime(text: string): number {
@@ -225,14 +226,20 @@ export default function AnalysisPage() {
           {analysis.summary}
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
+          {/* Tags link to their topic page. The page exists for every tag, but
+              only the ones clearing MIN_TAG_ARTICLES are indexable, so a link
+              here is a crawl path rather than a promise of a rich page. */}
           {analysis.tags.map((tag) => (
-            <span
+            <Link
               key={tag}
-              className="rounded-full px-2.5 py-1 text-xs font-semibold"
+              to={tagPath(tag)}
+              className="rounded-full px-2.5 py-1 text-xs font-semibold no-underline"
               style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)' }}
+              onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; }}
+              onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
             >
               {tag}
-            </span>
+            </Link>
           ))}
         </div>
       </header>

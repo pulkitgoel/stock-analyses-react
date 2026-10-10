@@ -420,17 +420,43 @@ per-article disclaimer all shipped. A live deep dive now exposes 7 internal
 Still open: a related-analyses block keyed on shared ticker then shared tags, and a
 table of contents on long articles.
 
-### 7.5 Crawlable archive, category and tag URLs — still open, now the top build item
+### 7.5 Crawlable archive, category and tag URLs — DONE 2026-10-10
 
-Measured on the live site 2026-10-10: the homepage exposes **9 of 254** articles, the
-rest sitting behind a JavaScript "load more", and the sitemap contains **0** tag or
-archive routes. 245 articles are reachable only through the sitemap.
+Measured 2026-10-10: the homepage exposed **9 of 254** articles, the rest sitting
+behind a JavaScript "load more", and the sitemap contained **0** tag or archive
+routes. 245 articles were reachable only through the sitemap.
 
-This matters more now than when it was written. Before 7.1 a hub page would have been
-another empty shell; now that bodies prerender, a `/tag/{tag}` or `/analyses/page/N`
-page carries real crawlable content and real link equity. Roughly 25 tag routes and 28
-archive routes. They must be added to `generate-sitemap.js`, prerendered by
-`generate-og-files.py`, and routed in `docs/nginx-seo.conf` the same way `/company/` is.
+Now built, and the reason it was worth doing after 7.1 is that these pages carry
+real prerendered content rather than being empty shells:
+
+- **`/analyses/page/N`** — 29 pages of 9 articles, newest first, with a full
+  numbered pager. Every article is now one crawlable hop from the footer link, and
+  each page links every other page. `/analyses` 301s to page 1.
+- **`/tag/{tag}`** — 26 pages. Gated at **`MIN_TAG_ARTICLES = 12`**: there are 335
+  distinct tags and 307 of them fall below the floor, so they render for a reader
+  with `noindex, follow` but never enter the sitemap. Same reasoning as 3.7, and the
+  same medicine — a page per tag would have been the 625-hub mistake again.
+- Sitemap is now **469 URLs** (was 414): 254 analysis + 155 company + 26 tag +
+  29 archive + 5 static.
+
+Three copies of the rules must stay in sync, as with the ticker rule in 3.6:
+`src/utils/tags.ts` (`MIN_TAG_ARTICLES`, `tagSlug`), `scripts/generate-sitemap.js`
+(same two), and `scripts/generate-og-files.py` (`MIN_TAG_ARTICLES`, `tag_slug`).
+`ARCHIVE_PAGE_SIZE`/`PAGE_SIZE` (9) is duplicated in the same three places plus
+`ITEMS_PER_PAGE` in `AnalysisGrid.tsx`.
+
+nginx routes both with longest-prefix `^~` blocks. `^~ /analyses/page/` is a longer
+prefix than `^~ /analyses/`, so it wins there while `/analyses/{slug}.md` keeps
+serving raw markdown with its own content type. **Every new route needs its own
+location block** — the catch-all is `try_files $uri =404`.
+
+**Also fixed here: company hubs emitted duplicate crawler tags.** CompanyPage.tsx
+re-emitted description, canonical, `og:*` and a second `CollectionPage` JSON-LD on
+top of the prerendered ones, so every indexable hub carried **two canonicals and two
+CollectionPage entities** at runtime. That is invariant 3.2, and it was measured in
+the DOM, not assumed. The component now sets only `<title>` plus the conditional
+robots tag, matching AnalysisPage.
+
 
 ### 7.6 Remaining items
 
