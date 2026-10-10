@@ -392,7 +392,7 @@ What the baseline says, and it should steer the next round of work:
 Still missing: **no analytics tag of any kind.** Search Console covers search only, so
 nothing is known about behaviour after the click.
 
-### 7.3b Legacy static .html URLs 301 into a 404 — NOT YET APPLIED
+### 7.3b Legacy static .html URLs 301 into a 404 — DONE 2026-10-10
 
 The old static site's rule rewrites `/<name>.html` to `/analysis/<name>`. That is right
 for articles and wrong for the five static pages, which have no `/analysis/` twin:
@@ -405,11 +405,28 @@ for articles and wrong for the five static pages, which have no `/analysis/` twi
 ```
 
 `/about.html` is still indexed and took **the only organic click in the 92-day
-baseline**. That click lands on a 404 today.
+baseline**. That click landed on a 404.
 
-The four exact-match redirects are written in `docs/nginx-seo.conf`; they need applying
-to the live config. Article `.html` URLs are correct already and must keep working
-(`/nalco-down-root-cause-jun16.html` resolves to a live page).
+The four exact-match redirects are now live in the site config, ahead of the generic
+regex rule. Verified: each `/name.html` 301s to its `/name` and that page returns 200;
+article `.html` URLs still resolve (`/nalco-down-root-cause-jun16.html` → 200); and
+`/index.html` still 301s to `/`.
+
+**Related cleanup — do not put nginx backups in `sites-enabled/`.** `nginx.conf`
+includes `sites-enabled/*`, so a backup written there is loaded as a second server
+block for the same names and reported as `conflicting server name` on every test and
+reload. It is also a silent-failure trap: the glob is alphabetical, so a backup named
+`stocksfundamentals.online-old` sorts *before* the real file and nginx keeps serving
+the stale config while you edit the live one. Backups now live in
+`/etc/nginx/backups/`.
+
+**Related fix — the SPA fallback no longer bounces a reader to the homepage.** The
+`/company/` block used `try_files $uri.html /index.html;`, and because the final
+argument is a URI, nginx internally redirected it into `location = /index.html`, which
+301s to `/`. Every one of the ~484 below-threshold hubs therefore redirected instead of
+rendering — the opposite of what 3.7 requires. Ending the directive with `=404` makes
+`/index.html` a *file* candidate, so the shell is served with a 200. Measured after:
+thin hub 200, thin tag page 200, generic 404 still 404.
 
 ### 7.4 Internal linking — largely DONE 2026-10-09
 
