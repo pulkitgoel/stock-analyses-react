@@ -351,32 +351,96 @@ The live config is a real file, not a symlink. The catch-all `location /` is
 `try_files $uri =404`, which means **every new route needs its own location block**
 before it will be reachable — this applies directly to section 7.5.
 
-### 7.3 Verify Search Console — needs a human
+### 7.3 Search Console — verified; read the baseline before optimising
 
-The `YOUR_VERIFICATION_CODE` placeholder has been removed from `index.html`, but the
-domain is still unverified. There is also no analytics tag anywhere. Until both exist
-there is no index-coverage data, no query data, and no way to measure whether any of
-this work helped.
+**Correction to an earlier version of this file: the domain was never unverified.**
+A DNS TXT record (`google-site-verification=vNe2G5shsI5EKqYlfucAdnfBR0jVv67UKJgG_lcW2os`)
+has been in place throughout, on a Domain property. The `YOUR_VERIFICATION_CODE` meta
+tag was cosmetic and removing it changed nothing. The gap was that nobody had read the
+data, not that it was missing.
 
-### 7.4 Internal linking
+**Baseline exported 2026-10-10, covering the 92 days to 2026-10-06.** This is a clean
+pre-change picture: everything in 7.1, 7.2 and 7.4 went live on 2026-10-09.
 
-An 8,338-word deep dive exposes five internal links, all of them footer links. Only 1 of
-250 markdown files contains an internal link, and no `Related` component exists. Add a
-related-analyses block keyed on shared ticker then shared tags, link article tickers to
-their hubs, and add breadcrumbs plus a table of contents on long articles.
+| Metric | Value |
+|---|---|
+| Impressions | 620 |
+| Clicks | **1** |
+| CTR | 0.16% |
+| Manual actions | none |
+| Sitemap | 414 URLs discovered, Success |
 
-### 7.5 Crawlable archive, category and tag URLs
+What the baseline says, and it should steer the next round of work:
 
-The homepage renders nine cards behind a JavaScript "load more", with no paginated
-archive and no tag routes, so 241 of 250 articles are reachable only through the
-sitemap. A sitemap says a URL exists; internal links say it matters.
+- **Ranking is not the bottleneck; click-through is.** Weekly average position moved
+  50.0 (w/c Aug 26) to 6.2 (w/c Sep 30). `cg-power-deep-dive-jun18` holds position 7.5
+  on 141 impressions with **zero** clicks; `leap-india` 6.8 with zero; `esds-software`
+  4.6 with zero. Pages reach the first page and convert nothing.
+- The likely cause was fixed on 2026-10-09 and is **not yet measured**: 246 of 250
+  titles were truncated in the SERP, descriptions were cut mid-word, and no `og:image`
+  existed. Re-export Performance around 2026-11-07 and compare CTR at unchanged
+  positions. That comparison is the experiment; do not stack more changes on top of it
+  without recording what shipped when.
+- **The India/US drift is now evidenced, not theoretical.** United States 270
+  impressions against India 126. Desktop 597 against mobile 22, while the stated
+  audience is Indian retail investors, who are overwhelmingly mobile.
+- **Policy Pulse is not earning its volume.** 199 of 254 articles, and exactly one
+  appears in the top 15 pages (24 impressions). Deep dives take essentially all of it.
+- **Deindexing the thin company hubs cost nothing.** All company pages together drew 19
+  impressions across 92 days.
+
+Still missing: **no analytics tag of any kind.** Search Console covers search only, so
+nothing is known about behaviour after the click.
+
+### 7.3b Legacy static .html URLs 301 into a 404 — NOT YET APPLIED
+
+The old static site's rule rewrites `/<name>.html` to `/analysis/<name>`. That is right
+for articles and wrong for the five static pages, which have no `/analysis/` twin:
+
+```
+/about.html      -> 301 -> /analysis/about      -> 404
+/contact.html    -> 301 -> /analysis/contact    -> 404
+/disclaimer.html -> 301 -> /analysis/disclaimer -> 404
+/privacy.html    -> 301 -> /analysis/privacy    -> 404
+```
+
+`/about.html` is still indexed and took **the only organic click in the 92-day
+baseline**. That click lands on a 404 today.
+
+The four exact-match redirects are written in `docs/nginx-seo.conf`; they need applying
+to the live config. Article `.html` URLs are correct already and must keep working
+(`/nalco-down-root-cause-jun16.html` resolves to a live page).
+
+### 7.4 Internal linking — largely DONE 2026-10-09
+
+Ticker links to company hubs (capped at `TICKER_LINK_LIMIT`), breadcrumbs and a
+per-article disclaimer all shipped. A live deep dive now exposes 7 internal
+`/analysis/` and `/company/` links, against 0 before.
+
+Still open: a related-analyses block keyed on shared ticker then shared tags, and a
+table of contents on long articles.
+
+### 7.5 Crawlable archive, category and tag URLs — still open, now the top build item
+
+Measured on the live site 2026-10-10: the homepage exposes **9 of 254** articles, the
+rest sitting behind a JavaScript "load more", and the sitemap contains **0** tag or
+archive routes. 245 articles are reachable only through the sitemap.
+
+This matters more now than when it was written. Before 7.1 a hub page would have been
+another empty shell; now that bodies prerender, a `/tag/{tag}` or `/analyses/page/N`
+page carries real crawlable content and real link equity. Roughly 25 tag routes and 28
+archive routes. They must be added to `generate-sitemap.js`, prerendered by
+`generate-og-files.py`, and routed in `docs/nginx-seo.conf` the same way `/company/` is.
 
 ### 7.6 Remaining items
 
 - Trust layer: a 600-900 word disclaimer, a 400-600 word `/about` with methodology, and
   a disclaimer line in every article (only 70 of 250 have one).
 - Link the sources already named in prose: 226 articles name a source, 10 link to one.
-- Fix CLS (0.21-0.33 desktop, ~0.63 mobile; the shifting node is `<footer>`).
+- ~~Fix CLS.~~ **Resolved by 7.1.** Measured on the live article 2026-10-10: CLS
+  **0.0443**, against 0.289 before the body prerender. Prerendering removed the
+  reflow, so no separate fix is needed. Confirm against CrUX field data in Search
+  Console (Experience, Core Web Vitals) rather than trusting this lab figure.
 - ~~Fix the 292-character unbreakable ticker string and make the data tables readable
   on mobile.~~ **Done 2026-10-10.** Each table scrolls in its own `.table-scroll` box
   (a react-markdown `table` override in `AnalysisPage.tsx`) with an edge fade and a
@@ -384,10 +448,13 @@ sitemap. A sitemap says a URL exists; internal links say it matters.
   not reintroduce `overflow-wrap: anywhere` on table cells — it lets a column collapse
   to one character and renders labels as "Opera ting profit". Do not scroll
   `.article-body` instead: that drags the prose sideways and hides the cut-off.
-- Ship `llms.txt`, `llms-full.txt` and an RSS feed — **after** 7.2, because until
-  unmatched paths 404 a new file is indistinguishable from a missing one.
-- Route-level code splitting; the single bundle is 286 KB gzip and includes the full
-  markdown pipeline on every route.
+- ~~Ship `llms.txt`, `llms-full.txt` and an RSS feed.~~ **Done 2026-10-09.** All three
+  verified live and served as `text/plain` / `text/xml`, generated by
+  `scripts/generate-discovery-files.py`.
+- Route-level code splitting; the single bundle is **334 KB gzip** in one chunk and
+  includes the full markdown pipeline on every route. Lower priority than it looks:
+  with bodies prerendered, content paints before hydration, so this is now an INP and
+  hydration-cost item rather than an LCP one. Live LCP measured 3,488 ms.
 - Surface `/watchlist`: 21 entries with `priceAtAnalysis` rendered against live quotes is
   a falsifiable public track record, and nothing links to it.
 
