@@ -392,7 +392,7 @@ What the baseline says, and it should steer the next round of work:
 Still missing: **no analytics tag of any kind.** Search Console covers search only, so
 nothing is known about behaviour after the click.
 
-### 7.3b Legacy static .html URLs 301 into a 404 — NOT YET APPLIED
+### 7.3b Legacy static .html URLs 301 into a 404 — DONE 2026-10-10
 
 The old static site's rule rewrites `/<name>.html` to `/analysis/<name>`. That is right
 for articles and wrong for the five static pages, which have no `/analysis/` twin:
@@ -405,20 +405,56 @@ for articles and wrong for the five static pages, which have no `/analysis/` twi
 ```
 
 `/about.html` is still indexed and took **the only organic click in the 92-day
-baseline**. That click lands on a 404 today.
+baseline**. That click landed on a 404.
 
-The four exact-match redirects are written in `docs/nginx-seo.conf`; they need applying
-to the live config. Article `.html` URLs are correct already and must keep working
-(`/nalco-down-root-cause-jun16.html` resolves to a live page).
+The four exact-match redirects are now live in the site config, ahead of the generic
+regex rule. Verified: each `/name.html` 301s to its `/name` and that page returns 200;
+article `.html` URLs still resolve (`/nalco-down-root-cause-jun16.html` → 200); and
+`/index.html` still 301s to `/`.
 
-### 7.4 Internal linking — largely DONE 2026-10-09
+**Related cleanup — do not put nginx backups in `sites-enabled/`.** `nginx.conf`
+includes `sites-enabled/*`, so a backup written there is loaded as a second server
+block for the same names and reported as `conflicting server name` on every test and
+reload. It is also a silent-failure trap: the glob is alphabetical, so a backup named
+`stocksfundamentals.online-old` sorts *before* the real file and nginx keeps serving
+the stale config while you edit the live one. Backups now live in
+`/etc/nginx/backups/`.
 
-Ticker links to company hubs (capped at `TICKER_LINK_LIMIT`), breadcrumbs and a
-per-article disclaimer all shipped. A live deep dive now exposes 7 internal
-`/analysis/` and `/company/` links, against 0 before.
+**Related fix — the SPA fallback no longer bounces a reader to the homepage.** The
+`/company/` block used `try_files $uri.html /index.html;`, and because the final
+argument is a URI, nginx internally redirected it into `location = /index.html`, which
+301s to `/`. Every one of the ~484 below-threshold hubs therefore redirected instead of
+rendering — the opposite of what 3.7 requires. Ending the directive with `=404` makes
+`/index.html` a *file* candidate, so the shell is served with a 200. Measured after:
+thin hub 200, thin tag page 200, generic 404 still 404.
 
-Still open: a related-analyses block keyed on shared ticker then shared tags, and a
-table of contents on long articles.
+### 7.4 Internal linking — DONE 2026-10-10
+
+Ticker links to company hubs (capped at `TICKER_LINK_LIMIT`), breadcrumbs, a
+related-analyses block keyed on shared tickers then shared tags, and a per-article
+disclaimer all shipped. A live deep dive now exposes 7 internal `/analysis/` and
+`/company/` links, against 0 before.
+
+**Table of contents added 2026-10-10**, shown on the 74 longest articles (at least 10
+`##`/`###` headings). That floor is measured, not guessed: Policy Pulse notes run a
+median of 6 headings against 33 for deep dives, so a floor of 4 would have put a
+contents panel on 93% of the library. It is a collapsed `<details>`, so it costs no
+vertical space while the section anchors stay in the prerendered HTML.
+
+`rehype-slug` is not installed, so `src/utils/toc.ts` assigns ids in ONE pass over the
+markdown, injects an `<a id>` inside each heading, and returns the contents list from
+that same pass — the hrefs and the ids cannot drift apart. Each alternative was
+measured and rejected:
+
+- Rewriting a heading to raw `<h2 id>` renders `**bold**` literally in the 20 articles
+  that use inline formatting in a heading.
+- A rehype plugin assigning ids needs render-order state, and StrictMode's double
+  render would desynchronise ids from the list.
+- 23 articles (9%) repeat a heading, so the document-order counter adds `-2` suffixes
+  rather than emitting colliding ids.
+
+Verified against the real pipeline before shipping (react-markdown + remark-gfm +
+rehype-raw): the inline anchor survives inside a heading and bold/code still render.
 
 ### 7.5 Crawlable archive, category and tag URLs — DONE 2026-10-10
 
