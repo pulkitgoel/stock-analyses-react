@@ -84,6 +84,17 @@ export default function AnalysisPage() {
       .finally(() => setLoading(false));
   }, [slug]);
 
+  // Heading anchors plus the contents list, derived in one pass so their ids
+  // cannot drift apart (AGENTS 7.4). Runs on the fetched text, so the raw
+  // /analyses/{slug}.md keeps its clean headings.
+  //
+  // This MUST stay above the early returns below. Placed after them, the hook is
+  // skipped on the loading render and then called on the loaded one, which is
+  // React error #310 - "rendered more hooks than during the previous render".
+  // That is not a warning: the component throws, #root stays empty, and the
+  // prerender reports it only as a 30-second timeout on every article route.
+  const { markdown: body, toc } = useMemo(() => prepareHeadings(content), [content]);
+
   if (loading) return <LoadingSpinner />;
 
   if (error || !analysis) {
@@ -113,11 +124,6 @@ export default function AnalysisPage() {
   }
 
   const readTime = estimateReadTime(content);
-
-  // Heading anchors plus the contents list, both derived from one pass so their
-  // ids cannot drift apart (AGENTS 7.4). Runs on the fetched text, so the raw
-  // /analyses/{slug}.md keeps its clean headings.
-  const { markdown: body, toc } = useMemo(() => prepareHeadings(content), [content]);
   const tickers = tickerTokens(analysis.ticker);
   const related = relatedAnalyses(analysis, ANALYSES);
   const primaryHub = tickers.length === 1 ? tickers[0] : null;
