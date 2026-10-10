@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -12,6 +12,8 @@ import { ANALYSES } from '../data/analyses.generated';
 import { tickerTokens, companyHubPath } from '../utils/tickers';
 import { tagPath } from '../utils/tags';
 import AudioSummary from '../components/Analysis/AudioSummary';
+import TableOfContents from '../components/Analysis/TableOfContents';
+import { prepareHeadings } from '../utils/toc';
 
 function estimateReadTime(text: string): number {
   const words = text.split(/\s+/).length;
@@ -111,6 +113,11 @@ export default function AnalysisPage() {
   }
 
   const readTime = estimateReadTime(content);
+
+  // Heading anchors plus the contents list, both derived from one pass so their
+  // ids cannot drift apart (AGENTS 7.4). Runs on the fetched text, so the raw
+  // /analyses/{slug}.md keeps its clean headings.
+  const { markdown: body, toc } = useMemo(() => prepareHeadings(content), [content]);
   const tickers = tickerTokens(analysis.ticker);
   const related = relatedAnalyses(analysis, ANALYSES);
   const primaryHub = tickers.length === 1 ? tickers[0] : null;
@@ -252,6 +259,10 @@ export default function AnalysisPage() {
       <AudioSummary slug={analysis.slug} />
 
       <div className="page-panel surface-card animate-in animate-in-delay-1 overflow-hidden rounded-[2rem]">
+        {/* Contents for long articles (AGENTS 7.4). Collapsed by default so it
+            costs no vertical space, but rendered unconditionally - the section
+            anchors and their links are in the prerendered HTML either way. */}
+        <TableOfContents entries={toc} />
         <div className="article-body">
           {/* An h1 in the markdown body is rendered as an h2.
               106 of 250 articles open with their own `# Title`, which produced a
@@ -279,7 +290,7 @@ export default function AnalysisPage() {
               ),
             }}
           >
-            {content}
+            {body}
           </ReactMarkdown>
         </div>
       </div>

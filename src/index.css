@@ -318,6 +318,63 @@ button { touch-action: manipulation; }
   .article-body .table-scroll tr:nth-child(even) td:first-child { background: var(--bg-elevated); }
 }
 
+/* ── Article table of contents (AGENTS 7.4) ──
+   Collapsed by default so a long article is not pushed down by its own index.
+   It is a plain <details>, so the section anchors and their links are present in
+   the prerendered HTML whether or not a reader opens it. */
+.toc-panel {
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface-soft);
+  overflow: hidden;
+}
+.toc-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.toc-summary::-webkit-details-marker { display: none; }
+.toc-summary:hover { color: var(--accent); }
+.toc-count {
+  margin-left: auto;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.toc-list {
+  margin: 0;
+  padding: 0 1.1rem 1.05rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.toc-list a {
+  display: block;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--border);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+.toc-list a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc-list li[data-level='3'] a { padding-left: 1.6rem; font-size: 0.79rem; }
+
 /* ── Button System ── */
 .btn {
     display: inline-flex;
