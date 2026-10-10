@@ -82,10 +82,21 @@ function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
 
 interface AnalysisGridProps {
   analyses: Analysis[];
+  /**
+   * How many cards to render before the "Show more" button. Defaults to
+   * ITEMS_PER_PAGE.
+   *
+   * Pages that exist to be crawled must pass the full count. A crawler never
+   * clicks "Show more", so whatever is hidden behind it has no link. That is
+   * what made /tag/defence advertise "60 articles tagged" while exposing nine
+   * crawlable links. The homepage keeps the default on purpose: the archive is
+   * the crawl path, so the homepage does not need to list everything.
+   */
+  initialCount?: number;
 }
 
-export default function AnalysisGrid({ analyses }: AnalysisGridProps) {
-  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+export default function AnalysisGrid({ analyses, initialCount = ITEMS_PER_PAGE }: AnalysisGridProps) {
+  const [visibleCount, setVisibleCount] = useState(initialCount);
   
   const visibleAnalyses = analyses.slice(0, visibleCount);
   const hasMore = visibleCount < analyses.length;

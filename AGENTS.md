@@ -439,6 +439,21 @@ real prerendered content rather than being empty shells:
 - Sitemap is now **469 URLs** (was 414): 254 analysis + 155 company + 26 tag +
   29 archive + 5 static.
 
+**Follow-up fixed 2026-10-10: a page built to be crawled must render every item.**
+`AnalysisGrid` caps at `ITEMS_PER_PAGE` (9) behind a "Show more" button, and the tag
+pages were passing it the full match list. The result shipped: `/tag/defence`
+advertised "60 articles tagged" while exposing **9** crawlable links — the other 51
+sat behind a button no crawler clicks, which is the exact problem 7.5 exists to solve.
+
+`AnalysisGrid` now takes an optional `initialCount`, and `TagPage` passes
+`matching.length`. `/tag/defence` renders all 60 with no button. The homepage keeps
+the default 9 on purpose: the archive is the crawl path, so the homepage does not need
+to list everything. The archive pages were already correct, because their page size was
+deliberately matched to `ITEMS_PER_PAGE`.
+
+**Invariant:** any page whose job is to be crawled must pass `initialCount`. If you add
+another listing page, check the rendered link count against the count the page claims.
+
 Three copies of the rules must stay in sync, as with the ticker rule in 3.6:
 `src/utils/tags.ts` (`MIN_TAG_ARTICLES`, `tagSlug`), `scripts/generate-sitemap.js`
 (same two), and `scripts/generate-og-files.py` (`MIN_TAG_ARTICLES`, `tag_slug`).

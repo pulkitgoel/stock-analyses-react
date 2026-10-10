@@ -206,8 +206,14 @@ export default function WatchlistPage() {
   return (
     <>
       <Helmet>
-        {/* Private page: reachable only by direct URL, never indexed or linked. */}
-        <meta name="robots" content="noindex,nofollow" />
+        {/* Linked from the footer, but deliberately not indexed.
+            The page renders live quotes, and scripts/prerender-body.py skips it
+            (SKIP_PREFIXES) precisely so build-time prices are never baked into
+            static HTML. A crawler would therefore only ever see an empty shell,
+            so there is nothing here worth indexing.
+            `follow`, not `nofollow`: the page links to the analysis behind each
+            call, and those links should still be crawled. */}
+        <meta name="robots" content="noindex, follow" />
         <title>Watchlist — StocksFundamentals</title>
       </Helmet>
 

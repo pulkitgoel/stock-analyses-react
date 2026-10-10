@@ -9,6 +9,9 @@ const navGroups = [
       // Site-wide crawl entry point to the archive (AGENTS.md 7.5). The
       // homepage links nine articles; this is how a crawler reaches the rest.
       { to: '/analyses/page/1', label: 'All analysis' },
+      // The only falsifiable public record on the site: 21 calls with the price
+      // at the time of each, tracked against live quotes. Nothing linked to it.
+      { to: '/watchlist', label: 'Watchlist' },
       { to: '/about', label: 'About' },
       { to: '/contact', label: 'Contact' },
     ],

@@ -98,7 +98,9 @@ export default function TagPage() {
           </div>
         ) : (
           <section className="mt-6">
-            <AnalysisGrid analyses={matching} />
+            {/* Every match, not the default nine: this page exists to be
+                crawled, and a crawler never clicks "Show more". */}
+            <AnalysisGrid analyses={matching} initialCount={matching.length} />
           </section>
         )}
 
