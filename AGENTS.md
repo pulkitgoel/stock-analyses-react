@@ -56,6 +56,11 @@ the `#root` markup, so the step-5 head survives byte-for-byte. Without it a
 non-executing crawler reads about seven words per page. It needs Playwright plus
 a Chrome binary, and takes roughly seven minutes over 409 routes.
 
+It looks for a system Chrome in the usual Linux, macOS and Windows locations,
+honours a `CHROME_PATH` override, and otherwise falls back to the Chromium that
+`playwright install` downloaded. The server keeps using `/usr/bin/google-chrome`,
+which is still matched first.
+
 **Deploy with `./deploy.sh` on the server.** Do not run `npm run build` against
 the live root: `vite build` empties its output directory, so an in-place build
 404s every article page for the length of step 6. `deploy.sh` builds into
@@ -372,8 +377,13 @@ sitemap. A sitemap says a URL exists; internal links say it matters.
   a disclaimer line in every article (only 70 of 250 have one).
 - Link the sources already named in prose: 226 articles name a source, 10 link to one.
 - Fix CLS (0.21-0.33 desktop, ~0.63 mobile; the shifting node is `<footer>`).
-- Fix the 292-character unbreakable ticker string that widens analysis pages to 2,468px,
-  and make the data tables readable on mobile.
+- ~~Fix the 292-character unbreakable ticker string and make the data tables readable
+  on mobile.~~ **Done 2026-10-10.** Each table scrolls in its own `.table-scroll` box
+  (a react-markdown `table` override in `AnalysisPage.tsx`) with an edge fade and a
+  sticky first column; cells cap at 24ch and the label column has an 11ch floor. Do
+  not reintroduce `overflow-wrap: anywhere` on table cells — it lets a column collapse
+  to one character and renders labels as "Opera ting profit". Do not scroll
+  `.article-body` instead: that drags the prose sideways and hides the cut-off.
 - Ship `llms.txt`, `llms-full.txt` and an RSS feed — **after** 7.2, because until
   unmatched paths 404 a new file is indistinguishable from a missing one.
 - Route-level code splitting; the single bundle is 286 KB gzip and includes the full
