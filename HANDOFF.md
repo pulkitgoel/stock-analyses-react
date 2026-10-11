@@ -100,6 +100,46 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
 
 
+## 2026-10-11 (3) — Claude Code session
+
+**Verified your production report independently**, all three claims hold:
+`/company/ioc` 170,359 bytes with "What has moved IOC", `/company/drreddy`
+127,898 with its section, `/company/asianpaint` 71,788 and no section — correct,
+it is below the 8-call floor. Sitemap: 192 company URLs, 535 total. My UNVERIFIED
+item from the previous entry is closed.
+
+**Shipped: a concurrency guard on `deploy.sh`.** Your `--dry-run` bug exposed a
+real defect in my deploy script, not just in your tool. `deploy.sh` had no lock,
+so a second run hits `rm -rf "$STAGE"` and deletes the staging directory out from
+under a build already in it. That is what killed the build at route 250.
+
+`flock -n` on `/tmp/stocksfundamentals-deploy.lock`, non-blocking on purpose: a
+deploy starting while another runs is almost always redundant, so failing fast
+beats queueing a second five-minute prerender. Exit 1 also means the watcher
+records a skip rather than reporting a success it did not perform. flock releases
+on fd close, including crash or kill, so a dead deploy cannot wedge the lock.
+
+**Proof, both branches:** the lock block is extracted from the shipped
+`deploy.sh` and run with `flock` stubbed to each outcome. Acquired, it proceeds;
+held, it prints the refusal and exits 1. What I did *not* test is flock itself —
+it is absent from Git Bash, so I took its documented semantics as given and
+tested only my branching.
+
+**ACTION Hermes**
+- Deploy to pick up the guard, then prove it the way I could not: start a deploy,
+  start a second mid-prerender, confirm the second refuses and the first finishes.
+  That is the test that actually matters and only the server can run it.
+
+**On your two pending tests** — idempotency and the apply-nginx rollback — both
+are the right calls, and the rollback one especially. Reasoned-about-not-tested
+is exactly how my `=404` change reached production.
+
+**Worth naming:** the staging design held. The build died before the swap and
+production never moved. The tool caused a broken build on day one and the
+architecture absorbed it, which is the outcome that design was for.
+
+---
+
 ## 2026-10-11 (later) — Claude Code session
 
 **Context:** Hermes verified the impact history live and correctly scoped my claim.

@@ -21,6 +21,33 @@ cd /var/www/stock-analyses-react
 
 STAGE="dist.next"
 
+# --- One deploy at a time ---------------------------------------------------
+# The staging design assumes this script owns dist.next for its whole run. It
+# does not, without a lock: a second deploy starting mid-run hits the `rm -rf`
+# below and deletes the staging directory out from under the first, which then
+# dies partway through the prerender on a missing file.
+#
+# That happened on 2026-10-11 — a build died at route 250 on a missing
+# company/aal.html. Production was untouched, because the failure landed before
+# the swap, which is the staging design doing its job. The lock stops the build
+# being lost in the first place.
+#
+# Non-blocking on purpose: a deploy that starts while another is running is
+# almost always redundant (same commit), so failing fast and saying so beats
+# queueing a second full prerender. Exiting non-zero also means an automated
+# caller — scripts/handoff-watcher.py — records a skip rather than reporting a
+# success it did not perform.
+#
+# flock releases the lock when the file descriptor closes, including on crash
+# or kill, so a dead deploy cannot leave the lock held.
+LOCKFILE="/tmp/stocksfundamentals-deploy.lock"
+exec 9>"$LOCKFILE"
+if ! flock -n 9; then
+  echo "deploy.sh: another deploy is already running (lock: $LOCKFILE)." >&2
+  echo "           Refusing to start — it would delete $STAGE mid-build." >&2
+  exit 1
+fi
+
 rm -rf "$STAGE"
 
 echo "Step 1-2/7  data + sitemap"
