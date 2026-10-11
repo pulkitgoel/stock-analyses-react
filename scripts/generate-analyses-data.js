@@ -10,12 +10,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { classifyMarket } from './lib/market.js';
+import { parseImpactRows, groupByTicker } from './lib/impact.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
 const ANALYSES_DIR = path.join(REPO, 'public', 'analyses');
 const TS_OUT = path.join(REPO, 'src', 'data', 'analyses.generated.ts');
 const JSON_OUT = path.join(REPO, 'public', 'analyses.json');
+const IMPACT_OUT = path.join(REPO, 'public', 'impact.json');
 const WATCHLIST_OUT = path.join(REPO, 'public', 'watchlist.json');
 
 // Derive a Yahoo Finance symbol from a ticker string. US listings keep the bare
@@ -73,19 +75,26 @@ const files = fs
   .sort();
 
 const analyses = [];
+const impactRows = [];
 const watchlist = [];
 const problems = [];
 
 for (const file of files) {
   const slug = file.replace(/\.md$/, '');
   const raw = fs.readFileSync(path.join(ANALYSES_DIR, file), 'utf8');
-  const { data } = parseFrontmatter(raw);
+  const { data, body } = parseFrontmatter(raw);
 
   const errors = validate(slug, data);
   if (errors.length) {
     problems.push(`  • ${file}:\n      - ${errors.join('\n      - ')}`);
     continue;
   }
+
+  // The stock-impact table, if this article carries one. See lib/impact.js:
+  // this is the dated event-to-ticker mapping that nothing else publishes.
+  impactRows.push(...parseImpactRows(body, {
+    slug, title: data.title, date: data.date,
+  }));
 
   analyses.push({
     title: data.title,
@@ -155,7 +164,16 @@ fs.writeFileSync(TS_OUT, ts, 'utf8');
 fs.writeFileSync(JSON_OUT, JSON.stringify({ analyses }, null, 2) + '\n', 'utf8');
 fs.writeFileSync(WATCHLIST_OUT, JSON.stringify({ watchlist }, null, 2) + '\n', 'utf8');
 
+// Impact history, grouped by ticker. A separate file rather than another entry
+// in analyses.generated.ts, because only company pages need it and it is large.
+const impactByTicker = groupByTicker(impactRows);
+fs.writeFileSync(IMPACT_OUT, JSON.stringify(impactByTicker) + '\n', 'utf8');
+
+const impactTickers = Object.keys(impactByTicker).length;
+const impactKept = Object.values(impactByTicker).reduce((n, rows) => n + rows.length, 0);
+
 console.log(`✓ generate-analyses-data: wrote ${analyses.length} analyses, ${watchlist.length} watchlist entries`);
 console.log(`    → ${path.relative(REPO, TS_OUT)}`);
 console.log(`    → ${path.relative(REPO, JSON_OUT)}`);
 console.log(`    → ${path.relative(REPO, WATCHLIST_OUT)}`);
+console.log(`    → ${path.relative(REPO, IMPACT_OUT)} (${impactKept} impact calls across ${impactTickers} tickers, from ${impactRows.length} parsed)`);

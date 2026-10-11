@@ -11,6 +11,10 @@ a human still has to do.
 > React hooks bug was found and fixed twice within an hour. Both were pure waste and
 > both were avoidable.
 
+**Writing or retitling an article? Read [`CONTENT-PLAYBOOK.md`](CONTENT-PLAYBOOK.md)
+first.** It owns titles, headings, keyword targeting and the impact-table format. This
+file owns the build, the routing and the invariants.
+
 Full findings and the prioritised backlog live in `stocksfundamentals.online-audit/`
 (`FULL-AUDIT-REPORT.md` and `ACTION-PLAN.md`). That audit scored the site 43/100 on
 2026-10-09, before the fixes described below.

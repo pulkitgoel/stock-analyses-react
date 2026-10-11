@@ -24,6 +24,29 @@ export interface Analysis {
   market?: MarketKey;
 }
 
+/**
+ * One dated impact call: an event, the stock it touched, which way, why, and
+ * how strongly the author believed it.
+ *
+ * Extracted at build time from the impact tables in the Policy Pulse editions
+ * (scripts/lib/impact.js). This is the site's most distinctive asset — a causal
+ * history of what moved a stock, which neither a fundamentals database nor a
+ * newsfeed publishes — and it previously existed only inside article prose.
+ */
+export interface ImpactCall {
+  ticker: string;
+  /** Article the call came from. */
+  slug: string;
+  title: string;
+  date: string;
+  direction: 'positive' | 'negative' | 'watch';
+  /** Author's confidence, 1-5. Null on older articles that predate the scores. */
+  confidence: number | null;
+  /** True when the call was a deduction, flagged in the source as inferred. */
+  inferred: boolean;
+  reason: string;
+}
+
 // A curated watchlist entry, derived from an analysis whose frontmatter opts in
 // with `watchlist: true` and provides the technical levels below.
 export interface WatchlistEntry {

@@ -4,6 +4,9 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowUpRight, Building2 } from 'lucide-react';
 import { Analysis } from '../types/analysis';
 import { fetchAnalyses } from '../services/analysisService';
+import { fetchImpactFor } from '../services/impactService';
+import ImpactHistory from '../components/Company/ImpactHistory';
+import { ImpactCall } from '../types/analysis';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
 import { tickerTokens } from '../utils/tickers';
 
@@ -68,12 +71,17 @@ function AnalysisCardLink({ analysis: a }: { analysis: Analysis }) {
 export default function CompanyPage() {
   const { ticker } = useParams<{ ticker: string }>();
   const [analyses, setAnalyses] = useState<Analysis[]>([]);
+  const [impact, setImpact] = useState<ImpactCall[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!ticker) return;
     setLoading(true);
     const wanted = ticker.toUpperCase();
+    // Impact history loads alongside the articles. It is an enhancement, so a
+    // failure resolves to [] rather than blocking the page.
+    fetchImpactFor(wanted).then(setImpact).catch(() => setImpact([]));
+
     fetchAnalyses()
       .then((all) => {
         const matching = all.filter(
@@ -155,6 +163,11 @@ export default function CompanyPage() {
           </div>
         </div>
       </header>
+
+      {/* Placed above the article list on purpose: the dated causal history is
+          what this page offers that a fundamentals site or a newsfeed does not,
+          so it should not sit below a stack of article cards. */}
+      <ImpactHistory ticker={tickerUpper} calls={impact} />
 
       {research.length === 0 && mentions.length === 0 ? (
         <div className="surface-plain mt-5 rounded-2xl px-5 py-14 text-center text-sm" style={{ color: 'var(--text-dim)' }}>
