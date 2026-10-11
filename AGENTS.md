@@ -1,8 +1,15 @@
 # Agent instructions — stocksfundamentals.online
 
-This repository is maintained by an automated agent (Hermes). Read this file before
-changing anything. It records the invariants that recent SEO work established, how to
-build and verify, and which tasks a human still has to do.
+This repository is maintained by an automated agent (Hermes) **and** by interactive
+Claude Code sessions. Read this file before changing anything. It records the
+invariants that recent SEO work established, how to build and verify, and which tasks
+a human still has to do.
+
+> **More than one agent works here. Read [section 9, Coordination](#9-coordination--who-owns-what),
+> and claim a backlog item before you start it.** On 2026-10-10 the tag/archive feature
+> was built twice in parallel and one full implementation was thrown away, and the same
+> React hooks bug was found and fixed twice within an hour. Both were pure waste and
+> both were avoidable.
 
 Full findings and the prioritised backlog live in `stocksfundamentals.online-audit/`
 (`FULL-AUDIT-REPORT.md` and `ACTION-PLAN.md`). That audit scored the site 43/100 on
@@ -641,3 +648,88 @@ Already removed as provably dead: `src/components/Home/HeroSection.tsx` (never
 imported), `src/assets/react.svg` and `src/assets/vite.svg` (Vite scaffolding),
 `public/company-index.json` (generated, read by nothing), and two `__pycache__`
 directories.
+
+---
+
+## 9. Coordination — who owns what
+
+More than one agent works in this repository: the automated agent (Hermes) and
+interactive Claude Code sessions driven by the owner. They have collided.
+
+**What went wrong on 2026-10-10,** so the cost is concrete rather than theoretical:
+
+- The crawlable tag and archive feature (7.5) was designed and built **twice, in
+  parallel**, by two agents who each pushed a complete implementation. One was deleted
+  unmerged. Roughly a day of work produced nothing.
+- The React hooks bug in the article table of contents was found, diagnosed and fixed
+  **twice within the hour**, producing a merge conflict between two correct fixes of
+  the same line.
+
+Neither was a disagreement. Both agents were right. They simply could not see each
+other working.
+
+### 9.1 Claim an item before you start
+
+The backlog in section 7 is the claim board. Before writing any code for an item:
+
+1. `git fetch origin && git log --oneline main..origin/main` — see what landed while
+   you were away.
+2. Edit that item's heading in section 7 to read
+   `### 7.x <title> — IN PROGRESS, <who>, <date>`.
+3. **Commit and push that one-line change on its own, before doing the work.**
+
+A claim costs one small push and saves a day. If the heading already says IN PROGRESS
+and the date is today, pick a different item — do not start a second implementation on
+the assumption that yours will be better.
+
+Clear the claim in the same commit that finishes the work, changing the heading to
+`— DONE <date>`.
+
+### 9.2 Default split of responsibility
+
+Unless the owner says otherwise:
+
+| | Owns |
+|---|---|
+| **Hermes (automated)** | Publishing articles, the build and deploy pipeline, server and nginx changes, and implementing backlog items in section 7. |
+| **Interactive session** | Auditing, verification against the live site, diagnosing regressions, and the invariants in section 3. Implements a backlog item only when it has claimed it per 9.1. |
+
+The division that worked: one agent builds, the other verifies. The 60-vs-9 tag page
+defect and the hooks crash were both caught by review rather than by the build, and
+neither would have been caught by the agent that wrote the code.
+
+### 9.3 Push small, push often
+
+Long-running uncommitted work is what makes collisions expensive. A feature that lands
+in four pushes conflicts in one file; the same feature landing in one push conflicts in
+eleven. Push each coherent step as it passes its own verification.
+
+### 9.4 Verify against the live site, not just the build
+
+`https://stocksfundamentals.online` is public and can be checked directly at any time.
+Do it — a green build says almost nothing about what visitors and crawlers receive.
+
+Checks that earned their place:
+
+```bash
+# What a crawler actually receives (should be well over 20000 on an article)
+curl -s -A Googlebot https://stocksfundamentals.online/analysis/<slug> | wc -c
+
+# Does a listing page link everything it claims to?
+#   /tag/defence advertised "60 articles tagged" and shipped 9 links.
+curl -s -A Googlebot https://stocksfundamentals.online/tag/<slug> \
+  | grep -o 'href="/analysis/[^"]*"' | sort -u | wc -l
+
+# Is a page that returns 200 actually that page, or the SPA shell?
+curl -sI https://stocksfundamentals.online/<path> | grep -i content-type
+```
+
+Three things to hold onto:
+
+- **A 200 is not proof a file exists.** Before the nginx fix every path returned 200.
+  Verify by body and `Content-Type`, never by status code alone.
+- **`tsc` and `vite build` both pass on a component that renders nothing.** That is
+  exactly how the hooks crash reached `main`. Open the page (invariant 3.12).
+- **Check whether a change is deployed before judging it.** A defect found in the repo
+  may not be live, and a fix that is committed may not be. `curl` the live URL and
+  compare against what the build produces locally.

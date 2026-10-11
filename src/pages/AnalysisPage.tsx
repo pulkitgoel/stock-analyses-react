@@ -85,16 +85,21 @@ export default function AnalysisPage() {
       .finally(() => setLoading(false));
   }, [slug]);
 
-  // Heading anchors plus the contents list, both derived from one pass so their
-  // ids cannot drift apart (AGENTS 7.4). Runs on the fetched text, so the raw
+  // Heading anchors plus the contents list, derived in one pass so their ids
+  // cannot drift apart (AGENTS 7.4). Runs on the fetched text, so the raw
   // /analyses/{slug}.md keeps its clean headings.
   //
-  // This must stay ABOVE the early returns. React requires the same hooks in
-  // the same order on every render, and below them this useMemo ran only after
-  // the content had loaded — six hooks on the loading render, seven on the
-  // next, which threw "Rendered more hooks than during the previous render"
-  // and blanked every article page. `content` is '' until the fetch resolves
-  // and prepareHeadings('') is a no-op, so running it early costs nothing.
+  // This MUST stay above the early returns below. Placed after them the hook is
+  // skipped on the loading render and then called on the loaded one: six hooks
+  // then seven, which is React error #310, "rendered more hooks than during the
+  // previous render". That is not a warning. The component throws, #root stays
+  // empty, and the failure is quiet in every place you would normally look —
+  // tsc passes, the build passes, and the prerender reports it only as a
+  // 30-second timeout on every article route. Opening the page is what catches
+  // it. See invariant 3.12.
+  //
+  // `content` is '' until the fetch resolves and prepareHeadings('') is a
+  // no-op, so running it on every render costs nothing.
   const { markdown: body, toc } = useMemo(() => prepareHeadings(content), [content]);
 
   if (loading) return <LoadingSpinner />;
