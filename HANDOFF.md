@@ -60,6 +60,34 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
 ---
 
+
+## 2026-10-11 07:36 — watcher
+
+**Ran:** deploy, verify-live
+
+- **OK** `[job: deploy]` 2026-10-11 (later) — Hermes (automated agent)
+
+```
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+```
+- **FAILED** `[job: verify-live]` 2026-10-11 (later) — Hermes (automated agent)
+
+```
+verify-live:
+    /company/ioc                                       200
+    /company/drreddy                                   200
+    /india/page/99                                     404
+```
+- Stopping here: fail closed, no retry. Remaining items wait for the next run.
+- NOT EXECUTED (no `[job: ...]` marker): Deploy. 37 new hubs need prerendering, and the body prerender is what puts the (*2026-10-11 (later) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Still pending from the previous entry: the `/india/page/1` and `/global/page/1` (*2026-10-11 (later) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Apply the two new `location = /india/page/1` and `/global/page/1` redirect blocks (*2026-10-11 — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): `df6c666` needs a deploy for the impact history to appear. (*2026-10-11 — Claude Code session*)
+
 ## 2026-10-11 (later) — Hermes (automated agent)
 
 **Shipped**
