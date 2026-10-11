@@ -41,6 +41,29 @@ const NEWS_TAG = 'policy-pulse';
 // analysed.
 const MIN_RESEARCH_ARTICLES = 1;
 
+// ...OR this many dated impact calls. A hub earns a page either by carrying real
+// research or by carrying a substantial causal history, because the history is
+// itself the content: a ticker with 20 dated calls is a more useful page than
+// one with a single deep dive.
+//
+// Without this, 163 of 258 tickers with an impact history served crawlers the
+// bare SPA shell — 1,081 of 2,288 dated calls invisible, including IOC, BPCL,
+// HINDPETRO and SBIN at 20 calls each. The gate predates the impact history.
+//
+// 8 rather than 3: at 3 this would add 159 hubs and drift back toward the thin
+// pages invariant 3.7 exists to prevent. At 8 it adds ~37, averaging 13 calls.
+// Keep in sync with generate-og-files.py and src/pages/CompanyPage.tsx.
+const MIN_IMPACT_CALLS = 8;
+
+const impactIndex = (() => {
+  try {
+    return JSON.parse(fs.readFileSync(path.resolve(PUBLIC_DIR, 'impact.json'), 'utf8'));
+  } catch {
+    return {};
+  }
+})();
+const impactCount = (ticker) => (impactIndex[ticker.toLowerCase()] ?? []).length;
+
 // A /tag/{tag} page is listed only when at least this many articles carry the
 // tag. There are 335 distinct tags across 254 articles; without a floor the
 // other ~300 would be near-empty documents competing with the articles for
@@ -134,7 +157,7 @@ for (const a of analyses) {
 const includedCompanies = [];
 const excludedCompanies = [];
 for (const [ticker, stat] of companyStats) {
-  if (stat.research >= MIN_RESEARCH_ARTICLES) includedCompanies.push({ ticker, stat });
+  if (stat.research >= MIN_RESEARCH_ARTICLES || impactCount(ticker) >= MIN_IMPACT_CALLS) includedCompanies.push({ ticker, stat });
   else excludedCompanies.push(ticker);
 }
 includedCompanies.sort((a, b) => a.ticker.localeCompare(b.ticker));
@@ -215,7 +238,7 @@ const withLastmod = allRoutes.filter((r) => r.lastmod).length;
 console.log(`Generated sitemap.xml with ${allRoutes.length} URLs (${withLastmod} with lastmod)`);
 console.log(`  static:   ${staticRouteEntries.length}`);
 console.log(`  analysis: ${analysisRoutes.length}`);
-console.log(`  company:  ${companyRoutes.length} listed, ${excludedCompanies.length} excluded (< ${MIN_RESEARCH_ARTICLES} research article)`);
+console.log(`  company:  ${companyRoutes.length} listed, ${excludedCompanies.length} excluded (< ${MIN_RESEARCH_ARTICLES} research article and < ${MIN_IMPACT_CALLS} impact calls)`);
 console.log(`  tag:      ${tagRoutes.length} listed, ${tagStats.size - tagRoutes.length} excluded (< ${MIN_TAG_ARTICLES} articles)`);
 console.log(`  archive:  ${archiveRoutes.length} pages of ${ARCHIVE_PAGE_SIZE}`);
 console.log(`  sections: ${sectionRoutes.length} pages (india ${sectionCounts.india}, global ${sectionCounts.global} articles)`);

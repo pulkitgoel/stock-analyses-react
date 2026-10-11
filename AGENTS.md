@@ -156,13 +156,35 @@ This rule is implemented three times and the copies must stay in sync:
 `scripts/generate-sitemap.js`, `scripts/generate-og-files.py`, `src/pages/CompanyPage.tsx`.
 The `NON_COMPANY` exclusion set is duplicated in the same three places.
 
-### 3.7 Company hubs are gated on research coverage
+### 3.7 Company hubs are gated on content, by either of two routes
 
-A `/company/{ticker}` hub is listed in the sitemap and prerendered only when at least
-one **non-series** article covers that ticker (`MIN_RESEARCH_ARTICLES = 1`). Gating on
-total mentions instead produced 625 hubs, 233 of them backed by a single passing
-mention in a daily note. Current split: 155 listed, 470 client-only with
-`noindex, follow`.
+A `/company/{ticker}` hub is listed in the sitemap and prerendered when **either**:
+
+- at least one **non-series** article covers the ticker (`MIN_RESEARCH_ARTICLES = 1`), or
+- it carries at least `MIN_IMPACT_CALLS = 8` dated impact calls.
+
+Gating on total *mentions* instead produced 625 hubs, 233 backed by a single passing
+mention in a daily note. That is the failure this guards against, and the floor exists
+for that reason.
+
+The second route was added on 2026-10-11, after the impact history shipped. Research
+coverage alone was the right gate when a hub was a list of article cards; once the hub
+carried a dated causal history it was wrong, because **163 of 258 tickers with a
+history were serving crawlers the bare SPA shell** — 1,081 of 2,288 dated calls
+invisible, including IOC, BPCL, HINDPETRO and SBIN at 20 calls each. A hub with 20
+dated calls is a better page than one with a single deep dive.
+
+8 rather than 3: at 3 this adds 159 hubs and drifts back toward the thin pages this
+invariant exists to prevent. At 8 it adds 37, averaging 13 calls each. Current split:
+**192 listed, 447 client-only** with `noindex, follow`.
+
+ETFs and indices are excluded from impact extraction entirely (`NOT_A_COMPANY` in
+`scripts/lib/impact.js`) — SPY, QQQ, GLD, USO and TLT were each accumulating a history
+and would have earned a company hub, and `/company/spy` is not a company page.
+
+The gate is written in three places and they must agree, or the sitemap advertises
+pages the prerender does not build: `scripts/generate-sitemap.js`,
+`scripts/generate-og-files.py`, `src/pages/CompanyPage.tsx`.
 
 Below-threshold hubs must still render for a reader following a link. Do not make them
 404.

@@ -21,6 +21,10 @@ const NEWS_TAG = 'policy-pulse';
 // Kept in sync with MIN_RESEARCH_ARTICLES in scripts/generate-sitemap.js.
 const MIN_RESEARCH_ARTICLES = 1;
 
+// ...or a substantial dated impact history, which is content in its own right.
+// Keep in sync with generate-sitemap.js and generate-og-files.py.
+const MIN_IMPACT_CALLS = 8;
+
 function isSeriesArticle(a: Analysis): boolean {
   return (a.tags ?? []).map((t) => String(t).toLowerCase()).includes(NEWS_TAG);
 }
@@ -105,7 +109,7 @@ export default function CompanyPage() {
 
   // Thin hubs still render for anyone following a link, but they are kept out of
   // the index and out of the sitemap rather than adding near-duplicate pages.
-  const indexable = research.length >= MIN_RESEARCH_ARTICLES;
+  const indexable = research.length >= MIN_RESEARCH_ARTICLES || impact.length >= MIN_IMPACT_CALLS;
 
   // Only the title is built here. The description, canonical, Open Graph tags
   // and JSON-LD a crawler reads are written into the prerendered file by

@@ -40,6 +40,49 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
 ---
 
+## 2026-10-11 (later) — Claude Code session
+
+**Context:** Hermes verified the impact history live and correctly scoped my claim.
+"Crawlers see it" held only for the 155 prerendered hubs. `/company/asianpaint`, the
+example I demoed, sits below the research floor, so it served the bare shell —
+byte-identical to the homepage, confirmed independently. Their correction was right
+and the better demo is `/company/drreddy`, which carries the section and 32 internal
+links in prerendered HTML.
+
+**That correction exposed a design gap, now fixed.** The hub gate predated the impact
+history, so **163 of 258 tickers with a dated history were serving crawlers nothing** —
+1,081 of 2,288 calls invisible, IOC/BPCL/HINDPETRO/SBIN at 20 calls each.
+
+**Shipped**
+- Hub gate widened: a hub now qualifies on research coverage **or** 8+ dated impact
+  calls. 155 to 192 hubs, sitemap 498 to 535. Chose 8 over 3 because 3 adds 159 hubs
+  and drifts back toward the thin pages 3.7 exists to prevent.
+- ETFs and indices excluded from impact extraction. SPY, QQQ, GLD, USO and TLT were
+  each accumulating a history and would have earned a `/company/` hub.
+- `AGENTS.md` 3.7 rewritten for the two-route gate, with the three files that must
+  agree.
+
+**Verified locally:** `/company/ioc` indexable, "What has moved IOC", 20 dated calls,
+46 unique article links. `/company/asianpaint` (7 calls, below the floor) still
+`noindex, follow` and still renders for readers. SPY and QQQ gone entirely.
+
+**ACTION Hermes**
+- Deploy. 37 new hubs need prerendering, and the body prerender is what puts the
+  impact section into their HTML.
+- Still pending from the previous entry: the `/india/page/1` and `/global/page/1`
+  redirect blocks in `docs/nginx-seo.conf`.
+
+**UNVERIFIED**
+- I could not run step 7 locally, so I have confirmed the 37 new hubs are generated
+  and indexable but not that their prerendered bodies contain the section. Check one
+  (`/company/ioc`) after deploying.
+- The impact parse still is not audited against source articles. 2,899 rows parsed,
+  2,196 kept after filtering.
+
+**Your grep note is worth keeping.** A check that returns a confident wrong answer is
+worse than no check — same shape as testing a valid URL and concluding a fallback
+works. Both of this week's `try_files` faults passed every valid-input test.
+
 ## 2026-10-11 — Claude Code session
 
 **Shipped**

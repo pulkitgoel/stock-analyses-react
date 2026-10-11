@@ -51,6 +51,11 @@ DESCRIPTION_LIMIT = 155
 # everything else is evergreen analysis.
 NEWS_TAGS = {"policy-pulse"}
 
+# A company hub earns a prerendered page either by carrying real research or by
+# carrying a substantial dated impact history — the history is itself content.
+# Keep in sync with generate-sitemap.js and src/pages/CompanyPage.tsx.
+MIN_IMPACT_CALLS = 8
+
 # Index and exchange tokens that appear inside ticker strings but are not
 # companies. Kept in sync with the same list in generate-sitemap.js.
 NON_COMPANY = {
@@ -672,7 +677,21 @@ def main():
     # client-side with `noindex, follow`, so giving them crawler metadata would
     # defeat the point.
     stats = company_stats(analyses)
-    indexable = sorted(t for t, s in stats.items() if s["research"] >= 1)
+    # Hubs with no research but a substantial impact history are prerendered
+    # too: 163 of 258 tickers with a history were serving crawlers a bare shell.
+    try:
+        with open(os.path.join(PUBLIC_DIR, "impact.json"), encoding="utf-8") as f:
+            impact_index = json.load(f)
+    except (OSError, ValueError):
+        impact_index = {}
+
+    def impact_count(ticker):
+        return len(impact_index.get(ticker.lower(), []))
+
+    indexable = sorted(
+        t for t, s in stats.items()
+        if s["research"] >= 1 or impact_count(t) >= MIN_IMPACT_CALLS
+    )
     company_dir = os.path.join(DIST_DIR, "company")
     n_company = 0
     for ticker in indexable:

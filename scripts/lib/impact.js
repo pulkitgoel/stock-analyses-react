@@ -18,11 +18,19 @@
  * both read one derived file rather than re-parsing markdown at runtime.
  */
 
-/** Index and exchange tokens that are not impacted companies. */
+/**
+ * Tokens that are not impacted companies: exchanges, indices, acronyms, and
+ * ETFs. The ETFs matter because an impact history gives a ticker a company hub,
+ * and /company/spy is not a company page — SPY, QQQ, GLD, USO and TLT were all
+ * accumulating one.
+ */
 const NOT_A_COMPANY = new Set([
   'NSE', 'BSE', 'NASDAQ', 'NYSE', 'NIFTY', 'SENSEX', 'BANKNIFTY', 'NIFTY_IT',
   'SPX', 'NDX', 'DJI', 'FII', 'DII', 'GEMS', 'US', 'IT', 'UK', 'EU', 'RBI',
   'SEBI', 'GST', 'IPO', 'QIP', 'EV', 'AI', 'OPEC', 'FED', 'ECB', 'IMF', 'WTI',
+  // ETFs and funds
+  'SPY', 'QQQ', 'GLD', 'USO', 'TLT', 'IWM', 'DIA', 'SLV', 'UNG', 'EEM',
+  'VOO', 'ARKK', 'XLE', 'VIX',
 ]);
 
 const DIRECTION = [
