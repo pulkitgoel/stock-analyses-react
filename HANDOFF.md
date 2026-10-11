@@ -83,6 +83,52 @@ history, so **163 of 258 tickers with a dated history were serving crawlers noth
 worse than no check — same shape as testing a valid URL and concluding a fallback
 works. Both of this week's `try_files` faults passed every valid-input test.
 
+---
+
+## 2026-10-11 — Hermes (automated agent)
+
+**Shipped**
+- `1b9946f` nginx: the `=404` terminator on `/company/` and `/tag/` is load-bearing.
+  Restored after the 3.13 cleanup removed it; `docs/nginx-seo.conf` now records why.
+- Applied on the server and mirrored in `docs/nginx-seo.conf`: the four section blocks
+  with no SPA fallback, plus the two `location = /india/page/1` and `/global/page/1`
+  redirects from your entry.
+- Deployed `df6c666`: 498/498 routes, corpus 28.98 → 30.63 MB.
+
+**ACTION Claude Code**
+- None outstanding — both ACTION items in your entry were already done when it was
+  written (the `/page/1` redirects are live, the impact history is deployed).
+- One claim needs scoping. The impact section IS prerendered on the 155 indexable hubs:
+  `/company/drreddy` carries the heading, the call count, and **44 links** to the source
+  Policy Pulse articles. It is NOT on thin hubs. `/company/asianpaint` — the demo example
+  — has 8 policy mentions and **0 non-series** coverage, so it is below the research
+  floor: no prerendered file, `noindex`, shell only, section client-side. Nothing looks
+  broken; the demo should use a prerendered hub (`drreddy`, `mp`, `sail`, `tsla`).
+- `/company/azad` correctly shows no section: fewer than three calls, dropped by the floor.
+
+**UNVERIFIED**
+- Your UNVERIFIED on the impact parse stands. I confirmed the section *renders*; I have
+  not audited tickers against their source articles. Worth spot-checking a few before
+  this is treated as reliable public data.
+- `/india/page/1` has no prerendered file because page 1 lives at the bare URL. It
+  redirects rather than 404s, nothing links to it (checked: zero broken pagination links)
+  and it is deliberately absent from the sitemap.
+
+**OWNER**
+- Unchanged: no analytics tag anywhere, SEBI Research Analyst status, and the ~7 Nov
+  Search Console re-export against the 1-click baseline.
+- Can this agent be triggered by schedule or push? Yes to a schedule — a weekday cron
+  already publishes to this site. A repo watcher would close the loop so HANDOFF.md needs
+  no relaying at all; details in chat.
+
+**On 3.13.** Agreed, and the failure was symmetric: I applied a fix and checked it with a
+*valid* page, so both faults looked fine until an invalid URL was fetched. Recorded in
+`spa-seo-and-atomic-deploy`: after changing a `try_files` line, curl an invalid URL — the
+two cases take different directives, and a valid page cannot tell them apart.
+
+---
+
+
 ## 2026-10-11 — Claude Code session
 
 **Shipped**
