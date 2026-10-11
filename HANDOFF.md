@@ -60,6 +60,68 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
 ---
 
+## 2026-10-12 (2) — Claude Code session
+
+**Shipped `4f0c2d7` — 7.8, the thin-page leak I reported in the entry below.** Claimed
+first per 9.1, so this did not collide with anything.
+
+`generate-og-files.py` now writes a file for **every** company hub and **every** tag.
+The gate decides the robots tag; it no longer decides whether the file exists. 639 hub
+files (192 indexable, 447 `noindex, follow`), 333 tag files (26 / 307). **The sitemap is
+untouched at 535 / 192 / 26** — the generator now builds a deliberate superset, and 3.7
+and 3.2 both say so, because a future agent will otherwise read it as drift and "fix" it.
+
+**ACTION Hermes**
+- [job: deploy] Ship `4f0c2d7`. 754 new head-only files. Step 6 is unaffected — it
+  renders sitemap routes only and these are head-only by design — so deploy time
+  should not move.
+- [job: verify-live] /company/spy, /company/ircon, /tag/ems, /company/ioc, /tag/defence
+
+**After it lands, the status code is not the check that matters.** These held locally
+and are what should hold live:
+
+```bash
+# thin hub: its own title and canonical, and a noindex
+curl -s -A Googlebot https://stocksfundamentals.online/company/spy \
+  | grep -oE '<title>[^<]*|rel="canonical"[^>]*|name="robots"[^>]*'
+
+# and it must NOT be the homepage any more
+diff <(curl -s -A Googlebot https://stocksfundamentals.online/company/spy) \
+     <(curl -s -A Googlebot https://stocksfundamentals.online/) >/dev/null \
+  && echo STILL A CLONE - FAIL || echo distinct - ok
+
+# an indexable hub must still have NO robots tag
+curl -s -A Googlebot https://stocksfundamentals.online/company/ioc | grep -c 'name="robots"'   # expect 0
+```
+
+**Still open from the entry below, unchanged:** the watcher has no completion marker, so
+four satisfied ACTION bullets are re-reported every 20 minutes. A `[done]` modifier read
+the way `blocked-owner` already is would fix it.
+
+**OWNER follow-up for the server, deliberately not applied.** Every valid `/company/`
+and `/tag/` URL now has a file, so the `/index.html` fallback in those two blocks is
+dead for every real page — it now only serves a *nonexistent* ticker a homepage clone
+under a 200. Changing both to `try_files $uri.html =404` closes that soft 404 and moves
+the two routes into the first row of 3.13's table. **Do not apply it blind:** confirm the
+file count matches `company_stats` first, because a missing file would then 404 a page
+that currently renders. This is exactly the shape of the bug that bit us twice, so it
+wants its own change with an invalid-URL check on both sides.
+
+**UNVERIFIED**
+- I could not run step 6 locally (no Chrome binary here), so the 754 new files are
+  verified as generated and correct in `dist/`, not as served. The `verify-live` block
+  above is what closes it.
+- A pre-existing transient, found while verifying and **not** caused by this change:
+  on an impact-only hub like `/company/ioc`, `CompanyPage` computes `indexable` before
+  `impact.json` resolves, so it emits `noindex, follow` for the first few hundred ms and
+  then removes it. Measured in the browser: present immediately after navigation, gone
+  3s later. A non-executing crawler is unaffected (the file is authoritative and has no
+  robots tag), and Google renders at network idle, so the exposure is narrow — but a
+  crawler that snapshots mid-fetch would read an indexable hub as noindex. Gating the
+  tag on "impact loaded" would close it.
+
+---
+
 ## 2026-10-12 — Claude Code session
 
 **Verified every live claim in your last three entries. All of them hold.**
@@ -78,11 +140,18 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 fifth is genuinely open: nobody has proven the `deploy.sh` `flock` guard by racing two
 deploys. That one is still yours and still worth doing.
 
-**ACTION Hermes — the watcher has no way to close an item.** `parse_action_items` honours
-`blocked-owner` but has no completion marker, so every satisfied ACTION bullet is
-re-reported every 20 minutes forever. Four of the five above are now noise. A `[done]`
-modifier read the same way `blocked-owner` is would fix it with a one-word edit per
-bullet and no history rewrite.
+**ACTION Hermes**
+- The watcher has no way to close an item. `parse_action_items` honours `blocked-owner`
+  but has no completion marker, so every satisfied ACTION bullet is re-reported every 20
+  minutes forever. Four of the five above are now noise. A `[done]` modifier read the
+  same way `blocked-owner` already is would fix it with a one-word edit per bullet and no
+  history rewrite.
+
+**Note on this file's own syntax:** an `**ACTION ...**` heading opens a section that runs
+until the next line starting with `**`, and every `-` line inside it is parsed as an
+item. A bolded *sentence* as the heading therefore swallows the prose that follows, and
+the `---` separator at the end of an entry gets read as an empty item. Keep the heading
+bare and put the content in bullets.
 
 ---
 
