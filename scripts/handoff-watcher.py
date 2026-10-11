@@ -147,6 +147,7 @@ def entry_id(*parts):
 
 JOB_RE = re.compile(r"\[job:\s*([a-z-]+)\s*\]\s*(.*)", re.IGNORECASE)
 OWNER_RE = re.compile(r"\bblocked[\s:-]*owner\b", re.IGNORECASE)
+BUSY_RE = re.compile(r"another deploy is already running|would delete .*mid-build", re.IGNORECASE)
 ACTION_RE = re.compile(r"\*\*ACTION\b([^*]*)\*\*", re.IGNORECASE)
 # An ACTION section is only ours if it names us. `**ACTION Claude Code**` is the other
 # agent's queue: reading it as ours would be acting on work addressed elsewhere.
@@ -317,30 +318,74 @@ def job_apply_nginx(_arg):
 # ------------------------------------------------------------------------------ jobs
 
 def job_deploy(_arg):
-    """Staged deploy. A failure before the swap leaves the live site untouched."""
+    """Staged deploy.
+
+    A failure before the swap leaves the live site untouched. deploy.sh takes a
+    non-blocking flock and exits non-zero when another deploy holds it, so a busy lock is
+    reported as a SKIP: nothing was attempted, nothing was achieved, and the item must
+    stay pending so the next run tries again.
+    """
     ok, out = run(["./deploy.sh"], timeout=1800)
-    tail = "\n".join([l for l in out.strip().splitlines() if l.strip()][-5:])
-    return ok, tail
+    if not ok and BUSY_RE.search(out):
+        return "skip", "another deploy holds the lock; nothing attempted, will retry next run"
+    return ("ok" if ok else "fail"), deploy_summary(out)
+
+
+def deploy_summary(out):
+    """The lines that say what shipped, rather than the vite chunk-size warning."""
+    interesting = [l.strip() for l in out.splitlines()
+                   if re.search(r"prerender-body: \d+/\d+ routes|corpus \S+ ->|Deployed\.|"
+                                r"Generated \d+ |another deploy|ERROR|Traceback", l)]
+    if interesting:
+        return "\n".join(interesting[-6:])
+    return "\n".join([l for l in out.strip().splitlines() if l.strip()][-5:])
+
+
+def expected_for(path):
+    """The status the route table expects for a path, or None if it is not listed."""
+    for _label, vp, vs, ip, isx in ROUTE_EXPECTATIONS:
+        if path == vp:
+            return vs
+        if ip and path == ip:
+            return isx
+    return None
 
 
 def job_verify_live(arg):
-    paths = [p.strip() for p in re.split(r"[,\s]+", arg) if p.strip()]
-    if not paths:
+    """Fetch the given paths and compare against the EXPECTED status, not against 200.
+
+    Accepts `path` or `path=NNN`. A bare path is looked up in the route table; a path the
+    table does not know is only required to be below 400.
+
+    The first version failed any status >= 400, which reported the *correct* answer as a
+    failure whenever the job deliberately checked an invalid URL - and checking that an
+    invalid URL is not served a 200 is the entire reason the table has an invalid column.
+    """
+    specs = [s for s in re.split(r"[,\s]+", arg) if s.strip()]
+    if not specs:
         return verify_routes()
     lines, bad = [], []
-    for p in paths:
-        st = status_of(p)
-        if not isinstance(st, int) or st >= 400:
-            bad.append(p)
-        lines.append("    %-50s %s" % (p, st))
-    return not bad, "verify-live:\n" + "\n".join(lines)
+    for spec in specs:
+        path, _, want = spec.partition("=")
+        want = int(want) if want.strip().isdigit() else expected_for(path)
+        got = status_of(path)
+        if want is None:
+            ok_here = isinstance(got, int) and got < 400
+            note = "ok (< 400)" if ok_here else "FAIL (want < 400)"
+        else:
+            ok_here = got == want
+            note = "ok" if ok_here else "FAIL (want %s)" % want
+        if not ok_here:
+            bad.append((path, want, got))
+        lines.append("    %-50s %-5s %s" % (path, got, note))
+    return ("ok" if not bad else "fail"), "verify-live:\n" + "\n".join(lines)
 
 
 HANDLERS = {
     "deploy": job_deploy,
     "apply-nginx": job_apply_nginx,
     "verify-live": job_verify_live,
-    "report": lambda a: (True, "report only, nothing executed: " + a),
+    "report": lambda a: ("ok", "report only, nothing executed: " + a),
 }
 
 
@@ -454,7 +499,7 @@ def main():
             print("- (owner-blocked, would be skipped): %s" % a[:110])
         return 0
 
-    results, failed, ran = [], False, []
+    results, failed, ran, skipped_busy = [], False, [], []
     for heading, job, arg, eid in pending:
         if job not in JOBS:
             results.append("- SKIPPED, `%s` is not in the executable whitelist: %s (*%s*)"
@@ -463,14 +508,20 @@ def main():
             continue
         log("  [job: %s] from %s" % (job, heading))
         try:
-            ok, detail = HANDLERS[job](arg)
+            stat, detail = HANDLERS[job](arg)
         except Exception as exc:
-            ok, detail = False, "%s: %s" % (type(exc).__name__, exc)
+            stat, detail = "fail", "%s: %s" % (type(exc).__name__, exc)
+        glyph = {"ok": "OK", "skip": "SKIPPED", "fail": "FAILED"}.get(stat, "FAILED")
         results.append("- **%s** `[job: %s]` %s\n\n```\n%s\n```"
-                       % ("OK" if ok else "FAILED", job, heading, detail.strip()[:1800]))
-        state["actioned"].append(eid)
-        ran.append(job)
-        if not ok:
+                       % (glyph, job, heading, detail.strip()[:1800]))
+        if stat == "skip":
+            # Deliberately NOT actioned: nothing was attempted and nothing was achieved
+            # (a deploy skipped because another held the lock), so the next run retries.
+            skipped_busy.append((job, heading, detail))
+        else:
+            state["actioned"].append(eid)
+            ran.append(job)
+        if stat == "fail":
             failed = True
             results.append("- Stopping here: fail closed, no retry. Remaining items wait "
                            "for the next run.")
@@ -483,19 +534,24 @@ def main():
         lines.append("- NOT EXECUTED (no `[job: ...]` marker): %s (*%s*)" % (a[:100], h))
     for h, a in skipped_owner:
         lines.append("- SKIPPED (owner-blocked): %s (*%s*)" % (a[:100], h))
+    for job, h, d in skipped_busy:
+        lines.append("- LEFT PENDING: `%s` was not attempted (%s), so it stays queued."
+                     % (job, d[:90]))
     ok, detail = write_entry(lines, args.dry_run)
     if not ok:
         log("  WARNING: could not write the HANDOFF entry: %s" % detail)
     save_state(state)
     # stdout = the deliverable. Silence when the run did nothing, so the 20-minute
     # cadence does not post an update every time; a failure is always reported.
-    if failed or unmarked or skipped_owner or ran:
+    if failed or unmarked or skipped_owner or ran or skipped_busy:
         print("handoff-watcher: %s" % (", ".join(ran) if ran else "no executable jobs"))
         print("\n".join(results) if results else "")
         for h, a in unmarked:
             print("- NOT EXECUTED (no [job: ...] marker): %s" % a[:110])
         for h, a in skipped_owner:
             print("- SKIPPED (owner-blocked): %s" % a[:110])
+        for job, h, d in skipped_busy:
+            print("- LEFT PENDING: %s was not attempted (%s)" % (job, d[:90]))
         if not ok:
             print("WARNING: the HANDOFF entry could not be written: %s" % detail)
     return 1 if failed else 0
