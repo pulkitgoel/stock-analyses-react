@@ -253,36 +253,56 @@ def can_elevate():
 
 
 def job_apply_nginx(_arg):
-    """Reconcile the live config with the doc, gated before and after.
+    """Reconcile the live config with the doc — REPLACEMENTS ONLY, never insertions.
 
-    Conservative: a doc block is replaced or inserted, but a live block the doc does not
-    mention is never deleted - the live file also carries Certbot's TLS settings, the
-    /api/ proxy and legacy redirects the doc does not own.
+    The doc is a reference, not the literal desired state. The live file carries seven
+    deliberate deviations, recorded in its own header, and one of them is load-bearing:
+    the doc says `location ^~ /analysis/` where live has `location /analysis/`, and `^~`
+    outranks regex locations - applying it would break the legacy `/analysis/{slug}.md`
+    redirect and the retired-URL 301. A blind sync also silently drops the rationale
+    comments that live blocks carry and the doc does not.
+
+    So this refuses, with a report, whenever the doc declares a block the live config does
+    not have (structural change = a human decision), or when replacement would delete
+    comment lines the live block has. Otherwise it replaces changed blocks and runs both
+    gates.
     """
     if not can_elevate():
-        return False, "cannot elevate (sudo -n unavailable); refusing to half-apply"
+        return "fail", "cannot elevate (sudo -n unavailable); refusing to half-apply"
 
     doc_blocks = location_blocks(DOC_NGINX.read_text())
     if not doc_blocks:
-        return False, "no location blocks in %s - refusing to touch the live config" % DOC_NGINX
+        return "fail", "no location blocks in %s - refusing to touch the live config" % DOC_NGINX
     live_text = LIVE_NGINX.read_text()
     live_blocks = location_blocks(live_text)
 
-    candidate, changed, added = live_text, [], []
-    for header, block in doc_blocks.items():
-        if header in live_blocks:
-            if live_blocks[header] != block:
-                candidate = candidate.replace(live_blocks[header], block, 1)
-                changed.append(header)
-        else:
-            anchor = "    location / {\n"
-            if anchor not in candidate:
-                return False, "cannot find the catch-all to insert before"
-            candidate = candidate.replace(anchor, block + "\n" + anchor, 1)
-            added.append(header)
+    doc_only = [h for h in doc_blocks if h not in live_blocks]
+    changed = [h for h in doc_blocks if h in live_blocks and live_blocks[h] != doc_blocks[h]]
+    comment_loss = [h for h in changed
+                    if len([l for l in live_blocks[h].splitlines() if l.strip().startswith("#")])
+                    > len([l for l in doc_blocks[h].splitlines() if l.strip().startswith("#")])]
 
-    if not changed and not added:
-        return True, "live config already matches the doc; nothing to apply"
+    if doc_only or comment_loss:
+        parts = ["refusing to apply: this needs a human decision, not a sync."]
+        if doc_only:
+            parts.append("\nDoc declares %d block(s) the live config does not have. Inserting a"
+                         " second definition of a route nginx already serves is what produced"
+                         " `duplicate location` here today:" % len(doc_only))
+            parts += ["  - %s" % h for h in doc_only]
+        if comment_loss:
+            parts.append("\nReplacing these would delete rationale comments the live block"
+                         " carries and the doc does not:")
+            parts += ["  - %s" % h for h in comment_loss]
+        parts.append("\nThe live config is unchanged. Reconcile doc and live by hand, or"
+                     " restructure so nginx includes a single authoritative file.")
+        return "fail", "\n".join(parts)
+
+    if not changed:
+        return "ok", "live config already matches the doc in every block it declares"
+
+    candidate = live_text
+    for header in changed:
+        candidate = candidate.replace(live_blocks[header], doc_blocks[header], 1)
 
     NGINX_BACKUPS.mkdir(parents=True, exist_ok=True)
     backup = NGINX_BACKUPS / ("%s.bak-%s" % (LIVE_NGINX.name, time.strftime("%Y%m%d-%H%M%S")))
@@ -294,14 +314,14 @@ def job_apply_nginx(_arg):
     ok, out = run(nginx_cmd("-t"))
     if not ok:
         shutil.copy(backup, LIVE_NGINX)
-        return False, ("nginx -t rejected the candidate; restored %s, nothing served it:\n%s"
-                       % (backup.name, out.strip()[-600:]))
+        return "fail", ("nginx -t rejected the candidate; restored %s, nothing served it:\n%s"
+                        % (backup.name, out.strip()[-600:]))
 
     ok, out = run(nginx_cmd("-s", "reload"))
     if not ok:
         shutil.copy(backup, LIVE_NGINX)
         run(nginx_cmd("-s", "reload"))
-        return False, "reload failed; rolled back to %s:\n%s" % (backup.name, out.strip()[-400:])
+        return "fail", "reload failed; rolled back to %s:\n%s" % (backup.name, out.strip()[-400:])
 
     # GATE 2. Behaviour, after. Both halves of every shape.
     time.sleep(3)
@@ -309,10 +329,10 @@ def job_apply_nginx(_arg):
     if not ok:
         shutil.copy(backup, LIVE_NGINX)
         run(nginx_cmd("-s", "reload"))
-        return False, ("route verification failed; config ROLLED BACK to %s\n%s"
-                       % (backup.name, detail))
-    return True, ("applied %d changed + %d new block(s); backup %s\n%s"
-                  % (len(changed), len(added), backup.name, detail))
+        return "fail", ("route verification failed; config ROLLED BACK to %s\n%s"
+                        % (backup.name, detail))
+    return "ok", ("replaced %d block(s); backup %s\n%s"
+                  % (len(changed), backup.name, detail))
 
 
 # ------------------------------------------------------------------------------ jobs
@@ -425,7 +445,7 @@ def main():
     ap.add_argument("--verify", action="store_true", help="route table only, no queue")
     args = ap.parse_args()
 
-    print("handoff-watcher %s" % time.strftime("%Y-%m-%d %H:%M:%S"))
+    log("handoff-watcher %s" % time.strftime("%Y-%m-%d %H:%M:%S"))
     if args.verify:
         ok, detail = verify_routes()
         print(detail)
@@ -468,9 +488,20 @@ def main():
             pending.append((heading, job, arg, eid))
 
     if not pending:
+        # Constraint 6 says leave an entry every run, including an idle one, because a
+        # silent watcher is indistinguishable from a broken one. Taken literally at a
+        # 20-minute cadence that is ~72 commits a day into one file, which would make the
+        # log unreadable and bury the entries that matter. So idle runs coalesce: the
+        # first idle run of the day records it, later ones on the same day are silent.
+        # Liveness stays visible - the entry is there, and cron history shows every run.
+        today = time.strftime("%Y-%m-%d")
+        if state.get("idle_entry_date") == today:
+            log("  idle; an idle entry for %s already exists, not repeating it" % today)
+            save_state(state)
+            return 0
+        state["idle_entry_date"] = today
         lines = ["## %s — watcher" % time.strftime("%Y-%m-%d %H:%M"), "",
-                 "**Ran:** nothing executable.",
-                 "",
+                 "**Idle** — nothing executable.", "",
                  "No unactioned `[job: ...]` item in HANDOFF.md." if not unmarked and not skipped_owner
                  else "%d unmarked and %d owner-blocked item(s), listed below."
                  % (len(unmarked), len(skipped_owner))]

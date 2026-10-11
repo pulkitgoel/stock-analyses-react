@@ -122,6 +122,56 @@ verify-live:
 ## 2026-10-11 (later) — Hermes (automated agent)
 
 **Shipped**
+- Watcher hardened after its first live runs. Seven bugs, every one found by *running* it
+  rather than reading it: `nginx -t` tested the installed config instead of the candidate;
+  the block parser skipped single-line blocks; the URL helper followed redirects so a 301
+  read as 200; it read ACTION sections addressed to Claude as its own; `--dry-run`
+  executed the queue; `_, log = run(...)` rebound the logging function; and the run header
+  went to stdout, so the cron would have posted a message every 20 minutes.
+- `verify-live` now compares against the **expected** status, not against 200. The first
+  live run failed a job that had succeeded, because `/india/page/99` returning 404 - the
+  correct answer for an invalid URL - was recorded as a failure.
+- A busy deploy lock is now a SKIP, not a failure: nothing attempted, so the item stays
+  queued. The handler contract is ok/skip/fail.
+- Idle runs coalesce: one idle entry per day, then silence. Constraint 6 taken literally
+  is ~72 commits a day into one file.
+- Verified: the route gate passes all 18 checks; a second run writes no commit; idle
+  stdout is 0 bytes; and the nginx gate **rejected a bad candidate and restored the
+  backup with the live config unchanged** - measured as a byte-identical checksum.
+
+**ACTION Claude Code — the nginx doc and the live config have diverged, and one
+divergence is load-bearing**
+- `docs/nginx-seo.conf` says `location ^~ /analysis/`; live has `location /analysis/`.
+  `^~` outranks regex locations, so applying the doc would break the legacy
+  `/analysis/{slug}.md` redirect and the retired-URL 301. The doc also declares that block
+  as new, so a sync inserts a second definition and nginx dies with `duplicate location`.
+- Replacing `location ^~ /company/` and `location ^~ /tag/` would delete the rationale
+  comments the live blocks carry and the doc does not.
+- So `apply-nginx` now **refuses** structural changes and comment-losing replacements,
+  reporting why, and applies nothing. That is deliberate: the doc is a reference, not the
+  desired state. The clean fix is one authoritative file that nginx `include`s, so applying
+  becomes a copy with no insert/delete logic; that is a §7 item and a claim, not a sync.
+
+**UNVERIFIED**
+- The replacement half of `apply-nginx` is still unexercised: every run so far has been
+  refused or a no-op. Its rollback is now proven, but a successful apply is not.
+- The busy-lock SKIP path has not fired in anger either; it is code paths until a second
+  deploy actually collides.
+- The impact parse is still not audited against source articles (three entries running).
+
+**OWNER**
+- Unchanged: no analytics tag, SEBI Research Analyst status, the ~7 Nov Search Console
+  re-export.
+- The watcher's cadence (20 min) and its four-job whitelist are yours; both live in
+  `scripts/handoff-watcher.py` and cron job `58e425231c56`.
+- Idle-entry coalescing is a deliberate reading of constraint 6, not an oversight: the
+  entry exists, but once per day rather than once per run.
+
+
+
+## 2026-10-11 (later) — Hermes (automated agent) — initial watcher build
+
+**Shipped**
 - `scripts/handoff-watcher.py` — the queue runner. Bounded: only `deploy`, `apply-nginx`,
   `verify-live` and `report` are executable, and only from an ACTION section naming this
   agent with an explicit `[job: ...]` marker. Anything else is recorded and reported.
