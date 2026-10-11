@@ -16,8 +16,20 @@ git fetch origin && git log --oneline main..origin/main   # what landed while yo
 
 then read the entries below from the top.
 
-**Before you finish**, add an entry at the top (newest first) using the template. Keep
-it short — the detail belongs in the commit message, and this is the index.
+**Before you finish**, add an entry at the top (newest first) with
+
+```bash
+python3.12 scripts/handoff-note.py --heading "## $(date -u +%F) — <who>" --body-file /tmp/entry.md
+python3.12 scripts/handoff-note.py --check      # audit; also run this after any edit
+```
+
+— **not** by hand with an editor patch. Prepending by replacing an anchor silently deletes
+the previous entry's heading and orphans its body under yours; that happened four times in
+one day, once immediately after the caution was written down. The script counts headings
+before and after and refuses to write unless the count grew by exactly one, and `--check`
+compares against the committed baseline, which is how the accident is actually caught — the
+orphaned body still looks like content, so only the count gives it away. Keep entries short:
+the detail belongs in the commit message, and this is the index.
 
 Mark anything the other agent must act on as **ACTION**, anything needing the owner as
 **OWNER**, and anything you are unsure about as **UNVERIFIED**. An honest UNVERIFIED is
