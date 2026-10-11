@@ -181,6 +181,35 @@ A backslash before an apostrophe or quote is never intentional in prose. One pub
 batch leaked `SEBI\'s` into four articles. `clean_text()` in `generate-og-files.py`
 strips these defensively, but fix the source markdown as well when you see one.
 
+### 3.13 `try_files ... /index.html =404` never 404s
+
+`try_files` serves the first path that **exists** and only applies a trailing
+`=404` when none did. `/index.html` always exists, so in
+
+```nginx
+try_files $uri.html /index.html =404;   # the =404 can never run
+```
+
+the fallback always wins. Written on a paginated route this produces a soft 404:
+`/india/page/99` returned **200** with the SPA shell, and the router clamped the page
+number to the last real page, so a nonexistent URL served duplicate content under a
+success status. That is precisely what 7.2 removed from the rest of the site, quietly
+reintroduced on three route prefixes.
+
+The rule:
+
+- **Routes where every valid URL has a prerendered file** (`/analysis/`,
+  `/analyses/page/`, `/india/page/`, `/global/page/`, `/india`, `/global`) take
+  `try_files $uri.html =404;` with **no** SPA fallback. A missing file means the URL
+  does not exist.
+- **Routes with legitimate client-only pages** (`/company/`, `/tag/`) keep
+  `try_files $uri.html /index.html;` and carry **no** trailing `=404`, because it would
+  be dead code reading as a guard. Those pages render with `noindex, follow`.
+
+`/analysis/` is the one exception that looks like the broken pattern but is not:
+`try_files $uri $uri.html $uri/index.html =404` ends in a **per-slug** path
+(`/analysis/foo/index.html`), not the root `index.html`, so the `=404` is reachable.
+
 ### 3.12 Every hook goes above the early returns
 
 The page components here fetch data and bail out early:
@@ -704,7 +733,23 @@ Long-running uncommitted work is what makes collisions expensive. A feature that
 in four pushes conflicts in one file; the same feature landing in one push conflicts in
 eleven. Push each coherent step as it passes its own verification.
 
-### 9.4 Verify against the live site, not just the build
+### 9.4 A build and its routing ship together
+
+7.7 shipped its build without its nginx blocks, so 29 section URLs sat in the sitemap
+while every one of them 404'd. The split between "someone writes the config in
+`docs/nginx-seo.conf`" and "someone applies it on the server" is where that fell
+through, and it has now happened twice — the legacy `.html` redirects sat unapplied for
+a day in the same way.
+
+If a change needs a server-side rule, it is not done when the build is green:
+
+- Say so in the commit message, explicitly, under its own line.
+- Treat `docs/nginx-seo.conf` as a queue of pending server work, not documentation of
+  the live state. It has drifted from the live config in both directions.
+- After deploying, `curl` one URL of each new route shape, including one that should
+  **fail**. A route that 200s when it should 404 passes every "does it load" check.
+
+### 9.5 Verify against the live site, not just the build
 
 `https://stocksfundamentals.online` is public and can be checked directly at any time.
 Do it — a green build says almost nothing about what visitors and crawlers receive.
