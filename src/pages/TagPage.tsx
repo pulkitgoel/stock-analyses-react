@@ -55,9 +55,12 @@ export default function TagPage() {
             scripts/generate-og-files.py writes for this route. Emitting them
             here as well produced two of every tag - AGENTS.md invariant 3.2.
 
-            The robots tag is safe to set here: an indexable tag page is
-            prerendered without one, and a thin one is not prerendered at all,
-            so it only ever appears once and only where it is wanted. */}
+            The robots tag stays, and since 2026-10-12 a thin tag page carries
+            it twice: every tag is now prerendered, a below-floor one with
+            `noindex, follow` already in its head (7.8). Two identical noindex
+            directives agree with each other, so this is not the conflicting
+            duplication 3.2 guards against. See the longer note in
+            CompanyPage.tsx. */}
         <title>{title}</title>
         {!indexable && <meta name="robots" content="noindex, follow" />}
       </Helmet>

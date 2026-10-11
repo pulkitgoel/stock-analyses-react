@@ -205,15 +205,23 @@ def build_jsonld(slug, title, description, analysis, image_url):
 
 
 def render_shell(title, description, canonical, jsonld, assets, image_url,
-                 og_type="article", extra_head=""):
+                 og_type="article", extra_head="", robots=None):
     """Render the prerendered HTML shell shared by every page type.
 
     The body stays an empty #root: this prerender supplies head metadata only.
     Prerendering the article body as well is the remaining high-value change,
     and it is what would make the content visible to AI crawlers.
+
+    `robots` emits a robots meta. Only the below-threshold company hubs and tag
+    pages pass one (`noindex, follow`); an indexable page omits it, so the
+    absence of the tag is itself the signal.
     """
     t_attr = html.escape(title, quote=True)
     d_attr = html.escape(description, quote=True)
+
+    if robots:
+        extra_head = ('\n    <meta name="robots" content="%s" />'
+                      % html.escape(robots, quote=True)) + extra_head
 
     image_tags = ""
     if image_url:
@@ -360,11 +368,14 @@ def company_stats(analyses):
     return stats
 
 
-def generate_company_html(ticker, stat, assets, image_url):
+def generate_company_html(ticker, stat, assets, image_url, robots=None):
     """Prerender one company hub.
 
     Without this, all 625 company URLs served the generic homepage title to any
     crawler that does not run JavaScript.
+
+    Every hub in `company_stats` gets a file, above the gate or not. `robots`
+    carries `noindex, follow` for the ones below it — see invariant 3.7.
     """
     upper = ticker.upper()
     url = "%s/company/%s" % (SITE_URL, ticker)
@@ -402,6 +413,7 @@ def generate_company_html(ticker, stat, assets, image_url):
         image_url=image_url,
         og_type="website",
         extra_head="",
+        robots=robots,
     )
 
 
@@ -486,11 +498,14 @@ def newest_article_date(analyses):
     return max(dates) if dates else None
 
 
-def generate_tag_html(slug, stat, assets, image_url):
+def generate_tag_html(slug, stat, assets, image_url, robots=None):
     """Prerender one tag page.
 
     Same reason as the company hubs: a route with no prerendered file serves the
     generic homepage title to any crawler that does not execute JavaScript.
+
+    Every tag gets a file; `robots` carries `noindex, follow` for the ones below
+    MIN_TAG_ARTICLES.
     """
     url = "%s/tag/%s" % (SITE_URL, slug)
     label = display_tag(stat["tag"])
@@ -524,6 +539,7 @@ def generate_tag_html(slug, stat, assets, image_url):
         image_url=image_url,
         og_type="website",
         extra_head="",
+        robots=robots,
     )
 
 
@@ -673,9 +689,14 @@ def main():
 
     # --- Company hubs ---
     #
-    # Only the hubs the sitemap lists are prerendered. The rest render
-    # client-side with `noindex, follow`, so giving them crawler metadata would
-    # defeat the point.
+    # EVERY hub gets a file; the gate decides the robots tag, not whether the
+    # file exists. Prerendering only the indexable ones was measured wrong on
+    # 2026-10-12: nginx fell back to /index.html, so 253 below-threshold hubs
+    # that articles link to served HTML byte-identical to the homepage — the
+    # homepage's title, no canonical of their own, and no robots tag, because
+    # the `noindex, follow` lived in CompanyPage and needs JavaScript to appear.
+    # Removing the internal links instead would not have helped: the 625 hubs
+    # listed before the gate are already in Google's index.
     stats = company_stats(analyses)
     # Hubs with no research but a substantial impact history are prerendered
     # too: 163 of 258 tickers with a history were serving crawlers a bare shell.
@@ -688,18 +709,22 @@ def main():
     def impact_count(ticker):
         return len(impact_index.get(ticker.lower(), []))
 
-    indexable = sorted(
+    indexable = set(
         t for t, s in stats.items()
         if s["research"] >= 1 or impact_count(t) >= MIN_IMPACT_CALLS
     )
     company_dir = os.path.join(DIST_DIR, "company")
-    n_company = 0
-    for ticker in indexable:
-        if write(generate_company_html(ticker, stats[ticker], assets, image_url),
+    n_company = n_company_noindex = 0
+    for ticker in sorted(stats):
+        robots = None if ticker in indexable else "noindex, follow"
+        if write(generate_company_html(ticker, stats[ticker], assets, image_url,
+                                       robots=robots),
                  os.path.join(company_dir, "%s.html" % ticker), "company/%s" % ticker):
             n_company += 1
-    print("Generated %d company hubs in %s (%d left client-only, noindex)"
-          % (n_company, company_dir, len(stats) - len(indexable)))
+            if robots:
+                n_company_noindex += 1
+    print("Generated %d company hubs in %s (%d indexable, %d noindex)"
+          % (n_company, company_dir, n_company - n_company_noindex, n_company_noindex))
 
     # --- Static pages ---
     n_static = 0
@@ -710,21 +735,22 @@ def main():
     print("Generated %d static pages in %s" % (n_static, DIST_DIR))
 
     # --- Tag pages ---
-    # Only tags that clear the coverage floor are prerendered. A thinner tag
-    # still renders client-side with `noindex, follow`, so linking to one is
-    # harmless but it never becomes an indexable page.
+    # Every tag gets a file, for the reason given above the company hubs: a tag
+    # below the floor used to fall through to /index.html and serve a homepage
+    # clone. The floor still decides indexability, now via the robots tag.
     tstats = tag_stats(analyses)
     tag_dir = os.path.join(DIST_DIR, "tag")
-    n_tag = 0
+    n_tag = n_tag_noindex = 0
     for slug in sorted(tstats):
         stat = tstats[slug]
-        if stat["count"] < MIN_TAG_ARTICLES:
-            continue
-        if write(generate_tag_html(slug, stat, assets, image_url),
+        robots = None if stat["count"] >= MIN_TAG_ARTICLES else "noindex, follow"
+        if write(generate_tag_html(slug, stat, assets, image_url, robots=robots),
                  os.path.join(tag_dir, "%s.html" % slug), "tag/%s" % slug):
             n_tag += 1
-    print("Generated %d tag pages in %s (%d left client-only, noindex)"
-          % (n_tag, tag_dir, sum(1 for s in tstats.values() if s["count"] < MIN_TAG_ARTICLES)))
+            if robots:
+                n_tag_noindex += 1
+    print("Generated %d tag pages in %s (%d indexable, %d noindex)"
+          % (n_tag, tag_dir, n_tag - n_tag_noindex, n_tag_noindex))
 
     # --- Archive pages ---
     total_pages = max(1, -(-len(analyses) // ARCHIVE_PAGE_SIZE))

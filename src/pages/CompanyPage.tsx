@@ -128,9 +128,18 @@ export default function CompanyPage() {
             entities at runtime, because the prerendered file already carries
             them (AGENTS.md invariant 3.2).
 
-            The robots tag is safe: an indexable hub is prerendered without one,
-            and a hub below the research-coverage floor is not prerendered at
-            all, so this appears exactly once and only where it is wanted. */}
+            The robots tag stays, and since 2026-10-12 it is deliberately a
+            duplicate: every hub is now prerendered, a below-threshold one with
+            `noindex, follow` already in its head (7.8). So a thin hub carries
+            two identical robots tags after hydration.
+
+            That is not the defect 3.2 guards against. 3.2 exists because two
+            canonicals and two Article entities with two different author names
+            CONFLICT; two identical noindex directives agree, and Google takes
+            the most restrictive directive regardless. Keeping it covers the one
+            case the prerender cannot: /company/<nonexistent-ticker> has no file
+            at all, falls through to /index.html, and would otherwise render as
+            the homepage with nothing telling a crawler to skip it. */}
         <title>{title}</title>
         {!indexable && <meta name="robots" content="noindex, follow" />}
       </Helmet>

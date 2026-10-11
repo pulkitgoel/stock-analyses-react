@@ -117,14 +117,28 @@ Build the string first if you need to combine values.
 
 ### 3.2 Prerendered routes own their crawler metadata
 
-`/analysis/*`, `/company/*` (indexable ones) and the four static pages are prerendered
-by `generate-og-files.py`. Those files carry the title, description, canonical, Open
+`/analysis/*`, `/company/*` (**all** of them since 2026-10-12, see 3.7), `/tag/*`,
+the archive and section pages and the four static pages are prerendered by
+`generate-og-files.py`. Those files carry the title, description, canonical, Open
 Graph, Twitter and JSON-LD tags.
 
 The matching React component must **not** emit those tags again. `AnalysisPage.tsx`
 sets only `<title>`, and only so the browser tab updates during client-side navigation.
 Emitting the rest produced two of every tag, including two conflicting `Article`
 entities with two different author names.
+
+**One deliberate exception: the robots tag on a below-threshold hub or tag page.**
+`CompanyPage` and `TagPage` emit `noindex, follow` at runtime, and the prerendered file
+now carries it too, so a thin page holds two identical robots tags after hydration.
+That is not what this invariant guards against — the harm in the original defect was
+**conflict** (two canonicals, two author names), and two identical noindex directives
+agree with each other. Keeping the runtime copy covers the one case the prerender
+cannot: `/company/<nonexistent-ticker>` has no file, falls through to `/index.html`,
+and would otherwise render as the homepage with nothing telling a crawler to skip it.
+
+Do not "clean this up" by deleting the runtime tag without first giving every reachable
+hub a file, and do not add the prerendered tag to an **indexable** page — the absence of
+a robots tag is what marks a page indexable.
 
 ### 3.3 JSON-LD is built with `json.dumps()`, never string interpolation
 
@@ -185,6 +199,25 @@ and would have earned a company hub, and `/company/spy` is not a company page.
 The gate is written in three places and they must agree, or the sitemap advertises
 pages the prerender does not build: `scripts/generate-sitemap.js`,
 `scripts/generate-og-files.py`, `src/pages/CompanyPage.tsx`.
+
+**The gate decides indexability, not whether a file exists.** Every hub in
+`company_stats` is prerendered; a below-threshold one carries
+`<meta name="robots" content="noindex, follow">` in its head. So
+`generate-og-files.py` deliberately builds a **superset** of the sitemap — 639 hub
+files against 192 sitemap entries — and that is not the drift this invariant warns
+about. The hazard is the sitemap listing a page with no file, never the reverse.
+
+Prerendering only the indexable hubs was measured wrong on 2026-10-12. nginx fell back
+to `/index.html`, so a below-threshold hub served HTML **byte-identical to the
+homepage**: the homepage's `<title>`, no canonical of its own, and no robots tag at
+all, because the `noindex, follow` lives in `CompanyPage` and needs JavaScript to
+appear. **253 of those hubs are linked from article pages** (52% of articles link at
+least one), so a crawler following internal links found several hundred homepage
+duplicates. Thin `/tag/` pages leaked identically — 307 of them.
+
+Deleting the internal links instead would not have fixed it: the 625 hubs listed before
+the gate existed are already in Google's index, and nothing reaches them but a
+directive served at their own URL.
 
 Below-threshold hubs must still render for a reader following a link. Do not make them
 404.
@@ -624,7 +657,32 @@ the DOM, not assumed. The component now sets only `<title>` plus the conditional
 robots tag, matching AnalysisPage.
 
 
-### 7.8 Below-threshold hubs and tags serve a homepage clone — IN PROGRESS, Claude Code session, 2026-10-12
+### 7.8 Below-threshold hubs and tags served a homepage clone — DONE 2026-10-12
+
+`generate-og-files.py` now writes a file for **every** company hub and **every** tag,
+not only the ones the sitemap lists. The gate decides the robots tag instead of
+deciding whether the file exists. Counts: **639 hub files (192 indexable, 447
+noindex), 333 tag files (26 indexable, 307 noindex)**; the sitemap is unchanged at
+535 / 192 / 26.
+
+Why it mattered, and the measurement, are in invariant 3.7. Short version: nginx fell
+back to `/index.html`, so 253 hubs that articles actually link to served byte-identical
+copies of the homepage with no canonical and no robots tag, and the `noindex, follow`
+that 3.7 relies on only existed after JavaScript ran.
+
+Verified before commit: `/company/spy` and `/tag/ems` carry their own title, their own
+canonical and `noindex, follow`; `/company/ioc`, `/tag/defence`, an article page and
+`/india` carry **no** robots tag; all 253 linked thin hubs and all 333 tags have a
+file; `/company/spy` renders fully in a browser with no console errors, so 3.7's
+"must still render for a reader" holds.
+
+**Follow-up for the server, not done here.** Every valid `/company/` and `/tag/` URL
+now has a file, so the `/index.html` fallback in those two blocks is dead for every
+real page and only ever serves a nonexistent ticker a homepage clone under a 200.
+Changing both to `try_files $uri.html =404` would close that soft 404 and move the two
+routes into the first row of 3.13's table. Do not apply it blind: confirm the file
+count matches `company_stats` first, because a missing file would then 404 a page that
+used to render.
 
 ### 7.6 Remaining items
 
