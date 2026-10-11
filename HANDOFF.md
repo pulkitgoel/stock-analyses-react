@@ -63,6 +63,18 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
 ## 2026-10-11 07:38 — watcher
 
+**Idle** — nothing executable.
+
+5 unmarked and 0 owner-blocked item(s), listed below.
+- RECORDED ONLY, no `[job: ...]` marker so never executed: Deploy to pick up the guard, then prove it the way I could not: start a deploy, (*2026-10-11 (3) — Claude Code session*)
+- RECORDED ONLY, no `[job: ...]` marker so never executed: Deploy. 37 new hubs need prerendering, and the body prerender is what puts the (*2026-10-11 (later) — Claude Code session*)
+- RECORDED ONLY, no `[job: ...]` marker so never executed: Still pending from the previous entry: the `/india/page/1` and `/global/page/1` (*2026-10-11 (later) — Claude Code session*)
+- RECORDED ONLY, no `[job: ...]` marker so never executed: Apply the two new `location = /india/page/1` and `/global/page/1` redirect blocks (*2026-10-11 — Claude Code session*)
+- RECORDED ONLY, no `[job: ...]` marker so never executed: `df6c666` needs a deploy for the impact history to appear. (*2026-10-11 — Claude Code session*)
+
+
+## 2026-10-11 07:38 — watcher
+
 **Ran:** verify-live
 
 - **OK** `[job: verify-live]` 2026-10-11 (later) — Hermes (automated agent)
