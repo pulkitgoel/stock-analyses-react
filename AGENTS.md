@@ -185,34 +185,56 @@ A backslash before an apostrophe or quote is never intentional in prose. One pub
 batch leaked `SEBI\'s` into four articles. `clean_text()` in `generate-og-files.py`
 strips these defensively, but fix the source markdown as well when you see one.
 
-### 3.13 `try_files ... /index.html =404` never 404s
+### 3.13 `try_files`: the last argument is a URI, every earlier one is a file
 
-`try_files` serves the first path that **exists** and only applies a trailing
-`=404` when none did. `/index.html` always exists, so in
+This rule has drawn blood twice, in opposite directions, so read both halves before
+changing any `try_files` line.
+
+**The mechanism.** nginx treats the **final** argument of `try_files` as a URI and
+performs an internal redirect to it. Every argument before the last is a **file**
+existence check. So moving `/index.html` between those two positions changes what it
+means entirely.
+
+**Half one — a fallback on a paginated route is a soft 404.**
 
 ```nginx
-try_files $uri.html /index.html =404;   # the =404 can never run
+try_files $uri.html /index.html =404;   # on /india/page/
 ```
 
-the fallback always wins. Written on a paginated route this produces a soft 404:
-`/india/page/99` returned **200** with the SPA shell, and the router clamped the page
-number to the last real page, so a nonexistent URL served duplicate content under a
-success status. That is precisely what 7.2 removed from the rest of the site, quietly
-reintroduced on three route prefixes.
+Here `=404` is last, so `/index.html` is a *file* check — and that file always exists,
+so it is always served and the `=404` can never run. On a paginated route the result
+was `/india/page/99` returning **200** with the SPA shell, the router clamping to the
+last real page, and a nonexistent URL serving duplicate content under a success status.
 
-The rule:
+**Half two — removing the `=404` is worse, not neutral.**
 
-- **Routes where every valid URL has a prerendered file** (`/analysis/`,
-  `/analyses/page/`, `/india/page/`, `/global/page/`, `/india`, `/global`) take
-  `try_files $uri.html =404;` with **no** SPA fallback. A missing file means the URL
-  does not exist.
-- **Routes with legitimate client-only pages** (`/company/`, `/tag/`) keep
-  `try_files $uri.html /index.html;` and carry **no** trailing `=404`, because it would
-  be dead code reading as a guard. Those pages render with `noindex, follow`.
+```nginx
+try_files $uri.html /index.html;        # on /company/ or /tag/
+```
 
-`/analysis/` is the one exception that looks like the broken pattern but is not:
-`try_files $uri $uri.html $uri/index.html =404` ends in a **per-slug** path
-(`/analysis/foo/index.html`), not the root `index.html`, so the `=404` is reachable.
+Now `/index.html` is the last argument, so it is a *URI*: nginx internally redirects,
+lands in `location = /index.html`, and hits the `301` to `/`. Measured live, roughly
+484 below-threshold company hubs and every thin tag page began bouncing readers to the
+homepage, against 3.7.
+
+The `=404` on those routes genuinely never fires. It is not there as a guard — it is
+there to keep `/index.html` in file position.
+
+**The rule, which needs both halves:**
+
+| Route kind | Directive |
+|---|---|
+| Every valid URL has a prerendered file — `/analysis/`, `/analyses/page/`, `/india/page/`, `/global/page/`, `/india`, `/global` | `try_files $uri.html =404;` |
+| Legitimate client-only pages — `/company/`, `/tag/` | `try_files $uri.html /index.html =404;` |
+| Anything | **never** `try_files $uri.html /index.html;` — it 301s to `/` |
+
+`/analysis/` looks like the broken pattern and is not: `try_files $uri $uri.html
+$uri/index.html =404` ends in a **per-slug** path, not the root `index.html`.
+
+**The habit that would have caught both:** after changing a `try_files` line, curl an
+**invalid** URL, not just a valid one. Both bugs behaved perfectly on real pages. Only
+a nonexistent path showed the fault — once as a 200 that should have been a 404, once
+as a 301 that should have been a 200.
 
 ### 3.12 Every hook goes above the early returns
 
