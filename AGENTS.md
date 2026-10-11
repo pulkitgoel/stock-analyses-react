@@ -689,10 +689,39 @@ used to render.
 - Trust layer: a 600-900 word disclaimer, a 400-600 word `/about` with methodology, and
   a disclaimer line in every article (only 70 of 250 have one).
 - Link the sources already named in prose: 226 articles name a source, 10 link to one.
-- ~~Fix CLS.~~ **Resolved by 7.1.** Measured on the live article 2026-10-10: CLS
-  **0.0443**, against 0.289 before the body prerender. Prerendering removed the
-  reflow, so no separate fix is needed. Confirm against CrUX field data in Search
-  Console (Experience, Core Web Vitals) rather than trusting this lab figure.
+- **Fix CLS on mobile. Not resolved — an earlier version of this file said it was, and
+  that claim was too narrow.** 7.1 did fix it on the *article* page: CLS 0.0443 against
+  0.289 before the body prerender. But PageSpeed Insights on the **homepage**,
+  2026-10-12, measures **CLS 0.71 on mobile against 0.001 on desktop** — a fail, and the
+  single worst number on the site.
+
+  The culprit is named and it is one element: `<footer>`, shift score **0.710**, the
+  whole of it. That is precisely the "footer repositioning after content arrival" the
+  original audit identified, so the body prerender did not remove it on this route.
+  Contributing: the hero `<img>` is sized with inline `height: 180px; width: auto` and
+  carries no width/height attributes, so it reserves no space.
+
+  Mobile matters more than this number already suggests. The stated audience is Indian
+  retail investors, who are overwhelmingly mobile, and the Search Console baseline was
+  desktop 597 impressions against mobile 22. Lab, not field — confirm against CrUX in
+  Search Console (Experience, Core Web Vitals) — but 0.71 against 0.001 on the same page
+  is too large to be measurement noise.
+
+- **Homepage LCP on mobile is the hero image, and it is discovered late.** LCP 2.6 s,
+  broken down as TTFB 0 ms, **resource load delay 1,180 ms**, load duration 1,160 ms,
+  render delay 30 ms. The delay, not the download, is the problem: nothing preloads
+  `/assets/hero-*.png`. A `<link rel="preload">` or `fetchpriority="high"` plus real
+  dimensions addresses this and the CLS contribution together.
+
+- **The Google Fonts stylesheet is render-blocking, 750 ms of it.** `render_shell` emits
+  a plain `<link rel="stylesheet">` for `fonts.googleapis.com/css2`; with the app CSS
+  (8.7 KiB, 340 ms) that is an estimated **1,800 ms** of blocked render on mobile. The
+  `preconnect` is already there; the stylesheet itself still blocks.
+
+  PSI 2026-10-12, homepage: mobile Performance **67** (FCP 2.6 s, LCP 2.6 s, TBT 0 ms,
+  CLS 0.71, SI 4.8 s), desktop **95** (0.7 / 0.8 / 0 / 0.001 / 2.1). SEO **100** and Best
+  Practices **100** on both; Accessibility 97, one contrast failure. Agentic Browsing
+  3/3 on desktop and **2/3 on mobile — the check it fails is CLS.**
 - ~~Fix the 292-character unbreakable ticker string and make the data tables readable
   on mobile.~~ **Done 2026-10-10.** Each table scrolls in its own `.table-scroll` box
   (a react-markdown `table` override in `AnalysisPage.tsx`) with an edge fade and a
