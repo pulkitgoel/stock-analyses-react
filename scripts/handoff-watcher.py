@@ -60,8 +60,12 @@ ROUTE_EXPECTATIONS = [
     ("article",           "/analysis/syrma-sgs-technology-deep-dive-analysis", 200,
                           "/analysis/does-not-exist-at-all",     404),
     ("company indexable", "/company/drreddy",     200, "/company/azad",        200),
-    ("company thin",      "/company/zzznotreal",  200, None,                  None),
-    ("tag indexable",     "/tag/defence",         200, "/tag/ems",            200),
+    # Every hub has a file, so a thin hub must still be served from its own file and a
+    # ticker that does not exist must 404 - it used to be handed a homepage clone under
+    # a 200. These rows are the check for that, on both sides.
+    ("company thin",      "/company/spy",         200, "/company/zzznotreal",  404),
+    ("tag indexable",     "/tag/defence",         200, "/tag/ems",             200),
+    ("tag thin",          "/tag/infrastructure",  200, "/tag/zzznotreal",      404),
     ("archive paginated", "/analyses/page/1",     200, "/analyses/page/99",   404),
     ("section india",     "/india",               200, "/india/page/99",      404),
     ("section global",    "/global",              200, "/global/page/99",     404),
@@ -282,9 +286,16 @@ def job_apply_nginx(_arg):
 
     doc_only = [h for h in doc_blocks if h not in live_blocks]
     changed = [h for h in doc_blocks if h in live_blocks and live_blocks[h] != doc_blocks[h]]
+    # Refuse only when replacement would leave a block with NO explanation where the live
+    # config had one - stripping recorded rationale down to a bare directive. A doc block
+    # that carries its own (updated) comments is a documented change, not a silent one, and
+    # refusing those would make this tool unable to apply the edits it exists for: the
+    # /company/ and /tag/ rationale went stale the moment every hub got a file.
+    def comments(block):
+        return [l for l in block.splitlines() if l.strip().startswith("#")]
+
     comment_loss = [h for h in changed
-                    if len([l for l in live_blocks[h].splitlines() if l.strip().startswith("#")])
-                    > len([l for l in doc_blocks[h].splitlines() if l.strip().startswith("#")])]
+                    if comments(live_blocks[h]) and not comments(doc_blocks[h])]
 
     if doc_only or comment_loss:
         parts = ["refusing to apply: this needs a human decision, not a sync."]
@@ -491,6 +502,22 @@ def main():
         else:
             pending.append((heading, job, arg, eid))
 
+    # Unmarked ACTION items are reported ONCE. They used to be re-listed in every entry, so
+    # at a 20-minute cadence the log repeated the same four bullets all day and buried the
+    # entries that mattered. A `[done]` modifier was the suggestion; keying on the bullet's
+    # own text needs no new convention and cannot be forgotten, which is the point - the
+    # protocol you must remember to follow is the one that fails.
+    state.setdefault("reported_unmarked", [])
+    freshly_reported = []
+    for h, a in unmarked:
+        uid = entry_id("unmarked", h, a)
+        if uid in state["reported_unmarked"]:
+            continue
+        state["reported_unmarked"].append(uid)
+        freshly_reported.append((h, a))
+    state["reported_unmarked"] = state["reported_unmarked"][-ACTIONED_CAP:]
+    stale_unmarked = len(unmarked) - len(freshly_reported)
+
     if not pending:
         # Constraint 6 says leave an entry every run, including an idle one, because a
         # silent watcher is indistinguishable from a broken one. Taken literally at a
@@ -507,9 +534,11 @@ def main():
         lines = ["## %s — watcher" % time.strftime("%Y-%m-%d %H:%M"), "",
                  "**Idle** — nothing executable.", "",
                  "No unactioned `[job: ...]` item in HANDOFF.md." if not unmarked and not skipped_owner
-                 else "%d unmarked and %d owner-blocked item(s), listed below."
-                 % (len(unmarked), len(skipped_owner))]
-        for h, a in unmarked:
+                 else "%d unmarked and %d owner-blocked item(s)." % (len(unmarked), len(skipped_owner))]
+        if stale_unmarked:
+            lines.append("- %d previously reported, unchanged; not repeated here."
+                         % stale_unmarked)
+        for h, a in freshly_reported:
             lines.append("- RECORDED ONLY, no `[job: ...]` marker so never executed: %s (*%s*)"
                          % (a[:100], h))
         for h, a in skipped_owner:
@@ -583,8 +612,11 @@ def main():
     lines = ["## %s — watcher" % time.strftime("%Y-%m-%d %H:%M"), "",
              "**Ran:** %s" % (", ".join(ran) if ran else "nothing executable"),
              "", *results]
-    for h, a in unmarked:
+    for h, a in freshly_reported:
         lines.append("- NOT EXECUTED (no `[job: ...]` marker): %s (*%s*)" % (a[:100], h))
+    if stale_unmarked:
+        lines.append("- %d previously reported unmarked item(s), unchanged."
+                     % stale_unmarked)
     for h, a in skipped_owner:
         lines.append("- SKIPPED (owner-blocked): %s (*%s*)" % (a[:100], h))
     for job, h, d in skipped_busy:
