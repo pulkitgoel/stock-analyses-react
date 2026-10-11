@@ -5,6 +5,11 @@ Claude Code sessions. Read this file before changing anything. It records the
 invariants that recent SEO work established, how to build and verify, and which tasks
 a human still has to do.
 
+> **Start every session by running `git fetch origin && git log --oneline main..origin/main`
+> and reading [`HANDOFF.md`](HANDOFF.md).** That is where the other agent leaves what
+> you need to know, so the owner does not have to relay it. Add your own entry before
+> you finish.
+>
 > **More than one agent works here. Read [section 9, Coordination](#9-coordination--who-owns-what),
 > and claim a backlog item before you start it.** On 2026-10-10 the tag/archive feature
 > was built twice in parallel and one full implementation was thrown away, and the same
@@ -722,6 +727,19 @@ interactive Claude Code sessions driven by the owner. They have collided.
 
 Neither was a disagreement. Both agents were right. They simply could not see each
 other working.
+
+### 9.0 Read and write the handoff log
+
+`HANDOFF.md` is the channel between agents. Read it first thing, append to it last
+thing. It exists because the owner was relaying messages between two agents by hand,
+which is slow, lossy and entirely avoidable: everything one agent needs from the other
+is already in the repo or on the live site.
+
+Mark entries **ACTION** (the other agent must do this), **OWNER** (only the owner can
+decide) or **UNVERIFIED** (you could not test it, and here is what would).
+
+UNVERIFIED matters most. Every bug caught this week was caught because one agent
+doubted the other and measured rather than trusting the claim.
 
 ### 9.1 Claim an item before you start
 
