@@ -85,6 +85,18 @@ export default function AnalysisPage() {
       .finally(() => setLoading(false));
   }, [slug]);
 
+  // Heading anchors plus the contents list, both derived from one pass so their
+  // ids cannot drift apart (AGENTS 7.4). Runs on the fetched text, so the raw
+  // /analyses/{slug}.md keeps its clean headings.
+  //
+  // This must stay ABOVE the early returns. React requires the same hooks in
+  // the same order on every render, and below them this useMemo ran only after
+  // the content had loaded — six hooks on the loading render, seven on the
+  // next, which threw "Rendered more hooks than during the previous render"
+  // and blanked every article page. `content` is '' until the fetch resolves
+  // and prepareHeadings('') is a no-op, so running it early costs nothing.
+  const { markdown: body, toc } = useMemo(() => prepareHeadings(content), [content]);
+
   if (loading) return <LoadingSpinner />;
 
   if (error || !analysis) {
@@ -114,11 +126,6 @@ export default function AnalysisPage() {
   }
 
   const readTime = estimateReadTime(content);
-
-  // Heading anchors plus the contents list, both derived from one pass so their
-  // ids cannot drift apart (AGENTS 7.4). Runs on the fetched text, so the raw
-  // /analyses/{slug}.md keeps its clean headings.
-  const { markdown: body, toc } = useMemo(() => prepareHeadings(content), [content]);
   const tickers = tickerTokens(analysis.ticker);
   const related = relatedAnalyses(analysis, ANALYSES);
   const primaryHub = tickers.length === 1 ? tickers[0] : null;

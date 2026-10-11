@@ -174,6 +174,32 @@ A backslash before an apostrophe or quote is never intentional in prose. One pub
 batch leaked `SEBI\'s` into four articles. `clean_text()` in `generate-og-files.py`
 strips these defensively, but fix the source markdown as well when you see one.
 
+### 3.12 Every hook goes above the early returns
+
+The page components here fetch data and bail out early:
+
+```tsx
+if (loading) return <LoadingSpinner />;
+if (error || !analysis) return <NotFound />;
+```
+
+Any `useState`, `useEffect` or `useMemo` placed **below** those lines runs only on the
+renders that get past them. React requires the same hooks in the same order every
+time, so the component renders six hooks while loading and seven afterwards, and throws
+*"Rendered more hooks than during the previous render."*
+
+This shipped once: a `useMemo` added for the table of contents sat below the early
+return in `AnalysisPage`, which blanked **every article page** as soon as the content
+loaded. It was caught before deploy, but only because the page was opened in a browser.
+
+Two consequences worth keeping:
+
+- Put every hook at the top of the component, before the first `return`. A hook that
+  depends on fetched data is fine there: `content` is `''` until the fetch resolves,
+  and `prepareHeadings('')` is a no-op.
+- `tsc` does not catch this and neither does the build. **Open the page.** A component
+  that compiles cleanly can still render nothing.
+
 ---
 
 ## 4. Publishing a new analysis
