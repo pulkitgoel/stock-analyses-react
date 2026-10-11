@@ -75,6 +75,17 @@ UA = "Mozilla/5.0 (compatible; handoff-watcher/1.0)"
 ACTIONED_CAP = 500
 
 
+def log(*a):
+    """Progress goes to STDERR.
+
+    The cron entry runs this with no_agent, which delivers STDOUT verbatim. At a
+    20-minute cadence a chatty stdout would post 72 messages a day, so only the
+    deliverable summary uses stdout - and nothing is printed there on a quiet run.
+    HANDOFF.md is the liveness record (constraint 6); this channel is for events.
+    """
+    print(*a, file=sys.stderr)
+
+
 def run(cmd, cwd=None, timeout=1800):
     """Run a command. ALWAYS returns (ok, combined_output) - never a bare bool, so a
     caller cannot accidentally unpack a status code or test a string for truthiness."""
@@ -221,6 +232,25 @@ def location_blocks(text):
     return blocks
 
 
+def nginx_cmd(*args):
+    """nginx control, elevated when not already root.
+
+    The cron runs this script unprivileged, and `apply-nginx` needs to reload nginx, so
+    the elevation lives here rather than requiring the whole watcher to run as root -
+    `deploy` and `verify-live` stay unprivileged.
+    """
+    if os.geteuid() == 0:
+        return ["nginx", *args]
+    return ["sudo", "-n", "nginx", *args]
+
+
+def can_elevate():
+    if os.geteuid() == 0:
+        return True
+    ok, _ = run(["sudo", "-n", "true"])
+    return ok
+
+
 def job_apply_nginx(_arg):
     """Reconcile the live config with the doc, gated before and after.
 
@@ -228,8 +258,8 @@ def job_apply_nginx(_arg):
     mention is never deleted - the live file also carries Certbot's TLS settings, the
     /api/ proxy and legacy redirects the doc does not own.
     """
-    if os.geteuid() != 0:
-        return False, "needs root (run under sudo); refusing to half-apply"
+    if not can_elevate():
+        return False, "cannot elevate (sudo -n unavailable); refusing to half-apply"
 
     doc_blocks = location_blocks(DOC_NGINX.read_text())
     if not doc_blocks:
@@ -260,16 +290,16 @@ def job_apply_nginx(_arg):
     # GATE 1. Write the candidate WITHOUT reloading: nginx serves the loaded config until
     # a reload, so a candidate that fails -t never affects traffic, and restoring is enough.
     LIVE_NGINX.write_text(candidate)
-    ok, out = run(["nginx", "-t"])
+    ok, out = run(nginx_cmd("-t"))
     if not ok:
         shutil.copy(backup, LIVE_NGINX)
         return False, ("nginx -t rejected the candidate; restored %s, nothing served it:\n%s"
                        % (backup.name, out.strip()[-600:]))
 
-    ok, out = run(["nginx", "-s", "reload"])
+    ok, out = run(nginx_cmd("-s", "reload"))
     if not ok:
         shutil.copy(backup, LIVE_NGINX)
-        run(["nginx", "-s", "reload"])
+        run(nginx_cmd("-s", "reload"))
         return False, "reload failed; rolled back to %s:\n%s" % (backup.name, out.strip()[-400:])
 
     # GATE 2. Behaviour, after. Both halves of every shape.
@@ -277,7 +307,7 @@ def job_apply_nginx(_arg):
     ok, detail = verify_routes()
     if not ok:
         shutil.copy(backup, LIVE_NGINX)
-        run(["nginx", "-s", "reload"])
+        run(nginx_cmd("-s", "reload"))
         return False, ("route verification failed; config ROLLED BACK to %s\n%s"
                        % (backup.name, detail))
     return True, ("applied %d changed + %d new block(s); backup %s\n%s"
@@ -320,7 +350,7 @@ def write_entry(lines, dry_run=False):
     """Prepend a run entry above the newest existing one, then push (never force)."""
     body = "\n".join(lines) + "\n"
     if dry_run:
-        print("  [dry-run] would prepend to HANDOFF.md:\n" + body)
+        log("  [dry-run] would prepend to HANDOFF.md:\n" + body)
         return True, "dry-run"
     head, sep, tail = HANDOFF.read_text().partition("\n---\n\n")
     if not sep:
@@ -362,7 +392,7 @@ def main():
 
     ok, out = run(["git", "fetch", "origin", "main"])
     if not ok:
-        print("  github unreachable; nothing read this run")
+        log("  github unreachable; nothing read this run")
         write_entry(["## %s — watcher" % time.strftime("%Y-%m-%d %H:%M"), "",
                      "**Nothing done:** `git fetch` failed, so no queue could be read.",
                      "The next run retries."], args.dry_run)
@@ -371,13 +401,13 @@ def main():
 
     ok, out = run(["git", "pull", "--rebase", "--autostash", "origin", "main"])
     if not ok:
-        print("  pull failed; leaving the tree alone:\n%s" % out.strip()[-300:])
+        log("  pull failed; leaving the tree alone:\n%s" % out.strip()[-300:])
         save_state(state)
         return 1
 
-    _, log = run(["git", "log", "--format=%h%x09%s", "-20"])
-    state["last_sha"] = log.splitlines()[0].split("\t")[0] if log.strip() else None
-    print("  at %s" % state["last_sha"])
+    _, log_out = run(["git", "log", "--format=%h%x09%s", "-20"])
+    state["last_sha"] = log_out.splitlines()[0].split("\t")[0] if log_out.strip() else None
+    log("  at %s" % state["last_sha"])
 
     pending, unmarked, skipped_owner = [], [], []
     for heading, job, arg in parse_action_items(HANDOFF.read_text()):
@@ -405,9 +435,23 @@ def main():
         for h, a in skipped_owner:
             lines.append("- SKIPPED, blocked on an owner decision (constraint 3): %s (*%s*)"
                          % (a[:100], h))
-        print("  " + lines[2])
+        log("  " + lines[2])
         write_entry(lines, args.dry_run)
         save_state(state)
+        return 0
+
+    # A dry run must have NO side effects: it neither executes a job nor marks one
+    # actioned (marking would make the real run skip it). This was wrong in the first
+    # version - --dry-run ran the queue, which is precisely the opposite of a preview.
+    if args.dry_run:
+        print("handoff-watcher --dry-run: %d job(s) queued, nothing executed" % len(pending))
+        for heading, job, arg, _eid in pending:
+            marker = "" if job in JOBS else "  (NOT IN WHITELIST - would be skipped)"
+            print("- [job: %s] %s%s\n    from: %s" % (job, arg[:110], marker, heading))
+        for h, a in unmarked:
+            print("- (no marker, would be recorded only): %s" % a[:110])
+        for h, a in skipped_owner:
+            print("- (owner-blocked, would be skipped): %s" % a[:110])
         return 0
 
     results, failed, ran = [], False, []
@@ -417,7 +461,7 @@ def main():
                            % (job, arg[:80], heading))
             state["actioned"].append(eid)
             continue
-        print("  [job: %s] from %s" % (job, heading))
+        log("  [job: %s] from %s" % (job, heading))
         try:
             ok, detail = HANDLERS[job](arg)
         except Exception as exc:
@@ -441,8 +485,19 @@ def main():
         lines.append("- SKIPPED (owner-blocked): %s (*%s*)" % (a[:100], h))
     ok, detail = write_entry(lines, args.dry_run)
     if not ok:
-        print("  WARNING: could not write the HANDOFF entry: %s" % detail)
+        log("  WARNING: could not write the HANDOFF entry: %s" % detail)
     save_state(state)
+    # stdout = the deliverable. Silence when the run did nothing, so the 20-minute
+    # cadence does not post an update every time; a failure is always reported.
+    if failed or unmarked or skipped_owner or ran:
+        print("handoff-watcher: %s" % (", ".join(ran) if ran else "no executable jobs"))
+        print("\n".join(results) if results else "")
+        for h, a in unmarked:
+            print("- NOT EXECUTED (no [job: ...] marker): %s" % a[:110])
+        for h, a in skipped_owner:
+            print("- SKIPPED (owner-blocked): %s" % a[:110])
+        if not ok:
+            print("WARNING: the HANDOFF entry could not be written: %s" % detail)
     return 1 if failed else 0
 
 
