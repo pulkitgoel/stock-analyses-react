@@ -24,6 +24,26 @@ Mark anything the other agent must act on as **ACTION**, anything needing the ow
 worth more than a confident claim that turns out wrong: three bugs this week were
 caught because one of us doubted the other and measured.
 
+### The job queue
+
+An ACTION bullet addressed to **Hermes** only becomes work if it carries an explicit
+marker. `scripts/handoff-watcher.py` runs every 20 minutes and executes the marker, not
+the prose:
+
+```
+- [job: deploy]                              staged build + deploy, then verify
+- [job: verify-live] /company/ioc, /india     fetch those paths, report statuses
+- [job: apply-nginx]                          reconcile the live config with docs/nginx-seo.conf
+- [job: report] <anything>                    record it, execute nothing
+```
+
+Those four are the **entire** executable vocabulary. A bullet without a marker is
+recorded and reported, never executed — this file is agent-writable, so whatever it can
+trigger is the real blast radius. Add `blocked-owner` to an item and it is skipped until
+the owner decides. `--verify` runs the route-shape check on demand; after any
+`try_files` change, that check is the one that matters, because it fetches an invalid
+URL as well as a valid one.
+
 Related: `AGENTS.md` section 9 (claiming work, who owns what, verifying against the
 live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
@@ -39,6 +59,46 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ```
 
 ---
+
+## 2026-10-11 (later) — Hermes (automated agent)
+
+**Shipped**
+- `scripts/handoff-watcher.py` — the queue runner. Bounded: only `deploy`, `apply-nginx`,
+  `verify-live` and `report` are executable, and only from an ACTION section naming this
+  agent with an explicit `[job: ...]` marker. Anything else is recorded and reported.
+  nginx changes are gated before and after (see below); failures are reported once and
+  never retried; every run leaves an entry here, including a run that did nothing.
+- `b102327` (rebased) `npm audit fix` — 5 high advisories to 0, patch bumps only.
+- The four `location` blocks for the India/Global sections and the two `/page/1`
+  redirects are applied on the server and verified; `docs/nginx-seo.conf` matches.
+
+**ACTION Hermes**
+- [job: deploy] Ship `d77e9e2`: 37 new hubs need prerendering, sitemap 498 -> 535.
+- [job: verify-live] /company/ioc, /company/drreddy, /india/page/99
+
+**Corrections to the queued item from the owner**
+- There is no CI in this repository (no `.github/workflows`), so nothing was "failing in
+  CI". `npm audit` reported **5** high advisories, not two, and brace-expansion was not
+  among them. Four were build-chain (via vite and @tailwindcss/vite); **react-router was
+  runtime**, via react-router-dom. Its advisory is an RSC-mode CSRF bypass and this app
+  mounts BrowserRouter client-side with no server components, so it was not reachable.
+  All five were patch bumps, so nothing reached the OWNER queue.
+
+**UNVERIFIED**
+- The watcher's `apply-nginx` path has not been exercised end to end: no configuration
+  currently differs from the doc, so it takes the "already matches" branch. Its rollback
+  was reasoned about, not tested. Provoking a deliberate mismatch would test it.
+- The route gate could not distinguish a 301 from a 200 until this session: urllib
+  followed redirects, so `/india/page/1` read as 200. Fixed, and the gate now PASSes all
+  18 checks — but it is new, and new gates are wrong until proven otherwise.
+
+**OWNER**
+- Unchanged: no analytics tag, SEBI Research Analyst status, and the ~7 Nov Search
+  Console re-export.
+- The watcher's cadence (20 min) and its whitelist are yours to change; both live in
+  `scripts/handoff-watcher.py` and the cron entry.
+
+
 
 ## 2026-10-11 (later) — Claude Code session
 
