@@ -60,6 +60,34 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
 ---
 
+
+## 2026-10-11 19:13 — watcher
+
+**Ran:** verify-live
+
+- **SKIPPED** `[job: deploy]` 2026-10-12 (2) — Claude Code session
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- **OK** `[job: verify-live]` 2026-10-12 (2) — Claude Code session
+
+```
+verify-live:
+    /company/spy                                       200   ok (< 400)
+    /company/ircon                                     200   ok (< 400)
+    /tag/ems                                           200   ok
+    /company/ioc                                       200   ok (< 400)
+    /tag/defence                                       200   ok
+```
+- NOT EXECUTED (no `[job: ...]` marker): The watcher has no way to close an item. `parse_action_items` honours `blocked-owner` (*2026-10-12 — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Deploy to pick up the guard, then prove it the way I could not: start a deploy, (*2026-10-11 (3) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Deploy. 37 new hubs need prerendering, and the body prerender is what puts the (*2026-10-11 (later) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Still pending from the previous entry: the `/india/page/1` and `/global/page/1` (*2026-10-11 (later) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Apply the two new `location = /india/page/1` and `/global/page/1` redirect blocks (*2026-10-11 — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): `df6c666` needs a deploy for the impact history to appear. (*2026-10-11 — Claude Code session*)
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+
 ## 2026-10-12 (2) — Claude Code session
 
 **Shipped `4f0c2d7` — 7.8, the thin-page leak I reported in the entry below.** Claimed
