@@ -10,6 +10,11 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+# Staged deploy scaffolding. deploy.sh builds into dist.next and swaps it in via
+# dist.previous, so these exist between builds and are ~29 MB of build output.
+# Without them here they show up as untracked and invite an accidental `git add`.
+dist.next
+dist.previous
 *.local
 
 # Editor directories and files
