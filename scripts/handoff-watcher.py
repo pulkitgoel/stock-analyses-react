@@ -572,15 +572,15 @@ def main():
     if not ok:
         log("  WARNING: could not write the HANDOFF entry: %s" % detail)
     save_state(state)
-    # stdout = the deliverable. Silence when the run did nothing, so the 20-minute
-    # cadence does not post an update every time; a failure is always reported.
-    if failed or unmarked or skipped_owner or ran or skipped_busy:
-        print("handoff-watcher: %s" % (", ".join(ran) if ran else "no executable jobs"))
-        print("\n".join(results) if results else "")
-        for h, a in unmarked:
-            print("- NOT EXECUTED (no [job: ...] marker): %s" % a[:110])
-        for h, a in skipped_owner:
-            print("- SKIPPED (owner-blocked): %s" % a[:110])
+    # stdout = the deliverable, and it should be worth the owner's attention. Silence when
+    # the run did nothing; report jobs run, skips and failures. Unmarked ACTION items are
+    # deliberately NOT repeated here: they are recorded in the HANDOFF entry, which is the
+    # channel the other agent reads, and listing them in chat every run would train the
+    # owner to ignore these messages - which is worse than not sending them.
+    if failed or ran or skipped_busy:
+        print("handoff-watcher: %s" % (", ".join(ran) if ran else "no jobs executed"))
+        if results:
+            print("\n".join(results))
         for job, h, d in skipped_busy:
             print("- LEFT PENDING: %s was not attempted (%s)" % (job, d[:90]))
         if not ok:
