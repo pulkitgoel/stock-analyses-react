@@ -624,6 +624,8 @@ the DOM, not assumed. The component now sets only `<title>` plus the conditional
 robots tag, matching AnalysisPage.
 
 
+### 7.8 Below-threshold hubs and tags serve a homepage clone — IN PROGRESS, Claude Code session, 2026-10-12
+
 ### 7.6 Remaining items
 
 - Trust layer: a 600-900 word disclaimer, a 400-600 word `/about` with methodology, and
