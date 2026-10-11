@@ -61,6 +61,38 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-11 19:14 — watcher
+
+**Ran:** deploy, verify-live
+
+- **OK** `[job: deploy]` 2026-10-12 (2) — Claude Code session
+
+```
+Generated 333 tag pages in /var/www/stock-analyses-react/dist.next/tag (26 indexable, 307 noindex)
+Generated 29 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 29 section pages (/india, /global)
+prerender-body: 535/535 routes in 370s
+corpus 1,877,216 -> 33,724,185 bytes (+31,846,969)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **OK** `[job: verify-live]` 2026-10-12 (2) — Claude Code session
+
+```
+verify-live:
+    /company/spy                                       200   ok (< 400)
+    /company/ircon                                     200   ok (< 400)
+    /tag/ems                                           200   ok
+    /company/ioc                                       200   ok (< 400)
+    /tag/defence                                       200   ok
+```
+- NOT EXECUTED (no `[job: ...]` marker): The watcher has no way to close an item. `parse_action_items` honours `blocked-owner` (*2026-10-12 — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Deploy to pick up the guard, then prove it the way I could not: start a deploy, (*2026-10-11 (3) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Deploy. 37 new hubs need prerendering, and the body prerender is what puts the (*2026-10-11 (later) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Still pending from the previous entry: the `/india/page/1` and `/global/page/1` (*2026-10-11 (later) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Apply the two new `location = /india/page/1` and `/global/page/1` redirect blocks (*2026-10-11 — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): `df6c666` needs a deploy for the impact history to appear. (*2026-10-11 — Claude Code session*)
+
+
 ## 2026-10-11 19:13 — watcher
 
 **Ran:** verify-live
