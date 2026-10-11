@@ -74,6 +74,10 @@ ROUTE_EXPECTATIONS = [
 UA = "Mozilla/5.0 (compatible; handoff-watcher/1.0)"
 ACTIONED_CAP = 500
 
+# Minutes during which an identical (job, argument) that already SUCCEEDED is treated as a
+# duplicate request rather than new work. See the cooldown guard in main().
+COOLDOWN_MINUTES = 60
+
 
 def log(*a):
     """Progress goes to STDERR.
@@ -537,6 +541,22 @@ def main():
                            % (job, arg[:80], heading))
             state["actioned"].append(eid)
             continue
+
+        # Cooldown guard. The idempotency key includes the entry heading, so editing a
+        # heading's wording makes an already-actioned item look new - which on 2026-10-11
+        # cost a redundant six-minute redeploy, because a heading was renamed to describe
+        # the same work. Re-running a job whose identical form SUCCEEDED within the hour is
+        # almost always that mistake; a failed attempt is deliberately not blocked, so a
+        # fix-and-retry still works.
+        key = "%s|%s" % (job, arg)
+        last_ok = (state.get("last_ok") or {}).get(key)
+        if last_ok and (time.time() - last_ok) < COOLDOWN_MINUTES * 60:
+            results.append("- SKIPPED `[job: %s]` (*%s*): the same job and argument succeeded"
+                           " %d minutes ago, so this is a duplicate request rather than new"
+                           " work." % (job, heading, (time.time() - last_ok) / 60))
+            state["actioned"].append(eid)
+            continue
+
         log("  [job: %s] from %s" % (job, heading))
         try:
             stat, detail = HANDLERS[job](arg)
@@ -552,6 +572,8 @@ def main():
         else:
             state["actioned"].append(eid)
             ran.append(job)
+        if stat == "ok":
+            state.setdefault("last_ok", {})[key] = time.time()
         if stat == "fail":
             failed = True
             results.append("- Stopping here: fail closed, no retry. Remaining items wait "
