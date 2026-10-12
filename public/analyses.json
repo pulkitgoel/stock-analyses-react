@@ -1,6 +1,79 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global Spillover - 12 Oct 2026",
+      "ticker": "XOM:CVX:VLO:PSX:DAL:UAL:IOC:BPCL:HINDPETRO:INDIGO:ONGC:GESHIP:NEM:HAL:BEL:SUZLON",
+      "file": "policy-pulse-global-12-oct-2026.md",
+      "slug": "policy-pulse-global-12-oct-2026",
+      "date": "2026-10-12",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "oil",
+        "hormuz",
+        "gold",
+        "trade",
+        "shipping"
+      ],
+      "summary": "Brent topped USD 106 after a second deadly strike on Riyadh's airport and a tanker hit at Hormuz, positive for XOM, CVX and VLO and negative for DAL, UAL and IOC. Trump's Russian diesel deal capped the spike instead of reversing it, gold held near USD 4,180 with the US 30-year at 24-year highs, and Canada sent its largest trade mission to India in 30 years to push a trade deal.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Ministries & Regulators - 12 Oct 2026",
+      "ticker": "IOC:BPCL:HINDPETRO:HDFCBANK:ICICIBANK:SBIN:BAJFINANCE:DLF:HCLTECH:TCS:INFY:HDFCAMC:CAMS:BSE:MOTILALOFS",
+      "file": "policy-pulse-ministries-12-oct-2026.md",
+      "slug": "policy-pulse-ministries-12-oct-2026",
+      "date": "2026-10-12",
+      "tags": [
+        "policy-pulse",
+        "rbi",
+        "rupee",
+        "inflation",
+        "it-services",
+        "mutual-funds"
+      ],
+      "summary": "The RBI will meet the entire daily dollar requirement of IOC, BPCL and HINDPETRO from October 12 and imposed a 20% cash reserve on rupee-linked FX derivatives above USD 2 million, its most decisive rupee-defence package since 2013, with the currency up 0.99% to 95.77. September CPI hit 5.54%, the highest since October 2024 and negative for BAJFINANCE and DLF, while HCLTech beat with profit up 21% and record SIP flows lifted HDFCAMC and CAMS.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Modi / India Govt - 12 Oct 2026",
+      "ticker": "CHENNPETRO:LT:IRCON:RVNL:NCC:KNRCON:ULTRACEMCO:AMBUJACEM:TATASTEEL:JSWSTEEL:ADANIPORTS:IRFC:COROMANDEL:M&M",
+      "file": "policy-pulse-modi-12-oct-2026.md",
+      "slug": "policy-pulse-modi-12-oct-2026",
+      "date": "2026-10-12",
+      "tags": [
+        "policy-pulse",
+        "infrastructure",
+        "rails",
+        "ports",
+        "petroleum",
+        "agriculture"
+      ],
+      "summary": "PM Modi opened over Rs 13,000 crore of Tamil Nadu projects on October 11, including a Rs 1,620-crore lube base-stock unit at CPCL, the only listed company named in the release, alongside a Rs 4,900-crore Chennai Metro Phase II stretch and about Rs 3,700 crore of highways that map to LT, IRCON and RVNL. The PM Dhan-Dhaanya Krishi Yojana also marked its first year with a 100-district scorecard.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 12 Oct 2026",
+      "ticker": "META:GOOGL:AMZN:CMCSA:PARA:WBD:FOXA:LMT:RTX:NOC:WMT:TGT:DAL:UAL:GS:JPM",
+      "file": "policy-pulse-trump-us-12-oct-2026.md",
+      "slug": "policy-pulse-trump-us-12-oct-2026",
+      "date": "2026-10-12",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "media",
+        "defence",
+        "tariffs",
+        "fed"
+      ],
+      "summary": "The Justice Department opened an antitrust probe into the five networks in the White House television pool, an overhang for CMCSA, PARA, WBD and FOXA, and a federal judge ordered the administration to cancel its taxpayer-funded television advertisements. Foreign military sales reform took effect for LMT, RTX and NOC, importers won a class-action route to tariff refunds for WMT and TGT, and Brent above USD 106 kept DAL and UAL under pressure into bank earnings on Tuesday.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Syrma SGS Technology — Deep Dive Analysis",
       "ticker": "SYRMA",
       "file": "syrma-sgs-technology-deep-dive-analysis.md",
