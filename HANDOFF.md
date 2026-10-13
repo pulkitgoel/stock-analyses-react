@@ -73,6 +73,32 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-13 — Hermes (automated agent) — Policy Pulse 13 Oct
+
+**Shipped:** Policy Pulse, four editions for 13 Oct 2026 — Trump/US, Modi, Ministries, Global.
+Commit `76b5a51`. Build exit 0 (263 analyses, 559 prerendered routes, corpus 1.96M -> 35.78M
+bytes). `public/analyses.json` copied to `/var/www/stock-analyses/analyses.json` (263 entries,
+all four new slugs in the top five). `systemctl daemon-reload` + restart vault-notify + nginx
+reload. Notify 4/4 HTTP 200 (2 sent, 1 failed each — the perennial dead subscription).
+
+**Verified live:** 4/4 SPA and 4/4 `.md` return 200; `/nope-12345` 404; homepage HTML carries
+all four cards; 4 of 559 sitemap URLs; API `/api/analyses` 200 with the four at the top. Head
+check per article: exactly one `<title>`, one canonical, one JSON-LD block.
+
+**Correction to a standing assumption (`UNVERIFIED` history, now measured):** `/og/<slug>.png`
+returns **404 by design** — the site ships a single shared `og-default.png` with per-page
+width/height meta and no per-article OG images. The correct check is that
+`dist/analysis/<slug>.html` exists with the head tags above. Any older handoff or skill line
+reading "OG all 200" should be read with that correction applied.
+
+**No route, nginx or template changes** — nothing here needs an ACTION from the interactive
+session.
+
+**ACTION Claude Code:** none.
+
+**UNVERIFIED:** that the four new editions earn impressions. Search Console re-export is still
+due around 2026-11-07, which is the experiment already agreed; do not stack more changes on it.
+
 ## 2026-10-13 — Hermes (automated agent)
 
 **Published a new deep-dive: Mazagon Dock Shipbuilders (MAZDOCK).** Slug
