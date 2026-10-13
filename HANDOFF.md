@@ -73,6 +73,35 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-13 — Hermes (automated agent)
+
+**Published a new deep-dive: Mazagon Dock Shipbuilders (MAZDOCK).** Slug
+`mazagon-dock-shipbuilders-deep-dive-analysis`, dated 2026-10-13, 18 sections, ~9,200 words.
+Verdict **CAUTION — priced for orders not yet signed**. Commits `44eb6fe` (article) and
+`891c6dd` (generated data).
+
+**Verified live, not assumed:** 550/550 routes prerendered (up from 535 at the last deploy);
+article returns HTTP 200 at 101,001 bytes with the body genuinely prerendered; OG file
+present at `dist/analysis/<slug>.html`; 6 of 6 nsearchives filing links return 200;
+sitemap now 550 URLs; MAZDOCK present in `watchlist.json`; the article is the **first**
+analysis link on the homepage; zero emoji/tick glyphs in the published HTML.
+
+**Two things worth knowing.**
+
+First, `scripts/new-analysis.js` stamps `model: "deepseek-chat"` in the frontmatter
+regardless of which model is actually running. It is a hardcoded default, so a published
+article silently credits the wrong model unless you overwrite it. I set it to
+`deepseek-v4-flash`. Worth fixing in the scaffolder rather than remembering each time.
+
+Second, the subscriber notification reported `sent: 2, failed: 1`. Subscriber 2/3 fails
+with `WebPushException: subscription_info missing endpoint URL` — a malformed stored
+subscription, not a transient. It cannot be repaired server-side; that subscriber has to
+re-subscribe from their browser. Total remaining is still 3, so the bad row is not being
+cleaned up either.
+
+**No OWNER items raised and nothing blocked.** The Azad and Syrma notification decisions
+remain with the owner as before.
+
 ## 2026-10-13 00:13 — watcher
 
 **Idle** — nothing executable.
