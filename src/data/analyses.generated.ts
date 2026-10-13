@@ -23,6 +23,83 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Policy Pulse - Global Spillover - 13 Oct 2026",
+    "ticker": "MU:AVGO:AMD:INTC:TCS:INFY:HCLTECH:WIPRO:IOC:BPCL:HINDPETRO:ONGC:XOM:CVX:VLO:NEM",
+    "file": "policy-pulse-global-13-oct-2026.md",
+    "slug": "policy-pulse-global-13-oct-2026",
+    "date": "2026-10-13",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "semiconductors",
+      "kospi",
+      "oil",
+      "tariffs",
+      "gold",
+      "russia"
+    ],
+    "summary": "China's CXMT claimed a 4F2 DRAM design and the KOSPI fell 5.46%, hitting MU, AVGO and INTC while re-rating TCS, INFY and HCLTECH through Nifty IT's 5.22% gain. Five days out, the Graham Act had still produced no notice to Congress, leaving IOC, BPCL, ONGC and Sun Pharma exposed on the Indian side.",
+    "market": "global",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Ministries & Regulators - 13 Oct 2026",
+    "ticker": "BSE:ANGELONE:MOTILALOFS:IIFL:CDSL:CAMS:KFINTECH:HDFCAMC:POLYCAB:BEL:SOLARINDS:NIBE:SUNPHARMA:CIPLA:PAYTM",
+    "file": "policy-pulse-ministries-13-oct-2026.md",
+    "slug": "policy-pulse-ministries-13-oct-2026",
+    "date": "2026-10-13",
+    "tags": [
+      "policy-pulse",
+      "capital-markets",
+      "taxation",
+      "defence",
+      "sebi",
+      "fii-dii"
+    ],
+    "summary": "The Finance Minister said the government will hear views on removing LTCG tax and reframing STT, a debate that lifted the Sensex 1,109 points and the Nifty IT index 5.22%, positive for BSE, ANGELONE and CDSL. BEL disclosed Rs 533 crore of new orders, Polycab fell 5% as the NSE ended its F&O contracts, and the Army inducted 450 loitering munitions from Solar Industries' unit.",
+    "market": "india",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Modi / India Govt - 13 Oct 2026",
+    "ticker": "TCS:INFY:HCLTECH:WIPRO:TECHM:LTM:SUNPHARMA:DRREDDY:CIPLA:LUPIN:HINDCOPPER:NATIONALUM:VEDL:KAYNES:CGPOWER:DIXON",
+    "file": "policy-pulse-modi-13-oct-2026.md",
+    "slug": "policy-pulse-modi-13-oct-2026",
+    "date": "2026-10-13",
+    "tags": [
+      "policy-pulse",
+      "modi",
+      "semiconductors",
+      "critical-minerals",
+      "it-services",
+      "pharma",
+      "gcc"
+    ],
+    "summary": "PM Modi told the Bloomberg New Economy Forum on October 13 that the routes of globalisation have become chokepoints, naming supply chains, energy, critical minerals and payments, a framing that maps to TCS, INFY, SUNPHARMA and HINDCOPPER. The PMO named no company, so every mapping is inferred.",
+    "market": "india",
+    "model": "deepseek-chat"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 13 Oct 2026",
+    "ticker": "GS:JPM:C:WFC:VLO:PSX:XOM:CVX:DAL:UAL:DJT:MS:COIN:MU:AVGO:WMT",
+    "file": "policy-pulse-trump-us-13-oct-2026.md",
+    "slug": "policy-pulse-trump-us-13-oct-2026",
+    "date": "2026-10-13",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "tariffs",
+      "russia",
+      "crypto",
+      "bank-earnings",
+      "fed",
+      "semiconductors"
+    ],
+    "summary": "Goldman beat on a 72% surge in equities revenue while JPMorgan missed its first quarter in three years. Trump floated a US diesel export cap five days before the Graham Act's October 18 deadline, hitting VLO and PSX, and Trump Media pulled three crypto ETF filings as DJT fell 5% on a 32% approval rating.",
+    "market": "global",
+    "model": "deepseek-chat"
+  },
+  {
     "title": "Policy Pulse - Global Spillover - 12 Oct 2026",
     "ticker": "XOM:CVX:VLO:PSX:DAL:UAL:IOC:BPCL:HINDPETRO:INDIGO:ONGC:GESHIP:NEM:HAL:BEL:SUZLON",
     "file": "policy-pulse-global-12-oct-2026.md",
