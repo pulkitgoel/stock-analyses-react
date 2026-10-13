@@ -1,6 +1,24 @@
 {
   "analyses": [
     {
+      "title": "Mazagon Dock Shipbuilders — Deep Dive Analysis",
+      "ticker": "MAZDOCK",
+      "file": "mazagon-dock-shipbuilders-deep-dive-analysis.md",
+      "slug": "mazagon-dock-shipbuilders-deep-dive-analysis",
+      "date": "2026-10-13",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "defence",
+        "shipbuilding",
+        "PSU",
+        "capital-goods"
+      ],
+      "summary": "Mazagon Dock is India's only yard building both destroyers and conventional submarines, with a pristine balance sheet, 36% ROCE and the cheapest multiple among shipbuilding peers. The problem is what it will build next: the order book has fallen to Rs 18,218 Cr from Rs 38,561 Cr in FY24 as P17A, P15B and P75 Kalvari complete, while the Rs 99,000 Cr P75(I) submarine contract remains unsigned and management says new orders take about two years to reach revenue. Verdict: CAUTION — priced for orders not yet signed.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse - Global Spillover - 12 Oct 2026",
       "ticker": "XOM:CVX:VLO:PSX:DAL:UAL:IOC:BPCL:HINDPETRO:INDIGO:ONGC:GESHIP:NEM:HAL:BEL:SUZLON",
       "file": "policy-pulse-global-12-oct-2026.md",

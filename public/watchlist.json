@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "mazagon-dock-shipbuilders-deep-dive-analysis",
+      "ticker": "MAZDOCK",
+      "title": "Mazagon Dock Shipbuilders — Deep Dive Analysis",
+      "date": "2026-10-13",
+      "yahooSymbol": "MAZDOCK.NS",
+      "priceAtAnalysis": 2027,
+      "support": 1988,
+      "resistance": 2150,
+      "supports": [
+        1947,
+        1781
+      ],
+      "resistances": [
+        2246,
+        2413
+      ],
+      "verdict": "CAUTION — PRICED FOR ORDERS NOT YET SIGNED"
+    },
+    {
       "slug": "syrma-sgs-technology-deep-dive-analysis",
       "ticker": "SYRMA",
       "title": "Syrma SGS Technology — Deep Dive Analysis",
