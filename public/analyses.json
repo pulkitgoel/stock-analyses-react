@@ -1,6 +1,77 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global Spillover - 15 Oct 2026",
+      "ticker": "TCS:INFY:TECHM:HCLTECH:MU:CRWV:WDC:IOC:ONGC:VEDL",
+      "file": "policy-pulse-global-15-oct-2026.md",
+      "slug": "policy-pulse-global-15-oct-2026",
+      "date": "2026-10-15",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "ai-chip-crash",
+        "korea",
+        "reverse-ai-trade",
+        "russia"
+      ],
+      "summary": "The KOSPI fell 7.57% with circuit breakers on both Korean boards and the Nikkei lost 4.90%, hitting MU, WDC and CRWV on Anthropic's decelerating growth and CoreWeave's bond selloff. India diverged as Nifty IT rose 1.82%, lifting TCS, INFY and TECHM, while IOC and BPCL stay exposed to the Graham Act's five-day deadline.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Ministries & Regulators - 15 Oct 2026",
+      "ticker": "IDBI:LICI:YESBANK:RELIANCE:BSE:ANGELONE:CDSL:PAYTM:HDFCBANK:IOC",
+      "file": "policy-pulse-ministries-15-oct-2026.md",
+      "slug": "policy-pulse-ministries-15-oct-2026",
+      "date": "2026-10-15",
+      "tags": [
+        "policy-pulse",
+        "disinvestment",
+        "rbi",
+        "ipo",
+        "exports",
+        "capital-markets"
+      ],
+      "summary": "The CCEA cleared the Rs 52,878 crore sale of a 60.72% IDBI Bank stake to Fairfax at Rs 81 a share and IDBI fell 7%, while the Supreme Court quashed Yes Bank's Rs 8,415 crore AT1 write-off and YESBANK fell 12.68%. Jio Platforms priced India's largest IPO at Rs 1,065-1,119, lifting RELIANCE 3.44% and BSE 2.70%.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Modi / India Govt - 15 Oct 2026",
+      "ticker": "LT:RVNL:IRCON:CGPOWER:KEC:NETWEB:HEROMOTOCO:MARUTI:EICHERMOT:DABUR:HCLTECH:WIPRO",
+      "file": "policy-pulse-modi-15-oct-2026.md",
+      "slug": "policy-pulse-modi-15-oct-2026",
+      "date": "2026-10-15",
+      "tags": [
+        "policy-pulse",
+        "infrastructure",
+        "data-centre",
+        "railways",
+        "it-services"
+      ],
+      "summary": "PM Modi dedicated Rs 3,350 crore of Ladakh projects including a Rs 2,500 crore strategic road, mapping to LT, GRINFRA and KEC. A dedicated data-centre policy is being drafted to protect consumers from grid costs, a positive for CGPOWER and POWERINDIA, and the Cabinet cleared a 78-day railway bonus worth Rs 2,009.61 crore.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 15 Oct 2026",
+      "ticker": "META:DJT:LLY:WMT:CRWV:MU:TSM:VLO:DAL:NVDA",
+      "file": "policy-pulse-trump-us-15-oct-2026.md",
+      "slug": "policy-pulse-trump-us-15-oct-2026",
+      "date": "2026-10-15",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "fed",
+        "ai-debt",
+        "russia",
+        "leader-trades"
+      ],
+      "summary": "A 3.7% September CPI was followed by a 6.3% PPI, the biggest since 2022, taking October hike odds to a coin flip; Walmart, Lilly and Nike gained while CRWV, MU, WDC and ORCL were sold on data-centre debt. Five days from the Graham Act deadline there is still no notice to Congress, and Trump's August filing showed up to USD 25M of META bought on one day.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Mazagon Dock Shipbuilders — Deep Dive Analysis",
       "ticker": "MAZDOCK",
       "file": "mazagon-dock-shipbuilders-deep-dive-analysis.md",

@@ -220,10 +220,21 @@ const allRoutes = [
   ...sectionRoutes,
 ];
 
+// XML-escape route text. An unescaped "&" (the NSE symbol M&M produces /company/M&M)
+// makes the document ill-formed and hard-fails prerender-body.py's ElementTree parse,
+// which aborts deploy.sh before the dist swap.
+const xmlEscape = (s) =>
+  String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes.map(({ loc, lastmod }) => `  <url>
-    <loc>${BASE_URL}${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
+    <loc>${xmlEscape(`${BASE_URL}${loc}`)}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
   </url>`).join('\n')}
 </urlset>
 `;
