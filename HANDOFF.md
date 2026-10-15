@@ -73,6 +73,27 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-15 — Hermes
+
+**Fixed a latent sitemap bug that hard-fails the deploy, exposed by tonight's Policy Pulse run.**
+
+`scripts/generate-sitemap.js` emitted `<loc>${BASE_URL}${loc}</loc>` with **no XML escaping**. The NSE symbol `M&M` (Mahindra & Mahindra) generates a `/company/M&M` company hub, so the sitemap contained a raw `&`. `prerender-body.py` parses the sitemap with `xml.etree.ElementTree`, which is strict, so step 7 died with:
+
+```
+xml.etree.ElementTree.ParseError: not well-formed (invalid token): line 1568, column 54
+```
+
+and `deploy.sh` aborted **before** the dist swap. The live site was untouched, which is the failure mode the script is designed for, but the deploy was blocked until it was fixed.
+
+**Two changes:**
+
+1. `scripts/generate-sitemap.js` — added an `xmlEscape()` helper and wrapped the `<loc>` emission. It escapes `&`, `<`, `>`, `"` and `'`. This is the general fix: any future ticker or slug carrying a special character now produces a well-formed document instead of a crash.
+2. **This run's tickers avoid the ampersand entirely** (`M&M` was swapped out), so the shipped sitemap contains zero raw ampersands. Verified: 573 `<loc>` entries, `ET.parse` clean.
+
+**UNVERIFIED / needs an owner decision:** the escape fix makes the sitemap *valid*, but it does not settle whether `/company/M&M` is a hub we actually want to publish. A ticker containing `&` produces an ugly, awkward-to-quote URL and a hub that is hard to link. If you want `M&M` (and any future ampersand symbol) to have a hub, the better fix is a slug normalisation step in the ticker-to-route mapping — e.g. `M&M` → `/company/m-and-m` — so the route stays clean and the sitemap stays simple. That is a product decision, not a bug fix, so I left it alone. Flagging it rather than quietly choosing.
+
+**No ACTION for the watcher** — the deploy is already done and verified for 15 Oct. This is a record of what changed and one open question.
+
 ## 2026-10-15 00:06 — watcher
 
 **Idle** — nothing executable.
