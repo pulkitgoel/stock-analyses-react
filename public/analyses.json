@@ -1,6 +1,77 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse - Global Spillover - 16 Oct 2026",
+      "ticker": "MSCI:TCS:INFY:TECHM:MOTHERSON:BHARATFORG:IOC:BPCL:ONGC:HDFCBANK",
+      "file": "policy-pulse-global-16-oct-2026.md",
+      "slug": "policy-pulse-global-16-oct-2026",
+      "date": "2026-10-16",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "emerging-markets",
+        "indonesia",
+        "eu-auto",
+        "oil"
+      ],
+      "summary": "MSCI proposed reclassifying Indonesia as a Standalone Market and the Jakarta Composite fell 11.1%, its worst day since 1998, pushing flows toward TCS, INFY and HDFCBANK as the cleaner emerging-market exposure. France and Germany agreed to soften the EU's 2035 combustion-engine ban, and the KOSPI rebounded 2.1%.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Ministries & Regulators - 16 Oct 2026",
+      "ticker": "TATASTEEL:SUNPHARMA:DRREDDY:WELSPUNLIV:BSE:ANGELONE:CDSL:HAL:BEL:DIXON",
+      "file": "policy-pulse-ministries-16-oct-2026.md",
+      "slug": "policy-pulse-ministries-16-oct-2026",
+      "date": "2026-10-16",
+      "tags": [
+        "policy-pulse",
+        "trade",
+        "defence",
+        "capital-markets",
+        "rupee",
+        "ipo"
+      ],
+      "summary": "The India-US BTA first tranche is finalised and in legal drafting, with Piyush Goyal and Nirmala Sitharaman both pushing for signature, a positive for SUNPHARMA, DRREDDY and WELSPUNLIV. The MoD signed Rs 4,106 crore of contracts led by a Rs 2,563 crore IAF satellite, and SEBI rewrote the closing auction session from December 7.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Modi / India Govt - 16 Oct 2026",
+      "ticker": "RELIANCE:IOC:BPCL:GAIL:KAYNES:DIXON:CGPOWER:LT:ULTRACEMCO:PAGEIND",
+      "file": "policy-pulse-modi-16-oct-2026.md",
+      "slug": "policy-pulse-modi-16-oct-2026",
+      "date": "2026-10-16",
+      "tags": [
+        "policy-pulse",
+        "sports-economy",
+        "semiconductors",
+        "energy",
+        "india-us"
+      ],
+      "summary": "PM Modi's 2036 Olympics ambition was priced the next morning at Rs 7,386.74 crore: the Sports Ministry raised event-hosting aid from Rs 2 crore to up to Rs 50 crore, mapping to LT and ULTRACEMCO. Rubio lands in Jamnagar, the RELIANCE refinery complex, two days after the Graham Act deadline.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse - Trump / US Watch - 16 Oct 2026",
+      "ticker": "META:DJT:MRK:LLY:ABBV:VLO:PSX:F:NUE",
+      "file": "policy-pulse-trump-us-16-oct-2026.md",
+      "slug": "policy-pulse-trump-us-16-oct-2026",
+      "date": "2026-10-16",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "russia",
+        "leader-trades",
+        "tariffs",
+        "fed"
+      ],
+      "summary": "Two days from the Graham Act deadline there is still no Section 113(g) notice to Congress, leaving VLO, PSX and DAL on the right side of a licensed Russian diesel flow. Trump's pharma portfolio grew from $1.7 million to as much as $56.2 million as Medicare exemptions expanded, and the US-Mexico tariff deal stalled on the 25% auto and 50% metals levies.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse - Global Spillover - 15 Oct 2026",
       "ticker": "TCS:INFY:TECHM:HCLTECH:MU:CRWV:WDC:IOC:ONGC:VEDL",
       "file": "policy-pulse-global-15-oct-2026.md",
