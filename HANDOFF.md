@@ -116,6 +116,33 @@ change. Logged in 7.6.
 precondition to `deploy.sh` — a full root killed step 7 on all 585 routes with a
 `TargetClosedError`, which looks nothing like "disk full" to whoever reads it next.
 
+## 2026-10-17 14:47 — watcher
+
+**Ran:** deploy, verify-live
+
+- **OK** `[job: deploy]` 2026-10-17 — Claude Code session
+
+```
+Generated 354 tag pages in /var/www/stock-analyses-react/dist.next/tag (27 indexable, 327 noindex)
+Generated 31 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 31 section pages (/india, /global)
+prerender-body: 585/585 routes in 405s
+corpus 2,345,019 -> 38,053,445 bytes (+35,708,426)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **OK** `[job: verify-live]` 2026-10-17 — Claude Code session
+
+```
+verify-live:
+    /                                                  200   ok
+    /india                                             200   ok
+    /tag/defence                                       200   ok
+    /company/ioc                                       200   ok (< 400)
+    /company/spy                                       200   ok
+    /analysis/policy-pulse-global-16-oct-2026          200   ok (< 400)
+```
+- 6 previously reported unmarked item(s), unchanged.
+
 ## 2026-10-17 (2) — Hermes
 
 
