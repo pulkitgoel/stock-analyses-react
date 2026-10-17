@@ -712,6 +712,12 @@ used to render.
 Lighthouse settings (`--form-factor=mobile --throttling-method=simulate`): live, old
 code, **CLS 0.71, Performance 61**; the fixed build, **CLS 0, Performance 84**.
 
+**Confirmed on production after the deploy** (`4dc6fa2`), measured twice independently:
+**CLS 0** both times, Performance **85** (this session) and **73** (Hermes). Treat the
+Performance number as noisy on a throttled remote run and CLS 0 as the result. The
+Google Fonts entry has left the render-blocking list; the only item remaining is the app
+CSS, at 394 ms.
+
 **The footer was never the cause.** PSI named `<footer>` with the whole 0.710 because
 the footer is the largest box that moved, but `Footer.tsx` is static markup with no data
 dependency. The cause was one line in a service:
@@ -764,9 +770,15 @@ fixed. Re-measure on PSI after deploy before claiming it.
 
 **Still open from the original item:**
 
-- **LCP on mobile.** Unchanged in the local measurement, for the reason above. If PSI
-  still shows the delay after this deploy, the remaining lever is the app CSS in the
-  critical path, not the image.
+- **LCP on mobile — diagnosed on production, and it is the app CSS, not the image.**
+  Live after the deploy: **FCP 3.3 s, LCP 3.3 s** (Hermes measured 3.2 / 3.9). FCP and
+  LCP are effectively equal, which means nothing is slow to *load* — the page simply
+  cannot paint until the one remaining render-blocking stylesheet arrives, and the LCP
+  element paints the moment it does. The hero's `width`/`height` and `fetchPriority` were
+  still correct (they removed its CLS contribution) but they could not move a metric that
+  is not image-bound. **The only lever left is `/assets/index-*.css` in the critical
+  path** — inline the above-the-fold rules, or split the stylesheet so the homepage does
+  not download all 8.7 KiB of it before first paint. Do not reopen the image angle.
 - Accessibility 97, one contrast failure.
 - The numbers above are lab, not field. Confirm against CrUX in Search Console
   (Experience -> Core Web Vitals) once enough traffic accumulates.
@@ -782,6 +794,20 @@ and one canonical (3.1, 3.2).
 ---
 
 ### 7.6 Remaining items
+
+- **The homepage is the one route with no canonical in its prerendered head.** Found
+  while verifying 7.9 on production, 2026-10-17: every other route carries exactly one
+  (`/india`, `/global`, `/analyses/page/3`, `/tag/*`, `/company/*`, `/analysis/*`,
+  `/about` all check out), but `/` has **zero**, because the homepage head comes from
+  `index.html` — which never had one — rather than from `render_shell()`. A
+  non-executing crawler therefore gets no canonical on the site's most important URL.
+
+  It is **not** a one-line addition. `HomePage.tsx` already emits a canonical through
+  Helmet, so adding one to `index.html` would put two on `/` after hydration, which is
+  the duplicate-metadata defect 3.2 exists to prevent. The fix is to add it to
+  `index.html` **and** drop it from `HomePage.tsx` in the same change, matching how
+  `AnalysisPage` and `CompanyPage` already defer to the prerendered head. Pre-existing,
+  not a 7.9 regression.
 
 - Trust layer: a 600-900 word disclaimer, a 400-600 word `/about` with methodology, and
   a disclaimer line in every article (only 70 of 250 have one).

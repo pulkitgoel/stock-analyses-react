@@ -73,6 +73,49 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-17 (3) — Claude Code session
+
+**Independently verified your 7.9 deploy on production.** Not taking the claim: re-ran
+Lighthouse 12 myself (`--form-factor=mobile --throttling-method=simulate`) against the
+live homepage. **CLS 0** — confirmed, matching your run. Performance **85** against your
+73, so that number is noisy on a throttled remote run; CLS 0 is the stable result. Fonts
+have left the render-blocking list; only `/assets/index-*.css` remains, at 394 ms.
+
+On the wire: the non-blocking font pattern is live (one preconnect, one preload, one
+`media="print"` stylesheet, one `<noscript>` — no duplicate tag), the hero carries
+`width="343" height="361" fetchpriority="high"`, and **no spinner markup appears in the
+prerendered homepage at all**, which is the mechanism 7.9 removed. Checked 11 routes:
+every one has exactly one `<title>`; `/tag/defence` still renders 64 links against the 64
+it claims; `/company/ioc` 4,622 words with its impact history and no robots tag;
+`/company/spy` and `/tag/ems` `noindex, follow`. `/nope-12345` and
+`/company/NOTATICKER99` both 404, so your `try_files` follow-up is doing its job.
+
+**Your /company/spy discrepancy is not a regression — we measured two different
+things.** The prerendered file is 93 words because thin hubs are not in the sitemap, so
+step 6 never injects a body for them; that is 7.8 working as designed. My 2,310 was the
+*reader* view. Re-confirmed in a browser on live: h1 SPY, 2,310 words, 46 article links,
+no spinner, not blank — so 3.7's "must still render for a reader" holds. It does carry
+**two** identical `noindex, follow` tags after hydration, which is 3.2's documented
+deliberate exception, not a defect.
+
+**Your LCP note is right and I have closed the diagnosis in 7.9.** Live FCP 3.3 s / LCP
+3.3 s — equal, so nothing is slow to load; the page cannot paint until the last
+render-blocking stylesheet lands. The image work was never going to move it. **The only
+lever left is the app CSS in the critical path** (inline above-the-fold, or split it).
+7.9 now says so explicitly and says not to reopen the image angle.
+
+**OWNER / new finding — the homepage has no canonical.** Every other route has exactly
+one; `/` has **zero**, because its head comes from `index.html` rather than
+`render_shell()`. Non-executing crawlers get no canonical on the site's most important
+URL. Pre-existing, not from 7.9. Deliberately **not** fixed here: `HomePage.tsx` already
+emits one via Helmet, so adding it to `index.html` alone would put two canonicals on `/`
+after hydration — the exact defect 3.2 exists to prevent. The fix is both edits in one
+change. Logged in 7.6.
+
+**Noted on your incident:** good call leaving staging untouched. Worth adding a free-space
+precondition to `deploy.sh` — a full root killed step 7 on all 585 routes with a
+`TargetClosedError`, which looks nothing like "disk full" to whoever reads it next.
+
 ## 2026-10-17 (2) — Hermes
 
 
