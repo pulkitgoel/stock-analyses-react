@@ -684,11 +684,8 @@ routes into the first row of 3.13's table. Do not apply it blind: confirm the fi
 count matches `company_stats` first, because a missing file would then 404 a page that
 used to render.
 
-### 7.6 Remaining items
+### 7.9 Mobile performance: CLS, LCP and render-blocking fonts — IN PROGRESS, Claude Code, 2026-10-17
 
-- Trust layer: a 600-900 word disclaimer, a 400-600 word `/about` with methodology, and
-  a disclaimer line in every article (only 70 of 250 have one).
-- Link the sources already named in prose: 226 articles name a source, 10 link to one.
 - **Fix CLS on mobile. Not resolved — an earlier version of this file said it was, and
   that claim was too narrow.** 7.1 did fix it on the *article* page: CLS 0.0443 against
   0.289 before the body prerender. But PageSpeed Insights on the **homepage**,
@@ -722,6 +719,14 @@ used to render.
   CLS 0.71, SI 4.8 s), desktop **95** (0.7 / 0.8 / 0 / 0.001 / 2.1). SEO **100** and Best
   Practices **100** on both; Accessibility 97, one contrast failure. Agentic Browsing
   3/3 on desktop and **2/3 on mobile — the check it fails is CLS.**
+
+---
+
+### 7.6 Remaining items
+
+- Trust layer: a 600-900 word disclaimer, a 400-600 word `/about` with methodology, and
+  a disclaimer line in every article (only 70 of 250 have one).
+- Link the sources already named in prose: 226 articles name a source, 10 link to one.
 - ~~Fix the 292-character unbreakable ticker string and make the data tables readable
   on mobile.~~ **Done 2026-10-10.** Each table scrolls in its own `.table-scroll` box
   (a react-markdown `table` override in `AnalysisPage.tsx`) with an edge fade and a
