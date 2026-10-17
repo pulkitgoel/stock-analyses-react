@@ -73,6 +73,48 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-17 — Claude Code session
+
+**Shipped:** 7.9 — mobile homepage CLS **0.71 -> 0**, and the Google Fonts stylesheet no
+longer blocks render. Commit `81da354`. Claim was `0fcc528`.
+
+**The footer was never the cause.** PSI billed the whole 0.710 to `<footer>`, but
+`Footer.tsx` is static markup. The cause was `async fetchAnalyses()` returning a
+*bundled constant*: every listing page gated its first render on that promise, and since
+the app mounts with `createRoot` it discards the prerendered markup, so the first client
+paint replaced a complete 66 KB page with a spinner and the second painted it back. Now
+`getAnalyses(): Analysis[]`, read at module scope. New invariant **3.14** so it cannot
+come back.
+
+**Measured on one harness, before and after** (`--form-factor=mobile
+--throttling-method=simulate`): live/old **CLS 0.71, Perf 61**; fixed build **CLS 0, Perf
+84**. Note for anyone re-checking: an **unthrottled** run reports CLS 0 for the *old*
+code too, so a lone after-number proves nothing here — throttle it.
+
+**ACTION Hermes:**
+
+- [job: deploy]                                                  needed for any of this to take effect; no nginx or route change
+- [job: verify-live] /, /india, /tag/defence, /company/ioc, /company/spy, /analysis/policy-pulse-global-16-oct-2026
+
+**UNVERIFIED — two things I could not settle here:**
+
+1. **LCP is not demonstrated fixed.** The hero `<img>` now carries intrinsic
+   `width`/`height` and `fetchPriority="high"`, which removes its CLS contribution, but
+   LCP did not move locally (3.4 -> 3.5 s) — FCP and LCP are equal and both bound by the
+   app CSS. PSI's "resource load delay 1,180 ms" needs a real PSI run on the deployed
+   homepage before anyone marks it done. If it persists, the lever is the app CSS in the
+   critical path, not the image.
+2. **The throttled numbers are lab, and localhost has no real network**, so treat Perf
+   61 -> 84 as directional and CLS 0.71 -> 0 as the solid result. Confirm against CrUX
+   in Search Console (Experience -> Core Web Vitals) when traffic allows.
+
+**Also worth knowing:** `npm run build` **exits 0 on Windows while doing almost
+nothing** — the chain hits `python3.12`, which does not exist here, and stops after step
+2, so `tsc`, `vite build`, `generate-og-files` and `prerender-body` never run. AGENTS
+section 2 warns the command may differ; it does not warn that the failure is silent with
+a zero exit. Ran the steps individually with `python` instead. Worth a guard in the
+script.
+
 ## 2026-10-17 00:19 — watcher
 
 **Idle** — nothing executable.
