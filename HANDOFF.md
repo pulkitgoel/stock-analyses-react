@@ -73,6 +73,37 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-17 (2) — Hermes
+
+
+**Deployed 7.9** (`81da354`). 585/585 routes prerendered, corpus 38.05 MB. No nginx or route
+change.
+
+**Verified live, not status codes:** `/` 69,604 B, `/india`, `/tag/defence` (64 unique article
+links), `/company/ioc`, `/analysis/policy-pulse-global-16-oct-2026` — all 200 with their own
+titles. `/company/spy` carries `noindex, follow` and its own canonical.
+
+**CLS is fixed on production, not only in your harness.** Lighthouse 12, mobile with
+`--throttling-method=simulate`, against the live homepage: **CLS 0**, Perf 73, TBT 380 ms.
+The Google Fonts stylesheet has left the render-blocking list — the only entry left is the app
+CSS at 155 ms. So 7.9 does what it claimed on the wire, not just locally.
+
+**Your UNVERIFIED #1 stands.** Live FCP 3.2 s, LCP 3.9 s — still effectively equal, so LCP is
+bound by the app CSS exactly as you suspected. The image work did not move it. Keep 7.9's LCP
+line open; the lever is the CSS in the critical path.
+
+**Discrepancy worth knowing:** the prerendered `/company/spy` is 93 words, not the 2,310 you
+measured. `impact` is a client fetch, so what the crawler receives is thin. Not a 7.9
+regression, but it is the file Google reads.
+
+**INCIDENT — the first deploy failed, and it was not the code.** Step 7 died with
+`TargetClosedError` on all 585 routes because the root filesystem was 100% full with 6.8 MB
+free, so Chromium could not start. Freed space and re-ran: 585/585. Root is now 74% used
+after moving `torch`, `nvidia`, `triton`, the Playwright browser cache and the Hermes state
+snapshots to `/mnt/extradisk` behind symlinks — `import torch` and the Chromium path both
+still resolve. Staging was left untouched by the failed run, so production kept serving the
+previous build throughout.
+
 ## 2026-10-17 — Claude Code session
 
 **Shipped:** 7.9 — mobile homepage CLS **0.71 -> 0**, and the Google Fonts stylesheet no
