@@ -5,7 +5,19 @@ import { ANALYSES } from '../data/analyses.generated';
 // public/analyses/*.md (see scripts/generate-analyses-data.js), so the list is
 // always in sync with the markdown that actually ships. There is no separate
 // hand-maintained array to keep up to date.
-export async function fetchAnalyses(): Promise<Analysis[]> {
+//
+// It is compiled into the bundle, so reading it is synchronous and must stay
+// that way. This was `async fetchAnalyses()`, and every listing page gated its
+// first render on the resulting promise: `if (loading) return <LoadingSpinner />`.
+// Since the app mounts with createRoot, React discards the prerendered markup
+// (AGENTS.md 7.1), so the first client paint replaced a complete page with a
+// spinner and the second painted it back — the whole document collapsed and
+// re-expanded for one microtask. That is what PageSpeed measured as CLS 0.71 on
+// the mobile homepage, billed to `<footer>` because the footer is the largest
+// box that moved (AGENTS.md 7.9). A promise around a constant bought nothing
+// and cost the worst number on the site, so there is deliberately no async
+// accessor here to fall back into.
+export function getAnalyses(): Analysis[] {
   return ANALYSES;
 }
 

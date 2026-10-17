@@ -267,7 +267,12 @@ def render_shell(title, description, canonical, jsonld, assets, image_url,
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Non-render-blocking font load; see the matching comment in index.html.
+         Keep the two in sync: this shell owns every prerendered route's head,
+         index.html owns the homepage's. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   </head>
   <body>
     <div id="root"></div>

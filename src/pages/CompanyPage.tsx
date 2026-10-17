@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowUpRight, Building2 } from 'lucide-react';
 import { Analysis } from '../types/analysis';
-import { fetchAnalyses } from '../services/analysisService';
+import { getAnalyses } from '../services/analysisService';
 import { fetchImpactFor } from '../services/impactService';
 import ImpactHistory from '../components/Company/ImpactHistory';
 import { ImpactCall } from '../types/analysis';
-import LoadingSpinner from '../components/Common/LoadingSpinner';
 import { tickerTokens } from '../utils/tickers';
 
 // Ticker tokenisation and the NON_COMPANY exclusion set live in
@@ -72,32 +71,35 @@ function AnalysisCardLink({ analysis: a }: { analysis: Analysis }) {
   );
 }
 
+// Bundled constant. See services/analysisService.ts: gating the first render on
+// a promise over this is what caused the CLS fail, so the article list is
+// filtered synchronously. The impact history is a real network call and keeps
+// its own state — it is an enhancement, so the page renders without waiting for
+// it rather than showing a spinner. That means `indexable` below is computed
+// from `impact = []` on the first render and settles when the fetch lands; the
+// prerendered file already carries the correct robots tag either way
+// (AGENTS.md 3.2, 3.7), and this race is unchanged from the previous version,
+// which never awaited the impact fetch either.
+const ALL_ANALYSES = getAnalyses();
+
 export default function CompanyPage() {
   const { ticker } = useParams<{ ticker: string }>();
-  const [analyses, setAnalyses] = useState<Analysis[]>([]);
   const [impact, setImpact] = useState<ImpactCall[]>([]);
-  const [loading, setLoading] = useState(true);
+
+  const analyses = useMemo(() => {
+    const wanted = (ticker ?? '').toUpperCase();
+    if (!wanted) return [];
+    return ALL_ANALYSES.filter(
+      (a) => tickerTokens(a.ticker).includes(wanted) ||
+      a.tags.some((t) => t.toUpperCase() === wanted)
+    );
+  }, [ticker]);
 
   useEffect(() => {
     if (!ticker) return;
-    setLoading(true);
-    const wanted = ticker.toUpperCase();
-    // Impact history loads alongside the articles. It is an enhancement, so a
-    // failure resolves to [] rather than blocking the page.
-    fetchImpactFor(wanted).then(setImpact).catch(() => setImpact([]));
-
-    fetchAnalyses()
-      .then((all) => {
-        const matching = all.filter(
-          (a) => tickerTokens(a.ticker).includes(wanted) ||
-          a.tags.some((t) => t.toUpperCase() === wanted)
-        );
-        setAnalyses(matching);
-      })
-      .finally(() => setLoading(false));
+    setImpact([]);
+    fetchImpactFor(ticker.toUpperCase()).then(setImpact).catch(() => setImpact([]));
   }, [ticker]);
-
-  if (loading) return <LoadingSpinner />;
 
   const tickerUpper = ticker?.toUpperCase() || '';
   const byDateDesc = (a: Analysis, b: Analysis) => b.date.localeCompare(a.date);

@@ -324,6 +324,28 @@ Two consequences worth keeping:
 
 ---
 
+### 3.14 Never gate a render on a promise over a bundled constant
+
+`src/data/analyses.generated.ts` is compiled into the bundle, so reading the catalogue
+is synchronous. It is exposed as `getAnalyses(): Analysis[]` and **must stay
+synchronous**. Do not reintroduce an `async` wrapper, and do not add a `loading` state
+for it.
+
+It was `async fetchAnalyses()`, and every listing page opened with
+`if (loading) return <LoadingSpinner />`. Because the app mounts with `createRoot` it
+discards the prerendered markup (7.1), so the first client paint replaced a complete
+66 KB page with a spinner and the second painted it back — **CLS 0.71 on the mobile
+homepage**, the worst number on the site, for a promise that resolved on a microtask and
+fetched nothing. Fixed and measured in 7.9 (0.71 -> 0).
+
+The general rule: a page whose body is prerendered must render its first client paint
+from data it already has. Anything it genuinely has to fetch — the markdown body on
+`/analysis/`, the impact history on `/company/` — either keeps its own state and lets the
+page render without it, or is the one thing `loading` covers. A spinner over prerendered
+content is always a layout shift.
+
+---
+
 ## 4. Publishing a new analysis
 
 Use the existing skill at `.claude/skills/publish-analysis/SKILL.md`. Required front
@@ -684,41 +706,78 @@ routes into the first row of 3.13's table. Do not apply it blind: confirm the fi
 count matches `company_stats` first, because a missing file would then 404 a page that
 used to render.
 
-### 7.9 Mobile performance: CLS, LCP and render-blocking fonts — IN PROGRESS, Claude Code, 2026-10-17
+### 7.9 Mobile CLS and render-blocking fonts — DONE 2026-10-17
 
-- **Fix CLS on mobile. Not resolved — an earlier version of this file said it was, and
-  that claim was too narrow.** 7.1 did fix it on the *article* page: CLS 0.0443 against
-  0.289 before the body prerender. But PageSpeed Insights on the **homepage**,
-  2026-10-12, measures **CLS 0.71 on mobile against 0.001 on desktop** — a fail, and the
-  single worst number on the site.
+**CLS 0.71 -> 0 on the mobile homepage.** Measured before and after under identical
+Lighthouse settings (`--form-factor=mobile --throttling-method=simulate`): live, old
+code, **CLS 0.71, Performance 61**; the fixed build, **CLS 0, Performance 84**.
 
-  The culprit is named and it is one element: `<footer>`, shift score **0.710**, the
-  whole of it. That is precisely the "footer repositioning after content arrival" the
-  original audit identified, so the body prerender did not remove it on this route.
-  Contributing: the hero `<img>` is sized with inline `height: 180px; width: auto` and
-  carries no width/height attributes, so it reserves no space.
+**The footer was never the cause.** PSI named `<footer>` with the whole 0.710 because
+the footer is the largest box that moved, but `Footer.tsx` is static markup with no data
+dependency. The cause was one line in a service:
 
-  Mobile matters more than this number already suggests. The stated audience is Indian
-  retail investors, who are overwhelmingly mobile, and the Search Console baseline was
-  desktop 597 impressions against mobile 22. Lab, not field — confirm against CrUX in
-  Search Console (Experience, Core Web Vitals) — but 0.71 against 0.001 on the same page
-  is too large to be measurement noise.
+```ts
+export async function fetchAnalyses(): Promise<Analysis[]> { return ANALYSES; }
+```
 
-- **Homepage LCP on mobile is the hero image, and it is discovered late.** LCP 2.6 s,
-  broken down as TTFB 0 ms, **resource load delay 1,180 ms**, load duration 1,160 ms,
-  render delay 30 ms. The delay, not the download, is the problem: nothing preloads
-  `/assets/hero-*.png`. A `<link rel="preload">` or `fetchpriority="high"` plus real
-  dimensions addresses this and the CLS contribution together.
+`ANALYSES` is compiled into the bundle, so that promise wrapped a constant. Every listing
+page still gated its first render on it — `if (loading) return <LoadingSpinner />` — and
+because the app mounts with `createRoot`, React discards the prerendered markup (7.1).
+So the first client paint replaced a complete 66 KB page with a spinner and the second
+painted it back. The whole document collapsed and re-expanded for one microtask, and the
+footer travelled furthest.
 
-- **The Google Fonts stylesheet is render-blocking, 750 ms of it.** `render_shell` emits
-  a plain `<link rel="stylesheet">` for `fonts.googleapis.com/css2`; with the app CSS
-  (8.7 KiB, 340 ms) that is an estimated **1,800 ms** of blocked render on mobile. The
-  `preconnect` is already there; the stylesheet itself still blocks.
+It is now `getAnalyses(): Analysis[]`, read at module scope by HomePage, ArchivePage,
+TagPage and CompanyPage. **There is deliberately no async accessor left to fall back
+into.** `src/hooks/useAnalyses.ts` is deleted (one consumer, now a synchronous read), and
+with it HomePage's unreachable error branch, which told readers to check an
+`/api/analyses` endpoint the app has never called. `AnalysisPage` keeps its `loading`
+gate: the markdown body is a real fetch. `CompanyPage` keeps `impact` async — it is an
+enhancement, and the page no longer waits for it.
 
-  PSI 2026-10-12, homepage: mobile Performance **67** (FCP 2.6 s, LCP 2.6 s, TBT 0 ms,
-  CLS 0.71, SI 4.8 s), desktop **95** (0.7 / 0.8 / 0 / 0.001 / 2.1). SEO **100** and Best
-  Practices **100** on both; Accessibility 97, one contrast failure. Agentic Browsing
-  3/3 on desktop and **2/3 on mobile — the check it fails is CLS.**
+**Why the local measurement needed a counterfactual.** An unthrottled measurement of the
+fixed build reported CLS 0 — but so did the *live, unfixed* page under the same
+conditions, because without CPU throttling the spinner frame is too brief to register.
+The 0.71 only reproduces with `--throttling-method=simulate`. A single after-number here
+would have proved nothing; the before-number on the same harness is what makes it
+evidence.
+
+**Fonts: the stylesheet no longer blocks render.** `render_shell` and `index.html` emitted
+a plain `<link rel="stylesheet">` for `fonts.googleapis.com/css2`, which Lighthouse
+measured at **860 ms** of blocked render on the live homepage. Both now use
+`rel="preload" as="style"` plus `media="print" onload="this.media='all'"` with a
+`<noscript>` fallback, and the entry is gone from the render-blocking list; only the app
+CSS remains. Verified against the live CSP before shipping: `script-src 'self'
+'unsafe-inline'` permits the inline handler, and `style-src`/`font-src` already allow the
+two Google hosts — under a stricter CSP this pattern would silently leave the stylesheet
+at `media="print"` and the font would never load.
+
+Keep the two copies identical: `index.html` owns the homepage head, `render_shell()` in
+`scripts/generate-og-files.py` owns every prerendered route's.
+
+**Hero image: dimensions shipped, LCP unproven.** The `<img>` now carries its intrinsic
+`width={343} height={361}` plus `fetchPriority="high"`, so the browser reserves 171x180
+before the bytes arrive instead of 0. That removes its CLS contribution. It did **not**
+move LCP in the local run (3.4 s -> 3.5 s), where FCP and LCP are equal and both are
+bound by the app CSS, so PSI's "resource load delay 1,180 ms" is **not** demonstrated
+fixed. Re-measure on PSI after deploy before claiming it.
+
+**Still open from the original item:**
+
+- **LCP on mobile.** Unchanged in the local measurement, for the reason above. If PSI
+  still shows the delay after this deploy, the remaining lever is the app CSS in the
+  critical path, not the image.
+- Accessibility 97, one contrast failure.
+- The numbers above are lab, not field. Confirm against CrUX in Search Console
+  (Experience -> Core Web Vitals) once enough traffic accumulates.
+
+**Verified before commit:** `/india` 9 cards, `/tag/defence` renders 64 links against the
+64 it claims (7.5), `/company/ioc` indexable with its impact history ("What has moved
+IOC") and no robots tag, `/company/spy` `noindex, follow` and 2,310 words for a reader
+(3.7), the Mazagon Dock article one `h1` with 21 scroll-boxed tables and its contents
+panel (3.8). One console error throughout: `/api/audio-index` 502, which has no backend
+locally and is expected (section 4b). Prerendered heads still carry exactly one `<title>`
+and one canonical (3.1, 3.2).
 
 ---
 

@@ -1,10 +1,7 @@
-import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, Library } from 'lucide-react';
-import { Analysis } from '../types/analysis';
-import { fetchAnalyses } from '../services/analysisService';
-import LoadingSpinner from '../components/Common/LoadingSpinner';
+import { getAnalyses } from '../services/analysisService';
 import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import { indexableTags, tagPath } from '../utils/tags';
 import {
@@ -34,6 +31,10 @@ function displayTag(raw: string): string {
     .join(' ');
 }
 
+// Bundled constant, read once at module scope. See services/analysisService.ts:
+// gating the first render on a promise over this is what caused the CLS fail.
+const analyses = getAnalyses();
+
 /**
  * Serves three routes: the combined archive at /analyses/page/N, and one
  * section each at /india and /global.
@@ -45,16 +46,6 @@ function displayTag(raw: string): string {
  */
 export default function ArchivePage({ market = null }: { market?: MarketKey | null }) {
   const { page } = useParams<{ page: string }>();
-  const [analyses, setAnalyses] = useState<Analysis[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchAnalyses()
-      .then(setAnalyses)
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) return <LoadingSpinner />;
 
   const inScope = market ? articlesForMarket(analyses, market) : analyses;
   const sorted = [...inScope].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));

@@ -1,10 +1,7 @@
-import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Tag as TagIcon } from 'lucide-react';
-import { Analysis } from '../types/analysis';
-import { fetchAnalyses } from '../services/analysisService';
-import LoadingSpinner from '../components/Common/LoadingSpinner';
+import { getAnalyses } from '../services/analysisService';
 import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import { articlesForTag, indexableTags, MIN_TAG_ARTICLES, tagPath, tagSlug } from '../utils/tags';
 
@@ -18,18 +15,12 @@ function displayTag(raw: string): string {
     .join(' ');
 }
 
+// Bundled constant, read once at module scope. See services/analysisService.ts:
+// gating the first render on a promise over this is what caused the CLS fail.
+const analyses = getAnalyses();
+
 export default function TagPage() {
   const { tag } = useParams<{ tag: string }>();
-  const [analyses, setAnalyses] = useState<Analysis[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchAnalyses()
-      .then(setAnalyses)
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) return <LoadingSpinner />;
 
   const slug = tagSlug(tag ?? '');
   const matching = articlesForTag(analyses, slug);

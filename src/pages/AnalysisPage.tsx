@@ -6,9 +6,8 @@ import rehypeRaw from 'rehype-raw';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Clock, FileText } from 'lucide-react';
 import { Analysis } from '../types/analysis';
-import { fetchAnalyses, fetchAnalysisContent } from '../services/analysisService';
+import { getAnalyses, fetchAnalysisContent } from '../services/analysisService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
-import { ANALYSES } from '../data/analyses.generated';
 import { tickerTokens, companyHubPath } from '../utils/tickers';
 import { tagPath } from '../utils/tags';
 import { MARKET_HEADING, sectionPath } from '../utils/market';
@@ -68,20 +67,26 @@ export default function AnalysisPage() {
     if (!slug) return;
     setLoading(true);
     setError(null);
-    Promise.all([
-      fetchAnalyses(),
-      fetchAnalysisContent(slug).catch(() => ''),
-    ])
-      .then(([analyses, mdContent]) => {
-        const found = analyses.find((a) => a.slug === slug);
-        if (!found) {
-          setError('Analysis not found');
-          return;
-        }
-        setAnalysis(found);
+
+    // The catalogue is synchronous (services/analysisService.ts), so a missing
+    // slug is known without waiting. Only the markdown body is a real fetch,
+    // and that is what `loading` covers.
+    const found = getAnalyses().find((a) => a.slug === slug);
+    if (!found) {
+      setError('Analysis not found');
+      setLoading(false);
+      return;
+    }
+    setAnalysis(found);
+
+    // A missing body is not an error: the page still has its frontmatter, so it
+    // renders with a placeholder rather than failing. `error` is now reserved
+    // for an unknown slug, which is decided synchronously above.
+    fetchAnalysisContent(slug)
+      .catch(() => '')
+      .then((mdContent) => {
         setContent(mdContent || `# ${found.title}\n\n*Content not available.*`);
       })
-      .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, [slug]);
 
@@ -132,7 +137,7 @@ export default function AnalysisPage() {
 
   const readTime = estimateReadTime(content);
   const tickers = tickerTokens(analysis.ticker);
-  const related = relatedAnalyses(analysis, ANALYSES);
+  const related = relatedAnalyses(analysis, getAnalyses());
   const primaryHub = tickers.length === 1 ? tickers[0] : null;
 
   return (

@@ -27,7 +27,16 @@
          production and verified nothing, so it was removed. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Loaded without blocking render. A plain <link rel="stylesheet"> here cost
+         750 ms of blocked render on mobile, ~1,800 ms together with the app CSS
+         (AGENTS.md 7.9). media="print" makes it a non-render-blocking fetch and
+         onload promotes it; the <noscript> copy keeps the font for a client that
+         never runs the handler. Keep this identical to render_shell() in
+         scripts/generate-og-files.py — the homepage head comes from this file
+         and every prerendered route's from that one. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
     <script>
       try {
         const saved = localStorage.getItem('sf-theme-v2');

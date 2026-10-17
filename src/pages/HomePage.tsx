@@ -2,34 +2,26 @@ import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, BookOpen, Sparkles } from 'lucide-react';
-import { useAnalyses } from '../hooks/useAnalyses';
 import { useSearch } from '../hooks/useSearch';
 import { useNotification } from '../hooks/useNotification';
+import { getAnalyses } from '../services/analysisService';
 
 import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import SubscribeCard from '../components/Common/SubscribeCard';
 import SearchBar from '../components/Home/SearchBar';
 import CategoryTabs from '../components/Home/CategoryTabs';
-import LoadingSpinner from '../components/Common/LoadingSpinner';
 import heroImage from '../assets/hero.png';
 
+// The catalogue is a bundled constant, so it is read at module scope: there is
+// no loading state to render and no spinner frame between the prerendered page
+// and the client's first paint. See the note in services/analysisService.ts.
+const analyses = getAnalyses();
+
 export default function HomePage() {
-  const { analyses, loading, error } = useAnalyses();
   const { query, setQuery, sortMode, setSortMode, category, setCategory, counts, filtered } = useSearch(analyses);
   const { subscribed, supported, loading: notifLoading, subscribe, unsubscribe } = useNotification();
   const allTags = useMemo(() => analyses.flatMap(a => a.tags), [analyses]);
   const latest = useMemo(() => [...analyses].sort((a, b) => b.date.localeCompare(a.date))[0], [analyses]);
-
-  if (loading) return <LoadingSpinner />;
-
-  if (error) {
-    return (
-      <div className="surface-card mx-auto max-w-xl rounded-3xl px-6 py-16 text-center" style={{ color: 'var(--text-muted)' }}>
-        <p className="text-base font-black" style={{ color: 'var(--text)' }}>Failed to load analyses.</p>
-        <p className="mt-2 text-sm">Check that the API server is available at /api/analyses.</p>
-      </div>
-    );
-  }
 
   const stats = [
     { label: 'Stock research', value: counts.stocks },
@@ -187,9 +179,20 @@ export default function HomePage() {
                 LIVE LIBRARY
               </div>
               <div style={{ padding: '3rem 1.5rem 2rem', display: 'flex', justifyContent: 'center' }}>
+                {/* width/height are the file's intrinsic size (343x361). They
+                    are not the rendered size — CSS still draws it 180px tall —
+                    but they give the browser the aspect ratio before the bytes
+                    arrive, so it reserves 171x180 instead of 0 and the page
+                    below does not jump when the image loads. This is the LCP
+                    element on mobile, and its 1,180 ms was discovery delay
+                    rather than download, hence fetchPriority (AGENTS.md 7.9). */}
                 <img
                   src={heroImage}
                   alt="Layered research stack"
+                  width={343}
+                  height={361}
+                  fetchPriority="high"
+                  decoding="async"
                   style={{ height: '180px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))' }}
                 />
               </div>
