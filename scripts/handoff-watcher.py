@@ -452,6 +452,62 @@ def write_entry(lines, dry_run=False):
     return (True, "entry pushed") if ok else (False, "push rejected: " + out.strip()[-300:])
 
 
+# ----------------------------------------------------------------------- recovery
+# A pull that conflicts used to leave the tree mid-rebase. Every later run then failed on
+# "you have unmerged files", so the job sat broken for two hours on 2026-10-17 while
+# nothing said why. Recover instead: both agents append entries at the top of HANDOFF.md,
+# so a replayed entry conflicts in that one file and nowhere else, and keeping both sides
+# is the correct merge, not a guess. Anything else is aborted, never resolved blind.
+
+STUCK_MARKERS = ("rebase-merge", "rebase-apply", "MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD")
+CONFLICT_BLOCK = re.compile(r"<<<<<<< [^\n]*\n(.*?)\n=======\n(.*?)\n>>>>>>> [^\n]*\n", re.S)
+
+
+def stuck_operation():
+    for marker in STUCK_MARKERS:
+        if (REPO / ".git" / marker).exists():
+            return marker
+    return None
+
+
+def resolve_handoff_conflict():
+    """Keep both sides of a HANDOFF.md conflict: upstream first, then the replayed
+    entry. Returns (ok, detail); ok means the repository is clean again."""
+    ok, out = run(["git", "diff", "--name-only", "--diff-filter=U"])
+    unmerged = [p for p in out.split() if p]
+    if unmerged != ["HANDOFF.md"]:
+        return False, "unmerged paths: %s" % (", ".join(unmerged) or "none")
+
+    text = HANDOFF.read_text()
+    seen = []
+
+    def keep_both(match):
+        seen.append(1)
+        return match.group(1).rstrip("\n") + "\n\n" + match.group(2).rstrip("\n") + "\n"
+
+    text = CONFLICT_BLOCK.sub(keep_both, text)
+    if not seen:
+        return False, "no conflict block in HANDOFF.md"
+    if "<<<<<<<" in text or ">>>>>>>" in text:
+        return False, "conflict markers survived the rewrite"
+
+    HANDOFF.write_text(text)
+    run(["git", "add", "HANDOFF.md"])
+    ok, out = run(["git", "-c", "core.editor=true", "rebase", "--continue"])
+    if not ok:
+        return False, "rebase --continue failed: " + out.strip()[-300:]
+    return True, "kept both entries (%d block(s))" % len(seen)
+
+
+def abort_stuck_operation():
+    for args in (["rebase", "--abort"], ["merge", "--abort"],
+                 ["cherry-pick", "--abort"], ["revert", "--abort"]):
+        if not stuck_operation():
+            return True
+        run(["git"] + args)
+    return stuck_operation() is None
+
+
 # -------------------------------------------------------------------------------- main
 
 def main():
@@ -470,6 +526,19 @@ def main():
     state = load_state()
     state["runs"] = state.get("runs", 0) + 1
 
+    stuck = stuck_operation()
+    if stuck:
+        log("  repository left mid-%s by an earlier run; recovering" % stuck)
+        resolved, detail = resolve_handoff_conflict()
+        if resolved:
+            log("  recovered: %s" % detail)
+        else:
+            aborted = abort_stuck_operation()
+            log("  recovery failed (%s); %s" % (
+                detail, "aborted to a clean tree" if aborted else "TREE STILL STUCK"))
+            save_state(state)
+            return 1
+
     ok, out = run(["git", "fetch", "origin", "main"])
     if not ok:
         log("  github unreachable; nothing read this run")
@@ -481,9 +550,16 @@ def main():
 
     ok, out = run(["git", "pull", "--rebase", "--autostash", "origin", "main"])
     if not ok:
-        log("  pull failed; leaving the tree alone:\n%s" % out.strip()[-300:])
-        save_state(state)
-        return 1
+        log("  pull conflicted:\n%s" % out.strip()[-300:])
+        resolved, detail = resolve_handoff_conflict()
+        if resolved:
+            log("  resolved automatically: %s" % detail)
+        else:
+            aborted = abort_stuck_operation()
+            log("  could not resolve (%s); %s" % (
+                detail, "tree restored to clean" if aborted else "TREE STILL STUCK"))
+            save_state(state)
+            return 1
 
     _, log_out = run(["git", "log", "--format=%h%x09%s", "-20"])
     state["last_sha"] = log_out.splitlines()[0].split("\t")[0] if log_out.strip() else None
