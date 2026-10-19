@@ -5,6 +5,26 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "CG Power — What Changed Since June (and Whether to Buy the Fall)",
+    "ticker": "CGPOWER:NSE",
+    "file": "cg-power-what-changed-since-june-with-forward-valuation.md",
+    "slug": "cg-power-what-changed-since-june-with-forward-valuation",
+    "date": "2026-10-19",
+    "tags": [
+      "cg-power",
+      "what-changed",
+      "update",
+      "fundamental",
+      "capital-goods",
+      "semiconductor",
+      "valuation",
+      "down-market"
+    ],
+    "summary": "Refreshed 19 Oct at ₹854 with Q2 FY27 due 23 Oct. Order book ₹18,965 Cr (+45%), delivery 50.8%, but 105x earnings and 16.7x book give no protection in a falling market. Verdict: accumulate in tranches around the 200-DMA at ₹804, not a full position at ₹854.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse - Global Spillover - 16 Oct 2026",
     "ticker": "MSCI:TCS:INFY:TECHM:MOTHERSON:BHARATFORG:IOC:BPCL:ONGC:HDFCBANK",
     "file": "policy-pulse-global-16-oct-2026.md",
@@ -972,25 +992,6 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Core PCE cooled to 3.0% and cut the priced odds of an October hike from 71% to 35%, sending short-dated yields lower and equity indices higher, while the Section 301 forced-labour tariffs - 10-12.5% on 86 countries covering 99.4% of US imports - went before the Court of International Trade and Trump credited a $15bn Iowa steel mill to his 50% steel tariffs. Canada's $1bn alcohol and dairy import ban is live, and the July 278-T showed 1,156 trades including Strategy bought at the 2026 lows.",
     "market": "global",
-    "model": "deepseek-v4-flash"
-  },
-  {
-    "title": "CG Power — What Changed Since June (with Forward Valuation)",
-    "ticker": "CGPOWER:NSE",
-    "file": "cg-power-what-changed-since-june-with-forward-valuation.md",
-    "slug": "cg-power-what-changed-since-june-with-forward-valuation",
-    "date": "2026-09-17",
-    "tags": [
-      "cg-power",
-      "what-changed",
-      "update",
-      "fundamental",
-      "capital-goods",
-      "semiconductor",
-      "valuation"
-    ],
-    "summary": "Q1 FY27 missed on EPS but the order book grew 45% and G1 OSAT is now commercially producing. First forward valuation: 87x FY27E, 63x FY28E, forward PEG ~1.7. Rating upgraded to accumulate on dips.",
-    "market": "india",
     "model": "deepseek-v4-flash"
   },
   {

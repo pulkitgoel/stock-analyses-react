@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "cg-power-what-changed-since-june-with-forward-valuation",
+      "ticker": "CGPOWER:NSE",
+      "title": "CG Power — What Changed Since June (and Whether to Buy the Fall)",
+      "date": "2026-10-19",
+      "yahooSymbol": "CGPOWER.NS",
+      "priceAtAnalysis": 854,
+      "support": 818,
+      "resistance": 898,
+      "supports": [
+        804,
+        760
+      ],
+      "resistances": [
+        900,
+        935
+      ],
+      "verdict": "ACCUMULATE IN TRANCHES — Q2 ON 23 OCT"
+    },
+    {
       "slug": "mazagon-dock-shipbuilders-deep-dive-analysis",
       "ticker": "MAZDOCK",
       "title": "Mazagon Dock Shipbuilders — Deep Dive Analysis",
@@ -90,23 +109,6 @@
         2567
       ],
       "verdict": "CAUTION — FULLY VALUED"
-    },
-    {
-      "slug": "cg-power-what-changed-since-june-with-forward-valuation",
-      "ticker": "CGPOWER:NSE",
-      "title": "CG Power — What Changed Since June (with Forward Valuation)",
-      "date": "2026-09-17",
-      "yahooSymbol": "CGPOWER.NS",
-      "priceAtAnalysis": 882,
-      "support": 858,
-      "resistance": 935,
-      "supports": [
-        786
-      ],
-      "resistances": [
-        981
-      ],
-      "verdict": "ACCUMULATE ON DIPS"
     },
     {
       "slug": "leap-india-deep-dive-analysis",
