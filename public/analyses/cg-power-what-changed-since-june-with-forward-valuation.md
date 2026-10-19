@@ -38,7 +38,7 @@ verdict: "ACCUMULATE IN TRANCHES — Q2 ON 23 OCT"
 2. **G2's timeline moved out.** Manufacturing from the second OSAT unit is now guided to **Q4 CY2027 or early 2028**, with construction and tool move-in by Q2 CY2027. The "2027 re-rating catalyst" our September note carried is a 2028 revenue event, not a 2027 one.
 3. **The semiconductor order backlog is expected to double** if execution holds, with Renesas committed to roughly 50% of combined G1 and G2 capacity and additional customers in discussion. The design arm (Exero/Axiro) is revenue-generating and expanding from RF and SATCOM into power electronics.
 
-**Two numbers got worse.** Working capital days rose from **31.3 to 69.8**, and the stock still trades at **105-108x trailing earnings** and **16.7x book**. A falling market fixes neither of those.
+**Two numbers got worse.** Working capital days rose from **31.3 to 69.8**, and the stock still trades at **108x trailing earnings** and **16.7x book**. A falling market fixes neither of those.
 
 **Is it good to invest in it in a down market?** The full answer is in section 8.4. In one line: **the business is good, the price is not cheap, and the next four days carry event risk — so accumulate in tranches around the 200-day moving average, not in one go at ₹854.**
 
@@ -279,7 +279,7 @@ The pattern is unchanged and important: **domestic institutions keep buying, for
 | 17 | Quarterly earnings growth (30-50%) | Q1 FY27 PAT +16% consolidated, +27% standalone — below the band; Q2 due 23 Oct | Caution |
 | 18 | Delivery percentage | 47.9% average over the last three sessions, rising to 50.8% | Pass |
 | 19 | News & institutional activity | DIIs at 18.23% and accumulating; FIIs trimming; Q2 print four days away | Caution |
-| 20 | Risk management | Definable: ₹818 (15 Oct low), then ₹804 (200-DMA); weekly close below ₹786 invalidates | Pass |
+| 20 | Risk management | Definable: ₹818 (15 Oct close; the low was ₹815.35 and 16 Oct traded to ₹808.55), then ₹804 (200-DMA); a weekly close below ₹786 invalidates | Pass |
 | 21 | Market environment | Nifty -1.3% today, -5.6% over three months — a falling market | Caution |
 | 22 | Liquidity | Excellent — a ₹1.35 lakh crore company | Pass |
 | 23 | Relative strength | Outperforming the benchmark over one year and again today | Pass |
@@ -313,7 +313,7 @@ The pattern is unchanged and important: **domestic institutions keep buying, for
 
 The business case has strengthened since September, not weakened: order book ₹18,965 Cr (+45% YoY), Power Systems backlog ₹14,434 Cr with 23% segment PBIT margin, delivery rising to 50.8%, and one-year relative performance of +12.3% against a Nifty that fell 11.1%. The stock has de-rated 3.2% over that month while the order book grew.
 
-What has got worse is everything about *timing and price*: the stock is below all three shorter averages, the market is in a downtrend, G2 revenue slipped to 2028, working capital days doubled to 69.8, and it still trades at 105-108x earnings and 16.7x book. In September the average Street target implied ~6% upside; from ₹854 it implies more, but only if the earnings hold.
+What has got worse is everything about *timing and price*: the stock is below all three shorter averages, the market is in a downtrend, G2 revenue slipped to 2028, working capital days doubled to 69.8, and it still trades at 108x earnings and 16.7x book. In September the average Street target implied ~6% upside; from ₹854 it implies more, but only if the earnings hold.
 
 **It stays "accumulate", not "buy".** A 108x multiple with a 0.93% earnings yield is a growth stock priced on perfection; in a falling market that is a liability, not a moat.
 
