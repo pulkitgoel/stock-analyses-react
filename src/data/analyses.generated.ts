@@ -25,6 +25,75 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Policy Pulse - Global Spillover - 19 Oct 2026",
+    "ticker": "TTE:SHEL:BP:FRO:STNG:INTC:AMD:NVDA:MU:TSM:STLA:SNY:SONY:TM:NEM:COIN:HOOD",
+    "file": "policy-pulse-global-19-oct-2026.md",
+    "slug": "policy-pulse-global-19-oct-2026",
+    "date": "2026-10-19",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "sanctions",
+      "semiconductors",
+      "europe"
+    ],
+    "summary": "The waiver suspended China's exposure on the same terms as India's and left the statutory machinery delegated to the USTR, while INTC rose 4% on a JPMorgan upgrade and STLA bore the brunt of French protests that took the DAX down 1.39%.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Ministries & Regulators - 19 Oct 2026",
+    "ticker": "SUNPHARMA:CIPLA:DRREDDY:NATCOPHARM:GLAND:EMCURE:ALKEM:ZYDUSLIFE:AJANTPHARM:MEDPLUS:APOLLOHOSP:MAXHEALTH:FORTIS:DIVISLAB:TATASTEEL:JSWSTEEL:CENTURYPLY:GREENPLY:WELSPUNLIV:TRIDENT:KPRMILL:RAJESHEXPO:POLYMED:INFY:TECHM:PERSISTENT:COFORGE:HDFCAMC:NAM-INDIA:CAMS:KFINTECH:BSE:ANGELONE:MOTILALOFS:IIFL:HDFCBANK:ICICIBANK:RELIANCE:AXISBANK:HCLTECH:WIPRO:TMPV:CDSL",
+    "file": "policy-pulse-ministries-19-oct-2026.md",
+    "slug": "policy-pulse-ministries-19-oct-2026",
+    "date": "2026-10-19",
+    "tags": [
+      "policy-pulse",
+      "pharma",
+      "pricing",
+      "fta",
+      "capital-markets"
+    ],
+    "summary": "NPPA capped trade margins on 137 cancer drugs at 30% from November 9, a margin reset that hits MEDPLUS and re-prices oncology-heavy portfolios like NATCOPHARM, while Jio's 30x anchor book keeps BSE and ANGELONE on the right side of the primary market.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Modi / India Govt - 19 Oct 2026",
+    "ticker": "IOC:BPCL:HINDPETRO:MRPL:RELIANCE:ONGC:OIL:GAIL:PETRONET:GESHIP:SUNPHARMA:DRREDDY:CIPLA:LUPIN:WELSPUNLIV:TRIDENT:KPRMILL:PAGEIND:MOTHERSON:BHARATFORG:DIXON:WAAREEENER:PREMIERENE:VIKRAMSOLR:HDFCBANK:ICICIBANK:SBIN:KOTAKBANK:INDIGO",
+    "file": "policy-pulse-modi-19-oct-2026.md",
+    "slug": "policy-pulse-modi-19-oct-2026",
+    "date": "2026-10-19",
+    "tags": [
+      "policy-pulse",
+      "india-us",
+      "energy",
+      "exports",
+      "rupee"
+    ],
+    "summary": "India's 100% tariff tail risk is gone: the Graham Act waiver removes the secondary duty that would have hit every Indian shipment, putting IOC, BPCL and HINDPETRO back on Russian crude without an export penalty, while WAAREEENER faces the one duty that was not waived.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse - Trump / US Watch - 19 Oct 2026",
+    "ticker": "AAPL:WMT:TGT:COST:NKE:DAL:UAL:AAL:LUV:XOM:CVX:VLO:PSX:CENX:NUE:F:GM:LLY:MRK:TMO:INTC:AMD:NVDA:MU",
+    "file": "policy-pulse-trump-us-19-oct-2026.md",
+    "slug": "policy-pulse-trump-us-19-oct-2026",
+    "date": "2026-10-19",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "russia",
+      "sanctions",
+      "tariffs",
+      "semiconductors"
+    ],
+    "summary": "Trump set 500% duties on Russia and 100% on the five largest buyers of Russian energy in a Friday executive order, then waived every one of them under Section 115, lifting a 100% tariff tail risk off AAPL's India assembly base and putting a supply premium out of XOM and CVX.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse - Global Spillover - 16 Oct 2026",
     "ticker": "MSCI:TCS:INFY:TECHM:MOTHERSON:BHARATFORG:IOC:BPCL:ONGC:HDFCBANK",
     "file": "policy-pulse-global-16-oct-2026.md",
