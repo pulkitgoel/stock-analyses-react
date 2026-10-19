@@ -3,7 +3,7 @@ title: "CG Power — What Changed Since June (and Whether to Buy the Fall)"
 ticker: "CGPOWER:NSE"
 date: "2026-10-19"
 tags: ["cg-power","what-changed","update","fundamental","capital-goods","semiconductor","valuation","down-market"]
-summary: "Refreshed 19 Oct at ₹854 with Q2 FY27 due 23 Oct. Order book ₹18,965 Cr (+45%), delivery 50.8%, but 105x earnings and 16.7x book give no protection in a falling market. Verdict: accumulate in tranches around the 200-DMA at ₹804, not a full position at ₹854."
+summary: "Refreshed 19 Oct at ₹854 with Q2 FY27 due 23 Oct. Order book ₹18,965 Cr (+45%), delivery 50.8%, but 108x earnings and 16.7x book give no protection in a falling market. Verdict: accumulate in tranches around the 200-DMA at ₹804, not a full position at ₹854."
 model: "deepseek-v4-flash"
 watchlist: true
 priceAtAnalysis: 854
@@ -21,6 +21,8 @@ verdict: "ACCUMULATE IN TRANCHES — Q2 ON 23 OCT"
 *This began as a follow-up to our 18 June 2026 deep dive and is now on its second refresh. It covers what has changed in the business, prices the stock forward, and — because that is what was asked — answers directly whether this is a good investment while the market is falling.*
 
 ---
+
+> **Correction note, 20 October 2026.** An external audit of this article found four errors, each re-checked here against exchange data rather than against the audit's own numbers. (1) Section 3 graded our June "₹800-850" entry call as "broadly right". The NSE bhavcopy for 30 July 2026 shows a low of **₹814.85** and a close of ₹832.60, so the call was filled; the row is re-graded. (2) Section 2.1 called Q1 FY27 "strong operationally". Other income supplied ₹56 Cr of the ₹59 Cr PBT increase, and core pretax profit grew **0.9%**. (3) The 3 July session fell **-6.9%**, not -5.5%, on 5.8x average volume — a distribution day, not profit-booking. (4) **₹818 was the 15 October close, not the low** (₹815.35), and 16 October traded to ₹808.55. Separately, the trailing P/E basis was inconsistent across sections and is now stated once: TTM EPS ₹7.94, giving **111x at ₹882 and 108x at ₹854**. The verdict is unchanged.
 
 ## 0. 19 October Update — What Changed in a Month, and the Short Answer
 
@@ -48,11 +50,11 @@ verdict: "ACCUMULATE IN TRANCHES — Q2 ON 23 OCT"
 |---|---|---|---|
 | Price | ₹954 | **₹882** | **-7.5%** |
 | Market cap | ₹1,50,292 Cr | ₹1,38,931 Cr | -₹11,361 Cr |
-| Stock P/E | 122x | 109x | De-rated, still high |
+| Stock P/E (TTM EPS ₹7.94) | 120x | 111x | De-rated, still high |
 | PEG (trailing) | 11.9 | 11.3 | Still extreme on trailing growth |
 | ROCE | 27.0% | 26.7% | Stable |
 | ROE | 20.8% | 20.5% | Stable |
-| Book value | ₹50.6 | ₹50.6 | Flat |
+| Book value | ₹50.6 | ₹50.6 | Flat — both columns carry the FY26 (March) figure |
 | Debt/Equity | 0.01 | 0.01 | Unchanged — still near zero debt |
 | 52-week high / low | ₹971 / ₹526 | ₹981 / ₹526 | New high made, then corrected |
 | Industry P/E | 37.0 | 32.9 | Sector de-rated |
@@ -68,7 +70,9 @@ verdict: "ACCUMULATE IN TRANCHES — Q2 ON 23 OCT"
 
 ## 2. What Happened Since 18 June
 
-### 2.1 Q1 FY27 results (reported 27 July 2026) — strong operationally, one miss on the bottom line
+### 2.1 Q1 FY27 results (reported 27 July 2026) — treasury income carried the bottom line
+
+**Read the table below with one calculation in mind.** Other income went from ₹28 Cr to ₹84 Cr, an increase of ₹56 Cr, against a PBT increase of ₹59 Cr for the whole company. **95% of the year-on-year pretax growth came from treasury income, not operations.** Strip it out and core pretax profit (PBT less other income) went ₹336 Cr → ₹339 Cr: **+0.9% on 14% revenue growth.** The segment detail further down shows genuine strength in Power Systems, but at the consolidated level this quarter was not "strong operationally", and an earlier version of this article said it was.
 
 | Metric (consolidated) | Q1 FY27 | Q1 FY26 | YoY |
 |---|---|---|---|
@@ -91,7 +95,7 @@ Standalone (core business, excluding subsidiaries): sales ₹3,061 Cr (+16%), PA
 
 Power Systems backlog hit ₹14,434 Cr (+59% YoY). Industrial Systems was dragged by a ₹20 Cr one-off provision in the railways business and weak consolidated industrial margins (7.6% vs 10.2% YoY) — management attributed the gap to G.G. Tronics, which is still pre-revenue and "at breakeven today."
 
-**The miss:** consensus FY27 Q1 EPS was ₹2.20; actual was ₹1.99 — a **-9.7% surprise**, the first negative earnings surprise in four quarters (Q3 FY26 +3.4%, Q4 FY26 +12.9%). The shortfall came from lower Industrial Systems margins and higher semiconductor losses, not from the power business.
+**The miss:** consensus FY27 Q1 EPS was ₹2.20; actual was ₹1.99 — a **-9.7% surprise**, the first negative earnings surprise in the three quarters we hold the record for (Q3 FY26 +3.4%, Q4 FY26 +12.9%). The shortfall came from lower Industrial Systems margins and higher semiconductor losses, not from the power business.
 
 **Other operational highlights from the call:**
 - Order intake ₹4,692 Cr standalone / ₹5,211 Cr consolidated in the quarter
@@ -115,19 +119,21 @@ This is the transition our June note flagged as the potential 2027 re-rating cat
 
 ### 2.4 Price action: an all-time high, then a two-and-a-half-month consolidation
 
-- 1-2 July 2026: all-time high **₹981.15**, immediately followed by a **-5.5% intraday** drop — the stock's steepest single-day fall in 15 months, on below-average volume (profit-booking, no confirmed trigger)
-- July-November drift: the stock has traded a broad ₹858-930 range since, including a **-5.6% day on 15 September** (close ₹858) that took it to the bottom of that range
+- 2-3 July 2026: all-time intraday high **₹980.90** on 2 July (close ₹959.40), then **-6.9% to ₹892.55** on 3 July — the stock's steepest single-day fall in 15 months, on **5.8x** the prior 30-session average volume (24.7 million shares). That is a distribution day, not profit-booking: it was the heaviest volume in the series, and an earlier version of this note wrongly described it as below-average profit-taking
+- July-September drift: the stock traded a broad **₹815-981** range, including a **-5.6% day on 15 September** (close ₹858) that took it to the bottom of that range
 - Now: ₹882 on 17 September, **-10% from the all-time high**, and -7.5% below our June analysis price
-- *(19 October: ₹854, -12.9% from the high, after a ₹818 low on 15 October — see section 0)*
+- *(19 October: ₹854, -12.9% from the high. The 15 October low was ₹815.35 and the close was ₹818; 16 October traded to ₹808.55 — see section 0)*
 
 ---
 
 ## 3. Old Thesis vs New Reality — Marking Our Own Homework
 
+*This table was written on 17 September 2026 and is kept as the record of that day's grading. One row has since been corrected against exchange data, and the correction is marked in the row itself rather than quietly rewritten.*
+
 | Our June 18 position | Status today | Verdict on our call |
 |---|---|---|
 | "PEG 11.9 — paying a very heavy price for modest growth" | Trailing PEG 11.3 — but **forward PEG ~1.7** on FY28 consensus | **Partly wrong** — we judged on a trailing CAGR flattered by the FY23-24 base. Forward growth is much faster than the historical CAGR implied |
-| "Wait for a dip to ₹800-850 for a better entry" | Stock bottomed at **₹858** on 15 Sep, now ₹882 | **Broadly right** — the ₹858 low came within 1% of our ₹850 upper bound and the stock has not retested below |
+| "Wait for a dip to ₹800-850 for a better entry" | **Hit.** NSE bhavcopy, 30 July 2026: low **₹814.85**, close ₹832.60 — inside the zone | **Right — and better than we first graded it.** This row originally read "bottomed at ₹858 on 15 Sep" and "has not retested below". That was wrong: the stock traded to ₹814.85 in late July, so the entry zone was filled. Corrected 20 October 2026 |
 | "Power Systems is on fire — ₹12,644 Cr backlog, +91% growth" | Backlog ₹14,434 Cr, **+59% YoY**, PBIT margin expanded to 23% | **Right, and it got better** — margins expanded further |
 | "Industrial Systems are struggling — no second engine" | PBIT ₹148 Cr vs ₹172 Cr; consolidated industrial margin 7.6% vs 10.2%; ₹20 Cr one-off | **Right** — this remains the soft spot |
 | "OSAT losses are front-loaded and temporary; re-rating catalyst in 2027" | G1 commercially producing; Exero revenue-generating; losses still dragging quarterly numbers | **Right on direction, early on timing** — the drag is still visible in Q1 FY27 |
@@ -140,7 +146,7 @@ This is the transition our June note flagged as the potential 2027 re-rating cat
 
 ## 4. Forward Valuation — The Section We Owe You
 
-*The multiples in this section were computed at ₹882 on 17 September 2026 and are left as written. At ₹854 they are about 3% lower — roughly 103x trailing rather than 106x. The forward argument does not change with a 3% price move; only the earnings print does.*
+*The multiples in this section were computed at ₹882 on 17 September 2026. **Correction, 20 October:** the trailing multiple here originally read 109x, and a later note on this paragraph said "103x rather than 106x". Both were wrong. The basis used throughout this article is TTM consolidated EPS of **₹7.94**: that makes ₹882 **111x** and ₹854 **108x**, and an earnings yield of **0.93%**. The basis is stated once, here, and every section now uses it. The forward argument does not change with a 3% price move; only the earnings print does.*
 
 ### 4.1 Consensus estimates (20 analysts, September 2026)
 
@@ -158,7 +164,7 @@ Estimate revision trend: FY27 EPS consensus has been **cut** from ₹10.36 (60 d
 
 | Metric | Value | Comment |
 |---|---|---|
-| Trailing P/E | 109x | vs industry 32.9x — the number that scares people |
+| Trailing P/E (TTM EPS ₹7.94) | 111x at ₹882, 108x at ₹854 | vs industry 32.9x — the number that scares people |
 | **Forward P/E (FY27E)** | **87.5x** | Still expensive |
 | **Forward P/E (FY28E)** | **63.3x** | The number that matters for the OSAT thesis |
 | Trailing PEG | 11.3x | Artifact of the FY23-24 base; ignore it |
@@ -167,8 +173,8 @@ Estimate revision trend: FY27 EPS consensus has been **cut** from ₹10.36 (60 d
 | EV (mcap less net cash) | ~₹1,35,800 Cr | QIP corpus (~₹3,000 Cr) largely unspent; debt ₹118 Cr |
 | EV/EBITDA FY26A | ~84x | Asset-light compounder, not a value multiple |
 | EV/EBITDA FY27E (13% OPM) | ~67x | |
-| EV/EBITDA FY28E (15% OPM) | ~45x | Where the multiple normalises if margins deliver |
-| Earnings yield | 1.30% | vs 10Y G-Sec ~6.5% |
+| EV/EBITDA FY28E (15% OPM) | ~48x | Where the multiple normalises if margins deliver |
+| Earnings yield | 0.93% | vs 10Y G-Sec ~6.5% |
 
 **The clearest way to see it:** the company's own revenue guidance trajectory (25% CAGR FY26-28 modelled by Motilal Oswal, with EBIT margins of 13.9% FY27 and 15.1% FY28) takes EPS from ₹7.86 to ₹13.93 in two years. On that path, the forward PEG is ~1.7 — expensive but defensible, versus the 11.3 trailing PEG that made the stock look indefensible in June. **The valuation case is entirely a function of whether you believe the FY28 numbers.**
 
@@ -176,9 +182,9 @@ Estimate revision trend: FY27 EPS consensus has been **cut** from ₹10.36 (60 d
 
 | Scenario | Revenue FY28 | EBITDA margin | PAT | EPS | Implied P/E | Implied EV/EBITDA |
 |---|---|---|---|---|---|---|
-| **Bear** — power cycle cools, OSAT losses persist, industrial stays flat | ₹17,750 Cr | 12.5% | ₹1,600 Cr | ₹10.74 | **82x** | ~52x |
-| **Base (consensus)** | ₹20,089 Cr | 14.0% | ₹2,190 Cr | ₹13.93 | **63x** | ~45x |
-| **Bull** — export utility orders + OSAT ramp + margin expansion | ₹22,805 Cr | 15.5% | ₹3,010 Cr | ₹19.10 | **46x** | ~36x |
+| **Bear** — power cycle cools, OSAT losses persist, industrial stays flat | ₹17,750 Cr | 12.5% | ₹1,600 Cr | ₹10.74 | **82x** | ~61x |
+| **Base (consensus)** | ₹20,089 Cr | 14.0% | ₹2,190 Cr | ₹13.93 | **63x** | ~48x |
+| **Bull** — export utility orders + OSAT ramp + margin expansion | ₹22,805 Cr | 15.5% | ₹3,010 Cr | ₹19.10 | **46x** | ~38x |
 
 Even the bear case leaves the stock at 82x forward earnings — which is the honest cost of owning a best-in-class franchise with a semiconductor option embedded. There is no scenario in which this becomes a "cheap" stock on FY28 numbers; the question is only whether growth keeps compounding past FY28.
 
@@ -190,7 +196,7 @@ Even the bear case leaves the stock at 82x forward earnings — which is the hon
 | Motilal Oswal (3 Sep 2026) | Buy | **₹1,020** (cut to ₹975 post-Q1, then raised) | ~73x FY28E |
 | Morgan Stanley | Overweight | Base ₹799 / Bull ₹1,044 | 57x / 75x FY28E |
 
-Note the shape of this: the **average Street target (₹934) is only ~6% above the current price**, and the low target (₹627) implies a 29% drawdown. The high target implies 25% upside. That is an unusually wide dispersion for a ₹1.4 lakh crore company, and it is entirely driven by how each analyst values the semiconductor business.
+Note the shape of this: the **average Street target (₹934) is only ~6% above the current price**, and the low target (₹627) implies a 29% drawdown. The high target implies 25% upside. That is an unusually wide dispersion for a ₹1.35 lakh crore company, and it is entirely driven by how each analyst values the semiconductor business.
 
 ### 4.5 Credibility check — what has to be true
 
@@ -210,9 +216,9 @@ Being honest about the parts of our June bear case that survive intact:
 - **Industrial Systems remains the weak engine** — +6% sales, PBIT down to ₹148 Cr, consolidated industrial margin 7.6% vs 10.2%. G.G. Tronics is still pre-revenue. This has not improved in three months.
 - **Semiconductor losses still drag the consolidated P&L.** G1 is now producing commercially, but the business is loss-making and G2 is still to come. Every quarter of drag is a quarter where consolidated growth (16%) lags standalone growth (27%).
 - **Other income is doing real work** — ₹84 Cr in Q1 FY27 against PBT of ₹423 Cr (20%). Strip it out and the core P/E is higher still. It is legitimate income from the QIP corpus, but it is not operational.
-- **FIIs are still net sellers** — 12.69% (Jun'25) → 11.97% (Jun'26), a seventh consecutive quarter of decline. DIIs (14.22% → 18.23%) are absorbing the supply, which is constructive, but the foreign bid has not returned.
+- **FIIs are still net sellers** — 12.69% (Jun'25) → 11.97% (Jun'26), lower in every snapshot we hold — the direction is clear even though the streak is not measurable from four data points. DIIs (14.22% → 18.23%) are absorbing the supply, which is constructive, but the foreign bid has not returned.
 - **Execution load is unchanged and heavy** — 1,10,000 MVA transformer target, switchgear greenfield, OSAT G1 ramp plus G2 build, railway approvals. Four simultaneous large programmes.
-- **The absolute valuation is still high** on every historical metric: 109x trailing, 63x FY28, 45x FY28 EV/EBITDA, 1.3% earnings yield.
+- **The absolute valuation is still high** on every historical metric: 108x trailing, 63x FY28, 48x FY28 EV/EBITDA, 0.93% earnings yield.
 
 ---
 
@@ -248,7 +254,7 @@ The pattern is unchanged and important: **domestic institutions keep buying, for
 
 **Structure:** the consolidation has widened to roughly **₹818-935** and the stock is now in the lower half of it, having made a marginal lower high near ₹898 in October. Price sits below the 20/50/100-day cluster (₹872-897) but comfortably above the 200-DMA at ₹804 — the classic "pullback inside an uptrend" shape, not yet a trend break.
 
-**Interpretation:** the 15 October drop to ₹818 was the second -5% day in a month, and it came with delivery at 47.6% — real transfers, not a volume vacuum. The two sessions since have recovered half of it on rising delivery (50.8% on 16 October) and above-average volume. Combine that with today's relative strength (+0.95% against a Nifty down 1.28%) and the tape is more constructive than the -12.9% from the high suggests. What it still lacks is a close back above ₹880-900, which is where the averages and the October high converge.
+**Interpretation:** the 15 October drop to a ₹815.35 low (closing at ₹818) was the second -5% day in a month, and it came with delivery at 47.6% — real transfers, not a volume vacuum. The two sessions since have recovered half of it on rising delivery (50.8% on 16 October) and above-average volume. Combine that with today's relative strength (+0.95% against a Nifty down 1.28%) and the tape is more constructive than the -12.9% from the high suggests. What it still lacks is a close back above ₹880-900, which is where the averages and the October high converge.
 
 ### 7.2 All 25 points assessed
 
@@ -275,12 +281,12 @@ The pattern is unchanged and important: **domestic institutions keep buying, for
 | 19 | News & institutional activity | DIIs at 18.23% and accumulating; FIIs trimming; Q2 print four days away | Caution |
 | 20 | Risk management | Definable: ₹818 (15 Oct low), then ₹804 (200-DMA); weekly close below ₹786 invalidates | Pass |
 | 21 | Market environment | Nifty -1.3% today, -5.6% over three months — a falling market | Caution |
-| 22 | Liquidity | Excellent — a ₹1.33 lakh crore company | Pass |
+| 22 | Liquidity | Excellent — a ₹1.35 lakh crore company | Pass |
 | 23 | Relative strength | Outperforming the benchmark over one year and again today | Pass |
 | 24 | Breakout confirmation | None — price is mid-range with the average cluster overhead | Caution |
 | 25 | Trading psychology | Patience is available; the 23 October print argues for waiting | Pass |
 
-**Score: 18.5 / 25** (one item N/A) — down from 19.5 in September, and the change is almost entirely about trend and timing rather than the business: the 200-DMA is holding, delivery is rising and relative strength is genuinely good, but price sits below all three shorter averages and the market itself is falling. On the checklist's own rules this is **not an entry signal yet** — it needs either the 23 October print to clear and a close above ₹880-900, or a controlled retest of the 200-DMA that holds.
+**Score: 19.0 / 25** (one item N/A; rule: Pass = 1, Caution = 0.5, Fail = 0, N/A excluded — 14 Pass + 10 Caution) — down half a point from 19.5 in September, and the change is almost entirely about trend and timing rather than the business: the 200-DMA is holding, delivery is rising and relative strength is genuinely good, but price sits below all three shorter averages and the market itself is falling. On the checklist's own rules this is **not an entry signal yet** — it needs either the 23 October print to clear and a close above ₹880-900, or a controlled retest of the 200-DMA that holds.
 
 ---
 
@@ -294,7 +300,7 @@ The pattern is unchanged and important: **domestic institutions keep buying, for
 | Resistance 2 | ₹935 | Top of the consolidation range |
 | **Resistance 1 (primary)** | **₹880-900** | 20/50/100-DMA cluster (₹872 / ₹881 / ₹897) |
 | **CMP** | **₹854** | 19 October 2026, intraday |
-| **Support 1 (primary)** | **₹818** | 15 October 2026 low |
+| **Support 1** | **₹818** | 15 October 2026 **close**. The low that day was ₹815.35, and 16 October traded to ₹808.55 — so this level has already been breached intraday |
 | **Support 2** | **₹804** | 200-DMA — the line that matters |
 | Support 3 | ₹760 | Prior breakout zone |
 | Invalidation | Weekly close below ₹786 | Primary trend break — re-underwrite the thesis |
@@ -309,7 +315,7 @@ The business case has strengthened since September, not weakened: order book ₹
 
 What has got worse is everything about *timing and price*: the stock is below all three shorter averages, the market is in a downtrend, G2 revenue slipped to 2028, working capital days doubled to 69.8, and it still trades at 105-108x earnings and 16.7x book. In September the average Street target implied ~6% upside; from ₹854 it implies more, but only if the earnings hold.
 
-**It stays "accumulate", not "buy".** A 105x multiple with a 0.95% earnings yield is a growth stock priced on perfection; in a falling market that is a liability, not a moat.
+**It stays "accumulate", not "buy".** A 108x multiple with a 0.93% earnings yield is a growth stock priced on perfection; in a falling market that is a liability, not a moat.
 
 ### 8.3 What I would do
 
@@ -324,7 +330,7 @@ What has got worse is everything about *timing and price*: the stock is below al
 
 *This is the question this update was commissioned to answer, so it gets a direct one.*
 
-**What a falling market does to a stock like this.** CG Power trades at roughly 105x trailing earnings — an earnings yield near 0.95%. When the benchmark is down 5.6% over three months and long yields are rising, the first thing sold is the most expensive growth. High-multiple capital goods de-rate twice: once with the market, and again as the discount rate on their future earnings rises. A 13% drawdown from the high is not evidence that the de-rating has finished — at 16.7x book, a 20% drawdown from here would still leave it expensive.
+**What a falling market does to a stock like this.** CG Power trades at roughly 108x trailing earnings — an earnings yield of 0.93%. When the benchmark is down 5.6% over three months and long yields are rising, the first thing sold is the most expensive growth. High-multiple capital goods de-rate twice: once with the market, and again as the discount rate on their future earnings rises. A 13% drawdown from the high is not evidence that the de-rating has finished — at 16.7x book, a 20% drawdown from here would still leave it expensive.
 
 **What is genuinely good:**
 
@@ -341,6 +347,7 @@ What has got worse is everything about *timing and price*: the stock is below al
 - **The semiconductor business is still a cost.** G2 revenue is now a 2028 event. Until then the OSAT operation subtracts from consolidated margin — ₹43 Cr, or 132 bps, in Q1.
 - **Industrial Systems remains the weak engine** — PBIT ₹148 Cr against ₹172 Cr, with G.G. Tronics not yet contributing.
 - **Working capital days doubled to 69.8.** In a tightening-rate environment that is a real cost, not a footnote.
+- **Depreciation is compounding.** It has risen from ₹32 Cr a quarter (Mar-25) to ₹54 Cr (Jun-26) — **+69%** — against the largest capex programme in the company's history: transformer capacity from 22,000 to 110,000 MVA plus two OSAT fabs. The FY28 15% EBITDA-margin case has to absorb that.
 - **Valuation offers no protection.** There is no dividend (0.15% yield) and no asset backing (16.7x book) to catch a fall.
 
 **The answer:**
@@ -348,9 +355,11 @@ What has got worse is everything about *timing and price*: the stock is below al
 | Situation | Verdict |
 |---|---|
 | Building a 3+ year position | **Yes — in tranches.** Start 25-30% at ₹840-860, add at ₹800-820, keep a third for ₹720-760. Average lands near ₹820 |
-| Deploying a full allocation today at ₹854 | **No.** You would pay 105x for a stock below its 20/50/100-DMA, four days before an earnings print, in a falling market |
+| Deploying a full allocation today at ₹854 | **No.** You would pay 108x for a stock below its 20/50/100-DMA, four days before an earnings print, in a falling market |
 | Preferring confirmation to prediction | **Wait for 23 October.** A beat plus a close above ₹880-900 on delivery >45% is a better entry than guessing the print |
 | Swing trading | **No.** No breakout, no base, binary event |
+
+**One tension to be explicit about.** ₹804 is asked to do two jobs in this plan: it is where the second tranche sits, and it is where a decisive close on rising volume would break the trend. Those are opposite instructions at the same price. Decide which applies to you before the level arrives — a three-year accumulator should treat ₹800-820 as an add with a weekly close below ₹786 as the stop, while a 1-3 month trend trader should treat a decisive break of ₹802-804 on rising volume as an exit, not an entry.
 
 **Position sizing:** cap at 3-4% of portfolio, across at least three tranches, sized so that a gap through ₹786 on results costs a normal single-trade loss. The semiconductor optionality is a 2028 binary; it should not become a concentrated bet.
 
@@ -377,14 +386,15 @@ This analysis is for information and education only. It is not investment advice
 
 **Sources**
 - TradingView scanner for NSE:CGPOWER (19 October 2026, intraday) — price, RSI(14) 46.2, SMA 20/50/100/200 at ₹872/₹881/₹897/₹804, ATR ₹28, 52-week range, relative performance
-- NSE bhavcopy (`sec_bhavdata_full`) for 14, 15 and 16 October 2026 — closes of ₹863, ₹818 and ₹846, and delivery percentages of 45.5%, 47.6% and 50.8%
+- NSE bhavcopy (`sec_bhavdata_full`) for 30 July, 14, 15 and 16 October 2026 — the 30 July low of **₹814.85** and close of ₹832.60 (the source of the section 3 correction), closes of ₹863 / ₹818 / ₹846, and delivery percentages of 45.5% / 47.6% / 50.8%
+- BSE bhavcopy (`BhavCopy_BSE_CM_0_0_0_YYYYMMDD_F_0000.CSV`) for 3 July, 31 July, 3-4 August and 15-16 October 2026 — used to cross-check NSE prices while the NSE archive was rate-limiting: 3 July closed ₹893.10 against ₹958.95, 15 October low ₹815.60, 16 October low ₹808.75
 - NSE corporate filing and the company's earnings-call notice — Q2 FY27 board meeting and call on **23 October 2026**
 - Economic Times (Oct 2026) — CG Semi's second OSAT unit: construction and tool move-in by Q2 CY2027, manufacturing from Q4 CY2027 or early 2028
 - Financial Express (Oct 2026) — semiconductor backlog expected to double; Renesas committed to ~50% of combined G1/G2 capacity; ISM 2.0 guidelines under review; working capital days 31.3 → 69.8
 - Screener.in consolidated page for CGPOWER (19 Oct 2026) — P/E 105-108x, book value ₹50.6 (16.7x book), ROCE 26.7%, ROE 20.5%, dividend yield 0.15%, debt-free
 - TradingView index scan (19 Oct 2026) — Nifty 22,850, -1.28% on the day, -5.6% over three months, -6.6% over six
 - Our own 18 June 2026 analysis (stocksfundamentals.online/analysis/cg-power-deep-dive-jun18) — basis for the then-vs-now comparison
-- Screener.in consolidated page for CGPOWER (logged-in, 27 sidebar metrics verified, 17 Sep 2026) — current P/E 109x, ROCE 26.7%, mcap ₹1,38,931 Cr, quarterly results Jun 2023-Jun 2026, shareholding through Jun 2026
+- Screener.in consolidated page for CGPOWER (logged-in, 27 sidebar metrics verified, 17 Sep 2026) — P/E, ROCE 26.7%, mcap ₹1,38,931 Cr, quarterly results Jun 2023-Jun 2026, shareholding through Jun 2026
 - CG Power Q1 FY27 earnings call (reported 27 July 2026; transcript via Investing.com, Quartr, AlphaSpread) — segment PBIT, order intake and backlog, capacity ramp, management commentary on price hikes, G.G. Tronics and OSAT
 - Yahoo Finance analyst estimates page for CGPOWER.NS — FY27/FY28 revenue and EPS consensus (20 analysts), estimate revision history, earnings surprise record
 - Investing.com consensus page — 20-analyst average target ₹934.15 (low ₹627, high ₹1,100); Motilal Oswal Buy ₹1,020 (3 Sep 2026)

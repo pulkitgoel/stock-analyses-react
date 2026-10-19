@@ -20,7 +20,7 @@ export const ANALYSES: Analysis[] = [
       "valuation",
       "down-market"
     ],
-    "summary": "Refreshed 19 Oct at ₹854 with Q2 FY27 due 23 Oct. Order book ₹18,965 Cr (+45%), delivery 50.8%, but 105x earnings and 16.7x book give no protection in a falling market. Verdict: accumulate in tranches around the 200-DMA at ₹804, not a full position at ₹854.",
+    "summary": "Refreshed 19 Oct at ₹854 with Q2 FY27 due 23 Oct. Order book ₹18,965 Cr (+45%), delivery 50.8%, but 108x earnings and 16.7x book give no protection in a falling market. Verdict: accumulate in tranches around the 200-DMA at ₹804, not a full position at ₹854.",
     "market": "india",
     "model": "deepseek-v4-flash"
   },
