@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "kernex-microsystems-deep-dive-oct20",
+      "ticker": "KERNEX",
+      "title": "Kernex Microsystems — Deep Dive Analysis",
+      "date": "2026-10-20",
+      "yahooSymbol": "KERNEX.NS",
+      "priceAtAnalysis": 1737.6,
+      "support": 1712,
+      "resistance": 1817,
+      "supports": [
+        1573,
+        1400
+      ],
+      "resistances": [
+        1960,
+        2200
+      ],
+      "verdict": "ACCUMULATE ON EXECUTION — NOT A SWING SETUP"
+    },
+    {
       "slug": "cg-power-what-changed-since-june-with-forward-valuation",
       "ticker": "CGPOWER:NSE",
       "title": "CG Power — What Changed Since June (and Whether to Buy the Fall)",

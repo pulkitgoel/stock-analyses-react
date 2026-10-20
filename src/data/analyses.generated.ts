@@ -5,6 +5,24 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Kernex Microsystems — Deep Dive Analysis",
+    "ticker": "KERNEX",
+    "file": "kernex-microsystems-deep-dive-oct20.md",
+    "slug": "kernex-microsystems-deep-dive-oct20",
+    "date": "2026-10-20",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "railways",
+      "kavach",
+      "capital-goods",
+      "small-cap"
+    ],
+    "summary": "Kernex is the cheapest stock in the Kavach pack at 15x earnings, and on FY27 execution it may be cheaper still: Q1 revenue was Rs 504 Cr against Rs 431 Cr for all of FY26. But the order book fell 12% QoQ to Rs 3,641 Cr, receivables sit at 268 days, borrowings tripled, and HBL has guided that Kavach revenue peaks around FY28. Verdict: ACCUMULATE ON EXECUTION, NOT A SWING SETUP.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "CG Power — What Changed Since June (and Whether to Buy the Fall)",
     "ticker": "CGPOWER:NSE",
     "file": "cg-power-what-changed-since-june-with-forward-valuation.md",
