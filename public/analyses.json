@@ -19,6 +19,75 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Policy Pulse — Global — 20 Oct 2026",
+      "ticker": "MSFT:GOOGL:ORCL:PLTR:NVDA:AMD:STLA:TM:HMC:TSLA:BA:RYAAY:GE:TCS:INFY:HCLTECH",
+      "file": "policy-pulse-global-20-oct-2026.md",
+      "slug": "policy-pulse-global-20-oct-2026",
+      "date": "2026-10-20",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "china",
+        "europe",
+        "autos"
+      ],
+      "summary": "Beijing called the US DeepSeek procurement ban a breach of the Xi-Trump consensus, hardening the AI-decoupling theme into the Jan 10 truce deadline, while EU lawmakers agreed to weaken the 2035 car target to 87.5% - a lift for STLA and a negative for TSLA, with Boeing 737 MAX 10 certification due today.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 20 Oct 2026",
+      "ticker": "HDFCBANK:ICICIBANK:KOTAKBANK:AXISBANK:SBIN:BANKBARODA:BAJFINANCE:CHOLAFIN:LICHSGFIN:BSE:ANGELONE:MOTILALOFS:CDSL:WELSPUNLIV:TRIDENT:KPRMILL:PAGEIND",
+      "file": "policy-pulse-ministries-20-oct-2026.md",
+      "slug": "policy-pulse-ministries-20-oct-2026",
+      "date": "2026-10-20",
+      "tags": [
+        "policy-pulse",
+        "rbi",
+        "liquidity",
+        "exports",
+        "ipo"
+      ],
+      "summary": "The RBI ran its first liquidity infusion since July 29 - a Rs 1 lakh crore seven-day VRR at 5.52% with another Rs 50,000 crore due Oct 21 - which is a marginal positive for BAJFINANCE and CHOLAFIN and a warning for WELSPUNLIV, with RoDTEP and RoSCTL expiring Dec 31 while US holiday orders fall 25-30%.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / India Govt — 20 Oct 2026",
+      "ticker": "RELIANCE:IOC:BPCL:HINDPETRO:MRPL:ONGC:OIL:GAIL:PETRONET:WAAREEENER:VIKRAMSOLR:TATASTEEL:JSWSTEEL:CENTURYPLY:GREENPLY:WELSPUNLIV:TRIDENT:KPRMILL:RAJESHEXPO:SUNPHARMA:CIPLA",
+      "file": "policy-pulse-modi-20-oct-2026.md",
+      "slug": "policy-pulse-modi-20-oct-2026",
+      "date": "2026-10-20",
+      "tags": [
+        "policy-pulse",
+        "trade-deal",
+        "india-us",
+        "energy",
+        "textiles"
+      ],
+      "summary": "Rubio told reporters in Mumbai the trade deal is 'as close as you can be without having executed the agreement' and confirmed he will press RELIANCE to run more Venezuelan crude at Jamnagar, while the India-New Zealand FTA took effect today - a plus for TATASTEEL and CENTURYPLY, a minus for WAAREEENER with solar AD/CVD finals due Oct 26.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US Watch — 20 Oct 2026",
+      "ticker": "JPM:GS:DHI:LEN:PHM:MSFT:GOOGL:ORCL:PLTR:NVDA:GD:TXT:NOC:RTX:GE:LMT:HII:MP:USAR:AREC:HOLX:OGN:PFE:ABBV:TMO:MMM:EFX:GM:STLD:CRWV:META",
+      "file": "policy-pulse-trump-us-20-oct-2026.md",
+      "slug": "policy-pulse-trump-us-20-oct-2026",
+      "date": "2026-10-20",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "fed",
+        "ai-policy",
+        "tariffs",
+        "defence"
+      ],
+      "summary": "Ninety-four of 100 economists now expect the Fed to hold on Oct 27-28 and all 100 expect a December hike, which keeps a floor under JPM and GS while extending the pain for DHI, LEN and PHM; separately DHS ordered DeepSeek out of civilian agency IT, a procurement positive for MSFT and ORCL.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "CG Power — What Changed Since June (and Whether to Buy the Fall)",
       "ticker": "CGPOWER:NSE",
       "file": "cg-power-what-changed-since-june-with-forward-valuation.md",
