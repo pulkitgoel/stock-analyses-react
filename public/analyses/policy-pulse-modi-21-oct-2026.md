@@ -19,7 +19,7 @@ Three things sit between the quote and a signed text: the tariff schedule itself
 
 The Graham Act backdrop matters here. The duties of up to 100% on the top five buyers of Russian crude were **waived by executive order on October 16** under Section 115 — but a waiver is discretion, not repeal, and the 60-day review window runs to roughly **December 15**. Trade policy toward India in this window is a negotiation lever, not a settled regime.
 
-PIB and the White House named no companies. The mappings below are inferences from tariff exposure, not from any named beneficiary.
+Neither government named a company in connection with the talks. The mappings below are inferences from tariff exposure, not from any named beneficiary.
 
 | Stock | Impact | Reason | Confidence |
 |---|---|---|---|
