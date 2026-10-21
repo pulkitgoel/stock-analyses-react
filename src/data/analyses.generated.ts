@@ -5,6 +5,73 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global Watch — 21 Oct 2026",
+    "ticker": "NVDA:MU:TSM:MSFT:GOOGL:AMZN:SPCX:XOM:CVX:DAL:UAL:CCL:RCL:STLA:TM:HMC:TSLA:TCS:INFY:HCLTECH",
+    "file": "policy-pulse-global-21-oct-2026.md",
+    "slug": "policy-pulse-global-21-oct-2026",
+    "date": "2026-10-21",
+    "tags": [
+      "policy-pulse",
+      "oil",
+      "autos",
+      "semiconductors"
+    ],
+    "summary": "SpaceX's 161% revenue growth and an Anthropic IPO filing reopen the AI financing window for NVDA and TSM, Brent near USD 110 with the Graham Act waiver doing the offsetting work, and Europe's carmakers won an 87.5% 2035 target that lifts STLA and slows TSLA.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 21 Oct 2026",
+    "ticker": "BEL:DATAPATTNS:PARAS:ZENTEC:IDEAFORGE:SOLARINDS:HAL:BDL:BAJFINANCE:CHOLAFIN:LICHSGFIN:HDFCBANK:ICICIBANK:KOTAKBANK:AXISBANK:SBIN:BANKBARODA:BSE:ANGELONE:MOTILALOFS:CDSL:KFINTECH:CAMS:RELIANCE:ETERNAL:TRENT:NTPC",
+    "file": "policy-pulse-ministries-21-oct-2026.md",
+    "slug": "policy-pulse-ministries-21-oct-2026",
+    "date": "2026-10-21",
+    "tags": [
+      "policy-pulse",
+      "defence",
+      "liquidity",
+      "ipo"
+    ],
+    "summary": "MoD signed a Rs 770 crore counter-drone radar contract with BEL, the RBI injected another Rs 50,000 crore and drew nearly twice the bids, and Jio's Rs 30,213 crore IPO was fully subscribed in under two hours -- a volumes positive for BSE and ANGELONE.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / India Govt — 21 Oct 2026",
+    "ticker": "RELIANCE:IOC:BPCL:HINDPETRO:MRPL:ONGC:OIL:GAIL:PETRONET:WELSPUNLIV:TRIDENT:KPRMILL:PAGEIND:RAJESHEXPO:SUNPHARMA:CIPLA:TCS:INFY:APOLLOTYRE",
+    "file": "policy-pulse-modi-21-oct-2026.md",
+    "slug": "policy-pulse-modi-21-oct-2026",
+    "date": "2026-10-21",
+    "tags": [
+      "policy-pulse",
+      "trade-deal",
+      "energy",
+      "refining",
+      "exports"
+    ],
+    "summary": "Trump says the India-US deal is 'pretty close' but names no rate or date, which keeps WELSPUNLIV and TRIDENT geared to a tariff schedule that does not exist yet, while Rubio at Jamnagar steered heavy Venezuelan crude toward RELIANCE.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US Watch — 21 Oct 2026",
+    "ticker": "META:TSLA:NFLX:SPCX:NVDA:MU:AMD:COIN:HOOD:MSTR:MSFT:GOOGL:AMZN:XOM:CVX:DAL:UAL:CCL:RCL:BRK.B",
+    "file": "policy-pulse-trump-us-21-oct-2026.md",
+    "slug": "policy-pulse-trump-us-21-oct-2026",
+    "date": "2026-10-21",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "earnings",
+      "crypto",
+      "ai-policy",
+      "oil"
+    ],
+    "summary": "Trump's biggest August purchase was up to USD 25.3 million of META and it reports tonight, while a 10% cut to Netflix's ad forecast cost NFLX about USD 17 billion of market value and SpaceX's 161% revenue growth re-rated the AI financing window for NVDA and TSM.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Kernex Microsystems — Deep Dive Analysis",
     "ticker": "KERNEX",
     "file": "kernex-microsystems-deep-dive-oct20.md",
