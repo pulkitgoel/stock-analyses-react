@@ -793,17 +793,78 @@ and one canonical (3.1, 3.2).
 
 ---
 
-### 7.10 UI redesign, step 1: remove the decoration layer — IN PROGRESS, claude (interactive), 2026-10-23
+### 7.10 UI redesign, step 1: remove the decoration layer — DONE 2026-10-23
+
+**Result: the LCP hypothesis below was mostly wrong, and 7.9's conclusion stands.**
+Measured on the 7.9 harness (`--form-factor=mobile --throttling-method=simulate`),
+three runs per build against `vite preview`, with the served CSS asset hash checked each
+time to prove which build was being measured:
+
+| | perf | FCP | LCP | CLS | TBT | LCP element |
+|---|---|---|---|---|---|---|
+| Before | 83 | 3315 ms | 3610 ms | 0.018 | 67 ms | the `h1` |
+| After | 84 | 3316 ms | 3471 ms | 0.016 | 30 ms | the hero `img` |
+
+- **FCP did not move at all (+1 ms).** This is the finding. First paint is still gated on
+  the one render-blocking stylesheet, exactly as 7.9 concluded. Removing the animation
+  did not unlock the page.
+- **LCP improved 139 ms (3.8%)**, and the LCP element changed from the `h1` to the hero
+  image. That is structural confirmation that the opacity-0 animation was holding the
+  `h1` back as an LCP candidate — but the effect is a fraction of what was supposed.
+- **TBT more than halved, 67 ms -> 30 ms**, from dropping the animation work and 34
+  inline hover handlers.
+- **CLS did not regress.** Both builds measure ~0.017 on this harness; the 0 recorded in
+  7.9 is a production measurement, so the two numbers are not comparable.
+- Bundle: CSS 7.75 -> 7.41 kB gzip, JS 297.97 -> 297.39 kB gzip.
+
+**A caution worth more than the result.** The first run of this comparison reported
+LCP 3488 -> 2569 ms, a tidy confirmation of the hypothesis. It was wrong: `dist` had been
+rebuilt underneath an already-running preview server, so which build each run measured
+was unknown. Three repeat runs gave 3462 ms. Restarting the server per build and
+verifying the asset hash produced the table above. **A single flattering run that
+confirms what you expected is the one to re-measure**, which is the same lesson 7.9
+records about needing a counterfactual.
+
+**The two levers that remain, in order:** inline or split the render-blocking CSS (7.9
+already named this), and replace the hero image with the text masthead in `DESIGN.md`
+step 3 — it is now the LCP element, so there is nothing else above it to blame.
+
+What shipped (three commits, all subtractions, no head tag or heading touched):
+
+- `.animate-in` / fade-up and its delay classes; the fixed `body::before` grid with
+  `mask-image`; the two body gradients; the `premium-card` sheen with `translateZ(0)`
+  and `isolation`; `backdrop-filter: blur(22px)` on the header and mobile bottom bar;
+  the radial ambient glow on the home and about heroes; three `blur(50px)` decorative
+  circles; `box-shadow` on `.surface-card` (`--shadow-soft`/`--shadow-card` are now
+  `none`, kept as tokens so ~8 inline call sites stay valid until step 2).
+- Emoji tag icons removed from `AnalysisCard`; every font size below 12px raised to 12px
+  (6 Tailwind arbitrary sizes, 22 inline `fontSize` values across 9 files). Homepage went
+  from 10 elements computing under 12px to **zero**.
+- All 34 `onMouseOver`/`onMouseOut` handlers replaced by six `data-hov` CSS rules.
+  **Those rules need `!important` and it is load-bearing:** every affected element
+  declares its base border/background/colour as an inline style, which outranks any
+  stylesheet rule. The first version parsed, typechecked, built, rendered — and did
+  nothing on hover. It was caught by reading computed styles in a browser, not by the
+  build. Step 2 moves those base styles into classes and the `!important` can go.
+
+Verified at 375px in a browser: home, the Kernex deep dive (4,526 words, 12 scroll-boxed
+tables), `/company/ioc` (4,848 words, indexable, no robots tag per 3.7) and
+`/analyses/page/1` all render; one `h1` each; no horizontal overflow; zero above-the-fold
+elements with `opacity < 1` or a running animation; hover confirmed with a real pointer,
+settling on exactly the values the old handlers wrote. Only console error throughout is
+the expected `/api/audio-index` 502 (section 4b).
+
+Emoji remain in 10 article titles and summaries in `analyses.generated.ts`. Those are
+content, not UI, and retitling would contaminate the 2026-11-07 experiment (7.3).
+
+**Steps 2-6 of `DESIGN.md` Appendix B are not claimed.** Step 5 is gated on the owner's
+decisions in section 6 (AI disclosure, SEBI Research Analyst status).
+
+<details>
+<summary>The original claim and hypothesis, kept for the record</summary>
 
 Spec is `DESIGN.md` (committed 2026-10-22, nothing implemented). Appendix B of that file
-orders the rollout; this claim covers **step 1 only**, which is subtractions:
-
-- `animate-in` / fade-up from `opacity: 0` on anything above the fold
-- `backdrop-filter: blur(22px)` on the header and the mobile bottom bar
-- the fixed `body::before` grid with `mask-image`, the `premium-card` sheen,
-  `--shadow-soft` / `--shadow-card`, `translateZ(0)` + `isolation` on cards
-- emoji tag icons; inline `onMouseOver` / `onMouseOut` handlers replaced by CSS `:hover`
-- every font size below 12px raised to 12px (`text-[0.45rem]`, `0.5rem`, `0.68rem`)
+orders the rollout; this claim covers **step 1 only**, which is subtractions.
 
 Chosen first because it touches **no title, description, heading or head tag**, so it does
 not contaminate the 2026-11-07 Search Console re-export that 7.3 defines as the experiment.
@@ -812,12 +873,10 @@ It also tests a hypothesis 7.9 left open. 7.9 concluded the remaining LCP lever 
 CSS. A review on 2026-10-22 argued the mobile LCP may be **JS-bound** instead: `.animate-in`
 starts at `opacity: 0`, Chromium ignores opacity-0 LCP candidates, and `createRoot` discards
 the prerendered nodes so the animation only replays once the ~334 KB gzip bundle has run.
-**UNVERIFIED.** Removing the above-the-fold animation and re-running the 7.9 harness
-(`--form-factor=mobile --throttling-method=simulate`) is the cheap test, and the before
-number on the same harness is what makes it evidence (7.9 records why).
+**UNVERIFIED.** Removing the above-the-fold animation and re-running the 7.9 harness is the
+cheap test, and the before number on the same harness is what makes it evidence.
 
-Steps 2-6 of Appendix B are not claimed. Step 5 is gated on the owner's decisions in
-section 6 (AI disclosure, SEBI Research Analyst status).
+</details>
 
 ---
 

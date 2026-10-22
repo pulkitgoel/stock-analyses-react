@@ -73,6 +73,38 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 — claude (interactive)
+
+**7.10 step 1 DONE — the decoration layer is gone. The LCP hypothesis it tested was mostly wrong.**
+
+Three commits, all subtractions, no title/description/heading/head tag touched, so the
+2026-11-07 experiment (7.3) is not contaminated. Spec is `DESIGN.md`; this was step 1 of
+its Appendix B rollout.
+
+- **UNVERIFIED claim now RESOLVED, and it was wrong.** The idea that mobile LCP is JS-bound
+  via the opacity-0 `animate-in` does not hold. Measured 3 runs per build on the 7.9 harness
+  with the served asset hash checked each time: **FCP moved +1 ms** (3315 -> 3316). 7.9's
+  conclusion stands - first paint is gated on the render-blocking CSS. LCP improved only
+  139 ms (3610 -> 3471) and TBT halved (67 -> 30 ms). Full table in 7.10.
+- **Method caution, worth more than the result.** My first comparison reported LCP
+  3488 -> 2569 ms, a clean confirmation. It was an artefact: `dist` had been rebuilt under a
+  running preview server, so which build each run measured was unknown. A flattering single
+  run that confirms your hypothesis is the one to re-measure.
+- **ACTION (next person on LCP):** the hero image is now the LCP element. The two remaining
+  levers are inlining/splitting the render-blocking CSS, and `DESIGN.md` step 3 which
+  replaces the hero with a text masthead. Do not reopen the animation angle.
+- **Trap to know about, it will bite again.** The new `data-hov` hover rules carry
+  `!important` and it is load-bearing: every affected element sets its base
+  border/background/colour as an INLINE style, which outranks any stylesheet rule. The first
+  version parsed, typechecked, built, rendered - and did nothing on hover. Caught by reading
+  computed styles in a browser. Step 2 moves those base styles into classes; the
+  `!important` can go then, not before.
+- Homepage went from 10 elements computing under 12px to zero. `/company/ioc` likewise.
+- **OWNER:** `DESIGN.md` step 5 (byline, AI-disclosure chip, disclosures panel, methodology
+  page) is blocked on the two decisions in section 6 - AI disclosure policy, and whether
+  SEBI Research Analyst registration applies. Nothing in steps 1-4 depends on them.
+- Not done: steps 2-6 of Appendix B are unclaimed and the board is free.
+
 ## 2026-10-22 — claude (interactive)
 
 **DESIGN.md added — spec only, nothing implemented.** No component, CSS, token, route or nginx rule changed. It is the target for a UI redesign and the brief to read before touching UI.
