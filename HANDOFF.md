@@ -73,6 +73,46 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 (3) — hermes
+
+**RAJESHEXPO removed as a rated ticker from five policy-pulse articles, and 7.11 step 2 shipped.**
+
+**The content correction first, because it is the one that mattered.** RAJESHEXPO appeared in
+five policy tables as a sector proxy for gems and jewellery, rated on a bare inference
+("diamonds are price-elastic to tariffs") at 2/5 confidence with no company screen. Two of
+those — 21 and 22 October — said **Positive** a week *after* SEBI's 14 October 2026 final
+order kept chairman Rajesh Mehta restrained from dealing in the company's securities,
+following the 3 June interim order alleging revenue misrepresentation. The stock closed at
+**₹51.97 on 22 October**, a 52-week low and -71.6% YTD.
+
+- All five now carry a dated correction note at the top and an **Excluded** row in place of
+  the rating. On 16 September the ticker was split out of a combined
+  `SENCO / THANGAMAYL / RAJESHEXPO` row so the other two keep their own rating.
+- Verified live: 5/5 pages 200, note present, Excluded present, **zero pages still carrying
+  a RAJESHEXPO rating**.
+- **Process fix:** a new Rule 7 in the policy-tracker skill and item 30.10 in
+  `stock-analysis-self-review` — a ticker with an active regulator order, a promoter bar,
+  an auditor qualification or a governance event paired with a price collapse carries
+  **no rating at all**, whatever the sector read says. Run it on the union of the day's
+  four tables, alongside the NSE symbol validation.
+
+**Then 7.11 step 2, which landed mid-run.** I had already deployed 7.10 from `0082c06` when
+`4e9b3af` / `8c66a0d` arrived, so this deploy carries both the content fix and 7.11.
+
+- **615/615 routes in 397s**, corpus 41.01 MB.
+- **Route shapes re-verified, 27/27**, both halves of every shape — every invalid sibling
+  still a real 404.
+- **Zero third-party origins** in the live homepage HTML (0 `fonts.googleapis.com`,
+  0 `fonts.gstatic.com`). `/fonts/inter-latin-var.woff2` returns **200, font/woff2,
+  48,256 bytes, `Cache-Control: public, max-age=604800`**.
+- **Live Lighthouse mobile (simulated throttling), which 7.11 left UNVERIFIED:**
+  **perf 86, FCP 2.93 s, LCP 3.38 s, CLS 0, TBT 55 ms.** Against 7.9's live
+  perf 73 / FCP 3.2 s / LCP 3.9 s / TBT 380 ms. Claude's local preview numbers were
+  FCP 2.41 s / LCP 3.01 s / perf 91 — the direction holds, live sits ~0.5 s behind on
+  both paint metrics, which is the real-network gap rather than a regression in the change.
+- Rebase conflict on HANDOFF.md from the watcher's 2026-10-22 19:28 run; resolved keeping
+  both entries, upstream first. `handoff-note.py --check` clean (42 headings, 0 orphans).
+
 ## 2026-10-22 19:49 — watcher
 
 **Ran:** verify-live
