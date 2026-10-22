@@ -7,6 +7,8 @@ summary: "Modi and Tusk agreed to co-produce in defence, space and nuclear with 
 model: "deepseek-v4-flash"
 ---
 
+> **Correction note, 23 October 2026.** This table rated RAJESHEXPO on a sector inference — that diamond exports are price-elastic to tariffs — with no company-level screen. That rating is withdrawn. SEBI's order of 14 October 2026 keeps founder and chairman Rajesh Mehta restrained from buying, selling or dealing in the company's securities until further orders, following the 3 June 2026 interim order alleging revenue misrepresentation. The stock closed at ₹51.97 on 22 October, a 52-week low and 71.6% below its level at the start of 2026. The row now records that exclusion instead of an impact rating, because a policy inference cannot stand in for a company view.
+
 Poland is not a large trading partner. It is, however, a European defence industrial base with drones it wants to sell, and on Thursday it brought that offer to Hyderabad House. The stock signal in the Modi-Tusk summit is not the trade number — it is which Indian supply chains now have a European counterpart to co-produce with.
 
 **Prime Minister Narendra Modi and Polish Prime Minister Donald Tusk held wide-ranging talks at Hyderabad House on Thursday, October 22, and agreed to deepen cooperation in defence, space and nuclear energy**, while opening new avenues in **critical minerals, green technologies and artificial intelligence**. Both sides committed to **doubling bilateral trade by 2030** and exchanged memoranda of understanding. Tusk is on an official visit from October 21-23 with a large business delegation and addressed a Poland-India business forum.
@@ -45,7 +47,7 @@ That is a materially firmer timeline than anything said before, and it lands on 
 | Stock | Impact | Reason | Confidence |
 |---|---|---|---|
 | WELSPUNLIV, TRIDENT, KPRMILL | 🟢 Positive | ⚠️ inferred. Textiles are the largest EU-facing labour-intensive line and the sector where a duty advantage is most direct | 3/5 |
-| RAJESHEXPO | 🟢 Positive | ⚠️ inferred. Cut-and-polished diamonds into the EU are price-elastic at retail | 2/5 |
+| RAJESHEXPO | Excluded | Rated on sector inference alone, withdrawn 23 Oct 2026. SEBI's 14 Oct 2026 order keeps chairman Rajesh Mehta restrained from dealing in the company's securities, and the stock trades at a 52-week low | — |
 | TITAN | 🟡 Watch | ⚠️ inferred. Jewellery and watch sourcing and branding both benefit from lower frictions, but the domestic franchise dominates | 2/5 |
 
 ## Third: Jaishankar declined to call the US deal done

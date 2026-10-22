@@ -7,6 +7,8 @@ summary: "Rubio told reporters in Mumbai the trade deal is 'as close as you can 
 model: "deepseek-v4-flash"
 ---
 
+> **Correction note, 23 October 2026.** This table rated RAJESHEXPO on a sector inference — that diamond exports are price-elastic to tariffs — with no company-level screen. That rating is withdrawn. SEBI's order of 14 October 2026 keeps founder and chairman Rajesh Mehta restrained from buying, selling or dealing in the company's securities until further orders, following the 3 June 2026 interim order alleging revenue misrepresentation. The stock closed at ₹51.97 on 22 October, a 52-week low and 71.6% below its level at the start of 2026. The row now records that exclusion instead of an impact rating, because a policy inference cannot stand in for a company view.
+
 ## Rubio in Mumbai: "As Close as You Can Be Without Having Executed"
 
 The US Secretary of State arrived in Mumbai on Tuesday morning and met External Affairs Minister **S Jaishankar** at the Taj Mahal Palace at 3:50 pm, with US Ambassador **Sergio Gor** and Foreign Secretary **Vikram Misri** in the room. His programme, per the MEA advisory issued on October 19, runs **October 20-22** — Mumbai first, then the **Jamnagar refinery complex in Gujarat on Wednesday**, where he meets business leaders including **Mukesh Ambani**.
@@ -56,7 +58,7 @@ The scale check matters more than the announcement. Bilateral merchandise trade 
 | TATASTEEL, JSWSTEEL | 🟢 Positive | ⚠️ inferred. Duty-free coking coal and metal scrap is a direct input-cost line for Indian steelmakers, and it arrives while coking coal prices are elevated | 3/5 |
 | CENTURYPLY, GREENPLY | 🟢 Positive | ⚠️ inferred. Duty-free wooden logs from New Zealand addresses the single largest cost input for plywood and panel makers and the industry's chronic raw-material constraint | 3/5 |
 | WELSPUNLIV, TRIDENT, KPRMILL | 🟢 Positive | ⚠️ inferred. Textiles and home textiles get zero-duty access from day one into a small but zero-tariff, English-language market that UK and EU buyers benchmark against | 2/5 |
-| RAJESHEXPO | 🟡 Watch | ⚠️ inferred. Gems and jewellery are covered, but New Zealand is not a meaningful outlet for Indian studded jewellery relative to the US and UAE | 2/5 |
+| RAJESHEXPO | Excluded | Rated on sector inference alone, withdrawn 23 Oct 2026. SEBI's 14 Oct 2026 order keeps chairman Rajesh Mehta restrained from dealing in the company's securities, and the stock trades at a 52-week low | — |
 | SUNPHARMA, CIPLA | 🟢 Positive | ⚠️ inferred. Acceptance of FDA, EMA and MHRA inspection approvals removes a duplicate-inspection cost for every ANDA filed there; small revenue, real regulatory cost saving | 2/5 |
 
 ## The Market Was Shut, and Monday's Close Was Ugly

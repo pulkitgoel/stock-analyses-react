@@ -7,6 +7,8 @@ summary: "Trump says the India-US deal is 'pretty close' but names no rate or da
 model: "deepseek-v4-flash"
 ---
 
+> **Correction note, 23 October 2026.** This table rated RAJESHEXPO on a sector inference — that diamond exports are price-elastic to tariffs — with no company-level screen. That rating is withdrawn. SEBI's order of 14 October 2026 keeps founder and chairman Rajesh Mehta restrained from buying, selling or dealing in the company's securities until further orders, following the 3 June 2026 interim order alleging revenue misrepresentation. The stock closed at ₹51.97 on 22 October, a 52-week low and 71.6% below its level at the start of 2026. The row now records that exclusion instead of an impact rating, because a policy inference cannot stand in for a company view.
+
 The President said the words Indian exporters have waited a year to hear, and then immediately qualified them.
 
 Asked at the White House on Tuesday about the prospects of an agreement, **Donald Trump said India and the United States were "pretty close" to finalising a trade deal** and added: **"It's going to be a much different kind of deal than we've done."** The full quote was "They want to make a deal. We're going to make a deal. Pretty close, yeah."
@@ -25,7 +27,7 @@ Neither government named a company in connection with the talks. The mappings be
 |---|---|---|---|
 | WELSPUNLIV, TRIDENT, KPRMILL | 🟢 Positive | ⚠️ inferred. Textiles are the most tariff-exposed export line and the specific sector where the Vietnam/Bangladesh edge is being argued; US holiday orders are already reported down 25-30% | 3/5 |
 | PAGEIND | 🟡 Watch | ⚠️ inferred. Innerwear exports benefit from any tariff relief, but the domestic franchise is the larger driver | 2/5 |
-| RAJESHEXPO | 🟢 Positive | ⚠️ inferred. Cut-and-polished diamonds into the US are highly price-elastic at the retail counter; a tariff step-down is direct | 2/5 |
+| RAJESHEXPO | Excluded | Rated on sector inference alone, withdrawn 23 Oct 2026. SEBI's 14 Oct 2026 order keeps chairman Rajesh Mehta restrained from dealing in the company's securities, and the stock trades at a 52-week low | — |
 | SUNPHARMA, CIPLA | 🟡 Watch | ⚠️ inferred. Generics are already exempt from Section 232 and at 0% under the generic regime, so a BTA adds little here except certainty | 2/5 |
 | APOLLOTYRE | 🟡 Watch | ⚠️ inferred. Auto components are the sector most exposed to any US content rules; treat a deal as unambiguously better than the current Section 301 baseline | 2/5 |
 

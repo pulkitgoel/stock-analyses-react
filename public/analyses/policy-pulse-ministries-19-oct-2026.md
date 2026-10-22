@@ -7,6 +7,8 @@ summary: "NPPA capped trade margins on 137 cancer drugs at 30% from November 9, 
 model: "deepseek-v4-flash"
 ---
 
+> **Correction note, 23 October 2026.** This table rated RAJESHEXPO on a sector inference — that diamond exports are price-elastic to tariffs — with no company-level screen. That rating is withdrawn. SEBI's order of 14 October 2026 keeps founder and chairman Rajesh Mehta restrained from buying, selling or dealing in the company's securities until further orders, following the 3 June 2026 interim order alleging revenue misrepresentation. The stock closed at ₹51.97 on 22 October, a 52-week low and 71.6% below its level at the start of 2026. The row now records that exclusion instead of an impact rating, because a policy inference cannot stand in for a company view.
+
 ## NPPA Caps Trade Margins on 137 Cancer Drugs at 30%, Effective November 9
 
 The gazette notification is the most consequential Indian pricing decision since the cardiac stent and knee-implant caps. The **National Pharmaceutical Pricing Authority** has capped trade margins on **137 identified non-scheduled anti-cancer drugs** at **30% of MRP** (excluding GST), which corresponds to a mark-up of **42.86% on the price to stockist or price to distributor**.
@@ -52,7 +54,7 @@ That last number is the reason to keep confidence scores low. A duty-free regime
 | TATASTEEL, JSWSTEEL | 🟢 Positive | ✅ named inputs. Duty-free coking coal and metal scrap are direct input-cost relief for blast-furnace and scrap-based steelmaking, and both are price-setters on the domestic cost curve | 3/5 |
 | CENTURYPLY, GREENPLY | 🟢 Positive | ✅ named inputs. Wooden logs entering duty-free is the single largest cost line for plywood and laminate manufacturers | 3/5 |
 | WELSPUNLIV, TRIDENT, KPRMILL | 🟢 Positive | ✅ named sectors. Textiles and home textiles enter New Zealand duty-free from day one, removing a tariff that made Indian suppliers uncompetitive against China and Vietnam in that market | 2/5 |
-| RAJESHEXPO | 🟡 Watch | ✅ named sector. Gems and jewellery is on the duty-free list, but New Zealand is a small market for Indian jewellery exports and the company's own revenue is concentrated elsewhere | 2/5 |
+| RAJESHEXPO | Excluded | Rated on sector inference alone, withdrawn 23 Oct 2026. SEBI's 14 Oct 2026 order keeps chairman Rajesh Mehta restrained from dealing in the company's securities, and the stock trades at a 52-week low | — |
 | SUNPHARMA, CIPLA, POLYMED | 🟢 Positive | ✅ named mechanism. Regulatory acceptance of FDA, EMA, MHRA and Health Canada inspections is a time-to-market cut, and time-to-market is the binding cost for Indian pharma and device exporters entering small developed markets | 2/5 |
 | INFY, TECHM, PERSISTENT, COFORGE | 🟡 Watch | ⚠️ inferred. Services access across 118 sectors with MFN in 139 sub-sectors plus 5,000 professional visas is a real opening, but New Zealand is a small IT services wallet relative to the US and Europe | 2/5 |
 

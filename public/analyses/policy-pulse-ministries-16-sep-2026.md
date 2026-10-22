@@ -7,6 +7,8 @@ summary: "NPCI's 0.4% MDR on merchant UPI above Rs 2,000 from October 15 opens a
 model: "deepseek-v4-flash"
 ---
 
+> **Correction note, 23 October 2026.** This table rated RAJESHEXPO on a sector inference — that diamond exports are price-elastic to tariffs — with no company-level screen. That rating is withdrawn. SEBI's order of 14 October 2026 keeps founder and chairman Rajesh Mehta restrained from buying, selling or dealing in the company's securities until further orders, following the 3 June 2026 interim order alleging revenue misrepresentation. The stock closed at ₹51.97 on 22 October, a 52-week low and 71.6% below its level at the start of 2026. The row now records that exclusion instead of an impact rating, because a policy inference cannot stand in for a company view.
+
 ## UPI Gets a Price — 0.4% MDR on Merchant Payments Above ₹2,000 From October 15
 
 This is the largest structural change to Indian digital payments since the zero-MDR regime began in January 2020, and it repriced the sector in a single session.
@@ -70,7 +72,8 @@ The **All India Gem & Jewellery Domestic Council (GJC)** has asked the Centre an
 | Stock | Impact | Reason | Confidence |
 |-------|--------|--------|-----------|
 | KALYANKJIL / PCJEWELLER | 🔴 Negative | Direct incremental compliance cost per article, unabsorbable ahead of the festive season without margin dilution or a consumer price increase; both fell 4-5% | High |
-| SENCO / THANGAMAYL / RAJESHEXPO | 🔴 Negative | ⚠️ Inferred. Sector-wide regulatory cost with the same festive-season timing; the read-across is uniform across organised jewellers | Medium-High |
+| SENCO / THANGAMAYL | 🔴 Negative | ⚠️ Inferred. Sector-wide regulatory cost with the same festive-season timing; the read-across is uniform across organised jewellers | Medium-High |
+| RAJESHEXPO | Excluded | Rated on sector inference alone, withdrawn 23 Oct 2026. SEBI's 14 Oct 2026 order keeps chairman Rajesh Mehta restrained from dealing in the company's securities, and the stock trades at a 52-week low | — |
 | TITAN | 🟡 Watch | ⚠️ Inferred. Titan's scale and formalisation leadership make it the most able to absorb ₹30 an article, but it carries the same category-level cost increase | Medium |
 
 ## NSE's Anchor Book Opens — "Much More Than We Thought It Would Be"
