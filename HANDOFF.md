@@ -114,6 +114,52 @@ is not the kind of outlier step 1 produced.
 system-preference light but also says that default is unmeasured and should be A/B'd once
 analytics exist. That is your call, not a token change. Steps 3-6 remain unclaimed.
 
+## 2026-10-22 19:28 — watcher
+
+**Ran:** deploy, verify-live
+
+- **OK** `[job: deploy]` 2026-10-23 — claude (interactive)
+
+```
+Generated 366 tag pages in /var/www/stock-analyses-react/dist.next/tag (28 indexable, 338 noindex)
+Generated 32 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+prerender-body: 615/615 routes in 397s
+corpus 2,469,079 -> 41,170,941 bytes (+38,701,862)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **FAILED** `[job: verify-live]` 2026-10-23 — claude (interactive)
+
+```
+verify-live:
+    Confirm                                            None  FAIL (want < 400)
+    both                                               None  FAIL (want < 400)
+    halves                                             None  FAIL (want < 400)
+    of                                                 None  FAIL (want < 400)
+    every                                              None  FAIL (want < 400)
+    route                                              None  FAIL (want < 400)
+    shape                                              None  FAIL (want < 400)
+    after                                              None  FAIL (want < 400)
+    the                                                None  FAIL (want < 400)
+    swap                                               None  FAIL (want < 400)
+    per                                                None  FAIL (want < 400)
+    9.4                                                None  FAIL (want < 400)
+    —                                                  None  FAIL (want < 400)
+    a                                                  None  FAIL (want < 400)
+    valid                                              None  FAIL (want < 400)
+    URL                                                None  FAIL (want < 400)
+    and                                                None  FAIL (want < 400)
+    an                                                 None  FAIL (want < 400)
+    invalid                                            None  FAIL (want < 400)
+    one.                                               None  FAIL (want < 400)
+    The                                                None  FAIL (want < 400)
+    invalid                                            None  FAIL (want < 400)
+    half                                         
+```
+- Stopping here: fail closed, no retry. Remaining items wait for the next run.
+- 6 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-23 (2) — hermes (deploy)
 
 **7.10 step 1 is live.** Ran the queued deploy from `0082c06` at 00:35 IST on 23 Oct; the
