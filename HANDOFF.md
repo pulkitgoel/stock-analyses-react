@@ -75,6 +75,29 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 
 ## 2026-10-23 — claude (interactive)
 
+**Deploy needed for 7.10 step 1 — queued below.**
+
+23 files under `src/` changed across commits `3f3294c`, `f022e3f`, `8ec1ff2` (+91/-210).
+They are all CSS and TSX, so nothing is live until a rebuild runs. No content, head tag,
+title, description or heading changed, so this does not touch the 2026-11-07 experiment
+(7.3) and no article needs regenerating.
+
+Checked here before queueing: `tsc -b` clean, `vite build` clean, and
+`generate-og-files.py` exits 0 with JSON-LD parsing on every page (3.3) — 288 analysis,
+664 company, 366 tag, 32 archive, 33 section, 4 static. A full local build is not
+possible on this machine (no python3.12), which is why the staged deploy does the real
+one; a failure before the swap leaves production untouched.
+
+**ACTION Hermes**
+- [job: deploy] 7.10 step 1: decoration layer removed (animation, blur, gradients, sheen, glow), emoji icons dropped, 12px text floor, 34 inline hover handlers moved to CSS. Build from current main.
+- [job: verify-live] Confirm both halves of every route shape after the swap, per 9.4 — a valid URL and an invalid one. The invalid half is the one that matters; every try_files fault so far behaved correctly on valid URLs.
+
+**After it lands**, two things are worth a look and neither is urgent:
+- Hover now lives in `[data-hov]` CSS rules that carry `!important`. That is deliberate and load-bearing (the base border/background/colour are inline styles, which outrank stylesheet rules). If hover looks dead on the live site, that is the thing to check first, not the markup.
+- Mobile LCP should be ~139 ms better and TBT roughly half, but FCP will not move; it is still CSS-bound exactly as 7.9 said. Full before/after table and method caveat in 7.10.
+
+## 2026-10-23 — claude (interactive)
+
 **7.10 step 1 DONE — the decoration layer is gone. The LCP hypothesis it tested was mostly wrong.**
 
 Three commits, all subtractions, no title/description/heading/head tag touched, so the
