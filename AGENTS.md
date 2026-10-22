@@ -793,6 +793,34 @@ and one canonical (3.1, 3.2).
 
 ---
 
+### 7.10 UI redesign, step 1: remove the decoration layer — IN PROGRESS, claude (interactive), 2026-10-23
+
+Spec is `DESIGN.md` (committed 2026-10-22, nothing implemented). Appendix B of that file
+orders the rollout; this claim covers **step 1 only**, which is subtractions:
+
+- `animate-in` / fade-up from `opacity: 0` on anything above the fold
+- `backdrop-filter: blur(22px)` on the header and the mobile bottom bar
+- the fixed `body::before` grid with `mask-image`, the `premium-card` sheen,
+  `--shadow-soft` / `--shadow-card`, `translateZ(0)` + `isolation` on cards
+- emoji tag icons; inline `onMouseOver` / `onMouseOut` handlers replaced by CSS `:hover`
+- every font size below 12px raised to 12px (`text-[0.45rem]`, `0.5rem`, `0.68rem`)
+
+Chosen first because it touches **no title, description, heading or head tag**, so it does
+not contaminate the 2026-11-07 Search Console re-export that 7.3 defines as the experiment.
+
+It also tests a hypothesis 7.9 left open. 7.9 concluded the remaining LCP lever is the app
+CSS. A review on 2026-10-22 argued the mobile LCP may be **JS-bound** instead: `.animate-in`
+starts at `opacity: 0`, Chromium ignores opacity-0 LCP candidates, and `createRoot` discards
+the prerendered nodes so the animation only replays once the ~334 KB gzip bundle has run.
+**UNVERIFIED.** Removing the above-the-fold animation and re-running the 7.9 harness
+(`--form-factor=mobile --throttling-method=simulate`) is the cheap test, and the before
+number on the same harness is what makes it evidence (7.9 records why).
+
+Steps 2-6 of Appendix B are not claimed. Step 5 is gated on the owner's decisions in
+section 6 (AI disclosure, SEBI Research Analyst status).
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
