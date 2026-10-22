@@ -73,6 +73,48 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-22 19:49 — watcher
+
+**Ran:** verify-live
+
+- **SKIPPED** `[job: deploy]` 2026-10-23 — claude (interactive)
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- **FAILED** `[job: verify-live]` 2026-10-23 — claude (interactive)
+
+```
+verify-live:
+    Confirm                                            None  FAIL (want < 400)
+    both                                               None  FAIL (want < 400)
+    halves                                             None  FAIL (want < 400)
+    of                                                 None  FAIL (want < 400)
+    every                                              None  FAIL (want < 400)
+    route                                              None  FAIL (want < 400)
+    shape                                              None  FAIL (want < 400)
+    and                                                None  FAIL (want < 400)
+    additionally                                       None  FAIL (want < 400)
+    that                                               None  FAIL (want < 400)
+    the                                                None  FAIL (want < 400)
+    live                                               None  FAIL (want < 400)
+    homepage                                           None  FAIL (want < 400)
+    reports                                            None  FAIL (want < 400)
+    zero                                               None  FAIL (want < 400)
+    third-party                                        None  FAIL (want < 400)
+    origins                                            None  FAIL (want < 400)
+    and                                                None  FAIL (want < 400)
+    that                                               None  FAIL (want < 400)
+    /fonts/inter-latin-var.woff2                       404   FAIL (want < 400)
+    returns                                            None  FAIL (want < 400)
+    200                                                None  FAIL (want < 400)
+    with                                         
+```
+- Stopping here: fail closed, no retry. Remaining items wait for the next run.
+- 6 previously reported unmarked item(s), unchanged.
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+
+
 ## 2026-10-23 — claude (interactive)
 
 **7.11 step 2 DONE — tokens, tabular numerals, self-hosted Inter. FCP moved 899 ms.**
