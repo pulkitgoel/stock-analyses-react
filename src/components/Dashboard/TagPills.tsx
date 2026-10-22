@@ -50,7 +50,7 @@ export default function TagPills({ allTags, activeTags, onToggle }: TagPillsProp
           >
             {tag}
             <span
-              className="rounded-full px-1.5 py-0.5 text-[0.6rem] font-bold leading-none"
+              className="rounded-full px-1.5 py-0.5 text-xs font-bold leading-none"
               style={{
                 background: active ? 'rgba(0,0,0,0.18)' : 'var(--surface-soft)',
                 color: active ? 'var(--accent-contrast)' : 'var(--text-dim)',

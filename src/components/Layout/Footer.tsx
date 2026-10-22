@@ -90,7 +90,7 @@ export default function Footer() {
             {navGroups.map(({ label, links }) => (
               <div key={label}>
                 <p style={{
-                  fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.12em',
+                  fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.12em',
                   textTransform: 'uppercase', color: 'var(--text-dim)', margin: '0 0 0.85rem',
                 }}>
                   {label}

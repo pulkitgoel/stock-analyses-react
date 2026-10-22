@@ -71,7 +71,7 @@ export default function AboutPage() {
               <BarChart3 size={22} />
             </div>
             <span style={{
-              fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em',
+              fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.14em',
               textTransform: 'uppercase', color: 'var(--accent)',
               background: 'var(--accent-glow)',
               padding: '5px 14px', borderRadius: '999px',
@@ -124,7 +124,7 @@ export default function AboutPage() {
       {/* ── Pillars — stacked column on mobile, row on desktop ── */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <p style={{
-          fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em',
+          fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.14em',
           textTransform: 'uppercase', color: 'var(--text-dim)', margin: 0,
         }}>
           What this covers
@@ -189,7 +189,7 @@ export default function AboutPage() {
             <User size={24} />
           </div>
           <div>
-            <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', margin: 0 }}>
+            <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', margin: 0 }}>
               Built by
             </p>
             <p style={{ fontSize: '1.1rem', fontWeight: 900, color: 'var(--text)', margin: '2px 0 0', lineHeight: 1.2 }}>

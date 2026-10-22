@@ -79,7 +79,7 @@ export default function ImpactHistory({ ticker, calls }: { ticker: string; calls
                 <ConfidenceDots score={c.confidence} />
                 {c.inferred && (
                   <span
-                    className="rounded-full px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide"
+                    className="rounded-full px-2 py-0.5 text-xs font-bold uppercase tracking-wide"
                     style={{ background: 'var(--surface-soft)', color: 'var(--text-dim)' }}
                     title="A deduction by the author, not something the source reported"
                   >

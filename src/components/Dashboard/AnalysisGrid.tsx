@@ -59,7 +59,7 @@ function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
           {analysis.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="rounded-full px-2.5 py-1 text-[0.68rem] font-black"
+              className="rounded-full px-2.5 py-1 text-xs font-black"
               style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)' }}
             >
               {tag}

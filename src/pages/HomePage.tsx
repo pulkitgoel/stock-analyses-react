@@ -113,7 +113,7 @@ export default function HomePage() {
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 background: 'var(--accent-glow)', color: 'var(--accent)',
                 padding: '6px 14px', borderRadius: '999px',
-                fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.12em',
+                fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.12em',
                 textTransform: 'uppercase', marginBottom: '1.5rem',
                 border: '1px solid rgba(99,230,190,0.2)'
               }}>
@@ -164,7 +164,7 @@ export default function HomePage() {
                 position: 'absolute', left: '1.25rem', top: '1.25rem', zIndex: 10,
                 background: 'var(--accent)', color: 'var(--accent-contrast)',
                 padding: '6px 12px', borderRadius: '12px',
-                fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.05em'
+                fontSize: '0.75rem', fontWeight: 900, letterSpacing: '0.05em'
               }}>
                 LIVE LIBRARY
               </div>
@@ -196,7 +196,7 @@ export default function HomePage() {
                     padding: '1rem 0.5rem', textAlign: 'center'
                   }}>
                     <div style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--text)' }}>{stat.value}</div>
-                    <div style={{ marginTop: '0.35rem', fontSize: '0.62rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-dim)' }}>{stat.label}</div>
+                    <div style={{ marginTop: '0.35rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-dim)' }}>{stat.label}</div>
                   </div>
                 ))}
               </div>

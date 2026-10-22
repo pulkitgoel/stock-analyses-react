@@ -89,7 +89,7 @@ export default function SearchBar({ query, onQueryChange, sortMode, onSortChange
 
       {/* Sort toggle — three separate pill buttons */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-dim)', whiteSpace: 'nowrap' }}>
+        <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-dim)', whiteSpace: 'nowrap' }}>
           Sort by:
         </span>
         {modes.map(({ key, label }) => {

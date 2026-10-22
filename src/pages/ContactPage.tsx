@@ -54,7 +54,7 @@ export default function ContactPage() {
           display: 'inline-flex', alignItems: 'center', gap: '8px',
           background: 'var(--accent-glow)', color: 'var(--accent)',
           padding: '5px 14px', borderRadius: '999px',
-          fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase',
+          fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase',
           marginBottom: '1.25rem', position: 'relative',
         }}>
           <MessageCircle size={13} /> Get in touch
@@ -107,10 +107,10 @@ export default function ContactPage() {
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2px' }}>
-                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</span>
                 {badge && (
                   <span style={{
-                    fontSize: '0.6rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em',
+                    fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em',
                     background: 'var(--accent-glow)', color: 'var(--accent)', padding: '2px 8px', borderRadius: '999px',
                   }}>{badge}</span>
                 )}
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
       {/* FAQs */}
       <div style={{ marginTop: '2rem' }}>
-        <p style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: '1rem' }}>
+        <p style={{ fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: '1rem' }}>
           Common questions
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>

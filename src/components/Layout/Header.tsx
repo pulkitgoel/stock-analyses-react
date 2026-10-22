@@ -125,7 +125,7 @@ export default function Header() {
             <Link
               key={link.path}
               to={link.path}
-              className="focus-ring flex h-13 min-w-0 flex-col items-center justify-center gap-1 rounded-2xl text-[0.64rem] font-black no-underline transition-all"
+              className="focus-ring flex h-13 min-w-0 flex-col items-center justify-center gap-1 rounded-2xl text-xs font-black no-underline transition-all"
               style={{
                 color: active ? 'var(--accent-contrast)' : 'var(--text-dim)',
                 background: active ? 'var(--accent)' : 'transparent',
