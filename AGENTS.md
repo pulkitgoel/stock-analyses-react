@@ -880,7 +880,68 @@ cheap test, and the before number on the same harness is what makes it evidence.
 
 ---
 
-### 7.11 UI redesign, step 2: tokens and typography — IN PROGRESS, claude (interactive), 2026-10-23
+### 7.11 UI redesign, step 2: tokens and typography — DONE 2026-10-23
+
+**FCP finally moved, and this is the first change that has moved it.** Three runs per
+build on the 7.9 harness, served CSS hash verified each time, and the BEFORE build
+confirmed to still carry the Google Fonts links (4 references) against 0 in AFTER:
+
+| | perf | FCP | LCP | CLS | TBT |
+|---|---|---|---|---|---|
+| Before (7.10 state) | 84 | 3307 ms | 3459 ms | 0.016 | 28 ms |
+| After | 91 | **2408 ms** | 3012 ms | **0.000** | 24 ms |
+| | +7 | **−899 ms** | −448 ms | −0.016 | −4 ms |
+
+Run-to-run spread was 5 ms on FCP, so unlike the step-1 outlier this is not noise.
+
+7.9 and 7.10 both concluded FCP was gated on the render-blocking chain and that the
+remaining lever was the CSS. **Removing the two third-party font origins was worth
+899 ms of it** — more than the stylesheet itself. 7.9 had already made that stylesheet
+non-blocking with `preload` + `media="print"`, which is why this was recorded as a
+tidy-up rather than a lever; it was not. Under simulated mobile throttling the
+preconnects and the font fetch still sit in the dependency graph and still delay the
+app CSS. The CSS is still the next lever, but it is now worth less than this was.
+
+**CLS 0.016 -> 0.000**, from the size-adjusted fallback.
+
+What shipped:
+
+- **Four text colours failed the 4.5:1 floor and now pass.** 7.9 recorded "one contrast
+  failure"; measured against both the page and the card beneath, there were four:
+  dark `--text-dim` 4.45, light `--text-dim` 3.54, light `--down` 4.46, light `--warn`
+  2.71. Zero failures after, lowest 4.67.
+- `--green`/`--red`/`--yellow` are now `--up`/`--down`/`--warn` at all 18 uses. Naming
+  them for the meaning is what stops them being used as decoration.
+- Dead tokens removed: `--accent-warm` (0 uses), `--shadow-soft` (0), `--shadow-card`
+  (7 inline `boxShadow` call sites deleted first), `--radius-sm` (0). `--radius`
+  18px -> 10px. Light palette moved to the DESIGN.md values.
+- `font-variant-numeric: tabular-nums` on article tables, the watchlist and the impact
+  history via a `data-nums` hook. Verified: 24 such elements on `/watchlist`, all
+  computing `tabular-nums`.
+- **Self-hosted Inter, one file.** Inter v20 is a variable font and Google Fonts returns
+  the same latin woff2 for 400, 600 and 700, so `font-weight: 400 700` covers the scale
+  in 47 KB. OFL, committed with its licence in `public/fonts/`.
+
+**The fallback metrics are measured, not copied, and the copied ones were wrong.** The
+widely-quoted `size-adjust: 107%` for Inter-against-Arial is off for this subset: Inter
+renders 1.0594x Arial here, so 105.94%. At 107% the fallback ran ~1% wide; at the
+measured value it matches to 0.007% (0.11 px over 1543 px). That is what buys CLS 0.000,
+and it is the kind of value that must be re-measured if the face is ever changed.
+
+**Not done, deliberately.** The default theme is still dark with its toggle. `DESIGN.md`
+section 1 asks for system-preference light but also says the dark default is unmeasured
+and should be A/B'd once analytics exist (7.3: still no analytics tag). Flipping it and
+deleting a control readers use is an owner decision.
+
+Verified at 375px: `/watchlist` renders with 1 `h1`, no horizontal overflow, zero
+elements under 12px, **zero third-party origins**, Inter loaded. `generate-og-files.py`
+exits 0 with JSON-LD parsing on all pages (3.3). `index.html` and `render_shell()` both
+carry exactly the same single preload and no Google Fonts reference (7.9 parity).
+
+**A method note that cost real time.** A file check run against the working tree while a
+background A/B measurement had the BEFORE commit checked out read the old files and
+reported Google Fonts still present. Do not inspect the tree while a comparison script is
+swapping refs underneath it.
 
 `DESIGN.md` Appendix B step 2. Scope:
 

@@ -73,6 +73,47 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 — claude (interactive)
+
+**7.11 step 2 DONE — tokens, tabular numerals, self-hosted Inter. FCP moved 899 ms.**
+
+Three runs per build on the 7.9 harness, CSS hash verified, BEFORE confirmed to still
+carry the Google Fonts links (4 refs) against 0 in AFTER. Spread was 5 ms on FCP, so this
+is not the kind of outlier step 1 produced.
+
+| | perf | FCP | LCP | CLS |
+|---|---|---|---|---|
+| before | 84 | 3307 ms | 3459 ms | 0.016 |
+| after | 91 | **2408 ms** | 3012 ms | **0.000** |
+
+- **The finding, and it contradicts 7.9 and 7.10.** Both concluded the remaining FCP
+  lever was the app CSS. Removing the two third-party font origins was worth 899 ms,
+  more than the stylesheet. 7.9 had already made that stylesheet non-blocking, so this
+  was filed as tidy-up rather than a lever. Under simulated mobile throttling the
+  preconnects and font fetch still sit in the dependency graph and still delay the app
+  CSS. The CSS remains the next lever but is now worth less than this was.
+- **Four contrast failures fixed, not one.** 7.9 recorded "one contrast failure";
+  measured against both page and card there were four (dark text-dim 4.45, light
+  text-dim 3.54, light down 4.46, light warn 2.71). Zero after, lowest 4.67.
+- **UNVERIFIED on production.** All numbers are local `vite preview`. Confirm on the live
+  site after deploy; FCP there was ~3.3 s.
+- **Trap for whoever touches fonts next.** The `Inter Fallback` size-adjust is measured,
+  and the widely-quoted 107% is wrong for this subset - Inter renders 1.0594x Arial here,
+  so 105.94%. At 107% the fallback ran ~1% wide; at the measured value it matches to
+  0.007%. That is what buys CLS 0.000. Re-measure if the face ever changes; do not copy a
+  value from a blog post.
+- **Method note.** A file check run while a background A/B script had the BEFORE commit
+  checked out read the old files and wrongly reported Google Fonts still present. Do not
+  inspect the tree while a comparison script is swapping refs underneath it.
+
+**ACTION Hermes**
+- [job: deploy] 7.11 step 2: palette tokens with four contrast fixes, --up/--down/--warn rename, tabular numerals, self-hosted Inter variable subset replacing Google Fonts in both index.html and render_shell. New asset: public/fonts/inter-latin-var.woff2 (47 KB, OFL).
+- [job: verify-live] Confirm both halves of every route shape, and additionally that the live homepage reports zero third-party origins and that /fonts/inter-latin-var.woff2 returns 200 with a long cache header.
+
+**OWNER:** the default theme stays dark with its toggle. DESIGN.md asks for
+system-preference light but also says that default is unmeasured and should be A/B'd once
+analytics exist. That is your call, not a token change. Steps 3-6 remain unclaimed.
+
 ## 2026-10-23 (2) — hermes (deploy)
 
 **7.10 step 1 is live.** Ran the queued deploy from `0082c06` at 00:35 IST on 23 Oct; the
