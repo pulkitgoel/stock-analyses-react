@@ -1,6 +1,80 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global Spillover — 22 Oct 2026",
+      "ticker": "XOM:CVX:OXY:SHEL:BP:ONGC:OIL:IOC:BPCL:HINDPETRO:MRPL:GAIL:PETRONET:DAL:UAL:AAL:CCL:RCL:APOLLOTYRE:BHARATFORG:STLA:META:NVDA:AVGO:MU:AMAT:MRVL:ARM:LITE:TCS:INFY:HCLTECH",
+      "file": "policy-pulse-global-22-oct-2026.md",
+      "slug": "policy-pulse-global-22-oct-2026",
+      "date": "2026-10-22",
+      "tags": [
+        "policy-pulse",
+        "oil",
+        "hormuz",
+        "asia",
+        "ai-capex",
+        "france"
+      ],
+      "summary": "Brent at 112 dollars on Houthi strikes and reported post-midterm Iran planning puts XOM and CVX positive and IOC and HINDPETRO negative, while gold and bitcoin falling with the VIX rising says this was a liquidation rather than a fear trade.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 22 Oct 2026",
+      "ticker": "HDFCBANK:ICICIBANK:KOTAKBANK:AXISBANK:SBIN:BANKBARODA:PNB:BAJFINANCE:CHOLAFIN:LICHSGFIN:MUTHOOTFIN:MANAPPURAM:BSE:ANGELONE:MOTILALOFS:CDSL:KFINTECH:CAMS:RELIANCE:INFY:TCS:HCLTECH:TECHM:NESTLEIND:HINDUNILVR:ITC",
+      "file": "policy-pulse-ministries-22-oct-2026.md",
+      "slug": "policy-pulse-ministries-22-oct-2026",
+      "date": "2026-10-22",
+      "tags": [
+        "policy-pulse",
+        "rbi",
+        "liquidity",
+        "sebi",
+        "ipo",
+        "market-close"
+      ],
+      "summary": "The RBI allotted only 50,006 crore against 1.62 lakh crore of bids at Thursday's VRR with the liquidity surplus down to 542 crore, a squeeze that favours BAJFINANCE and CHOLAFIN on funding cost while SEBI's early-pay-in margin waiver supports BSE and ANGELONE.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / India Govt — 22 Oct 2026",
+      "ticker": "HAL:BEL:MAZDOCK:GRSE:COCHINSHIP:SOLARINDS:IDEAFORGE:ZENTEC:DATAPATTNS:ASTRAMICRO:MTARTECH:AXISCADES:PARAS:WALCHANNAG:BHEL:LT:MIDHANI:HINDCOPPER:NATIONALUM:TATAELXSI:PERSISTENT:WELSPUNLIV:TRIDENT:KPRMILL:RAJESHEXPO:TITAN:BHARATFORG:APOLLOTYRE:SUNPHARMA:DRREDDY:CIPLA",
+      "file": "policy-pulse-modi-22-oct-2026.md",
+      "slug": "policy-pulse-modi-22-oct-2026",
+      "date": "2026-10-22",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "space",
+        "critical-minerals",
+        "trade-deal",
+        "textiles"
+      ],
+      "summary": "Modi and Tusk agreed to co-produce in defence, space and nuclear with drones the explicit Polish pitch, putting HAL, BEL and SOLARINDS on the positive side of an inference-heavy read, while Goyal dated the India-EU FTA to end-2026 signature.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 22 Oct 2026",
+      "ticker": "XOM:CVX:OXY:COP:SLB:LMT:RTX:NOC:GD:PLTR:HON:GE:KTOS:AAL:DAL:UAL:LUV:CCL:RCL:NCLH:META:NVDA:AVGO:MU:AMAT:MRVL:ARM:LITE:CRWV:WMT:TGT:AMZN:HD:LOW:NKE:DJT",
+      "file": "policy-pulse-trump-us-22-oct-2026.md",
+      "slug": "policy-pulse-trump-us-22-oct-2026",
+      "date": "2026-10-22",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "iran",
+        "oil",
+        "defence",
+        "airlines",
+        "ai-capex",
+        "de-minimis"
+      ],
+      "summary": "Trump ruled out talks with Iran and strike plans were reported for after the midterms, sending Brent to a five-month high and putting XOM and CVX on the positive side while AAL, DAL and UAL absorb the fuel cost.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global Watch — 21 Oct 2026",
       "ticker": "NVDA:MU:TSM:MSFT:GOOGL:AMZN:SPCX:XOM:CVX:DAL:UAL:CCL:RCL:STLA:TM:HMC:TSLA:TCS:INFY:HCLTECH",
       "file": "policy-pulse-global-21-oct-2026.md",
