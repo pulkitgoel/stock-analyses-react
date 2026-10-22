@@ -19,14 +19,7 @@ function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
         border: '1px solid var(--border)',
         boxShadow: 'var(--shadow-card)',
       }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.borderColor = 'var(--border-light)';
-        e.currentTarget.style.background = 'var(--bg-card-hover)';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.borderColor = 'var(--border)';
-        e.currentTarget.style.background = 'var(--bg-card)';
-      }}
+      data-hov="card"
     >
       <div className="card-content-offset mb-6 flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-center gap-3">

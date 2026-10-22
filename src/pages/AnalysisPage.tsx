@@ -126,8 +126,7 @@ export default function AnalysisPage() {
             transition: 'transform 180ms ease',
             whiteSpace: 'nowrap',
           }}
-          onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-          onMouseOut={(e) => e.currentTarget.style.transform = 'none'}
+          data-hov="rise"
         >
           <ArrowLeft size={16} /> Back Home
         </Link>
@@ -176,8 +175,7 @@ export default function AnalysisPage() {
           transition: 'border-color 180ms ease, transform 180ms ease',
           whiteSpace: 'nowrap',
         }}
-        onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-        onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
+        data-hov="lift"
       >
         <ArrowLeft size={14} /> All analyses
       </Link>
@@ -271,8 +269,7 @@ export default function AnalysisPage() {
               to={tagPath(tag)}
               className="rounded-full px-2.5 py-1 text-xs font-semibold no-underline"
               style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)' }}
-              onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; }}
-              onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+              data-hov="accent"
             >
               {tag}
             </Link>
@@ -379,8 +376,7 @@ export default function AnalysisPage() {
             transition: 'border-color 180ms ease, transform 180ms ease',
             whiteSpace: 'nowrap',
           }}
-          onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-          onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
+          data-hov="lift"
         >
           <ArrowLeft size={16} /> Back to dashboard
         </Link>

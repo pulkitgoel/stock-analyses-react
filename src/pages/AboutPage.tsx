@@ -214,8 +214,7 @@ export default function AboutPage() {
             fontFamily: 'inherit',
             whiteSpace: 'nowrap',
           }}
-          onMouseOver={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
-          onMouseOut={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
+          data-hov="edge"
         >
           <Mail size={14} /> pulkitgoel28@gmail.com
         </a>

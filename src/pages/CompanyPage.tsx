@@ -34,14 +34,7 @@ function AnalysisCardLink({ analysis: a }: { analysis: Analysis }) {
       to={`/analysis/${a.slug}`}
       className="analysis-card premium-card group rounded-[1.75rem] no-underline transition-all duration-300 hover:-translate-y-1"
       style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.borderColor = 'var(--border-light)';
-        e.currentTarget.style.background = 'var(--bg-card-hover)';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.borderColor = 'var(--border)';
-        e.currentTarget.style.background = 'var(--bg-card)';
-      }}
+      data-hov="card"
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
@@ -158,8 +151,7 @@ export default function CompanyPage() {
           whiteSpace: 'nowrap',
           marginBottom: '1rem',
         }}
-        onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-        onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
+        data-hov="lift"
       >
         <ArrowLeft size={14} /> Dashboard
       </Link>

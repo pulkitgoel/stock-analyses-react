@@ -45,8 +45,7 @@ export default function NotFoundPage() {
               transition: 'transform 180ms ease',
               whiteSpace: 'nowrap',
             }}
-            onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseOut={(e) => { e.currentTarget.style.transform = 'none'; }}
+            data-hov="rise"
           >
             <ArrowLeft size={16} /> Browse research
           </Link>

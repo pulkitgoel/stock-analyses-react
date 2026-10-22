@@ -159,6 +159,30 @@ button { touch-action: manipulation; }
   outline-offset: 3px;
 }
 
+/* 7.10 step 1: hover styling, previously 17 pairs of inline onMouseOver/onMouseOut
+   handlers that wrote element.style on every card. A touch device never fires them,
+   so on the phone the site is built for they were pure weight. Declared as data
+   attributes rather than class names so the swap stays local to the two handler
+   lines and never edits an existing className. */
+[data-hov] { transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease, transform 140ms ease; }
+
+/* `!important` is load-bearing, not laziness: every one of these elements declares its
+   base border/background/color as an INLINE style, which outranks any stylesheet rule.
+   Without it these hover rules parse, ship, and do nothing - tsc and the build both pass.
+   DESIGN.md step 2 moves those base styles into classes, and this can drop back out. */
+[data-hov="card"]:hover   { border-color: var(--border-light) !important; background: var(--bg-card-hover) !important; }
+[data-hov="lift"]:hover   { border-color: var(--accent) !important; transform: translateY(-2px); }
+[data-hov="rise"]:hover   { transform: translateY(-2px); }
+[data-hov="accent"]:hover { color: var(--accent) !important; }
+[data-hov="chip"]:hover   { color: var(--accent) !important; border-color: var(--accent) !important; }
+[data-hov="edge"]:hover   { border-color: var(--accent) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hov] { transition: none; }
+  [data-hov="lift"]:hover,
+  [data-hov="rise"]:hover { transform: none; }
+}
+
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 

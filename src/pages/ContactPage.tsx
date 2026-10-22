@@ -87,14 +87,7 @@ export default function ContactPage() {
               borderRadius: '1.5rem', padding: '1.5rem', textDecoration: 'none',
               transition: 'border-color 180ms ease, transform 180ms ease',
             }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.borderColor = 'var(--accent)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.transform = 'none';
-            }}
+            data-hov="lift"
           >
             <div style={{
               width: '52px', height: '52px', borderRadius: '1rem', flexShrink: 0,

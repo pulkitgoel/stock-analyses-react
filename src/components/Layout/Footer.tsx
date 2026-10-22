@@ -101,8 +101,7 @@ export default function Footer() {
                       <Link
                         to={to}
                         style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 150ms ease' }}
-                        onMouseOver={(e) => (e.currentTarget.style.color = 'var(--accent)')}
-                        onMouseOut={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+                        data-hov="accent"
                       >
                         {linkLabel}
                       </Link>

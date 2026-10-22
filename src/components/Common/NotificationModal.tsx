@@ -36,8 +36,7 @@ export default function NotificationModal({ open, onClose }: NotificationModalPr
         {/* Close */}
         <button onClick={onClose} className="absolute top-3 right-3 p-1 rounded-md transition-colors cursor-pointer border-none"
           style={{ color: 'var(--text-dim)' }}
-          onMouseOver={(e) => e.currentTarget.style.color = 'var(--text)'}
-          onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-dim)'}>
+          data-hov="accent">
           <X size={16} />
         </button>
 

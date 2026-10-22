@@ -14,14 +14,7 @@ export default function AnalysisCard({ analysis }: AnalysisCardProps) {
         background: 'var(--bg-card)',
         border: '1px solid var(--border)',
       }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.borderColor = 'var(--border-light)';
-        e.currentTarget.style.background = 'var(--bg-card-hover)';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.borderColor = 'var(--border)';
-        e.currentTarget.style.background = 'var(--bg-card)';
-      }}
+      data-hov="card"
     >
       <div className="p-3.5 sm:p-5">
         <div className="flex items-start justify-between gap-2.5 mb-1.5">

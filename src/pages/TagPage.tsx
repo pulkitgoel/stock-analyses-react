@@ -68,8 +68,7 @@ export default function TagPage() {
             transition: 'border-color 180ms ease, transform 180ms ease',
             whiteSpace: 'nowrap', marginBottom: '1rem',
           }}
-          onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-          onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
+          data-hov="lift"
         >
           <ArrowLeft size={14} /> Dashboard
         </Link>
@@ -110,8 +109,7 @@ export default function TagPage() {
                   to={tagPath(t.tag)}
                   className="rounded-full px-3 py-1.5 text-xs font-bold no-underline"
                   style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}
-                  onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)'; }}
-                  onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
+                  data-hov="chip"
                 >
                   {displayTag(t.tag)} <span style={{ color: 'var(--text-dim)' }}>{t.count}</span>
                 </Link>
