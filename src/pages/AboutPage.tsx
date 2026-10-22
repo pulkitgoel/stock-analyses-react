@@ -57,16 +57,6 @@ export default function AboutPage() {
           position: 'relative',
         }}
       >
-        {/* ambient glow — z-index 0, sits behind all content */}
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute', inset: 0, borderRadius: '2rem',
-            background: 'radial-gradient(ellipse 55% 45% at 95% 10%, rgba(99,230,190,0.13) 0%, transparent 70%)',
-            pointerEvents: 'none', zIndex: 0,
-          }}
-        />
-
         {/* all content at z-index 1 */}
         <div style={{ position: 'relative', zIndex: 1 }}>
           {/* icon + badge row */}

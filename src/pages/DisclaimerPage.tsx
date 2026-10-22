@@ -49,11 +49,6 @@ export default function DisclaimerPage() {
         }}
       >
         <div style={{
-          position: 'absolute', top: '-40px', right: '-40px', width: '200px', height: '200px',
-          borderRadius: '50%', background: 'rgba(246,196,83,0.08)', filter: 'blur(50px)', pointerEvents: 'none',
-        }} />
-
-        <div style={{
           width: '52px', height: '52px', borderRadius: '1rem',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           background: 'rgba(246,196,83,0.12)', marginBottom: '1.25rem', position: 'relative',

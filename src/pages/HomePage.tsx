@@ -103,16 +103,6 @@ export default function HomePage() {
             overflow: 'hidden',
           }}
         >
-          {/* ambient glow */}
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute', inset: 0, borderRadius: '2rem',
-              background: 'radial-gradient(ellipse 45% 55% at 85% 15%, rgba(99,230,190,0.12) 0%, transparent 65%)',
-              pointerEvents: 'none', zIndex: 0,
-            }}
-          />
-
           <div style={{
             position: 'relative', zIndex: 1,
             display: 'flex', flexWrap: 'wrap', gap: '3rem',

@@ -39,7 +39,6 @@ export default function Header() {
         className="sticky top-0 z-[100]"
         style={{
           background: 'var(--header-bg)',
-          backdropFilter: 'blur(22px)',
           borderBottom: '1px solid var(--border)',
         }}
       >
@@ -117,8 +116,6 @@ export default function Header() {
         style={{
           background: 'var(--header-bg)',
           border: '1px solid var(--border)',
-          backdropFilter: 'blur(22px)',
-          boxShadow: 'var(--shadow-soft)',
         }}
       >
         {navLinks.map((link) => {

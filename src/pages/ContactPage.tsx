@@ -51,11 +51,6 @@ export default function ContactPage() {
         }}
       >
         <div style={{
-          position: 'absolute', top: '-40px', right: '-40px', width: '220px', height: '220px',
-          borderRadius: '50%', background: 'var(--accent-glow)', filter: 'blur(50px)', pointerEvents: 'none',
-        }} />
-
-        <div style={{
           display: 'inline-flex', alignItems: 'center', gap: '8px',
           background: 'var(--accent-glow)', color: 'var(--accent)',
           padding: '5px 14px', borderRadius: '999px',

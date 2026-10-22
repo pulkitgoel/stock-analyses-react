@@ -51,11 +51,6 @@ export default function PrivacyPage() {
         }}
       >
         <div style={{
-          position: 'absolute', top: '-50px', right: '-50px', width: '220px', height: '220px',
-          borderRadius: '50%', background: 'var(--accent-glow)', filter: 'blur(55px)', pointerEvents: 'none',
-        }} />
-
-        <div style={{
           width: '52px', height: '52px', borderRadius: '1rem',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           background: 'linear-gradient(135deg, var(--accent), var(--accent-strong))',

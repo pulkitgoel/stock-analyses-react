@@ -20,9 +20,12 @@
   --green: #48d597;
   --red: #ff6b6b;
   --yellow: #f6c453;
-  --header-bg: rgba(9,13,18,0.78);
-  --shadow-soft: 0 22px 70px rgba(0,0,0,0.32);
-  --shadow-card: 0 16px 42px rgba(0,0,0,0.22);
+  --header-bg: #090d12;
+  /* 7.10 step 1: flat surfaces. Kept as tokens so the ~8 inline
+     `boxShadow: var(--shadow-card)` call sites stay valid; DESIGN.md Appendix A
+     removes the references in step 2. */
+  --shadow-soft: none;
+  --shadow-card: none;
   --radius: 18px;
   --radius-sm: 12px;
 }
@@ -47,9 +50,9 @@
   --green: #15803d;
   --red: #dc2626;
   --yellow: #ca8a04;
-  --header-bg: rgba(244,246,248,0.78);
-  --shadow-soft: 0 22px 70px rgba(15,23,42,0.08);
-  --shadow-card: 0 16px 42px rgba(15,23,42,0.08);
+  --header-bg: #f4f6f8;
+  --shadow-soft: none;
+  --shadow-card: none;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,35 +61,13 @@ html { scroll-behavior: smooth; }
 
 body {
   min-height: 100vh;
-  background:
-    linear-gradient(135deg, rgba(99,230,190,0.08), transparent 26rem),
-    linear-gradient(180deg, rgba(255,255,255,0.04), transparent 20rem),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 180ms ease, color 180ms ease;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 62%);
-}
-
-[data-theme="light"] body::before {
-  background-image:
-    linear-gradient(rgba(15,23,42,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15,23,42,0.045) 1px, transparent 1px);
 }
 
 a { color: inherit; }
@@ -113,9 +94,8 @@ button { touch-action: manipulation; }
 }
 
 .surface-card {
-  background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
 }
 
 .surface-plain,
@@ -182,48 +162,14 @@ button { touch-action: manipulation; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-.animate-in {
-  animation: fade-up 520ms ease both;
-}
+/* 7.10 step 1 removed `.animate-in` (fade-up from opacity 0), the `.premium-card`
+   sheen, and the fixed `body::before` grid.
 
-.animate-in-delay-1 { animation-delay: 80ms; }
-.animate-in-delay-2 { animation-delay: 160ms; }
-.animate-in-delay-3 { animation-delay: 240ms; }
-
-.premium-card {
-  position: relative;
-  transform: translateZ(0);
-  isolation: isolate;
-}
-
-.premium-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0;
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: inherit;
-  background: linear-gradient(120deg, transparent, rgba(99,230,190,0.10), transparent);
-  transform: translateX(-60%);
-  transition: opacity 180ms ease;
-}
-
-.premium-card:hover::before {
-  opacity: 1;
-  animation: sheen 900ms ease;
-}
-
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes sheen {
-  from { transform: translateX(-70%); }
-  to { transform: translateX(70%); }
-}
+   The animation is gone rather than merely shortened because an element starting at
+   `opacity: 0` is not an LCP candidate in Chromium, and `createRoot` discards the
+   prerendered markup (7.1), so above-the-fold content could not paint until the bundle
+   had run. See 7.10 for the measurement. The class names remain in the JSX as inert
+   hooks for the step-2 reveal layer, which only ever targets content below the fold. */
 
 .article-shell {
   width: 100%;
