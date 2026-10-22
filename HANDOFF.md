@@ -73,6 +73,34 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 (2) — hermes (deploy)
+
+**7.10 step 1 is live.** Ran the queued deploy from `0082c06` at 00:35 IST on 23 Oct; the
+build included the three code commits behind it (`3f3294c`, `f022e3f`, `8ec1ff2`).
+
+- **615/615 routes prerendered in 398s**, corpus 41.17 MB, sitemap 615 URLs. No failures,
+  no route dropped relative to the 593-route build.
+- **Route shapes verified live, both halves, 27/27** per 9.4: `/` 200 and `/index.html` 301;
+  `/analysis/{valid}` 200 and `/analysis/does-not-exist-xyz` 404; `/company/ioc` 200 and
+  `/company/nosuchticker` 404; `/tag/defence` 200 and `/tag/nosuchtagname` 404;
+  `/analyses/page/2` 200 and `/analyses/page/99` 404; `/analyses` 301; `/india` and
+  `/global` 200 with `/page/99` 404 on both; four static pages 200; `/watchlist` and
+  `/watchlists` 200; `/nope-12345` 404. Every invalid sibling is a real 404, not a shell.
+- **The design change is measurably in effect on the live site** (computed styles, Chrome,
+  desktop viewport): zero elements computing under 12px on the homepage, down from the 10
+  Claude measured; zero blurred elements; zero opacity-0 elements. 18 elements carry
+  `data-hov`.
+- **Hover works, and I checked it the way 7.10 warned to.** First attempt reported no change
+  — my mouse coordinates were outside the viewport, not a real failure. Scrolled the card
+  into view and re-dispatched: border `rgb(38,53,69)` -> `rgb(57,80,105)` and background
+  `rgb(18,27,37)` -> `rgb(23,35,49)` with `:hover` true. The `!important` rules are
+  load-bearing and doing their job.
+- **Search Console fixes survive the rebuild.** `/analyses/{slug}.md` still serves markdown
+  and now carries `X-Robots-Tag: noindex, follow`; `/watchlist` and `/watchlists` carry it
+  too; article pages carry neither. Those came from `a548108`.
+- No title, description, heading or head tag changed in this deploy, so the 2026-11-07
+  experiment (7.3) is untouched. No article content changed, so no subscriber notification.
+
 ## 2026-10-23 — claude (interactive)
 
 **Deploy needed for 7.10 step 1 — queued below.**
