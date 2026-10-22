@@ -265,14 +265,14 @@ def render_shell(title, description, canonical, jsonld, assets, image_url,
     <script type="application/ld+json">
 %(jsonld)s
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Non-render-blocking font load; see the matching comment in index.html.
-         Keep the two in sync: this shell owns every prerendered route's head,
-         index.html owns the homepage's. -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
+    <!-- Self-hosted Inter (AGENTS.md 7.11). One variable woff2 covers 400/600/700.
+         Preloaded so the fetch starts with the document rather than after the CSS
+         that declares it. 7.9 had already made the old Google Fonts stylesheet
+         non-blocking; self-hosting removes its two third-party origins as well.
+         Keep this identical to render_shell() in scripts/generate-og-files.py --
+         the homepage head comes from this file and every prerendered route's
+         from that one. -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-var.woff2" crossorigin>
   </head>
   <body>
     <div id="root"></div>

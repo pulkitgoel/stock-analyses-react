@@ -49,7 +49,7 @@ export default function ImpactHistory({ ticker, calls }: { ticker: string; calls
   );
 
   return (
-    <section className="mt-8">
+    <section data-nums className="mt-8">
       <h2 className="mb-1 text-sm font-bold uppercase tracking-wide" style={{ color: 'var(--text-dim)' }}>
         What has moved {ticker}
       </h2>

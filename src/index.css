@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
+/* Self-hosted Inter — DESIGN.md section 3, AGENTS.md 7.11.
+   One file, not three: Inter v20 is a variable font and Google Fonts returns the same
+   latin woff2 for 400, 600 and 700, so `font-weight: 400 700` covers the whole scale
+   in 47 KB from our own origin. That removes fonts.googleapis.com and fonts.gstatic.com
+   from the critical path entirely — 7.9 had already made the stylesheet non-blocking,
+   so what is left to win is the two third-party origins, not the block.
+
+   `Inter Fallback` exists only to stop the swap moving the page. Its overrides are
+   measured against the real face, not copied from a blog post; the figures are in 7.11.
+   Without it, `font-display: swap` reintroduces exactly the shift 7.9 removed. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-var.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  ascent-override: 90%;
+  descent-override: 22.43%;
+  line-gap-override: 0%;
+  size-adjust: 105.94%;
+}
+
+/* Tokens — DESIGN.md section 2. Direction colours are named for what they mean
+   (--up / --down), not for what they look like, because on a research site green and
+   red carry one meaning only: which way a number moved. Never use them as a fill, and
+   never on a control, where they would read as buy and sell.
+
+   Contrast is measured, not eyeballed. Every text token clears 4.5:1 against both the
+   page and the card beneath it; the figures are in 7.11. */
 :root {
   --bg: #090d12;
   --bg-elevated: #101720;
@@ -11,48 +48,38 @@
   --border-light: #395069;
   --text: #f7fafc;
   --text-muted: #b8c3d2;
-  --text-dim: #748296;
+  --text-dim: #9aa7b8;      /* was #748296 — 4.45:1 on --bg-card, under the 4.5 floor */
   --accent: #63e6be;
   --accent-strong: #22c55e;
   --accent-contrast: #051512;
-  --accent-warm: #f6c453;
   --accent-glow: rgba(99,230,190,0.14);
-  --green: #48d597;
-  --red: #ff6b6b;
-  --yellow: #f6c453;
+  --up: #48d597;
+  --down: #ff6b6b;
+  --warn: #f6c453;
   --header-bg: #090d12;
-  /* 7.10 step 1: flat surfaces. Kept as tokens so the ~8 inline
-     `boxShadow: var(--shadow-card)` call sites stay valid; DESIGN.md Appendix A
-     removes the references in step 2. */
-  --shadow-soft: none;
-  --shadow-card: none;
-  --radius: 18px;
-  --radius-sm: 12px;
+  --radius: 10px;
 }
 
 [data-theme="light"] {
-  --bg: #f4f6f8;
+  --bg: #ffffff;
   --bg-elevated: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-hover: #fbfcfd;
-  --surface-soft: #edf2f7;
-  --surface-strong: #e2e8f0;
-  --border: #d9e1ea;
-  --border-light: #bdc8d6;
-  --text: #101828;
-  --text-muted: #445164;
-  --text-dim: #778397;
+  --bg-card-hover: #f6f7f5;
+  --surface-soft: #f6f7f5;
+  --surface-strong: #e8eae7;
+  --border: #e5e7e6;
+  --border-light: #d3d7d5;
+  --text: #0b0f14;
+  --text-muted: #3d4552;
+  --text-dim: #5b6674;      /* was #778397 — 3.54:1 on --bg, well under the floor */
   --accent: #0f766e;
   --accent-strong: #0f766e;
   --accent-contrast: #ffffff;
-  --accent-warm: #b45309;
-  --accent-glow: rgba(15,118,110,0.10);
-  --green: #15803d;
-  --red: #dc2626;
-  --yellow: #ca8a04;
-  --header-bg: #f4f6f8;
-  --shadow-soft: none;
-  --shadow-card: none;
+  --accent-glow: #effaf7;
+  --up: #15803d;
+  --down: #c62828;          /* was #dc2626 — 4.46:1 on --bg */
+  --warn: #b45309;          /* was #ca8a04 — 2.71:1 on --bg, the worst in the set */
+  --header-bg: #ffffff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -63,7 +90,7 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -214,6 +241,14 @@ button { touch-action: manipulation; }
 .article-body strong { color: var(--text); font-weight: 700; }
 .article-body ul, .article-body ol { margin: 0.75rem 0; padding-left: 1.35rem; }
 .article-body li { margin: 0.35rem 0; }
+/* Tabular numerals — DESIGN.md section 3. Proportional digits make a column of prices
+   ragged, which is the fastest way for a research page to look untrustworthy. This is a
+   font feature, not a second typeface, so it costs nothing. Applied to the places that
+   actually hold figures rather than globally, so prose keeps its normal digits. */
+.article-body table,
+.tnum,
+[data-nums] { font-variant-numeric: tabular-nums; }
+
 .article-body table { width: max-content; min-width: 100%; border-collapse: collapse; margin: 1.35rem 0; font-size: 0.85rem; }
 .article-body th { background: var(--surface-soft); color: var(--text); font-weight: 750; text-align: left; padding: 0.7rem 0.8rem; border: 1px solid var(--border); white-space: nowrap; }
 .article-body td { padding: 0.65rem 0.8rem; border: 1px solid var(--border); vertical-align: top; }
@@ -410,7 +445,7 @@ button { touch-action: manipulation; }
 
   .btn-success {
     background: var(--surface-soft);
-    color: var(--green);
+    color: var(--up);
     border: 1px solid var(--border-light);
   }
 

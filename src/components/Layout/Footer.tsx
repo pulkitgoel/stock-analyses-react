@@ -78,8 +78,8 @@ export default function Footer() {
             }}>
               <span style={{
                 display: 'inline-block', width: '6px', height: '6px',
-                borderRadius: '50%', background: 'var(--green)',
-                boxShadow: '0 0 6px var(--green)', flexShrink: 0,
+                borderRadius: '50%', background: 'var(--up)',
+                boxShadow: '0 0 6px var(--up)', flexShrink: 0,
               }} />
               Live library · updated regularly
             </p>

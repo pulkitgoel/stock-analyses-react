@@ -158,7 +158,6 @@ export default function HomePage() {
               position: 'relative', overflow: 'hidden', borderRadius: '1.5rem',
               background: 'var(--bg-elevated)', border: '1px solid var(--border)',
               display: 'flex', flexDirection: 'column',
-              boxShadow: 'var(--shadow-card)',
             }}>
               <div style={{
                 position: 'absolute', left: '1.25rem', top: '1.25rem', zIndex: 10,

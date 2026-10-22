@@ -25,7 +25,6 @@ export default function SearchBar({ query, onQueryChange, sortMode, onSortChange
           background: 'var(--bg-elevated)',
           border: '1px solid var(--border)',
           borderRadius: '1rem',
-          boxShadow: 'var(--shadow-card)',
           overflow: 'hidden',
           height: '48px',
         }}

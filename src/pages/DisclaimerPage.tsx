@@ -7,7 +7,7 @@ const points = [
     icon: AlertTriangle,
     title: 'Not financial advice',
     body: 'All content on this site is strictly for educational and informational purposes. Nothing here constitutes a recommendation to buy, sell, or hold any security.',
-    accent: 'var(--yellow)',
+    accent: 'var(--warn)',
     accentBg: 'rgba(246,196,83,0.10)',
   },
   {
@@ -21,7 +21,7 @@ const points = [
     icon: TrendingDown,
     title: 'Capital at risk',
     body: 'Investing in equities and markets carries significant risk, including the possible loss of your entire principal. Always do your own due diligence.',
-    accent: 'var(--red)',
+    accent: 'var(--down)',
     accentBg: 'rgba(255,107,107,0.10)',
   },
 ];
@@ -53,7 +53,7 @@ export default function DisclaimerPage() {
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           background: 'rgba(246,196,83,0.12)', marginBottom: '1.25rem', position: 'relative',
         }}>
-          <ShieldCheck size={24} style={{ color: 'var(--yellow)' }} />
+          <ShieldCheck size={24} style={{ color: 'var(--warn)' }} />
         </div>
 
         <h1 style={{
@@ -105,7 +105,7 @@ export default function DisclaimerPage() {
         borderRadius: '1.25rem', padding: '1.25rem 1.5rem',
       }}>
         <p style={{ fontSize: '0.875rem', lineHeight: 1.8, color: 'var(--text-muted)', margin: 0 }}>
-          <strong style={{ color: 'var(--yellow)' }}>Disclosure:</strong> The author may hold positions in securities discussed on this site at the time of publication. This does not constitute a conflict of interest disclosure sufficient for professional advice.
+          <strong style={{ color: 'var(--warn)' }}>Disclosure:</strong> The author may hold positions in securities discussed on this site at the time of publication. This does not constitute a conflict of interest disclosure sufficient for professional advice.
         </p>
       </div>
 

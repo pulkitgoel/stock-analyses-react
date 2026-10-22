@@ -98,7 +98,6 @@ export default function Header() {
                   background: 'var(--bg-elevated)',
                   border: '1px solid var(--border)',
                   color: 'var(--text)',
-                  boxShadow: 'var(--shadow-card)',
                 }}
                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
                 title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}

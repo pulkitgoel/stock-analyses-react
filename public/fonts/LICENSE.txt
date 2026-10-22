@@ -1,0 +1,18 @@
+inter-latin-var.woff2
+---------------------
+
+Inter, by Rasmus Andersson and the Inter Project Authors.
+https://github.com/rsms/inter
+
+Licensed under the SIL Open Font License, Version 1.1:
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+
+Copyright (c) 2016 The Inter Project Authors.
+
+This is the latin subset (U+0000-00FF plus the usual punctuation and symbol
+ranges) of the Inter variable font, as served by Google Fonts (Inter v20). It is
+a variable font covering the full weight axis, so one file serves weights 400,
+600 and 700 — Google Fonts returns the same URL for all three.
+
+It is committed rather than fetched at build time so the site serves its own
+font from its own origin. See AGENTS.md 7.11.

@@ -17,7 +17,6 @@ function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
       style={{
         background: 'var(--bg-card)',
         border: '1px solid var(--border)',
-        boxShadow: 'var(--shadow-card)',
       }}
       data-hov="card"
     >
