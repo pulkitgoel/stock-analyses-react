@@ -880,6 +880,39 @@ cheap test, and the before number on the same harness is what makes it evidence.
 
 ---
 
+### 7.11 UI redesign, step 2: tokens and typography — IN PROGRESS, claude (interactive), 2026-10-23
+
+`DESIGN.md` Appendix B step 2. Scope:
+
+- The section 2 palette as tokens. For the dark theme this is small — raise `--text-dim`
+  to `#9aa7b8` (the current `#748296` is dimmer than the 4.5:1 floor), rename
+  `--green`/`--red` to `--up`/`--down`, retire `--accent-glow` and the dead
+  `--shadow-*` tokens with their ~8 inline call sites.
+- The section 3 type scale, and `font-variant-numeric: tabular-nums` on every table,
+  figure and ticker. A research site whose numbers do not line up column to column
+  looks wrong before anyone reads it.
+- **Self-host an Inter subset (400/600/700) with a size-adjusted fallback.** This is the
+  one piece aimed at a measured number. 7.10 established that FCP is unmoved at ~3315 ms
+  and gated on the render-blocking chain; the Google Fonts stylesheet is two third-party
+  origins in that chain. 7.9 already made it non-blocking via `preload` +
+  `media="print"`, so the remaining win is removing the origins, not the block.
+
+**Not in scope, deliberately.** The default theme stays dark with its toggle. `DESIGN.md`
+section 1 asks for system-preference light, but also says the dark default is unmeasured
+and should be A/B'd once analytics exist (7.3 notes there is still no analytics tag).
+Flipping the default and deleting a control readers use is an owner decision, not a
+token change.
+
+Acceptance is a before/after on the 7.9 harness, three runs each with the served asset
+hash verified, as 7.10 records. **CLS must stay at its current value** — a self-hosted
+face with the wrong metrics reintroduces exactly the shift 7.9 removed.
+
+Keep in sync: `index.html` owns the homepage head and `render_shell()` in
+`scripts/generate-og-files.py` owns every prerendered route's. 7.9 records why they must
+stay identical.
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
