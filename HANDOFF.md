@@ -73,6 +73,18 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-22 — claude (interactive)
+
+**DESIGN.md added — spec only, nothing implemented.** No component, CSS, token, route or nginx rule changed. It is the target for a UI redesign and the brief to read before touching UI.
+
+- Covers: flat/light-first look, palette with contrast ratios, Inter + tabular numerals with a 12px floor, a research-card vs Pulse-row split, nav Research / Daily Pulse / Watchlist / Search with an India/US switch inside each, byline + AI-disclosure + risk-strip components, motion limits.
+- Rollout order is in Appendix B. Step 1 (pure subtractions: animate-in above the fold, backdrop-filter, grid/sheen, emoji, sub-12px text) touches no head tags or headings and is the only step proposed before the 2026-11-07 Search Console re-export.
+- **OWNER:** AI-disclosure wording and the SEBI Research Analyst position (AGENTS section 6) gate rollout step 5 and the no-verdict-badges-on-cards rule. The spec does not decide either.
+- **UNVERIFIED:** the idea that `.animate-in` (opacity-0 fade) delays mobile LCP. Test by removing it above the fold and re-running the 7.9 simulate-throttled Lighthouse before relying on it.
+- **UNVERIFIED:** every expected gain. No analytics tag exists (AGENTS 7.3); install a cookieless one before the homepage/nav change.
+- **ACTION (whoever builds it):** claim a backlog item per AGENTS 9.1 first; new routes (Research, Daily Pulse) need nginx location blocks and prerender entries (9.4).
+- Pulse titles: the 19-22 Oct editions still start with "Policy Pulse", against CONTENT-PLAYBOOK section 2. The publishing agent should lead with the day's number or event, series name in a `series:` field, and Pulse titles should be changed for new notes only until the 2026-11-07 read.
+
 ## 2026-10-22 00:17 — watcher
 
 **Idle** — nothing executable.
