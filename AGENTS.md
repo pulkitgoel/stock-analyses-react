@@ -974,6 +974,40 @@ stay identical.
 
 ---
 
+### 7.12 UI redesign, step 3: nav, masthead, Research / Daily Pulse split — IN PROGRESS, claude (interactive), 2026-10-23
+
+`DESIGN.md` Appendix B step 3. Three pieces, landing separately per 9.3:
+
+- **a. Nav.** `Research` / `Daily Pulse` / `Watchlist` / `Search`. Today the mobile dock
+  is Home / About / Contact / Risk / Privacy — it spends the most valuable space on a
+  phone on pages nobody revisits, while `/watchlist` is linked from nowhere (7.6) and
+  `/india` and `/global` (7.7) are not in the nav at all. Legal links move to the footer.
+- **b. Homepage masthead.** Replace the hero card with a plain `h1`, one positioning
+  line, and the latest lists. **This has a measured target.** On the live site after
+  7.11, FCP 2.93 s against LCP 3.38 s — a 450 ms gap where 7.9 measured the two as
+  equal. Equal meant CSS-bound; a gap means the LCP element now loads *after* first
+  paint, and that element is the hero image (7.10 recorded the handover from the `h1`).
+  Deleting it should close the gap, and that is the acceptance test.
+- **c. Research / Daily Pulse split.** The site already derives `market`
+  (india/global) at build time (7.7) and `isPolicyPulse` at runtime
+  (`src/utils/category.ts`). Type is the axis a reader picks first — briefing or
+  company — and market second, so this promotes type to a route family and reuses the
+  `ArchivePage` seam that already serves `/analyses`, `/india` and `/global` from one
+  component.
+
+**c needs server work and does not ship without it (9.4).** New route families need
+their own nginx `location` blocks — the catch-all is `try_files $uri =404`, so a new
+route 404s until a block exists — plus sitemap and prerender entries. 7.7 shipped its
+build without its blocks and left 29 sitemap URLs 404ing. `/india`, `/global` and
+`/analyses/page/N` stay exactly as they are; this adds, it does not re-scheme.
+
+**Not in scope.** The default theme (owner decision, see 7.11). Retitling Policy Pulse
+articles — `CONTENT-PLAYBOOK.md` section 2 is right that the current titles waste their
+first 14 characters, but that is content and would contaminate the 2026-11-07
+experiment (7.3).
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
