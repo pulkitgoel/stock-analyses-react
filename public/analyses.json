@@ -20,6 +20,24 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Swiggy — The Loss Is Contracting, the Stock Is Not",
+      "ticker": "SWIGGY",
+      "file": "swiggy-the-loss-is-contracting-the-stock-is-not.md",
+      "slug": "swiggy-the-loss-is-contracting-the-stock-is-not",
+      "date": "2026-10-23",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "quick-commerce",
+        "food-delivery",
+        "consumer-internet",
+        "turnaround"
+      ],
+      "summary": "Swiggy's H1 FY27 loss is 25% below last year and food delivery now earns Rs 341 Cr of quarterly EBITDA, but Instamart alone lost Rs 895 Cr and the sequential loss widened. At 1.2x EV/revenue against Eternal's 5x the market has priced the bear case; the chart, at an all-time low with 12 checklist fails, says wait for the Q3 Instamart number.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global Spillover — 22 Oct 2026",
       "ticker": "XOM:CVX:OXY:SHEL:BP:ONGC:OIL:IOC:BPCL:HINDPETRO:MRPL:GAIL:PETRONET:DAL:UAL:AAL:CCL:RCL:APOLLOTYRE:BHARATFORG:STLA:META:NVDA:AVGO:MU:AMAT:MRVL:ARM:LITE:TCS:INFY:HCLTECH",
       "file": "policy-pulse-global-22-oct-2026.md",

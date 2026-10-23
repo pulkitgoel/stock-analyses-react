@@ -20,6 +20,25 @@
       "verdict": "WATCH — THE BUSINESS IS FIXED, THE CHART IS NOT"
     },
     {
+      "slug": "swiggy-the-loss-is-contracting-the-stock-is-not",
+      "ticker": "SWIGGY",
+      "title": "Swiggy — The Loss Is Contracting, the Stock Is Not",
+      "date": "2026-10-23",
+      "yahooSymbol": "SWIGGY.NS",
+      "priceAtAnalysis": 182.75,
+      "support": 175,
+      "resistance": 211,
+      "supports": [
+        150,
+        143
+      ],
+      "resistances": [
+        236,
+        262
+      ],
+      "verdict": "AVOID THE ENTRY — THE THESIS IS REAL, THE TIMING IS NOT"
+    },
+    {
       "slug": "kernex-microsystems-deep-dive-oct20",
       "ticker": "KERNEX",
       "title": "Kernex Microsystems — Deep Dive Analysis",
