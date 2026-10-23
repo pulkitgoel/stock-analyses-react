@@ -154,6 +154,64 @@ verify-live:
 - 6 previously reported unmarked item(s), unchanged.
 
 
+## 2026-10-24 — claude (interactive)
+
+**7.13 step 4 done. And two corrections of mine — one about apply-nginx, one about a job I queued malformed.**
+
+**apply-nginx: my earlier reading was wrong, and your refusal was simply correct.**
+I had queued it again arguing the six blocks were "additive, so there is nothing to
+duplicate". That misread the contract. `job_apply_nginx` is **replacements only, never
+insertions**, by design and for good reasons recorded in its own docstring — the live
+file carries seven deliberate deviations, one of them load-bearing (`location
+/analysis/` against the doc's `^~`, where `^~` would break the legacy `.md` redirect).
+So it cannot add a new block, and asking it to was asking for the thing it exists to
+refuse. **I have withdrawn that job.** No apply-nginx is queued.
+
+**The blocks are live and correct, however they got there.** Verified by curl just now,
+both halves:
+
+| | |
+|---|---|
+| `/research`, `/pulse` | 200, each with **its own** title and canonical, not a homepage clone |
+| `/research/page/99`, `/pulse/page/99` | **404** — a real one, not a 200 shell |
+| `/research/page/1`, `/pulse/page/1` | 301 to the bare URL |
+| `/researchXYZ` | 404 |
+
+Live sitemap is 661 URLs with all 34 kind entries, and the homepage h1 is the new
+masthead. So 7.12 is fully live and the window where the sitemap advertised 34 URLs that
+404'd has closed.
+
+**My verify-live job failed, and that was my error, not the site's.** I wrote prose into
+the argument. `job_verify_live` splits its argument on whitespace and commas and treats
+each token as a path, so it tried to fetch `Both`, `halves`, `of`, `every`… The correct
+form is `path` or `path=NNN`, and the `=NNN` matters precisely when the point is that a
+URL *should* fail. Requeued below in that form.
+
+**Two findings from 7.13 worth keeping.**
+
+- Stripping series boilerplate off a Pulse title leaves **"23 Oct 2026"** and nothing
+  else, because these titles are boilerplate plus a date and carry no claim. The first
+  version shipped rows whose headline *and anchor text* were a bare date — useless to a
+  reader, and worse than boilerplate for a crawler. `pulseHeadline()` now falls through
+  to the summary's first sentence when the remainder does not read as a claim. The titles
+  themselves are the content problem CONTENT-PLAYBOOK section 2 describes; this is
+  presentation only and does not touch the 2026-11-07 experiment.
+- A scripted edit turned every `` in a regex into a literal backspace byte (0x08), so
+  `edition()` would have matched nothing and every row would have read "Daily Pulse".
+  **`tsc` passed** — the file was still valid TypeScript. If a script rewrites source
+  containing regex escapes, use raw strings and scan the output for control characters.
+
+**ACTION Hermes**
+- [job: deploy] 7.13: ResearchCard and PulseRow replace the single card shape. AnalysisGrid dispatches on kind; pulse rows span the full grid width so mixed listings keep date order. No route, sitemap or nginx change - 7.12 is already live and this only changes how listings render.
+- [job: verify-live] /=200, /research=200, /pulse=200, /analyses/page/1=200, /tag/defence=200, /india=200, /watchlist=200, /research/page/99=404, /pulse/page/99=404, /nope-12345=404
+
+**UNVERIFIED:** everything in 7.13 is local `vite preview` only.
+
+**OWNER:** unchanged — the default theme stays dark with its toggle until you decide.
+DESIGN.md steps 5 and 6 remain unclaimed; step 5 is blocked on the section 6 decisions
+(AI disclosure, SEBI status).
+
+
 ## 2026-10-23 18:49 — watcher
 
 **Ran:** apply-nginx

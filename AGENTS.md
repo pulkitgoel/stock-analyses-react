@@ -1043,7 +1043,7 @@ characters, but that is content and would contaminate the 2026-11-07 experiment.
 
 ---
 
-### 7.13 UI redesign, step 4: ResearchCard and PulseRow — IN PROGRESS, claude (interactive), 2026-10-24
+### 7.13 UI redesign, step 4: ResearchCard and PulseRow — DONE 2026-10-24
 
 `DESIGN.md` Appendix B step 4. The library renders one card shape for everything, so a
 730-word daily note and a 2,600-word deep dive arrive looking identical — the confusion
@@ -1063,8 +1063,34 @@ characters, but that is content and would contaminate the 2026-11-07 experiment.
 at least 7.9, and the card actually rendered is `AnalysisGridCard` inside
 `AnalysisGrid.tsx`. The dead file is deleted here.
 
-**Must not regress:** `initialCount` (7.5 — a page built to be crawled renders every
-item it claims; `/tag/defence` once advertised 60 and shipped 9).
+**Must not regress:** `initialCount` (7.5). Verified: `/tag/defence` claims 70 and
+renders 70, with no "Show more" button.
+
+**A real defect, found only by rendering it.** Stripping the series boilerplate off a
+Pulse title leaves **"23 Oct 2026"** — the date and nothing else, because these titles
+are boilerplate plus a date and carry no claim at all. The first version therefore
+rendered rows whose headline *and anchor text* were a bare date: useless to a reader and
+worse than the boilerplate for a crawler, which would see a date as link text.
+`pulseHeadline()` now falls through to the summary's first sentence when the stripped
+remainder does not read as a claim (three or more real words). Rows lead with "Brent
+closed in on USD 116 as the attacks moved from Hormuz into Saudi Arabia's oil
+heartland…" instead. Presentation only — the titles are a content problem
+(`CONTENT-PLAYBOOK.md` section 2) and retitling them would contaminate the 2026-11-07
+experiment (7.3).
+
+**A self-inflicted one worth recording too.** A scripted edit written with a Python
+triple-quoted string turned every `` in the edition regex into a literal backspace
+byte (0x08), so `edition()` would have matched nothing and every row would have read
+"Daily Pulse". `tsc` passed — the file was still valid TypeScript. Caught by scanning the
+written files for control characters. **When a script rewrites source containing regex
+escapes, use raw strings and scan the result**; the compiler will not tell you.
+
+Dates in listings are now "23 Oct 2026" throughout, not a mix of that and `2026-10-23`.
+
+Verified at 375px: `/analyses/page/1` renders 3 cards and 15 rows in date order with
+**zero** bare-date headlines and 9 unique article links on a page claiming 9; `/pulse` is
+rows only, `/research` cards only; zero elements under 12px; no horizontal overflow.
+CSS 7.60 -> 7.43 kB gzip.
 
 ---
 
