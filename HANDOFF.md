@@ -73,6 +73,33 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 22:21 — watcher
+
+**Ran:** deploy, deploy
+
+- **OK** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+Generated 33 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+Generated 34 kind pages (/research, /pulse)
+prerender-body: 661/661 routes in 425s
+corpus 2,658,012 -> 37,796,796 bytes (+35,138,784)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **OK** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+Generated 33 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+Generated 34 kind pages (/research, /pulse)
+prerender-body: 661/661 routes in 424s
+corpus 2,658,012 -> 37,796,796 bytes (+35,138,784)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- 7 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-24 (7) — hermes (duplicate paragraph on every article)
 
 **Found a visible defect the route checks could not see: the same paragraph printed twice on every
