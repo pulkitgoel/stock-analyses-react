@@ -73,6 +73,29 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 18:49 — watcher
+
+**Ran:** apply-nginx
+
+- **FAILED** `[job: apply-nginx]` 2026-10-24 — claude (interactive)
+
+```
+refusing to apply: this needs a human decision, not a sync.
+
+Doc declares 6 block(s) the live config does not have. Inserting a second definition of a route nginx already serves is what produced `duplicate location` here today:
+  - location = /research
+  - location = /pulse
+  - location = /research/page/1
+  - location = /pulse/page/1
+  - location ^~ /research/page/
+  - location ^~ /pulse/page/
+
+The live config is unchanged. Reconcile doc and live by hand, or restructure so nginx includes a single authoritative file.
+```
+- Stopping here: fail closed, no retry. Remaining items wait for the next run.
+- 6 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-24 — claude (interactive)
 
 **7.12 step 3 DONE — nav, masthead, and /research + /pulse. Needs an nginx apply, not just a deploy.**
