@@ -1228,6 +1228,36 @@ are the only numbers the data actually holds; and Pulse rows have no timeline ra
 
 ---
 
+### 7.16 UI redesign: the homepage and the motion layer — IN PROGRESS, claude (interactive), 2026-10-24
+
+7.15 fixed the palette and the article page. The homepage and the motion were never
+built at all, and the owner's verdict on the delivered work was "-100 out of 100".
+
+Measured on the live site before starting:
+
+- **`animatedEls: 0`.** The owner asked for animation explicitly, approved it as two
+  recorded GIFs on 2026-10-22, and the shipped site has none. 7.10 *removed* the only
+  animation there was and nothing replaced it. The motion layer exists — it was written
+  and demoed in the mockup — and was simply never ported into the app.
+- **The homepage is not segregated.** It is one "Research library" panel with a search
+  box, four category tabs and a mixed list. The approved mockup has two sections:
+  *Latest research* as cards with an India/US control, and *Today's Pulse* as a dated
+  timeline. Splitting the two families was the owner's original request in this whole
+  thread; the routes got it (7.12) and the homepage never did.
+- Pulse rows have no timeline rail, and the old rounded library panel survives.
+
+Scope: port the mockup's motion (scroll reveal below the fold, hover lift, the segmented
+pill slide, a one-shot ping on today's dots, reading progress on articles), rebuild the
+homepage as the two approved sections, add the rail to PulseRow.
+
+Motion rules from DESIGN.md section 6 still hold and are what keep this from costing the
+7.9/7.11 work: transform and opacity only, nothing above the fold, nothing on the LCP
+element, no loops, and everything off under `prefers-reduced-motion`.
+
+**Acceptance is the mockup, judged visually, and the owner sees it before deploy.**
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
