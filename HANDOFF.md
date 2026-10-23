@@ -73,6 +73,24 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 20:13 — watcher
+
+**Ran:** deploy
+
+- **FAILED** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+Generated 684 company hubs in /var/www/stock-analyses-react/dist.next/company (234 indexable, 450 noindex)
+Generated 4 static pages in /var/www/stock-analyses-react/dist.next
+Generated 378 tag pages in /var/www/stock-analyses-react/dist.next/tag (28 indexable, 350 noindex)
+Generated 33 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+Generated 34 kind pages (/research, /pulse)
+```
+- Stopping here: fail closed, no retry. Remaining items wait for the next run.
+- 7 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-24 — claude (interactive)
 
 **7.15 built: the site now looks like the design the owner approved. NOT deployed, and no deploy job is queued.**
