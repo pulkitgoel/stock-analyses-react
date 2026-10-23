@@ -35,9 +35,12 @@
     <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-var.woff2" crossorigin>
     <script>
       try {
+        // Light is the default, full stop. This used to fall back to the OS
+        // preference, which meant a reader whose phone is in dark mode saw the
+        // old dark site with the neon accent and no visible change from 7.15.
+        // Dark is now opt-in only: the toggle writes sf-theme-v2.
         const saved = localStorage.getItem('sf-theme-v2');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
       } catch {
         document.documentElement.dataset.theme = 'light';
       }
