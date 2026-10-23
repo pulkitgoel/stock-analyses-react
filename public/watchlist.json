@@ -39,6 +39,26 @@
       "verdict": "AVOID THE ENTRY — THE THESIS IS REAL, THE TIMING IS NOT"
     },
     {
+      "slug": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book",
+      "ticker": "ZENTEC",
+      "title": "Zen Technologies — Deep Dive: Capabilities, Order Book and the FY28 Test",
+      "date": "2026-10-23",
+      "yahooSymbol": "ZENTEC.NS",
+      "priceAtAnalysis": 1466.8,
+      "support": 1223,
+      "resistance": 1600,
+      "supports": [
+        1223,
+        1100
+      ],
+      "resistances": [
+        1600,
+        1723,
+        2044
+      ],
+      "verdict": "CAPABILITY IS REAL, TIMING IS NOT — WAIT FOR Q2 FY27"
+    },
+    {
       "slug": "kernex-microsystems-deep-dive-oct20",
       "ticker": "KERNEX",
       "title": "Kernex Microsystems — Deep Dive Analysis",
@@ -279,26 +299,6 @@
       "priceAtAnalysis": 1474,
       "support": 1342,
       "resistance": 1555
-    },
-    {
-      "slug": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book",
-      "ticker": "ZENTEC",
-      "title": "Zen Technologies Q1 FY27 — Deep Dive: Weak Quarter, Strong Order Book",
-      "date": "2026-07-27",
-      "yahooSymbol": "ZENTEC.NS",
-      "priceAtAnalysis": 1698,
-      "support": 1460,
-      "resistance": 1770,
-      "supports": [
-        1460,
-        1580
-      ],
-      "resistances": [
-        1770,
-        1850,
-        2024
-      ],
-      "verdict": "CAUTION"
     },
     {
       "slug": "fiem-industries-ltd-deep-dive-analysis",

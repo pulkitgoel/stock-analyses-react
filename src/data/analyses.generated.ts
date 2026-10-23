@@ -42,6 +42,24 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Zen Technologies — Deep Dive: Capabilities, Order Book and the FY28 Test",
+    "ticker": "ZENTEC",
+    "file": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book.md",
+    "slug": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book",
+    "date": "2026-10-23",
+    "tags": [
+      "deep-dive",
+      "defence",
+      "simulation",
+      "anti-drone",
+      "counter-uas",
+      "exports"
+    ],
+    "summary": "Zen has the deepest capability stack in Indian defence simulation — Army and Navy leadership, a completed Air Force product, a man-portable anti-drone system and now an AI battlefield-management business. But FY26 revenue fell 29%, the 35% EBIT target is being formally walked back, and at 73x earnings the price already assumes the order book converts on schedule. Verdict: CAPABILITY IS REAL, TIMING IS NOT — WAIT FOR Q2 FY27.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse — Global Spillover — 22 Oct 2026",
     "ticker": "XOM:CVX:OXY:SHEL:BP:ONGC:OIL:IOC:BPCL:HINDPETRO:MRPL:GAIL:PETRONET:DAL:UAL:AAL:CCL:RCL:APOLLOTYRE:BHARATFORG:STLA:META:NVDA:AVGO:MU:AMAT:MRVL:ARM:LITE:TCS:INFY:HCLTECH",
     "file": "policy-pulse-global-22-oct-2026.md",
@@ -3419,23 +3437,6 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US-Iran war pause holds — oil crashes 7%, S&P 500 rallies 1%. Brent at 85. Airlines/cruises reverse to BUY. Defence stocks dial back to HOLD. Fed week + Big Tech earnings in focus. Trump meets Netanyahu tomorrow on Iran trajectory.",
     "market": "global",
-    "model": "deepseek-chat"
-  },
-  {
-    "title": "Zen Technologies Q1 FY27 — Deep Dive: Weak Quarter, Strong Order Book",
-    "ticker": "ZENTEC",
-    "file": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book.md",
-    "slug": "zen-technologies-q1-fy27-deep-dive-weak-quarter-strong-order-book",
-    "date": "2026-07-27",
-    "tags": [
-      "deep-dive",
-      "defence",
-      "quarterly-results",
-      "simulation",
-      "anti-drone"
-    ],
-    "summary": "Zen Technologies Q1 FY27 revenue fell 10.5% YoY to ₹141.64 Cr as execution back-loaded to Q2-Q3. Order book remains robust at ₹1,239 Cr with new ₹177.5 Cr MoD order secured in July. Management commentary, QIP extension, and 7 new product launches analyzed.",
-    "market": "india",
     "model": "deepseek-chat"
   },
   {
