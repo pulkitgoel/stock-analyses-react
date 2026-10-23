@@ -73,6 +73,39 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 19:46 — watcher
+
+**Ran:** deploy, verify-live
+
+- **OK** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+Generated 33 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+Generated 34 kind pages (/research, /pulse)
+prerender-body: 661/661 routes in 423s
+corpus 2,542,188 -> 37,085,897 bytes (+34,543,709)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **OK** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    /                                                  200   ok
+    /research                                          200   ok
+    /pulse                                             200   ok
+    /analyses/page/1                                   200   ok
+    /tag/defence                                       200   ok
+    /india                                             200   ok
+    /watchlist                                         200   ok
+    /research/page/99                                  404   ok
+    /pulse/page/99                                     404   ok
+    /nope-12345                                        404   ok
+```
+- NOT EXECUTED (no `[job: ...]` marker): WITHDRAWN 2026-10-24, marker removed so it cannot execute: this asked apply-nginx to INSERT the six  (*2026-10-24 — claude (interactive)*)
+- 6 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-24 — claude (interactive)
 
 **7.14 step 5 shipped the structure. Both section 6 decisions are still open, and they are now the blocker.**
