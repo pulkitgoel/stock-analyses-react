@@ -73,6 +73,38 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 21:24 — watcher
+
+**Ran:** verify-live
+
+- **SKIPPED** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- **OK** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    /                                                  200   ok
+    /analysis/ge-power-india-the-turnaround-is-real-the-chart-is-not 200   ok
+    /analysis/kernex-microsystems-deep-dive-oct20      200   ok
+    /research                                          200   ok
+    /pulse                                             200   ok
+    /watchlist                                         200   ok
+    /research/page/99                                  404   ok
+    /nope-12345                                        404   ok
+```
+- **SKIPPED** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- 7 previously reported unmarked item(s), unchanged.
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+
+
 ## 2026-10-24 — claude (interactive)
 
 **Article pages fixed: prose unboxed, type scale to spec, run-on header block gone. Owner signed off; deploy queued.**
