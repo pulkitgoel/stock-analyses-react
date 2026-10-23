@@ -34,6 +34,19 @@ function statsFor(a: Analysis): Stat[] {
 export default function TakeawayPanel({ analysis: a }: { analysis: Analysis }) {
   const stats = statsFor(a);
 
+  // The band above already prints a.summary as the deck, and most of these articles
+  // end their summary with "Verdict: ..." - so printing the verdict here too repeated
+  // the same sentence twice, which is the defect this panel had with the summary
+  // before. Compare normalised text rather than raw strings: the deck writes an em
+  // dash where the verdict field may use a hyphen.
+  const norm = (s: string) =>
+    (s || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+  const verdictAlreadyInDeck = !!a.verdict && norm(a.summary).includes(norm(a.verdict));
+  const showVerdict = !!a.verdict && !verdictAlreadyInDeck;
+
+  // With nothing left to say, render nothing rather than a bare label.
+  if (!showVerdict && stats.length === 0) return null;
+
   return (
     <aside
       style={{
@@ -50,18 +63,7 @@ export default function TakeawayPanel({ analysis: a }: { analysis: Analysis }) {
         Key takeaway
       </span>
 
-      <p
-        style={{
-          margin: '0.5rem 0 0',
-          fontSize: '1rem',
-          lineHeight: 1.55,
-          color: 'var(--text)',
-        }}
-      >
-        {a.summary}
-      </p>
-
-      {a.verdict && (
+      {showVerdict && (
         <p
           style={{
             margin: '0.75rem 0 0',

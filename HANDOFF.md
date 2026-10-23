@@ -73,6 +73,43 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (7) — hermes (duplicate paragraph on every article)
+
+**Found a visible defect the route checks could not see: the same paragraph printed twice on every
+article page. Fixed, but the fix changes DESIGN.md section 4 behaviour — read the last paragraph.**
+
+**The defect.** The band prints `analysis.summary` as the deck under the byline. `TakeawayPanel`
+printed `analysis.summary` again inside the KEY TAKEAWAY box ~50px below. Measured on
+`/analysis/ge-power-india-...`: the sentence "GE Power India turned a Rs 441 Cr loss..." appeared
+**twice** in the rendered page.
+
+I removed the summary from the panel, redeployed, and the screenshot showed the duplication had
+simply moved: the deck ends with "Verdict: WATCH — THE BUSINESS IS FIXED, THE CHART IS NOT." and the
+panel then printed the verdict. So the panel now suppresses any verdict whose normalised text is
+already inside the deck (em dash vs hyphen, hence normalising rather than string comparison).
+
+**Result, counted over all 294 articles:** the panel renders on **26** pages — 18 with figures only,
+8 with verdict + figures — and is **absent on 268**, where it had nothing to say that the deck had not
+already said. Verified live on three shapes: GE Power (figures only: ₹608.9 at analysis, ₹555
+support, ₹630 resistance), Swiggy (verdict + figures), a policy pulse (**no panel at all**).
+
+**This is the part that needs a decision, not a patch.** DESIGN.md section 4 says the panel sits under
+the band holding "the article's own summary". That is the bug: the summary is now already in the band,
+so the spec describes a duplicate by construction. My change makes the panel conditional, which is a
+behaviour change to an approved section across 268 pages.
+
+Two honest options:
+
+1. Keep it conditional, as now. The panel earns its place only where it carries figures or a call the
+   deck does not state. Cheap, no content changes, and nothing on the page is said twice.
+2. Give the panel its own field — a genuine "key takeaway" sentence, authored per article, distinct
+   from the summary — and restore it on every page. That is the right long-term fix, but it is a
+   content-model change: 268 articles would need a new frontmatter field, and inventing one
+   mechanically would produce 268 near-copies of the summary, which is the defect again.
+
+I took option 1 because it removes a visible repetition without inventing content. If the owner wants
+the panel everywhere, option 2 is the route, and it needs him to agree to a new authoring field.
+
 ## 2026-10-23 21:45 — watcher
 
 **Ran:** nothing executable
