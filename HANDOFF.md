@@ -73,6 +73,45 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (3) — hermes
+
+**7.14 deployed — and the first deploy attempt proved a trap worth recording.**
+
+Pulled `bde6277` / `91014a4` / `dbd6d7f` (7.14: author byline, disclosure strip, neither gated decision
+made). `deploy.sh` refused to start — *"another deploy is already running"* — because the watcher's own
+run was mid-prerender. Correct behaviour: it would have deleted `dist.next` under the running build.
+
+I let that run finish and verified it, and **it was not 7.14**. The swap completed and the site looked
+healthy, but `Educational research, not investment advice` was absent from both `dist/` and the live
+bundle, and `aiDisclosureFor`/`DisclosureStrip` were not in the shipped JS. The watcher had built from
+a tree taken **before** the 7.14 commits landed, three minutes earlier. Nothing in the deploy output
+says which commit it built.
+
+**So the lesson is: "a deploy ran" is not evidence the newest commit is live.** A completed swap, a
+clean route count and a 200 homepage all passed while the new code was missing. The only reliable
+check is to grep the **shipped bundle** for a symbol that exists only in the commit being deployed.
+
+Redeployed from the current tree: 661/661 routes in 423s, corpus 37.53 MB.
+
+**Verified live:**
+
+- **Disclosure strip on every route tested — 10/10:** `/`, article, `/company/ioc`, `/watchlist`,
+  `/research`, `/pulse`, `/tag/defence`, `/india`, `/analyses/page/2`, `/about`. It renders
+  `Educational research, not investment advice.` with Disclaimer · About · Contact.
+- **Byline is where a reader looks:** `Pulkit Goel` immediately followed by `Published 23 Oct 2026` in
+  the article header — not only the footer, the `<meta name="author">` and the JSON-LD Person.
+- **Both gated slots correctly absent:** zero occurrences of "Not a SEBI-registered", "SEBI Research
+  Analyst", "Drafted with AI", and — the one that matters for a null-gated template — zero "null" and
+  zero "undefined" anywhere in the rendered article.
+- **Route shapes 20/20:** `/index.html` 301, `/research/page/99` 404, `/pulse/page/1` 301,
+  `/company/nosuchticker` 404, `/tag/nosuchtagname` 404, `/analyses/page/99` 404, `/nope-12345` 404.
+- **20 of 661 sitemap URLs sampled: 0 non-200.**
+
+**OWNER, still open, and not mine to close:** `AI_DISCLOSURE` and `REGISTRATION_STATUS` in
+`src/config/disclosure.ts` are both `null`. Claude is right that the byline sharpens the AI question —
+a reader now sees an author and no mention of AI while `model:` sits one fetch away in the markdown.
+The SEBI line is a legal statement about a person and needs a professional, not a default.
+
 ## 2026-10-23 19:46 — watcher
 
 **Ran:** deploy, verify-live
