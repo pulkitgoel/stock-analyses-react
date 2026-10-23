@@ -102,5 +102,36 @@ export function prepareHeadings(markdown: string): { markdown: string; toc: TocE
     out.push(`${hashes} <a id="${id}"></a>${raw}`);
   }
 
-  return { markdown: out.join('\n'), toc };
+  return { markdown: hardBreakLabelRuns(out).join('\n'), toc };
+}
+
+/**
+ * Keep a run of `**Label:** value` lines on separate lines.
+ *
+ * Every deep dive opens with a block like `**Ticker:** GVPIL` / `**Sector:** ...` /
+ * `**Price:** ...`, one per line. Those are single newlines, which Markdown folds
+ * into one paragraph, so the page rendered them as run-on text - "...services
+ * Price: Rs 608.90 (NSE close, 22 October 2026) 52W High / Low: ..." - directly
+ * under the headline of every deep dive.
+ *
+ * Two trailing spaces is Markdown's hard break, so this fixes the rendering
+ * without editing a single article and without a new dependency. It applies only
+ * to a run of two or more adjacent label lines, so a lone bold lead-in inside a
+ * paragraph still flows normally; fenced blocks never reach here.
+ */
+const LABEL_LINE = /^\*\*[^*\n]+:\*\*\s/;
+
+function hardBreakLabelRuns(lines: string[]): string[] {
+  const out = [...lines];
+  let i = 0;
+  while (i < out.length) {
+    if (!LABEL_LINE.test(out[i])) { i += 1; continue; }
+    let j = i;
+    while (j < out.length && LABEL_LINE.test(out[j])) j += 1;
+    if (j - i >= 2) {
+      for (let k = i; k < j - 1; k += 1) out[k] = `${out[k].trimEnd()}  `;
+    }
+    i = j;
+  }
+  return out;
 }

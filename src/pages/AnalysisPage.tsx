@@ -230,7 +230,7 @@ export default function AnalysisPage() {
           it paints first and does not push the article down once loaded. */}
       <AudioSummary slug={analysis.slug} />
 
-      <div className="page-panel surface-card animate-in animate-in-delay-1 overflow-hidden rounded-lg">
+      <div className="article-prose">
         {/* Contents for long articles (AGENTS 7.4). Collapsed by default so it
             costs no vertical space, but rendered unconditionally - the section
             anchors and their links are in the prerendered HTML either way. */}

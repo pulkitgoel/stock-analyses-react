@@ -229,22 +229,48 @@ button { touch-action: manipulation; }
    had run. See 7.10 for the measurement. The class names remain in the JSX as inert
    hooks for the step-2 reveal layer, which only ever targets content below the fold. */
 
+/* The article prose sits directly on the page, not in a card (7.16). It was
+   wrapped in `page-panel surface-card`: 32px of padding and a border inside the
+   16px page gutter, so on a 375px phone the text column was ~277px wide. That
+   made every paragraph wrap onto more lines - a large share of why the GE Power
+   page ran to tens of thousands of pixels - and boxed the whole article, which
+   the approved mockup never did: band, takeaway, then prose on the canvas. */
+.article-prose { width: 100%; }
+
 .article-shell {
   width: 100%;
   max-width: 920px;
   margin: 0 auto;
 }
 
+/* Article typography — DESIGN.md section 3. These were never updated by 7.11,
+   which changed the tokens and the font but not this block, so the body kept the
+   old values: line-height 1.9 and an h2 at 1.28rem/800.
+
+   Line-height 1.9 is the one that mattered. On a 2,600-word deep dive it made the
+   GE Power page 37,095px tall on a 375px screen — roughly 45 full screens of
+   scrolling — and spread the prose until it read like a large-print edition.
+   1.65 is the spec and is what long-form actually wants.
+
+   The headings were the other half: h2 at 1.28rem/800 was both smaller than the
+   scale asks and HEAVIER than the h1 at 700, so a section heading competed with
+   the page title while looking cramped. */
 .article-body {
   overflow-x: auto;
   font-size: 1rem;
-  line-height: 1.9;
+  line-height: 1.65;
   color: var(--text-muted);
 }
-.article-body h1 { font-size: 1.55rem; font-weight: 800; margin: 2rem 0 0.75rem; color: var(--text); line-height: 1.2; }
-.article-body h2 { font-size: 1.28rem; font-weight: 800; margin: 2rem 0 0.65rem; color: var(--text); line-height: 1.25; }
-.article-body h3 { font-size: 1.08rem; font-weight: 750; margin: 1.4rem 0 0.45rem; color: var(--text); }
-.article-body p { margin: 0.85rem 0; }
+.article-body h1 { font-size: 1.5rem; font-weight: 700; margin: 2.25rem 0 0.75rem; color: var(--text); line-height: 1.25; letter-spacing: -0.01em; }
+.article-body h2 { font-size: 1.375rem; font-weight: 700; margin: 2.25rem 0 0.7rem; color: var(--text); line-height: 1.3; letter-spacing: -0.01em; }
+.article-body h3 { font-size: 1.125rem; font-weight: 600; margin: 1.6rem 0 0.4rem; color: var(--text); line-height: 1.35; }
+.article-body p { margin: 0.9rem 0; }
+/* Measure. Prose past ~68 characters a line is measurably harder to track back
+   from the end of one line to the start of the next; it only bites on desktop,
+   where the column is otherwise the full container width. */
+.article-body > p,
+.article-body > ul,
+.article-body > ol { max-width: 68ch; }
 .article-body strong { color: var(--text); font-weight: 700; }
 .article-body ul, .article-body ol { margin: 0.75rem 0; padding-left: 1.35rem; }
 .article-body li { margin: 0.35rem 0; }
@@ -467,8 +493,10 @@ button { touch-action: manipulation; }
   .analysis-card { padding: 1.75rem; }
   .page-panel { padding: 2.5rem; }
   .mini-panel { padding: 1.25rem; }
-  .article-body h1 { font-size: 1.8rem; }
-  .article-body h2 { font-size: 1.42rem; }
+  .article-body { font-size: 1.0625rem; }
+  .article-body h1 { font-size: 1.75rem; }
+  .article-body h2 { font-size: 1.625rem; }
+  .article-body h3 { font-size: 1.25rem; }
 }
 
 @media (min-width: 1024px) {
