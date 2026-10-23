@@ -355,7 +355,9 @@ button { touch-action: manipulation; }
   border-radius: 999px;
   background: var(--accent-glow);
   color: var(--accent);
-  font-size: 0.68rem;
+  /* 12px floor (7.11). The 7.10 sweep raised Tailwind utilities and inline
+     fontSize values but not plain rules in this file, so this one survived. */
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0;
 }

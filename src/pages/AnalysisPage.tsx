@@ -14,6 +14,8 @@ import { MARKET_HEADING, sectionPath } from '../utils/market';
 import AudioSummary from '../components/Analysis/AudioSummary';
 import TableOfContents from '../components/Analysis/TableOfContents';
 import { prepareHeadings } from '../utils/toc';
+import { AUTHOR_NAME, aiDisclosureFor } from '../config/disclosure';
+import { displayDate } from '../utils/articleDisplay';
 
 function estimateReadTime(text: string): number {
   const words = text.split(/\s+/).length;
@@ -135,6 +137,11 @@ export default function AnalysisPage() {
   }
 
   const readTime = estimateReadTime(content);
+  // Null unless the owner has set AI_DISCLOSURE (section 6). Not a hook, so it
+  // sits here with readTime rather than above the early returns — 3.12 governs
+  // hooks, and adding a useMemo for a string replace would be the 3.14 mistake
+  // in miniature.
+  const aiNotice = aiDisclosureFor(analysis.model);
   const tickers = tickerTokens(analysis.ticker);
   const related = relatedAnalyses(analysis, getAnalyses());
   const primaryHub = tickers.length === 1 ? tickers[0] : null;
@@ -231,15 +238,43 @@ export default function AnalysisPage() {
               {analysis.ticker}
             </span>
           )}
-          <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>{analysis.date}</span>
-          {analysis.updated && analysis.updated !== analysis.date && (
-            <span className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
-              updated {analysis.updated}
-            </span>
-          )}
           <span className="flex items-center gap-1 text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
             <Clock size={13} /> {readTime} min read
           </span>
+        </div>
+
+        {/* Byline (AGENTS 7.14). The author name was published in the prerendered
+            `<meta name="author">` and the JSON-LD Person on every article, and in
+            the footer and on /about — everywhere except where a reader looks. On
+            YMYL content that is the one place it matters, so this surfaces a claim
+            the site already makes rather than adding a new one.
+
+            The AI-disclosure chip beside it is an owner decision (section 6) and
+            renders only once src/config/disclosure.ts sets it. Until then the slot
+            is omitted entirely: an empty or bracketed placeholder on a page like
+            this is worse than nothing. */}
+        <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span className="text-sm font-bold" style={{ color: 'var(--text)' }}>
+            {AUTHOR_NAME}
+          </span>
+          <span data-nums className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
+            Published {displayDate(analysis.date)}
+            {analysis.updated && analysis.updated !== analysis.date
+              ? ` · Updated ${displayDate(analysis.updated)}`
+              : ''}
+          </span>
+          {aiNotice && (
+            <span
+              className="rounded px-2 py-0.5 text-xs font-semibold"
+              style={{
+                border: '1px solid var(--border)',
+                color: 'var(--text-muted)',
+                borderRadius: 'var(--radius-xs, 4px)',
+              }}
+            >
+              {aiNotice}
+            </span>
+          )}
         </div>
 
         <h1 className="text-3xl font-black leading-tight tracking-tight sm:text-5xl" style={{ color: 'var(--text)' }}>
