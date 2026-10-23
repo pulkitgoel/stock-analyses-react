@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BarChart3, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowRight, BarChart3, BookOpen } from 'lucide-react';
 import { useSearch } from '../hooks/useSearch';
 import { useNotification } from '../hooks/useNotification';
 import { getAnalyses } from '../services/analysisService';
@@ -10,7 +10,6 @@ import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import SubscribeCard from '../components/Common/SubscribeCard';
 import SearchBar from '../components/Home/SearchBar';
 import CategoryTabs from '../components/Home/CategoryTabs';
-import heroImage from '../assets/hero.png';
 
 // The catalogue is a bundled constant, so it is read at module scope: there is
 // no loading state to render and no spinner frame between the prerendered page
@@ -92,114 +91,57 @@ export default function HomePage() {
       </Helmet>
 
       <div className="mx-auto max-w-7xl">
-        <section
-          className="animate-in"
-          style={{
-            background: 'var(--bg-card)',
-            border: '1px solid var(--border)',
-            borderRadius: '2rem',
-            padding: '3rem 2.5rem',
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
-          <div style={{
-            position: 'relative', zIndex: 1,
-            display: 'flex', flexWrap: 'wrap', gap: '3rem',
-            alignItems: 'center', justifyContent: 'space-between'
+        {/* Masthead, not a hero. DESIGN.md step 3.
+
+            The card this replaces held a 343x361 decorative PNG that was the mobile LCP
+            element. After 7.11 the live site measured FCP 2.93s against LCP 3.38s - the
+            450ms gap was this image loading after first paint, where 7.9 had measured the
+            two as equal. Nothing above the fold is an image now, so the LCP candidate is
+            text and paints with the first CSS.
+
+            The h1 also says what the site is. "Markets move fast. Research should stay
+            sharp." never mentioned Indian equities, while the title and description both
+            lead with them (7.7). */}
+        <section style={{ paddingTop: '0.5rem' }}>
+          <h1 style={{
+            fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+            fontWeight: 800, lineHeight: 1.15,
+            letterSpacing: '-0.02em', color: 'var(--text)',
+            margin: 0, maxWidth: '20ch',
           }}>
-            <div style={{ flex: '1 1 500px' }}>
-              <div style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                background: 'var(--accent-glow)', color: 'var(--accent)',
-                padding: '6px 14px', borderRadius: '999px',
-                fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.12em',
-                textTransform: 'uppercase', marginBottom: '1.5rem',
-                border: '1px solid rgba(99,230,190,0.2)'
-              }}>
-                <Sparkles size={14} />
-                Independent research desk
-              </div>
-              
-              <h1 style={{
-                fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)',
-                fontWeight: 900, lineHeight: 1.1,
-                letterSpacing: '-0.03em', color: 'var(--text)',
-                margin: 0
-              }}>
-                {/* The trailing space matters: without it, text extractors read
-                    the heading as "fast.Research" because <br /> contributes no
-                    whitespace. It does not change the rendered layout. */}
-                Markets move fast.{' '}<br />
-                <span style={{ color: 'var(--accent)' }}>Research should stay sharp.</span>
-              </h1>
-              
-              <p style={{
-                marginTop: '1.25rem', fontSize: '1.05rem', lineHeight: 1.8,
-                color: 'var(--text-muted)', maxWidth: '600px'
-              }}>
-                Deep-dives, valuation calls, institutional activity, and market notes presented like a clean research terminal.
-              </p>
+            Indian stock research, and the global macro that moves it.
+          </h1>
 
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
-                <a href="#library" className="btn btn-primary">
-                  Explore research <ArrowRight size={16} />
-                </a>
-                {latest && (
-                  <Link to={`/analysis/${latest.slug}`} className="btn btn-secondary">
-                    Latest note <BookOpen size={16} />
-                  </Link>
-                )}
-              </div>
-            </div>
+          <p style={{
+            marginTop: '0.85rem', fontSize: '1.05rem', lineHeight: 1.6,
+            color: 'var(--text-muted)', maxWidth: '58ch',
+          }}>
+            Deep dives on NSE delivery data, promoter trends and quarterly results, plus a
+            daily policy note on what Delhi and Washington did and which tickers it moves.
+            Written by Pulkit Goel.
+          </p>
 
-            <div style={{
-              flex: '1 1 340px', maxWidth: '440px',
-              position: 'relative', overflow: 'hidden', borderRadius: '1.5rem',
-              background: 'var(--bg-elevated)', border: '1px solid var(--border)',
-              display: 'flex', flexDirection: 'column',
-            }}>
-              <div style={{
-                position: 'absolute', left: '1.25rem', top: '1.25rem', zIndex: 10,
-                background: 'var(--accent)', color: 'var(--accent-contrast)',
-                padding: '6px 12px', borderRadius: '12px',
-                fontSize: '0.75rem', fontWeight: 900, letterSpacing: '0.05em'
-              }}>
-                LIVE LIBRARY
-              </div>
-              <div style={{ padding: '3rem 1.5rem 2rem', display: 'flex', justifyContent: 'center' }}>
-                {/* width/height are the file's intrinsic size (343x361). They
-                    are not the rendered size — CSS still draws it 180px tall —
-                    but they give the browser the aspect ratio before the bytes
-                    arrive, so it reserves 171x180 instead of 0 and the page
-                    below does not jump when the image loads. This is the LCP
-                    element on mobile, and its 1,180 ms was discovery delay
-                    rather than download, hence fetchPriority (AGENTS.md 7.9). */}
-                <img
-                  src={heroImage}
-                  alt="Layered research stack"
-                  width={343}
-                  height={361}
-                  fetchPriority="high"
-                  decoding="async"
-                  style={{ height: '180px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))' }}
-                />
-              </div>
-              <div style={{
-                display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem',
-                padding: '0 1.25rem 1.25rem'
-              }}>
-                {stats.map((stat) => (
-                  <div key={stat.label} style={{
-                    background: 'var(--surface-soft)', borderRadius: '12px',
-                    padding: '1rem 0.5rem', textAlign: 'center'
-                  }}>
-                    <div style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--text)' }}>{stat.value}</div>
-                    <div style={{ marginTop: '0.35rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-dim)' }}>{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <p data-nums style={{
+            marginTop: '0.85rem', fontSize: '0.8125rem', fontWeight: 600,
+            color: 'var(--text-dim)',
+          }}>
+            {stats.map((stat, i) => (
+              <span key={stat.label}>
+                {i > 0 && <span style={{ margin: '0 0.5rem' }}>&middot;</span>}
+                {stat.value} {stat.label.toLowerCase()}
+              </span>
+            ))}
+          </p>
+
+          <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+            <a href="#library" className="btn btn-primary">
+              Browse research <ArrowRight size={16} />
+            </a>
+            {latest && (
+              <Link to={`/analysis/${latest.slug}`} className="btn btn-secondary">
+                Latest note <BookOpen size={16} />
+              </Link>
+            )}
           </div>
         </section>
 

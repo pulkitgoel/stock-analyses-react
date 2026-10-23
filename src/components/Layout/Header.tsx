@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BarChart3, FileText, Home, Info, Mail, Moon, ShieldCheck, Sun } from 'lucide-react';
+import { BarChart3, Globe2, Home, LineChart, ListChecks, Moon, Sun } from 'lucide-react';
 
+// The nav carries the content, not the paperwork. It previously spent all five slots -
+// and on a phone, the entire bottom dock - on Home / About / Contact / Risk / Privacy,
+// so the two beats (7.7) were absent and /watchlist, the only falsifiable public record
+// on the site, was linked from nowhere (7.6). About, Contact, Risk and Privacy are in
+// the footer, which is where a reader looks for them.
+//
+// These four are live routes today. DESIGN.md step 3 replaces India/Global with
+// Research/Daily Pulse once those route families exist and nginx serves them; pointing
+// the nav at them before that would be linking to a 404 (9.4).
 const navLinks = [
   { path: '/', label: 'Home', mobileLabel: 'Home', icon: Home },
-  { path: '/about', label: 'About', mobileLabel: 'About', icon: Info },
-  { path: '/contact', label: 'Contact', mobileLabel: 'Mail', icon: Mail },
-  { path: '/disclaimer', label: 'Risk', mobileLabel: 'Risk', icon: ShieldCheck },
-  { path: '/privacy', label: 'Privacy', mobileLabel: 'Privacy', icon: FileText },
+  { path: '/india', label: 'India research', mobileLabel: 'India', icon: LineChart },
+  { path: '/global', label: 'Global macro', mobileLabel: 'Global', icon: Globe2 },
+  { path: '/watchlist', label: 'Watchlist', mobileLabel: 'Watchlist', icon: ListChecks },
 ];
 
 export default function Header() {
@@ -111,7 +119,7 @@ export default function Header() {
 
       <nav
         aria-label="Mobile navigation"
-        className="fixed inset-x-3 bottom-3 z-[100] grid grid-cols-5 gap-1 rounded-[1.4rem] p-1.5 md:hidden"
+        className="fixed inset-x-3 bottom-3 z-[100] grid grid-cols-4 gap-1 rounded-[1.4rem] p-1.5 md:hidden"
         style={{
           background: 'var(--header-bg)',
           border: '1px solid var(--border)',
