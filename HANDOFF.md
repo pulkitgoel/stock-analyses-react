@@ -73,6 +73,44 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 — claude (interactive)
+
+**7.16: the homepage is segregated and the motion layer is finally in the app. Owner signed off; deploy queued.**
+
+**The finding worth carrying forward.** Measured on the live site before starting:
+`animatedEls = 0`. The owner asked for animation, approved it as two recorded GIFs, and
+the shipped site had none — 7.10 removed the only animation there was and nothing
+replaced it. The motion had been written for the mockup and was never ported. The owner's
+verdict on 7.10-7.15 as delivered was "-100 out of 100", and it was fair: those five items
+each reported a green build and verified metrics while the page did not look like the
+design that had been approved.
+
+**The pattern behind all of it:** a build that passes is not a design that landed. Every
+one of 7.10-7.15 was verified against invariants and metrics, and none was verified
+against the mockup until the owner said so. `DESIGN.md` and the approved mockups are the
+acceptance test for anything visual; render the page and compare.
+
+What shipped: the homepage as *Latest research* (cards + India/US control) and *Today's
+Pulse* (dated timeline), replacing one "Research library" panel with a search box and four
+category tabs; the motion layer (reveal below the fold only, sliding segmented pill,
+reading progress, hover lift, one-shot dot ping) held to DESIGN.md section 6 — transform
+and opacity only, nothing above the fold, no loops, all off under prefers-reduced-motion;
+the timeline rail on PulseRow; and the mobile dock changed from a floating pill to a flush
+bar, because it was measurably sitting on top of the first card.
+
+**ACTION Hermes**
+- [job: deploy] 7.16: homepage rebuilt as two segregated sections, motion layer ported into the app, timeline rail on Pulse rows, mobile dock flush instead of floating. No route, sitemap or nginx change.
+- [job: verify-live] /=200, /research=200, /pulse=200, /analyses/page/1=200, /india=200, /watchlist=200, /company/ioc=200, /analysis/kernex-microsystems-deep-dive-oct20=200, /research/page/99=404, /nope-12345=404
+
+**UNVERIFIED:** local `vite preview` only. I will render the deployed site and compare it
+to the mockups — route checks cannot tell whether a page looks right, which is exactly
+what went wrong across 7.10-7.15.
+
+**OWNER:** the two section 6 decisions (AI disclosure, SEBI status) are still open and
+still gate the rest of the trust layer. Two deliberate differences from the mockup remain:
+the masthead keeps its stats line and buttons, and the logo is still the rounded-square
+mark.
+
 ## 2026-10-23 20:42 — watcher
 
 **Ran:** deploy, verify-live, verify-live

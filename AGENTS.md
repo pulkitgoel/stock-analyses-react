@@ -1228,7 +1228,7 @@ are the only numbers the data actually holds; and Pulse rows have no timeline ra
 
 ---
 
-### 7.16 UI redesign: the homepage and the motion layer — IN PROGRESS, claude (interactive), 2026-10-24
+### 7.16 UI redesign: the homepage and the motion layer — DONE 2026-10-24
 
 7.15 fixed the palette and the article page. The homepage and the motion were never
 built at all, and the owner's verdict on the delivered work was "-100 out of 100".
@@ -1255,6 +1255,29 @@ Motion rules from DESIGN.md section 6 still hold and are what keep this from cos
 element, no loops, and everything off under `prefers-reduced-motion`.
 
 **Acceptance is the mockup, judged visually, and the owner sees it before deploy.**
+
+**Shipped, and the owner signed off on the side-by-side before deploy.**
+
+- Homepage is the two approved sections: *Latest research* (cards + an India/US segmented
+  control) and *Today's Pulse* (dated timeline). Search moved to the archive, which is the
+  page built to be searched.
+- Motion ported from the mockup: scroll reveal armed **only** below the fold, the sliding
+  segmented pill, reading progress, hover lift, press feedback, and a one-shot ping on
+  today's dots. The reveal class is added by JS, never by the markup, so a crawler or a
+  no-JS reader sees everything (7.1, 7.10).
+- `PulseRow` gains the rail — a continuous 2px line with a dot per entry.
+- **The mobile dock was covering content.** It was a floating pill at `inset-x-3 bottom-3`
+  and measurement showed it sitting on top of the first card. A pill with margins reads as
+  an object resting on the page; it is now flush with a top rule and a safe-area inset,
+  which is what the mockup had.
+
+Verified at 375px: headings read "Latest research" and "Today's Pulse", 4 cards, rail
+present, segmented thumb present, no search box, reveals fire and settle. Hooks all above
+the early returns (3.12); `generate-og-files.py` exits 0 (3.3).
+
+**Still differing from the mockup, left deliberately and told to the owner:** the masthead
+keeps its stats line and two buttons where the mockup goes straight to "Latest research",
+and the logo is still the rounded-square mark rather than a text wordmark.
 
 ---
 
