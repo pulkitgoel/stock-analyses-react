@@ -73,6 +73,25 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 21:45 — watcher
+
+**Ran:** nothing executable
+
+- **SKIPPED** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- **SKIPPED** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- 7 previously reported unmarked item(s), unchanged.
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+
+
 ## 2026-10-23 21:24 — watcher
 
 **Ran:** verify-live
