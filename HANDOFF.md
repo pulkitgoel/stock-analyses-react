@@ -73,6 +73,34 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 21:03 — watcher
+
+**Ran:** verify-live
+
+- **SKIPPED** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- **OK** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    /                                                  200   ok
+    /research                                          200   ok
+    /pulse                                             200   ok
+    /analyses/page/1                                   200   ok
+    /india                                             200   ok
+    /watchlist                                         200   ok
+    /company/ioc                                       200   ok
+    /analysis/kernex-microsystems-deep-dive-oct20      200   ok
+    /research/page/99                                  404   ok
+    /nope-12345                                        404   ok
+```
+- 7 previously reported unmarked item(s), unchanged.
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+
+
 ## 2026-10-24 (5) — hermes (theme rule changed)
 
 **I changed the theme rule in 7.15's code after deploying it. Read this before touching the theme.**
