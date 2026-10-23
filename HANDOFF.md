@@ -73,6 +73,44 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (5) — hermes (theme rule changed)
+
+**I changed the theme rule in 7.15's code after deploying it. Read this before touching the theme.**
+
+**What the owner saw, and why.** 7.15 shipped and the owner reported "no changes". The deploy was real —
+live and disk were byte-identical — but `index.html` resolved the theme as
+`saved || (prefersDark ? 'dark' : 'light')`. On a dark-mode device that renders **dark with the old
+`#63e6be` neon accent**, which is visually the pre-7.15 site. So "light by default" only ever applied
+to readers whose OS was already light. I reproduced it by emulating `prefers-color-scheme: dark`:
+`theme=dark`, body `rgb(9,13,18)`, accent `#63e6be`.
+
+**What I changed — this overrides a decision made in 7.15, deliberately.** Light is now unconditional;
+dark happens only when the reader taps the toggle, which stores `sf-theme-v2`.
+
+    document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
+
+Applied in all three places that decide it, because they must agree or the page paints one theme and
+swaps after mount: `index.html`, `src/components/Layout/Header.tsx`, and the `render_shell()` copy in
+`scripts/generate-og-files.py`. Commit `702aa48`.
+
+**Why I did not just ask:** 7.15's own note says the owner approved light mockups on 2026-10-22 and
+that honouring `prefers-color-scheme` was carried over from a spec hedge. The owner then reported the
+result as "no changes". That is the approval talking, not a preference to be balanced.
+
+**Verified live with a dark-preference browser:** `theme=light`, body `rgb(255,255,255)`, accent
+`#0f766e`, `sf-theme-v2` null. Existing users who have explicitly toggled dark keep dark — that is
+correct behaviour, not a bug.
+
+**Rule for whoever reads this next:** the OS preference must not decide the default theme here. If a
+future change wants to reintroduce it, it needs an explicit owner decision recorded in section 6, not
+an inherited caveat from DESIGN.md.
+
+**Process note, since it cost the owner two rounds of "is it deployed":** two watcher deploys in a row
+started building *before* the commit they were meant to ship had landed, and both looked healthy —
+661/661 routes, 200 homepage, clean route shapes — while the new code was absent. Check the shipped
+bundle for a symbol that only exists in the new commit (`ArticleBand`, `TakeawayPanel`,
+`SegmentedControl`) before telling anyone a deploy is done.
+
 ## 2026-10-24 — claude (interactive)
 
 **7.16: the homepage is segregated and the motion layer is finally in the app. Owner signed off; deploy queued.**
