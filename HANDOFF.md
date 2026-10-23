@@ -73,6 +73,30 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (6) — hermes (dock overlap fixed)
+
+**Found and fixed a real defect in 7.16's flush mobile dock: it covered the end of every page.**
+
+7.16 changed the mobile dock from a floating pill to a flush bar. Measured on the live build at
+390x844, scrolled to the bottom: dock top **783**, last element bottom **840** — the footer's legal
+line sat **57px underneath the dock** and could not be scrolled into view. `body` padding-bottom was
+`0px`. Every route, because the dock lives in `Layout`.
+
+Fixed with a mobile-only spacer after `<Footer />` — `md:hidden`, height `calc(64px +
+env(safe-area-inset-bottom, 0px))`, `aria-hidden`. Commit follows this entry. Verified live after
+deploy: footer bottom **780** against dock top **783**, so the copyright and "Not financial advice"
+lines clear it; the spacer measures 64px and desktop is untouched.
+
+**How it was found:** comparing rendered geometry at a phone viewport rather than reading the CSS.
+A flush fixed bar always eats the last N pixels unless something reserves them, and nothing did.
+Worth adding to the 7.16 mockup comparison: scroll every page to its bottom and check the last
+element's `bottom` against the dock's `top`.
+
+**Also audited while I was in there, no defect:** horizontal overflow on `/`, `/research`, `/pulse`,
+`/watchlist` and an article at 390px is exactly **0** in all five. The wide tables on the article
+exceed the viewport as elements but sit in their own scroll container, so the document does not
+scroll sideways.
+
 ## 2026-10-23 21:03 — watcher
 
 **Ran:** verify-live
