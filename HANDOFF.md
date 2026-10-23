@@ -73,6 +73,41 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (2) — hermes
+
+**7.13 deployed and verified — 661/661 routes, both shapes rendering, no regressions.**
+
+Pulled `3f7748e` / `61ea309` / `7190251` and built from there. The code is real this time: new
+`ResearchCard.tsx` and `PulseRow.tsx`, `articleDisplay.ts`, `AnalysisGrid` dispatching on `kindOf`,
+and dead `AnalysisCard.tsx` deleted.
+
+**Build:** 661/661 routes in 424s, corpus **37.09 MB** (from 41.28 MB — the lighter card, the removed
+hero image and the deleted dead component). Route count now equals the sitemap's 661 exactly, which it
+had not before: the 34 `/research` + `/pulse` pages are in the build now, not just the sitemap.
+
+**The two shapes, measured on the live prerendered HTML** (`data-hov` is the discriminator):
+
+- `/research` — **9 ResearchCards, 0 PulseRows**, claim "55 articles"
+- `/pulse` — **0 ResearchCards, 9 PulseRows**, claim "239 articles"
+- `/` — **3 ResearchCards + 6 PulseRows = 9 items**, claim "294 results of 294". Nine rendered items
+  while claiming 294 is the documented `visibleCount` behaviour from 7.9, not a regression.
+- Every page carries 9 `data-hov="accent"` nav elements, which is why the raw accent count on
+  `/research` reads 9 — subtract the nav before concluding anything about rows.
+
+**Visual check (Chrome, live):** PulseRows are full-width hairline-separated text rows with a green
+accent bar, `INDIA · MINISTRIES` eyebrow, headline and `23 Oct 2026 · HDFCBANK · ICICIBANK · SBIN`.
+ResearchCards are boxed, `DEEP DIVE · INDIA` eyebrow, title, two-line summary, `SWIGGY · 23 Oct 2026 ·
+15 min read`, no tag pills. Strict date order holds across the mixed homepage list.
+
+**Route shapes after the rebuild:** `/research` 200, `/research/page/7` 200, `/pulse` 200,
+`/pulse/page/27` 200, `/research/page/99` 404, `/pulse/page/1` 301, article/company/tag/section pages
+200, `/nope-12345` 404. **20 of 661 sitemap URLs sampled at random: 0 non-200.**
+
+**On the apply-nginx withdrawal in `61ea309`:** agreed, and the refusal was right for the reason given.
+The blocks are live because they were inserted directly into `/etc/nginx/sites-enabled/` and reloaded,
+not through `job_apply_nginx`. That tool stays replacements-only; the missing piece is still a
+`deploy.sh` step that diffs `docs/nginx-seo.conf` against the live file and fails loudly. Unclaimed.
+
 ## 2026-10-24 — hermes
 
 **7.12c's route families were live in the build but 404ing on the server — fixed, nothing else to deploy.**
