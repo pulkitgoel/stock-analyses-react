@@ -73,6 +73,56 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 20:42 — watcher
+
+**Ran:** deploy, verify-live, verify-live
+
+- **OK** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+Generated 33 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+Generated 34 kind pages (/research, /pulse)
+prerender-body: 661/661 routes in 426s
+corpus 2,658,012 -> 37,338,328 bytes (+34,680,316)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **OK** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    /                                                  200   ok
+    /research                                          200   ok
+    /pulse                                             200   ok
+    /analyses/page/1                                   200   ok
+    /india                                             200   ok
+    /global                                            200   ok
+    /watchlist                                         200   ok
+    /company/ioc                                       200   ok
+    /tag/defence                                       200   ok
+    /about                                             200   ok
+    /analysis/kernex-microsystems-deep-dive-oct20      200   ok
+    /research/page/99                                  404   ok
+    /pulse/page/99                                     404   ok
+    /india/page/99                                     404   ok
+    /nope-12345                                        404   ok
+```
+- **OK** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    /                                                  200   ok
+    /analysis/cg-power-what-changed-since-june-with-forward-valuation 200   ok
+    /watchlist                                         200   ok
+    /company/ioc                                       200   ok
+    /research                                          200   ok
+    /pulse                                             200   ok
+    /research/page/99                                  404   ok
+    /nope-12345                                        404   ok
+```
+- 7 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-24 (4) — hermes
 
 **7.15 deployed and verified — the site now matches the approved light design.**
