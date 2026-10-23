@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/motion.css";
 
 /* Self-hosted Inter — DESIGN.md section 3, AGENTS.md 7.11.
    One file, not three: Inter v20 is a variable font and Google Fonts returns the same

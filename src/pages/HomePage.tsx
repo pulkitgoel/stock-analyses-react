@@ -1,15 +1,17 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BarChart3, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 import { useSearch } from '../hooks/useSearch';
 import { useNotification } from '../hooks/useNotification';
 import { getAnalyses } from '../services/analysisService';
 
-import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
+import ResearchCard from '../components/Dashboard/ResearchCard';
+import PulseRow from '../components/Dashboard/PulseRow';
+import SegmentedControl from '../components/Home/SegmentedControl';
+import { kindOf } from '../utils/kind';
+import { useReveal } from '../hooks/useReveal';
 import SubscribeCard from '../components/Common/SubscribeCard';
-import SearchBar from '../components/Home/SearchBar';
-import CategoryTabs from '../components/Home/CategoryTabs';
 
 // The catalogue is a bundled constant, so it is read at module scope: there is
 // no loading state to render and no spinner frame between the prerendered page
@@ -17,7 +19,7 @@ import CategoryTabs from '../components/Home/CategoryTabs';
 const analyses = getAnalyses();
 
 export default function HomePage() {
-  const { query, setQuery, sortMode, setSortMode, category, setCategory, counts, filtered } = useSearch(analyses);
+  const { counts } = useSearch(analyses);
   const { subscribed, supported, loading: notifLoading, subscribe, unsubscribe } = useNotification();
   const allTags = useMemo(() => analyses.flatMap(a => a.tags), [analyses]);
   const latest = useMemo(() => [...analyses].sort((a, b) => b.date.localeCompare(a.date))[0], [analyses]);
@@ -28,8 +30,24 @@ export default function HomePage() {
     { label: 'Themes tracked', value: new Set(allTags).size },
   ];
 
-  const categoryTotal = category === 'all' ? counts.all : category === 'stocks' ? counts.stocks : counts.policy;
-  const categoryLabel = category === 'policy' ? 'Policy Pulse notes' : category === 'stocks' ? 'research notes' : 'notes';
+  // The homepage shows the two families separately, so it slices the catalogue
+  // by kind rather than running it through the search filter.
+  const [researchMarket, setResearchMarket] = useState<'india' | 'global'>('india');
+  const researchReveal = useReveal<HTMLElement>();
+  const pulseReveal = useReveal<HTMLElement>();
+
+  const byDate = useMemo(
+    () => [...analyses].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? '')),
+    [],
+  );
+  const researchByMarket = useMemo(() => ({
+    india: byDate.filter((a) => kindOf(a) === 'research' && a.market !== 'global'),
+    global: byDate.filter((a) => kindOf(a) === 'research' && a.market === 'global'),
+  }), [byDate]);
+  const researchShown = researchByMarket[researchMarket].slice(0, 4);
+  const pulseAll = useMemo(() => byDate.filter((a) => kindOf(a) === 'pulse'), [byDate]);
+  const pulseShown = pulseAll.slice(0, 6);
+  const newestPulseDate = pulseAll[0]?.date;
 
   return (
     <>
@@ -145,34 +163,60 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="library" className="animate-in animate-in-delay-1" style={{ marginTop: '3rem' }}>
-          <div className="library-panel surface-card rounded-lg">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <BarChart3 size={20} style={{ color: 'var(--accent)' }} />
-                  <h2 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text)' }}>Research library</h2>
-                </div>
-                <p className="mt-1 text-sm font-semibold" style={{ color: 'var(--text-dim)' }}>
-                  {filtered.length} result{filtered.length !== 1 ? 's' : ''} of {categoryTotal} {categoryLabel}
-                </p>
-              </div>
-              <SearchBar query={query} onQueryChange={setQuery} sortMode={sortMode} onSortChange={setSortMode} />
-            </div>
-            <div style={{ marginTop: '1.5rem' }}>
-              <CategoryTabs category={category} onCategoryChange={setCategory} counts={counts} />
-            </div>
+        {/* The two families, segregated. This is what the owner asked for at the
+            start of this thread and what the approved mockup shows: deep dives as
+            cards, daily notes as a dated timeline, each with its own heading and
+            its own "all of these" link. It replaces a single "Research library"
+            panel that put a search box and four category tabs in front of one
+            undifferentiated list — the pile the whole redesign exists to split.
+
+            Search still exists, on the archive, which is the page built to be
+            searched. The homepage's job is to show what is new. */}
+        <section ref={researchReveal} style={{ marginTop: '2.5rem' }}>
+          <div
+            className="flex flex-wrap items-baseline justify-between gap-3"
+            style={{ borderBottom: '1px solid var(--border)', paddingBottom: '0.6rem' }}
+          >
+            <h2 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Latest research</h2>
+            <Link to="/research" className="text-sm font-semibold no-underline" data-hov="accent" style={{ color: 'var(--accent)' }}>
+              All research &rarr;
+            </Link>
+          </div>
+
+          <div style={{ marginTop: '1rem' }}>
+            <SegmentedControl
+              segments={[
+                { key: 'india', label: 'India', count: researchByMarket.india.length },
+                { key: 'global', label: 'US & Global', count: researchByMarket.global.length },
+              ]}
+              value={researchMarket}
+              onChange={(k) => setResearchMarket(k as 'india' | 'global')}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1rem', marginTop: '1rem' }}>
+            {researchShown.map((a) => (
+              <div key={a.slug} className="lift"><ResearchCard analysis={a} /></div>
+            ))}
           </div>
         </section>
 
-        <section className="animate-in animate-in-delay-2" style={{ marginTop: '3rem' }}>
-          {filtered.length === 0 ? (
-            <div className="surface-card rounded-lg px-6 py-16 text-center text-sm" style={{ color: 'var(--text-dim)' }}>
-              No analyses match your filters.
-            </div>
-          ) : (
-            <AnalysisGrid analyses={filtered} />
-          )}
+        <section ref={pulseReveal} style={{ marginTop: '2.5rem' }}>
+          <div
+            className="flex flex-wrap items-baseline justify-between gap-3"
+            style={{ borderBottom: '1px solid var(--border)', paddingBottom: '0.6rem' }}
+          >
+            <h2 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Today&rsquo;s Pulse</h2>
+            <Link to="/pulse" className="text-sm font-semibold no-underline" data-hov="accent" style={{ color: 'var(--accent)' }}>
+              All Pulse notes &rarr;
+            </Link>
+          </div>
+
+          <div style={{ marginTop: '0.5rem' }}>
+            {pulseShown.map((a) => (
+              <PulseRow key={a.slug} analysis={a} isToday={a.date === newestPulseDate} />
+            ))}
+          </div>
         </section>
 
         <div className="animate-in animate-in-delay-3" style={{ marginTop: '3rem' }}>

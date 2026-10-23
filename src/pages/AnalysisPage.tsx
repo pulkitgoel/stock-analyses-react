@@ -16,6 +16,7 @@ import TableOfContents from '../components/Analysis/TableOfContents';
 import ArticleBand from '../components/Analysis/ArticleBand';
 import TakeawayPanel from '../components/Analysis/TakeawayPanel';
 import { prepareHeadings } from '../utils/toc';
+import { useReadingProgress, useStuckHeader } from '../hooks/useReveal';
 
 function estimateReadTime(text: string): number {
   const words = text.split(/\s+/).length;
@@ -108,6 +109,10 @@ export default function AnalysisPage() {
   // `content` is '' until the fetch resolves and prepareHeadings('') is a
   // no-op, so running it on every render costs nothing.
   const { markdown: body, toc } = useMemo(() => prepareHeadings(content), [content]);
+  // Above the early returns, as 3.12 requires - both are no-ops until their
+  // targets exist, which is cheaper than the crash that rule records.
+  const progressRef = useReadingProgress();
+  useStuckHeader();
 
   if (loading) return <LoadingSpinner />;
 
@@ -164,6 +169,10 @@ export default function AnalysisPage() {
             A second block here produced two conflicting Article entities per
             page, with two different author names. */}
       </Helmet>
+
+      <div className="read-progress" aria-hidden>
+        <i ref={progressRef as React.RefObject<HTMLElement>} />
+      </div>
 
       <ArticleBand analysis={analysis} readTime={readTime} />
 

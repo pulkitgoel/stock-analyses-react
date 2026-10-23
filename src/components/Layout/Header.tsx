@@ -48,7 +48,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-[100]"
+        className="topbar-settle sticky top-0 z-[100]"
         style={{
           background: 'var(--header-bg)',
           borderBottom: '1px solid var(--border)',
@@ -123,10 +123,17 @@ export default function Header() {
 
       <nav
         aria-label="Mobile navigation"
-        className="fixed inset-x-3 bottom-3 z-[100] grid grid-cols-4 gap-1 rounded-lg p-1.5 md:hidden"
+        className="fixed inset-x-0 bottom-0 z-[100] grid grid-cols-4 md:hidden"
         style={{
           background: 'var(--header-bg)',
-          border: '1px solid var(--border)',
+          // Flush to the edge with a single top rule, not a floating pill
+          // (7.16). A pill with margins reads as an object sitting on top of
+          // the page, and content scrolling under it looks like a defect; a
+          // flush bar reads as chrome. The app-main bottom padding keeps the
+          // end of the document clear of it.
+          borderTop: '1px solid var(--border)',
+          paddingTop: '0.25rem',
+          paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))',
         }}
       >
         {navLinks.map((link) => {

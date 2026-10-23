@@ -22,7 +22,7 @@ function edition(title: string): string | null {
   return null;
 }
 
-export default function PulseRow({ analysis: a }: { analysis: Analysis }) {
+export default function PulseRow({ analysis: a, isToday = false }: { analysis: Analysis; isToday?: boolean }) {
   const ed = edition(a.title);
   const tickers = leadTickers(a);
 
@@ -32,21 +32,34 @@ export default function PulseRow({ analysis: a }: { analysis: Analysis }) {
       data-hov="accent"
       className="block no-underline"
       style={{
+        // The rail: one continuous 2px line down the left of the list, with a
+        // dot per entry. It is what makes a run of daily notes read as a dated
+        // sequence rather than a stack of separate rows (DESIGN.md section 4).
+        position: 'relative',
         borderTop: '1px solid var(--border)',
-        padding: '0.875rem 0',
+        padding: '0.875rem 0 0.875rem 1.5rem',
       }}
     >
+      <span
+        aria-hidden
+        style={{
+          position: 'absolute', left: '3px', top: 0, bottom: 0,
+          width: '2px', background: 'var(--border)',
+        }}
+      />
+      <span
+        aria-hidden
+        className={isToday ? 'rail-dot-today' : undefined}
+        style={{
+          position: 'absolute', left: 0, top: '1.25rem',
+          width: '8px', height: '8px', borderRadius: '50%',
+          background: isToday ? 'var(--accent)' : 'var(--border-light)',
+        }}
+      />
       <span
         className="flex items-center gap-2 text-xs font-bold uppercase"
         style={{ color: 'var(--text-dim)', letterSpacing: '0.06em' }}
       >
-        <span
-          aria-hidden
-          style={{
-            display: 'inline-block', width: '6px', height: '6px',
-            background: 'var(--accent)', flex: '0 0 auto',
-          }}
-        />
         {ed ?? 'Daily Pulse'}
       </span>
 
