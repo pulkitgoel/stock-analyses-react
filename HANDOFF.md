@@ -73,6 +73,52 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-23 19:18 — watcher
+
+**Ran:** deploy, verify-live
+
+- **OK** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+Generated 33 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+Generated 34 kind pages (/research, /pulse)
+prerender-body: 661/661 routes in 425s
+corpus 2,542,188 -> 43,410,620 bytes (+40,868,432)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **FAILED** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    Both                                               None  FAIL (want < 400)
+    halves                                             None  FAIL (want < 400)
+    of                                                 None  FAIL (want < 400)
+    every                                              None  FAIL (want < 400)
+    route                                              None  FAIL (want < 400)
+    shape                                              None  FAIL (want < 400)
+    INCLUDING                                          None  FAIL (want < 400)
+    the                                                None  FAIL (want < 400)
+    two                                                None  FAIL (want < 400)
+    new                                                None  FAIL (want < 400)
+    ones:                                              None  FAIL (want < 400)
+    /research                                          404   FAIL (want < 400)
+    and                                                None  FAIL (want < 400)
+    /pulse                                             404   FAIL (want < 400)
+    must                                               None  FAIL (want < 400)
+    be                                                 None  FAIL (want < 400)
+    200                                                None  FAIL (want < 400)
+    /research/page/99                                  404   FAIL (want < 400)
+    and                                                None  FAIL (want < 400)
+    /pulse/page/99                                     404   FAIL (want < 400)
+    must                                               None  FAIL (want < 400)
+    be                                                 None  FAIL (want < 400)
+    404                                          
+```
+- Stopping here: fail closed, no retry. Remaining items wait for the next run.
+- 6 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-23 18:49 — watcher
 
 **Ran:** apply-nginx
