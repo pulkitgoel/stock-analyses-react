@@ -1,6 +1,25 @@
 {
   "watchlist": [
     {
+      "slug": "ge-power-india-the-turnaround-is-real-the-chart-is-not",
+      "ticker": "GVPIL",
+      "title": "GE Power India — The Turnaround Is Real, the Chart Is Not",
+      "date": "2026-10-23",
+      "yahooSymbol": "GVPIL.NS",
+      "priceAtAnalysis": 608.9,
+      "support": 555,
+      "resistance": 630,
+      "supports": [
+        476,
+        400
+      ],
+      "resistances": [
+        675,
+        739
+      ],
+      "verdict": "WATCH — THE BUSINESS IS FIXED, THE CHART IS NOT"
+    },
+    {
       "slug": "kernex-microsystems-deep-dive-oct20",
       "ticker": "KERNEX",
       "title": "Kernex Microsystems — Deep Dive Analysis",

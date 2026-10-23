@@ -1,6 +1,25 @@
 {
   "analyses": [
     {
+      "title": "GE Power India — The Turnaround Is Real, the Chart Is Not",
+      "ticker": "GVPIL",
+      "file": "ge-power-india-the-turnaround-is-real-the-chart-is-not.md",
+      "slug": "ge-power-india-the-turnaround-is-real-the-chart-is-not",
+      "date": "2026-10-23",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "capital-goods",
+        "power",
+        "thermal",
+        "services",
+        "demerger"
+      ],
+      "summary": "GE Power India turned a Rs 441 Cr loss into a Rs 253 Cr profit and is demerging its loss-making Durgapur plant to JSW Energy. But the free JSW shares are worth only Rs 33, margins fell from 34% to 15% in one quarter, and the stock is 44% below its high, below every moving average. Verdict: WATCH — THE BUSINESS IS FIXED, THE CHART IS NOT.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global Spillover — 22 Oct 2026",
       "ticker": "XOM:CVX:OXY:SHEL:BP:ONGC:OIL:IOC:BPCL:HINDPETRO:MRPL:GAIL:PETRONET:DAL:UAL:AAL:CCL:RCL:APOLLOTYRE:BHARATFORG:STLA:META:NVDA:AVGO:MU:AMAT:MRVL:ARM:LITE:TCS:INFY:HCLTECH",
       "file": "policy-pulse-global-22-oct-2026.md",
