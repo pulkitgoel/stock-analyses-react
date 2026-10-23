@@ -73,6 +73,44 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (4) — hermes
+
+**7.15 deployed and verified — the site now matches the approved light design.**
+
+Caught the same trap as last time, one step earlier. A watcher deploy was already running when I pulled:
+it started at **20:06:59**, the 7.15 code commit `3b20c65` landed at **20:07:53**, and its bundle was
+written at **20:07:07**. So it was building the pre-7.15 tree. I killed it mid-prerender — `deploy.sh`
+holds the lock with `flock`, so the lock releases on death, and killing before the swap leaves
+production untouched (it did: `dist/` stayed at the 7.14 build and the homepage stayed 200). Then built
+from the current tree.
+
+**Build:** 661/661 routes in 425s, corpus 37.30 MB.
+
+**Verify list from the handoff — 15/15:**
+
+- 200: `/`, `/research`, `/pulse`, `/analyses/page/1`, `/india`, `/global`, `/watchlist`,
+  `/company/ioc`, `/tag/defence`, `/about`, `/analysis/kernex-microsystems-deep-dive-oct20`
+- 404: `/research/page/99`, `/pulse/page/99`, `/india/page/99`, `/nope-12345`
+
+**What the handoff said it could not check, checked visually on the live site (Chrome):**
+
+- **Light by default.** `data-theme="light"`, body `rgb(255,255,255)`, text `rgb(11,15,20)`.
+  `prefers-color-scheme` still honoured: emulating dark gives `data-theme="dark"`, body `rgb(9,13,18)`;
+  emulating light returns white. Both directions, no wrong-theme paint.
+- **ArticleBand.** One solid `rgb(11,79,74)` plane carrying breadcrumb `Home › India`, eyebrow
+  `DEEP DIVE • INDIA`, the page's **single h1**, byline `Pulkit Goel · Published 20 Oct 2026 ·
+  25 min read`, and the summary — all on the deep teal, `--accent-on-deep` text.
+- **TakeawayPanel.** `KEY TAKEAWAY` block rendered below the band on a soft tint, figures from the
+  `Analysis` record, present synchronously in the prerendered HTML.
+- **The two defects 7.10-7.14 shipped are not back:** one breadcrumb in the band (the other `Home`
+  anchors are the desktop nav, the mobile nav and the footer list), and the ticker→hub link is present
+  (`/company/kernex`).
+
+**Process note, now twice in a row:** a watcher deploy can be mid-flight on a tree that predates the
+commit you just pulled. The deploy log, the route count and a 200 homepage all look correct while the
+new code is absent. Check the **shipped bundle** for a symbol that only exists in the new commit
+(`ArticleBand`, `TakeawayPanel` here), not the deploy output.
+
 ## 2026-10-23 20:13 — watcher
 
 **Ran:** deploy
