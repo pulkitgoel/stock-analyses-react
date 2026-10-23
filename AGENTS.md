@@ -974,37 +974,72 @@ stay identical.
 
 ---
 
-### 7.12 UI redesign, step 3: nav, masthead, Research / Daily Pulse split — IN PROGRESS, claude (interactive), 2026-10-23
+### 7.12 UI redesign, step 3: nav, masthead, Research / Daily Pulse split — DONE 2026-10-23
 
-`DESIGN.md` Appendix B step 3. Three pieces, landing separately per 9.3:
+**The masthead's premise was wrong, for the second time in this series.** I predicted the
+hero image was the LCP element and that deleting it would close the FCP/LCP gap. Measured,
+three runs per build with the hero PNG's presence in `dist/assets` verified per build:
 
-- **a. Nav.** `Research` / `Daily Pulse` / `Watchlist` / `Search`. Today the mobile dock
-  is Home / About / Contact / Risk / Privacy — it spends the most valuable space on a
-  phone on pages nobody revisits, while `/watchlist` is linked from nowhere (7.6) and
-  `/india` and `/global` (7.7) are not in the nav at all. Legal links move to the footer.
-- **b. Homepage masthead.** Replace the hero card with a plain `h1`, one positioning
-  line, and the latest lists. **This has a measured target.** On the live site after
-  7.11, FCP 2.93 s against LCP 3.38 s — a 450 ms gap where 7.9 measured the two as
-  equal. Equal meant CSS-bound; a gap means the LCP element now loads *after* first
-  paint, and that element is the hero image (7.10 recorded the handover from the `h1`).
-  Deleting it should close the gap, and that is the acceptance test.
-- **c. Research / Daily Pulse split.** The site already derives `market`
-  (india/global) at build time (7.7) and `isPolicyPulse` at runtime
-  (`src/utils/category.ts`). Type is the axis a reader picks first — briefing or
-  company — and market second, so this promotes type to a route family and reuses the
-  `ArchivePage` seam that already serves `/analyses`, `/india` and `/global` from one
-  component.
+| | perf | FCP | LCP | CLS | LCP element |
+|---|---|---|---|---|---|
+| Before | 91 | 2409 ms | 3014 ms | 0.000 | the `h1` |
+| After | 92 | 2411 ms | 2861 ms | 0.000 | the lead `<p>` |
 
-**c needs server work and does not ship without it (9.4).** New route families need
-their own nginx `location` blocks — the catch-all is `try_files $uri =404`, so a new
-route 404s until a block exists — plus sitemap and prerender entries. 7.7 shipped its
-build without its blocks and left 29 sitemap URLs 404ing. `/india`, `/global` and
-`/analyses/page/N` stay exactly as they are; this adds, it does not re-scheme.
+- **The hero image was not the LCP element.** It had been at the 7.10 state, which is
+  where the prediction came from, but by 7.11 the LCP candidate had moved back to the
+  `h1`. The gap narrowed 605 ms -> 450 ms and LCP improved 153 ms, because the masthead is
+  less markup, not because an image went away.
+- FCP unchanged (+2 ms), as expected — nothing here touched the render-blocking chain.
 
-**Not in scope.** The default theme (owner decision, see 7.11). Retitling Policy Pulse
-articles — `CONTENT-PLAYBOOK.md` section 2 is right that the current titles waste their
-first 14 characters, but that is content and would contaminate the 2026-11-07
-experiment (7.3).
+**The pattern worth naming.** This is the second LCP prediction in three steps to be wrong
+(7.10 was the first), and both failed the same way: attributing LCP to a specific element
+without first reading what Lighthouse names as the LCP element. `largest-contentful-paint-element`
+is in every report. **Read it before forming the hypothesis, not after.** A gap between FCP
+and LCP says the LCP element paints late; it does not say which element that is.
+
+The masthead is still right on its own terms — nothing above the fold is an image, the
+`h1` now says what the site is, and the decorative PNG is out of the bundle — but it was
+sold as an LCP fix and it is a modest one.
+
+What shipped:
+
+- **a. Nav.** `Home` / `India research` / `Global macro` / `Watchlist`, replacing
+  Home / About / Contact / Risk / Privacy. The dock spent every slot on a phone on pages
+  nobody revisits while `/watchlist` was linked from nowhere (7.6) and the 7.7 beats were
+  absent. Legal links were already in the footer. Dock is four columns.
+- **b. Masthead.** The hero card, its 343x361 PNG, the "Independent research desk" pill,
+  the LIVE LIBRARY badge and the three stat tiles are gone; the stats are one line of
+  text. The `h1` is now "Indian stock research, and the global macro that moves it.",
+  which matches the title and description (7.7); the old "Markets move fast. Research
+  should stay sharp." never mentioned Indian equities. It is not the title or the
+  description, so it does not touch the 2026-11-07 SERP experiment (7.3).
+- **c. `/research` and `/pulse`**, paginated, page 1 at the bare URL. 34 pages. Sitemap
+  661 URLs. **`kind` is derived once** in `scripts/lib/kind.js` and written onto every
+  record by `generate-analyses-data.js`, exactly as 7.7 did for `market`, so the sitemap,
+  the prerender and the app read one value. `src/utils/category.ts` re-implemented the
+  same tag-and-title rule and now delegates to it — that duplication is what let the
+  ticker rule (3.6) and the tag floor (7.5) drift, and this avoids a fourth copy.
+
+**The two axes are never combined.** `/research/india` would be a fourth near-duplicate
+listing of the same 294 articles — the surface 7.5 gated tags against and 3.7 gated hubs
+against. Each section cross-links the other instead. If that cross-product is ever wanted,
+it needs a gate first.
+
+**Server work, and it is not optional.** `/research` and `/pulse` 404 until their nginx
+blocks are applied; the catch-all is `try_files $uri =404`, so a green build proves
+nothing. Blocks are queued in `docs/nginx-seo.conf` and take the first row of 3.13's table
+(`try_files $uri.html =404`, no `/index.html` fallback) because every valid URL has a
+prerendered file — a fallback would make `/pulse/page/99` a soft 404.
+
+Verified: 34 sitemap kind URLs against 34 prerendered files, zero missing. Each page
+carries one title, one canonical, no robots tag, and JSON-LD that parses (3.1–3.3). At
+375px `/pulse` renders 9 cards, a 27-page pager, cross-links to research and both markets,
+zero elements under 12px, no horizontal overflow. Homepage: one `h1`, **zero images above
+the fold**.
+
+**Not done.** The default theme (owner decision, 7.11). Retitling Policy Pulse articles —
+`CONTENT-PLAYBOOK.md` section 2 is right that the current titles waste their first 14
+characters, but that is content and would contaminate the 2026-11-07 experiment.
 
 ---
 

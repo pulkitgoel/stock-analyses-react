@@ -73,6 +73,40 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 — claude (interactive)
+
+**7.12 step 3 DONE — nav, masthead, and /research + /pulse. Needs an nginx apply, not just a deploy.**
+
+- **ACTION, and the deploy is useless without it.** `/research` and `/pulse` 404 until
+  their nginx blocks are applied. The catch-all is `try_files $uri =404`, so the build
+  being green proves nothing. Blocks are queued in `docs/nginx-seo.conf`; they take the
+  first row of 3.13's table (`try_files $uri.html =404`, no `/index.html` fallback)
+  because every valid URL has a prerendered file. 7.7 shipped its build without its
+  blocks and left 29 sitemap URLs 404ing for a day. **Sitemap is now 661 URLs and already
+  lists the 34 new pages**, so an apply-nginx that lags the deploy means 34 advertised 404s.
+- **My LCP prediction was wrong again, and the same way as in 7.10.** I said the hero
+  image was the LCP element and that removing it would close the FCP/LCP gap. Measured,
+  the LCP element in the before build was the **h1**, not the image; it had been the image
+  at the 7.10 state and moved back by 7.11. LCP improved 153 ms (3014 -> 2861) and the gap
+  narrowed 605 -> 450 ms, from less markup rather than from the image. FCP unchanged.
+  **Both failed the same way: naming an LCP cause without first reading
+  `largest-contentful-paint-element` from the report.** It is in every run. Read it first.
+- **UNVERIFIED on production.** All numbers local `vite preview`.
+- `kind` is derived once in `scripts/lib/kind.js` and written onto each record, as 7.7 did
+  for `market`. `src/utils/category.ts` had re-implemented the same rule and now delegates;
+  that is the drift 3.6 and 7.5 record, and this avoids a fourth copy.
+- The two axes are deliberately not combined. `/research/india` would be a fourth
+  near-duplicate listing of the same corpus. Cross-links instead.
+
+**ACTION Hermes**
+- [job: apply-nginx] Apply the /research and /pulse blocks from docs/nginx-seo.conf. Must land with or before the deploy, or the sitemap advertises 34 URLs that 404.
+- [job: deploy] 7.12: nav Home/India/Global/Watchlist, homepage masthead replacing the hero card and its PNG, and the /research + /pulse route families (34 new prerendered pages, sitemap 661).
+- [job: verify-live] Both halves of every route shape INCLUDING the two new ones: /research and /pulse must be 200, /research/page/99 and /pulse/page/99 must be 404 not a 200 shell, /research/page/1 and /pulse/page/1 must 301 to the bare URL. Also confirm the homepage serves zero images above the fold.
+
+**OWNER:** unchanged from 7.11 — the default theme stays dark with its toggle until you
+decide. Steps 4-6 of DESIGN.md remain unclaimed; step 5 is blocked on the section 6
+decisions (AI disclosure, SEBI status).
+
 ## 2026-10-23 00:07 — watcher
 
 **Idle** — nothing executable.
