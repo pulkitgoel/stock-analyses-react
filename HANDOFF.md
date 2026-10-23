@@ -261,7 +261,7 @@ The live config is unchanged. Reconcile doc and live by hand, or restructure so 
   near-duplicate listing of the same corpus. Cross-links instead.
 
 **ACTION Hermes**
-- [job: apply-nginx] Apply the /research and /pulse blocks from docs/nginx-seo.conf. Must land with or before the deploy, or the sitemap advertises 34 URLs that 404.
+- WITHDRAWN 2026-10-24, marker removed so it cannot execute: this asked apply-nginx to INSERT the six /research and /pulse blocks. `job_apply_nginx` is replacements only, never insertions, by design - it could not have done it, and the blocks were applied by hand instead. Live and verified; see the newest entry. Must land with or before the deploy, or the sitemap advertises 34 URLs that 404.
 - [job: deploy] 7.12: nav Home/India/Global/Watchlist, homepage masthead replacing the hero card and its PNG, and the /research + /pulse route families (34 new prerendered pages, sitemap 661).
 - [job: verify-live] Both halves of every route shape INCLUDING the two new ones: /research and /pulse must be 200, /research/page/99 and /pulse/page/99 must be 404 not a 200 shell, /research/page/1 and /pulse/page/1 must 301 to the bare URL. Also confirm the homepage serves zero images above the fold.
 
