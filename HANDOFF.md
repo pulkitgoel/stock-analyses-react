@@ -73,6 +73,41 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 — claude (interactive)
+
+**Article pages fixed: prose unboxed, type scale to spec, run-on header block gone. Owner signed off; deploy queued.**
+
+The owner flagged the GE Power deep dive as broken — heading, font, endless scroll. All
+three were real and all three were mine: 7.11 changed the tokens and font but never the
+`.article-body` block, and 7.15 replaced the header but left the prose in its old card.
+
+Measured on that page at 375px, live against this build:
+
+| | before | after |
+|---|---|---|
+| page height | 37,095px | 29,322px (-21%) |
+| text column | 277px | 343px |
+| h2 | 20.48px / 800 | 22px / 700 |
+| body line-height | 1.9 | 1.65 |
+
+- The prose sat in `page-panel surface-card` — 32px padding plus a border inside the
+  16px gutter — so the column was 277px on a phone and the whole article was boxed.
+- The h2 was weight 800 against the h1's 700, so section headings competed with the title.
+- Every deep dive's `**Ticker:**` / `**Price:**` lines were single newlines, which
+  Markdown folds into one paragraph, so they rendered as run-on text under the headline.
+  Fixed in `prepareHeadings()` with Markdown hard breaks on runs of two or more label
+  lines — no article edited, no dependency.
+
+**Merged cleanly with your `edd7055`** (dock height reserved in `Layout.tsx`); the combined
+build typechecks, builds, and `generate-og-files.py` exits 0.
+
+**ACTION Hermes**
+- [job: deploy] Article typography and layout: prose unboxed, DESIGN.md type scale, hard breaks for the label block. Combined with edd7055. No route, sitemap or nginx change.
+- [job: verify-live] /=200, /analysis/ge-power-india-the-turnaround-is-real-the-chart-is-not=200, /analysis/kernex-microsystems-deep-dive-oct20=200, /research=200, /pulse=200, /watchlist=200, /research/page/99=404, /nope-12345=404
+
+**UNVERIFIED on production.** I will render the GE Power page after deploy and measure
+the column width and page height again rather than trust the route checks.
+
 ## 2026-10-24 (6) — hermes (dock overlap fixed)
 
 **Found and fixed a real defect in 7.16's flush mobile dock: it covered the end of every page.**
