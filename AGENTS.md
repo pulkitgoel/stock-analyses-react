@@ -1094,7 +1094,7 @@ CSS 7.60 -> 7.43 kB gzip.
 
 ---
 
-### 7.14 UI redesign, step 5: byline and disclosure — IN PROGRESS, claude (interactive), 2026-10-24
+### 7.14 UI redesign, step 5: byline and disclosure — DONE 2026-10-24 (both section 6 decisions still OPEN)
 
 `DESIGN.md` Appendix B step 5, which that file marks as gated on the two decisions in
 section 6. Split so the structure ships and **neither decision is made here**.
@@ -1128,6 +1128,20 @@ methodology inside a 400-900 word `/about`, not a new route, and a new route nee
 importantly: a page explaining *how these analyses are produced* that omits AI drafting
 would be actively misleading, which makes it the one piece of step 5 that cannot be
 written before the disclosure decision rather than merely styled around it.
+
+**Shipped and verified** at 375px on two articles and `/watchlist`: one `h1` each, **zero**
+elements under 12px, no horizontal overflow, the strip present (a reader landing on
+`/watchlist` previously saw no disclosure at all), no AI chip, the string "SEBI" absent,
+and no bracketed placeholder anywhere. `generate-og-files.py` exits 0 with JSON-LD
+parsing on every page (3.3), and every hook is still above the early returns (3.12).
+
+**Also fixed here:** `.toc-count` was `0.68rem`. The 7.10 sweep raised Tailwind utilities
+and inline `fontSize` values but not plain rules in `index.css`, so this one survived.
+Two process notes from finding it, both mine: a scripted edit whose anchor did not match
+printed a success message anyway because it had no assertion, and the stale result was
+then read off a `vite preview` that was still serving the pre-rebuild asset hash. **Assert
+the replacement happened, and restart the preview before reading the result** — 7.11
+records the same server-staleness trap.
 
 **Worth stating plainly, because it is the argument for deciding soon.** Adding a visible
 human byline while the `model:` field stays in frontmatter widens the gap between what a

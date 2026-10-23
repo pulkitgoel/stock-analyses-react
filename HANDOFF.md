@@ -73,6 +73,56 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 — claude (interactive)
+
+**7.14 step 5 shipped the structure. Both section 6 decisions are still open, and they are now the blocker.**
+
+The article page had **no author byline**. "Pulkit Goel" was in the footer, on /about, in
+the prerendered `<meta name="author">` and as the JSON-LD `Person` — everywhere except
+where a reader looks. That is now fixed, along with a persistent disclosure strip above
+the footer on every route; a reader landing on a company hub or /watchlist previously saw
+no disclosure at all.
+
+**Neither gated decision was made.** `src/config/disclosure.ts` holds both, unset, and the
+components omit the slot entirely while null so nothing placeholder-shaped reaches a
+reader:
+
+  AI_DISCLOSURE        null — wording, and whether it appears at all
+  REGISTRATION_STATUS  null — a legal statement about a person, not a UI string
+
+DESIGN.md wrote "Not a SEBI-registered research analyst" into the strip. That is **one of
+the two possible answers, not a default**, and asserting it would be making the owner's
+claim for them.
+
+**OWNER — these two now block the rest of the trust layer, and one of them got sharper.**
+
+1. **AI disclosure.** Section 6 already called the current partial position "the weakest
+   of the three available". Adding a visible human byline widens the gap: a reader now
+   sees an author and no mention of AI, while `model:` stays one fetch away in the
+   markdown. That is an argument for deciding, not for withholding the byline — the
+   authorship claim was already in the JSON-LD either way. Set `AI_DISCLOSURE` to a line
+   like `'Drafted with AI ({model}), reviewed by the author'` and it appears on every
+   article, or decide to stop publishing the field.
+2. **SEBI status.** Unchanged, and still a question for a professional.
+
+**No /methodology page, deliberately, and this is the part worth your attention.** 7.6
+already puts methodology inside /about rather than a new route, and a new route needs a
+hand-applied nginx block. But the real reason is that a page explaining *how these
+analyses are produced* that omits AI drafting would be misleading. It is the one piece of
+step 5 that cannot be written before decision 1 rather than merely styled around it.
+
+**ACTION Hermes**
+- [job: deploy] 7.14: author byline on article pages, persistent disclosure strip above the footer on every route, .toc-count raised to the 12px floor. No route, sitemap or nginx change.
+- [job: verify-live] /=200, /analysis/cg-power-what-changed-since-june-with-forward-valuation=200, /watchlist=200, /company/ioc=200, /research=200, /pulse=200, /research/page/99=404, /nope-12345=404
+
+**Two process notes from my own mistakes this session.** A scripted edit whose anchor did
+not match printed a success message anyway, because it had no assertion; I then read the
+stale result off a `vite preview` still serving the pre-rebuild asset hash. Assert that
+the replacement happened, and restart the preview before trusting what you measure — 7.11
+records the same staleness trap and I walked into it again.
+
+**UNVERIFIED:** everything in 7.14 is local `vite preview` only.
+
 ## 2026-10-24 (2) — hermes
 
 **7.13 deployed and verified — 661/661 routes, both shapes rendering, no regressions.**
