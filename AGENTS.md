@@ -1152,7 +1152,7 @@ the authorship claim is already published to crawlers either way.
 
 ---
 
-### 7.15 UI redesign: make the live site match the approved mockups — IN PROGRESS, claude (interactive), 2026-10-24
+### 7.15 UI redesign: make the live site match the approved mockups — BUILT 2026-10-24, awaiting owner sign-off before deploy
 
 **Why this item exists: 7.10-7.14 shipped the structure of the approved design and none
 of its appearance.** The owner approved light mockups on 2026-10-22 — white page, teal
@@ -1191,6 +1191,40 @@ comparison — 7.10-7.14 each reported a green build while the site looked wrong
 
 Invariants to hold: one `h1` (3.8), no head tags from components (3.2), hooks above early
 returns (3.12), no spinner over prerendered content (3.14), 12px floor, CLS 0 (7.11).
+
+**Built and committed in `3b20c65`. Deliberately not deployed and no deploy job queued** —
+the owner sees the side-by-side first. 7.10-7.14 each reported a green build while the
+site looked wrong, so a build passing is not the acceptance test here.
+
+What shipped:
+
+- Default theme light, honouring `prefers-color-scheme`. Changed in all three places that
+  decide it — `index.html`, `render_shell()`, `Header.tsx` — because if they disagree the
+  page paints one theme and swaps after mount.
+- `--accent-deep`, `--accent-on-deep`, `--link` added; `--radius` 10px -> 8px.
+- `ArticleBand` replaces the `page-panel surface-card` header. `TakeawayPanel` carries the
+  summary, the dated verdict and up to four stat blocks, with the figures read from
+  watchlist frontmatter now carried on the `Analysis` record so it renders synchronously
+  (3.14). No stats rather than placeholders when an article has none.
+- Stripped: `rounded-[2rem]`/`[1.75rem]`/`[1.4rem]` across 11 files, the glow on
+  `.btn-primary` and `.btn:active`, and five hard-coded `rgba(99,230,190)` shadows and
+  borders. Those were the dark accent as a literal, so on a light page they put a green
+  halo around a teal button.
+
+**Two defects found by comparing the render to the mockup, not by any check.** Articles
+rendered **two breadcrumbs** — the page kept its own above the band while the band carried
+another — and the same edit silently dropped the ticker->company-hub links that are 7.4's
+internal linking. Both fixed. `tsc`, the build and the JSON-LD check all passed with both
+present, which is the 9.5 lesson again: open the page.
+
+Verified at 375px in light: one `h1`, one breadcrumb, takeaway present, no horizontal
+overflow across home, archive and two articles. `generate-og-files.py` exits 0 (3.3). All
+eight light-theme text/background pairs clear 4.5:1, lowest 5.13.
+
+**Known remaining gaps from the mockup**, surfaced to the owner rather than silently
+closed: the logo is still the rounded-square mark against the mockup's text wordmark; the
+stat blocks show watchlist figures rather than the mockup's article metrics, because those
+are the only numbers the data actually holds; and Pulse rows have no timeline rail yet.
 
 ---
 
