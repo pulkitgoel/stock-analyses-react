@@ -24,6 +24,90 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Policy Pulse — Global — 23 Oct 2026",
+    "ticker": "XOM:CVX:OXY:COP:FANG:SLB:SHEL:BP:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:NVDA:MU:AMD:AVGO:TSM:ASML:AMAT:MRVL:ARM:MSFT:GOOGL:ORCL:NEM:AEM:GOLD:SPCX:T:VZ:TMUS:CCI:AMT:IOC:BPCL:HINDPETRO:MRPL:ONGC:OIL:GAIL:PETRONET:RELIANCE:INDIGO:ASIANPAINT:BERGEPAINT",
+    "file": "policy-pulse-global-23-oct-2026.md",
+    "slug": "policy-pulse-global-23-oct-2026",
+    "date": "2026-10-23",
+    "tags": [
+      "policy-pulse",
+      "oil",
+      "hormuz",
+      "saudi",
+      "asia",
+      "bonds",
+      "gold",
+      "telecom",
+      "india-readacross"
+    ],
+    "summary": "Brent closed in on USD 116 as the attacks moved from Hormuz into Saudi Arabia's oil heartland, lifting XOM and CVX while DAL and UAL absorb USD 6.32 diesel; the offsetting signal was a three-year-record Treasury rally and gold through USD 4000.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 23 Oct 2026",
+    "ticker": "HDFCBANK:ICICIBANK:SBIN:AXISBANK:KOTAKBANK:BAJFINANCE:CHOLAFIN:LICHSGFIN:MUTHOOTFIN:MANAPPURAM:DLF:OBEROIRLTY:PRESTIGE:GODREJPROP:ANGELONE:MOTILALOFS:IIFL:BSE:CDSL:KFINTECH:CAMS:RELIANCE",
+    "file": "policy-pulse-ministries-23-oct-2026.md",
+    "slug": "policy-pulse-ministries-23-oct-2026",
+    "date": "2026-10-23",
+    "tags": [
+      "policy-pulse",
+      "rbi",
+      "liquidity",
+      "sebi",
+      "ipo",
+      "banks",
+      "nbfc",
+      "realty",
+      "exchanges"
+    ],
+    "summary": "The RBI lent Rs 50000 crore again on Friday against three times that in bids while the system surplus sits at Rs 542 crore, a repair of the operating target rather than an easing, while BSE, ANGELONE and MOTILALOFS book the 22-times Jio IPO.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / India Govt — 23 Oct 2026",
+    "ticker": "RELIANCE:HAL:BEL:BDL:MAZDOCK:GRSE:COCHINSHIP:LT:BHEL:SOLARINDS:DATAPATTNS:PARAS:ASTRAMICRO:WELSPUNLIV:TRIDENT:KPRMILL:SUNPHARMA:DRREDDY:CIPLA:LUPIN:IOC:BPCL:HINDPETRO:GAIL:PETRONET:ONGC:OIL:TCS:INFY:HCLTECH:WIPRO:LTM:COFORGE:PERSISTENT:TMPV:TMCV:MARUTI:MOTHERSON:BHARATFORG:APOLLOTYRE",
+    "file": "policy-pulse-modi-23-oct-2026.md",
+    "slug": "policy-pulse-modi-23-oct-2026",
+    "date": "2026-10-23",
+    "tags": [
+      "policy-pulse",
+      "india-us",
+      "trade-deal",
+      "defence",
+      "civil-nuclear",
+      "energy",
+      "textiles",
+      "pharma",
+      "it"
+    ],
+    "summary": "Rubio's Mumbai readout put defence co-production, civil nuclear and US energy purchases at the centre of the trade deal's last mile, with a leaders' signature as the gating item — RELIANCE is the only company named, HAL and BEL carry the air-domain inference, and INFY and TCS carry the mobility offset.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 23 Oct 2026",
+    "ticker": "VLO:PSX:MPC:PBF:DK:XOM:CVX:OXY:COP:WMB:KMI:OKE:RDN:ESNT:MTG:NMIH:FAF:FNF:RKT:UWMC:PFSI:DHI:LEN:PHM:TOL:NVR:CVCO:SKY:GEV:NEE:AEP:DUK:ENPH:TPIC:LMT:RTX:NOC:GD:PLTR:DAL:UAL:AAL:LUV:CCL:RCL:NCLH",
+    "file": "policy-pulse-trump-us-23-oct-2026.md",
+    "slug": "policy-pulse-trump-us-23-oct-2026",
+    "date": "2026-10-23",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "housing",
+      "mortgage",
+      "refining",
+      "oil",
+      "wind",
+      "energy",
+      "defence"
+    ],
+    "summary": "Trump signed a housing-cost order that attacks mortgage-insurance persistency and title premiums, a negative for RDN, ESNT and FAF, while a $150m Defense Production Act allocation puts VLO and PSX on the positive side of a refining story.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Swiggy — The Loss Is Contracting, the Stock Is Not",
     "ticker": "SWIGGY",
     "file": "swiggy-the-loss-is-contracting-the-stock-is-not.md",
