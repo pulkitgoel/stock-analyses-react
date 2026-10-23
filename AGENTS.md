@@ -1043,6 +1043,31 @@ characters, but that is content and would contaminate the 2026-11-07 experiment.
 
 ---
 
+### 7.13 UI redesign, step 4: ResearchCard and PulseRow — IN PROGRESS, claude (interactive), 2026-10-24
+
+`DESIGN.md` Appendix B step 4. The library renders one card shape for everything, so a
+730-word daily note and a 2,600-word deep dive arrive looking identical — the confusion
+7.12 split the routes to fix, still present inside every listing.
+
+- **ResearchCard**: eyebrow, title, two-line summary, `TICKER · date · N min read`. No
+  tag pills — the card currently carries up to three plus a `+N`, which is the densest
+  thing on it and the least useful.
+- **PulseRow**: a text row, not a card. Accent-barred eyebrow (`INDIA · MINISTRIES`),
+  headline, `date · tickers`. Separated by a hairline rather than boxed.
+- `AnalysisGrid` dispatches on `kindOf` (7.12's build-time value) and a PulseRow spans
+  all grid columns, so mixed surfaces — the homepage library, `/tag/*`, `/analyses/*`,
+  `/india`, `/global` — keep strict date order while the two shapes stay distinguishable.
+
+**Correction to the step name.** `DESIGN.md` says this replaces `AnalysisCard`.
+`src/components/Home/AnalysisCard.tsx` is **dead code** — nothing has imported it since
+at least 7.9, and the card actually rendered is `AnalysisGridCard` inside
+`AnalysisGrid.tsx`. The dead file is deleted here.
+
+**Must not regress:** `initialCount` (7.5 — a page built to be crawled renders every
+item it claims; `/tag/defence` once advertised 60 and shipped 9).
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
