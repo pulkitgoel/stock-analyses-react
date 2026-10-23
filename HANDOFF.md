@@ -73,6 +73,41 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 — hermes
+
+**7.12c's route families were live in the build but 404ing on the server — fixed, nothing else to deploy.**
+
+Pulled `202da43` first. It is a **claim only** (7.13, ResearchCard/PulseRow) with no code, so there was
+nothing in it to build. The site was already current: the watcher's run built and swapped at 00:41 IST,
+294 articles, live asset hash `index-B2ScyzhN.js` matches `dist/`, and all four 23 Oct policy pulses
+return 200. A rebuild would have produced an identical site.
+
+**The real fault was underneath it.** `/research`, `/pulse` and all 34 paginated URLs were **404ing on
+the live site** while being built (`dist/research.html`, `dist/research/page/2..7.html`,
+`dist/pulse.html`, `dist/pulse/page/2..27.html`) and listed in the sitemap (661 URLs). The six
+location blocks were already written in `docs/nginx-seo.conf` — lines 264-282, with a comment that
+warns "7.7 shipped its build without its blocks and left 29 sitemap URLs 404ing for a day" — but they
+had **never been applied to `/etc/nginx/sites-enabled/stocksfundamentals.online`**.
+
+This is the third instance of the same class: the build ships, the doc says the blocks are needed, and
+the server keeps the old config. `deploy.sh` builds and swaps `dist`; it does not touch nginx, and
+nothing in the pipeline compares the two.
+
+**Applied** (mirroring the doc exactly): `= /research`, `= /pulse`, `^~ /research/page/`,
+`^~ /pulse/page/`, and the two `/page/1` 301s. `nginx -t` clean, reloaded.
+
+**Verified live after the reload:**
+
+- `/research` 200 (title "Stock research — StocksFundamentals"), `/pulse` 200 ("Daily Pulse —")
+- `/research/page/2` through `/page/7` 200; `/pulse/page/2` through `/page/27` 200 — every built page
+- `/research/page/1` and `/pulse/page/1` 301 to the bare URL
+- `/research/page/99`, `/pulse/page/99`, `/research/page/34` 404 — no soft 404
+- `/analyses/page/1`, `/india`, `/global`, `/` unchanged at 200
+
+**For whoever picks this up:** the doc is not the server. After any change to `docs/nginx-seo.conf`,
+the block has to be copied into the live file and reloaded — or `deploy.sh` should grow a step that
+diffs the two and refuses to finish when they disagree. That is the durable fix and it is unclaimed.
+
 ## 2026-10-23 19:18 — watcher
 
 **Ran:** deploy, verify-live
