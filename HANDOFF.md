@@ -73,6 +73,96 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (6) — hermes (dock overlap fixed)
+
+**Found and fixed a real defect in 7.16's flush mobile dock: it covered the end of every page.**
+
+7.16 changed the mobile dock from a floating pill to a flush bar. Measured on the live build at
+390x844, scrolled to the bottom: dock top **783**, last element bottom **840** — the footer's legal
+line sat **57px underneath the dock** and could not be scrolled into view. `body` padding-bottom was
+`0px`. Every route, because the dock lives in `Layout`.
+
+Fixed with a mobile-only spacer after `<Footer />` — `md:hidden`, height `calc(64px +
+env(safe-area-inset-bottom, 0px))`, `aria-hidden`. Commit follows this entry. Verified live after
+deploy: footer bottom **780** against dock top **783**, so the copyright and "Not financial advice"
+lines clear it; the spacer measures 64px and desktop is untouched.
+
+**How it was found:** comparing rendered geometry at a phone viewport rather than reading the CSS.
+A flush fixed bar always eats the last N pixels unless something reserves them, and nothing did.
+Worth adding to the 7.16 mockup comparison: scroll every page to its bottom and check the last
+element's `bottom` against the dock's `top`.
+
+**Also audited while I was in there, no defect:** horizontal overflow on `/`, `/research`, `/pulse`,
+`/watchlist` and an article at 390px is exactly **0** in all five. The wide tables on the article
+exceed the viewport as elements but sit in their own scroll container, so the document does not
+scroll sideways.
+
+## 2026-10-23 21:03 — watcher
+
+**Ran:** verify-live
+
+- **SKIPPED** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+another deploy holds the lock; nothing attempted, will retry next run
+```
+- **OK** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    /                                                  200   ok
+    /research                                          200   ok
+    /pulse                                             200   ok
+    /analyses/page/1                                   200   ok
+    /india                                             200   ok
+    /watchlist                                         200   ok
+    /company/ioc                                       200   ok
+    /analysis/kernex-microsystems-deep-dive-oct20      200   ok
+    /research/page/99                                  404   ok
+    /nope-12345                                        404   ok
+```
+- 7 previously reported unmarked item(s), unchanged.
+- LEFT PENDING: `deploy` was not attempted (another deploy holds the lock; nothing attempted, will retry next run), so it stays queued.
+
+
+## 2026-10-24 (5) — hermes (theme rule changed)
+
+**I changed the theme rule in 7.15's code after deploying it. Read this before touching the theme.**
+
+**What the owner saw, and why.** 7.15 shipped and the owner reported "no changes". The deploy was real —
+live and disk were byte-identical — but `index.html` resolved the theme as
+`saved || (prefersDark ? 'dark' : 'light')`. On a dark-mode device that renders **dark with the old
+`#63e6be` neon accent**, which is visually the pre-7.15 site. So "light by default" only ever applied
+to readers whose OS was already light. I reproduced it by emulating `prefers-color-scheme: dark`:
+`theme=dark`, body `rgb(9,13,18)`, accent `#63e6be`.
+
+**What I changed — this overrides a decision made in 7.15, deliberately.** Light is now unconditional;
+dark happens only when the reader taps the toggle, which stores `sf-theme-v2`.
+
+    document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
+
+Applied in all three places that decide it, because they must agree or the page paints one theme and
+swaps after mount: `index.html`, `src/components/Layout/Header.tsx`, and the `render_shell()` copy in
+`scripts/generate-og-files.py`. Commit `702aa48`.
+
+**Why I did not just ask:** 7.15's own note says the owner approved light mockups on 2026-10-22 and
+that honouring `prefers-color-scheme` was carried over from a spec hedge. The owner then reported the
+result as "no changes". That is the approval talking, not a preference to be balanced.
+
+**Verified live with a dark-preference browser:** `theme=light`, body `rgb(255,255,255)`, accent
+`#0f766e`, `sf-theme-v2` null. Existing users who have explicitly toggled dark keep dark — that is
+correct behaviour, not a bug.
+
+**Rule for whoever reads this next:** the OS preference must not decide the default theme here. If a
+future change wants to reintroduce it, it needs an explicit owner decision recorded in section 6, not
+an inherited caveat from DESIGN.md.
+
+**Process note, since it cost the owner two rounds of "is it deployed":** two watcher deploys in a row
+started building *before* the commit they were meant to ship had landed, and both looked healthy —
+661/661 routes, 200 homepage, clean route shapes — while the new code was absent. Check the shipped
+bundle for a symbol that only exists in the new commit (`ArticleBand`, `TakeawayPanel`,
+`SegmentedControl`) before telling anyone a deploy is done.
+
 ## 2026-10-24 — claude (interactive)
 
 **7.16: the homepage is segregated and the motion layer is finally in the app. Owner signed off; deploy queued.**

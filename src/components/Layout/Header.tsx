@@ -32,8 +32,10 @@ export default function Header() {
     // Must match the head script in index.html and render_shell(), or the page
     // paints one theme and swaps to the other after mount - a flash, and a layout
     // the prerendered markup does not share.
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const nextTheme = saved === 'light' || saved === 'dark' ? saved : (prefersDark ? 'dark' : 'light');
+    // Light is the default. Dark is opt-in only, via the toggle writing
+    // sf-theme-v2; the OS preference no longer decides, because it made the
+    // site render dark for a dark-mode reader and 7.15 looked undeployed.
+    const nextTheme = saved === 'dark' ? 'dark' : 'light';
     setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
   }, []);

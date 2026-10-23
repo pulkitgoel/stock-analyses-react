@@ -256,9 +256,10 @@ def render_shell(title, description, canonical, jsonld, assets, image_url,
     <meta name="author" content="%(author)s" />
     <script>
       try {
+        // Light default; dark only when the toggle has stored it. Matches
+        // index.html and Header.tsx - the OS preference must not decide here.
         const saved = localStorage.getItem('sf-theme-v2');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
       } catch {
         document.documentElement.dataset.theme = 'light';
       }
