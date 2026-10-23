@@ -34,6 +34,14 @@ export default function App() {
             <Route path="/india/page/:page" element={<ArchivePage market="india" />} />
             <Route path="/global" element={<ArchivePage market="global" />} />
             <Route path="/global/page/:page" element={<ArchivePage market="global" />} />
+            {/* The kind axis (DESIGN.md step 3). Type is the question a reader
+                answers first - a briefing or a company - and market second.
+                These need their own nginx location blocks before they resolve
+                on the server; the catch-all is `try_files $uri =404` (9.4). */}
+            <Route path="/research" element={<ArchivePage kind="research" />} />
+            <Route path="/research/page/:page" element={<ArchivePage kind="research" />} />
+            <Route path="/pulse" element={<ArchivePage kind="pulse" />} />
+            <Route path="/pulse/page/:page" element={<ArchivePage kind="pulse" />} />
             <Route path="/analyses" element={<Navigate to="/analyses/page/1" replace />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />

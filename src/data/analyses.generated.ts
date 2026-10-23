@@ -21,6 +21,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "GE Power India turned a Rs 441 Cr loss into a Rs 253 Cr profit and is demerging its loss-making Durgapur plant to JSW Energy. But the free JSW shares are worth only Rs 33, margins fell from 34% to 15% in one quarter, and the stock is 44% below its high, below every moving average. Verdict: WATCH — THE BUSINESS IS FIXED, THE CHART IS NOT.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -42,6 +43,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent closed in on USD 116 as the attacks moved from Hormuz into Saudi Arabia's oil heartland, lifting XOM and CVX while DAL and UAL absorb USD 6.32 diesel; the offsetting signal was a three-year-record Treasury rally and gold through USD 4000.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -63,6 +65,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI lent Rs 50000 crore again on Friday against three times that in bids while the system surplus sits at Rs 542 crore, a repair of the operating target rather than an easing, while BSE, ANGELONE and MOTILALOFS book the 22-times Jio IPO.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -84,6 +87,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Rubio's Mumbai readout put defence co-production, civil nuclear and US energy purchases at the centre of the trade deal's last mile, with a leaders' signature as the gating item — RELIANCE is the only company named, HAL and BEL carry the air-domain inference, and INFY and TCS carry the mobility offset.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -105,6 +109,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump signed a housing-cost order that attacks mortgage-insurance persistency and title premiums, a negative for RDN, ESNT and FAF, while a $150m Defense Production Act allocation puts VLO and PSX on the positive side of a refining story.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -123,6 +128,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Swiggy's H1 FY27 loss is 25% below last year and food delivery now earns Rs 341 Cr of quarterly EBITDA, but Instamart alone lost Rs 895 Cr and the sequential loss widened. At 1.2x EV/revenue against Eternal's 5x the market has priced the bear case; the chart, at an all-time low with 12 checklist fails, says wait for the Q3 Instamart number.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -141,6 +147,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Zen has the deepest capability stack in Indian defence simulation — Army and Navy leadership, a completed Air Force product, a man-portable anti-drone system and now an AI battlefield-management business. But FY26 revenue fell 29%, the 35% EBIT target is being formally walked back, and at 73x earnings the price already assumes the order book converts on schedule. Verdict: CAPABILITY IS REAL, TIMING IS NOT — WAIT FOR Q2 FY27.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -159,6 +166,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent at 112 dollars on Houthi strikes and reported post-midterm Iran planning puts XOM and CVX positive and IOC and HINDPETRO negative, while gold and bitcoin falling with the VIX rising says this was a liquidation rather than a fear trade.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -177,6 +185,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI allotted only 50,006 crore against 1.62 lakh crore of bids at Thursday's VRR with the liquidity surplus down to 542 crore, a squeeze that favours BAJFINANCE and CHOLAFIN on funding cost while SEBI's early-pay-in margin waiver supports BSE and ANGELONE.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -195,6 +204,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Modi and Tusk agreed to co-produce in defence, space and nuclear with drones the explicit Polish pitch, putting HAL, BEL and SOLARINDS on the positive side of an inference-heavy read, while Goyal dated the India-EU FTA to end-2026 signature.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -215,6 +225,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump ruled out talks with Iran and strike plans were reported for after the midterms, sending Brent to a five-month high and putting XOM and CVX on the positive side while AAL, DAL and UAL absorb the fuel cost.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -231,6 +242,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SpaceX's 161% revenue growth and an Anthropic IPO filing reopen the AI financing window for NVDA and TSM, Brent near USD 110 with the Graham Act waiver doing the offsetting work, and Europe's carmakers won an 87.5% 2035 target that lifts STLA and slows TSLA.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -247,6 +259,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "MoD signed a Rs 770 crore counter-drone radar contract with BEL, the RBI injected another Rs 50,000 crore and drew nearly twice the bids, and Jio's Rs 30,213 crore IPO was fully subscribed in under two hours -- a volumes positive for BSE and ANGELONE.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -264,6 +277,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump says the India-US deal is 'pretty close' but names no rate or date, which keeps WELSPUNLIV and TRIDENT geared to a tariff schedule that does not exist yet, while Rubio at Jamnagar steered heavy Venezuelan crude toward RELIANCE.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -282,6 +296,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's biggest August purchase was up to USD 25.3 million of META and it reports tonight, while a 10% cut to Netflix's ad forecast cost NFLX about USD 17 billion of market value and SpaceX's 161% revenue growth re-rated the AI financing window for NVDA and TSM.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -300,6 +315,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Kernex is the cheapest stock in the Kavach pack at 15x earnings, and on FY27 execution it may be cheaper still: Q1 revenue was Rs 504 Cr against Rs 431 Cr for all of FY26. But the order book fell 12% QoQ to Rs 3,641 Cr, receivables sit at 268 days, borrowings tripled, and HBL has guided that Kavach revenue peaks around FY28. Verdict: ACCUMULATE ON EXECUTION, NOT A SWING SETUP.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -317,6 +333,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Beijing called the US DeepSeek procurement ban a breach of the Xi-Trump consensus, hardening the AI-decoupling theme into the Jan 10 truce deadline, while EU lawmakers agreed to weaken the 2035 car target to 87.5% - a lift for STLA and a negative for TSLA, with Boeing 737 MAX 10 certification due today.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -334,6 +351,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI ran its first liquidity infusion since July 29 - a Rs 1 lakh crore seven-day VRR at 5.52% with another Rs 50,000 crore due Oct 21 - which is a marginal positive for BAJFINANCE and CHOLAFIN and a warning for WELSPUNLIV, with RoDTEP and RoSCTL expiring Dec 31 while US holiday orders fall 25-30%.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -351,6 +369,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Rubio told reporters in Mumbai the trade deal is 'as close as you can be without having executed the agreement' and confirmed he will press RELIANCE to run more Venezuelan crude at Jamnagar, while the India-New Zealand FTA took effect today - a plus for TATASTEEL and CENTURYPLY, a minus for WAAREEENER with solar AD/CVD finals due Oct 26.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -369,6 +388,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Ninety-four of 100 economists now expect the Fed to hold on Oct 27-28 and all 100 expect a December hike, which keeps a floor under JPM and GS while extending the pain for DHI, LEN and PHM; separately DHS ordered DeepSeek out of civilian agency IT, a procurement positive for MSFT and ORCL.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -389,6 +409,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Refreshed 19 Oct at ₹854 with Q2 FY27 due 23 Oct. Order book ₹18,965 Cr (+45%), delivery 50.8%, but 108x earnings and 16.7x book give no protection in a falling market. Verdict: accumulate in tranches around the 200-DMA at ₹804, not a full position at ₹854.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -406,6 +427,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The waiver suspended China's exposure on the same terms as India's and left the statutory machinery delegated to the USTR, while INTC rose 4% on a JPMorgan upgrade and STLA bore the brunt of French protests that took the DAX down 1.39%.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -423,6 +445,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "NPPA capped trade margins on 137 cancer drugs at 30% from November 9, a margin reset that hits MEDPLUS and re-prices oncology-heavy portfolios like NATCOPHARM, while Jio's 30x anchor book keeps BSE and ANGELONE on the right side of the primary market.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -440,6 +463,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India's 100% tariff tail risk is gone: the Graham Act waiver removes the secondary duty that would have hit every Indian shipment, putting IOC, BPCL and HINDPETRO back on Russian crude without an export penalty, while WAAREEENER faces the one duty that was not waived.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -458,6 +482,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump set 500% duties on Russia and 100% on the five largest buyers of Russian energy in a Friday executive order, then waived every one of them under Section 115, lifting a 100% tariff tail risk off AAPL's India assembly base and putting a supply premium out of XOM and CVX.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -476,6 +501,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "MSCI proposed reclassifying Indonesia as a Standalone Market and the Jakarta Composite fell 11.1%, its worst day since 1998, pushing flows toward TCS, INFY and HDFCBANK as the cleaner emerging-market exposure. France and Germany agreed to soften the EU's 2035 combustion-engine ban, and the KOSPI rebounded 2.1%.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -494,6 +520,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The India-US BTA first tranche is finalised and in legal drafting, with Piyush Goyal and Nirmala Sitharaman both pushing for signature, a positive for SUNPHARMA, DRREDDY and WELSPUNLIV. The MoD signed Rs 4,106 crore of contracts led by a Rs 2,563 crore IAF satellite, and SEBI rewrote the closing auction session from December 7.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -511,6 +538,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi's 2036 Olympics ambition was priced the next morning at Rs 7,386.74 crore: the Sports Ministry raised event-hosting aid from Rs 2 crore to up to Rs 50 crore, mapping to LT and ULTRACEMCO. Rubio lands in Jamnagar, the RELIANCE refinery complex, two days after the Graham Act deadline.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -529,6 +557,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Two days from the Graham Act deadline there is still no Section 113(g) notice to Congress, leaving VLO, PSX and DAL on the right side of a licensed Russian diesel flow. Trump's pharma portfolio grew from $1.7 million to as much as $56.2 million as Medicare exemptions expanded, and the US-Mexico tariff deal stalled on the 25% auto and 50% metals levies.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -547,6 +576,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The KOSPI fell 7.57% with circuit breakers on both Korean boards and the Nikkei lost 4.90%, hitting MU, WDC and CRWV on Anthropic's decelerating growth and CoreWeave's bond selloff. India diverged as Nifty IT rose 1.82%, lifting TCS, INFY and TECHM, while IOC and BPCL stay exposed to the Graham Act's five-day deadline.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -565,6 +595,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The CCEA cleared the Rs 52,878 crore sale of a 60.72% IDBI Bank stake to Fairfax at Rs 81 a share and IDBI fell 7%, while the Supreme Court quashed Yes Bank's Rs 8,415 crore AT1 write-off and YESBANK fell 12.68%. Jio Platforms priced India's largest IPO at Rs 1,065-1,119, lifting RELIANCE 3.44% and BSE 2.70%.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -582,6 +613,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi dedicated Rs 3,350 crore of Ladakh projects including a Rs 2,500 crore strategic road, mapping to LT, GRINFRA and KEC. A dedicated data-centre policy is being drafted to protect consumers from grid costs, a positive for CGPOWER and POWERINDIA, and the Cabinet cleared a 78-day railway bonus worth Rs 2,009.61 crore.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -600,6 +632,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "A 3.7% September CPI was followed by a 6.3% PPI, the biggest since 2022, taking October hike odds to a coin flip; Walmart, Lilly and Nike gained while CRWV, MU, WDC and ORCL were sold on data-centre debt. Five days from the Graham Act deadline there is still no notice to Congress, and Trump's August filing showed up to USD 25M of META bought on one day.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -618,6 +651,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Mazagon Dock is India's only yard building both destroyers and conventional submarines, with a pristine balance sheet, 36% ROCE and the cheapest multiple among shipbuilding peers. The problem is what it will build next: the order book has fallen to Rs 18,218 Cr from Rs 38,561 Cr in FY24 as P17A, P15B and P75 Kalvari complete, while the Rs 99,000 Cr P75(I) submarine contract remains unsigned and management says new orders take about two years to reach revenue. Verdict: CAUTION — priced for orders not yet signed.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -638,6 +672,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "China's CXMT claimed a 4F2 DRAM design and the KOSPI fell 5.46%, hitting MU, AVGO and INTC while re-rating TCS, INFY and HCLTECH through Nifty IT's 5.22% gain. Five days out, the Graham Act had still produced no notice to Congress, leaving IOC, BPCL, ONGC and Sun Pharma exposed on the Indian side.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -656,6 +691,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Finance Minister said the government will hear views on removing LTCG tax and reframing STT, a debate that lifted the Sensex 1,109 points and the Nifty IT index 5.22%, positive for BSE, ANGELONE and CDSL. BEL disclosed Rs 533 crore of new orders, Polycab fell 5% as the NSE ended its F&O contracts, and the Army inducted 450 loitering munitions from Solar Industries' unit.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -675,6 +711,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi told the Bloomberg New Economy Forum on October 13 that the routes of globalisation have become chokepoints, naming supply chains, energy, critical minerals and payments, a framing that maps to TCS, INFY, SUNPHARMA and HINDCOPPER. The PMO named no company, so every mapping is inferred.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -695,6 +732,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Goldman beat on a 72% surge in equities revenue while JPMorgan missed its first quarter in three years. Trump floated a US diesel export cap five days before the Graham Act's October 18 deadline, hitting VLO and PSX, and Trump Media pulled three crypto ETF filings as DJT fell 5% on a 32% approval rating.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -714,6 +752,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent topped USD 106 after a second deadly strike on Riyadh's airport and a tanker hit at Hormuz, positive for XOM, CVX and VLO and negative for DAL, UAL and IOC. Trump's Russian diesel deal capped the spike instead of reversing it, gold held near USD 4,180 with the US 30-year at 24-year highs, and Canada sent its largest trade mission to India in 30 years to push a trade deal.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -732,6 +771,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI will meet the entire daily dollar requirement of IOC, BPCL and HINDPETRO from October 12 and imposed a 20% cash reserve on rupee-linked FX derivatives above USD 2 million, its most decisive rupee-defence package since 2013, with the currency up 0.99% to 95.77. September CPI hit 5.54%, the highest since October 2024 and negative for BAJFINANCE and DLF, while HCLTech beat with profit up 21% and record SIP flows lifted HDFCAMC and CAMS.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -750,6 +790,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi opened over Rs 13,000 crore of Tamil Nadu projects on October 11, including a Rs 1,620-crore lube base-stock unit at CPCL, the only listed company named in the release, alongside a Rs 4,900-crore Chennai Metro Phase II stretch and about Rs 3,700 crore of highways that map to LT, IRCON and RVNL. The PM Dhan-Dhaanya Krishi Yojana also marked its first year with a 100-district scorecard.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -768,6 +809,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Justice Department opened an antitrust probe into the five networks in the White House television pool, an overhang for CMCSA, PARA, WBD and FOXA, and a federal judge ordered the administration to cancel its taxpayer-funded television advertisements. Foreign military sales reform took effect for LMT, RTX and NOC, importers won a class-action route to tariff refunds for WMT and TGT, and Brent above USD 106 kept DAL and UAL under pressure into bank earnings on Tuesday.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -785,6 +827,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Revised deep dive: Syrma is up 22.6% to Rs 1,720 since our 4 August note, the trailing P/E has expanded to 89.3x, and average delivery has fallen to 28.2% from 37.3%. Q2 FY27 is not yet reported. Clarifies the two Rs 1,000 Cr QIPs and adds the Exchange Filings section. Verdict: CAUTION — priced for perfection.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -801,6 +844,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Revised deep dive: the stock is up 44% to Rs 2,910 since our 27 June note while TTM profit sits below FY26, FIIs and DIIs both cut holdings, and the working capital cycle widened to 344 days. Includes the full 25-point technical checklist and updated levels.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -821,6 +865,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent slipped to about USD 103 after Trump ruled out an Iran strike before the November 3 midterms, negative for XOM and CVX and positive for airlines and Indian oil marketers; a strong 30-year auction pulled the US long end back from a 24-year high; and the US-China 30-for-30 tariff lists named toys and appliances and medical devices, with the truce extended to January 10, 2027.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -841,6 +886,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI raised daily CRR maintenance to 99% and lined up Rs 25,000 crore of bond sales, negative for rate-sensitive NBFCs and bond-funded lenders; SEBI mandated a colour-coded credit risk-o-meter, positive for CRISIL and ICRA; and a 30% cap on cancer-drug trade margins lifted Apollo Hospitals and Fortis while TCS led a 3% Nifty IT rally.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -859,6 +905,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Assam Cabinet adopted 75 resolutions marking PM Modi's 25 years, restating a Rs 27,000-crore Tata semiconductor plant at Jagiroad and a Rs 28,000-crore Numaligarh Refinery expansion, positive for BPCL and OIL and for the listed electronics names; the PM closed the Women and Child Development summit, and UP renamed Noida airport after him.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -878,6 +925,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's August disclosure logged 517 trades, including a Dell sale on the same day he handed Dell a medal and Nvidia bought before he decorated Jensen Huang; Washington simultaneously froze Microsoft and Adobe out of the green-card PERM programme, and SpaceX's USD 8 billion spectrum buy hit T-Mobile, Verizon and AT&T while lifting tower REITs.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -898,6 +946,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent rose 4.25 percent to USD 104.5 after Axios reported the Pentagon has been told to prepare for a possible resumption of major combat operations in Iran and Tropical Storm Isaias shut in a quarter of Gulf of Mexico output, positive for XOM, CVX and ONGC and negative for DAL, IOC and BPCL; hawkish September FOMC minutes kept the 10-year near 5.28 percent and the 30-year at 2002 levels, and India joined the US-led 15-country excess-capacity initiative while a Section 301 investigation into India's own industrial policies remains live.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -917,6 +966,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The 57th GST Council left rates untouched but recommended removing GST officers' arrest powers, raising the prosecution threshold to Rs 5 crore, cutting the general penalty to Rs 10,000 and automating refunds and ITC, positive for SUNPHARMA, DRREDDY and CIPLA and for TCS and INFY on services-export facilitation; the reported deferral of the UPI merchant fee to January 2027 took 5.2 percent off PAYTM and 4.5 percent off MOBIKWIK, while TCS opened Q2 FY27 with profit up 15 percent to Rs 13,884 crore and a further Rs 12 dividend.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -936,6 +986,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi opened India Mobile Congress 2026 with a stated target of one billion 5G users by 2030, a call for a global anti-cyber-fraud framework and USD 15 billion of BharatNet middle-mile connectivity, positive for BHARTIARTL and INDUSTOWER on the demand commitment and for DIXON and KAYNES on a mobile phone industry now worth USD 63 billion with USD 29 billion of exports. The PM separately amplified a space self-reliance piece by Digantara's founders, and Indian equities closed at their lowest level since April 2025 with ITC and JSW Steel among the worst hit.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -955,6 +1006,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's August financial disclosure showed 517 trades including the largest single position of the month, up to USD 25 million of META, plus USD 1-5 million of SPCX notes bought two days before a national space transportation policy targeting 1,000 launches a year by 2030; completion of Trump Accounts auto-enrolment for nearly 70 million children is positive for HOOD and SCHW. The indefinite de minimis suspension reaches its October 22 compliance date, positive for LLY, MRK and PFE by removing personal-importation arbitrage and negative for WMT and TGT on per-parcel cost.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -974,6 +1026,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Revenue up 52% but net profit flat for five straight quarters as depreciation and interest consume the growth. Advent International is buying 24.87% at Rs 985 - diluting EPS by up to 25% versus the published consensus. The market price sits above both the average analyst target and Advent's own entry price. Rating: CAUTION - wait for dips.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -993,6 +1046,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Q1 FY27 PAT up 111% with margins at 26%, but volumes fell 22% YoY - the recovery is price-led, not demand-led. The stock is up 66% in a year, trades above the average analyst price target, and carries a September 2026 SEBI warning for non-disclosure of a DGFT blacklisting and an FDA warning. Rating: CAUTION - fully valued.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1010,6 +1064,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The EIA raised its 2026 Brent forecast 8 percent to about USD 98 and lifted Q4 2026 to USD 105 with 4.5 million barrels per day still shut in, positive for XOM, CVX and ONGC and negative for DAL, UAL and Indian refiners IOC and BPCL. The 30-year Treasury yield held near its highest since 2002 with the September FOMC minutes due tonight and CME pricing an October hike near 20 percent, while French OAT yields kept rising and the euro sat near a 17-month low. Spot gold above USD 4,167 with the rupee at a five-month low of 97.03 is a translation positive for TCS and INFY and an input-cost negative for TITAN and MRF.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1028,6 +1083,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI hiked the repo rate 25 basis points to 5.50 percent, changed its stance to calibrated tightening and revised FY27 GDP up 40 basis points to 7.1 percent, sending the Sensex down 429 points to 72,638.70 - negative for LICHSGFIN, PNBHOUSING, DLF and MARUTI but positive for HDFCBANK, ICICIBANK and SBIN on net interest margin. The 57th GST Council slipped a second time to October 8 with a proposed 17-day export refund clock, positive for SUNPHARMA, CIPLA and INFY, SEBI exempted eligible AA-minus issuers from the merchant-banker requirement on private-placement debt, positive for PFC, RECLTD and BSE, and L&T won a 5,000-10,000 crore main-plant notice to proceed for the 2x800 MW Chandrapura thermal project.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1045,6 +1101,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi inaugurates India Mobile Congress 2026 on October 8 at Yashobhoomi and met the GSMA board, with Starlink declaring its India launch ready after building 20 gateway sites, a mixed signal for BHARTIARTL and IDEA and a positive for INDUSTOWER, TEJASNET and HFCL on densification and backhaul. Modi and Swiss President Parmelin address the second India-EFTA Prosperity Summit with the USD 100 billion TEPA investment target, the direct read-through for NESTLEIND and ABB. The Rural Development Ministry notified 375 permissible works under VB-G RAM G in a 41 percent expansion supporting PNCINFRA, HINDUNILVR and M&M.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1064,6 +1121,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump unveiled Anduril's USD 3.7 billion Arsenal-2 submarine shipyard at Sparrows Point with a Navy contract of up to USD 2.9 billion and announced a 40 percent US government stake in the operating subsidiary, a 15 percent lift to Virginia-class production capacity that is positive for NUE and STLD on naval steel while leaving incumbents GD and HII two-sided as a new component competitor enters. The August trade deficit widened to USD 105.6 billion, the widest since Liberation Day, on record imports led by semiconductors and nonmonetary gold, positive for NVDA, AMD and NEM. The IRS issued a staking safe harbour, positive for COIN and HOOD.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1082,6 +1140,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent fell back below USD 100 to USD 98.33 as Hormuz transits and the Saudi East-West pipeline recovered and the G7's 100-million-barrel release began flowing - a cost tailwind for IOC, BPCL and INDIGO and a headwind for ONGC and XOM. The S&P 500 and Nasdaq printed new records on Tuesday as the 10-year Treasury eased to 5.26% from a 19-year high of 5.35%, the euro hit a 17-month low on French fiscal stress, and BMI Research raised its Q4 2026 Brent forecast to USD 107 a barrel while Kenanga went to USD 91 for 2026.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1100,6 +1159,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Ministry of Defence signed a Rs 661.50 crore BrahMos fire-control and launcher contract for Indian Navy ships at a minimum 68% indigenous content - BEL and LT are the inferred beneficiaries because PIB names no listed company. The RBI decides rates tomorrow with a 25 basis point hike to 5.50% near-fully priced, the 57th GST Council was rescheduled for a second time to October 8, and SEBI is reported to be partly reversing the Closing Auction Session for derivatives settlement, a positive for BSE, ANGELONE and MOTILALOFS. Trent's 23% Q2 revenue beat drove a 12.6% surge to a Rs 1.5 trillion market cap while Coal India and Tech Mahindra led the day's losses as the Sensex closed 685 points higher at 73,067.81.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1118,6 +1178,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Cabinet approved a Rs 10,000 crore SME Growth Fund to supply patient growth equity to high-potential SMEs - BSE, SBIN and CHOLAFIN are the inferred beneficiaries - and cleared the Integrated Transport and Logistics Authority as an SPV that will write a long-term National Transport Plan and appraise every government infrastructure project worth Rs 500 crore or more, a positive read-through for LT, IRB and CONCOR. The World Bank raised India's FY27 growth forecast 50 basis points to 7.1%, and the primary market stayed open with SRIT India listing at a 13.85% premium while AceVector debuted at an 11.5% discount.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1136,6 +1197,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump signed an Emergency Tax Relief on Diesel Fuel order deferring the federal diesel excise tax from October 5 to December 31 for highway use - a per-mile cost cut for ODFL, CSX and DAL rather than a supply fix, with pump diesel still at USD 6.32 a gallon. CBP opened CAPE Phase 3 today, releasing roughly USD 20.6 billion of IEEPA tariff refunds to about 3,700 court plaintiffs - a cash event for WMT, TGT and AMZN. The copy-trade signal of the session was PTC Inc, up 30% in a day on disclosed presidential holdings of up to USD 6.15 million, while the July filing's USD 5-25 million sales each of AMZN and MSFT remain the largest non-DJT equity exits.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1156,6 +1218,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The G7 began a coordinated 100-million-barrel IEA release with a frontloaded diesel leg after Trump's export-ban threat, splitting the crude market - Brent near $101.5 against WTI below $90 and Murban at $110.80 - which is positive for DAL, UAL and INDIGO and negative for VLO and PSX. The Lindsey Graham Act's secondary sanctions on Russian-crude buyers could be decided by October 18, a live risk for RELIANCE, IOC and BPCL, while the US-Ukraine fund's first $30 million minerals deal and China's rare-earth suspension extension to January 2027 lift MP and USAR.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1175,6 +1238,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI's MPC opened a three-day meeting with roughly 60% of polled economists expecting the first repo hike since February 2023 - a 25bp move to 5.50% on October 7 that would pressure LICHSGFIN, DLF and MARUTI - while the 57th GST Council meets the same day with a pre-announced compliance, refunds and ITC package that is positive for SUNPHARMA, WELSPUNLIV and PAYTM. SEBI's Project Jagrook went live on every broker website today, and the Rs 80,000 crore Project-75(I) submarine programme with TKMS reached final approval stage as the clearest single positive for MAZDOCK.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1195,6 +1259,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi and Swiss President Guy Parmelin signed five agreements at Hyderabad House on Monday, pairing expanded market access for Indian agriculture, pharma, textiles and engineering goods with a $100 billion EFTA investment target and fresh channels in biotech, life sciences, banking and insurance - a positive read-through for SUNPHARMA, WELSPUNLIV and NESTLEIND - alongside a Migration and Mobility Partnership and a Young Professionals Agreement. The PMO named no company, so every mapping here is inferred and confidence-marked. Forward catalyst: Chennai Metro Phase II's first 14 km on October 11.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1214,6 +1279,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump stood up the Super Intelligence Force on Sunday - a White House task force chaired by DNI Jay Clayton, with FTC Chair Andrew Ferguson and Pentagon CTO Emil Michael, and a charter written to prevent overregulation - a capex-permission signal for NVDA, AVGO and VRT. USTR Greer said negotiated tariff caps will be credited against the Section 301 excess-capacity probe, the July disclosure showed $5-25 million sales each of AMZN and MSFT alongside a June buy of small-cap defence name EFOR, and $90 Medicare payments to 20.8 million beneficiaries plus a renewed $5,000 cheque pledge read as a transfer positive for WMT, DG and UNH.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1232,6 +1298,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "A 29,000 US payroll print against a 90,000 consensus removed the October Fed hike and reversed the global bond selloff that had driven the 10-year Treasury to a 24-year high — a positive for TCS, INFY and QQQ and a relief valve for emerging markets. Trump said Europe agreed to release emergency diesel stocks, sending Brent below $100 and lifting DAL, UAL, CCL and RCL while pressuring XOM and CVX, even as the Iran ceasefire expired and three Hormuz tankers were struck. G20 Milwaukee produced a steel framework and no China tariff timetable, French spreads hit their widest over Germany since 2012, and Micron's blowout quarter drove a memory-led Asian relief rally.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1253,6 +1320,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India is in the final stages of approving a ₹80,000 crore Project-75(I) submarine deal with Germany to be built by MAZDOCK with ThyssenKrupp, while the MoD inked a ₹810.79 crore SAT-SAAW contract with BDL. September power shortages hit a three-year high at 560 million kWh, and the Section 11 order forcing 112 private captive coal plants to run flat out and sell into exchanges is now live — positive for COALINDIA, NTPC and TATAPOWER. September GST rose 14.7% to ₹2,03,521 crore but on a record-high import share, and RBI eased bank shareholding norms for mutual funds, insurers and pension funds.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1271,6 +1339,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "GOBARdhan, the ₹23,731 crore National Unified Scheme for Compressed Biogas approved by the Cabinet chaired by PM Modi on August 6, was launched on October 1 with a ten-year runway to raise CBG output tenfold to about 5 MMSCMD at an administered price of ₹2,110 per MMBTU — a structural positive for GAIL, IGL, MGL, ATGL and PRAJIND. The People's Plan Campaign 2026-27 launched on Gandhi Jayanti, PM Modi paid tributes at Rajghat and spoke to flydubai hero Captain Smit Machchhar, and Putin praised the PM's Ukraine peace effort. India's markets were closed for Gandhi Jayanti after an eighth straight weekly loss, the longest in 25 years.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1290,6 +1359,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "September payrolls came in at just 29,000 against an 84,000-90,000 consensus with unemployment at 4.2% and July revised into a loss, taking the October Fed hike off the table and sending Treasury yields tumbling from a 24-year high. Trump announced on Truth Social that Europe will release emergency diesel stocks, pushing Brent below $100 and lifting DAL, UAL, CCL and RCL while pressuring XOM and CVX. Greer closed the G20 in Milwaukee with no timetable for US-China tariff cuts, and the July disclosure showed Trump's team sold up to $25 million each of AMZN and MSFT.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1307,6 +1377,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "G20 trade ministers endorsed a Milwaukee Framework on steel overcapacity as Greer put the MFN principle itself up for review, while a Section 301 overcapacity probe covering 16 economies including India remains the unexercised risk to SUNPHARMA, WELSPUNLIV and BHARATFORG. Brent went back above $100 on China's fuel-export halt, lifting XOM and CVX against DAL and CCL, the US 10-year held near 5.28% after its biggest quarterly gain since 1994, and Micron's blowout quarter drove a 2.9-3.3% Nikkei rally.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1325,6 +1396,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Finance Ministry cut the diesel and ATF export levy for a second fortnight, positive for IOC, BPCL and RELIANCE, as GST crossed Rs 2 lakh crore for a third month and the manufacturing PMI hit a seven-month high of 55.1. SEBI cleared corporate bond index futures for the NSE, the AMCA prototype RFP closed on 30 October with LT, BEL, BHARATFORG, BEML and DATAPATTNS named in the three shortlisted consortia while HAL did not qualify, and the rupee closed at 96.31 into a live RBI hike risk on October 7.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1342,6 +1414,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM-DHARA's first trading session priced the Rs 1.86 lakh crore transmission and storage programme selectively, with TARIL up 9.29% as the top BSE gainer and ADANIENSOL up 4.31% while the Nifty fell 0.88% to an eighth straight weekly loss. Prime Minister Modi's UPSC centenary address set out a 2047 that is more urban, Captain Smit Machchhar's rescue drew national tribute, and the October 5-7 RBI meeting now carries live hike risk on a rupee near 96.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1359,6 +1432,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump Media filed the S-4 for its all-stock merger with TAE Technologies, turning DJT into one of the first publicly listed commercial fusion developers. The White House Super Intelligence order added no compliance burden on NVDA, AVGO and MSFT, while the Senate killed the Stop Insider Trading Act 53-47 and the July disclosure showed pure buys in SO and PSA. Boeing took a $20bn-plus Navy F/A-XX award against NOC, and Micron's blowout quarter lifted Nasdaq futures as Brent went back above $100.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1377,6 +1451,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The G20 Trade Ministerial opened in Milwaukee on steel excess capacity, MFN erosion and forced labour - the same ground as the Section 301 tariffs under challenge at the Court of International Trade - while core PCE at 3.0% cut October Fed hike odds from 71% to 35% and eased the front end. Saudi Arabia restarted the East-West pipeline and Yanbu loadings, Gulf exports recovered to 23.3 mbpd with Brent near $103, and India kept 0% Section 232 tariffs on specialty drugs, supporting SUNPHARMA and DRREDDY.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1394,6 +1469,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The CGA put the fiscal deficit at 41.9% of the FY27 target with five months gone, the RBI reported a record $200bn net forward dollar book as the concessional FCNR(B) window closed, and SEBI's Pandey rebuilt FPI onboarding rails while confirming no exchange interoperability and no changes outside the CAS paper. BSE replaced Wipro in the Nifty 50, the Andaman offshore mineral auction returns on October 1, and SEBI's 215th Board rewrote PMS regulations for MOTILALOFS and BSE.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1411,6 +1487,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Cabinet approved the Rs 1.86 lakh crore PM-DHARA scheme - 135 GW of renewable evacuation plus 50 GWh of battery storage - as part of a Rs 2.79 lakh crore package with the Rabi MSP policy and a Delhi traffic system, drawing POWERGRID, KEC, KPIL and the transformer and storage complex into focus. Modi also spoke with Trump as Goyal met Greer in Milwaukee on the interim trade deal, the Supreme Court kept the 0.4% UPI MDR on track for October 15, and the Sabarmati LNG train and Kandla e-methanol plant carried the green-fuel push.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1428,6 +1505,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Core PCE cooled to 3.0% and cut the priced odds of an October hike from 71% to 35%, sending short-dated yields lower and equity indices higher, while the Section 301 forced-labour tariffs - 10-12.5% on 86 countries covering 99.4% of US imports - went before the Court of International Trade and Trump credited a $15bn Iowa steel mill to his 50% steel tariffs. Canada's $1bn alcohol and dairy import ban is live, and the July 278-T showed 1,156 trades including Strategy bought at the 2026 lows.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1446,6 +1524,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Down 18% from its ₹159 IPO and at all-time lows: a 90%-share pallet-pooling leader at 91x earnings, where interest exceeds PBT. 25-point score 12.5/25 — wait for a base.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1465,6 +1544,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent held above USD 108 after Saudi Arabia's East-West pipeline went offline, the Fed is set to deliver its first hike since 2023 with a 25bp move 94% priced, and the BoJ meets September 17-18 expected to lift rates to a 31-year high of 1.25%. ONGC and OIL gain on the crude bid while IOC, BPCL and HINDPETRO absorb negative marketing margins.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1483,6 +1563,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "NPCI's 0.4% MDR on merchant UPI above Rs 2,000 from October 15 opens a Rs 22,000 crore revenue pool by FY28 - PAYTM hit a 52-week high of Rs 1,855.50 while acquiring banks SBIN and AXISBANK led the gainers. SEBI gave arbitrage funds a 1% unhedged leeway to revive the closing auction, and BIS's 67% hallmarking fee hike sent KALYANKJIL and PCJEWELLER down 4-5%.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1501,6 +1582,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi chaired the annual global semiconductor CEO roundtable today and opens SEMICON India 2026 tomorrow - 600+ companies, 300 international, 52 countries, with DIXON, CGPOWER and UNOMINDA named at the event. The Cabinet also cleared the first EPFO wage ceiling hike in 12 years to Rs 25,000 effective September 17, lifting TEAMLEASE and the AMC cohort while raising statutory costs for VTL and TRIDENT.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1519,6 +1601,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The Senate kills the CLARITY Act 49-50, sending COIN down ~10% and CRCL 8-11% and closing crypto's legislative route for 2026, while a 25bp Fed hike is 94% priced into tonight's decision with the 10-year at 4.995%. Trump's $1.4bn crypto income and the bill's blind-trust ethics clause made this a leader-trade story.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1538,6 +1621,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Up 309% from its ₹429 IPO in seven sessions on the AI/GPU story — but ESDS is the paying customer in the $1.25bn SharonAI deal. 25-point checklist score 16.5/25: avoid at CMP.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-v4-flash"
   },
   {
@@ -1555,6 +1639,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Saudi Arabia's East-West pipeline is out for weeks, leaving Hormuz as the only channel and Brent above USD 107 - bullish ONGC and XOM, painful for IOC, BPCL, HINDPETRO and INDIGO. The US 10-year crossed 5% and sank the Sensex 778 points to 74,003.82, but the reverse-AI rotation finally fired: Nifty IT +2.19% led by HCLTECH, INFY and TCS.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1572,6 +1657,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "The RBI rejected Tata Sons' CIC surrender on September 11, putting the Rs 2.01 lakh crore holding company on a mandatory listing path - a generational fee event for BSE, ANGELONE and MOTILALOFS. August CPI hit an 8-month high of 4.82% and WPI 9.92% (IOC, BPCL, HINDPETRO pressure) while NHAI debarred PNCINFRA for three years, sending it down 20%.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1589,6 +1675,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi opens SEMICON India 2026 at Yashobhoomi on September 17 - 600+ exhibitors, 300 international companies and 40+ countries, with CG Power and Uno Minda named in the exhibitor lineup. It is the delivery test for Semicon 2.0's Rs 1,27,500 crore and 12 approved projects; DIXON, KAYNES, SYRMA and AMBER are inferred beneficiaries.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1607,6 +1694,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump rejected Anthropic's AI slowdown call outright - 'whoever wins AI wins' - removing policy risk from the NVDA/AVGO/VRT capex trade even as the 10-year crossed 5% and hike odds topped 90% into tomorrow's FOMC. Canada's Section 338 product changes took effect today (ATVs and dairy in, road salt and cement out) and the Senate holds its 60-vote CLARITY Act test this afternoon (COIN, HOOD).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1624,6 +1712,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent's surge to a USD 107.63 close (highest since May 19) and a hot 0.3% core CPI pushed the US 10-year to about 4.95% and the 30-year to 19-year highs - buy energy (XOM, CVX, ONGC), sell airlines (DAL, UAL, INDIGO). BRICS opens in New Delhi with CBDC payment links and critical minerals on the agenda, not a common currency.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1641,6 +1730,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "NSE priced its IPO at Rs 1,700-1,785 (~Rs 22,562 crore, opens Sep 17, listing circa Sep 24) with the issue down about 15% - a re-rating trigger for BSE and ANGELONE. Record August SIP flows of Rs 32,297 crore and Rs 87.08 trillion MF AUM lift HDFCAMC and NAM-INDIA, while Brent above USD 100 drives oil-marketing margins to Rs -5/litre petrol and Rs -23/litre diesel (IOC, BPCL, HINDPETRO negative).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1658,6 +1748,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Modi hosts the 18th BRICS Summit (Sep 12-13) after a bilateral with Putin covering defence, nuclear, fertilisers, critical minerals and railways: HAL is the one named company, with IL-114 and Sukhoi Superjet 100 local manufacturing expanded (BEL, BDL inferred). India's digital-rupee CBDC settlement push lifts HDFCBANK and SBIN; discounted Russian crude at a record 51% import share helps IOC and BPCL.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1675,6 +1766,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "August CPI matched at 3.4% y/y but core ran 0.3% m/m, holding September Fed hike odds near 60% and the 10-year near 4.95% - a headwind for NVDA, MU and INTC into ORCL's AI cloud beat. Trump's USD 5,000 dividend pledge costs an estimated USD 1.2-1.35 trillion (TLT risk, GLD bid) and Canada's Section 338 scope changes land September 15 (F, GM, STLA).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1691,6 +1783,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "ECB hikes 25bp to a 2.50% deposit rate, its second hike of 2026, blaming Middle East energy costs. Brent holds above USD 100-102 after the US sank five Iranian tankers and Iran struck 10 vessels, with Hormuz flows below 2 mbpd. Buy energy (XOM, CVX, OXY, VLO), sell airlines (DAL, UAL) and India's OMCs (IOC, BPCL, HINDPETRO); ONGC benefits.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1707,6 +1800,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI keeps the Closing Auction Session but will rework derivatives settlement pricing, and revises commodity derivatives position limits (MCX). NSE IPO price band due Sep 11 with the issue trimmed to about Rs 23,000 crore and an ISIN freeze from Sep 11 (BSE, ANGELONE, MOTILALOFS). Man Industries won about Rs 600 crore of orders. Sensex +138 to 74,902.59; defence was the worst sector.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1723,6 +1817,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi told the Paris International Space Summit that India will build a space station by 2035 and put an Indian on the Moon by 2040. Three India-France space deals were signed, including AXISCADES with France's U-Space on microsatellites and Safran's EUR 5M+ supply into India's 52-satellite SBS-3 constellation (MTARTECH, DATAPATTNS inferred).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1739,6 +1834,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Hot August PPI (headline +5.4% y/y, energy +4.2%, diesel +24.1%) and crude back above USD 100 pushed the 10-year to a 2023 high and September hike odds near 66%. Trump's top-9 energy holdings gained USD 1.5-4.4M during the Iran war (CVX, COP, XOM, OXY); Canada tariffs escalate to import bans on dairy, alcohol and motorcycles (F, GM, STLA, HOG) while aluminium bars and rods face 50% (AA).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1755,6 +1851,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Day 194: Brent tops USD 100 as the tanker war widens (5 more tankers destroyed, Iran threatens Gulf ports). India: Sensex -813 to a 3-month low, IT -3%, rupee 95.08; metals and energy gain. BUY ONGC/OIL/XOM, SELL IOC/INDIGO/DAL.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1771,6 +1868,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Record day: six mainboards open together (~Rs 4,400 cr, first time in ~30 yrs); Manipal Payment 0.17x on day 1 (GMP +10%); Torrent Gas files 100%-OFS IPO papers. BSE, ZERODHA, ANGELONE benefit (inferred).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1787,6 +1885,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "CCEA clears 8 railway multi-tracking projects worth Rs 20,804 cr across 9 states (~1,196 km, +74 MTPA freight): coal-belt fourth lines (Rs 10,783 cr) plus five southern corridors (Rs 10,021 cr). IRCON, RVNL, JWL, TITAGARH in focus (inferred).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1803,6 +1902,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent crosses USD 100 as the US destroys 5 more Iranian tankers and Iran threatens Gulf ports; Dow closes -628 (S&P -0.6%) into Thursday CPI with ~55% Sept-hike odds. BUY XOM/CVX/HAL, SELL DAL/UAL/CCL, watch SPY/QQQ.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1818,6 +1918,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Day 193 of Hormuz conflict: US strikes on 3 Iranian tankers and Houthi attacks on Saudi energy push Brent to ~USD 98; Goldman lifts Brent to USD 85 (Dec-26), disruptions seen into 2027. Rupee -0.35% to 94.81; BUY ONGC/OIL, SELL IOC/BPCL/INDIGO.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1834,6 +1935,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "DAC clears Rs 1.1 lakh crore of AoNs (98% domestic, Sep 7): HAL and BEL are the key beneficiaries, defence stocks +2.5%. SEBI ETF framework live Sep 7, FPI G-Sec compliance eased; BoB to sell 35% NSE stake; Deepa Jewellers lists +25%.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1850,6 +1952,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi completes the 2,800-km Dedicated Freight Corridor and unveils Rs 35,000+ cr rail/highway/urban/floating-solar projects in Vadodara. CONCOR, JWL, RVNL, LT in focus (inferred); SEMICON India CEO roundtable Sep 16 is the next policy catalyst.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1866,6 +1969,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Oil near USD 98 after US strikes on 3 Iranian tankers and Houthi hits on Saudi energy, plus Canada 15-50% retaliatory tariffs and 58% Sept-hike odds, drag the Dow ~600 pts on the first session back. BUY XOM/CVX, SELL DAL, watch X/HOG and DJT.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1881,6 +1985,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Asia rallies Friday (Nikkei back above 65,000, Kospi +1.6%) on Waller hold hopes; then US jobs beat lifts Sept hike odds to 63%. Brent ~USD 95 on Day 189. India snaps 4-day fall: Sensex +363, metals/financials lead.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1896,6 +2001,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI to review derivatives settlement pricing after CAS volatility (PR 53/2026) - BSE +3%. NSE IPO global roadshows on, listing window firms (~Sep 25). Army-CGD PNG LoUs (PIB). HDFC Bank raises ~USD 12B via FCNR(B).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1911,6 +2017,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Hot Aug jobs report (+162K vs 53K est) lifts Sept rate-hike odds to 63% - stocks open lower, yields jump. SNOW +17% and PLTR +8% keep software bid. Brent eases to ~USD 95; BUY XOM, SELL DAL.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1926,6 +2033,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Day 188: Brent tops USD 97, touches USD 99 - BUY XOM, ONGC; SELL DAL, INDIGO. Asia mixed (KOSPI rebounds). US hike odds slide to 54%. Sensex -417, Bank Nifty +0.36%, rupee 94.59.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1941,6 +2049,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SC disposes SEBI pleas vs NSE after Rs 1,500 cr settlement - NSE IPO path cleared (Sep window). SEBI accredited-investor comments close today. Hindustan Zinc wins Karnataka REE LoI. BUY BSE, ZERODHA, HINDZINC.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1956,6 +2065,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India-Belgium summit: 10 defence-industry pacts. L&T named for mine-warfare (Exail) and Zorawar turrets (John Cockerill); Bharat Forge-Kalyani for 70mm rockets. BUY LT, BHARATFORGE.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1971,6 +2081,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Section 232 drone tariffs (up to 100%) take effect Sep 3 - BUY RCAT, AVAV, KTOS. Brent tops USD 97 intraday USD 99; Fed hike odds slide to 54%. SELL DAL, UAL.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -1986,6 +2097,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Global risk-off Day 187: KOSPI -4%, Nikkei -2.9%, bond rout (US 10-yr 4.8%, JGB 3%). Brent $95. India Sensex -374 but FIIs net buy Rs 6,688 cr. BUY ONGC, COALINDIA; SELL INDIGO, WIPRO.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2001,6 +2113,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Semicon 2.0 six-pillar notifications issued (MeitY); Coal India +4% on Mahanadi Coalfields IPO filing; curtailed renewable sale via BESS allowed. BUY DIXON, KAYNES, CGPOWER, COALINDIA.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2016,6 +2129,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent tops $95 on Day 187 of the Iran war as US strikes IRGC targets; bond rout lifts 10-yr to 4.8%. BUY XOM, CVX, HAL, SLB; SELL DAL, UAL. Fed hike odds 68%.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2031,6 +2145,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent +2% to $92 on Hormuz re-escalation (Day 186); India Q1 GDP 7.8% beats all forecasts; Fed hike bets. BUY XOM, ONGC; SELL DAL, INDIGO.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2046,6 +2161,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI grants NSE IPO NOC (valuation up to Rs 5.26 lakh cr, September listing target); ETF framework deferred to Sep 7. Positive for BSE, ZERODHA, ANGELONE.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2061,6 +2177,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi hails 7.8% Q1 GDP 'herculean feat'; SCO bilaterals with Putin and Iran. SEMICON India Sep 17-19. Positive for HDFCBANK, LT, DIXON, KAYNES.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2076,6 +2193,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent tops $92 as US-Iran fighting resumes (Day 186); supertankers struck in Hormuz. BUY XOM, CVX, HAL; SELL DAL, UAL. Fed Sep 16 hike bets, DJT -3%.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2091,6 +2209,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "BEL secured Rs 730 crore new orders; SEBI Chairman says NSE IPO close to approval; Tejas Networks gets Rs 1,537 crore BSNL order.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2106,6 +2225,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India-Kuwait Joint Defence Committee held inaugural meeting in New Delhi; defence export opportunities for BEL, HAL, BDL.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2122,6 +2242,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump disclosed 1000+ trades in June including LMT, NOC, GD, RTX, PLTR, NFLX, DIS. Also signed Lake America EO amid Canada trade war.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2143,6 +2264,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump oil/gas trades during Iran war: XOM, CVX, COP active; $500K-$1M XOM sold pre-ceasefire. Holdings up 39% ($4.6M-$15.5M gain).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2157,6 +2279,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US-Canada trade war threatens North American supply chains; Hormuz remains two-way risk; G20 Trade Ministerial preview",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2173,6 +2296,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "RBI MPC holds repo at 5.25% with GDP raised to 6.7%; Piyush Goyal to visit US for G20 trade meet and USTR talks",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2187,6 +2311,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump invokes Section 338 for 50% Canada tariffs; New disclosure reveals SpaceX investment, heavy buying of HD, MA, V, BRK.B",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2202,6 +2327,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI study reveals 88% F&O trader losses; PLI 2.0 mobile scheme favors scale players like Dixon",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2216,6 +2342,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump disclosed 1,051 June trades including Boeing same-day as Navy contract; US-Canada trade war escalates with 50% tariffs",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2232,6 +2359,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US-Canada 50% tariff trade war escalates; India Sensex -171 to 77,369; metals gain on supply realignment; gold hits 3-month highs; TATASTEEL, JSWSTEEL beneficiaries",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2248,6 +2376,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's June disclosure reveals 1,051 trades worth 8M-63M: sold META, bought BRK.B/V/MA/HD; DJT Q2 loss 38M; US-Canada 50% tariffs escalate trade war",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2265,6 +2394,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Siemens Ltd — industrial giant with ₹45,033 Cr order backlog, 14.6% revenue growth, but P/E ~93x and margin pressures.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -2282,6 +2412,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Nifty ends 7-day losing streak with 0.64% gain; Brent crude tops 3 on Hormuz concerns; Shiprocket IPO lists; US-Canada trade deadline looms",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2298,6 +2429,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Data Patterns wins Rs 586 cr BEL radar order; Apollo Micro gets Rs 81 cr defence order; SEBI study shows 88.5% of young F&O traders lost money in FY26",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2315,6 +2447,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Canada trade deal deadline looms with 50% Section 338 tariffs set for Aug 22; deal very close with auto tariffs potentially cut to 15%; Trump hosts crypto summit, DJT Truth API generating revenue",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2332,7 +2465,8 @@ export const ANALYSES: Analysis[] = [
       "rbi"
     ],
     "summary": "Trump pauses 50% Canada tariffs (Section 338), Modi appeals for economic self-reliance, SEBI modifies disclosure framework, RBI MPC minutes signal possible rate hike",
-    "market": "global"
+    "market": "global",
+    "kind": "pulse"
   },
   {
     "title": "Ramkrishna Forgings Ltd — Deep Dive Analysis",
@@ -2348,7 +2482,8 @@ export const ANALYSES: Analysis[] = [
       "mid-cap"
     ],
     "summary": "Ramkrishna Forgings (RKFORGE) shows strong Q1 FY27 profit growth of 297% YoY with ₹9,635 Cr order book providing 4-year visibility. However, elevated valuation (P/E ~119x), low ROCE (5.6%), and promoter pledge (15.56%) warrant caution. Trading near 52-week high with mixed analyst consensus.",
-    "market": "india"
+    "market": "india",
+    "kind": "research"
   },
   {
     "title": "Policy Pulse — Global Spillover — 18 Aug 2026",
@@ -2365,6 +2500,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Brent crude tops $90 on Hormuz blockade concerns; markets await Wed FOMC minutes; AI rally pauses at records",
     "market": "global",
+    "kind": "pulse",
     "model": "kimi-k2.5"
   },
   {
@@ -2382,6 +2518,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "MoD signs Rs 1,943 cr MQ-9B drone lease with General Atomics; Nifty falls 6th straight session to 24,155 on crude above $90",
     "market": "india",
+    "kind": "pulse",
     "model": "kimi-k2.5"
   },
   {
@@ -2399,6 +2536,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump signs EO for 50% Canada tariffs effective Aug 19 using Section 338; retail beneficiaries WMT HD LOW, cruise lines CCL RCL at risk",
     "market": "global",
+    "kind": "pulse",
     "model": "kimi-k2.5"
   },
   {
@@ -2415,6 +2553,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "KPI Green (KPIGREEN): 6.94 GW renewable pipeline, 104% 5-yr PAT CAGR, cheap 13.2x P/E. But Q1 FY27 PAT -15% on soaring interest/depreciation, borrowings 3.5x to ₹5,197 Cr, 44.7% promoter pledge, and a technically-broken downtrend (Strong Sell, below all MAs). Verdict: CAUTION — fundamental value but EPS-dilutive until post-FY28, not a swing entry now.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -2433,6 +2572,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Crude ~$89.50 on the indefinite Hormuz blockade + Wednesday FOMC minutes loom; India gets a sector catalyst from Modi's I-Day AI/defence agenda — BUY energy (XOM), SELL airlines; BUY Indian IT/defence",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2451,6 +2591,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "MoD names ₹1,577 cr loiter-munition orders (TASL + NIBE) for the Indian Army — BUY TATAMOTORS proxy; Lalithaa Jewellery IPO opens ~45%, Shiprocket lists Aug 19 — BUY BSE; Nifty down 5th day on crude",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2471,6 +2612,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi's Aug 15 Independence Day address: train 1 crore youth in AI, defence self-reliance (Sudarshan Chakra), nuclear + semiconductor build-out — BUY IT (TCS/INFY) and defence (HAL/BEL), watch nuclear (BHEL/LT)",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2490,6 +2632,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Crude climbs ~1.1% to ~$89.50 on the indefinite Hormuz blockade; July retail sales -0.6% pulls yields off highs ahead of Wednesday FOMC minutes — BUY XOM/CVX/OXY, SELL DAL/UAL/CCL; AI rally pauses",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2508,6 +2651,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US indefinite-Hormuz-blockade threat + IEA supply cut (4.3M bpd) fuel a ~6% weekly oil rally — BUY XOM/CVX/OXY, SELL DAL/UAL; India refiners under pressure as rupee dips; only a signed deal flips the trade",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2527,6 +2671,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI's accredited-investor consultation (manager-led, 4-lakh pool) + OBPP bond-platform circular + Shiprocket/Behari Lal IPOs close at 80x subscription — BUY BSE, watch MOTILALOFS/ZERODHA; Nifty down 4th day on crude",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2545,6 +2690,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US threatens an indefinite Hormuz blockade; oil jumps ~2% toward a 6% weekly gain (Brent ~87-88, IEA cuts supply 4.3M bpd) — BUY XOM/CVX/OXY, SELL DAL/UAL/CCL; S&P pauses near record",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2561,6 +2707,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Jeena Sikho Lifecare — integrated Ayurveda hospital+products leader with FY26 revenue +71%, PAT +144%, ROCE 71%, ROE 60%. Trailing P/E ~29x is reasonable, but price is technically broken (below all MAs), rich on P/B ~14x, and Q1 profit quality is flattered by other income. Delivery data confirmed strong (avg 51%). Verdict: CAUTION.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -2582,6 +2729,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "AI buying + easing oil carry global equities; Hormuz stays unsigned two-way (Brent ~87.7); India's Tata Motors +83% Q1 offsets metals/bank drag",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2602,6 +2750,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Tata Motors Q1 PAT +83% lifts Tata complex; SEBI BRSR value-chain ESG mandate (FY26-27); Shiprocket IPO closes Aug 14 at retail ~10x, GMP ~35%",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2622,6 +2771,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "AI rally carries US stocks toward records as oil eases (Brent ~87.7); Truth API hit by a First-Amendment lawsuit; S&P near record, Nasdaq 100 +1.2%",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2644,6 +2794,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Tame CPI + AI earnings (CoreWeave +18%) carry global equities; Hormuz holds crude near $89 two-way; India rotates to metals/PSU-banks away from Tata/IT/healthcare",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2664,6 +2815,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "MoD fresh orders (BEL 541cr, Zen 295cr), Shiprocket IPO opens (62% day-1, GMP ~31%), PSU banks and metals lead amid Tata/healthcare/FMCG weakness",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2684,6 +2836,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "In-line July CPI (3.4%) keeps the Fed at bay and re-ignites the AI rally (CoreWeave +18%, Super Micro); Hormuz holds crude near $89; no new Trump trades",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2704,6 +2857,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Hormuz 'honeymoon' over - crude rallies to 88-90 as US-Iran deal hopes fade (possible 120-140 tipping point into Q4); markets camp at highs ahead of Aug 12 US CPI; pharma/IT cushion Indian dip",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2723,6 +2877,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Crude near 90 clouds Sensex (-0.49%) but pharma/IT/refineries shine (Gland +9.6% on Q1 beat, CPCL +14.9%); 'IPOgust' 11 mainboard IPOs raise 21272 cr, lifting BSE/brokers; Shiprocket IPO opens Aug 12",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2742,6 +2897,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump Media posts 238M Q2 loss as its crypto bet backfires, but Truth API lands 10+ paying HFT clients (60-100K/mo) and BTC treasury tops 900M; Trump 'low-keying it' on Iran keeps crude near 90",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2762,6 +2918,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Three global threads: US critical-minerals spend reprices rare-earth/magnet supply chain; Hormuz close-but-not-signed keeps crude two-way (Brent ~83.5); soft US jobs data lifts rate-cut trade ahead of Aug 12 CPI",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2780,6 +2937,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI resets broker-inspection framework (risk-based, joint inspections, FY27 target cut to one-third) — tailwind for compliant big brokers/exchanges; market flat but resilient",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2799,6 +2957,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's historic mining roundtable (Aug 7) pumps over 3B into rare earth, magnets, and battery supply chains; US rare-earth complex rallies (USAR +11%, MP up)",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2816,6 +2975,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's Aug 7 mining roundtable lit up magnets/rare-earths. Deep-dive on USAR (govt-backed mine-to-magnet, +29% on week, pre-revenue) vs MP (real +89% rev growth, EBITDA positive, magnets ship Q4'26). MP = core FAVOURABLE; USAR = high-risk momentum CAUTION.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -2836,6 +2996,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US polysilicon tariffs reshuffle global solar (SELL China c-Si exporters JKS/LONGI, BUY FSLR/SEDG); crude stays two-way as Hormuz deal is 'close but not signed'. India refiners/airlines benefit from softer crude.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2855,6 +3016,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "NSE issues Authorised Persons consultation (comments by Aug 27) — AP-heavy brokers face compliance reshuffle, exchanges/incumbents benefit. RBI on hold (recap). PSU banks +2% led Aug 6 close.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2874,6 +3036,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Cabinet approves GOBARdhan, Rs 23,731 cr compressed biogas scheme (FY27-FY36, Min of Petroleum). CGD entities (IGL, MGL, GUJGAS, ADANIGAS) are mandated CBG offtakers; refiners IOC/BPCL/HPCL co-invest.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2892,6 +3055,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump signs Section 232 tariffs + price floors on polysilicon (15% on derivatives, effective Dec 4). First Solar (FSLR) the clear winner; US solar manufacturing structurally repriced vs China.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2907,6 +3071,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on APL Apollo Tubes — fortress balance sheet (near debt-free, ₹1,400 Cr net cash), ROCE 31.6%, FY26 PAT +59%, 52% avg delivery indicating genuine institutional accumulation. Verdict: FAVORABLE — high-quality compounder, buy on pullbacks to ₹1,800-1,850; valuation 44.8x P/E is the only concern.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -2930,6 +3095,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Hormuz draft finalized but path unclear; Brent rebounded (two-way, no longer a straight crash). India mixed: Sensex +374, defence charges (HAL, GRSE), PSU banks lead, FIIs turn net-bullish on futures. Q1 earnings top driver (Trent +26%). Energy/airlines event-driven.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2954,6 +3120,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI FY27 agenda: LODR review, SLB revamp, fast-track AIF, corporate-bond tokenisation pilot, Jagrook. Buy-back open-market route live (Aug 1, <15% cap). Defence stocks fire (HAL, BEL, GRSE); PSU banks lead; Sensex +374, Nifty flat on CAS/expiry. Q1 earnings drive moves (Trent +26%).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2976,6 +3143,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Hormuz draft deal finalized; Trump says deal near, but US position unclear and oil rebounded (two-way). S&P record 7,736.52, Dow first close above 54,000. NVDA up on SpaceX AI deal. Energy/airlines now event-driven.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -2999,6 +3167,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Hormuz deal as early as Wednesday, Brent <$80; US records (AMZN >$3T). India firms (Sensex +152) as RBI holds. HSBC sees $25B FII inflows. SELL energy (XOM, ONGC), BUY airlines (DAL, INDIGO).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3021,6 +3190,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "RBI holds repo at 5.25% (neutral), raises FY27 GDP to 6.7%, cuts CPI to ~5%. SEBI CAS divergences; REIT/InvIT DR consultation. Banks neutral (ICICIBANK, KOTAKBANK, SBIN), BSE positive, TCS/HCL weak.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3041,6 +3211,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump says Hormuz-reopening deal could come as early as Wednesday; Brent <$80. US stocks at records (S&P 500 7,736, Amazon >$3T). SELL energy (XOM, OXY, USO), BUY airlines/cruises (DAL, CCL, WMT).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3061,6 +3232,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Hormuz talks stall, oil rebounds 1.4% (Brent ~5), India consolidates (Nifty -159 to 24,615) ahead of RBI Aug 5. Q1 earnings Ather +14%, BSE +62% drive select moves.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3080,6 +3252,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI Closing Auction Session (CAS) live from Aug 3; windfall tax raised on fuel exports (negative for IOC, BPCL, HPCL, RELIANCE). BSE Q1 profit +62%, Ather +14%, Pidilite +27.7%.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3099,6 +3272,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump Media (DJT) -4% on 0M Q2 loss and delayed crypto-ETF; Trump warns Iran talks are 'last chance' as oil rebounds 1.4%. DJT Hold, energy bounces (XOM), airlines dip (DAL).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3118,6 +3292,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "What Changed since the Jun 28 deep-dive. Stock fell to a fresh 52-week low (₹1,342) then bounced +6.9% to ₹1,474 on Aug 3 on the ₹3,135 Cr SECI green-ammonia PPA. Q1 FY27 concall reaffirms 40-50% revenue/PAT CAGR target with ₹7,000 Cr order book. P/E compressed to 11.9x vs industry 30.8x. Verdict: CAUTION — structurally intact, technically still bearish; early relief-rally only.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -3138,6 +3313,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US-Iran de-escalation crashes crude 6%. India rallies: refiners (BPCL, HPCL, IOC), airlines (INDIGO), gas pure. US energy sells off (XOM, CVX); airlines gain.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3157,6 +3333,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "RBI MPC begins (Aug 5 decision), India PMI at near-5-yr low (53.5), SEBI open-market buybacks live (Aug 1). Watch banks, buyback cash-rich TCS/INFY/ITC.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3176,6 +3353,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump cancels Iran strike, opens Hormuz talks — oil crashes ~6%. SELL energy (XOM, CVX, OXY), BUY airlines/cruises (DAL, UAL, CCL) and consumer.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3194,6 +3372,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US pharma Section 232 tariffs live (branded protected, generics exempt). India Samudra Manthan energy-security capex (ONGC, OIL). Markets stabilize post-Fed.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3211,6 +3390,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India-US pharma deal exempts Indian generics from Section 232 (BUY SUNPHARMA, DRREDDY, CIPLA). SEBI Stock Brokers Regulations 2026. Nifty Pharma +0.7%.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3228,6 +3408,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Cabinet approves Samudra Manthan ₹84,084 cr offshore exploration (BUY ONGC, OIL) and PM-SSY ₹5,070 cr floating solar+storage (TATAPOWER, SJVN, NHPC, EXIDEIND).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3244,6 +3425,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US Pharmaceutical Section 232 tariffs take effect today: 100% on branded patented drugs, generics exempt. Structural BUY for LLY, MRK, JNJ, PFE, ABBV. Watch Sept 29 expansion.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3264,6 +3446,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Fed hawkish hold sends yields to 2007 highs. Hormuz crude +7%. Adidas -19% record crash. Apple Siri AI upgrade. Reverse AI trade continues benefiting Indian IT. FII buying ₹2,982 Cr.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3282,6 +3465,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Q1 earnings heavy day: Vedanta +152% PAT, Bajaj Finance +29%, Tata Steel +19%. Nifty Auto +1.63% leads markets. GRSE ₹1,032 Cr order. NLC India 900 MW solar win. FIIs net buyers at ₹2,982 Cr.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3298,6 +3482,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM chairs 2nd high-level meeting with Secretaries on Iran War response. Defence and energy security remain top priorities. GRSE ₹1,032 Cr order adds defence tailwind.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3316,6 +3501,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Fed holds rates steady, 30-yr yields hit 2007 highs. Apple Siri AI upgrade. Adidas -19% crash on World Cup margins. Crude +7% on Hormuz tensions. Sector rotation from tech to energy.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3335,6 +3521,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "KOSPI back-to-back circuit breakers (first ever). SK Hynix misses despite record profit. China DUV competition fears. Reverse AI Trade lifts Indian IT. Hormuz oil surge +7%. Fed decision day.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3353,6 +3540,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI PMS overhaul consultation paper. Market rallies +889 pts led by IT (+2.55%), HUL (+4.70%), INFY (+4.50%). NSE removes Exide from F&O.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3369,6 +3557,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's financial disclosure reveals 58M portfolio, 21,000+ trades. CNBC links JPM, Schwab, UBS as custodians. Copy-trade signals on AAPL, NVDA, GOOGL, PLTR.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3388,6 +3577,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "North Korea to send 30,000 more troops to Russia (LMT, GD, PLTR bullish); KOSPI -10.8% triggers rotation to Indian IT; Iran ceasefire holds, crude basket down 32% from peak (IOC, BPCL benefit). Full geopolitical stock mapping inside.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3408,6 +3598,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI PMS overhaul opens MF-only category (MOTILALOFS, HDFCAMC bullish); Nifty IT rallies 3.7% on reverse AI trade (TCS, INFY, COFORGE); BEL Q1 profit +8.2% with ₹72K cr order book; HUL -7% on profit miss; Coal India flat. Full stock impact inside.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3426,6 +3617,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump Media's Truth API launches Aug 1 (DJT catalyst); KOSPI -10.8% on China DUV chip fears triggers AI rotation to software (GOOGL, MSFT); Iran ceasefire holds easing oil — BUY DAL, UAL, CCL. Full stock impact analysis inside.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3450,6 +3642,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Global markets rally on US-Iran war pause — Sensex +776, S&P 500 +1%, oil crashes 7%. Indian refiners reverse from SELL to BUY. ONGC biggest loser. BEL strong Q1. Fed meeting + Big Tech earnings this week. Saudi strikes Houthis — Red Sea risk persists.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3475,6 +3668,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Supreme Court denies IEX interim relief in market coupling case — structural risk. BEL Q1 PAT +8%, orderbook Rs 72,258 Cr. Coal India PAT flat, Tata Power PAT +11%. CONCOR hikes FY27 volume guidance. No new RBI/SEBI/FM announcements.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3498,6 +3692,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India relief rally — Sensex +776 pts breaks 5-day losing streak. Crude crash + US-Iran pause drive broad gains. INFY +3.65%, INDIGO +4.51%, ONGC -3.96%. No new cabinet decisions today. Existing Semicon 2.0/BHAVYA Rasayan tailwinds remain.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3521,6 +3716,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US-Iran war pause holds — oil crashes 7%, S&P 500 rallies 1%. Brent at 85. Airlines/cruises reverse to BUY. Defence stocks dial back to HOLD. Fed week + Big Tech earnings in focus. Trump meets Netanyahu tomorrow on Iran trajectory.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3541,6 +3737,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Strait of Hormuz crisis at peak — 13th night of US strikes, Iran rejects ceasefire, oil above 00. Generic drug tariff timeline begins Aug 1. Section 122 expiry relief for importers. Stock impact: BUY oil/gas/defence/renewables, SELL airlines/refiners/generic pharma.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3561,6 +3758,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI proposes PMS overhaul — foreign investments, unhedged shorts, MF-only PMS. HCL Tech announces ₹14,257 cr AI data centre in Odisha. Markets fall for 5th straight day. Stock impact: BUY PMS providers/AMCs/exchanges/HCLTech, SELL INFY/INDIGO.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3581,6 +3779,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Cabinet approves ₹3,030 cr BHAVYA Rasayan chemical parks scheme + ₹1,264 cr rail project. India secures lower 10% US tariff under Section 301. Stock impact: BUY chemicals/infra/pharma, SELL steel (US export).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3603,6 +3802,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Section 122 expires, replaced by Section 301 (10-12.5%) forced labor tariffs on 60 economies. Iran tariff EO signed. Hormuz crisis deepens — oil above $100. Generic drug tariff timeline begins. Stock impact: BUY oil/defence/retail, SELL airlines/cruises/generic pharma.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3629,6 +3829,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "INFY Q1: +12% PAT, guidance trimmed, ADR -4.85%. INDIGO: ₹238cr net loss on fuel costs (85% rise). CIPLA: -39% PAT. Hormuz: 12th night, Brent near 8. IOC/MRPL halt Iraq loadings. Section 122 expiry tomorrow benefits Indian IT/Textiles. ONGC gains, refiners bleed.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3650,6 +3851,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI proposes sweeping PMS overhaul — foreign securities, MF-only PMS, higher derivatives flexibility. Major positive for MOTILALOFS (largest listed PMS), HDFCAMC, NIPPONLIFE (MF-PMS channel), brokerages (ANGELONE, ZERODHA). SEBI also proposes ODR revamp (BSE beneficiary) and considers reducing upfront cash margins.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3673,6 +3875,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Section 122 tariff expires TOMORROW (Jul 24) — USTR missed replacement deadline, Wyden bill to repeal. Hormuz 12th night, Brent near 8. Generic drug tariff structural overhang continues. US retailers (WMT, TGT, COST, AMZN) biggest beneficiaries of Section 122 expiry.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3689,6 +3892,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Fiem Industries — a debt-free auto lighting leader riding the LED revolution. 29% ROCE, 24x P/E, DIIs accumulating heavily. Customer concentration is the risk to watch. Full analysis inside.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -3707,6 +3911,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Game changer: Ideaforge raised ₹500 Cr via QIP at ₹795. Working capital solved, debt cleared, HDFC MF & others invested. Promoter dilution to 25.3% is the sticking point. Full analysis.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -3723,6 +3928,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Indo-MIM — world's largest MIM manufacturer — opens IPO at ₹485. 45x P/E, 21% ROE, accelerating growth, but 86% OFS and US export concentration warrant caution. Detailed analysis inside.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -3744,6 +3950,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "US-Iran war enters 11th night of strikes; Trump threatens Iranian infrastructure. Hormuz closed — oil 5+, ONGC/OCD gain, refiners bleed. Trump generic drug tariff timeline hits TEVA, MYL globally. US-Jordan trade deal signed. Genesis B AI-for-science unveiled.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3764,6 +3971,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "RBI collateral norms (100% BG) ongoing impact — negative for exchanges (BSE, MCX) & brokerages (Angel One, Zerodha, IIFL), positive for banks (HDFC Bank, ICICI). SEBI buyback rule amendment positive for cash-rich cos (TCS, Infy, ITC, Coal India). SEBI enforcement action on Pace Stock Broking.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3784,6 +3992,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Nifty below 24,000 on Brent 5, IOCs halt Iraq oil loadings due to Hormuz (ONGC gains, IOC/BPCL/HPCL pressured). Trump generic drug tariff crushes Sun Pharma, Lupin, Cipla. Nestlé, Bajaj Auto shine on stellar Q1. Bandhan Bank -19% on RoA cut.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3806,6 +4015,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump escalates Hormuz (threatens Iranian infrastructure), announces generic drug tariff timeline (0%→100%→200%), unveils B Genesis AI Mission. Oil, defence, branded pharma gain; airlines, generic pharma under pressure.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3822,6 +4032,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Websol Energy — a remarkable turnaround from near-zero revenue to ₹1,049 Cr in FY26. 67% ROE, 63% ROCE, near net cash, but 89% promoter pledge casts a long shadow. Full analysis inside.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -3843,6 +4054,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "🌍 Hormuz crisis: Day 9 of US strikes on Iran, Houthis blockade Saudi, Brent at 9.22, US gas at /gal. Canada hit with 50% Section 338 tariffs on 0B of goods. Section 122 expires in 3 days (Jul 24). Impact: 🟢 BUY XOM, CVX, OXY, WMT, TGT, COST, TSLA, MP | 🔴 SELL DAL, UAL, AAL, CCL, STLA",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3863,6 +4075,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI operationalises promoter share freeze for buybacks (Aug 1 deadline) — revived open market route; RBI FCNR flows at 0.72B; 230 products shortlisted for indigenisation (89B import substitution target). Impact: 🟢 BUY TCS, INFY, ITC, HDFCBANK (buyback), DIXON, HAL, BEL (indigenisation), SBI (FCNR)",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3883,6 +4096,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Nifty ends at 24,187.70 (-0.21%). TVS Motor (+51% PAT) & Bajaj Auto (+42% PAT) lead auto Q1; Govt shortlists 230 products for import substitution (89B); Maruti hikes prices ₹30K from Aug; SEBI operationalises buyback freeze. Crude at 9/bbl weighs. Impact: 🟢 BUY TVS, BAJAJ-AUTO, DIXON, HAL, TCS, ITC | 🔴 SELL INDIGO, SPICEJET, TITAN",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3902,6 +4116,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's portfolio beats S&P (37.3% vs 23.5%); Canada slapped with 50% Section 338 tariffs on autos/booze/dairy; Defense Supply Chain EO cuts China waivers. Section 122 expiry in 3 days. Impact: 🟢 BUY GOOGL, AAPL, NVDA, PLTR, XOM, WMT, TGT, MP | 🔴 SELL DAL, UAL, STLA",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3922,6 +4137,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "🌍 Iran declares 'full-scale war' as US strikes 9th night. Houthis blockade Saudi ports. Brent at 8, US gas at /gal. Section 122 tariff expires Jul 24 (4 days). Impact: 🟢 BUY oil majors and retailers | 🔴 SELL airlines and cruises.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3942,6 +4158,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "📉 Indian markets: Nifty -0.39% amid Iran tension. PSU banks rally on Q1 beats (PNB +5.7%, Union Bank +4.4%). Private banks tank (Axis -5.4%, HDFC -5.1%). Pharma defensive rotation +1%. Space sector boost from Skyroot launch. RBI capital norms still pressuring NSE/BSE/brokerages.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3962,6 +4179,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "🔴 Iran war escalation: 9th night of US strikes, Brent breaks 0, Houthis blockade Saudi ports. 📅 Section 122 tariff expires Jul 24 in 4 days. Impact: 🟢 BUY XOM, CVX, OXY, WMT, TGT | 🔴 SELL DAL, UAL, AAL",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -3977,6 +4195,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep analysis of India's largest AMC IPO — ₹9,813 Cr OFS at 36-38x P/E, 41.73x subscription, GMP at 16%. We compare with HDFC AMC, ICICI Pru AMC & Nippon AMC and give a hold/sell verdict.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -3997,6 +4216,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Strait of Hormuz escalation: buy XOM, CVX, OXY, EOG; sell DAL, UAL, AAL, CCL, RCL. Section 301 deadline Jul 20: buy WMT, TGT, COST if Section 122 lapses; sell TCS, INFY, WIPRO, SUNPHARMA if 12.5% tariff hits.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4016,6 +4236,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI buyback amendment (Aug 1) positive for TCS, INFY, ITC, COALINDIA, ONGC. RBI CME norms negative for BSE, ANGELONE, ZERODHA, IIFL, MOTILALOFS. Markets rally 1.25% ahead of bank earnings.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4035,6 +4256,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM flags off India's first hydrogen train — buy Jindal Stainless (40% steel supply), IRCON, BHEL, L&T. Ather Energy ₹200 Cr govt investment — buy Hero MotoCorp. JSW Steel profit doubles, BHEL first profit in 8 years.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4054,6 +4276,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Section 122 tariff expires Jul 24 (7 days) — buy WMT, TGT, COST, AMZN, HD, LOW. Strait of Hormuz escalates — buy XOM, CVX, OXY; sell DAL, UAL, AAL, CCL, RCL. USTR Section 301 deadline Jul 20.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4073,6 +4296,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI buyback amendment (Aug 1) positive for cash-rich TCS, INFY, ITC. DAC clears ₹52K cr defence — buy HAL, BEL, BDL, Data Patterns, Apollo Micro.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4092,6 +4316,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Cabinet approves Semicon 2.0 (₹1.27L cr) + MPMS mobile PLI (₹62,500 cr) — buy Dixon Tech (+6.2%), CG Power, Kaynes Tech. Infra package buy L&T, IRCON.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4110,6 +4335,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Section 122 tariff expiry (Jul 24) just 8 days away — buy WMT, TGT, COST on import relief. Strait of Hormuz oil crisis intensifies — buy XOM, CVX, OXY, sell DAL, UAL, CCL.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4130,6 +4356,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "EU-US deal (15% ceiling) in effect, Section 301 deadline July 20, Section 122 expires July 24, USMCA enters annual review — TSLA, TCS, SUNPHARMA positioned across multi-tier tariff shifts.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4148,6 +4375,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Cabinet approves Semicon 2.0 (₹1.27 lakh cr) + MPMS (₹62,500 cr) + hydrogen train launch — KAYNES, DIXON, CG Semi, L&T key beneficiaries across semiconductor design, mobile manufacturing, and green rail.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4167,6 +4395,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump primetime address July 16 + Section 122 tariff expiry July 24 + pharma onshoring deadline July 31 create 9-day policy window — XOM, LLY, BA positioned for key outcomes.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4182,6 +4411,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Kalyan Jewellers delivered exceptional FY26 with PAT of ₹1,350 Cr (+89% YoY), aggressive store expansion (129 new showrooms), Candere turning profitable, and management targeting zero non-GML debt in FY27. However, the stock has rallied 46% in 4 sessions with delivery % collapsing from 35% to 13%, RSI at 80+, and FIIs reducing stake from 29.65% to 14.55% over 3 years. Citi targets ₹750 while technicals flash overbought warnings. Verdict: CAUTION.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4202,6 +4432,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Global cross-currents: Iran blockade drives oil stocks (XOM, ONGC) higher while hitting airlines (DAL, UAL); US-India trade talks progress; Indian defence exports surge 62% to record (HAL, BEL, SOLARINDS).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4220,6 +4451,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "SEBI's stricter conflict-of-interest rules and DPIIT's enhanced FDI approval SOP improve India's regulatory transparency — banking stocks (HDFCBANK, ICICIBANK, BAJFINANCE) benefit from clearer foreign investment pathways.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4237,6 +4469,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Modi-Austria semiconductor/defence partnership plus Micron's Gujarat facility mark India's accelerating semiconductor ecosystem — key beneficiaries: DIXON, HAL, KAYNES, L&T.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4256,6 +4489,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's $81B tariff refunds and new exemption EO signal shifting trade stance — tailwinds for mega-cap importers (AAPL, MSFT, LLY), crypto platforms (COIN, MSTR), and energy (XOM).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4278,6 +4512,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump says US will get 'paid to guard' Strait of Hormuz — oil at 5-78 sustained. Iran tensions escalate with fresh strikes. Oil/gas stocks up (XOM, CVX, OXY), airlines down (DAL, UAL), cruises down (CCL, RCL). India-US trade talks stall adds EM uncertainty.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4301,6 +4536,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "USTR proposes 12.5% forced labor tariffs on 44 countries including India — textiles hit hardest (WELSPUN, TRIDENT). June retail inflation rises to 4.38%, breaches RBI target. SEBI tightens employee conduct rules (governance only).",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4323,6 +4559,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India rejects rushed US trade deal — demands tariff edge over China. Risk of steeper tariffs later this month. IT (TCS, INFY) and textiles (WELSPUN, TRIDENT) exposed. HAL receives 7th GE engine — Tejas Mk1A programme gains momentum.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4346,6 +4583,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump signs aircraft Section 232 EO boosting US aerospace (BA, GE, RTX). Says US will get 'paid to guard' Strait of Hormuz — oil stocks up, airlines down. Crypto disclosure analyzed: .4B income invested in mega-cap tech (GOOGL, AAPL, NVDA, AVGO).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4366,6 +4604,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Iran ceasefire 'over' as US-Iran trade strikes — oil surges to $78 amid renewed Hormuz disruption. Oil prices slid 2% on Jul 10 but remain elevated. IEA warns supply recovery uncertain. Treasury revokes Iranian oil waiver effective Jul 17. Airlines and cruise stocks hit hard.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4387,6 +4626,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "RBI's new collateral norms (100% margin on bank guarantees to brokers) squeeze trading volumes since Jul 1. SEBI revives open-market buyback route effective Aug 1. SEBI reforms ETF pricing framework. Defence Ministry confirms ₹2L Cr contract signing target for FY26. NBCC reports ₹1.2L Cr order book.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4405,6 +4645,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India's semiconductor mission hits $18B in investments across 10 projects; commercial chip packaging begins at Sanand. Defence exports reach record ₹38,424 Cr. NBCC reports ₹1.2L Cr order book. Modi-Indonesia BrahMos missile deal sealed with new applications discussed.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4428,6 +4669,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's portfolio beats S&P 500 with 37.3% return; top holdings GOOGL, AAPL, NVDA, AVGO. Brokers bought $10M-$24M in defence stocks. Aircraft Section 232 probe launched. Spain trade threat via IEEPA escalates. USMCA non-renewed. AI E.O. 14409 signed.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4447,6 +4689,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Iran-US conflict escalates as Trump declares MoU 'over'. Iran strikes 85 US sites; oil surges to 8/barrel. Global markets sell off (Nifty -2.23%, KOSPI -5.35%). US approves Tomahawk missile sale to Germany. India's defence stocks and oil producers emerge as relative winners.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4468,6 +4711,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "DPIIT amends footwear QCOs (legacy stock clearance extended to 2027). Army fast-tracks ₹1,500Cr drone procurement — Tata/Nibe win. Apollo Micro nears ₹2,500Cr Premier Explosives acquisition. RBI injects ₹5.6L Cr liquidity.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4488,6 +4732,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "PM Modi in Australia: uranium supply deal signed, A00M NIIF investment from AustralianSuper, new defence declaration, clean energy cooperation, and CECA push. Key beneficiary stocks across nuclear, defence, renewables, and infrastructure.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4509,6 +4754,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's brokers bought 0M-4M in defence stocks (Palantir, Lockheed Martin, GD). Iran MoU declared 'over' — oil surges to 8. Trump Accounts launch with 0B expected inflow. India defends against Section 301 tariffs on Day 3 of USTR hearings.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4529,6 +4775,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "FM Sitharaman pushes toy exports to capture 25% of 79B global market. SEBI mandates FPI fees in INR, issues insider trading warning to Reliance, and reintroduces open market buyback framework.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4549,6 +4796,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump's 2025 financial disclosure reveals 327 stock purchases worth 2.8M the day before his tariff pause — including AAPL, MSFT, NVDA, AMZN, GOOGL. Plus: Trump Accounts launch, Section 301 forced labour hearings targeting India.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4568,7 +4816,8 @@ export const ANALYSES: Analysis[] = [
       "new-zealand-fta"
     ],
     "summary": "USTR Section 301 forced-labor tariff hearings begin Jul 7 — 60 economies targeted. China adds 20 Japanese entities to export control list. NZ-India FTA passes first reading. Digital customs cuts electronic clearance to 6 hrs. Key: INFY, TCS, SUNPHARMA, DIXON.",
-    "market": "global"
+    "market": "global",
+    "kind": "pulse"
   },
   {
     "title": "Policy Pulse — Ministries — 07 Jul 2026",
@@ -4586,7 +4835,8 @@ export const ANALYSES: Analysis[] = [
       "textiles"
     ],
     "summary": "DAC approves ₹52,000 Cr defence procurement (BEL, HAL, BDL, PARAS). India-EU FTA legal scrubbing accelerated — textile/pharma boost (TRIDENT, WELSPUN, DRREDDY). SEBI buyback cap at 15% from Aug 1. SEZ RoDTEP extension.",
-    "market": "india"
+    "market": "india",
+    "kind": "pulse"
   },
   {
     "title": "Policy Pulse — Modi — 07 Jul 2026",
@@ -4604,7 +4854,8 @@ export const ANALYSES: Analysis[] = [
       "infrastructure"
     ],
     "summary": "PM Modi in Indonesia: BrahMos & Astra missile export deal, critical minerals pact, steel supply chain cooperation, UPI integration. CG Semi OSAT inaugurated. ₹1.06L Cr projects in Rajasthan/Gujarat. Key: HAL, BDL, BEL, RIL, DIXON.",
-    "market": "india"
+    "market": "india",
+    "kind": "pulse"
   },
   {
     "title": "Policy Pulse — Trump — 07 Jul 2026",
@@ -4621,7 +4872,8 @@ export const ANALYSES: Analysis[] = [
       "financial-filing"
     ],
     "summary": "Section 122 tariffs expire Jul 24; Section 301 hearings begin. Trump 2025 disclosure shows 21K+ trades, $1.4B crypto, $5-25M buys in AAPL, NVDA, MSFT. USMCA not renewed. Stock impact: AAPL, NVDA, MSFT buy signals; DJT sell.",
-    "market": "global"
+    "market": "global",
+    "kind": "pulse"
   },
   {
     "title": "Policy Pulse — Global Trade — 06 Jul 2026",
@@ -4642,6 +4894,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "USTR forced labor tariff hearings Jul 7-9 propose 12.5% duty on 60 economies including India; US pharma tariffs (100% on patented) exclude generics — Neutral for Indian API exporters; USMCA not renewed; Brazil tariff deadline Jul 15. Stocks: SUNPHARMA, DRREDDY, DIVIS, TCS, INFY, TATASTEEL, WELSPUN, RAYMOND.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4663,6 +4916,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India-UK CETA effective Jul 15 — CFOs expanding capacity for textile, auto components, gems & jewellery export boom. SEBI reintroduces open market buyback from Aug 1. India exports set to cross $500B in FY27. Stocks: RAYMOND, WELSPUN, INDOCOUNT, CEAT, BHARATFORG, TITAN, PCJEWELLER.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4680,6 +4934,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Shakti Pumps (SHAKTIPUMP) — solar pump market leader with ₹2,698 Cr revenue, ₹353 Cr MSEDCL order win on 4 Jul, but OPM collapsed from 25% to 10% and PAT down 37% YoY. Verdict: CAUTION — margin compression in progress with strong order book support.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4697,6 +4952,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Comprehensive deep-dive on Ather Energy — revenue accelerating at 70% YoY, EBITDA improving to -2.5%, DIIs accumulating, but low delivery % and stretched valuation warrant caution for swing entry.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4717,6 +4973,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "USTR proposes 12.5% Section 301 tariffs on India over forced labor findings — hearings Jul 7. Major risk for Indian pharma (Sun Pharma, Dr Reddy's, Cipla, Aurobindo), textiles (Welspun, Trident), and IT (TCS, Infosys).",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4735,6 +4992,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "₹1.25 lakh crore ISM 2.0 cleared + CG Semi commercial production Jul 4 + chip exports to Malaysia → CGPOWER, DIXON, KAYNES, SYRMA, AMBER, TATAELXSI key beneficiaries.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4753,6 +5011,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India-Japan Summit: First-ever defence co-development pact → HAL, BEL, MAZDOCK. Maruti Suzuki fourth plant → MARUTI. CG Semi JV production Jul 4 → CGPOWER. Fujifilm semicon plant + AI cooperation → DIXON, KAYNES, TCS, INFY. ¥10 trillion target → LT, IRCON.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4771,6 +5030,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trump 927-page financial disclosure reveals 21,000+ securities trades in Year 1, 327 stock purchases day before tariff pause, and $1-5M buys in AAPL, MSFT, NVDA, AMZN, META, AVGO on AI Action Plan day — signal for mega-cap tech.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4790,6 +5050,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "India-Japan Summit: $10B+ investment pledge, first defence co-development pact (UNICORN naval mast) for BEL, MAZDOCK, HAL. Japan Renesas JV boosts CGPOWER OSAT. AI joint statement lifts TCS, INFY. Critical minerals pact + clean energy helps RELIANCE. Stock-specific BUY/HOLD calls inside.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4810,6 +5071,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "USMCA not renewed → F, GM, STLA sell; NUE, X, CLF buy (domestic steel). USTR Section 301 forced labor tariff hearings Jul 7 → WMT, TGT sell (import exposure). LNG permits fast-tracked → LNG, XOM, KMI buy. US stocks only analysis.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4827,6 +5089,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Genus Power — India's leading smart metering company with ₹25,173 Cr order book, 5.3x revenue visibility, 95% FY26 revenue growth, and PEG 0.09. Madhu Kela led ₹600 Cr block deal at ₹290. Verdict: FAVORABLE WITH CAUTION — cheap on fundamentals but negative FCF and rising debt need monitoring.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4844,6 +5107,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Insolation Energy (INA) — India's top-10 solar module manufacturer, largest in North India. FY26 sales ₹2,146 Cr (+61%), PAT ₹201 Cr (+60%). P/E 12.6x, PEG 0.08, forward FY27E P/E 3.3x under management guidance. But -58% from 52W high, D/E 1.10, CFO negative. Verdict: SPECULATIVE — high risk, high reward.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4862,6 +5126,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Fed hawkish (FII outflow → IT drag on INFY, TCS). OPEC+ output hike → crude down → positive for BPCL, IOC. EU steel tariffs + US market access → trade diversion for TATASTEEL, JSWSTEEL. China chip curbs → semicon import substitution for KAYNES, CGPOWER. Stock-specific BUY/HOLD/REDUCE calls inside.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4880,6 +5145,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "ISM 2.0 ₹1.25L Cr EFC nod (+64%) → direct boost for KAYNES, CGPOWER. NIIF ₹30K Cr infra fund → LT, KNR, PNCINFRA. US steel market access → TATASTEEL, JSWSTEEL. Faze Three PLI → FAZETHREE. RBI capital norms → SBIN, HDFCBANK. Delhi EV Policy → OLAELEC. Stock picks with targets.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4898,6 +5164,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Japan PM summit with Rupee-Yen settlement discussion → export boost for MARUTI, TATAMOTORS. Digital India 11-yr → INFY, TATACONSUM, PAYTM. Deregulation push → compliance cost reduction for all large caps. Country-specific stock recommendations.",
     "market": "india",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4918,6 +5185,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "USMCA threat → F, GM sell; NUE, X, CLF buy. SC birthright citizenship → MSFT, AAPL moderate risk; PLTR benefits. Fed hawkish → JPM, GS buy; PLTR sell. US stocks only — this is a US policy analysis.",
     "market": "global",
+    "kind": "pulse",
     "model": "deepseek-chat"
   },
   {
@@ -4934,6 +5202,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Apollo Micro Systems — defence technology leader with ₹1,432 Cr order book, 41% revenue CAGR, but P/E 134x, negative CFO (-₹130 Cr) and 22.5% avg delivery. Verdict: CAUTION — expensive growth story with cash flow problems.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4952,6 +5221,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Kaynes Technology — India's leading integrated EMS player with ₹8,366 Cr order book and OSAT pivot. But CFO -₹600 Cr, guidance miss (₹4,500→₹3,626 Cr), stock -49% from ATH. Verdict: AVOID — broken guidance, broken chart, broken cash flow.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4968,6 +5238,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Anant Raj — zero-debt real estate developer pivoting to data centers (28 MW operational, 357 MW target). 80% PAT CAGR, ₹25,000 Cr Haryana DC MoU, demerger potential. PEG 0.63 but ED investigation overhang. Verdict: CAUTION — strong fundamentals, wait for technical clarity.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -4986,6 +5257,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Oriana Power based on FY26 concall transcript (June 10, 2026). Revenue ₹1,814 Cr (+84%), PAT ₹252 Cr (+59%). ₹7,000 Cr order book, Actis monetization (238 MWp) in H1 FY27, BESS to be 40% of FY27 revenue, green ammonia PPA signed. P/E 12.8x vs industry 31x — deep discount. Verdict: CAUTION — Selectively Bullish long-term but NOT swingable (bearish technicals, -48% from high).",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5003,6 +5275,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Sanghvi Movers — Asia's largest crane rental company (5th globally, 485+ cranes). Record revenue ₹1,070 Cr but OPM collapsed 69%→37%. KSA expansion working (90% utilization), ₹1,053 Cr order book. Verdict: CAUTION — fairly valued, margin dilution risk.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5020,6 +5293,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Techno Electric — near zero-debt EPC leader with ₹9,600 Cr order book and data center pivot. Strong delivery (47.8% avg, 10/10 acc days) but negative FCF (-₹657 Cr). Verdict: CAUTION — good business, poor stock momentum.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5037,6 +5311,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Aeroflex Industries — debt-free niche manufacturer of flexible hoses expanding into AI data center liquid cooling skids. P/E 111x (extreme), FCF negative, promoter selling -1.52%. Verdict: CAUTION — expensive growth story with execution risk.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5054,6 +5329,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Comprehensive deep-dive on HBL Engineering — ₹4,000+ Cr Kavach order book, 58.4% ROCE, record FCF ₹618 Cr, PEG 0.26, Q4 margin compression risks.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5069,6 +5345,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Comprehensive analysis of why PLTR is down ~32% in 2026 despite 85% revenue growth. Analyst ratings breakdown, bear/bull cases, and action plan for existing vs new investors.",
     "market": "global",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5084,6 +5361,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Comprehensive FII/DII activity report with bulk/block deals, NSDL fortnightly sectoral data, and stocks getting maximum institutional attraction. FIIs +₹383.76 Cr, DIIs +₹5,747 Cr buying on June 25.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5099,6 +5377,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Full week institutional activity analysis. Top gems: Craftsman Automation (4 MFs buying ₹348 Cr), Pine Labs (Axis MF buying ₹148 Cr), Gokaldas Exports (SBI Life Insurance buying), JTL Industries (FII buying).",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5114,6 +5393,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep dive on ACE — market leader in cranes with 63%+ share, ACE-KATO JV, debt-free balance sheet, and record Q4 revenue. PEG 0.75, verdict: Favorable with Caution.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5129,6 +5409,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive analysis of the June 23 market crash driven by KOSPI circuit breaker (-9%), Accenture weak outlook, IT stocks hammered -2%, metals -3%, FII selling, and Fed rate hike fears.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5147,6 +5428,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on the June 23 US market crash. Nasdaq futures -2.1%, S&P 500 -1.04%. KOSPI circuit breaker #4, Fed rate hike odds at 90% by Sep, AI capex fatigue, and impact on your portfolio.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5162,6 +5444,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Nifty IT crashed 6.18% to a fresh 52-week low of 26,634.50 triggered by Accenture's guidance cut (-3% to -4%), outsourcing bookings down 15% YoY. Infosys -8.27%, TCS -6.10%, HCLTech -5.28%.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5177,6 +5460,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "CG Power analysis — revenue driven by Industrial, Power, and Railway segments. P/E 120+, PEG 11.8x, promoter holding 56.77%. Concerns: low ROE (2.06%), negative FCF, subsidiary losses.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5192,6 +5476,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Deep-dive on Ideaforge (India's largest drone maker). Q4 FY26 revenue ₹141Cr (+595% YoY), EBITDA margin 52.6%, ₹310Cr executable order book. High risk/reward turnaround play.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5207,6 +5492,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Comparative analysis of Kaynes and CG Power across growth, valuation, and execution risk.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5222,6 +5508,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Kaynes Technology deep dive — OSAT and PCB catalysts, PEG 1.10, P/E 62.1. Revenue CAGR 31.4%. Concerns: ₹600 Cr CFO risk, promoter/FIIs exiting.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5238,6 +5525,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Palantir deep dive — 41% of US federal revenue, AIP bootcamp model, regulatory risks, valuation scenarios, and action plan for entry and exit.",
     "market": "global",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5254,6 +5542,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "AMD deep dive — AI GPU competition with NVIDIA, MI400 series, Radeon 9000 vs Blackwell Ultra, valuation analysis, and entry/exit strategy.",
     "market": "global",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5269,6 +5558,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Reliance analysis ahead of AGM 2026 — P/E 25.9, 3D P/E 19.1, Delayed telecom tariff hike, Jio Financial demerger gains. Entry zones ₹1,285-1,300, ₹1,190-1,210.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5284,6 +5574,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Trent analysis — 28% correction, P/E 90, PEG 2.47, promoter stable, FIIs decreasing, Zudio scaling. Entry zone ₹4,200-4,600. Verdict: Favorable with Caution.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5299,6 +5590,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "HCL Tech's ₹1,427 Cr investment in Sarvam AI — strategic rationale, Sarvam's Indic LLM capabilities, and implications for the IT sector.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5314,6 +5606,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "NALCO root cause analysis — aluminium prices, secondary pressures, and bull case.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   },
   {
@@ -5329,6 +5622,7 @@ export const ANALYSES: Analysis[] = [
     ],
     "summary": "Netweb Technologies analysis — Make in India supercomputing play, AI server demand, and growth catalysts.",
     "market": "india",
+    "kind": "research",
     "model": "deepseek-chat"
   }
 ];

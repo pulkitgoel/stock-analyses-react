@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { classifyMarket } from './lib/market.js';
+import { classifyKind } from './lib/kind.js';
 import { parseImpactRows, groupByTicker } from './lib/impact.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -108,6 +109,10 @@ for (const file of files) {
     // sitemap, the prerender and the app all read the same value instead of
     // each re-deriving it. An explicit `market:` in frontmatter always wins.
     market: classifyMarket(data),
+    // Research or daily pulse. Derived here for the same reason as `market`:
+    // the sitemap, the prerender and the app must agree, and re-deriving it in
+    // three places is how the ticker rule (3.6) and the tag floor (7.5) drifted.
+    kind: classifyKind(data),
     ...(data.model ? { model: data.model } : {}),
     // Revision date. Must be emitted here or scripts/generate-og-files.py can
     // never see it: that script reads this JSON, not the markdown, so its

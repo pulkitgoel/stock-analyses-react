@@ -1,3 +1,4 @@
+import type { ArticleKind } from '../utils/kind';
 import type { MarketKey } from '../utils/market';
 
 export interface Analysis {
@@ -22,6 +23,11 @@ export interface Analysis {
    * overridable with an explicit `market:` in frontmatter.
    */
   market?: MarketKey;
+  /**
+   * Research or daily pulse. Derived at build time by scripts/lib/kind.js from
+   * the tags and title, and overridable with an explicit `kind:` in frontmatter.
+   */
+  kind?: ArticleKind;
 }
 
 /**

@@ -205,6 +205,32 @@ for (const market of ['india', 'global']) {
   }
 }
 
+// Kind sections (/research, /pulse). Same shape as the market sections above:
+// page 1 is the bare URL, so there is no /page/1 duplicate. `kind` is derived
+// once in scripts/lib/kind.js and written onto each record, so this filter and
+// the prerender in generate-og-files.py read the same value rather than each
+// re-deriving the rule — the drift that 3.6 and 7.5 both record.
+//
+// These URLs 404 until their nginx location blocks are applied (9.4). 7.7
+// shipped its build without its blocks and left 29 sitemap URLs 404ing.
+const kindRoutes = [];
+const kindCounts = {};
+for (const kind of ['research', 'pulse']) {
+  const inKind = analyses.filter((a) => a.kind === kind);
+  kindCounts[kind] = inKind.length;
+  const latest = inKind.reduce((acc, a) => {
+    const d = isoDate(a.date);
+    return d && (!acc || d > acc) ? d : acc;
+  }, null);
+  const pages = Math.max(1, Math.ceil(inKind.length / ARCHIVE_PAGE_SIZE));
+  for (let i = 1; i <= pages; i += 1) {
+    kindRoutes.push({
+      loc: i === 1 ? `/${kind}` : `/${kind}/page/${i}`,
+      lastmod: latest,
+    });
+  }
+}
+
 // The homepage changes whenever the newest article does.
 const staticRouteEntries = staticRoutes.map((loc) => ({
   loc,
@@ -218,6 +244,7 @@ const allRoutes = [
   ...tagRoutes,
   ...archiveRoutes,
   ...sectionRoutes,
+  ...kindRoutes,
 ];
 
 // XML-escape route text. An unescaped "&" (the NSE symbol M&M produces /company/M&M)
@@ -253,3 +280,4 @@ console.log(`  company:  ${companyRoutes.length} listed, ${excludedCompanies.len
 console.log(`  tag:      ${tagRoutes.length} listed, ${tagStats.size - tagRoutes.length} excluded (< ${MIN_TAG_ARTICLES} articles)`);
 console.log(`  archive:  ${archiveRoutes.length} pages of ${ARCHIVE_PAGE_SIZE}`);
 console.log(`  sections: ${sectionRoutes.length} pages (india ${sectionCounts.india}, global ${sectionCounts.global} articles)`);
+console.log(`  kinds: ${kindRoutes.length} pages (research ${kindCounts.research}, pulse ${kindCounts.pulse} articles)`);

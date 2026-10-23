@@ -5,9 +5,12 @@ import { getAnalyses } from '../services/analysisService';
 import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import { indexableTags, tagPath } from '../utils/tags';
 import {
-  MarketKey, MARKET_BLURB, MARKET_HEADING,
+  MarketKey, MARKETS, MARKET_BLURB, MARKET_HEADING,
   articlesForMarket, otherMarket, sectionPath,
 } from '../utils/market';
+import {
+  ArticleKind, KIND_BLURB, KIND_HEADING, articlesForKind, kindPath, otherKind,
+} from '../utils/kind';
 
 /**
  * Articles per archive page.
@@ -44,10 +47,20 @@ const analyses = getAnalyses();
  * two beats accumulate separate topical authority instead of diluting each
  * other; see src/utils/market.ts.
  */
-export default function ArchivePage({ market = null }: { market?: MarketKey | null }) {
+export default function ArchivePage(
+  { market = null, kind = null }: { market?: MarketKey | null; kind?: ArticleKind | null },
+) {
   const { page } = useParams<{ page: string }>();
 
-  const inScope = market ? articlesForMarket(analyses, market) : analyses;
+  // One scope, one axis. `market` and `kind` are never combined: /research/india
+  // would be a fourth near-duplicate listing of the same 294 articles, which is
+  // the surface that 7.5 gated tags at MIN_TAG_ARTICLES to avoid and that 3.7
+  // gated company hubs to avoid. Each section cross-links the other instead.
+  const inScope = kind
+    ? articlesForKind(analyses, kind)
+    : market
+      ? articlesForMarket(analyses, market)
+      : analyses;
   const sorted = [...inScope].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const current = Math.min(Math.max(1, parseInt(page ?? '1', 10) || 1), totalPages);
@@ -56,19 +69,24 @@ export default function ArchivePage({ market = null }: { market?: MarketKey | nu
   // that only global articles carry.
   const topics = indexableTags(inScope);
 
-  const heading = market ? MARKET_HEADING[market] : 'All analysis';
-  const blurb = market ? MARKET_BLURB[market] : 'Every analysis, newest first.';
+  const heading = kind ? KIND_HEADING[kind] : market ? MARKET_HEADING[market] : 'All analysis';
+  const blurb = kind ? KIND_BLURB[kind] : market ? MARKET_BLURB[market] : 'Every analysis, newest first.';
   // Must match the prerendered title in generate-og-files.py, and stay short:
   // the blurb belongs in the meta description, not the title (invariant 3.4).
-  const title = market
+  const title = kind
+    ? (current === 1
+        ? `${KIND_HEADING[kind]} — StocksFundamentals`
+        : `${KIND_HEADING[kind]} — Page ${current} of ${totalPages}`)
+    : market
     ? (current === 1
         ? `${MARKET_HEADING[market]} — StocksFundamentals`
         : `${MARKET_HEADING[market]} — Page ${current} of ${totalPages}`)
     : (current === 1
         ? 'All Analysis, Research & Policy Notes'
         : `All Analysis — Page ${current} of ${totalPages}`);
-  const pageHref = (n: number) => sectionPath(market, n);
+  const pageHref = (n: number) => (kind ? kindPath(kind, n) : sectionPath(market, n));
   const other = market ? otherMarket(market) : null;
+  const otherK = kind ? otherKind(kind) : null;
 
   const pagerStyle = (active: boolean) => ({
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
@@ -121,15 +139,39 @@ export default function ArchivePage({ market = null }: { market?: MarketKey | nu
 
         {/* Cross-link to the sibling beat. Keeps both sections one hop apart
             for a reader, and gives each a crawlable link to the other. */}
-        {other && (
-          <div className="mt-4">
-            <Link
-              to={sectionPath(other)}
-              className="text-sm font-bold no-underline"
-              style={{ color: 'var(--accent)' }}
-            >
-              {MARKET_HEADING[other]} &rarr;
-            </Link>
+        {(other || otherK) && (
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+            {other && (
+              <Link
+                to={sectionPath(other)}
+                className="text-sm font-bold no-underline"
+                style={{ color: 'var(--accent)' }}
+              >
+                {MARKET_HEADING[other]} &rarr;
+              </Link>
+            )}
+            {otherK && (
+              <Link
+                to={kindPath(otherK)}
+                className="text-sm font-bold no-underline"
+                style={{ color: 'var(--accent)' }}
+              >
+                {KIND_HEADING[otherK]} &rarr;
+              </Link>
+            )}
+            {/* A kind section still offers the market cut, as links rather than
+                as its own routes. The two axes stay one hop apart without
+                multiplying into /research/india and friends. */}
+            {kind && MARKETS.map((m) => (
+              <Link
+                key={m}
+                to={sectionPath(m)}
+                className="text-sm font-bold no-underline"
+                style={{ color: 'var(--text-dim)' }}
+              >
+                {MARKET_HEADING[m]} &rarr;
+              </Link>
+            ))}
           </div>
         )}
 

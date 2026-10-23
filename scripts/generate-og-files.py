@@ -600,19 +600,34 @@ MARKET_BLURB = {
 }
 
 
-def generate_section_html(market, page, total_pages, count, newest_date, assets, image_url):
+KIND_HEADING = {"research": "Stock research", "pulse": "Daily Pulse"}
+KIND_BLURB = {
+    "research": "Deep dives on single companies - delivery data, promoter "
+                "trends, quarterly results and the valuation case.",
+    "pulse": "The daily note on what Delhi and Washington did, and which "
+             "tickers it moves. Four editions a day.",
+}
+
+
+def generate_section_html(market, page, total_pages, count, newest_date, assets, image_url,
+                          kind=None):
     """Prerender one page of a section archive (/india or /global).
 
     The sections exist so each beat accumulates its own topical authority rather
     than diluting the other; see scripts/lib/market.js for why.
     """
-    path = "/%s" % market if page == 1 else "/%s/page/%d" % (market, page)
+    # `kind` and `market` are alternatives, never combined: /research/india
+    # would be a fourth near-duplicate listing of the same corpus, which is the
+    # surface 7.5 and 3.7 each gated against.
+    seg = kind or market
+    heading = KIND_HEADING[kind] if kind else MARKET_HEADING[market]
+    blurb = KIND_BLURB[kind] if kind else MARKET_BLURB[market]
+    path = "/%s" % seg if page == 1 else "/%s/page/%d" % (seg, page)
     url = SITE_URL + path
-    heading = MARKET_HEADING[market]
     if page == 1:
         title = "%s — %s" % (heading, SITE_NAME)
         description = smart_truncate("%s %d articles, newest first."
-                                     % (MARKET_BLURB[market], count))
+                                     % (blurb, count))
     else:
         title = "%s — Page %d of %d — %s" % (heading, page, total_pages, SITE_NAME)
         description = smart_truncate("Page %d of %d of %s on %s."
@@ -633,7 +648,7 @@ def generate_section_html(market, page, total_pages, count, newest_date, assets,
 
     extra = ""
     if page > 1:
-        prev = "%s/%s" % (SITE_URL, market) if page == 2 else "%s/%s/page/%d" % (SITE_URL, market, page - 1)
+        prev = "%s/%s" % (SITE_URL, seg) if page == 2 else "%s/%s/page/%d" % (SITE_URL, seg, page - 1)
         extra += '\n    <link rel="prev" href="%s" />' % prev
     if page < total_pages:
         extra += '\n    <link rel="next" href="%s/%s/page/%d" />' % (SITE_URL, market, page + 1)
@@ -785,6 +800,27 @@ def main():
                      out, "%s p%d" % (market, page)):
                 n_section += 1
     print("Generated %d section pages (/india, /global)" % n_section)
+
+    # --- Kind archives (/research, /pulse) ---
+    # `kind` is derived once in scripts/lib/kind.js and written onto each
+    # record, so this reads the same value the sitemap filtered on. Every page
+    # the sitemap lists must have a file here: 3.7 records that the hazard is
+    # the sitemap advertising a page the prerender did not build.
+    n_kind = 0
+    for kind in ("research", "pulse"):
+        in_kind = [a for a in analyses if a.get("kind") == kind]
+        if not in_kind:
+            continue
+        latest = max((clean_text(a.get("date")) for a in in_kind if a.get("date")), default=None)
+        pages = max(1, -(-len(in_kind) // ARCHIVE_PAGE_SIZE))
+        for page in range(1, pages + 1):
+            out = (os.path.join(DIST_DIR, "%s.html" % kind) if page == 1
+                   else os.path.join(DIST_DIR, kind, "page", "%d.html" % page))
+            if write(generate_section_html(None, page, pages, len(in_kind),
+                                           latest, assets, image_url, kind=kind),
+                     out, "%s p%d" % (kind, page)):
+                n_kind += 1
+    print("Generated %d kind pages (/research, /pulse)" % n_kind)
 
     if invalid:
         print("\nERROR: %d page(s) produced invalid JSON-LD and were not written:" % len(invalid))
