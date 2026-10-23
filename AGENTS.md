@@ -1152,6 +1152,48 @@ the authorship claim is already published to crawlers either way.
 
 ---
 
+### 7.15 UI redesign: make the live site match the approved mockups — IN PROGRESS, claude (interactive), 2026-10-24
+
+**Why this item exists: 7.10-7.14 shipped the structure of the approved design and none
+of its appearance.** The owner approved light mockups on 2026-10-22 — white page, teal
+`#0f766e` accent, a dark teal article band, a key-takeaway panel. The live site is dark
+with the old neon `#63e6be`, the old 2rem-radius panels and no band. Side-by-side capture
+confirmed it.
+
+**The cause was mine and it is worth writing down.** `DESIGN.md` section 1 records the
+dark default as "unmeasured, A/B it once analytics exist". I wrote that hedge, then cited
+it in 7.11, 7.12 and 7.14 as a reason to leave the default alone, describing it each time
+as an owner decision still open. It was not open: the owner had approved light mockups and
+said to build them. **A hedge written into a spec is not a standing veto over the approval
+that followed it.** When the owner has approved a design, the spec's own caveats are
+superseded, and continuing to cite them is overriding the decision rather than deferring
+to it.
+
+Scope:
+
+- Default theme **light**, honouring `prefers-color-scheme` when no choice is saved. The
+  toggle stays — `DESIGN.md` says no toggle, but removing a working control the owner did
+  not ask to lose would repeat the same error in the other direction.
+- Light palette finished to the `DESIGN.md` section 2 values: `--accent-deep` and
+  `--link` are missing, and `--radius` is 10px against the spec's 8px.
+- **ArticleBand** — the solid `--accent-deep` band carrying breadcrumb, eyebrow, the one
+  `h1`, the byline row and the lead. The single most defining element of the article
+  mockup, and not built in 7.14 despite being listed in Appendix B step 5.
+- **TakeawayPanel** — `--accent-wash` fill, "Key takeaway" label, the front-matter
+  summary, and up to four stat blocks on `--accent-deep`.
+- Strip the leftover dark chrome: `rounded-[2rem]` / `[1.75rem]` / `[1.4rem]` across 10
+  files, the glow on `.btn-primary`, and the `page-panel surface-card` wrappers the band
+  replaces.
+
+**Acceptance is visual, not a metric.** Render every changed page at 375px and 1280px and
+put it beside the approved mockup. Nothing deploys until the owner has seen that
+comparison — 7.10-7.14 each reported a green build while the site looked wrong.
+
+Invariants to hold: one `h1` (3.8), no head tags from components (3.2), hooks above early
+returns (3.12), no spinner over prerendered content (3.14), 12px floor, CLS 0 (7.11).
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
