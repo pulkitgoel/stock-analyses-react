@@ -32,7 +32,7 @@ function AnalysisCardLink({ analysis: a }: { analysis: Analysis }) {
   return (
     <Link
       to={`/analysis/${a.slug}`}
-      className="analysis-card premium-card group rounded-[1.75rem] no-underline transition-all duration-300 hover:-translate-y-1"
+      className="analysis-card premium-card group rounded-lg no-underline transition-all duration-300 hover:-translate-y-1"
       style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
       data-hov="card"
     >
@@ -156,7 +156,7 @@ export default function CompanyPage() {
         <ArrowLeft size={14} /> Dashboard
       </Link>
 
-      <header className="page-panel surface-card animate-in rounded-[2rem]">
+      <header className="page-panel surface-card animate-in rounded-lg">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: 'var(--accent-glow)' }}>

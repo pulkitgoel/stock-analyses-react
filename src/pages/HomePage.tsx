@@ -146,7 +146,7 @@ export default function HomePage() {
         </section>
 
         <section id="library" className="animate-in animate-in-delay-1" style={{ marginTop: '3rem' }}>
-          <div className="library-panel surface-card rounded-[2rem]">
+          <div className="library-panel surface-card rounded-lg">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <div className="flex items-center gap-2">
@@ -167,7 +167,7 @@ export default function HomePage() {
 
         <section className="animate-in animate-in-delay-2" style={{ marginTop: '3rem' }}>
           {filtered.length === 0 ? (
-            <div className="surface-card rounded-[2rem] px-6 py-16 text-center text-sm" style={{ color: 'var(--text-dim)' }}>
+            <div className="surface-card rounded-lg px-6 py-16 text-center text-sm" style={{ color: 'var(--text-dim)' }}>
               No analyses match your filters.
             </div>
           ) : (

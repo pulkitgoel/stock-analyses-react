@@ -257,9 +257,10 @@ def render_shell(title, description, canonical, jsonld, assets, image_url,
     <script>
       try {
         const saved = localStorage.getItem('sf-theme-v2');
-        document.documentElement.dataset.theme = saved || 'dark';
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
       } catch {
-        document.documentElement.dataset.theme = 'dark';
+        document.documentElement.dataset.theme = 'light';
       }
     </script>
     <script type="application/ld+json">

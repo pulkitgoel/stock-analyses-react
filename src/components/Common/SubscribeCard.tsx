@@ -11,7 +11,7 @@ interface SubscribeCardProps {
 export default function SubscribeCard({ subscribed, supported, loading, onSubscribe, onUnsubscribe }: SubscribeCardProps) {
   if (!supported) {
     return (
-      <div className="subscribe-panel surface-card rounded-[1.75rem]">
+      <div className="subscribe-panel surface-card rounded-lg">
         <h2 className="text-xl font-black" style={{ color: 'var(--text)' }}>Push notifications unavailable</h2>
         <p className="mt-2 text-sm leading-7" style={{ color: 'var(--text-muted)' }}>
           This browser does not support push alerts.
@@ -21,7 +21,7 @@ export default function SubscribeCard({ subscribed, supported, loading, onSubscr
   }
 
   return (
-    <div className="subscribe-panel premium-card surface-card rounded-[1.75rem]">
+    <div className="subscribe-panel premium-card surface-card rounded-lg">
       <div className="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-start gap-4">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>

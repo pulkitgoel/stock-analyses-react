@@ -73,7 +73,7 @@ export default function TagPage() {
           <ArrowLeft size={14} /> Dashboard
         </Link>
 
-        <header className="page-panel surface-card animate-in rounded-[2rem]">
+        <header className="page-panel surface-card animate-in rounded-lg">
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: 'var(--accent-glow)' }}>
             <TagIcon size={22} style={{ color: 'var(--accent)' }} />
           </div>

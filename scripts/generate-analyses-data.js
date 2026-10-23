@@ -113,6 +113,16 @@ for (const file of files) {
     // the sitemap, the prerender and the app must agree, and re-deriving it in
     // three places is how the ticker rule (3.6) and the tag floor (7.5) drifted.
     kind: classifyKind(data),
+    // The dated call, for the takeaway panel (7.15). Only on watchlist articles,
+    // and only fields the frontmatter actually declares - never a placeholder.
+    ...(data.watchlist === true && typeof data.priceAtAnalysis === 'number'
+      ? {
+          priceAtAnalysis: data.priceAtAnalysis,
+          support: data.support,
+          resistance: data.resistance,
+          ...(data.verdict ? { verdict: data.verdict } : {}),
+        }
+      : {}),
     ...(data.model ? { model: data.model } : {}),
     // Revision date. Must be emitted here or scripts/generate-og-files.py can
     // never see it: that script reads this JSON, not the markdown, so its

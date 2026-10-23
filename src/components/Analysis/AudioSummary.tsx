@@ -36,7 +36,7 @@ export default function AudioSummary({ slug }: { slug: string | undefined }) {
 
   return (
     <section
-      className="page-panel surface-card animate-in rounded-[2rem]"
+      className="page-panel surface-card animate-in rounded-lg"
       style={{ padding: '1.15rem 1.5rem' }}
       aria-label="Audio summary"
     >

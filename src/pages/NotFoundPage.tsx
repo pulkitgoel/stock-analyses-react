@@ -22,7 +22,7 @@ export default function NotFoundPage() {
       </Helmet>
 
       <div className="mx-auto max-w-2xl">
-        <header className="page-panel surface-card animate-in rounded-[2rem] text-center">
+        <header className="page-panel surface-card animate-in rounded-lg text-center">
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: 'var(--accent-glow)' }}>
             <SearchX size={22} style={{ color: 'var(--accent)' }} />
           </div>

@@ -220,7 +220,7 @@ export default function WatchlistPage() {
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="surface-card rounded-[2rem]"
+          className="surface-card rounded-lg"
           style={{ padding: '2rem 2rem 1.75rem' }}
         >
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
@@ -248,7 +248,7 @@ export default function WatchlistPage() {
         </motion.div>
 
         {entries.length === 0 ? (
-          <div className="surface-card rounded-[2rem]" style={{ marginTop: '2rem', padding: '4rem 1.5rem', textAlign: 'center', color: 'var(--text-dim)' }}>
+          <div className="surface-card rounded-lg" style={{ marginTop: '2rem', padding: '4rem 1.5rem', textAlign: 'center', color: 'var(--text-dim)' }}>
             No stocks on the watchlist yet.
           </div>
         ) : (

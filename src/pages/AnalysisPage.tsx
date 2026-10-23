@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Clock, FileText } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
 import { Analysis } from '../types/analysis';
 import { getAnalyses, fetchAnalysisContent } from '../services/analysisService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
@@ -13,9 +13,9 @@ import { tagPath } from '../utils/tags';
 import { MARKET_HEADING, sectionPath } from '../utils/market';
 import AudioSummary from '../components/Analysis/AudioSummary';
 import TableOfContents from '../components/Analysis/TableOfContents';
+import ArticleBand from '../components/Analysis/ArticleBand';
+import TakeawayPanel from '../components/Analysis/TakeawayPanel';
 import { prepareHeadings } from '../utils/toc';
-import { AUTHOR_NAME, aiDisclosureFor } from '../config/disclosure';
-import { displayDate } from '../utils/articleDisplay';
 
 function estimateReadTime(text: string): number {
   const words = text.split(/\s+/).length;
@@ -137,14 +137,8 @@ export default function AnalysisPage() {
   }
 
   const readTime = estimateReadTime(content);
-  // Null unless the owner has set AI_DISCLOSURE (section 6). Not a hook, so it
-  // sits here with readTime rather than above the early returns — 3.12 governs
-  // hooks, and adding a useMemo for a string replace would be the 3.14 mistake
-  // in miniature.
-  const aiNotice = aiDisclosureFor(analysis.model);
   const tickers = tickerTokens(analysis.ticker);
   const related = relatedAnalyses(analysis, getAnalyses());
-  const primaryHub = tickers.length === 1 ? tickers[0] : null;
 
   return (
     <article className="article-shell flex flex-col gap-6 sm:gap-8">
@@ -171,122 +165,31 @@ export default function AnalysisPage() {
             page, with two different author names. */}
       </Helmet>
 
-      <Link
-        to="/"
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: '8px',
-          height: '40px', padding: '0 18px', borderRadius: '12px',
-          background: 'transparent', color: 'var(--text)',
-          fontWeight: 700, fontSize: '0.82rem', textDecoration: 'none',
-          border: '1px solid var(--border)',
-          transition: 'border-color 180ms ease, transform 180ms ease',
-          whiteSpace: 'nowrap',
-        }}
-        data-hov="lift"
-      >
-        <ArrowLeft size={14} /> All analyses
-      </Link>
+      <ArticleBand analysis={analysis} readTime={readTime} />
 
-      {/* Breadcrumb (AGENTS 7.4). Prerendered with the rest of the body, so a
-          crawler that does not run JavaScript still sees the hierarchy. */}
-      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs" style={{ color: 'var(--text-dim)' }}>
-        <Link to="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Home</Link>
-        {primaryHub && (
-          <>
-            <span>/</span>
-            <Link to={companyHubPath(primaryHub)} style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              {primaryHub}
+      {analysis.verdict || analysis.priceAtAnalysis ? <TakeawayPanel analysis={analysis} /> : null}
+
+      {/* Ticker links to company hubs (AGENTS 7.4): a live deep dive exposes
+          7 internal /analysis/ and /company/ links against 0 before this. The
+          band does not carry them, so they sit here with the tags. Chips wrap,
+          which is also the fix for the 292-character unbroken ticker string. */}
+      <div className="mt-5 flex flex-wrap gap-2">
+          {tickers.slice(0, TICKER_LINK_LIMIT).map((t) => (
+            <Link
+              key={t}
+              to={companyHubPath(t)}
+              className="rounded px-2 py-0.5 font-mono text-xs font-bold no-underline"
+              style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}
+              data-hov="accent"
+            >
+              {t}
             </Link>
-          </>
-        )}
-        <span>/</span>
-        <span style={{ color: 'var(--text-dim)' }}>{analysis.title}</span>
-      </nav>
-
-      <header className="page-panel surface-card animate-in rounded-[2rem]">
-        <div className="mb-4 flex flex-wrap items-center gap-2">
-          {/* Each ticker token links to its company hub (AGENTS 7.4). Chips wrap,
-              which is also the fix for the 292-character unbroken ticker string
-              that used to widen this page to ~2468px. */}
-          {tickers.length > 0 ? (
-            <div className="flex flex-wrap items-center gap-1.5" style={{ maxWidth: '100%' }}>
-              {tickers.slice(0, TICKER_LINK_LIMIT).map((t) => (
-                <Link
-                  key={t}
-                  to={companyHubPath(t)}
-                  className="rounded-lg px-2 py-0.5 font-mono text-xs font-bold"
-                  style={{ background: 'var(--accent-glow)', color: 'var(--accent)', textDecoration: 'none' }}
-                >
-                  {t}
-                </Link>
-              ))}
-              {tickers.length > TICKER_LINK_LIMIT && (
-                <span className="font-mono text-xs" style={{ color: 'var(--text-dim)' }}>
-                  +{tickers.length - TICKER_LINK_LIMIT} more
-                </span>
-              )}
-            </div>
-          ) : (
-            <span
-              className="rounded-lg px-2.5 py-1 font-mono text-xs font-bold"
-              style={{
-                background: 'var(--accent-glow)', color: 'var(--accent)',
-                maxWidth: '100%', overflowWrap: 'anywhere', wordBreak: 'break-word',
-                whiteSpace: 'normal',
-              }}
-            >
-              {analysis.ticker}
+          ))}
+          {tickers.length > TICKER_LINK_LIMIT && (
+            <span className="font-mono text-xs" style={{ color: 'var(--text-dim)' }}>
+              +{tickers.length - TICKER_LINK_LIMIT} more
             </span>
           )}
-          <span className="flex items-center gap-1 text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
-            <Clock size={13} /> {readTime} min read
-          </span>
-        </div>
-
-        {/* Byline (AGENTS 7.14). The author name was published in the prerendered
-            `<meta name="author">` and the JSON-LD Person on every article, and in
-            the footer and on /about — everywhere except where a reader looks. On
-            YMYL content that is the one place it matters, so this surfaces a claim
-            the site already makes rather than adding a new one.
-
-            The AI-disclosure chip beside it is an owner decision (section 6) and
-            renders only once src/config/disclosure.ts sets it. Until then the slot
-            is omitted entirely: an empty or bracketed placeholder on a page like
-            this is worse than nothing. */}
-        <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
-          <span className="text-sm font-bold" style={{ color: 'var(--text)' }}>
-            {AUTHOR_NAME}
-          </span>
-          <span data-nums className="text-xs font-semibold" style={{ color: 'var(--text-dim)' }}>
-            Published {displayDate(analysis.date)}
-            {analysis.updated && analysis.updated !== analysis.date
-              ? ` · Updated ${displayDate(analysis.updated)}`
-              : ''}
-          </span>
-          {aiNotice && (
-            <span
-              className="rounded px-2 py-0.5 text-xs font-semibold"
-              style={{
-                border: '1px solid var(--border)',
-                color: 'var(--text-muted)',
-                borderRadius: 'var(--radius-xs, 4px)',
-              }}
-            >
-              {aiNotice}
-            </span>
-          )}
-        </div>
-
-        <h1 className="text-3xl font-black leading-tight tracking-tight sm:text-5xl" style={{ color: 'var(--text)' }}>
-          {analysis.title}
-        </h1>
-        <p className="mt-4 text-sm leading-7 sm:text-base" style={{ color: 'var(--text-muted)' }}>
-          {analysis.summary}
-        </p>
-        <div className="mt-5 flex flex-wrap gap-2">
-          {/* Tags link to their topic page. The page exists for every tag, but
-              only the ones clearing MIN_TAG_ARTICLES are indexable, so a link
-              here is a crawl path rather than a promise of a rich page. */}
           {/* Which beat this belongs to, linked. Tells a reader (and a
               crawler) that the article sits in a section, not a flat pile. */}
           {analysis.market && (
@@ -309,8 +212,7 @@ export default function AnalysisPage() {
               {tag}
             </Link>
           ))}
-        </div>
-      </header>
+      </div>
 
       {/* Audio summary, when this article has one. No per-article setup: the
           backend reports which slugs have audio (src/services/audioService.ts),
@@ -319,7 +221,7 @@ export default function AnalysisPage() {
           it paints first and does not push the article down once loaded. */}
       <AudioSummary slug={analysis.slug} />
 
-      <div className="page-panel surface-card animate-in animate-in-delay-1 overflow-hidden rounded-[2rem]">
+      <div className="page-panel surface-card animate-in animate-in-delay-1 overflow-hidden rounded-lg">
         {/* Contents for long articles (AGENTS 7.4). Collapsed by default so it
             costs no vertical space, but rendered unconditionally - the section
             anchors and their links are in the prerendered HTML either way. */}
@@ -363,7 +265,7 @@ export default function AnalysisPage() {
           and does not assert a regulatory position (AGENTS 6). It matches the
           footer's existing stance rather than inventing a stronger one. */}
       <p
-        className="page-panel surface-card rounded-[2rem]"
+        className="page-panel surface-card rounded-lg"
         style={{
           margin: 0, padding: '1.1rem 1.35rem', fontSize: '0.78rem',
           lineHeight: 1.75, color: 'var(--text-dim)',
@@ -377,7 +279,7 @@ export default function AnalysisPage() {
       </p>
 
       {related.length > 0 && (
-        <section className="page-panel surface-card animate-in rounded-[2rem]" style={{ padding: '1.75rem' }}>
+        <section className="page-panel surface-card animate-in rounded-lg" style={{ padding: '1.75rem' }}>
           <h2 className="text-lg font-black" style={{ color: 'var(--text)', margin: '0 0 1rem' }}>
             Related research
           </h2>

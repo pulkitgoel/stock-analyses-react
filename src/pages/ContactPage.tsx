@@ -94,7 +94,6 @@ export default function ContactPage() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'linear-gradient(135deg, var(--accent), var(--accent-strong))',
               color: 'var(--accent-contrast)',
-              boxShadow: '0 6px 20px rgba(99,230,190,0.2)',
             }}>
               <Icon size={22} />
             </div>

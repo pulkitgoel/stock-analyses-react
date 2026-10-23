@@ -20,7 +20,7 @@ const navLinks = [
 
 export default function Header() {
   const location = useLocation();
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
@@ -29,7 +29,11 @@ export default function Header() {
 
   useEffect(() => {
     const saved = localStorage.getItem('sf-theme-v2');
-    const nextTheme = saved === 'light' || saved === 'dark' ? saved : 'dark';
+    // Must match the head script in index.html and render_shell(), or the page
+    // paints one theme and swaps to the other after mount - a flash, and a layout
+    // the prerendered markup does not share.
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const nextTheme = saved === 'light' || saved === 'dark' ? saved : (prefersDark ? 'dark' : 'light');
     setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
   }, []);
@@ -119,7 +123,7 @@ export default function Header() {
 
       <nav
         aria-label="Mobile navigation"
-        className="fixed inset-x-3 bottom-3 z-[100] grid grid-cols-4 gap-1 rounded-[1.4rem] p-1.5 md:hidden"
+        className="fixed inset-x-3 bottom-3 z-[100] grid grid-cols-4 gap-1 rounded-lg p-1.5 md:hidden"
         style={{
           background: 'var(--header-bg)',
           border: '1px solid var(--border)',

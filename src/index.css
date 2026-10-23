@@ -57,7 +57,13 @@
   --down: #ff6b6b;
   --warn: #f6c453;
   --header-bg: #090d12;
-  --radius: 10px;
+  /* The band behind an article headline. Identical in both themes on purpose:
+     it is the one saturated plane in the system and it reads as the same object
+     whichever way the page is set (DESIGN.md section 4). */
+  --accent-deep: #0b4f4a;
+  --accent-on-deep: #cfe9e4;
+  --link: #6fb3ff;
+  --radius: 8px;
 }
 
 [data-theme="light"] {
@@ -409,18 +415,19 @@ button { touch-action: manipulation; }
 
   .btn:active:not(:disabled) {
     transform: translateY(0) !important;
-    box-shadow: 0 2px 8px rgba(99,230,190,0.15) !important;
   }
 
   .btn-primary {
     background: var(--accent);
     color: var(--accent-contrast);
-    box-shadow: 0 4px 14px rgba(99,230,190,0.25);
+    /* No glow (7.15). The shadow was a hard-coded neon rgba that did not follow
+       the accent token, so on the light theme it threw a green halo around a
+       teal button. Flat is the design; DESIGN.md section 6 allows no shadows on
+       controls. */
   }
 
   .btn-primary:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(99,230,190,0.35);
+    filter: brightness(1.06);
   }
 
   .btn-secondary {

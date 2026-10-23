@@ -55,7 +55,6 @@ export default function PrivacyPage() {
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           background: 'linear-gradient(135deg, var(--accent), var(--accent-strong))',
           color: 'var(--accent-contrast)',
-          boxShadow: '0 8px 24px rgba(99,230,190,0.2)',
           marginBottom: '1.25rem', position: 'relative',
         }}>
           <FileText size={24} />
@@ -79,7 +78,7 @@ export default function PrivacyPage() {
       {/* Promises strip */}
       <div style={{
         marginTop: '1.5rem',
-        background: 'var(--accent-glow)', border: '1px solid rgba(99,230,190,0.2)',
+        background: 'var(--accent-glow)', border: '1px solid var(--accent-glow)',
         borderRadius: '1.25rem', padding: '1.25rem 1.5rem',
         display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.5rem',
       }}>

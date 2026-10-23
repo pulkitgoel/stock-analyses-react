@@ -18,6 +18,10 @@
       "summary": "GE Power India turned a Rs 441 Cr loss into a Rs 253 Cr profit and is demerging its loss-making Durgapur plant to JSW Energy. But the free JSW shares are worth only Rs 33, margins fell from 34% to 15% in one quarter, and the stock is 44% below its high, below every moving average. Verdict: WATCH — THE BUSINESS IS FIXED, THE CHART IS NOT.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 608.9,
+      "support": 555,
+      "resistance": 630,
+      "verdict": "WATCH — THE BUSINESS IS FIXED, THE CHART IS NOT",
       "model": "deepseek-v4-flash"
     },
     {
@@ -125,6 +129,10 @@
       "summary": "Swiggy's H1 FY27 loss is 25% below last year and food delivery now earns Rs 341 Cr of quarterly EBITDA, but Instamart alone lost Rs 895 Cr and the sequential loss widened. At 1.2x EV/revenue against Eternal's 5x the market has priced the bear case; the chart, at an all-time low with 12 checklist fails, says wait for the Q3 Instamart number.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 182.75,
+      "support": 175,
+      "resistance": 211,
+      "verdict": "AVOID THE ENTRY — THE THESIS IS REAL, THE TIMING IS NOT",
       "model": "deepseek-v4-flash"
     },
     {
@@ -144,6 +152,10 @@
       "summary": "Zen has the deepest capability stack in Indian defence simulation — Army and Navy leadership, a completed Air Force product, a man-portable anti-drone system and now an AI battlefield-management business. But FY26 revenue fell 29%, the 35% EBIT target is being formally walked back, and at 73x earnings the price already assumes the order book converts on schedule. Verdict: CAPABILITY IS REAL, TIMING IS NOT — WAIT FOR Q2 FY27.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1466.8,
+      "support": 1223,
+      "resistance": 1600,
+      "verdict": "CAPABILITY IS REAL, TIMING IS NOT — WAIT FOR Q2 FY27",
       "model": "deepseek-v4-flash"
     },
     {
@@ -312,6 +324,10 @@
       "summary": "Kernex is the cheapest stock in the Kavach pack at 15x earnings, and on FY27 execution it may be cheaper still: Q1 revenue was Rs 504 Cr against Rs 431 Cr for all of FY26. But the order book fell 12% QoQ to Rs 3,641 Cr, receivables sit at 268 days, borrowings tripled, and HBL has guided that Kavach revenue peaks around FY28. Verdict: ACCUMULATE ON EXECUTION, NOT A SWING SETUP.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1737.6,
+      "support": 1712,
+      "resistance": 1817,
+      "verdict": "ACCUMULATE ON EXECUTION — NOT A SWING SETUP",
       "model": "deepseek-v4-flash"
     },
     {
@@ -406,6 +422,10 @@
       "summary": "Refreshed 19 Oct at ₹854 with Q2 FY27 due 23 Oct. Order book ₹18,965 Cr (+45%), delivery 50.8%, but 108x earnings and 16.7x book give no protection in a falling market. Verdict: accumulate in tranches around the 200-DMA at ₹804, not a full position at ₹854.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 854,
+      "support": 818,
+      "resistance": 898,
+      "verdict": "ACCUMULATE IN TRANCHES — Q2 ON 23 OCT",
       "model": "deepseek-v4-flash"
     },
     {
@@ -648,6 +668,10 @@
       "summary": "Mazagon Dock is India's only yard building both destroyers and conventional submarines, with a pristine balance sheet, 36% ROCE and the cheapest multiple among shipbuilding peers. The problem is what it will build next: the order book has fallen to Rs 18,218 Cr from Rs 38,561 Cr in FY24 as P17A, P15B and P75 Kalvari complete, while the Rs 99,000 Cr P75(I) submarine contract remains unsigned and management says new orders take about two years to reach revenue. Verdict: CAUTION — priced for orders not yet signed.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 2027,
+      "support": 1988,
+      "resistance": 2150,
+      "verdict": "CAUTION — PRICED FOR ORDERS NOT YET SIGNED",
       "model": "deepseek-v4-flash"
     },
     {
@@ -824,6 +848,10 @@
       "summary": "Revised deep dive: Syrma is up 22.6% to Rs 1,720 since our 4 August note, the trailing P/E has expanded to 89.3x, and average delivery has fallen to 28.2% from 37.3%. Q2 FY27 is not yet reported. Clarifies the two Rs 1,000 Cr QIPs and adds the Exchange Filings section. Verdict: CAUTION — priced for perfection.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1720,
+      "support": 1670,
+      "resistance": 1823,
+      "verdict": "CAUTION — PRICED FOR PERFECTION",
       "model": "deepseek-v4-flash"
     },
     {
@@ -841,6 +869,10 @@
       "summary": "Revised deep dive: the stock is up 44% to Rs 2,910 since our 27 June note while TTM profit sits below FY26, FIIs and DIIs both cut holdings, and the working capital cycle widened to 344 days. Includes the full 25-point technical checklist and updated levels.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 2910,
+      "support": 2716,
+      "resistance": 3128,
+      "verdict": "CAUTION — PRICED FOR PERFECTION",
       "model": "deepseek-v4-flash"
     },
     {
@@ -1023,6 +1055,10 @@
       "summary": "Revenue up 52% but net profit flat for five straight quarters as depreciation and interest consume the growth. Advent International is buying 24.87% at Rs 985 - diluting EPS by up to 25% versus the published consensus. The market price sits above both the average analyst target and Advent's own entry price. Rating: CAUTION - wait for dips.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1014,
+      "support": 958,
+      "resistance": 1057,
+      "verdict": "CAUTION — WAIT FOR DIPS",
       "model": "deepseek-v4-flash"
     },
     {
@@ -1043,6 +1079,10 @@
       "summary": "Q1 FY27 PAT up 111% with margins at 26%, but volumes fell 22% YoY - the recovery is price-led, not demand-led. The stock is up 66% in a year, trades above the average analyst price target, and carries a September 2026 SEBI warning for non-disclosure of a DGFT blacklisting and an FDA warning. Rating: CAUTION - fully valued.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 2175,
+      "support": 1958,
+      "resistance": 2203,
+      "verdict": "CAUTION — FULLY VALUED",
       "model": "deepseek-v4-flash"
     },
     {
@@ -1521,6 +1561,10 @@
       "summary": "Down 18% from its ₹159 IPO and at all-time lows: a 90%-share pallet-pooling leader at 91x earnings, where interest exceeds PBT. 25-point score 12.5/25 — wait for a base.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 130.5,
+      "support": 128.55,
+      "resistance": 144.5,
+      "verdict": "WAIT FOR BASE",
       "model": "deepseek-v4-flash"
     },
     {
@@ -1618,6 +1662,10 @@
       "summary": "Up 309% from its ₹429 IPO in seven sessions on the AI/GPU story — but ESDS is the paying customer in the $1.25bn SharonAI deal. 25-point checklist score 16.5/25: avoid at CMP.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1754,
+      "support": 1582,
+      "resistance": 1828,
+      "verdict": "AVOID AT CMP",
       "model": "deepseek-v4-flash"
     },
     {
@@ -2479,7 +2527,10 @@
       ],
       "summary": "Ramkrishna Forgings (RKFORGE) shows strong Q1 FY27 profit growth of 297% YoY with ₹9,635 Cr order book providing 4-year visibility. However, elevated valuation (P/E ~119x), low ROCE (5.6%), and promoter pledge (15.56%) warrant caution. Trading near 52-week high with mixed analyst consensus.",
       "market": "india",
-      "kind": "research"
+      "kind": "research",
+      "priceAtAnalysis": 749,
+      "support": 680,
+      "resistance": 775
     },
     {
       "title": "Policy Pulse — Global Spillover — 18 Aug 2026",
@@ -2550,6 +2601,10 @@
       "summary": "KPI Green (KPIGREEN): 6.94 GW renewable pipeline, 104% 5-yr PAT CAGR, cheap 13.2x P/E. But Q1 FY27 PAT -15% on soaring interest/depreciation, borrowings 3.5x to ₹5,197 Cr, 44.7% promoter pledge, and a technically-broken downtrend (Strong Sell, below all MAs). Verdict: CAUTION — fundamental value but EPS-dilutive until post-FY28, not a swing entry now.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 305,
+      "support": 281,
+      "resistance": 357,
+      "verdict": "CAUTION",
       "model": "deepseek-chat"
     },
     {
@@ -2704,6 +2759,10 @@
       "summary": "Deep-dive on Jeena Sikho Lifecare — integrated Ayurveda hospital+products leader with FY26 revenue +71%, PAT +144%, ROCE 71%, ROE 60%. Trailing P/E ~29x is reasonable, but price is technically broken (below all MAs), rich on P/B ~14x, and Q1 profit quality is flattered by other income. Delivery data confirmed strong (avg 51%). Verdict: CAUTION.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 520,
+      "support": 492,
+      "resistance": 577,
+      "verdict": "CAUTION",
       "model": "deepseek-chat"
     },
     {
@@ -3068,6 +3127,10 @@
       "summary": "Deep-dive on APL Apollo Tubes — fortress balance sheet (near debt-free, ₹1,400 Cr net cash), ROCE 31.6%, FY26 PAT +59%, 52% avg delivery indicating genuine institutional accumulation. Verdict: FAVORABLE — high-quality compounder, buy on pullbacks to ₹1,800-1,850; valuation 44.8x P/E is the only concern.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1986,
+      "support": 1744,
+      "resistance": 1984,
+      "verdict": "FAVORABLE",
       "model": "deepseek-chat"
     },
     {
@@ -3289,6 +3352,9 @@
       "summary": "What Changed since the Jun 28 deep-dive. Stock fell to a fresh 52-week low (₹1,342) then bounced +6.9% to ₹1,474 on Aug 3 on the ₹3,135 Cr SECI green-ammonia PPA. Q1 FY27 concall reaffirms 40-50% revenue/PAT CAGR target with ₹7,000 Cr order book. P/E compressed to 11.9x vs industry 30.8x. Verdict: CAUTION — structurally intact, technically still bearish; early relief-rally only.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1474,
+      "support": 1342,
+      "resistance": 1555,
       "model": "deepseek-chat"
     },
     {
@@ -3889,6 +3955,10 @@
       "summary": "Fiem Industries — a debt-free auto lighting leader riding the LED revolution. 29% ROCE, 24x P/E, DIIs accumulating heavily. Customer concentration is the risk to watch. Full analysis inside.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 2344,
+      "support": 2200,
+      "resistance": 2555,
+      "verdict": "FAVORABLE",
       "model": "deepseek-chat"
     },
     {
@@ -3908,6 +3978,10 @@
       "summary": "Game changer: Ideaforge raised ₹500 Cr via QIP at ₹795. Working capital solved, debt cleared, HDFC MF & others invested. Promoter dilution to 25.3% is the sticking point. Full analysis.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 862,
+      "support": 795,
+      "resistance": 997,
+      "verdict": "FAVORABLE",
       "model": "deepseek-chat"
     },
     {
@@ -4029,6 +4103,10 @@
       "summary": "Websol Energy — a remarkable turnaround from near-zero revenue to ₹1,049 Cr in FY26. 67% ROE, 63% ROCE, near net cash, but 89% promoter pledge casts a long shadow. Full analysis inside.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 101,
+      "support": 90,
+      "resistance": 115,
+      "verdict": "CAUTION",
       "model": "deepseek-chat"
     },
     {
@@ -4408,6 +4486,10 @@
       "summary": "Kalyan Jewellers delivered exceptional FY26 with PAT of ₹1,350 Cr (+89% YoY), aggressive store expansion (129 new showrooms), Candere turning profitable, and management targeting zero non-GML debt in FY27. However, the stock has rallied 46% in 4 sessions with delivery % collapsing from 35% to 13%, RSI at 80+, and FIIs reducing stake from 29.65% to 14.55% over 3 years. Citi targets ₹750 while technicals flash overbought warnings. Verdict: CAUTION.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 526,
+      "support": 450,
+      "resistance": 535,
+      "verdict": "CAUTION",
       "model": "deepseek-chat"
     },
     {
@@ -4931,6 +5013,9 @@
       "summary": "Deep-dive on Shakti Pumps (SHAKTIPUMP) — solar pump market leader with ₹2,698 Cr revenue, ₹353 Cr MSEDCL order win on 4 Jul, but OPM collapsed from 25% to 10% and PAT down 37% YoY. Verdict: CAUTION — margin compression in progress with strong order book support.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 593,
+      "support": 500,
+      "resistance": 650,
       "model": "deepseek-chat"
     },
     {
@@ -4949,6 +5034,10 @@
       "summary": "Comprehensive deep-dive on Ather Energy — revenue accelerating at 70% YoY, EBITDA improving to -2.5%, DIIs accumulating, but low delivery % and stretched valuation warrant caution for swing entry.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1144,
+      "support": 1050,
+      "resistance": 1216,
+      "verdict": "CAUTION",
       "model": "deepseek-chat"
     },
     {
@@ -5272,6 +5361,10 @@
       "summary": "Deep-dive on Sanghvi Movers — Asia's largest crane rental company (5th globally, 485+ cranes). Record revenue ₹1,070 Cr but OPM collapsed 69%→37%. KSA expansion working (90% utilization), ₹1,053 Cr order book. Verdict: CAUTION — fairly valued, margin dilution risk.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 411,
+      "support": 406,
+      "resistance": 425,
+      "verdict": "CAUTION",
       "model": "deepseek-chat"
     },
     {
@@ -5290,6 +5383,10 @@
       "summary": "Deep-dive on Techno Electric — near zero-debt EPC leader with ₹9,600 Cr order book and data center pivot. Strong delivery (47.8% avg, 10/10 acc days) but negative FCF (-₹657 Cr). Verdict: CAUTION — good business, poor stock momentum.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1067,
+      "support": 1000,
+      "resistance": 1150,
+      "verdict": "CAUTION",
       "model": "deepseek-chat"
     },
     {
@@ -5555,6 +5652,10 @@
       "summary": "Reliance analysis ahead of AGM 2026 — P/E 25.9, 3D P/E 19.1, Delayed telecom tariff hike, Jio Financial demerger gains. Entry zones ₹1,285-1,300, ₹1,190-1,210.",
       "market": "india",
       "kind": "research",
+      "priceAtAnalysis": 1333,
+      "support": 1210,
+      "resistance": 1400,
+      "verdict": "ACCUMULATE ON DIPS",
       "model": "deepseek-chat"
     },
     {

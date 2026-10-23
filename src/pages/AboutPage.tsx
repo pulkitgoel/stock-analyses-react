@@ -66,7 +66,6 @@ export default function AboutPage() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'linear-gradient(135deg, var(--accent), var(--accent-strong))',
               color: 'var(--accent-contrast)',
-              boxShadow: '0 6px 20px rgba(99,230,190,0.3)',
             }}>
               <BarChart3 size={22} />
             </div>
@@ -75,7 +74,7 @@ export default function AboutPage() {
               textTransform: 'uppercase', color: 'var(--accent)',
               background: 'var(--accent-glow)',
               padding: '5px 14px', borderRadius: '999px',
-              border: '1px solid rgba(99,230,190,0.2)',
+              border: '1px solid var(--accent-glow)',
             }}>
               Independent research desk
             </span>
