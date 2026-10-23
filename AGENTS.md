@@ -1094,6 +1094,50 @@ CSS 7.60 -> 7.43 kB gzip.
 
 ---
 
+### 7.14 UI redesign, step 5: byline and disclosure — IN PROGRESS, claude (interactive), 2026-10-24
+
+`DESIGN.md` Appendix B step 5, which that file marks as gated on the two decisions in
+section 6. Split so the structure ships and **neither decision is made here**.
+
+**Shipping — no decision required:**
+
+- **An author byline on the article page.** There is currently none. `Pulkit Goel`
+  appears in the footer, on `/about`, in the prerendered `<meta name="author">` and as
+  the JSON-LD `Person` — everywhere except where a reader looks. On YMYL content that is
+  the one place it matters. This publishes no new claim; it surfaces one the prerender
+  already makes to crawlers.
+- Published and updated dates in the byline row, from `date` and `updated`.
+- A persistent disclosure strip above the footer carrying **only positions the site
+  already publishes**: "Educational research, not investment advice" (the per-article
+  line from 7.4 says exactly this), with links to the existing Disclaimer and Contact.
+
+**Not shipping — owner's call, and section 6 says do not decide these autonomously:**
+
+- The AI-disclosure chip's wording and whether it appears at all.
+- Any registration-status line. "Not a SEBI-registered research analyst" is a legal
+  statement about the owner, not a UI string, and `DESIGN.md` wrote it only as a
+  placeholder.
+
+Both live in `src/config/disclosure.ts`, unset. The components render the slot and omit
+it entirely while it is unset — no placeholder text reaches a reader. Setting either
+value is a one-line change that turns it on everywhere.
+
+**A `/methodology` page is deliberately not built**, for two reasons. 7.6 already places
+methodology inside a 400-900 word `/about`, not a new route, and a new route needs a hand
+-applied nginx block (`job_apply_nginx` is replacements-only, as 7.13 records). More
+importantly: a page explaining *how these analyses are produced* that omits AI drafting
+would be actively misleading, which makes it the one piece of step 5 that cannot be
+written before the disclosure decision rather than merely styled around it.
+
+**Worth stating plainly, because it is the argument for deciding soon.** Adding a visible
+human byline while the `model:` field stays in frontmatter widens the gap between what a
+reader sees and what is true. Section 6 already calls the current partial disclosure "the
+weakest of the three available positions"; this makes that weakness more visible, not
+less. It is a reason to settle the decision, not a reason to withhold the byline, since
+the authorship claim is already published to crawlers either way.
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
