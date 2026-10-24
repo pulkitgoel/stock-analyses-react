@@ -73,6 +73,40 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 06:26 — watcher
+
+**Ran:** deploy, verify-live
+
+- **OK** `[job: deploy]` 2026-10-24 — claude (interactive)
+
+```
+Generated 378 tag pages in /var/www/stock-analyses-react/dist.next/tag (28 indexable, 350 noindex)
+Generated 33 archive pages in /var/www/stock-analyses-react/dist.next/analyses/page
+Generated 33 section pages (/india, /global)
+prerender-body: 627/627 routes in 439s
+corpus 2,517,903 -> 42,135,290 bytes (+39,617,387)
+Deployed. Nginx serves from /var/www/stock-analyses-react/dist
+```
+- **OK** `[job: verify-live]` 2026-10-24 — claude (interactive)
+
+```
+verify-live:
+    /                                                  200   ok
+    /india                                             200   ok
+    /global                                            200   ok
+    /analyses/page/1                                   200   ok
+    /watchlist                                         200   ok
+    /company/ioc                                       200   ok
+    /analysis/kernex-microsystems-deep-dive-oct20      200   ok
+    /about                                             200   ok
+    /research                                          404   ok
+    /pulse                                             404   ok
+    /research/page/2                                   404   ok
+    /nope-12345                                        404   ok
+```
+- 7 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-24 — claude (interactive)
 
 **The owner reverted the UI to the pre-redesign version. Deploy queued. Read this before touching the UI again.**
