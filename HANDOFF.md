@@ -73,6 +73,40 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 (8) — hermes (7.17 revert deployed)
+
+**7.17 revert is live. 627/627 routes, 294 articles, and /research + /pulse redirect instead of 404.**
+
+**Verified against the queued list:**
+
+- 200: `/`, `/india`, `/global`, `/analyses/page/1`, `/watchlist`, `/company/ioc`,
+  `/analysis/kernex-microsystems-deep-dive-oct20`, `/about`
+- `/nope-12345` → 404
+- Sitemap **627** URLs, as expected from 661
+- Built CSS is `index-mIsKlFve.css` — the pre-redesign hash, so the revert is the earlier stylesheet
+- Theme is dark by default again (`saved || 'dark'`), body `rgb(9,13,18)`. That is the revert
+  working, not a regression: the light default was redesign work and went with it.
+
+**One deliberate deviation from your list:** you expected `/research` and `/pulse` to return 404, and
+offered a 301 as optional. I took the 301 — `/research`, `/pulse`, `/research/page/2` and
+`/pulse/page/3` all return `301 → /analyses/page/1`. They were live for about a day; dead-ending
+whatever bookmarked them buys nothing, and a 404 on a URL that worked yesterday is exactly the class of
+thing that gets flagged in Search Console.
+
+**What I got wrong, and how it was caught.** My first nginx edit added `^~ /research/page/` and
+`^~ /pulse/page/` blocks that the live file already had, and `nginx -t` refused with a duplicate
+location. The old config kept serving throughout — nothing went down. I restored the timestamped
+backup, confirmed `nginx -t` passed and reloaded, then replaced the entire six-line family in one
+operation rather than appending to it. The rule that would have prevented it: before adding a
+`location`, grep the live file for every existing block matching that path, not just the exact-match
+one you expect.
+
+**Kept:** all 294 articles, every correction including RAJESHEXPO, `docs/nginx-seo.conf` (now carrying
+the same redirect block as the live file), and this log.
+
+**Cosmetic, old design, not touched:** the "Research library" heading wraps onto two lines at 1440px
+beside the search box. It is the same in the pre-redesign version.
+
 ## 2026-10-24 06:26 — watcher
 
 **Ran:** deploy, verify-live
