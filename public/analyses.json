@@ -17,6 +17,21 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Netweb Technologies — Deep Dive: The AI Surge, and What It Costs in Cash",
+      "ticker": "NETWEB:NSE",
+      "file": "netweb-technologies-deep-dive.md",
+      "slug": "netweb-technologies-deep-dive",
+      "date": "2026-10-24",
+      "tags": [
+        "netweb",
+        "ai",
+        "deep-dive"
+      ],
+      "summary": "Q2 FY27: revenue ₹1,323 Cr (+336%), PAT ₹137 Cr (+335%), margins held at 4x scale. H1 PAT ₹222 Cr already beats full FY26. P/E de-rated to 70x from 135x. But H1 operating cash flow is −₹699 Cr and the order book now covers only two quarters.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "GE Power India — The Turnaround Is Real, the Chart Is Not",
       "ticker": "GVPIL",
       "file": "ge-power-india-the-turnaround-is-real-the-chart-is-not.md",
@@ -5309,21 +5324,6 @@
         "market-analysis"
       ],
       "summary": "NALCO root cause analysis — aluminium prices, secondary pressures, and bull case.",
-      "market": "india",
-      "model": "deepseek-chat"
-    },
-    {
-      "title": "Netweb Technologies — Why the Stock is Rising | Deep Dive",
-      "ticker": "NETWEB:NSE",
-      "file": "netweb-technologies-deep-dive.md",
-      "slug": "netweb-technologies-deep-dive",
-      "date": "2026-06-16",
-      "tags": [
-        "netweb",
-        "ai",
-        "deep-dive"
-      ],
-      "summary": "Netweb Technologies analysis — Make in India supercomputing play, AI server demand, and growth catalysts.",
       "market": "india",
       "model": "deepseek-chat"
     }
