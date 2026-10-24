@@ -1,20 +1,74 @@
 ---
 title: "Apollo Micro Systems — Deep Dive Analysis"
 ticker: "APOLLO"
-date: "2026-06-30"
+date: "2026-10-24"
 tags: ["deep-dive","fundamental","defence","aerospace"]
-summary: "Deep-dive on Apollo Micro Systems — defence technology leader with ₹1,432 Cr order book, 41% revenue CAGR, but P/E 134x, negative CFO (-₹130 Cr) and 22.5% avg delivery. Verdict: CAUTION — expensive growth story with cash flow problems."
-model: "deepseek-chat"
+summary: "Q2 FY27: revenue ₹388 Cr (+72%), PBT +114%, PAT ₹46 Cr held back by a ₹18.5 Cr non-cash deferred tax charge. Order book ₹1,765 Cr. Updated P/E 105x TTM, ~90x forward. Verdict: CAUTION — growth is real, cash flow and valuation still are not fixed."
+model: "deepseek-v4-flash"
 ---
 
 # Apollo Micro Systems — Deep Dive Analysis
 
-**Ticker:** APOLLO (NSE: APOLLO, BSE: 540879)  
-**Sector:** Aerospace & Defence  
-**Price:** ₹423.70 (30 Jun 2026, +4.06%)  
-**Analysis Date:** 30 June 2026  
-**Data Source:** Screener.in consolidated view, TradingView, NSE Official  
+**Ticker:** APOLLO (NSE: APOLLO, BSE: 540879) 
+**Sector:** Aerospace & Defence 
+**Price:** ₹374.75 (23 Oct 2026 close, −3.59%) — was ₹423.70 on 30 Jun 2026 
+**Analysis Date:** 30 June 2026 
+**Last updated:** 24 October 2026 — Q2 FY27 results merged in (see "Update — Q2 FY27 Results") 
+**Data Source:** Screener.in consolidated view, TradingView, NSE filings and bhavcopy, company presentation 
 **Model:** DeepSeek Chat
+
+---
+
+## Update — Q2 FY27 Results (24 October 2026)
+
+Apollo Micro filed its September-quarter results on Saturday 24 October, after Friday's close. The stock had already fallen 11.6% in the four sessions before the filing — from ₹423.80 on 20 October to ₹374.75 — so the market's verdict is still to come.
+
+### Consolidated quarterly results (₹ Cr)
+
+| | Q2FY27 | Q1FY27 | Q2FY26 | YoY | H1FY27 | H1FY26 |
+|---|---|---|---|---|---|---|
+| Revenue | **388.1** | 251.3 | 225.3 | +72.3% | 639.4 | 358.8 |
+| EBITDA (ex other income) | **111.2** | 53.7 | 59.2 | +87.8% | 164.9 | 100.1 |
+| EBITDA margin | 28.6% | 21.4% | 26.3% | +230 bps | 25.8% | 27.9% |
+| PBT | **92.5** | 37.7 | 43.1 | +114.3% | 130.1 | 68.4 |
+| Tax | 46.3 | 12.5 | 13.1 | | 58.8 | 20.7 |
+| PAT | **46.2** | 25.2 | 30.0 | +53.7% | 71.4 | 47.7 |
+| Diluted EPS (₹) | 1.32 | 0.72 | 0.86 | | 2.06 | 1.53 |
+
+### The tax line explains the gap between 114% and 54%
+
+Pre-tax profit more than doubled. PAT grew 53.7%. The difference is tax of ₹46.3 Cr against ₹13.1 Cr a year earlier — an effective rate of 50.1%.
+
+The split matters: current tax was ₹27.9 Cr, which is 30.1% of PBT and in line with the 30-31% the company has paid for years; deferred tax was ₹18.5 Cr against ₹3.8 Cr in Q2FY26. Deferred tax is a non-cash charge. On cash tax alone, PAT would have been about ₹64.6 Cr, up 115% rather than 54%.
+
+The notes to the results do not say what generated the deferred tax liability. That is the first question for the earnings call.
+
+### Standalone versus consolidated
+
+| | Q2FY27 | Q2FY26 | YoY |
+|---|---|---|---|
+| Revenue | 306.3 | 225.3 | +36.0% |
+| EBITDA | 107.6 | 59.2 | +81.6% |
+| EBITDA margin | 35.1% | 26.3% | +880 bps |
+| PAT | 47.5 | 33.1 | +43.6% |
+
+> **Read the press release carefully.** Its headline says revenue "surges 97% to ₹306 Cr". That is quarter-on-quarter — ₹155.9 Cr in Q1FY27 to ₹306.3 Cr in Q2FY27. The year-on-year standalone figure is +36.0%. The +97%, +228% and +200% labels on page 1 compare Q2FY27 with Q2FY25, not with last year.
+
+Consolidated PAT is ₹46.2 Cr against ₹47.5 Cr standalone — the group earns slightly less than the parent alone. A ₹2.3 Cr share of the quarter's result was allocated to non-controlling interests, leaving ₹48.4 Cr attributable to owners of the company.
+
+### Order book and cash
+
+- **Order book ₹1,765 Cr** at 30 September, up from ₹1,432 Cr in March — an all-time high
+- **H1 standalone operating cash flow is negative ₹19.6 Cr** against ₹75.6 Cr of standalone PAT, with ₹178.2 Cr of capex funded by ₹202.3 Cr of financing
+- Share count rose from 35.73 Cr to 37.17 Cr — about 4% dilution. Promoter holding is now 49.98%, institutions 7.45%
+
+### Updated valuation
+
+TTM profit attributable to owners = FY26 ₹107.4 Cr + H1 FY27 ₹75.3 Cr − H1 FY26 ₹49.6 Cr = **₹133.1 Cr**.
+
+On 37.17 Cr shares that is **TTM EPS of ₹3.58**, so at ₹374.75 the **P/E is about 105x**, against 134x at ₹423.70 in June. The de-rating is real, but it came from both a 12% lower price and a 24% higher earnings base.
+
+If H2 simply repeats H1, FY27 PAT is about ₹151 Cr → EPS ₹4.05 → **92x forward**. If H2 grows 20%, about ₹166 Cr → **84x**.
 
 ---
 
@@ -22,25 +76,27 @@ model: "deepseek-chat"
 
 | Metric | Value | 
 |--------|-------|
-| **Market Cap** | ₹15,717 Cr |
-| **Current Price** | ₹423 |
-| **52W High / Low** | ₹447 / ₹162 |
-| **Stock P/E** | 139 |
+| **Market Cap** | ₹13,929 Cr |
+| **Current Price** | ₹374.75 |
+| **52W High / Low** | ₹466.50 / ₹179.50 |
+| **Stock P/E** | 105 (TTM, post-Q2 FY27) |
 | **Industry P/E** | 60.2 |
-| **PEG Ratio** | 1.84 |
-| **Book Value** | ₹36.8 |
+| **PEG Ratio** | 2.0 |
+| **Book Value** | ₹36.8 (FY26) |
 | **ROCE** | 14.5% |
 | **ROE** | 11.8% |
-| **EPS (TTM)** | ₹3.16 |
+| **EPS (TTM)** | ₹3.58 |
 | **Sales (FY26)** | ₹904 Cr |
+| **Sales (TTM)** | ₹1,185 Cr |
 | **PAT (FY26)** | ₹107 Cr |
+| **PAT (TTM)** | ₹133 Cr |
 | **Debt/Equity** | 0.41 |
 | **Debtor Days** | 194 |
 | **Dividend Yield** | 0.06% |
 | **Graham Number** | ₹51.1 |
 | **Piotroski Score** | 5/9 |
 | **Earnings Yield** | 1.30% |
-| **Return over 1Y** | +112% |
+| **Return over 1Y** | +24% |
 
 ---
 
@@ -148,7 +204,7 @@ Apollo Micro Systems Ltd (AMS) is a Hyderabad-based defence technology company s
 | **FCF** | 20 | -16 | 21 | -50 | -131 | -82 | **-357** |
 | **CFO/OP %** | 108% | 24% | 98% | -21% | -87% | 13% | **-50%** |
 
-**⚠️ CRITICAL — Cash Flow Red Flags:**
+** CRITICAL — Cash Flow Red Flags:**
 - **FY26 CFO was NEGATIVE ₹130 Cr** despite record PAT of ₹107 Cr
 - **FCF at -₹357 Cr** — massively negative for the year
 - **CFO/OP at -50%** — only 3 of 7 years positive
@@ -176,18 +232,18 @@ This is the single biggest concern. The company generates record accounting prof
 
 ### Key Trends
 
-**🔴 Promoters — Consistent Dilution**
+** Promoters — Consistent Dilution**
 - Declined from **63.92% (Mar'18) to 50.27% (Jun'26)** — -13.65% in 8 years
 - **-1.71% in last quarter alone** (Mar'26→Jun'26)
 - Screener flags this as a CON: *"Promoter holding has decreased over last quarter"*
 - Promoters have **pledged 30.8%** of their holding (another CON flagged)
 
-**🟢 FIIs — Returning Strongly**
+** FIIs — Returning Strongly**
 - Mar'24 saw a massive spike to 11.14% (from 0.12% in Mar'23)
 - Dropped to 0.93% in Mar'25, but now **rising back to 6.21% (Jun'26)**
 - Recent bulk deals by HRTI, Jump Trading in ₹415-423 range confirm FII/prop interest
 
-**🟡 Public — Explosive Retail Interest**
+** Public — Explosive Retail Interest**
 - Shareholders exploded from 42,134 (Mar'23) to **3,73,814 (Jun'26)** — **8.9x in 3 years**
 - Public holding grew from 37% to 42%
 - High retail participation — could add volatility
@@ -199,6 +255,7 @@ This is the single biggest concern. The company generates record accounting prof
 | Metric | Value |
 |--------|-------|
 | **Order Book (Mar'26)** | ₹1,432 Cr |
+| **Order Book (Sep'26)** | ₹1,765 Cr |
 | **Revenue (FY26)** | ₹904 Cr |
 | **Book-to-Bill** | 1.58x |
 | **Revenue CAGR (FY21-26)** | 41% |
@@ -247,152 +304,124 @@ This is the single biggest concern. The company generates record accounting prof
 
 ---
 
-## 9. Technical Analysis (As of 30 Jun 2026)
+## 9. Technical Analysis (As of 23 October 2026)
 
-**TradingView Summary:** **NEUTRAL** — Oscillators (Sell 1, Neutral 8, Buy 2) | MAs (Sell 0, Neutral 1, Buy 14)
+**TradingView composite: SELL (−0.29).** The moving-average picture is uniformly negative, and the oscillators are neutral to oversold. This section replaces the 30 June read, which was written when the stock was 5% below its high.
 
 ### Oscillators
 
-| Indicator | Value | Signal |
-|-----------|-------|--------|
-| RSI (14) | 57.92 | Neutral |
-| Stochastic %K (14,3,3) | 41.35 | Neutral |
-| CCI (20) | 22.88 | Neutral |
-| ADX (14) | 34.12 | Neutral |
-| Awesome Oscillator | 14.00 | Neutral |
-| Momentum (10) | 1.85 | **Buy** |
-| MACD Level (12,26) | 13.66 | **Sell** |
-| Stoch RSI Fast (3,3,14,14) | 29.91 | Neutral |
-| Williams %R (14) | -31.12 | Neutral |
-| Bull Bear Power | 13.73 | **Buy** |
-| Ultimate Oscillator (7,14,28) | 44.94 | Neutral |
+| Indicator | Value | Reading |
+|---|---|---|
+| RSI (14) | 40.1 | Weak, not yet oversold |
+| Stochastic %K / %D | 15.4 / 36.3 | Oversold, still falling |
+| CCI (20) | −208.4 | Deeply oversold |
+| ADX (14) | 12.3 | No trend — this is drift, not a directional decline |
+| MACD (12,26) | 0.18 vs signal 3.22 | Bearish crossover |
+| Momentum (10) | −20.4 | Negative |
+| Awesome Oscillator | 5.34 | Positive but fading |
 
 ### Moving Averages
 
-| MA | Period | Value | Signal |
-|----|--------|-------|--------|
-| EMA | 10 | 411.34 | **Buy** |
-| SMA | 10 | 417.57 | **Buy** |
-| EMA | 20 | 404.90 | **Buy** |
-| SMA | 20 | 414.58 | **Buy** |
-| EMA | 30 | 391.70 | **Buy** |
-| SMA | 30 | 402.17 | **Buy** |
-| EMA | 50 | 364.41 | **Buy** |
-| SMA | 50 | 361.19 | **Buy** |
-| EMA | 100 | 322.14 | **Buy** |
-| SMA | 100 | 291.50 | **Buy** |
-| EMA | 200 | 281.90 | **Buy** |
-| SMA | 200 | 285.07 | **Buy** |
-| VWMA | 20 | 415.92 | **Buy** |
-| Hull MA | 9 | 395.39 | **Buy** |
+| MA | Value | Price versus MA |
+|---|---|---|
+| EMA 9 | ₹399.92 | Below |
+| EMA 20 | ₹401.62 | Below |
+| EMA 50 | ₹397.84 | Below |
+| EMA 100 | ₹382.83 | Below |
+| EMA 200 | ₹345.77 | Above |
+| SMA 20 | ₹403.51 | Below |
+| SMA 50 | ₹396.11 | Below |
+| SMA 200 | ₹329.74 | Above |
 
-### Pivot Levels (Classic)
+Bollinger (20,2): upper ₹429.39, lower ₹377.64. Friday's close of ₹374.75 finished **below the lower band**, which is statistically stretched to the downside.
 
-| Level | Price |
-|-------|-------|
-| **R3** | ₹676 |
-| **R2** | ₹526 |
-| **R1** | ₹467 |
-| **Pivot** | **₹375** |
-| S1 | ₹317 |
-| S2 | ₹225 |
-| S3 | ₹74 |
+### Levels
 
-### EMA Ladder
-
-```
-EMA(10): ₹411 — CMP ($423) above all EMAs
-EMA(20): ₹405 — Positive slope
-EMA(30): ₹392 — Positive slope  
-EMA(50): ₹364 — Positive slope
-EMA(100): ₹322 — Strong uptrend
-EMA(200): ₹282 — Long-term uptrend intact
-```
-
-**Technical Verdict:**
-- All 14 MAs are in **Buy** territory — textbook bull trend
-- Price trading well above all key EMAs (10/20/50/100/200)
-- RSI at 57.9 — neither overbought nor oversold, room to run
-- MACD shows a **Sell** — divergence at extended levels
-- Support at ₹375 (pivot), strong support at ₹317 (S1)
-- Resistance at ₹447 (52W high) — if broken, ₹467 (R1) is next
+- **Resistance:** ₹382.83 (EMA100), then the ₹396-404 cluster (SMA50, EMA50, EMA20, SMA20), then ₹423.80 — the 20 October close before the slide
+- **Support:** ₹345.77 (EMA200), then ₹329.74 (SMA200)
+- **All-time high:** ₹466.50, 19.7% above Friday's close
 
 ### 25-Point Swing Trading Checklist Assessment
 
-| # | Checklist Item | Criterion | Evidence | Verdict |
-|---|---------------|-----------|----------|---------|
-| 1 | **Price Position** | Within 25% of 52W high or at ATH | 52W High ₹447, CMP ₹423. Distance: **5.4%** ✅ | ✅ PASS |
-| 2 | **Trend** | Clear uptrend, HH/HL visible | EMA ladder bullish (10>20>50>100>200). Uptrend since Mar'26 lows. | ✅ PASS |
-| 3 | **Volume Characteristics** | HVQ/HVY/HVE during breakouts | Volume 25.3M (1.6x avg) on bounce. Q4 results saw 2.5Cr+ volume. | ✅ PASS |
-| 4 | **Clean Price Action** | Smooth/orderly candles | 4-8% daily swings common. Moderate volatility for defence stock. | ⚠️ CAUTION |
-| 5 | **EMA Alignment** | 9>20>50>200, all sloping up | EMA(10)=411 > EMA(20)=405 > EMA(50)=364 > EMA(200)=282. All BUY. | ✅ PASS |
-| 6 | **Chart Pattern & Base** | Cup & Handle / Flat Base / Ascending | 3+ year cup from ₹162 to ₹447. Handle forming ₹384-447. Extreme depth (~85%) but duration compensates. | ⚠️ CAUTION |
-| 7 | **Base Quality** | Well-formed, tightening action | Multi-year base. Recent 14% pullback (₹447→₹384) = normal handle. Tightening near highs. | ⚠️ CAUTION |
-| 8 | **ADR** | Suitable for trading style | Daily range ₹15-25 (4-5% ADR). Wide stops needed (~₹25-30). | ✅ PASS |
-| 9 | **Primary Uptrend** | Broader market supports longs | Nifty recovering. Defence index +37% in 1Y. | ✅ PASS |
-| 10 | **Follow One Model** | Predefined strategy discipline | Generally aligns with swing model. | ✅ PASS |
-| 11 | **Sector Strength** | Leading sector | Defence in massive upcycle — govt priority. ₹7.8L Cr MoD budget. | ✅ PASS |
-| 12 | **Tailwind** | Industry/macro tailwinds | Atmanirbhar Bharat, DcPP model, global re-armament, explosives growth. | ✅ PASS |
-| 13 | **IPO Consideration** | IPO vs established | Listed since 2017. No IPO anomalies. | ✅ PASS |
-| 14 | **Price Action Strength** | Relative strength vs peers | +112% 1Y vs BEL+35%, HAL+48%, Data Patterns+55%. **Massive outperformance.** | ✅ PASS |
-| 15 | **Sector & Govt Boost** | Policy support, reforms | DAC approved 55 proposals worth ₹6.73L Cr. Private sector opened for missiles. | ✅ PASS |
-| 16 | **Fundamental Quality** | Healthy BS, improving business | Rev CAGR 41%, PAT CAGR 64%. But CFO -₹130 Cr, 194 debtor days, 30.8% pledge. | ⚠️ CAUTION |
-| 17 | **Quarterly Earnings Growth** | 30-50% growth | Q4: Rev +81%, PAT +163%. FY26: Rev +61%, PAT +90%. | ✅ PASS |
-| 18 | **Delivery Percentage** | Genuine buying vs churn | **Avg 22.5% over 15 days. 0/11 above 30%.** Speculative churn, not accumulation. | ❌ **FAIL** |
-| 19 | **News & Institutional Activity** | Positive news, MF/FII activity | Record results, IDL acquisition, UAV license, export order, BEL pipeline. FIIs rising. | ✅ PASS |
-| 20 | **Risk Management** | Entry, SL, target defined | SL below ₹375 (-11.4%). Target ₹467 (+10.4%). R:R ~0.9:1 — not great. | ⚠️ CAUTION |
-| 21 | **Market Environment** | Overall market supports | Nifty recovering. But global risks (KOSPI, Fed rate fears) remain. | ⚠️ CAUTION |
-| 22 | **Liquidity** | Sufficient volume | 1.6 Cr shares/day (~₹680 Cr). **Highly liquid.** | ✅ PASS |
-| 23 | **Relative Strength** | Outperforming benchmark | +112% 1Y vs Nifty +6%. **Massive RS.** | ✅ PASS |
-| 24 | **Breakout Confirmation** | Decisive breakout with volume | ₹447 resistance not broken yet. Recent bounce to ₹423 is not a confirmed breakout. | ⚠️ CAUTION |
-| 25 | **Trading Psychology** | Avoid FOMO, follow rules | Stock up 112% in 1Y, rallied 10% in 3 days. FOMO risk high. | ⚠️ CAUTION |
+| # | Checklist item | Evidence | Verdict |
+|---|---|---|---|
+| 1 | Price position | 19.7% below the 52-week and all-time high of ₹466.50 | Pass |
+| 2 | Trend | Lower highs since 20 October: 423.80 → 395.75 → 388.70 → 374.75; ADX 12.3 | Fail |
+| 3 | Volume characteristics | 87.4 lakh shares, 1.15x the 30-day average; no breakout volume | Caution |
+| 4 | Clean price action | 11.6% lost in four sessions, a gap down, ATR 4.8% of price | Fail |
+| 5 | EMA alignment | EMA9 ₹399.9 sits below EMA20 ₹401.6 — not stacked; price below every EMA except the 200 | Fail |
+| 6 | Chart pattern and base | The June cup-and-handle broke down; no base is forming here | Fail |
+| 7 | Base quality | No tightening and no accumulation — distribution since the high | Fail |
+| 8 | ADR | ATR ₹17.97 a day, 4.8% — wide stops required, but tradeable | Pass |
+| 9 | Primary uptrend | Price above EMA200 ₹345.77 and SMA200 ₹329.74; the 200-day is still rising | Pass |
+| 10 | Follow one model | A breakout model has nothing to break out of; a pullback model still needs a confirmed turn | Caution |
+| 11 | Sector strength | Defence pack weak over 6M: Mazagon −31%, BDL −29%, BEL −20%, HAL +9% | Caution |
+| 12 | Tailwind | DRDO missile technology transfer, defence capex cycle | Pass |
+| 13 | IPO consideration | Listed 2018; no IPO-base quirks | Pass |
+| 14 | Price action strength | Best in the peer pack: +27.9% over 6M against −20% to −31% for peers | Pass |
+| 15 | Sector and government boost | Raksha Mantri approval for DRDO missile ToT; indigenisation push | Pass |
+| 16 | Fundamental quality | Growth is strong, but H1 operating cash flow is −₹19.6 Cr and the cash cycle is 443 days | Caution |
+| 17 | Quarterly earnings growth | Revenue +72.3%, PBT +114.3%, PAT +53.7% | Pass |
+| 18 | Delivery percentage | 31.3% on 23 October; four-day average 28.6% — improving, but below the 35-40% threshold | Caution |
+| 19 | News and institutional activity | Record results, ToT approval, Premier Explosives acquisition in process; institutions 7.45% | Pass |
+| 20 | Risk management | Monday's reaction is unknown; a stop under ₹345 is 8% away with ATR at ₹18 | Caution |
+| 21 | Market environment | Nifty −13.3% over 1Y and −3.2% in the last month | Caution |
+| 22 | Liquidity | ₹328 Cr traded on Friday | Pass |
+| 23 | Relative strength | +27.9% over 6M against Nifty −6.2%; +24% over 1Y against −13.3% | Pass |
+| 24 | Breakout confirmation | No breakout; price below every short and medium moving average | Fail |
+| 25 | Trading psychology | Tempting to buy a 20% drawdown into record numbers; the checklist says wait for the reaction | Caution |
 
-**Total Score: 20 / 25 — ⚠️ MODERATE (Needs catalyst for entry)**
+**Score: 11 / 25 — Weak. Pass for a swing entry.**
 
-| Score Range | Verdict |
-|-------------|---------|
-| 22-25 | ✅ Strong — consider entry |
-| **17-21** | **⚠️ Moderate — needs catalyst** |
-| < 17 | ❌ Weak — pass |
+| Score range | Meaning |
+|---|---|
+| 22-25 | Strong — consider entry |
+| 17-21 | Moderate — needs a catalyst |
+| **Below 17** | **Weak — pass** |
 
-### Key Weaknesses (Items to Watch for Improvement)
-1. **🔴 Delivery %** (Item 18) — only FAIL item. Below 30% consistently means momentum-driven, not accumulation-driven.
-2. **⚠️ Breakout not confirmed** (Item 24) — ₹447 resistance intact. Without ₹447 clearance with volume, no swing entry.
-3. **⚠️ R:R unfavorable** (Item 20) — 0.9:1 at current levels. Better entry near ₹400-₹410 would give 1.5:1+.
-4. **⚠️ FOMO risk** (Item 25) — +112% in 1Y means late-cycle momentum. High psychological risk.
+The June assessment scored 20/25. Six items have flipped: the trend, the price action, the EMA stack, the pattern, the base and the breakout confirmation.
 
-### Trade Setup (If Considering Entry)
-- **Entry:** Wait for breakout above ₹447 with volume >2 Cr shares
-- **Alternative Entry:** Pullback to ₹400-410 with delivery % improving above 35%
-- **Stop Loss:** ₹375 (below pivot, -11.4%)
-- **Target 1:** ₹467 (R1 pivot)
-- **Target 2:** ₹526 (R2 pivot)
-- **R:R at current (₹423):** 0.9:1 — unfavorable
-- **R:R on pullback (₹405):** ~1.5:1 — better
+### What would change this
 
-### Verdict Recommendation
-**Wait for better setup.** The fundamental story is excellent (defence super-cycle, order book, recorded growth), but the technical entry at ₹423 near ₹447 resistance with 22.5% delivery and 0.9:1 R:R is not compelling. **Set alert for:**
-1. ₹447 breakout with >2 Cr volume → swing entry
-2. Pullback to ₹400-410 with delivery >35% → accumulation entry
-3. Q1 FY27 results (expected Aug 2026) as catalyst for next leg
+1. A close above ₹404 (the 20/50/100-day cluster) with delivery above 40%
+2. Operating cash flow turning positive in H2 FY27
+3. The deferred tax charge being explained as one-off rather than structural
 
----
+### Trade setup, if one insists
+
+- **Entry:** only on a reclaim of ₹404 with volume, or a test of ₹345-350 that holds
+- **Stop:** below ₹345 (EMA200), about 8% from Friday's close
+- **First target:** ₹424, the pre-results level; then ₹466.50 at the all-time high
+- **Reward-to-risk** from ₹374.75 to ₹424 against a ₹345 stop is about 1.7:1
 
 ## 10. NSE Delivery Data Analysis (Last 15 Trading Days)
 
+### October update — the week before results
+
+| Date | Close | Volume | Delivery % |
+|------|-------|--------|-----------|
+| 20 Oct | ₹423.80 | 84.2 lakh | 25.6% |
+| 21 Oct | ₹395.75 | 73.0 lakh | 29.8% |
+| 22 Oct | ₹388.70 | 50.8 lakh | 27.9% |
+| 23 Oct | ₹374.75 | 87.4 lakh | 31.3% |
+
+Delivery rose from 25.6% to 31.3% while the price fell 11.6% — mild accumulation into weakness rather than capitulation, but still under the 35-40% that would signal conviction. The results were filed after Friday's close, so Monday's delivery number is the one that carries information.
+
+### June data (as originally published)
+
 | Date | Close | Volume | Delivery % | Signal |
 |------|-------|--------|-----------|-------|
-| 12-Jun | 409.40 | 2.46 Cr | **16.8%** | 🔴 |
-| 15-Jun | 421.65 | 2.80 Cr | **18.5%** | 🔴 |
-| 16-Jun | 435.45 | 2.32 Cr | **18.3%** | 🔴 |
-| 17-Jun | 438.75 | 1.83 Cr | **19.4%** | 🔴 |
-| 18-Jun | 426.60 | 1.26 Cr | 26.9% | 🔴 |
-| 19-Jun | 433.15 | 1.02 Cr | 22.1% | 🔴 |
-| 22-Jun | 424.75 | 0.90 Cr | **28.0%** | 🔴 |
-| 23-Jun | 406.95 | 0.93 Cr | 29.6% | 🔴 |
-| 24-Jun | 395.00 | 1.02 Cr | 25.2% | 🔴 |
-| 25-Jun | 384.40 | 1.15 Cr | 24.8% | 🔴 |
-| 29-Jun | 407.15 | 2.53 Cr | **19.0%** | 🔴 |
+| 12-Jun | 409.40 | 2.46 Cr | **16.8%** | |
+| 15-Jun | 421.65 | 2.80 Cr | **18.5%** | |
+| 16-Jun | 435.45 | 2.32 Cr | **18.3%** | |
+| 17-Jun | 438.75 | 1.83 Cr | **19.4%** | |
+| 18-Jun | 426.60 | 1.26 Cr | 26.9% | |
+| 19-Jun | 433.15 | 1.02 Cr | 22.1% | |
+| 22-Jun | 424.75 | 0.90 Cr | **28.0%** | |
+| 23-Jun | 406.95 | 0.93 Cr | 29.6% | |
+| 24-Jun | 395.00 | 1.02 Cr | 25.2% | |
+| 25-Jun | 384.40 | 1.15 Cr | 24.8% | |
+| 29-Jun | 407.15 | 2.53 Cr | **19.0%** | |
 
 ### Key Findings
 
@@ -405,7 +434,7 @@ EMA(200): ₹282 — Long-term uptrend intact
 | Days Above 30% | **0 out of 11** |
 | Avg Daily Volume | 1.60 Cr |
 
-**🔴 THE BIGGEST RED FLAG:** Delivery % across ALL 11 trading days is below 30%. The average of **22.5%** indicates the stock is being driven by **intraday churn and speculative trading**, not genuine accumulation. This is consistent with a stock that has run up +112% in 1 year — profit-booking and short-term trading dominate.
+** THE BIGGEST RED FLAG:** Delivery % across ALL 11 trading days is below 30%. The average of **22.5%** indicates the stock is being driven by **intraday churn and speculative trading**, not genuine accumulation. This is consistent with a stock that has run up +112% in 1 year — profit-booking and short-term trading dominate.
 
 Compare with healthy accumulation (40%+ delivery) or strong accumulation (50%+). Apollo Micro is at **institutional churn levels**, not accumulation levels.
 
@@ -450,19 +479,23 @@ Compare with healthy accumulation (40%+ delivery) or strong accumulation (50%+).
 | FY25 | 1.84 | +67% |
 | FY26 | **3.16** | **+72%** |
 
-### Valuation at CMP (₹423)
+### Valuation at CMP (₹374.75, 24 October 2026)
 
 | Metric | Value |
 |--------|-------|
-| **Trailing P/E (FY26)** | **133.9x** |
+| **Trailing P/E (TTM)** | **105x** |
+| **Forward P/E (FY27E, H2 = H1)** | **92x** |
+| **Forward P/E (FY27E, H2 +20%)** | **84x** |
 | **Industry P/E** | 60.2x |
-| **Premium to Industry** | **2.2x** |
-| **PEG Ratio (3Y Profit CAGR)** | 1.84 |
-| **Price/Book** | 11.5x |
-| **EV/EBITDA (FY26)** | ~68x |
-| **EV/Sales (FY26)** | ~17x |
+| **Premium to Industry** | **1.7x** |
+| **PEG Ratio (TTM profit growth ~52%)** | 2.0 |
+| **Price/Book (FY26 book)** | 10.6x |
+| **EV/EBITDA (TTM)** | ~51x |
+| **EV/Sales (TTM)** | ~12x |
 
-### Analyst Consensus
+For comparison, at ₹423.70 on 30 June the trailing P/E on FY26 earnings was 134x. The multiple has come down because the price fell 12% and the earnings base rose 24%.
+
+### Analyst Consensus (June 2026, not yet revised for Q2)
 
 | Source | Target | Rating |
 |--------|--------|--------|
@@ -470,7 +503,9 @@ Compare with healthy accumulation (40%+ delivery) or strong accumulation (50%+).
 | Consensus Average | **₹382.50** | BUY (2 analysts) |
 | High Target | ₹400 | — |
 | Low Target | ₹365 | — |
-| **Downside from CMP** | **-9.7%** | |
+| **Upside from CMP (₹374.75)** | **+2.1%** | |
+
+The consensus was below the June price. After the Q2 print the stock is roughly at the target, so these numbers are stale and will be revised.
 
 ### Management Guidance Implied Valuation
 
@@ -496,60 +531,60 @@ With management stating FY26 as "breakthrough year" and guiding for continued st
 
 | Risk | Severity | Detail |
 |------|----------|--------|
-| **Negative CFO / Cash Burn** | 🔴 CRITICAL | FY26 CFO -₹130 Cr despite ₹107 Cr PAT. Working capital eats all cash. FCF -₹357 Cr. |
-| **Delivery % Below 30%** | 🔴 CRITICAL | 11 out of 11 trading days below 30%. Avg 22.5% — speculative churn, not genuine accumulation. |
-| **Promoter Dilution** | 🔴 HIGH | From 63.92% (Mar'18) to 50.27% (Jun'26). Down -1.71% in last quarter alone. |
-| **Promoter Pledge** | 🔴 HIGH | 30.8% of promoter holding pledged. Management targets zero but currently high. |
-| **P/E of 134x** | 🔴 HIGH | Even at 30% growth, 110x forward. Any earnings miss = severe de-rating risk. |
-| **High Working Capital** | 🟡 MEDIUM | 443-day cash conversion cycle. Improvement from 626 days but still very high. |
-| **Analyst Target Below CMP** | 🟡 MEDIUM | Consensus target ₹382.50 implies -9.7% downside. |
-| **Subsidiary Losses** | 🟡 MEDIUM | IDL Explosives in transformation phase, currently loss-making. |
-| **Defence Single-Customer Risk** | 🟡 MEDIUM | DRDO/BEL are dominant customers. Order flow depends on govt budget cycle. |
-| **Retail Froth** | 🟡 MEDIUM | Shareholders surged from 42,134 to 3,73,806 (+788%) — retail-heavy can amplify drawdowns. |
-| **Standalone Revenue Below Guidance** | 🟡 MEDIUM | FY26 standalone ₹764.9 Cr — slightly below initial guidance. |
+| **Negative CFO / Cash Burn** | CRITICAL | FY26 CFO -₹130 Cr despite ₹107 Cr PAT. Working capital eats all cash. FCF -₹357 Cr. |
+| **Delivery % Below 30%** | CRITICAL | 11 out of 11 trading days below 30%. Avg 22.5% — speculative churn, not genuine accumulation. |
+| **Promoter Dilution** | HIGH | From 63.92% (Mar'18) to 50.27% (Jun'26). Down -1.71% in last quarter alone. |
+| **Promoter Pledge** | HIGH | 30.8% of promoter holding pledged. Management targets zero but currently high. |
+| **P/E of 134x** | HIGH | Even at 30% growth, 110x forward. Any earnings miss = severe de-rating risk. |
+| **High Working Capital** | MEDIUM | 443-day cash conversion cycle. Improvement from 626 days but still very high. |
+| **Analyst Target Below CMP** | MEDIUM | Consensus target ₹382.50 implies -9.7% downside. |
+| **Subsidiary Losses** | MEDIUM | IDL Explosives in transformation phase, currently loss-making. |
+| **Defence Single-Customer Risk** | MEDIUM | DRDO/BEL are dominant customers. Order flow depends on govt budget cycle. |
+| **Retail Froth** | MEDIUM | Shareholders surged from 42,134 to 3,73,806 (+788%) — retail-heavy can amplify drawdowns. |
+| **Standalone Revenue Below Guidance** | MEDIUM | FY26 standalone ₹764.9 Cr — slightly below initial guidance. |
 
 ---
 
 ## 14. Screener.in Pros & Cons
 
 ### Pros
-- ✅ Company is expected to give good quarter
-- ✅ Company has delivered good profit growth of **61.6% CAGR over last 5 years**
+- Company is expected to give good quarter
+- Company has delivered good profit growth of **61.6% CAGR over last 5 years**
 
 ### Cons
-- ❌ Stock is trading at **11.1 times its book value**
-- ❌ **Promoter holding decreased** over last quarter: -1.71%
-- ❌ Company has a **low return on equity of 10.2%** over last 3 years
-- ❌ **Promoters have pledged 30.8%** of their holding
-- ❌ Company has **high debtors of 194 days**
+- Stock is trading at **11.1 times its book value**
+- **Promoter holding decreased** over last quarter: -1.71%
+- Company has a **low return on equity of 10.2%** over last 3 years
+- **Promoters have pledged 30.8%** of their holding
+- Company has **high debtors of 194 days**
 
 ---
 
 ## 15. Bull vs Bear Case
 
-### 🟢 Bull Case
+### Bull Case
 
 | Argument | Evidence |
 |----------|----------|
 | **Defence super-cycle underway** | India's MoD budget ₹7.8L Cr for FY27; 55 AoN proposals worth ₹6.73L Cr in FY26 alone |
 | **Unique market position** | Only company with highest DRDO missile program participation; 700+ onboard technologies |
-| **Record financial performance** | FY26: Revenue +61%, PAT +90%, highest ever |
-| **₹1,432 Cr order book** | 1.6x revenue coverage; major programs entering production phase |
+| **Record financial performance** | Q2FY27: Revenue +72%, PBT +114%, PAT +54% (PBT held back only by non-cash deferred tax) |
+| **₹1,765 Cr order book** | Up 23% since March, an all-time high; major programs entering production |
 | **FIIs returning** | FII holding from 0.93% → 6.21%; HRTI buying aggressively |
 | **Scaling capacity 12x** | ₹300 Cr capex plan for new facility; CWIP at ₹196 Cr |
 | **New growth vectors** | IDL Explosives, UAV manufacturing, first export order, additional acquisition expected |
 | **Improving margins** | OPM 19%→24% standalone; PAT margin 6%→16% over 6 years |
 
-### 🔴 Bear Case
+### Bear Case
 
 | Argument | Evidence |
 |----------|----------|
 | **Negative cash flow** | CFO -₹130 Cr on PAT ₹107 Cr. FCF -₹357 Cr. Business consumes cash. |
-| **Speculative churn** | Avg delivery % just 22.5% — driven by intraday traders, not investors |
-| **Absurd valuation** | P/E 134x, EV/EBITDA 68x, Price/Book 11.5x for 14.5% ROCE |
+| **Speculative churn** | Delivery averaged 22.5% in June and 28.6% in results week — improving, still short of 35-40% |
+| **Extreme valuation** | P/E 105x TTM, EV/EBITDA ~51x, Price/Book 10.6x for 14.5% ROCE |
 | **Promoter dilution + pledge** | Promoters down to 50.27% from 63.92%; 30.8% pledged |
-| **Meltdown risk** | +112% in 1 year, 162→447 range. At highs, any bad news = sharp correction |
-| **Analyst target below CMP** | Consensus ₹382.50 — already 9.7% below current price |
+| **Drawdown risk** | Already 19.7% below the high and under every short and medium MA before the print |
+| **Stale analyst targets** | Consensus ₹382.50 predates the Q2 print; the stock now sits at it |
 | **Working capital trap** | 443-day cash cycle; debtors 194 days — cash trapped in operations |
 | **Low Piotroski Score** | 5/9 — not a quality signal |
 | **Retail froth** | 3.73L shareholders vs 42K three years ago — late-cycle enthusiasm |
@@ -558,33 +593,35 @@ With management stating FY26 as "breakthrough year" and guiding for continued st
 
 ## 16. Final Verdict
 
-### **CAUTION — Expensive Growth Story with Cash Flow Problems**
+### **CAUTION — the operating business is accelerating; the entry is worse, not better**
 
-Apollo Micro Systems is a **genuine multi-decade defence opportunity** — it's deeply embedded in India's missile, torpedo, and underwater warfare programs with technological moats that are virtually unassailable. The revenue and profit trajectory is impressive (41% and 64% CAGR respectively), and the order book pipeline is robust.
+The Q2 FY27 results strengthen the business case and weaken the trading case at the same time.
 
-**However, three critical issues prevent a bullish stance at ₹423:**
+**What the quarter proved.** Revenue grew 72.3% and pre-tax profit 114.3%. The 53.7% PAT growth is not deterioration — it is a ₹18.5 Cr non-cash deferred tax charge. On cash tax, PAT would have grown about 115%. The order book is at an all-time high of ₹1,765 Cr, up 23% since March. The DRDO missile technology transfer, the IDL Explosives integration and the Premier Explosives acquisition put the company further up the missile value chain than it was in June.
 
-1. **💸 Cash Flow is Broken** — Negative CFO on record PAT is not a blip. The working capital cycle (443 days) and massive capex for the ₹300 Cr expansion mean the company will be cash-negative for at least another 2-3 years.
+**Why the stance is still CAUTION at ₹374.75:**
 
-2. **🏆 Valuation is Priced for Perfection** — At 134x trailing earnings, the stock prices in flawless execution for 5+ years. Any quarterly miss, project delay, or order book disappointment will trigger a 30-50% correction. The analyst consensus of ₹382.50 already implies downside.
+1. **Valuation is still extreme** — 105x trailing and roughly 90x forward for a business that does not yet generate operating cash.
+2. **Cash flow has not improved** — H1 standalone operating cash flow is −₹19.6 Cr against ₹75.6 Cr of PAT, with ₹178 Cr of capex funded by borrowing. This was the critical risk in June and it still is.
+3. **The chart broke** — the price is 19.7% below its high, below every short and medium moving average, with a bearish MACD and a checklist score of 11/25. Delivery is improving but has not crossed 35%.
 
-3. **🎰 Low Delivery = Speculative Churn** — 22.5% average delivery means this rally is driven by momentum traders, not long-term accumulators. When the momentum trade reverses (as it always does), the exit will be crowded.
+**What has genuinely improved since June:** the P/E has come down from 134x to about 105x because earnings grew faster than the price fell; the order book is 23% larger; and the margin profile is better — 28.6% consolidated EBITDA margin against 26.3% a year ago, and 35.1% on a standalone basis.
 
 ### What Would Change This View
 
-- **Delivery % consistently above 40%** — would indicate genuine accumulation replacing speculative churn
-- **CFO turning positive** — one quarter of positive CFO would be a massive signal
-- **Promoter pledge reduced below 20%**
-- **A meaningful correction to ₹300-350** — where the forward P/E becomes more digestible (~90-100x)
+- Delivery above 40% sustained for a week, not a day
+- Operating cash flow positive in any quarter of FY27
+- The deferred tax charge explained as one-off rather than structural
+- A close above ₹404 that holds, which would repair the moving-average structure
 
 ### Suitable Investor Profile
 
 | Profile | Suitability |
 |---------|-------------|
-| Long-term (5+ year) investor | 🟡 **Wait for better entry** — set alert for ₹300-350 |
-| Swing trader (1-6 months) | 🔴 **Risky** — low delivery, extended at highs, strong resistance at ₹447 |
-| Momentum trader | 🟡 **Possible** — but use tight stops below ₹400 |
-| Value investor | ❌ **Avoid** — P/E 134x, Graham Number ₹51 |
+| Long-term (5+ year) investor | Wait for a better entry — the story is intact, the price is still 105x |
+| Swing trader (1-6 months) | Avoid until the price reclaims ₹404; the checklist scores 11/25 |
+| Momentum trader | Wait for Monday's reaction; a gap-up above ₹404 on volume is the trigger |
+| Value investor | Avoid — 105x earnings and negative operating cash flow |
 
 > **Disclaimer:** For informational purposes only. Not investment advice. Data sourced from Screener.in consolidated view, TradingView, NSE official bhavcopy, BSE filings, and company presentations. The author may hold positions in securities discussed. Independent due diligence recommended before any investment decision.
 
