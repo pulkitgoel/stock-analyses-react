@@ -68,12 +68,13 @@ export default function TagPage() {
             transition: 'border-color 180ms ease, transform 180ms ease',
             whiteSpace: 'nowrap', marginBottom: '1rem',
           }}
-          data-hov="lift"
+          onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
         >
           <ArrowLeft size={14} /> Dashboard
         </Link>
 
-        <header className="page-panel surface-card animate-in rounded-lg">
+        <header className="page-panel surface-card animate-in rounded-[2rem]">
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: 'var(--accent-glow)' }}>
             <TagIcon size={22} style={{ color: 'var(--accent)' }} />
           </div>
@@ -109,7 +110,8 @@ export default function TagPage() {
                   to={tagPath(t.tag)}
                   className="rounded-full px-3 py-1.5 text-xs font-bold no-underline"
                   style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}
-                  data-hov="chip"
+                  onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)'; }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
                 >
                   {displayTag(t.tag)} <span style={{ color: 'var(--text-dim)' }}>{t.count}</span>
                 </Link>

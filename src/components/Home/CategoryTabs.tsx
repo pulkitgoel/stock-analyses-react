@@ -53,7 +53,7 @@ export default function CategoryTabs({ category, onCategoryChange, counts }: Cat
                 height: '20px',
                 padding: '0 6px',
                 borderRadius: '999px',
-                fontSize: '0.75rem',
+                fontSize: '0.68rem',
                 fontWeight: 900,
                 background: active ? 'rgba(0,0,0,0.18)' : 'var(--surface-soft)',
                 color: active ? 'var(--accent-contrast)' : 'var(--text-dim)',

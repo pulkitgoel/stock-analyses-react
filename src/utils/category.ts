@@ -1,15 +1,15 @@
 import { Analysis } from '../types/analysis';
-import { kindOf } from './kind';
 
-// Home-page segregation: every analysis is either a day-to-day Policy Pulse note
-// or stock research. The rule itself lives in utils/kind.ts, which reads the
-// value derived once at build time by scripts/lib/kind.js — this file used to
-// re-implement the tag and title check, which is exactly the duplication that
-// let the ticker rule (3.6) and the tag floor (7.5) drift.
+// Home-page segregation: every analysis is either day-to-day "Policy Pulse"
+// macro/policy tracking, or "Stock Research" (deep-dives, market notes,
+// institutional flows, etc.). Classification lives here so the hook, the tab
+// bar, and any counts all agree.
 export type Category = 'all' | 'stocks' | 'policy';
 
+const POLICY_TAGS = new Set(['policy-pulse', 'policy-tracker']);
+
 export function isPolicyPulse(a: Analysis): boolean {
-  return kindOf(a) === 'pulse';
+  return a.tags.some((t) => POLICY_TAGS.has(t.toLowerCase())) || /^policy pulse\b/i.test(a.title);
 }
 
 export function getCategory(a: Analysis): Exclude<Category, 'all'> {

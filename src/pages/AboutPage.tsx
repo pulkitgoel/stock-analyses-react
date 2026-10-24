@@ -57,6 +57,16 @@ export default function AboutPage() {
           position: 'relative',
         }}
       >
+        {/* ambient glow — z-index 0, sits behind all content */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute', inset: 0, borderRadius: '2rem',
+            background: 'radial-gradient(ellipse 55% 45% at 95% 10%, rgba(99,230,190,0.13) 0%, transparent 70%)',
+            pointerEvents: 'none', zIndex: 0,
+          }}
+        />
+
         {/* all content at z-index 1 */}
         <div style={{ position: 'relative', zIndex: 1 }}>
           {/* icon + badge row */}
@@ -66,15 +76,16 @@ export default function AboutPage() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'linear-gradient(135deg, var(--accent), var(--accent-strong))',
               color: 'var(--accent-contrast)',
+              boxShadow: '0 6px 20px rgba(99,230,190,0.3)',
             }}>
               <BarChart3 size={22} />
             </div>
             <span style={{
-              fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.14em',
+              fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em',
               textTransform: 'uppercase', color: 'var(--accent)',
               background: 'var(--accent-glow)',
               padding: '5px 14px', borderRadius: '999px',
-              border: '1px solid var(--accent-glow)',
+              border: '1px solid rgba(99,230,190,0.2)',
             }}>
               Independent research desk
             </span>
@@ -123,7 +134,7 @@ export default function AboutPage() {
       {/* ── Pillars — stacked column on mobile, row on desktop ── */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <p style={{
-          fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.14em',
+          fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em',
           textTransform: 'uppercase', color: 'var(--text-dim)', margin: 0,
         }}>
           What this covers
@@ -188,7 +199,7 @@ export default function AboutPage() {
             <User size={24} />
           </div>
           <div>
-            <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', margin: 0 }}>
+            <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', margin: 0 }}>
               Built by
             </p>
             <p style={{ fontSize: '1.1rem', fontWeight: 900, color: 'var(--text)', margin: '2px 0 0', lineHeight: 1.2 }}>
@@ -213,7 +224,8 @@ export default function AboutPage() {
             fontFamily: 'inherit',
             whiteSpace: 'nowrap',
           }}
-          data-hov="edge"
+          onMouseOver={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
+          onMouseOut={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
         >
           <Mail size={14} /> pulkitgoel28@gmail.com
         </a>

@@ -793,7 +793,7 @@ and one canonical (3.1, 3.2).
 
 ---
 
-### 7.10 UI redesign, step 1: remove the decoration layer — DONE 2026-10-23
+### 7.10 UI redesign, step 1: remove the decoration layer — DONE 2026-10-23 — REVERTED 2026-10-24 (owner decision, see 7.17)
 
 **Result: the LCP hypothesis below was mostly wrong, and 7.9's conclusion stands.**
 Measured on the 7.9 harness (`--form-factor=mobile --throttling-method=simulate`),
@@ -880,7 +880,7 @@ cheap test, and the before number on the same harness is what makes it evidence.
 
 ---
 
-### 7.11 UI redesign, step 2: tokens and typography — DONE 2026-10-23
+### 7.11 UI redesign, step 2: tokens and typography — DONE 2026-10-23 — REVERTED 2026-10-24 (owner decision, see 7.17)
 
 **FCP finally moved, and this is the first change that has moved it.** Three runs per
 build on the 7.9 harness, served CSS hash verified each time, and the BEFORE build
@@ -974,7 +974,7 @@ stay identical.
 
 ---
 
-### 7.12 UI redesign, step 3: nav, masthead, Research / Daily Pulse split — DONE 2026-10-23
+### 7.12 UI redesign, step 3: nav, masthead, Research / Daily Pulse split — DONE 2026-10-23 — REVERTED 2026-10-24 (owner decision, see 7.17)
 
 **The masthead's premise was wrong, for the second time in this series.** I predicted the
 hero image was the LCP element and that deleting it would close the FCP/LCP gap. Measured,
@@ -1043,7 +1043,7 @@ characters, but that is content and would contaminate the 2026-11-07 experiment.
 
 ---
 
-### 7.13 UI redesign, step 4: ResearchCard and PulseRow — DONE 2026-10-24
+### 7.13 UI redesign, step 4: ResearchCard and PulseRow — DONE 2026-10-24 — REVERTED 2026-10-24 (owner decision, see 7.17)
 
 `DESIGN.md` Appendix B step 4. The library renders one card shape for everything, so a
 730-word daily note and a 2,600-word deep dive arrive looking identical — the confusion
@@ -1094,7 +1094,7 @@ CSS 7.60 -> 7.43 kB gzip.
 
 ---
 
-### 7.14 UI redesign, step 5: byline and disclosure — DONE 2026-10-24 (both section 6 decisions still OPEN)
+### 7.14 UI redesign, step 5: byline and disclosure — DONE 2026-10-24 (both section 6 decisions still OPEN) — REVERTED 2026-10-24 (owner decision, see 7.17)
 
 `DESIGN.md` Appendix B step 5, which that file marks as gated on the two decisions in
 section 6. Split so the structure ships and **neither decision is made here**.
@@ -1152,7 +1152,7 @@ the authorship claim is already published to crawlers either way.
 
 ---
 
-### 7.15 UI redesign: make the live site match the approved mockups — BUILT 2026-10-24, awaiting owner sign-off before deploy
+### 7.15 UI redesign: make the live site match the approved mockups — BUILT 2026-10-24, awaiting owner sign-off before deploy — REVERTED 2026-10-24 (owner decision, see 7.17)
 
 **Why this item exists: 7.10-7.14 shipped the structure of the approved design and none
 of its appearance.** The owner approved light mockups on 2026-10-22 — white page, teal
@@ -1228,7 +1228,7 @@ are the only numbers the data actually holds; and Pulse rows have no timeline ra
 
 ---
 
-### 7.16 UI redesign: the homepage and the motion layer — DONE 2026-10-24
+### 7.16 UI redesign: the homepage and the motion layer — DONE 2026-10-24 — REVERTED 2026-10-24 (owner decision, see 7.17)
 
 7.15 fixed the palette and the article page. The homepage and the motion were never
 built at all, and the owner's verdict on the delivered work was "-100 out of 100".
@@ -1278,6 +1278,46 @@ the early returns (3.12); `generate-og-files.py` exits 0 (3.3).
 **Still differing from the mockup, left deliberately and told to the owner:** the masthead
 keeps its stats line and two buttons where the mockup goes straight to "Latest research",
 and the logo is still the rounded-square mark rather than a text wordmark.
+
+---
+
+### 7.17 UI redesign reverted to the pre-redesign version — DONE 2026-10-24 (owner decision)
+
+**The owner reviewed the redesigned site and chose a full revert.** Verdict, in their
+words: they expected a "wow" site and the result was a plain one, and the earlier version
+was better. Offered a hybrid (earlier look, fixes kept underneath); chose the full revert.
+That is the decision and it stands. Items 7.10-7.16 are marked REVERTED and kept as history.
+
+**What was reverted, and only this:** `src/`, `index.html`, `scripts/` and `public/fonts/`,
+restored to `f2ca44c` — the commit immediately before 7.10 changed any code. Every commit to
+those paths since was redesign work, including two of Hermes's fixes to the new UI
+(`edd7055` dock height, `51428a8` deck de-duplication), which go with it.
+
+**What was deliberately NOT reverted:** every article and content correction (RAJESHEXPO
+included), `docs/nginx-seo.conf`, the handoff log and this file. Data was regenerated from
+current content with the restored generator, so all 294 articles are present.
+
+**Verified before commit, against a render of the earlier version from git:** 0 pixels
+differing on the home and article pages at 375px. The built CSS is `index-mIsKlFve.css` —
+byte-identical to the pre-redesign CSS, which is the same hash 7.10 recorded for its BEFORE
+build. JS differs only because the bundle carries newer articles.
+
+**Consequences of the revert.** The owner was told about the lost fixes (faster load, readable text) when offered the hybrid, but was NOT told beforehand that `/research` and `/pulse` would start returning 404 - that is being reported to them now, after the fact:
+
+- `/research` and `/pulse` no longer exist in the app or the sitemap (627 URLs, from 661).
+  Their nginx blocks remain and use `try_files $uri.html =404`, so they now return a clean
+  **404**, not a soft 404. They were live for about a day.
+- Lost with the revert: the self-hosted font (7.11 measured it at -899ms FCP locally, ~-270ms
+  live), the contrast fixes, the 12px text floor, the article readability fixes, the byline,
+  and the segregated homepage.
+
+**The lesson, recorded because it caused this.** The design research behind `DESIGN.md` used
+four reviewer lenses — devil's advocate, simplicity, performance, compliance — and every one
+of them argues for removing things. None stood for visual design, brand or delight, so the
+research could only recommend subtraction, and the spec encoded it as rules ("no gradients,
+no glow, no shadows, flat"). Then real defects (tiny text, low contrast, a render-blocking
+font, an opacity-0 hero) were removed together with the character that was never a defect.
+**If design research is run again, one lens must argue for how the product should feel.**
 
 ---
 

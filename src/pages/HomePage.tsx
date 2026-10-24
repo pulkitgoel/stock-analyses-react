@@ -1,17 +1,16 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BarChart3, BookOpen, Sparkles } from 'lucide-react';
 import { useSearch } from '../hooks/useSearch';
 import { useNotification } from '../hooks/useNotification';
 import { getAnalyses } from '../services/analysisService';
 
-import ResearchCard from '../components/Dashboard/ResearchCard';
-import PulseRow from '../components/Dashboard/PulseRow';
-import SegmentedControl from '../components/Home/SegmentedControl';
-import { kindOf } from '../utils/kind';
-import { useReveal } from '../hooks/useReveal';
+import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
 import SubscribeCard from '../components/Common/SubscribeCard';
+import SearchBar from '../components/Home/SearchBar';
+import CategoryTabs from '../components/Home/CategoryTabs';
+import heroImage from '../assets/hero.png';
 
 // The catalogue is a bundled constant, so it is read at module scope: there is
 // no loading state to render and no spinner frame between the prerendered page
@@ -19,7 +18,7 @@ import SubscribeCard from '../components/Common/SubscribeCard';
 const analyses = getAnalyses();
 
 export default function HomePage() {
-  const { counts } = useSearch(analyses);
+  const { query, setQuery, sortMode, setSortMode, category, setCategory, counts, filtered } = useSearch(analyses);
   const { subscribed, supported, loading: notifLoading, subscribe, unsubscribe } = useNotification();
   const allTags = useMemo(() => analyses.flatMap(a => a.tags), [analyses]);
   const latest = useMemo(() => [...analyses].sort((a, b) => b.date.localeCompare(a.date))[0], [analyses]);
@@ -30,24 +29,8 @@ export default function HomePage() {
     { label: 'Themes tracked', value: new Set(allTags).size },
   ];
 
-  // The homepage shows the two families separately, so it slices the catalogue
-  // by kind rather than running it through the search filter.
-  const [researchMarket, setResearchMarket] = useState<'india' | 'global'>('india');
-  const researchReveal = useReveal<HTMLElement>();
-  const pulseReveal = useReveal<HTMLElement>();
-
-  const byDate = useMemo(
-    () => [...analyses].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? '')),
-    [],
-  );
-  const researchByMarket = useMemo(() => ({
-    india: byDate.filter((a) => kindOf(a) === 'research' && a.market !== 'global'),
-    global: byDate.filter((a) => kindOf(a) === 'research' && a.market === 'global'),
-  }), [byDate]);
-  const researchShown = researchByMarket[researchMarket].slice(0, 4);
-  const pulseAll = useMemo(() => byDate.filter((a) => kindOf(a) === 'pulse'), [byDate]);
-  const pulseShown = pulseAll.slice(0, 6);
-  const newestPulseDate = pulseAll[0]?.date;
+  const categoryTotal = category === 'all' ? counts.all : category === 'stocks' ? counts.stocks : counts.policy;
+  const categoryLabel = category === 'policy' ? 'Policy Pulse notes' : category === 'stocks' ? 'research notes' : 'notes';
 
   return (
     <>
@@ -109,114 +92,156 @@ export default function HomePage() {
       </Helmet>
 
       <div className="mx-auto max-w-7xl">
-        {/* Masthead, not a hero. DESIGN.md step 3.
+        <section
+          className="animate-in"
+          style={{
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border)',
+            borderRadius: '2rem',
+            padding: '3rem 2.5rem',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* ambient glow */}
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute', inset: 0, borderRadius: '2rem',
+              background: 'radial-gradient(ellipse 45% 55% at 85% 15%, rgba(99,230,190,0.12) 0%, transparent 65%)',
+              pointerEvents: 'none', zIndex: 0,
+            }}
+          />
 
-            The card this replaces held a 343x361 decorative PNG that was the mobile LCP
-            element. After 7.11 the live site measured FCP 2.93s against LCP 3.38s - the
-            450ms gap was this image loading after first paint, where 7.9 had measured the
-            two as equal. Nothing above the fold is an image now, so the LCP candidate is
-            text and paints with the first CSS.
-
-            The h1 also says what the site is. "Markets move fast. Research should stay
-            sharp." never mentioned Indian equities, while the title and description both
-            lead with them (7.7). */}
-        <section style={{ paddingTop: '0.5rem' }}>
-          <h1 style={{
-            fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
-            fontWeight: 800, lineHeight: 1.15,
-            letterSpacing: '-0.02em', color: 'var(--text)',
-            margin: 0, maxWidth: '20ch',
+          <div style={{
+            position: 'relative', zIndex: 1,
+            display: 'flex', flexWrap: 'wrap', gap: '3rem',
+            alignItems: 'center', justifyContent: 'space-between'
           }}>
-            Indian stock research, and the global macro that moves it.
-          </h1>
+            <div style={{ flex: '1 1 500px' }}>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: 'var(--accent-glow)', color: 'var(--accent)',
+                padding: '6px 14px', borderRadius: '999px',
+                fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.12em',
+                textTransform: 'uppercase', marginBottom: '1.5rem',
+                border: '1px solid rgba(99,230,190,0.2)'
+              }}>
+                <Sparkles size={14} />
+                Independent research desk
+              </div>
+              
+              <h1 style={{
+                fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)',
+                fontWeight: 900, lineHeight: 1.1,
+                letterSpacing: '-0.03em', color: 'var(--text)',
+                margin: 0
+              }}>
+                {/* The trailing space matters: without it, text extractors read
+                    the heading as "fast.Research" because <br /> contributes no
+                    whitespace. It does not change the rendered layout. */}
+                Markets move fast.{' '}<br />
+                <span style={{ color: 'var(--accent)' }}>Research should stay sharp.</span>
+              </h1>
+              
+              <p style={{
+                marginTop: '1.25rem', fontSize: '1.05rem', lineHeight: 1.8,
+                color: 'var(--text-muted)', maxWidth: '600px'
+              }}>
+                Deep-dives, valuation calls, institutional activity, and market notes presented like a clean research terminal.
+              </p>
 
-          <p style={{
-            marginTop: '0.85rem', fontSize: '1.05rem', lineHeight: 1.6,
-            color: 'var(--text-muted)', maxWidth: '58ch',
-          }}>
-            Deep dives on NSE delivery data, promoter trends and quarterly results, plus a
-            daily policy note on what Delhi and Washington did and which tickers it moves.
-            Written by Pulkit Goel.
-          </p>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
+                <a href="#library" className="btn btn-primary">
+                  Explore research <ArrowRight size={16} />
+                </a>
+                {latest && (
+                  <Link to={`/analysis/${latest.slug}`} className="btn btn-secondary">
+                    Latest note <BookOpen size={16} />
+                  </Link>
+                )}
+              </div>
+            </div>
 
-          <p data-nums style={{
-            marginTop: '0.85rem', fontSize: '0.8125rem', fontWeight: 600,
-            color: 'var(--text-dim)',
-          }}>
-            {stats.map((stat, i) => (
-              <span key={stat.label}>
-                {i > 0 && <span style={{ margin: '0 0.5rem' }}>&middot;</span>}
-                {stat.value} {stat.label.toLowerCase()}
-              </span>
-            ))}
-          </p>
-
-          <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
-            <a href="#library" className="btn btn-primary">
-              Browse research <ArrowRight size={16} />
-            </a>
-            {latest && (
-              <Link to={`/analysis/${latest.slug}`} className="btn btn-secondary">
-                Latest note <BookOpen size={16} />
-              </Link>
-            )}
+            <div style={{
+              flex: '1 1 340px', maxWidth: '440px',
+              position: 'relative', overflow: 'hidden', borderRadius: '1.5rem',
+              background: 'var(--bg-elevated)', border: '1px solid var(--border)',
+              display: 'flex', flexDirection: 'column',
+              boxShadow: 'var(--shadow-card)',
+            }}>
+              <div style={{
+                position: 'absolute', left: '1.25rem', top: '1.25rem', zIndex: 10,
+                background: 'var(--accent)', color: 'var(--accent-contrast)',
+                padding: '6px 12px', borderRadius: '12px',
+                fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.05em'
+              }}>
+                LIVE LIBRARY
+              </div>
+              <div style={{ padding: '3rem 1.5rem 2rem', display: 'flex', justifyContent: 'center' }}>
+                {/* width/height are the file's intrinsic size (343x361). They
+                    are not the rendered size — CSS still draws it 180px tall —
+                    but they give the browser the aspect ratio before the bytes
+                    arrive, so it reserves 171x180 instead of 0 and the page
+                    below does not jump when the image loads. This is the LCP
+                    element on mobile, and its 1,180 ms was discovery delay
+                    rather than download, hence fetchPriority (AGENTS.md 7.9). */}
+                <img
+                  src={heroImage}
+                  alt="Layered research stack"
+                  width={343}
+                  height={361}
+                  fetchPriority="high"
+                  decoding="async"
+                  style={{ height: '180px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))' }}
+                />
+              </div>
+              <div style={{
+                display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem',
+                padding: '0 1.25rem 1.25rem'
+              }}>
+                {stats.map((stat) => (
+                  <div key={stat.label} style={{
+                    background: 'var(--surface-soft)', borderRadius: '12px',
+                    padding: '1rem 0.5rem', textAlign: 'center'
+                  }}>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--text)' }}>{stat.value}</div>
+                    <div style={{ marginTop: '0.35rem', fontSize: '0.62rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-dim)' }}>{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* The two families, segregated. This is what the owner asked for at the
-            start of this thread and what the approved mockup shows: deep dives as
-            cards, daily notes as a dated timeline, each with its own heading and
-            its own "all of these" link. It replaces a single "Research library"
-            panel that put a search box and four category tabs in front of one
-            undifferentiated list — the pile the whole redesign exists to split.
-
-            Search still exists, on the archive, which is the page built to be
-            searched. The homepage's job is to show what is new. */}
-        <section ref={researchReveal} style={{ marginTop: '2.5rem' }}>
-          <div
-            className="flex flex-wrap items-baseline justify-between gap-3"
-            style={{ borderBottom: '1px solid var(--border)', paddingBottom: '0.6rem' }}
-          >
-            <h2 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Latest research</h2>
-            <Link to="/research" className="text-sm font-semibold no-underline" data-hov="accent" style={{ color: 'var(--accent)' }}>
-              All research &rarr;
-            </Link>
-          </div>
-
-          <div style={{ marginTop: '1rem' }}>
-            <SegmentedControl
-              segments={[
-                { key: 'india', label: 'India', count: researchByMarket.india.length },
-                { key: 'global', label: 'US & Global', count: researchByMarket.global.length },
-              ]}
-              value={researchMarket}
-              onChange={(k) => setResearchMarket(k as 'india' | 'global')}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1rem', marginTop: '1rem' }}>
-            {researchShown.map((a) => (
-              <div key={a.slug} className="lift"><ResearchCard analysis={a} /></div>
-            ))}
+        <section id="library" className="animate-in animate-in-delay-1" style={{ marginTop: '3rem' }}>
+          <div className="library-panel surface-card rounded-[2rem]">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <BarChart3 size={20} style={{ color: 'var(--accent)' }} />
+                  <h2 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text)' }}>Research library</h2>
+                </div>
+                <p className="mt-1 text-sm font-semibold" style={{ color: 'var(--text-dim)' }}>
+                  {filtered.length} result{filtered.length !== 1 ? 's' : ''} of {categoryTotal} {categoryLabel}
+                </p>
+              </div>
+              <SearchBar query={query} onQueryChange={setQuery} sortMode={sortMode} onSortChange={setSortMode} />
+            </div>
+            <div style={{ marginTop: '1.5rem' }}>
+              <CategoryTabs category={category} onCategoryChange={setCategory} counts={counts} />
+            </div>
           </div>
         </section>
 
-        <section ref={pulseReveal} style={{ marginTop: '2.5rem' }}>
-          <div
-            className="flex flex-wrap items-baseline justify-between gap-3"
-            style={{ borderBottom: '1px solid var(--border)', paddingBottom: '0.6rem' }}
-          >
-            <h2 className="text-xl font-bold" style={{ color: 'var(--text)' }}>Today&rsquo;s Pulse</h2>
-            <Link to="/pulse" className="text-sm font-semibold no-underline" data-hov="accent" style={{ color: 'var(--accent)' }}>
-              All Pulse notes &rarr;
-            </Link>
-          </div>
-
-          <div style={{ marginTop: '0.5rem' }}>
-            {pulseShown.map((a) => (
-              <PulseRow key={a.slug} analysis={a} isToday={a.date === newestPulseDate} />
-            ))}
-          </div>
+        <section className="animate-in animate-in-delay-2" style={{ marginTop: '3rem' }}>
+          {filtered.length === 0 ? (
+            <div className="surface-card rounded-[2rem] px-6 py-16 text-center text-sm" style={{ color: 'var(--text-dim)' }}>
+              No analyses match your filters.
+            </div>
+          ) : (
+            <AnalysisGrid analyses={filtered} />
+          )}
         </section>
 
         <div className="animate-in animate-in-delay-3" style={{ marginTop: '3rem' }}>

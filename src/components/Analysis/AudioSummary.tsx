@@ -36,7 +36,7 @@ export default function AudioSummary({ slug }: { slug: string | undefined }) {
 
   return (
     <section
-      className="page-panel surface-card animate-in rounded-lg"
+      className="page-panel surface-card animate-in rounded-[2rem]"
       style={{ padding: '1.15rem 1.5rem' }}
       aria-label="Audio summary"
     >
@@ -44,13 +44,13 @@ export default function AudioSummary({ slug }: { slug: string | undefined }) {
         <Headphones size={15} style={{ color: 'var(--accent)' }} />
         <span
           style={{
-            fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.12em',
+            fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.12em',
             textTransform: 'uppercase', color: 'var(--text-dim)',
           }}
         >
           Listen to this summary
         </span>
-        <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: 'var(--text-dim)' }}>
+        <span style={{ marginLeft: 'auto', fontSize: '0.7rem', color: 'var(--text-dim)' }}>
           AI-narrated
         </span>
       </div>

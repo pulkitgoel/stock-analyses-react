@@ -73,6 +73,47 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-24 — claude (interactive)
+
+**The owner reverted the UI to the pre-redesign version. Deploy queued. Read this before touching the UI again.**
+
+The owner reviewed the redesigned site and chose a full revert: they expected a "wow"
+site, got a plain one, and judged the earlier version better. Offered a hybrid (earlier
+look, fixes kept underneath), they chose the full revert. **That is an owner decision —
+do not reintroduce the redesign on your own initiative.** AGENTS.md 7.17 has the full record;
+7.10-7.16 are marked REVERTED.
+
+**Reverted, and only this:** `src/`, `index.html`, `scripts/`, `public/fonts/` restored to
+`f2ca44c`, the commit right before 7.10 changed code. Every commit to those paths since was
+redesign work — **including your `edd7055` (dock height) and `51428a8` (deck de-dup)**, which
+were fixes to the new UI and go with it. Nothing else of yours was touched.
+
+**Kept:** every article and correction, RAJESHEXPO included; `docs/nginx-seo.conf`; this log.
+Data regenerated from current content with the restored generator — all 294 articles present.
+
+**Verified before commit:** rendered the earlier version from git and the reverted build at
+375px and diffed them — **0 pixels differing** on home and article. Built CSS is
+`index-mIsKlFve.css`, byte-identical to the pre-redesign CSS (the same hash 7.10 recorded).
+
+**Two things for you, both server-side (the owner was not told about the 404s before choosing the revert):**
+
+- `/research` and `/pulse` are gone from the app and the sitemap (627 URLs, from 661). Their
+  nginx blocks remain with `try_files $uri.html =404`, so they now return a **clean 404**,
+  not a soft 404 — that is the expected state, and the verify below asserts it. They were
+  live for about a day. A 301 to `/analyses/page/1` would be kinder to anything that
+  bookmarked them; your call, not required.
+- The self-hosted font is gone, so the Google Fonts origins are back in the critical path.
+
+**ACTION Hermes**
+- [job: deploy] Owner-requested revert of the UI to the pre-redesign version (src/, index.html, scripts/ and public/fonts/ at f2ca44c). Content and data current; 294 articles. Sitemap 627 URLs.
+- [job: verify-live] /=200, /india=200, /global=200, /analyses/page/1=200, /watchlist=200, /company/ioc=200, /analysis/kernex-microsystems-deep-dive-oct20=200, /about=200, /research=404, /pulse=404, /research/page/2=404, /nope-12345=404
+
+**The lesson, since it caused all of this:** the design research behind DESIGN.md used four
+lenses — devil's advocate, simplicity, performance, compliance — and every one argues for
+removing things. None stood for how the product should feel. If the UI is redesigned again,
+one lens must argue for delight, and the result must be judged against the owner's sense of
+"wow", not only against invariants and metrics. DESIGN.md is now marked NOT IN USE.
+
 ## 2026-10-24 00:07 — watcher
 
 **Idle** — nothing executable.

@@ -32,9 +32,16 @@ function AnalysisCardLink({ analysis: a }: { analysis: Analysis }) {
   return (
     <Link
       to={`/analysis/${a.slug}`}
-      className="analysis-card premium-card group rounded-lg no-underline transition-all duration-300 hover:-translate-y-1"
+      className="analysis-card premium-card group rounded-[1.75rem] no-underline transition-all duration-300 hover:-translate-y-1"
       style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
-      data-hov="card"
+      onMouseOver={(e) => {
+        e.currentTarget.style.borderColor = 'var(--border-light)';
+        e.currentTarget.style.background = 'var(--bg-card-hover)';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.borderColor = 'var(--border)';
+        e.currentTarget.style.background = 'var(--bg-card)';
+      }}
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
@@ -151,12 +158,13 @@ export default function CompanyPage() {
           whiteSpace: 'nowrap',
           marginBottom: '1rem',
         }}
-        data-hov="lift"
+        onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+        onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; }}
       >
         <ArrowLeft size={14} /> Dashboard
       </Link>
 
-      <header className="page-panel surface-card animate-in rounded-lg">
+      <header className="page-panel surface-card animate-in rounded-[2rem]">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: 'var(--accent-glow)' }}>

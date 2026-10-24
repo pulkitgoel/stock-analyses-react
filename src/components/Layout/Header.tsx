@@ -1,26 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BarChart3, Globe2, Home, LineChart, ListChecks, Moon, Sun } from 'lucide-react';
+import { BarChart3, FileText, Home, Info, Mail, Moon, ShieldCheck, Sun } from 'lucide-react';
 
-// The nav carries the content, not the paperwork. It previously spent all five slots -
-// and on a phone, the entire bottom dock - on Home / About / Contact / Risk / Privacy,
-// so the two beats (7.7) were absent and /watchlist, the only falsifiable public record
-// on the site, was linked from nowhere (7.6). About, Contact, Risk and Privacy are in
-// the footer, which is where a reader looks for them.
-//
-// These four are live routes today. DESIGN.md step 3 replaces India/Global with
-// Research/Daily Pulse once those route families exist and nginx serves them; pointing
-// the nav at them before that would be linking to a 404 (9.4).
 const navLinks = [
   { path: '/', label: 'Home', mobileLabel: 'Home', icon: Home },
-  { path: '/india', label: 'India research', mobileLabel: 'India', icon: LineChart },
-  { path: '/global', label: 'Global macro', mobileLabel: 'Global', icon: Globe2 },
-  { path: '/watchlist', label: 'Watchlist', mobileLabel: 'Watchlist', icon: ListChecks },
+  { path: '/about', label: 'About', mobileLabel: 'About', icon: Info },
+  { path: '/contact', label: 'Contact', mobileLabel: 'Mail', icon: Mail },
+  { path: '/disclaimer', label: 'Risk', mobileLabel: 'Risk', icon: ShieldCheck },
+  { path: '/privacy', label: 'Privacy', mobileLabel: 'Privacy', icon: FileText },
 ];
 
 export default function Header() {
   const location = useLocation();
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
@@ -29,13 +21,7 @@ export default function Header() {
 
   useEffect(() => {
     const saved = localStorage.getItem('sf-theme-v2');
-    // Must match the head script in index.html and render_shell(), or the page
-    // paints one theme and swaps to the other after mount - a flash, and a layout
-    // the prerendered markup does not share.
-    // Light is the default. Dark is opt-in only, via the toggle writing
-    // sf-theme-v2; the OS preference no longer decides, because it made the
-    // site render dark for a dark-mode reader and 7.15 looked undeployed.
-    const nextTheme = saved === 'dark' ? 'dark' : 'light';
+    const nextTheme = saved === 'light' || saved === 'dark' ? saved : 'dark';
     setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
   }, []);
@@ -50,9 +36,10 @@ export default function Header() {
   return (
     <>
       <header
-        className="topbar-settle sticky top-0 z-[100]"
+        className="sticky top-0 z-[100]"
         style={{
           background: 'var(--header-bg)',
+          backdropFilter: 'blur(22px)',
           borderBottom: '1px solid var(--border)',
         }}
       >
@@ -112,6 +99,7 @@ export default function Header() {
                   background: 'var(--bg-elevated)',
                   border: '1px solid var(--border)',
                   color: 'var(--text)',
+                  boxShadow: 'var(--shadow-card)',
                 }}
                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
                 title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
@@ -125,17 +113,12 @@ export default function Header() {
 
       <nav
         aria-label="Mobile navigation"
-        className="fixed inset-x-0 bottom-0 z-[100] grid grid-cols-4 md:hidden"
+        className="fixed inset-x-3 bottom-3 z-[100] grid grid-cols-5 gap-1 rounded-[1.4rem] p-1.5 md:hidden"
         style={{
           background: 'var(--header-bg)',
-          // Flush to the edge with a single top rule, not a floating pill
-          // (7.16). A pill with margins reads as an object sitting on top of
-          // the page, and content scrolling under it looks like a defect; a
-          // flush bar reads as chrome. The app-main bottom padding keeps the
-          // end of the document clear of it.
-          borderTop: '1px solid var(--border)',
-          paddingTop: '0.25rem',
-          paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))',
+          border: '1px solid var(--border)',
+          backdropFilter: 'blur(22px)',
+          boxShadow: 'var(--shadow-soft)',
         }}
       >
         {navLinks.map((link) => {
@@ -145,7 +128,7 @@ export default function Header() {
             <Link
               key={link.path}
               to={link.path}
-              className="focus-ring flex h-13 min-w-0 flex-col items-center justify-center gap-1 rounded-2xl text-xs font-black no-underline transition-all"
+              className="focus-ring flex h-13 min-w-0 flex-col items-center justify-center gap-1 rounded-2xl text-[0.64rem] font-black no-underline transition-all"
               style={{
                 color: active ? 'var(--accent-contrast)' : 'var(--text-dim)',
                 background: active ? 'var(--accent)' : 'transparent',

@@ -78,8 +78,8 @@ export default function Footer() {
             }}>
               <span style={{
                 display: 'inline-block', width: '6px', height: '6px',
-                borderRadius: '50%', background: 'var(--up)',
-                boxShadow: '0 0 6px var(--up)', flexShrink: 0,
+                borderRadius: '50%', background: 'var(--green)',
+                boxShadow: '0 0 6px var(--green)', flexShrink: 0,
               }} />
               Live library · updated regularly
             </p>
@@ -90,7 +90,7 @@ export default function Footer() {
             {navGroups.map(({ label, links }) => (
               <div key={label}>
                 <p style={{
-                  fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.12em',
+                  fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.12em',
                   textTransform: 'uppercase', color: 'var(--text-dim)', margin: '0 0 0.85rem',
                 }}>
                   {label}
@@ -101,7 +101,8 @@ export default function Footer() {
                       <Link
                         to={to}
                         style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 150ms ease' }}
-                        data-hov="accent"
+                        onMouseOver={(e) => (e.currentTarget.style.color = 'var(--accent)')}
+                        onMouseOut={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
                       >
                         {linkLabel}
                       </Link>

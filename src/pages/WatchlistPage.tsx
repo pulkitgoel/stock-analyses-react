@@ -48,7 +48,7 @@ function Gauge({ entry, price, hasLive }: { entry: WatchlistEntry; price: number
   const pct = (v: number) => Math.max(0, Math.min(100, ((v - domainLo) / (domainHi - domainLo)) * 100));
 
   return (
-    <div data-nums style={{ marginTop: '1.25rem' }}>
+    <div style={{ marginTop: '1.25rem' }}>
       <div style={{ position: 'relative', height: '44px' }}>
         {/* animated live-price pill */}
         <motion.div
@@ -59,13 +59,14 @@ function Gauge({ entry, price, hasLive }: { entry: WatchlistEntry; price: number
         >
           <div
             style={{
-              fontSize: '0.75rem',
+              fontSize: '0.62rem',
               fontWeight: 900,
               padding: '2px 7px',
               borderRadius: '999px',
               whiteSpace: 'nowrap',
               background: hasLive ? 'var(--accent)' : 'var(--surface-strong)',
               color: hasLive ? 'var(--accent-contrast)' : 'var(--text-dim)',
+              boxShadow: 'var(--shadow-card)',
             }}
           >
             ₹{inr(price)}
@@ -94,22 +95,22 @@ function Gauge({ entry, price, hasLive }: { entry: WatchlistEntry; price: number
           }}
         >
           {/* support zone */}
-          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${pct(entry.support)}%`, background: 'color-mix(in srgb, var(--up) 30%, transparent)' }} />
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${pct(entry.support)}%`, background: 'color-mix(in srgb, var(--green) 30%, transparent)' }} />
           {/* resistance zone */}
-          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, left: `${pct(entry.resistance)}%`, background: 'color-mix(in srgb, var(--down) 30%, transparent)' }} />
+          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, left: `${pct(entry.resistance)}%`, background: 'color-mix(in srgb, var(--red) 30%, transparent)' }} />
         </div>
 
         {/* support / resistance ticks */}
-        <div style={{ position: 'absolute', top: '26px', left: `${pct(entry.support)}%`, width: '2px', height: '16px', background: 'var(--up)', transform: 'translateX(-50%)' }} />
-        <div style={{ position: 'absolute', top: '26px', left: `${pct(entry.resistance)}%`, width: '2px', height: '16px', background: 'var(--down)', transform: 'translateX(-50%)' }} />
+        <div style={{ position: 'absolute', top: '26px', left: `${pct(entry.support)}%`, width: '2px', height: '16px', background: 'var(--green)', transform: 'translateX(-50%)' }} />
+        <div style={{ position: 'absolute', top: '26px', left: `${pct(entry.resistance)}%`, width: '2px', height: '16px', background: 'var(--red)', transform: 'translateX(-50%)' }} />
         {/* analysis-time price tick (dim) */}
         <div style={{ position: 'absolute', top: '28px', left: `${pct(entry.priceAtAnalysis)}%`, width: '2px', height: '12px', background: 'var(--text-dim)', opacity: 0.7, transform: 'translateX(-50%)' }} title={`At analysis: ₹${inr(entry.priceAtAnalysis)}`} />
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px', fontSize: '0.75rem', fontWeight: 700 }}>
-        <span style={{ color: 'var(--up)' }}>Support ₹{inr(entry.support, 0)}</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px', fontSize: '0.68rem', fontWeight: 700 }}>
+        <span style={{ color: 'var(--green)' }}>Support ₹{inr(entry.support, 0)}</span>
         <span style={{ color: 'var(--text-dim)' }}>Analysis ₹{inr(entry.priceAtAnalysis, 0)}</span>
-        <span style={{ color: 'var(--down)' }}>Resistance ₹{inr(entry.resistance, 0)}</span>
+        <span style={{ color: 'var(--red)' }}>Resistance ₹{inr(entry.resistance, 0)}</span>
       </div>
     </div>
   );
@@ -137,6 +138,7 @@ function WatchlistCard({ entry, quote }: { entry: WatchlistEntry; quote: LiveQuo
         border: '1px solid var(--border)',
         borderRadius: '1.5rem',
         padding: '1.5rem',
+        boxShadow: 'var(--shadow-card)',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem' }}>
@@ -144,7 +146,7 @@ function WatchlistCard({ entry, quote }: { entry: WatchlistEntry; quote: LiveQuo
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px' }}>
             <span className="font-mono" style={{ fontSize: '0.9rem', fontWeight: 900, color: 'var(--accent)' }}>{entry.ticker}</span>
             {entry.verdict && (
-              <span style={{ fontSize: '0.75rem', fontWeight: 900, letterSpacing: '0.04em', padding: '2px 8px', borderRadius: '999px', background: 'var(--surface-soft)', color: 'var(--text-dim)' }}>
+              <span style={{ fontSize: '0.6rem', fontWeight: 900, letterSpacing: '0.04em', padding: '2px 8px', borderRadius: '999px', background: 'var(--surface-soft)', color: 'var(--text-dim)' }}>
                 {entry.verdict}
               </span>
             )}
@@ -158,7 +160,7 @@ function WatchlistCard({ entry, quote }: { entry: WatchlistEntry; quote: LiveQuo
 
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem', marginTop: '1.25rem' }}>
         <div>
-          <div style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-dim)' }}>
+          <div style={{ fontSize: '0.62rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-dim)' }}>
             {hasLive ? 'Live price' : 'Last analysis price'}
           </div>
           <div style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--text)', lineHeight: 1.1, fontVariantNumeric: 'tabular-nums' }}>
@@ -166,16 +168,16 @@ function WatchlistCard({ entry, quote }: { entry: WatchlistEntry; quote: LiveQuo
           </div>
         </div>
         {hasLive && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', fontWeight: 800, color: up ? 'var(--up)' : 'var(--down)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', fontWeight: 800, color: up ? 'var(--green)' : 'var(--red)' }}>
             {up ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
             {up ? '+' : ''}{changePct.toFixed(2)}%
           </div>
         )}
       </div>
 
-      <div style={{ marginTop: '4px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+      <div style={{ marginTop: '4px', fontSize: '0.72rem', color: 'var(--text-muted)' }}>
         Since analysis (₹{inr(entry.priceAtAnalysis, 0)}, {entry.date}):{' '}
-        <span style={{ fontWeight: 800, color: sinceAnalysis >= 0 ? 'var(--up)' : 'var(--down)' }}>
+        <span style={{ fontWeight: 800, color: sinceAnalysis >= 0 ? 'var(--green)' : 'var(--red)' }}>
           {sinceAnalysis >= 0 ? '+' : ''}{sinceAnalysis.toFixed(1)}%
         </span>
       </div>
@@ -220,7 +222,7 @@ export default function WatchlistPage() {
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="surface-card rounded-lg"
+          className="surface-card rounded-[2rem]"
           style={{ padding: '2rem 2rem 1.75rem' }}
         >
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
@@ -236,10 +238,10 @@ export default function WatchlistPage() {
               <motion.span
                 animate={{ opacity: status === 'live' ? [1, 0.25, 1] : 0.4 }}
                 transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
-                style={{ width: '8px', height: '8px', borderRadius: '999px', background: status === 'live' ? 'var(--up)' : 'var(--text-dim)' }}
+                style={{ width: '8px', height: '8px', borderRadius: '999px', background: status === 'live' ? 'var(--green)' : 'var(--text-dim)' }}
               />
               <Radio size={13} style={{ color: 'var(--text-dim)' }} />
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-muted)' }}>
+              <span style={{ fontSize: '0.7rem', fontWeight: 800, color: 'var(--text-muted)' }}>
                 {status === 'live' ? 'Live · Yahoo (delayed)' : status === 'loading' ? 'Connecting…' : 'Live feed unavailable'}
                 {updatedAt && status === 'live' ? ` · ${new Date(updatedAt).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}` : ''}
               </span>
@@ -248,7 +250,7 @@ export default function WatchlistPage() {
         </motion.div>
 
         {entries.length === 0 ? (
-          <div className="surface-card rounded-lg" style={{ marginTop: '2rem', padding: '4rem 1.5rem', textAlign: 'center', color: 'var(--text-dim)' }}>
+          <div className="surface-card rounded-[2rem]" style={{ marginTop: '2rem', padding: '4rem 1.5rem', textAlign: 'center', color: 'var(--text-dim)' }}>
             No stocks on the watchlist yet.
           </div>
         ) : (

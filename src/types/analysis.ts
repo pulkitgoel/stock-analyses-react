@@ -1,4 +1,3 @@
-import type { ArticleKind } from '../utils/kind';
 import type { MarketKey } from '../utils/market';
 
 export interface Analysis {
@@ -23,22 +22,6 @@ export interface Analysis {
    * overridable with an explicit `market:` in frontmatter.
    */
   market?: MarketKey;
-  /**
-   * Research or daily pulse. Derived at build time by scripts/lib/kind.js from
-   * the tags and title, and overridable with an explicit `kind:` in frontmatter.
-   */
-  kind?: ArticleKind;
-  /**
-   * The dated call, present only on the articles whose frontmatter opts into the
-   * watchlist. Carried on the record so the takeaway panel (7.15) can render the
-   * figures synchronously: the panel sits above the fold, and fetching them would
-   * mean it either shifts when they arrive or gates the page on a promise, which
-   * is the defect 3.14 records.
-   */
-  priceAtAnalysis?: number;
-  support?: number;
-  resistance?: number;
-  verdict?: string;
 }
 
 /**

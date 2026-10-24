@@ -1,5 +1,14 @@
 # Design system — stocksfundamentals.online
 
+> **STATUS 2026-10-24: NOT IN USE. The owner reverted the site to its pre-redesign UI**
+> (AGENTS.md 7.17). This spec produced a site the owner found plain, and the reason is in
+> the spec itself: it was written from research whose every lens argued for removing things,
+> and it encodes that as rules (no gradients, no glow, no shadows, flat). **Do not build from
+> this file as written.** It is kept as a record of what was tried. Sections 2 (contrast
+> figures) and 3 (the measured font fallback) remain useful as facts; the visual direction
+> does not.
+
+
 > **Status: specification only. Nothing here is implemented.** No component, stylesheet or
 > token has been changed. This file is the target a redesign is built against, and the
 > brief an agent reads before touching UI.

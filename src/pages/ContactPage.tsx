@@ -51,10 +51,15 @@ export default function ContactPage() {
         }}
       >
         <div style={{
+          position: 'absolute', top: '-40px', right: '-40px', width: '220px', height: '220px',
+          borderRadius: '50%', background: 'var(--accent-glow)', filter: 'blur(50px)', pointerEvents: 'none',
+        }} />
+
+        <div style={{
           display: 'inline-flex', alignItems: 'center', gap: '8px',
           background: 'var(--accent-glow)', color: 'var(--accent)',
           padding: '5px 14px', borderRadius: '999px',
-          fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase',
+          fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase',
           marginBottom: '1.25rem', position: 'relative',
         }}>
           <MessageCircle size={13} /> Get in touch
@@ -87,22 +92,30 @@ export default function ContactPage() {
               borderRadius: '1.5rem', padding: '1.5rem', textDecoration: 'none',
               transition: 'border-color 180ms ease, transform 180ms ease',
             }}
-            data-hov="lift"
+            onMouseOver={(e) => {
+              e.currentTarget.style.borderColor = 'var(--accent)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.borderColor = 'var(--border)';
+              e.currentTarget.style.transform = 'none';
+            }}
           >
             <div style={{
               width: '52px', height: '52px', borderRadius: '1rem', flexShrink: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'linear-gradient(135deg, var(--accent), var(--accent-strong))',
               color: 'var(--accent-contrast)',
+              boxShadow: '0 6px 20px rgba(99,230,190,0.2)',
             }}>
               <Icon size={22} />
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2px' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</span>
+                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</span>
                 {badge && (
                   <span style={{
-                    fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em',
+                    fontSize: '0.6rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em',
                     background: 'var(--accent-glow)', color: 'var(--accent)', padding: '2px 8px', borderRadius: '999px',
                   }}>{badge}</span>
                 )}
@@ -129,7 +142,7 @@ export default function ContactPage() {
 
       {/* FAQs */}
       <div style={{ marginTop: '2rem' }}>
-        <p style={{ fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: '1rem' }}>
+        <p style={{ fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: '1rem' }}>
           Common questions
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>

@@ -1,11 +1,84 @@
 import { useState } from 'react';
-import { Plus } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, CalendarDays, FileText, Plus } from 'lucide-react';
 import { Analysis } from '../../types/analysis';
-import { kindOf } from '../../utils/kind';
-import ResearchCard from './ResearchCard';
-import PulseRow from './PulseRow';
 
 const ITEMS_PER_PAGE = 9;
+
+interface AnalysisGridCardProps {
+  analysis: Analysis;
+}
+
+function AnalysisGridCard({ analysis }: AnalysisGridCardProps) {
+  return (
+    <Link
+      to={`/analysis/${analysis.slug}`}
+      className="analysis-card premium-card group relative flex min-h-[270px] flex-col rounded-[1.75rem] no-underline transition-all duration-300 hover:-translate-y-1 hover:z-10"
+      style={{
+        background: 'var(--bg-card)',
+        border: '1px solid var(--border)',
+        boxShadow: 'var(--shadow-card)',
+      }}
+      onMouseOver={(e) => {
+        e.currentTarget.style.borderColor = 'var(--border-light)';
+        e.currentTarget.style.background = 'var(--bg-card-hover)';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.borderColor = 'var(--border)';
+        e.currentTarget.style.background = 'var(--bg-card)';
+      }}
+    >
+      <div className="card-content-offset mb-6 flex items-start justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: 'var(--accent-glow)', color: 'var(--accent)' }}>
+            <FileText size={18} />
+          </div>
+          <div className="min-w-0">
+            <span className="block truncate font-mono text-xs font-black uppercase tracking-wide" style={{ color: 'var(--accent)' }} title={analysis.ticker}>
+              {analysis.ticker}
+            </span>
+            <span className="flex items-center gap-1 text-xs font-bold" style={{ color: 'var(--text-dim)' }}>
+              <CalendarDays size={12} /> {analysis.date}
+            </span>
+          </div>
+        </div>
+        <ArrowUpRight size={18} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" style={{ color: 'var(--text-dim)' }} />
+      </div>
+
+      <div className="card-content-offset">
+        <h3 className="text-xl font-black leading-tight tracking-tight" style={{ color: 'var(--text)' }}>
+          {analysis.title}
+        </h3>
+        <p className="mt-4 line-clamp-3 text-sm leading-7" style={{ color: 'var(--text-muted)' }}>
+          {analysis.summary}
+        </p>
+      </div>
+
+      <div className="card-content-offset mt-auto pt-7">
+        <div className="mb-5 flex flex-wrap gap-2">
+          {analysis.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full px-2.5 py-1 text-[0.68rem] font-black"
+              style={{ background: 'var(--surface-soft)', color: 'var(--text-muted)' }}
+            >
+              {tag}
+            </span>
+          ))}
+          {analysis.tags.length > 3 && (
+            <span className="px-1 py-1 text-xs font-black" style={{ color: 'var(--text-dim)' }}>
+              +{analysis.tags.length - 3}
+            </span>
+          )}
+        </div>
+        <span className="inline-flex items-center gap-2 text-sm font-black" style={{ color: 'var(--accent)' }}>
+          Read note
+          <ArrowUpRight size={15} />
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 interface AnalysisGridProps {
   analyses: Analysis[];
@@ -34,21 +107,12 @@ export default function AnalysisGrid({ analyses, initialCount = ITEMS_PER_PAGE }
 
   return (
     <div className="flex flex-col gap-8">
-      {/* 1rem, not the old 2rem: pulse rows carry their own hairline rule, and a
-          32px gap between them reads as separate blocks rather than a list. */}
       <div
         className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
-        style={{ gap: '1rem' }}
+        style={{ gap: '2rem' }}
       >
-        {/* One list, two shapes. A PulseRow spans every column, so a mixed
-            surface - the homepage library, /tag, /analyses, /india, /global -
-            keeps strict date order while the two kinds stay distinguishable.
-            Grouping them instead would have meant reordering by kind, which
-            costs the reader the one thing a dated list is for. */}
         {visibleAnalyses.map((a) => (
-          kindOf(a) === 'pulse'
-            ? <div key={a.slug} style={{ gridColumn: '1 / -1' }}><PulseRow analysis={a} /></div>
-            : <ResearchCard key={a.slug} analysis={a} />
+          <AnalysisGridCard key={a.slug} analysis={a} />
         ))}
       </div>
       
