@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BarChart3, FileText, Home, Info, Mail, Moon, ShieldCheck, Sun } from 'lucide-react';
+import { BarChart3, FileText, Home, Info, Mail, Moon, Plus, ShieldCheck, Sun } from 'lucide-react';
 
+// One list drives BOTH the desktop nav and the mobile dock (both map over it
+// below), so an entry here appears in both menus. That is why /request-research
+// was missing from both: it shipped with only a footer link and a homepage card.
+//
+// Six slots, not five: measured at 375px the dock gives each one 59px and
+// nothing truncates (the widest label, "Request", renders at 41px). Dropping
+// Privacy to make room was the assumption and it was not needed.
 const navLinks = [
   { path: '/', label: 'Home', mobileLabel: 'Home', icon: Home },
+  { path: '/request-research', label: 'Request research', mobileLabel: 'Request', icon: Plus },
   { path: '/about', label: 'About', mobileLabel: 'About', icon: Info },
   { path: '/contact', label: 'Contact', mobileLabel: 'Mail', icon: Mail },
   { path: '/disclaimer', label: 'Risk', mobileLabel: 'Risk', icon: ShieldCheck },
@@ -113,8 +121,13 @@ export default function Header() {
 
       <nav
         aria-label="Mobile navigation"
-        className="fixed inset-x-3 bottom-3 z-[100] grid grid-cols-5 gap-1 rounded-[1.4rem] p-1.5 md:hidden"
+        className="fixed inset-x-3 bottom-3 z-[100] grid gap-1 rounded-[1.4rem] p-1.5 md:hidden"
         style={{
+          // Derived from the list, not hardcoded. This was `grid-cols-5` while
+          // navLinks held six, so the sixth slot wrapped onto a second row and
+          // hung outside the pill. The column count and the list length are one
+          // fact, so they are written once.
+          gridTemplateColumns: `repeat(${navLinks.length}, minmax(0, 1fr))`,
           background: 'var(--header-bg)',
           border: '1px solid var(--border)',
           backdropFilter: 'blur(22px)',
