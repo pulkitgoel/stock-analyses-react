@@ -73,6 +73,26 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (6) — hermes (update merges, prerender reuse)
+
+**Request #8 shipped a thinner article than the one it replaced, and three gates were built so it cannot happen again.** The approved-runner update for Sanghvi Movers went from 713 lines / 5,711 words to 275 lines / 4,270 words: business overview, FY21-FY26 accounts, balance-sheet and cash-flow history, shareholding, order book, May 2026 commentary, delivery data, forward-PE work, key risks, pros and cons and the bull/bear case all disappeared. Approved 11:38:24, claimed 11:40:00, published 11:53:24, and nothing compared the new article to the old one.
+
+- **An approved-runner update replaced the Sanghvi deep dive instead of merging into it.** Request #8 (NSE:SANGHVIMOV) was approved at 11:38:24, claimed at 11:40:00 and published at 11:53:24 — but the article went from 713 lines / 5,711 words to 275 lines / 4,270 words. The business overview, FY21-FY26 accounts, balance sheet and cash-flow history, shareholding, order book, May 2026 management commentary, delivery data, forward-PE work, key risks, pros and cons and the bull/bear case all disappeared. Every gate passed, because nothing compared the new article to the version it replaced. The prompt had said "update in place" but never "preserve".
+
+- **Fixed, in three places.**
+  - `scripts/check-article-shrink.py` diffs every changed article against its version at HEAD and fails when one loses more than 10% of its words. `deploy.sh` runs it before the build, so a shrinking article costs seconds rather than ten minutes. `ALLOW_SHRINK=1` overrides it deliberately. Verified: a 425-word article cut to 181 was refused (exit 1), restored, then passed.
+  - The runner job `7e75621272dc` now carries the workflow skills (`complete-stock-analysis-publish-workflow`, `25-point-swing-trading-checklist`, `stock-analysis-self-review`, `screener-session-verification`, `edit-existing-stock-analysis`) — it previously had none — and its prompt states the merge rule explicitly: keep every section, rewrite numbers rather than delete sections, never shrink, and a "what changed" note is not an update.
+
+- **Sanghvi rebuilt as a merge, `56a24f2`.** 27 sections, 9,064 words: the October analysis kept intact and the June reference material restored verbatim in substance, each section retitled with its as-of date so no June figure reads as current. Restored: quick snapshot (rewritten at October figures), business overview, FY21-FY26 annual history, balance sheet (March 2026), cash flow (FY22-FY26), shareholding (March 2026 quarter), order book, May 2026 management commentary, June delivery data, forward-PE table at Rs 411, key risks, Screener pros and cons, bull/bear as it stood in June, news since June.
+
+- **Reconciliation, stated in the article rather than silently picked.** The June file said 150 GW of wind by 2030, the October data says 100 GW by FY30 from 56 GW in FY26 — the October figure is used and the June one dropped. FY27 capex guidance of Rs 350-400 Cr from the May call is superseded by Rs 652 Cr. FY26 free cash flow is -Rs 130 Cr on the October Screener pull, against -Rs 98 Cr in the June file; the article notes the supersession. The June TradingView section, final verdict and 25-point checklist were not restored — they were placeholders or are superseded by the current technical section, verdict and 25-row table.
+
+- **Prerender is now incremental, `d71722d`.** 628 routes re-rendered sequentially took 464 s on every publish, whether one article had changed or none had. `/analysis` pages whose markdown and related-set are byte-identical to the live build are now copied from `dist` instead of re-rendered; the related digest covers every slug sharing a ticker or tag, a superset of the six the page shows, so a new article cannot leave a stale related list. Listing, company and tag pages still always render, because their bodies come from data the shell cannot see.
+
+- **Measured: 464 s to 227 s on the prerender, 8 minutes to 3 m 56 s end to end**, reusing 293 of 628 routes. Four browser workers were tried first and abandoned: each rendered its 157-route shard in 455-466 s — identical wall clock, because the box is CPU-bound and four Chromiums share the same cores — and they produced two route timeouts (`company/hal`, `company/gold`) that the sequential run does not. That build failed and did not swap, so production was untouched. `deploy.sh` is sequential on purpose and says so in a comment.
+
+- **Live, verified with a Googlebot user agent:** `/analysis/sanghvi-movers-deep-dive-jun28` is 200 at 104,294 bytes with 8,341 words of server-rendered text, and every restored section heading present. Homepage bot HTML 73,242 bytes, `/watchlist` 200.
+
 ## 2026-10-25 — Hermes (reader request #8)
 
 **Shipped**
