@@ -342,7 +342,10 @@ export default function RequestResearchPage() {
                             {c.name}
                           </span>
                           <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '1px' }}>
-                            {c.industry || (c.tier === 'sme' ? 'SME platform' : 'NSE listed')}
+                            {c.industry || (c.market === 'NASDAQ' ? 'NASDAQ listed'
+                              : c.market === 'NYSE' ? 'NYSE listed'
+                                : c.market === 'AMEX' ? 'NYSE American'
+                                  : c.tier === 'sme' ? 'SME platform' : 'NSE listed')}
                           </span>
                         </span>
                         <span style={{

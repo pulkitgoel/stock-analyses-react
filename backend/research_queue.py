@@ -208,38 +208,58 @@ SYMBOL_RE = re.compile(r"^(NSE|BSE|NASDAQ|NYSE|AMEX):[A-Z0-9&.\-]{1,12}$")
 _universe_cache = {"mtime": None, "index": {}, "count": 0}
 
 
+def _universe_paths():
+    """Every universe file the site ships. India and the US are separate files on
+    purpose: generate-universe.js rebuilds universe.json from NSE's own lists and
+    would delete anything merged into it, so the US list lives beside it."""
+    root = _setting("research.site_root")
+    names = ("universe.json", "universe-us.json")
+    return [p for p in (os.path.join(root, n) for n in names) if os.path.exists(p)]
+
+
 def _universe_path():
     return os.path.join(_setting("research.site_root"), "universe.json")
 
 
 def _universe():
-    """symbol -> (symbol, name, tier, industry). Reloaded when the file changes.
+    """"MARKET:SYMBOL" -> (symbol, name, tier, industry, market). Reloaded when a file changes.
 
     `dist` is swapped by rename during a deploy, so a read can transiently fail.
     The last good index is kept in that case: a stale picker is a usable picker,
     and an empty one would reject every legitimate request for seven minutes.
     """
-    path = _universe_path()
-    try:
-        mtime = os.path.getmtime(path)
-    except OSError:
+    paths = _universe_paths()
+    if not paths:
         if not _universe_cache["index"]:
-            _say("warning", f"universe file missing at {path}")
+            _say("warning", f"universe file missing at {_universe_path()}")
+        return _universe_cache["index"]
+
+    try:
+        mtime = tuple((p, os.path.getmtime(p)) for p in paths)
+    except OSError:
         return _universe_cache["index"]
 
     if mtime == _universe_cache["mtime"]:
         return _universe_cache["index"]
 
+    index = {}
     try:
-        with open(path, encoding="utf-8") as fh:
-            payload = json.load(fh)
-        index = {row[0]: tuple(row) for row in payload.get("rows", [])}
+        for path in paths:
+            with open(path, encoding="utf-8") as fh:
+                payload = json.load(fh)
+            cols = payload.get("cols") or []
+            has_market = len(cols) >= 5 and cols[4] == "market"
+            for row in payload.get("rows", []):
+                market = row[4] if has_market and len(row) > 4 else "NSE"
+                key = f"{market}:{row[0]}"
+                index[key] = (row[0], row[1], row[2],
+                              row[3] if len(row) > 3 else "", market)
     except (OSError, ValueError, IndexError) as exc:
         _say("error", f"universe unreadable: {exc}")
         return _universe_cache["index"]
 
     _universe_cache.update({"mtime": mtime, "index": index, "count": len(index)})
-    _say("info", f"universe loaded: {len(index)} companies")
+    _say("info", f"universe loaded: {len(index)} listings")
     return index
 
 
@@ -253,10 +273,16 @@ def resolve(symbol: str):
     market, _, code = symbol.partition(":")
     if market not in ALLOWED_MARKETS:
         return None
-    row = _universe().get(code)
+    index = _universe()
+    row = index.get(symbol)
+    if not row and market == "BSE":
+        # A BSE code for a company also listed on NSE resolves to the NSE listing:
+        # we cover one company, not one exchange line.
+        row = index.get("NSE:" + code)
+        market = "NSE"
     if not row:
         return None
-    return (f"NSE:{row[0]}", row[1], row[2], row[3] if len(row) > 3 else "")
+    return (f"{market}:{row[0]}", row[1], row[2], row[3])
 
 
 # ---------------------------------------------------------------------------

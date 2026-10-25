@@ -11,12 +11,14 @@
 export type Tier = 'broad' | 'main' | 'watch' | 'sme';
 
 export interface Company {
-  /** "NSE:KERNEX" — the only thing ever submitted. */
+  /** "NSE:KERNEX" or "NASDAQ:NVDA" — the only thing ever submitted. */
   id: string;
   sym: string;
   name: string;
   tier: Tier;
   industry: string;
+  /** NSE | BSE | NASDAQ | NYSE | AMEX. Absent on older payloads, treated as NSE. */
+  market?: string;
 }
 
 export interface QueueEntry {
@@ -80,19 +82,29 @@ let universePromise: Promise<Company[]> | null = null;
 
 export function loadUniverse(): Promise<Company[]> {
   if (!universePromise) {
-    universePromise = fetch('/universe.json')
-      .then((res) => {
-        if (!res.ok) throw new Error('universe unavailable');
-        return res.json();
-      })
-      .then((data) =>
-        (data.rows as [string, string, Tier, string][]).map(([sym, name, tier, industry]) => ({
-          id: `NSE:${sym}`,
-          sym,
-          name,
-          tier,
-          industry: industry || '',
-        }))
+    // Two files, one picker. India is rebuilt from NSE's own lists and would lose
+    // anything merged into it, so the US list ships beside it and both are read here.
+    const files = ['/universe.json', '/universe-us.json'];
+    universePromise = Promise.all(
+      files.map((url) =>
+        fetch(url)
+          .then((res) => (res.ok ? res.json() : { rows: [], cols: [] }))
+          .catch(() => ({ rows: [], cols: [] }))
+      )
+    )
+      .then((payloads) =>
+        payloads.flatMap((data: { rows?: string[][]; cols?: string[] }) => {
+          const cols = data.cols || [];
+          const hasMarket = cols.length >= 5 && cols[4] === 'market';
+          return (data.rows || []).map((row) => ({
+            id: `${hasMarket ? row[4] : 'NSE'}:${row[0]}`,
+            sym: row[0],
+            name: row[1],
+            tier: row[2] as Tier,
+            industry: row[3] || '',
+            market: hasMarket ? row[4] : 'NSE',
+          }));
+        })
       )
       .catch((err) => {
         // Let the next focus try again rather than caching the failure.
