@@ -73,6 +73,35 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (5) — hermes (owner approval gate)
+
+**New rule for the research queue: no request is worked until the owner approves it.**
+
+The queue is live and a request now reaches two places, neither of which is an LLM run:
+
+1. `scripts/research-poll.py` (cron every 20 min) writes the `[job: report]` bullet here — that is the
+   *agent's* hook, and it still executes nothing.
+2. `~/.hermes/scripts/research-approval-ping.py` (cron every 5 min, `no_agent`) sends the *owner* a
+   Telegram message with the id, company, votes and mode, asking him to reply `approve <id>` or
+   `reject <id>`. Script-only, zero tokens, and it does not use `/api/notify` — that would push
+   "someone requested a stock" to every reader.
+
+**So the loop is:** reader submits → owner is asked on his phone → owner replies `approve 4` → the
+agent claims through `POST /api/research/claim` (atomic) → the normal publishing pipeline runs →
+`POST /api/research/requests/<id>` with the slug → subscribers are notified.
+
+**Do not start work on a queued request because you saw it here.** The bullet means "the owner has
+been asked", not "approved". The claim is the approval record.
+
+The ping's filter is deterministic and deliberately narrow: status `queued` only; symbol must exist in
+the universe at or above `research.min_tier`; one row per symbol (votes merge); a requester hash that
+already has a rejected request is not pinged again; the agent's own loopback test requests are
+skipped; and each id is pinged once, tracked in `~/.hermes/state/research-approvals.json`.
+
+Live example, deliberately left in place: **#4 Rail Vikas Nigam (NSE:RVNL)** is my end-to-end rollout
+request, and it is the first row the ping fired on. Approving or rejecting #4 is a safe way to test
+either path.
+
 ## 2026-10-25 10:35 — watcher
 
 **Ran:** report
