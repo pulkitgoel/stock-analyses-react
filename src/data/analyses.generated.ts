@@ -22,6 +22,24 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Tega Industries — Molycop Deep Dive: 5x Revenue, a Q1 Loss",
+    "ticker": "TEGA",
+    "file": "tega-industries-molycop-deep-dive.md",
+    "slug": "tega-industries-molycop-deep-dive",
+    "date": "2026-10-25",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "capital-goods",
+      "mining-consumables",
+      "molycop",
+      "special-situation"
+    ],
+    "summary": "Tega Industries paid $1.5bn for Molycop: revenue has 5x'd, Q1 FY27 still showed a ₹86 Cr loss, and the stock is 22% off its high. Verdict: CAUTION.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Apollo Micro Systems — Deep Dive Analysis",
     "ticker": "APOLLO",
     "file": "apollo-micro-systems-deep-dive-jun30.md",

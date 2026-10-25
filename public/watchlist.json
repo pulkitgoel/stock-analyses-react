@@ -22,6 +22,27 @@
       "verdict": "WAIT"
     },
     {
+      "slug": "tega-industries-molycop-deep-dive",
+      "ticker": "TEGA",
+      "title": "Tega Industries — Molycop Deep Dive: 5x Revenue, a Q1 Loss",
+      "date": "2026-10-25",
+      "yahooSymbol": "TEGA.NS",
+      "priceAtAnalysis": 1723.5,
+      "support": 1678,
+      "resistance": 1790,
+      "supports": [
+        1678,
+        1630,
+        1473
+      ],
+      "resistances": [
+        1790,
+        1866,
+        1994
+      ],
+      "verdict": "CAUTION"
+    },
+    {
       "slug": "ge-power-india-the-turnaround-is-real-the-chart-is-not",
       "ticker": "GVPIL",
       "title": "GE Power India — The Turnaround Is Real, the Chart Is Not",
