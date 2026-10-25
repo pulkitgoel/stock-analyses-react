@@ -61,6 +61,13 @@ rm -rf "$STAGE"
 # ten minutes. ALLOW_SHRINK=1 overrides it; the commit message must then say why.
 python3.12 scripts/check-article-shrink.py
 
+# --- An article is not finished because it is long -------------------------
+# Tega and NALCO both cleared the word-count floor and both shipped without the
+# reference sections the June deep dives carried: business overview, annual
+# financials, cash flow, order book, Screener pros/cons. Word count cannot see
+# that, so this checks the structure itself. ALLOW_THIN=1 overrides it.
+python3.12 scripts/check-article-sections.py
+
 echo "Step 1-2/7  data + sitemap"
 node scripts/generate-analyses-data.js
 node scripts/generate-sitemap.js
