@@ -657,7 +657,7 @@ export default function RequestResearchPage() {
                         {entry.status === 'claimed' && (
                           <div style={{ marginTop: '3px', fontSize: '0.68rem', color: 'var(--text-muted)', opacity: 0.85 }}>
                             {[
-                              minutesSince(entry.claimed_at) !== null
+                              minutesSince(entry.first_claimed_at ?? entry.claimed_at) !== null
                                 ? `${minsLabel(minutesSince(entry.claimed_at))} elapsed`
                                 : '',
                               entry.stage && minutesSince(entry.stage_at) !== null

@@ -38,6 +38,8 @@ export interface QueueEntry {
   approved_at?: string | null;
   /** Seconds the queue estimates are still needed. */
   claimed_at?: string | null;
+  /** When the request was first claimed — survives a re-claim. */
+  first_claimed_at?: string | null;
   eta_seconds?: number;
   eta_at?: string;
 }
