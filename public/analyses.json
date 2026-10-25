@@ -1,6 +1,23 @@
 {
   "analyses": [
     {
+      "title": "Sanghvi Movers falls 39%: 13.9x is cheap if margins hold",
+      "ticker": "SANGHVIMOV",
+      "file": "sanghvi-movers-deep-dive-jun28.md",
+      "slug": "sanghvi-movers-deep-dive-jun28",
+      "date": "2026-10-25",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "crane-rental",
+        "wind-energy",
+        "infrastructure"
+      ],
+      "summary": "Sanghvi Movers is down 39% from its August peak to ₹320, or 13.9x trailing earnings, after Q1 FY27 grew revenue 39% on the lowest operating margin in 13 quarters. Order book and guidance are intact; the chart and the receivables are not.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Apollo Micro Systems — Deep Dive Analysis",
       "ticker": "APOLLO",
       "file": "apollo-micro-systems-deep-dive-jun30.md",
@@ -4996,23 +5013,6 @@
         "green-hydrogen"
       ],
       "summary": "Deep-dive on Oriana Power based on FY26 concall transcript (June 10, 2026). Revenue ₹1,814 Cr (+84%), PAT ₹252 Cr (+59%). ₹7,000 Cr order book, Actis monetization (238 MWp) in H1 FY27, BESS to be 40% of FY27 revenue, green ammonia PPA signed. P/E 12.8x vs industry 31x — deep discount. Verdict: CAUTION — Selectively Bullish long-term but NOT swingable (bearish technicals, -48% from high).",
-      "market": "india",
-      "model": "deepseek-chat"
-    },
-    {
-      "title": "Sanghvi Movers Ltd — Deep Dive Analysis",
-      "ticker": "SANGHVIMOV",
-      "file": "sanghvi-movers-deep-dive-jun28.md",
-      "slug": "sanghvi-movers-deep-dive-jun28",
-      "date": "2026-06-28",
-      "tags": [
-        "deep-dive",
-        "fundamental",
-        "crane-rental",
-        "wind-energy",
-        "infrastructure"
-      ],
-      "summary": "Deep-dive on Sanghvi Movers — Asia's largest crane rental company (5th globally, 485+ cranes). Record revenue ₹1,070 Cr but OPM collapsed 69%→37%. KSA expansion working (90% utilization), ₹1,053 Cr order book. Verdict: CAUTION — fairly valued, margin dilution risk.",
       "market": "india",
       "model": "deepseek-chat"
     },

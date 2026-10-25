@@ -1,6 +1,27 @@
 {
   "watchlist": [
     {
+      "slug": "sanghvi-movers-deep-dive-jun28",
+      "ticker": "SANGHVIMOV",
+      "title": "Sanghvi Movers falls 39%: 13.9x is cheap if margins hold",
+      "date": "2026-10-25",
+      "yahooSymbol": "SANGHVIMOV.NS",
+      "priceAtAnalysis": 320.35,
+      "support": 305,
+      "resistance": 352,
+      "supports": [
+        270,
+        285,
+        305
+      ],
+      "resistances": [
+        352,
+        385,
+        410
+      ],
+      "verdict": "WAIT"
+    },
+    {
       "slug": "ge-power-india-the-turnaround-is-real-the-chart-is-not",
       "ticker": "GVPIL",
       "title": "GE Power India — The Turnaround Is Real, the Chart Is Not",
@@ -408,26 +429,6 @@
       ],
       "resistances": [
         1216
-      ],
-      "verdict": "CAUTION"
-    },
-    {
-      "slug": "sanghvi-movers-deep-dive-jun28",
-      "ticker": "SANGHVIMOV",
-      "title": "Sanghvi Movers Ltd — Deep Dive Analysis",
-      "date": "2026-06-28",
-      "yahooSymbol": "SANGHVIMOV.NS",
-      "priceAtAnalysis": 411,
-      "support": 406,
-      "resistance": 425,
-      "supports": [
-        375,
-        393,
-        406
-      ],
-      "resistances": [
-        425,
-        443
       ],
       "verdict": "CAUTION"
     },
