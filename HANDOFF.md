@@ -73,6 +73,24 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (14) — hermes (Tega and NALCO on the house template)
+
+**Tega and NALCO now carry the same 19-section structure as WABAG, and both are live.**
+
+**Tega — 6,854 to 14,795 words, 11 sections to 19 (`395fd68`).** It was a narrative with a technical panel and no reference backbone. Added: business overview, FY22-FY26 annual P&L plus TTM, five-year balance sheet, cash flow with CFO/EBITDA, shareholding to September 2026, ratios, order book and revenue visibility, management commentary, block deals, forward PE, recent news, Screener pros and cons, and bull versus bear. Every table carries its reading. Existing prose for the verdict, 25-point, filings and technical sections is kept and renumbered; the frontmatter is byte-identical.
+
+Three things the original did not say, all arithmetic from the Screener pull of 25 October: FY26 operating profit fell 32% to Rs 233 Cr with OPM going 21% to 14%, so the legacy business was deteriorating before the deal; the FY26 cash-conversion improvement came entirely from stretching payables 62 days; and TTM other income of Rs 89.1 Cr exceeds TTM profit before tax of Rs 41 Cr.
+
+The forward-PE section states its own gap rather than filling it: no FY27 or FY28 EPS estimate exists, so it gives implied EPS at various multiples instead of inventing a consensus.
+
+**NALCO — 21 sections reordered into 19, 12,268 words live (`840c2be`).** The trigger and the secondary pressures sat between the snapshot and the accounts; the pipeline was separated from revenue visibility; the bull case was fifteen pages from what would break it. Trigger and pressures are now subsections of Financial Performance, pipeline sits under Revenue Visibility, delivery under Technical, and the bull case merges with what breaks it. Three sections added from real data: block deals, forward PE, recent news.
+
+Two honest gaps in NALCO: the NSE block-deal API returned an empty record for 1 July to 23 October and the bulk-deal endpoint returned 404, so the section says the data is unusable rather than asserting there were no deals; and no FY27 EPS estimate exists anywhere in Screener, the filings or the transcript, so the forward-PE section gives implied EPS at 10x (Rs 30.18) instead of a consensus.
+
+**One deviation caught by the gate.** The NALCO draft kept the exchange-filings table oldest-first to honour "do not reorder" in the brief. `check-article-sections.py` refused it; the table was sorted newest-first and the intro sentence corrected, and the live page now has 13 October before 31 July. The rule wins over the instruction.
+
+**Verified live:** Tega 200 at 137,959 bytes and 14,275 words with all eleven previously-missing sections present; NALCO 200 at 124,659 bytes and 12,268 words with all nineteen, filings newest-first.
+
 ## 2026-10-25 (13) — hermes (exchange filings newest-first)
 
 **Exchange filings now read newest-first, and the build refuses a table that does not.**
