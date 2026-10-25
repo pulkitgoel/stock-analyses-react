@@ -73,6 +73,22 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (10) — hermes (approval card approved itself)
+
+**An approval card approved itself in eighteen seconds, and the queue gate failed open. Fixed, and the request it wrongly approved has been put back.**
+
+**What happened.** Request #9 (VA Tech Wabag) was submitted at 13:24:37 and `approved_at` was written at 13:24:55 — by nobody. The card I sent through the webhook put the signed approve and reject URLs in the message *body*. Telegram fetches every URL in a message to build a link preview, that fetch is a GET, and `decide()` acts on a GET. The crawler's request had a valid signature and a valid expiry, so it approved the request. The `research-approved-runner` claimed it at 13:25:52 and had started pulling Screener data at 13:26 when it was killed. Nothing was published, and #9 is back to `queued` with `approved_at` NULL.
+
+**Why the links appeared at all** is the same mistake. The webhook's `deliver_only` path sends plain text and cannot attach an inline keyboard, so the only way to make that card actionable was to paste the URLs — which is exactly what made it self-approving. The previous cards came from `research-approval-ping.py`, which posts to the Bot API with `reply_markup` and `disable_web_page_preview`.
+
+**Three changes:**
+
+- **The card is sent by the backend itself now**, through the Bot API with `reply_markup` inline buttons and `disable_web_page_preview: true`. `_send_card()` in `research_queue.py`; it reads the bot token from `TELEGRAM_BOT_TOKEN` in `~/.hermes/.env` because `api.notify_token` is the site's push secret, not a Telegram credential (it returned 404 from the Bot API).
+- **The decision endpoint refuses preview crawlers.** `decide()` takes the User-Agent and, for TelegramBot / facebookexternalhit / Twitterbot / Slackbot / Discordbot / WhatsApp / LinkedInBot / Iframely / Embedly / Pinterest, returns "Request #N has NOT been decided" without touching the row. Verified: a `TelegramBot` UA against №9's approve link returned that page and left the row `queued` with `approved_at` NULL.
+- **The `research-submitted` webhook route is deleted.** It only existed to carry the text card, and text was the vector.
+
+Zero rows were published by the accident. The lesson: an endpoint that mutates state must not be reachable by GET from a message body, because every messaging platform previews URLs. Buttons are safe because Telegram does not fetch them.
+
 ## 2026-10-25 (9) — hermes (routine filings were hidden, not missing)
 
 **"Why can't we fetch these announcements?" — we can. The filter hid them, and I read the subject line instead of the PDF.**
