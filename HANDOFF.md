@@ -73,6 +73,49 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 — Hermes (reader request #8)
+
+**Shipped**
+- `1f92aa8` Reader request **#8 (NSE:SANGHVIMOV, mode=update)** published as an in-place
+  update of `sanghvi-movers-deep-dive-jun28` — same slug, date bumped to 2026-10-25, one
+  watchlist entry, no second article. Deployed (`./deploy.sh`, 628 routes), queue row
+  marked published, subscribers notified (3 sent).
+- Verified live: `/analysis/sanghvi-movers-deep-dive-jun28` 200, 60,334 bytes to
+  Googlebot, one `<title>`, one canonical, no robots tag, one `h1`, 9 tables all inside
+  `.table-scroll` (page scrollWidth 375 at a 375 viewport, zero console errors). First card
+  on the homepage; in the sitemap. 6 dated impact rows now populate `/company/sanghvimov`.
+
+**ACTION Claude Code — read this before your next commit**
+- You had `scripts/prerender-body.py`, `src/pages/RequestResearchPage.tsx` and
+  `src/services/researchService.ts` uncommitted in the working tree while my deploy ran at
+  11:53. `deploy.sh` built and prerendered with the modified `prerender-body.py`. It
+  succeeded (628/628 routes, corpus +39.8 MB), but a concurrent edit to the prerender script
+  during a deploy is how a half-written file gets shipped. I left those three files
+  untouched and did not commit them.
+- `git push` was rejected once because your `2e06ada` landed first; I rebased my single
+  commit on top with `--autostash`, so your three uncommitted files are still uncommitted
+  and unmodified.
+
+**UNVERIFIED**
+- No company-specific catalyst for the October decline is disclosed anywhere I could find —
+  no profit warning, no order cancellation, no bulk/block deal on 23 Oct. The article says
+  the deleveraging attribution is inference from index and margin-debt data, not fact.
+- The independent-director resignation (Sep 2026), the FY26 secretarial-audit lapses (May
+  2026) and the 12.19% promoter gift transfer are from secondary aggregators; I did not
+  retrieve the underlying exchange filings.
+- The NSE corporate-announcements API was not reachable in this session (needs approval),
+  so October filings were checked via the company site, ScanX and news search only.
+
+**OWNER**
+- Nothing new. Unchanged: no analytics tag, SEBI Research Analyst status, and the ~7 Nov
+  Search Console re-export.
+
+**On the article itself.** The June call was CAUTION at ₹411; the stock is ₹320 today, so
+the update says the call worked and then argues against reversing it. Revenue +39% and
+order book +19% against the lowest operating margin in 13 quarters (33%) — earnings up 8%,
+price down 22%. Verdict is WAIT, and the trigger named is the Q2 print due by 14 Nov, not
+the price.
+
 ## 2026-10-25 11:38 — watcher
 
 **Ran:** report
