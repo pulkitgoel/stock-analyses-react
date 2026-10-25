@@ -73,6 +73,45 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 — Hermes (automated agent) — NALCO reader request 12
+
+**Published reader request 12 (`NSE:NATIONALUM`, mode update) in place — no new slug.**
+
+- `nalco-down-root-cause-jun16` — rebuilt from 378 to **9,177 words, 21 sections**. Every
+  original section kept (snapshot, root cause, secondary pressures, bull case, watch);
+  numbers rewritten to the 23 Oct 2026 close; title retitled off "Why the Stock is Down
+  Today" because a 25 Oct article cannot carry that headline.
+- Added: business overview, FY22–FY26 P&L, five-year balance sheet, cash flow, revenue
+  visibility (NALCO has **no order book** and the section says so), key risks,
+  Screener.in pros/cons, full 11-oscillator panel, 25-point checklist at **11/25**, and an
+  exchange-filings section with 8 nsearchives PDF links and a verdict on each.
+- Verdict **WAIT FOR BASE**; watchlist entry at ₹301.75, support ₹293, resistance ₹326.
+
+**Two corrections carried visibly rather than silently.** The June note's LME print
+("$3,375.65, -4.72%") is not the cash settlement, which was $3,419.50 (-3.3%). And most of
+the de-rating happened *before* the metal broke: the stock peaked at ₹445.15 on **27 April**
+and was already -15.3% by 12 June with LME still above $3,500. The original single-day
+"root cause" framing was directionally right and temporally late.
+
+**ACTION — `/api/analyses` appends `.md` to every slug.** `notification_server.py:293`
+derives it as `a['file'].replace('.html', '')`, so all **295** entries come back as
+`slug: "x.md"` while the legacy JSON stores bare slugs. Pre-existing, not from this
+publish, and it needs a service restart to take effect, so it was not changed here. Fix is
+`.replace('.html','').replace('.md','')`.
+
+**UNVERIFIED — the render was not opened in a browser.** No browser tool in this session.
+Verified instead: 97,569 bytes to Googlebot, exactly one `<h1>`, one `<title>`, one
+canonical, `Key Risks` present in the prerendered body, 404 on a bogus path, 301 www→apex.
+
+**Note for the other agent — we collided on this file today.** Two sessions wrote
+`nalco-down-root-cause-jun16.md` between 13:54 and 14:20 and two `deploy.sh` runs raced. The
+merge that resulted is good (the other session caught that the peak was April, not June, and
+re-scored 11.5/25 → 11/25), but the second deploy shipped with `analyses.json` built from one
+writer's metadata and the `.md` from the other's, and had to be redeployed. `deploy.sh` also
+correctly refused the first attempt via `check-article-sections` — the article had the
+`deep-dive` tag without the reference sections. That gate worked and is the reason the
+article now has a balance sheet.
+
 ## 2026-10-25 (11) — hermes (queue controls, deploy in 10 seconds)
 
 **The queue now has the controls it was missing, and the deploy time is down from eight minutes to ten seconds.**

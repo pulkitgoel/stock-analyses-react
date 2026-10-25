@@ -10,14 +10,14 @@
       "support": 293,
       "resistance": 326,
       "supports": [
+        293,
         288,
-        280,
         260
       ],
       "resistances": [
-        315,
         326,
-        351
+        347,
+        357
       ],
       "verdict": "WAIT FOR BASE"
     },
