@@ -44,7 +44,7 @@ All figures are as of 23 October 2026 unless a different date is shown.
 | **Gross D/E (Jun'26)** | 0.54x | **Net D/E (company basis)** | 0.3–0.4x |
 | **52-week high / low** | ₹528 / ₹223.80 | **Distance from 52-week high** | −39.3% |
 | **Average daily range (14d)** | 5.7% | **Delivery, 10 sessions** | 50.9% |
-| **Promoter holding / pledge** | 47.25% / nil | **Analyst coverage** | none |
+| **Promoter holding / pledge** | 47.0% (Jun'26) / nil | **Analyst coverage** | none |
 
 Two rows are the whole argument: trailing earnings are up 8% since June while the multiple is down 28%, and 116 days of receivables against 201 in the Gulf decides whether 33% is a trough or a new baseline. The June comparatives — ₹411, 19.3x, 37% blended margin, ₹1,053 Cr order book — are in the next table rather than here, so nothing stale reads as current.
 
@@ -281,7 +281,9 @@ The FY26 free-cash-flow figure is shown here as −₹130 Cr, consistent with th
 - **Shareholder base grew 128%** in two years to 60,472, though down from a peak of 68,155 — participation rose and then cooled
 - **Low institutional interest** is a red flag: FII and DII combined are just 2.78% on this register
 
-Two later disclosures: a September 2026 quarter transfer of 1.06 crore shares (12.19% of capital) to a family member, reported as a nil-consideration gift within the promoter group with aggregate holding unchanged, which is why 47.25% still reads; and latest FII and DII figures of 2.28% and 1.50%. The absence of institutions is a permanent feature of this register, not a new development.
+**The latest quarter, as on 30 June 2026** (company investor presentation, filed 31 July 2026): promoters **47.0%**, FIIs **2.0%**, DIIs **1.0%**, others **50.0%**; free float **53%**, on 8.66 crore shares. Against March, promoters eased 0.25 points from 47.25% and the public share rose by the same — a marginal drift, not a change of control. FII and DII holdings are 2.28% and 1.50% on the most recent register, so institutions remain a rounding error in this stock and that has not changed in five years.
+
+The 1.06 crore shares (12.19% of capital) transferred to a family member in the September quarter were a promoter-group transfer reported under Regulation 10(7), not a sale into the market; no October filing by a promoter or promoter-group entity followed it. The absence of institutions is a permanent feature of this register, not a new development.
 
 ## Order book and revenue visibility (as of the Q1 FY27 call)
 
@@ -366,41 +368,36 @@ FY26 EBITDA was ₹429 Cr: ₹188 Cr in H1 and ₹241 Cr in H2 on the company's 
 
 That is not impossible. The ₹560 Cr of capex lands between Q3 and Q4 and starts generating revenue, Q4 is always the strongest quarter by a wide margin (₹143 Cr against ₹85 Cr in the preceding Q3), and utilisation is running at 86% in both India and the GCC against 79% for FY26. But it is a demanding second half, and it is the specific thing Q2 results on the November deadline have to start validating.
 
-## Delivery data and block deals (12 to 25 June 2026)
+## Delivery data and block deals (9 to 23 October 2026)
 
-### NSE bhavcopy 10-day delivery analysis, 12 June to 25 June 2026
+### NSE bhavcopy, ten sessions to 23 October 2026
 
-| Date | Close | Volume | Delivery qty | Del% | Signal |
-|------|-------|--------|-------------|------|--------|
-| 12-Jun | 387.95 | 237,634 | 93,303 | **39.3%** | Neutral |
-| 13-Jun | — | — | — | — | Holiday |
-| 15-Jun | 420.85 | 1,660,675 | 807,088 | **48.6%** | Strong accumulation |
-| 16-Jun | 422.05 | 677,878 | 354,227 | **52.2%** | Strong accumulation |
-| 17-Jun | 416.50 | 461,240 | 210,572 | **45.7%** | Accumulation |
-| 18-Jun | 412.30 | 380,470 | 162,661 | **42.8%** | Accumulation |
-| 19-Jun | 414.75 | 346,281 | 148,213 | **42.8%** | Accumulation |
-| 20-Jun | — | — | — | — | Weekend |
-| 22-Jun | 436.70 | 1,158,206 | 556,913 | **48.1%** | Strong accumulation |
-| 23-Jun | 421.20 | 514,606 | 238,110 | **46.3%** | Accumulation |
-| 24-Jun | 419.85 | 301,065 | 130,964 | **43.5%** | Accumulation |
-| 25-Jun | 411.10 | 351,303 | 157,864 | **44.9%** | Accumulation |
+| Date | Close | Move | Volume | Delivery qty | Del% | Read |
+|------|-------|------|--------|-------------|------|------|
+| 09-Oct | 392.60 | — | 327,756 | 141,658 | 43.2% | Quiet |
+| 12-Oct | 392.05 | −0.1% | 229,110 | 104,589 | 45.6% | Quiet, lowest volume |
+| 13-Oct | 382.20 | −2.5% | 450,348 | 244,159 | 54.2% | Supply |
+| 14-Oct | 371.15 | −2.9% | 707,416 | 426,419 | **60.3%** | Heaviest distribution, 1.44x volume |
+| 15-Oct | 350.45 | −5.6% | 666,522 | 388,682 | 58.3% | Capitulation session |
+| 16-Oct | 344.95 | −1.6% | 464,481 | 227,739 | 49.0% | Pause |
+| 19-Oct | 347.25 | +0.7% | 571,080 | 285,174 | 49.9% | Only up day |
+| 21-Oct | 338.75 | −2.4% | 449,090 | 242,354 | 54.0% | Supply |
+| 22-Oct | 328.55 | −3.0% | 573,441 | 301,058 | 52.5% | Supply |
+| 23-Oct | 320.35 | −2.5% | 465,739 | 194,061 | 41.7% | Selling on thinner delivery |
 
-**Analysis as it stood in June:**
+**The October read, and it inverts June:**
 
-- **Average delivery of 45.9%** — well above the usual 40% threshold
-- **Accumulation days above 40%: 8 of 10** — an extremely strong pattern
-- **Distribution days below 30%: 0 of 10** — no selling pressure in any session
-- **Volume spike days:** 15-Jun at 2.76x average and 22-Jun at 1.92x — institutional-sized buying
-- **Price trend:** ₹387 to ₹436 to ₹411, up 6% with a pullback from the high; the last five sessions all printed above 42% delivery, so buying continued as the price came off
-- **Verdict at the time:** bullish accumulation, with genuine institutional participation
+- **Average delivery 50.9%** across the ten sessions, against 45.9% in the June window — higher, but the price went the other way: ₹392.60 to ₹320.35, down 18.4%.
+- **Delivery percentage only means something with the price trend.** In June, 46% delivery on a rising price was accumulation. Here, 51% delivery on nine falling closes is distribution — real shares changing hands, not just intraday churn.
+- **The heaviest day was 14 October:** 707,416 shares, 60.3% delivery, −2.9%. That is an institutional-sized exit, and it came four sessions before the market-wide small-cap deleveraging was reported.
+- **The last session was different.** 23 October fell 2.5% on 41.7% delivery, the lowest of the ten — the selling was being absorbed rather than chased.
+- **Nothing in the filings explains it.** The 6 October SAST report predates the fall and concerns a promoter-family transfer of 1.06 crore shares (12.19%), not a market sale.
 
 ### Block and bulk deals
 
-**No block or bulk deals were reported for SANGHVIMOV in calendar 2026 up to that point.** The stock has low institutional coverage and most trading is retail-driven. The strong delivery data suggested sophisticated buying even without exchange-reported deals.
+No block or bulk deal was reported for SANGHVIMOV in October 2026 either. The autumn selling happened entirely in the ordinary course — which is what makes the delivery percentages the evidence rather than the deal tapes.
 
-No material insider transactions were reported in the months to June 2026, and promoter pledge was and remains zero.
-
-The October read is inverted: in a sequence where nine of ten closes were lower and volume ran 12% above the 20-day average, 50.9% delivery means real supply changing hands. Delivery percentage only signals in the direction of the price trend, and the trend reversed.
+Promoter pledge remains zero. The last insider filing before the fall is the 16 September Regulation 10(6) disclosure by Maithili Rishi Sanghvi; nothing was filed in October by a promoter or promoter group entity.
 
 ## What ₹320 is pricing in
 
@@ -704,6 +701,16 @@ Carried over from the June 2026 analysis for the restored sections: Screener.in 
 - Q2 FY27 results are not yet published. All FY27 forward figures in this article are derived from the company's July guidance and its Q1 cost run-rate, not from analyst estimates — there are none.
 
 ## Exchange filings
+
+**The verdict on the filings themselves — five documents, and none of them explains a 39% fall:**
+
+- **Independent director exit (7 September) — routine, mildly negative.** The stated reason is other professional commitments and the company says there were no other material reasons. SEBI requires that statement, so it is worth reading the annexed resignation letter rather than the covering note; nothing in the intimation points to a disagreement over accounts, related-party dealings or governance. One independent director leaving is noise. A second exit within the year would not be, and there is not one.
+- **Auditor re-appointment (26 August) — non-event, and a positive.** MSKA is being given a second five-year term, which means the board and the audit committee wanted them back. An auditor leaving mid-term is the red flag; staying on is the opposite.
+- **FY26 audit opinion (20 May) — clean.** Unmodified opinion, declared under Regulation 33(3)(d). No qualification, no emphasis of matter disclosed in the declaration.
+- **Promoter-family transfer (1 and 16 September, 6 October) — neutral, but unread.** The 10(5), 10(6) and 10(7) filings are a transfer inside the promoter group, not a sale to the market, and aggregate promoter holding barely moved. The 10(7) report is the one to read for consideration and price; it is 5.96 MB and was not extracted for this update, which is why the "nil-consideration gift" description stays in the unverified list above.
+- **Q1 FY27 presentation (31 July) — the substance.** This is where the order book, the margin bridge and the guidance come from, and it is the only filing here that carries valuation weight.
+
+**The aggregate read:** the filings say the governance is stable and the accounts are clean. They are neutral on the fall — which supports the article's conclusion that the decline is a market and margin story, not a company-disclosure story. Anyone looking for a filing-shaped explanation for October will not find one.
 
 The primary documents behind the section above, as filed with NSE:
 
