@@ -73,6 +73,46 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (7) — hermes (US listings)
+
+**US listings are in the queue. The gate is now Indian + US, and the approval path has an owner CLI.**
+
+**Universe.** `scripts/build-us-universe.py` reads NASDAQ Trader's official symbol directory —
+`nasdaqlisted.txt` and `otherlisted.txt`, the exchange's own published files — and writes
+`public/universe-us.json`: **5,602 common stocks**, NASDAQ 3,272, NYSE 2,067, NYSE American 263.
+Excluded: ETFs, test issues, NextShares, warrants, rights, units, preferreds, notes, bonds, depositary
+receipts, and NYSE Arca/Cboe/IEX cross-listings. Class shares like `BRK.B` are kept — they are common
+stock. Names arrive suffixed with " - " and are cleaned.
+
+It is a **separate file** on purpose: `generate-universe.js` rebuilds `universe.json` from NSE's lists
+and would delete anything merged into it.
+
+**Backend.** The loader reads both files and keys the index by `MARKET:SYMBOL`; a `BSE:` code maps to
+the NSE listing of the same company; `NASDAQ:`/`NYSE:`/`AMEX:` resolve on their own. The allowlist is
+explicit: NSE, BSE, NASDAQ, NYSE, AMEX. Anything else is refused by name —
+"Only Indian (NSE/BSE) and US (NASDAQ/NYSE) listed stocks are accepted."
+
+`research.min_tier` moved from `broad` to **`main`**: US names carry no index membership, and `main`
+gives 2,356 Indian + 5,602 US listings while still excluding Indian `watch` and `sme`.
+
+**Frontend.** One picker over both files, ids carry the market, and the subtitle says NASDAQ / NYSE /
+NYSE American instead of calling everything "NSE listed". Verified live at 375px: searching "Apple"
+returns `Apple Inc. · NASDAQ listed · AAPL`, `Apple Hospitality REIT · NYSE listed · APLE`,
+`Pineapple Financial · NYSE American · PAPL`.
+
+**Owner CLI.** `manage_research.py approve <id>` writes the same `approved_at` column the signed link
+writes, so a decision typed in chat and a decision tapped on a card are indistinguishable to `claim()`.
+
+**Verified end to end:** `POST /api/research/requests` with `NASDAQ:NVDA` → **201 queued** (id 7);
+`LSE:VOD` → **400** with the market message; the queue page lists `NASDAQ:NVDA · NVIDIA Corporation ·
+QUEUED`. Tests: **56 passed, 0 failed**, including new assertions that an unapproved row is not
+claimable, that a bad signature / unknown action / expired link is refused, and that a market we do
+not cover does not resolve.
+
+**Nothing was published.** I approved #7 (NVIDIA) briefly to prove the CLI path and the monitor, then
+reverted it — an unattended agent run would have written and published a US deep dive to subscribers
+without the owner asking for it. #7 is queued and unapproved, ready to be the first US piece on his word.
+
 ## 2026-10-25 (6) — hermes (approve/reject buttons)
 
 **Approve/Reject buttons now sit on the card, and a tap is what releases the work. Two things were needed.**

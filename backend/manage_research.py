@@ -109,6 +109,32 @@ def cmd_release(argv):
     return _set(int(argv[0]), "queued", reason="Released by the owner.")
 
 
+def cmd_approve(argv):
+    """The owner's own approval, without a signed link.
+
+    Used when the decision arrives in chat ("approve 6") rather than as a button
+    tap: the same column the link writes, so claim() treats both identically.
+    """
+    if not argv:
+        print("approve <id>", file=sys.stderr)
+        return 2
+    with closing(settings_store.connect()) as con:
+        row = con.execute("SELECT status, symbol FROM research_requests WHERE id = ?",
+                          (argv[0],)).fetchone()
+        if not row:
+            print("no such request", file=sys.stderr)
+            return 1
+        if row["status"] != "queued":
+            print(f"#{argv[0]} is {row['status']}, not queued", file=sys.stderr)
+            return 1
+        with con:
+            con.execute("UPDATE research_requests SET approved_at = datetime('now'), "
+                        " approved_by = 'owner' WHERE id = ? AND status = 'queued'",
+                        (int(argv[0]),))
+    print(f"#{argv[0]} {row['symbol']} -> approved")
+    return 0
+
+
 def cmd_reject(argv):
     if len(argv) < 2:
         print('reject <id> "why"', file=sys.stderr)
@@ -135,6 +161,7 @@ COMMANDS = {
     "list": cmd_list,
     "show": cmd_show,
     "release": cmd_release,
+    "approve": cmd_approve,
     "reject": cmd_reject,
     "open": cmd_open,
 }
