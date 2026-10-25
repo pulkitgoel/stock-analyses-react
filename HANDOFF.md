@@ -73,6 +73,29 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (8) — hermes (filings verdict, stale sections rebuilt)
+
+**Sanghvi: the filings now carry a verdict, and two sections that were still showing June were rebuilt on October data.**
+
+The exchange-filings section listed documents without judging them, which made it a bibliography rather than analysis. It now opens with a per-filing verdict and closes with the aggregate read:
+
+- Independent director exit (7 Sep) — routine, mildly negative. Stated reason is other professional commitments; SEBI requires that sentence, so the annexed resignation letter matters more than the covering note. One exit is noise, a second would not be, and there is not one.
+- Auditor (26 Aug) — non-event, and a positive. MSKA given a second five-year term; an auditor leaving mid-term is the red flag, staying on is the opposite.
+- FY26 opinion (20 May) — clean, unmodified, no qualification declared.
+- Promoter-family transfer (1 and 16 Sep, 6 Oct) — neutral but unread: the 10(7) report is 5.96 MB and was not extracted, so "nil-consideration gift" stays in the unverified list.
+- Q1 FY27 presentation (31 Jul) — the only filing carrying valuation weight.
+- Aggregate: governance stable, accounts clean, nothing filing-shaped explains October. That supports the market-and-margin explanation rather than competing with it.
+
+**Stale sections found by auditing every section's as-of date, not just the ones that looked wrong:**
+
+- **Delivery data was the June window (12–25 June).** Rebuilt on the ten bhavcopy sessions to 23 October: 392.60 to 320.35 (−18.4%), average delivery 50.9% against 45.9% in June. The interpretation inverted — 46% delivery on a rising price was accumulation, 51% on nine falling closes is distribution. Heaviest day 14 October: 707,416 shares, 60.3% delivery, −2.9%. Final session 23 October fell on 41.7% delivery, the lowest of the ten. Note: the 20 October bhavcopy file contains 19 October data (holiday), so ten sessions is 9, 12–16, 19, 21–23 October.
+- **Shareholding was the March 2026 quarter.** Added the 30 June 2026 register from the Q1 investor presentation: promoters 47.0%, FII 2.0%, DII 1.0%, others 50.0%, free float 53% on 8.66 crore shares. Promoters eased 0.25 points from March — the earlier text said holding was unchanged at 47.25%, which was wrong, and the quick-snapshot row now reads 47.0% (Jun'26).
+- Everything else was already current and was checked section by section: snapshot, technical (23 Oct, all five EMAs and the 200-DMA), 25-point checklist, guidance, working capital, Q1 balance sheet, valuation at Rs 320, news to 22–23 October. The June material is explicitly dated in its headings.
+
+Deployed and verified live: 200, 109,853 bytes, 9,075 words, all new headings present, no emoji.
+
+**Prompt rules tightened in both trigger paths** (cron `7e75621272dc` and the `research-approved` webhook route): a verdict on each filing — material, routine or non-event — and what they collectively imply; and no section may present an older period as current — delivery data must be the latest ten sessions, shareholding the latest filed quarter, every dated table carries its as-of date in the heading.
+
 ## 2026-10-25 (7) — hermes (Sanghvi claims verified against NSE filings)
 
 **The Sanghvi article's unverified claims were checked against the exchange filings, and one of them did not survive.**
