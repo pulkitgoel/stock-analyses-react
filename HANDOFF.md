@@ -73,6 +73,28 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (9) — hermes (routine filings were hidden, not missing)
+
+**"Why can't we fetch these announcements?" — we can. The filter hid them, and I read the subject line instead of the PDF.**
+
+All five filings the owner named are in NSE's feed: the Reg 74(5) depositary certificate (8 October, 16:47), the Regulation 10(7) promoter report (6 October), the trading-window closure (25 September, 15:36), and the analyst-meet intimations (15 and 17 September). Nothing is missing from the exchange.
+
+**Two failures, both mine:**
+
+- `nse_filings.py` defaults to `--important`, which deliberately drops 74(5) certificates, trading-window closures, AGM/voting paperwork and analyst-meet notices as routine. That is the right default for "what could move the price" and the wrong view to answer "what was filed" — and it printed nothing about what it had thrown away, so the omissions were invisible rather than disclosed.
+- The 10(7) filing *did* surface. Its subject line says only "inter-se transfer among promoters"; the numbers are inside the 6 MB PDF, which was not opened. That is why a claim that was in fact documented stayed in the article as unverified.
+
+**Both fixed:**
+
+- The script now prints the count it hid: `N routine filing(s) hidden — 74(5) depositary certificates, trading-window closures, AGM/voting paperwork, analyst-meet notices. They are on the exchange; rerun with --all when the routine record matters.`
+- The skill carries the rule: never tell anyone NSE does not have a filing without running `--all` first, and read the PDF when the numbers matter — a 6 MB filing is not a reason to leave a claim unverified, PyMuPDF reads it in a second.
+
+**What the 10(7) report actually says**, now in the article: 1,05,53,614 shares, 12.19% of capital, transferred from **Rishi Chandrakant Sanghvi to Maithili Rishi Sanghvi** by way of gift, as an off-market inter-se transfer among promoter-group members, "without any consideration". Estate planning, not a sale. The article's unverified list no longer carries it; the filings verdict now describes it as a non-event on evidence rather than on assumption.
+
+The article also lists the routine filings for completeness — the 74(5) certificate, the trading-window closure, the September analyst meets — so their absence from the record is no longer mistaken for their non-existence.
+
+Deployed and verified: 200, 109,985 bytes, the share count, both names, "without any consideration" and the 74(5) reference all present on the live page. Commit pushed.
+
 ## 2026-10-25 (8) — hermes (filings verdict, stale sections rebuilt)
 
 **Sanghvi: the filings now carry a verdict, and two sections that were still showing June were rebuilt on October data.**
