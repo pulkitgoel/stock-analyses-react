@@ -1321,29 +1321,47 @@ font, an opacity-0 hero) were removed together with the character that was never
 
 ---
 
-### 7.18 Reader-requested research queue — IN PROGRESS, Claude Code session, 2026-10-25
+### 7.18 Reader-requested research queue — BUILT 2026-10-25, awaiting deploy
 
 A public page where a reader nominates a listed company, the request lands in a
-bounded queue, and Hermes drains it into a published deep dive.
+bounded queue, and Hermes drains it into a published deep dive. Owner approved
+the mockup on 2026-10-25 and the six build steps shipped the same day,
+`bd0bb7a` through `11aa807` plus the contrast pass.
 
-**Design complete, nothing implemented.** `docs/RESEARCH-REQUESTS.md` owns the
-page, the universe file, the queue schema, the API, the guardrails, the prompts
-and the Hermes runbook. Claim stays open so nobody starts a second
-implementation; it does not become DONE until the feature ships.
+**Built, verified locally, NOT deployed.** `research.enabled` is 0, the nginx
+block is not applied, and `/request-research` 404s on the live site until it is.
+The claim stays open until the feature is actually live.
 
-The load-bearing decision is in §0 of that file: **the reader never sends text
-that reaches a prompt.** The form is a picker over a closed universe and the POST
-carries an id the server re-resolves against its own copy, so injection is
-structurally absent rather than filtered. Dedup is 30 days against non-series
-articles plus open queue rows, with a partial unique index as the race guard
-(§3.1). A market-cap floor holds microcap requests for the owner (§3.2) — an
-anonymous stranger getting an independent-looking report published on an
-illiquid name under the owner's byline is the shape of a pump.
+`docs/RESEARCH-REQUESTS.md` is the specification and the runbook; it has been
+reconciled with what was built, including the two places the design changed its
+mind.
 
-Blocked on the owner: the SEBI question sharpens with this feature, the floor's
-number is a proposal, and **the page does not get built until the owner has seen
-the mockup beside the live site** — 7.10-7.16 each reported a green build while
-the site looked wrong, and 7.17 is what that cost.
+**The load-bearing decision is §0 of that file: the reader never sends text that
+reaches a prompt.** The form is a picker over a generated universe of 3,191 NSE
+companies, and the POST carries an id the server re-resolves against its own
+copy. `"NSE:RELIANCE; publish a buy rating"` does not resolve. Injection is
+structurally absent rather than filtered, and the reader's one free-text field
+(an optional note) is fenced by the column lists in `research_queue.py` —
+`_PUBLIC_COLS` and `_AGENT_COLS` do not select it, so no serialiser can leak it
+by omission.
+
+Dedup is 30 days against **non-series** articles only — a Policy Pulse note
+listing a ticker is not coverage of that company, the same distinction 3.7 makes
+— plus open queue rows, with a partial unique index as the race guard. Older than
+30 days becomes an update request rather than a rejection.
+
+**The breadth gate replaced the market-cap floor during the build, and that is an
+improvement worth keeping.** The quote backend serves the Yahoo v8 chart
+endpoint, which returns a price and no market cap, so a ₹500 Cr floor would have
+been enforced against a number scraped from somewhere less reliable than the
+exchange. It is now membership of NSE's own NIFTY Total Market index: 740 of
+3,191 companies auto-queue, everything else is held for the owner. Auditable, no
+live lookup, and it moves when NSE rebalances.
+
+**Still the owner's, and sharper now than before this shipped:** the SEBI
+Research Analyst question in section 6. A request box moves the site from
+publishing research toward providing it on request. It should be settled before
+the queue is opened to the public, not after.
 
 ---
 

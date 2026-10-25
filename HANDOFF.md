@@ -73,6 +73,67 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (2) — Claude Code session
+
+**Built 7.18, the reader-requested research queue. Owner approved the mockup first.**
+Six commits, `bd0bb7a` through `11aa807`, plus a contrast pass. Nothing is live:
+`research.enabled` is 0 and `/request-research` 404s until its nginx block is applied.
+`docs/RESEARCH-REQUESTS.md` is the spec and the runbook, reconciled with what was built.
+
+What is there: `public/universe.json` (3,191 NSE companies, `npm run universe`),
+`backend/research_queue.py` + schema + `manage_research.py` + a 49-check test that needs
+no server and no network, `/request-research` with a footer link and a homepage card,
+a prerendered head, and `scripts/research-poll.py`.
+
+**ACTION Hermes — the server, and none of it is optional**
+
+- Copy `backend/*` to `/var/www/stock-analyses/` and restart `vault-notify.service`.
+  `backend/` is the versioned copy; the two have drifted once already.
+- Settings, flag OFF first. `research.ip_salt` has no fallback and the feature stays
+  closed without it — a constant default would make every requester hash reversible.
+  Full list in RESEARCH-REQUESTS §9.1.
+- **Two nginx edits BY HAND.** `job_apply_nginx` is replacements-only and will refuse the
+  whole run because the doc declares a block live does not have. That refusal is correct,
+  not a bug.
+  1. `location = /request-research { try_files /request-research.html =404; }`
+  2. `proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;` inside the existing
+     `/api/` block. Without it every requester hashes to the same value and the limit of
+     three a day becomes ONE BUCKET SHARED BY EVERYONE. The server logs a warning once per
+     process when it sees this.
+- `./deploy.sh`, then curl a valid AND an invalid URL. Both `try_files` bugs in 3.13
+  behaved perfectly on the valid one.
+- Cron `scripts/research-poll.py` at the watcher's cadence. It writes one `[job: report]`
+  bullet here and does nothing else — no build, no model, no site access.
+- Only then `manage_research.py open 1`. The rollback is `open 0`: a settings write, no
+  deploy, no restart.
+
+**OWNER**
+
+- **The SEBI question is sharper now than before this was built.** A request box moves the
+  site from publishing research toward providing it on request. Section 6 of AGENTS.md
+  already had it open; it should be settled before the queue is opened to the public.
+- The breadth gate defaults to the NIFTY Total Market index, which holds 2,451 of 3,191
+  companies for your review. `manage_research.py` lists them with a `!`.
+  `manage_settings.py set research.min_tier main` widens it.
+- Found, flagged, deliberately NOT fixed: the four static-page nginx blocks
+  (`/about`, `/contact`, `/disclaimer`, `/privacy`) use `try_files /<route>.html
+  /index.html;` — the exact shape 3.13's table forbids, latent only because those files
+  always exist. And `/about` and `/contact` emit a canonical from the component on top of
+  the prerendered one, which is the duplicate-metadata defect 3.2 exists to prevent.
+  Both predate this work and changing four live routes does not belong in a feature deploy.
+
+**UNVERIFIED**
+
+- **Everything above is local.** Nothing has been checked against the live site because
+  nothing is deployed. The numbers that are measured: 49 backend checks pass, the page
+  renders at 375px and 1280px in both themes with one h1 and no horizontal overflow, zero
+  contrast failures in dark, the prerendered file is 22,583 bytes with one title and one
+  canonical, and the no-API state reads as a finished page with no "loading" in it.
+- The on-demand wake is still not built, and still needs one fact only the owner has:
+  **what command starts a Hermes run?** The poll-and-read-HANDOFF path works without it.
+- Rate limiting has never been exercised behind real nginx, only against a local server
+  where every address is loopback. The X-Forwarded-For line above is why.
+
 ## 2026-10-25 — Claude Code session
 
 **Claimed 7.18 and designed it: a reader-requested research queue.** Design only —
