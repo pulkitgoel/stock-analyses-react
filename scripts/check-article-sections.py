@@ -82,6 +82,32 @@ def changed_files() -> list[Path]:
     return [Path(n) for n in sorted(names) if n.endswith(".md") and Path(n).exists()]
 
 
+MONTHS = {m: n for n, m in enumerate(
+    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+def filings_out_of_order(text: str) -> bool:
+    """True when the Exchange Filings table is not newest-first.
+
+    The section is a record of what the company said and a reader scans it from
+    the latest backward. WABAG shipped it 12 Aug, 19 Aug, 7 Sep, 20 Jul, so the
+    most recent filing was the third row.
+    """
+    lines = text.split("\n")
+    start = next((i for i, l in enumerate(lines)
+                  if re.match(r"^#+\s*\d*\.?\s*exchange filings", l, re.I)), None)
+    if start is None:
+        return False
+    dates = []
+    for line in lines[start:start + 80]:
+        if line.startswith("##") and "exchange filings" not in line.lower():
+            break
+        m = re.match(r"\|\s*(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{4})", line)
+        if m:
+            dates.append((int(m.group(3)), MONTHS.get(m.group(2).lower(), 0), int(m.group(1))))
+    return dates != sorted(dates, reverse=True)
+
+
 def audit(path: Path) -> tuple[list[str], list[str]]:
     text = path.read_text()
     # Numbered headings ("## 14. Verdict") must match the same patterns as
@@ -112,8 +138,9 @@ def main() -> int:
         if not is_deep_dive(path, text):
             continue
         missing, absent_osc = audit(path)
-        if missing or (absent_osc and "technical analysis" not in missing):
-            failures.append((path, missing, absent_osc))
+        unordered = filings_out_of_order(text)
+        if missing or (absent_osc and "technical analysis" not in missing) or unordered:
+            failures.append((path, missing, absent_osc, unordered))
 
     if not failures:
         print(f"check-article-sections: {len(targets)} file(s) checked, "
@@ -121,12 +148,14 @@ def main() -> int:
         return 0
 
     print("check-article-sections: these deep dives are missing sections", file=sys.stderr)
-    for path, missing, absent_osc in failures:
+    for path, missing, absent_osc, unordered in failures:
         print(f"  - {path.name}", file=sys.stderr)
         if missing:
             print(f"      missing: {', '.join(missing)}", file=sys.stderr)
         if absent_osc:
             print(f"      technical panel lacks: {', '.join(absent_osc)}", file=sys.stderr)
+        if unordered:
+            print("      exchange filings are not newest-first", file=sys.stderr)
 
     if os.environ.get("ALLOW_THIN") == "1":
         print("check-article-sections: ALLOW_THIN=1 set, continuing", file=sys.stderr)
