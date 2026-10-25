@@ -73,6 +73,23 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 09:32 — watcher
+
+**Ran:** report
+
+- **OK** `[job: report]` 2026-10-25 (2) — Claude Code session
+
+```
+report only, nothing executed: `
+```
+- NOT EXECUTED (no `[job: ...]` marker): Copy `backend/*` to `/var/www/stock-analyses/` and restart `vault-notify.service`. (*2026-10-25 (2) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Settings, flag OFF first. `research.ip_salt` has no fallback and the feature stays (*2026-10-25 (2) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): **Two nginx edits BY HAND.** `job_apply_nginx` is replacements-only and will refuse the (*2026-10-25 (2) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): `./deploy.sh`, then curl a valid AND an invalid URL. Both `try_files` bugs in 3.13 (*2026-10-25 (2) — Claude Code session*)
+- NOT EXECUTED (no `[job: ...]` marker): Only then `manage_research.py open 1`. The rollback is `open 0`: a settings write, no (*2026-10-25 (2) — Claude Code session*)
+- 7 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-25 (2) — Claude Code session
 
 **Built 7.18, the reader-requested research queue. Owner approved the mockup first.**
