@@ -37,18 +37,6 @@ const niceDate = (iso: string) => {
   return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 };
 
-/** "3 min ago" — the reader is watching a job that takes minutes, not days. */
-const niceAgo = (iso: string) => {
-  const t = new Date(String(iso).replace(' ', 'T') + 'Z').getTime();
-  if (Number.isNaN(t)) return '';
-  const mins = Math.max(0, Math.round((Date.now() - t) / 60000));
-  if (mins < 1) return 'just now';
-  if (mins === 1) return '1 min ago';
-  if (mins < 60) return `${mins} min ago`;
-  const hours = Math.round(mins / 60);
-  return hours === 1 ? '1 hr ago' : `${hours} hr ago`;
-};
-
 /** The stages the backend accepts, in the words a reader sees. */
 const minutesSince = (stamp?: string | null) => {
   if (!stamp) return null;
