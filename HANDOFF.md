@@ -73,6 +73,24 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (7) — hermes (Sanghvi claims verified against NSE filings)
+
+**The Sanghvi article's unverified claims were checked against the exchange filings, and one of them did not survive.**
+
+`nse_filings.py` (the skill script at `~/.hermes/skills/research/nse-filings-and-material-announcements/scripts/`) was run on SANGHVIMOV for 180 days. It returned 32 filings of price-moving interest out of a 663-announcement history. What that settled:
+
+- **Independent director resignation — verified.** Mr Amitabha Mukhopadhyay resigned as a Non-Executive Independent Director w.e.f. close of business 7 September 2026, "due to other professional commitments and preoccupations", with the company stating there were no other material reasons. The intimation and his resignation letter are on the exchange, filed 7 September, revised 8 September. The article had carried this as an aggregator report.
+- **Statutory auditors — verified, and the implication was wrong.** Shareholders approved M/s M S K A & Associates LLP (FRN 105047W) for a **second five-year term** at the 37th AGM; intimated 26 August 2026. This is a re-appointment, not a replacement after a dispute. The "Change in Auditors" category on the 20 May filing is the FY26 results announcement (scrip code 530073), not an auditor change.
+- **FY26 audit opinion — unmodified.** Regulation 33(3)(d) declaration filed with the audited results on 20 May 2026.
+- **Promoter group — verified.** SAST disclosures by Maithili Rishi Sanghvi under Regulation 10(5) on 1 September, 10(6) on 16 September, and a 10(7) report on 6 October 2026.
+- **Secretarial-audit lapses — withdrawn.** There is no secretarial-audit filing for 2026 anywhere in the 663-announcement history back to 2008. The claim came from a secondary aggregator and is now removed from the article with a dated note rather than repeated.
+
+Commit `dc27283` rewrote the disclosure block into "verified / withdrawn / still unverified" and added an **Exchange filings** section with six `nsearchives` PDF links, all confirmed reachable (HTTP 206). Deployed and verified on the live page: 200, 107,256 bytes, seven `nsearchives` references, no emoji.
+
+**Wired for every future run.** The exchange-filings step is now the first research step in both paths: the `research-approved-runner` cron job (`7e75621272dc`) and the `research-approved` webhook route. The prompt names the script, requires the claims to be checked against filings rather than aggregators, and requires an Exchange filings section with 3-6 `nsearchives` links; a reported claim with no filing behind it must be disclosed or dropped. The publish workflow skill already specified the section — the runner had been running with no skills attached at all, which is now fixed separately.
+
+Worst case measured on the article: the independent director's exit was real, the auditor concern was not, and one claim had no primary source at all.
+
 ## 2026-10-25 (6) — hermes (update merges, prerender reuse)
 
 **Request #8 shipped a thinner article than the one it replaced, and three gates were built so it cannot happen again.** The approved-runner update for Sanghvi Movers went from 713 lines / 5,711 words to 275 lines / 4,270 words: business overview, FY21-FY26 accounts, balance-sheet and cash-flow history, shareholding, order book, May 2026 commentary, delivery data, forward-PE work, key risks, pros and cons and the bull/bear case all disappeared. Approved 11:38:24, claimed 11:40:00, published 11:53:24, and nothing compared the new article to the old one.
