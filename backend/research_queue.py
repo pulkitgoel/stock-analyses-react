@@ -105,6 +105,85 @@ def enabled() -> bool:
     return _setting("research.enabled") == "1" and _salt() is not None
 
 
+# ---------------------------------------------------------------------------
+# Owner decisions: signed links, so a tap approves without an agent session
+# ---------------------------------------------------------------------------
+
+DECISION_ACTIONS = ("approve", "reject")
+DECISION_DAYS = 7
+
+
+def _decision_secret() -> bytes:
+    """Signing key. Dedicated if set, else the same salt; never empty."""
+    return (_setting("research.approve_secret") or _salt() or "").encode()
+
+
+def decision_token(request_id: int, action: str, expires: int) -> str:
+    msg = f"{request_id}:{action}:{expires}".encode()
+    return hmac.new(_decision_secret(), msg, hashlib.sha256).hexdigest()[:32]
+
+
+def decision_url(base: str, request_id: int, action: str, days: int = DECISION_DAYS) -> str:
+    expires = int(time.time()) + days * 86400
+    token = decision_token(request_id, action, expires)
+    return f"{base}/api/research/decision?id={request_id}&a={action}&e={expires}&t={token}"
+
+
+def decide(request_id: int, action: str, expires: str, token: str):
+    """Verify a decision link and apply it. Returns (status_code, html)."""
+    if action not in DECISION_ACTIONS:
+        return 400, _page("Unknown action", "That link is not an approve or reject link.")
+    try:
+        exp = int(expires)
+    except (TypeError, ValueError):
+        return 400, _page("Bad link", "The expiry in that link is not a number.")
+    if exp < int(time.time()):
+        return 400, _page("Link expired", "Ask for a fresh notification; this link is older than "
+                                       f"{DECISION_DAYS} days.")
+    expected = decision_token(request_id, action, exp)
+    if not hmac.compare_digest(expected, (token or "").lower()):
+        return 403, _page("Not a valid link", "The signature does not verify for this request.")
+
+    with closing(_db()) as con:
+        with con:
+            if action == "approve":
+                changed = con.execute(
+                    "UPDATE research_requests SET approved_at = datetime('now'), approved_by = 'owner' "
+                    " WHERE id = ? AND status = 'queued'",
+                    (request_id,),
+                ).rowcount
+            else:
+                changed = con.execute(
+                    "UPDATE research_requests SET status = 'rejected', reason = 'owner rejected' "
+                    " WHERE id = ? AND status IN ('queued','needs-owner')",
+                    (request_id,),
+                ).rowcount
+        row = con.execute(
+            "SELECT id, symbol, name, status, approved_at FROM research_requests WHERE id = ?",
+            (request_id,),
+        ).fetchone()
+
+    if not row:
+        return 404, _page("No such request", f"Request #{request_id} does not exist.")
+    if not changed:
+        state = row["status"]
+        return 409, _page("Already decided",
+                          f"Request #{request_id} ({row['symbol']}) is already {state}.")
+    if action == "approve":
+        return 200, _page("Approved",
+                          f"{row['name']} ({row['symbol']}) is approved. Hermes picks it up on its "
+                          "next queue check and will publish through the normal pipeline.")
+    return 200, _page("Rejected", f"Request #{request_id} ({row['symbol']}) is closed.")
+
+
+def _page(title: str, message: str) -> str:
+    return ("<!doctype html><meta charset=utf-8><title>" + title + "</title>"
+            "<body style=\"font-family:system-ui,sans-serif;max-width:34rem;margin:15vh auto;"
+            "padding:0 1.2rem;line-height:1.55\"><h1 style=\"font-size:1.35rem\">" + title +
+            "</h1><p>" + message + "</p>"
+            "<p><a href=\"https://stocksfundamentals.online/request-research\">Back to the queue</a></p>")
+
+
 def _salt():
     """The hashing salt for requester identity. No salt, no feature.
 
@@ -120,7 +199,11 @@ def _salt():
 # The universe — the server's own copy, never the client's
 # ---------------------------------------------------------------------------
 
-SYMBOL_RE = re.compile(r"^NSE:[A-Z0-9&-]{1,12}$")
+# Indian and US listings only, by exchange prefix, so a request cannot smuggle in
+# a crypto pair, an unlisted name or a market we do not cover. The universe file
+# is the second gate: a well-formed US id still has to exist in it.
+ALLOWED_MARKETS = {"NSE", "BSE", "NASDAQ", "NYSE", "AMEX"}
+SYMBOL_RE = re.compile(r"^(NSE|BSE|NASDAQ|NYSE|AMEX):[A-Z0-9&.\-]{1,12}$")
 
 _universe_cache = {"mtime": None, "index": {}, "count": 0}
 
@@ -167,7 +250,10 @@ def resolve(symbol: str):
     """
     if not isinstance(symbol, str) or not SYMBOL_RE.match(symbol):
         return None
-    row = _universe().get(symbol.split(":", 1)[1])
+    market, _, code = symbol.partition(":")
+    if market not in ALLOWED_MARKETS:
+        return None
+    row = _universe().get(code)
     if not row:
         return None
     return (f"NSE:{row[0]}", row[1], row[2], row[3] if len(row) > 3 else "")
@@ -462,7 +548,13 @@ def submit(symbol_id: str, requester: str, note: str | None):
     """(http_status, payload). Re-checks everything verdict() checked."""
     found = resolve(symbol_id)
     if not found:
-        return 400, {"error": "No listed Indian company matches that."}
+        market = symbol_id.split(":", 1)[0] if ":" in symbol_id else ""
+        if market and market not in ALLOWED_MARKETS:
+            return 400, {
+                "error": "Only Indian (NSE/BSE) and US (NASDAQ/NYSE) listed stocks are accepted.",
+                "market": market,
+            }
+        return 400, {"error": "No listed company in the coverage universe matches that."}
     sid, name, tier, _industry = found
 
     with closing(_db()) as con:
@@ -608,9 +700,16 @@ def claim():
 
         candidate = con.execute(
             "SELECT id FROM research_requests WHERE status = 'queued' "
+            "   AND approved_at IS NOT NULL "
             " ORDER BY votes DESC, created_at ASC LIMIT 1"
         ).fetchone()
         if not candidate:
+            waiting = con.execute(
+                "SELECT COUNT(*) c FROM research_requests "
+                " WHERE status = 'queued' AND approved_at IS NULL"
+            ).fetchone()["c"]
+            if waiting:
+                return None, f"{waiting} queued but not approved by the owner"
             return None, "nothing queued"
 
         # The id is carried through rather than re-read afterwards. Reading the
@@ -626,7 +725,7 @@ def claim():
             changed = con.execute(
                 "UPDATE research_requests "
                 "   SET status = 'claimed', claimed_at = datetime('now') "
-                " WHERE id = ? AND status = 'queued'",
+                " WHERE id = ? AND status = 'queued' AND approved_at IS NOT NULL",
                 (candidate["id"],),
             ).rowcount
         if not changed:
@@ -725,7 +824,8 @@ def try_handle(handler, path: str, parts: list, method: str, data=None) -> bool:
 
     # Owner and agent endpoints answer even while the feature is switched off:
     # the flag closes the public door, not the operator's.
-    agent_route = path == "/api/research/claim" or tail == "full"
+    agent_route = (path in ("/api/research/claim", "/api/research/decision")
+                   or tail == "full")
 
     if not enabled() and not agent_route:
         _json(handler, 503, {"error": "closed",
@@ -735,6 +835,24 @@ def try_handle(handler, path: str, parts: list, method: str, data=None) -> bool:
     if method == "GET":
         if path == "/api/research/requests":
             _json(handler, 200, public_queue())
+            return True
+        if path == "/api/research/decision":
+            from urllib.parse import parse_qs, urlparse
+            q = parse_qs(urlparse(handler.path).query)
+            try:
+                rid = int((q.get("id", ["0"])[0] or "0"))
+            except ValueError:
+                rid = 0
+            code, html = decide(rid, (q.get("a", [""])[0] or "").lower(),
+                                q.get("e", ["0"])[0], q.get("t", [""])[0])
+            body = html.encode()
+            handler.send_response(code)
+            handler.send_header("Content-Type", "text/html; charset=utf-8")
+            handler.send_header("Content-Length", str(len(body)))
+            handler.send_header("Cache-Control", "no-store")
+            handler.send_header("X-Robots-Tag", "noindex, nofollow")
+            handler.end_headers()
+            handler.wfile.write(body)
             return True
         if path == "/api/research/nonce":
             _json(handler, 200, {"nonce": issue_nonce()})

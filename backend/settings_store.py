@@ -103,6 +103,15 @@ def connect() -> sqlite3.Connection:
 def init_db() -> None:
     with connect() as connection:
         connection.executescript(SCHEMA)
+        # Approval gate (2026-10-25): a request is not workable until the owner
+        # approves it. Added with ALTER rather than in SCHEMA so an existing
+        # database upgrades in place; SQLite has no ADD COLUMN IF NOT EXISTS, so
+        # a duplicate-column error is the "already migrated" signal.
+        cols = {r[1] for r in connection.execute("PRAGMA table_info(research_requests)")}
+        if "approved_at" not in cols:
+            connection.execute("ALTER TABLE research_requests ADD COLUMN approved_at TEXT")
+        if "approved_by" not in cols:
+            connection.execute("ALTER TABLE research_requests ADD COLUMN approved_by TEXT")
     try:
         os.chmod(DB_PATH, 0o600)
     except OSError:

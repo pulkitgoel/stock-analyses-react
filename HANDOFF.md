@@ -73,6 +73,50 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (6) — hermes (approve/reject buttons)
+
+**Approve/Reject buttons now sit on the card, and a tap is what releases the work. Two things were needed.**
+
+**1. The approval gate is enforced in SQL, not by convention.** `research_requests` gained
+`approved_at` / `approved_by` (added by a guarded `ALTER` in `settings_store.init_db()`, so an existing
+database upgrades in place). `claim()` now selects `WHERE status = 'queued' AND approved_at IS NOT NULL`
+and says "N queued but not approved by the owner" when it finds unapproved work. Nothing can be worked
+before the owner decides, including by an agent that saw the HANDOFF bullet.
+
+**2. The buttons are inline URL buttons, not callbacks.** Measured, not assumed:
+
+- Inline **callback** buttons render, but `_handle_callback_query` dispatches only the prefixes the
+  gateway already owns (`mp:`, `cp:`, `ea:`, `sc:`, `cl:`, `gt:`, `update_prompt:`) and silently drops
+  anything else — an `Approve` callback would look right and do nothing.
+- **Reply** keyboards are accepted by the API (`ok: true`) but return `reply_markup: null` and never
+  appear in this chat.
+- **Inline URL** buttons work. Each carries a signed link:
+  `/api/research/decision?id=N&a=approve|reject&e=<expiry>&t=<hmac>`, 7-day expiry, signature over
+  id+action+expiry with `research.approve_secret` (falling back to `ip_salt`).
+
+Verified end to end on a scratch row: valid link → **200 Approved**, tampered signature → **403**,
+reused link → **409**, and `claim()` handed the row back only after approval. The decision endpoint
+answers while the queue is closed, because that is exactly when the owner may want to reject something.
+
+**3. An approval now starts a run without a session.** `research-approved-runner` (cron, every 5 min)
+uses a **monitor**: `research-approved-monitor.sh` prints the approved-and-unclaimed ids, and identical
+output on the next tick skips the agent entirely. So it is silent and free while idle, and the tick
+that sees a new approval wakes the agent with the diff. The agent then claims through the API and runs
+the existing pipeline — no new pipeline, no new publishing path.
+
+**Market guardrail:** `SYMBOL_RE` and `resolve()` now carry an explicit allowlist — NSE, BSE, NASDAQ,
+NYSE, AMEX — and reject everything else with "Only Indian (NSE/BSE) and US (NASDAQ/NYSE) listed stocks
+are accepted." **India works today; the US prefixes pass the gate but resolve to nothing, because
+`universe.json` is NSE-only (3,191 names from NSE EQUITY_L, EMERGE and the Nifty Total Market list).**
+US needs its own universe before a US request can succeed; that is a build step, not a settings change.
+
+**Also fixed:** `init_db()` is not called when `vault-notify.service` starts, so the `ALTER` had to be
+applied by hand once. Anyone deploying this to a fresh directory must run
+`python3.12 -c "import settings_store; settings_store.init_db()"` after copying the backend.
+
+**Live test row:** #6 Wipro is queued and unapproved, created only to show the buttons. Approve it to
+exercise the full path, or reject it.
+
 ## 2026-10-25 (5) — hermes (owner approval gate)
 
 **New rule for the research queue: no request is worked until the owner approves it.**
