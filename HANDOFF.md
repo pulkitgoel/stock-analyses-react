@@ -73,6 +73,18 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 11:38 — watcher
+
+**Ran:** report
+
+- **OK** `[job: report]` 2026-10-25 - research queue
+
+```
+report only, nothing executed: research request #8 - Sanghvi Movers (NSE:SANGHVIMOV), update to an existing note, 1 vote
+```
+- 15 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-25 - research queue
 
 **1 new research request in the queue.** Submitted by readers through /request-research and recorded here by scripts/research-poll.py, which executes nothing.
