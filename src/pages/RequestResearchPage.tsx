@@ -37,19 +37,43 @@ const niceDate = (iso: string) => {
   return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 };
 
+/** "3 min ago" — the reader is watching a job that takes minutes, not days. */
+const niceAgo = (iso: string) => {
+  const t = new Date(String(iso).replace(' ', 'T') + 'Z').getTime();
+  if (Number.isNaN(t)) return '';
+  const mins = Math.max(0, Math.round((Date.now() - t) / 60000));
+  if (mins < 1) return 'just now';
+  if (mins === 1) return '1 min ago';
+  if (mins < 60) return `${mins} min ago`;
+  const hours = Math.round(mins / 60);
+  return hours === 1 ? '1 hr ago' : `${hours} hr ago`;
+};
+
+/** The stages the backend accepts, in the words a reader sees. */
+const STAGE_LABEL: Record<string, string> = {
+  researching: 'Gathering the data',
+  writing: 'Writing the analysis',
+  deploying: 'Publishing to the site',
+  verifying: 'Checking the live page',
+};
+
 const TIER_NOTE: Record<string, string> = {
   main: 'Outside the NIFTY Total Market index — held for review before anything is written.',
   watch: 'NSE trades this on a restricted series — held for review.',
   sme: 'An SME-platform listing — held for review.',
 };
 
-function StatusPill({ status }: { status: QueueEntry['status'] }) {
+function StatusPill({ status }: { status: QueueEntry['status'] | 'approved' }) {
   const map: Record<string, { label: string; fg: string; dot: string; bd: string; bg: string }> = {
     // fg is --accent-warm, not --yellow. In the light theme --yellow is #ca8a04
     // and measured 2.64:1 on its own tint; --accent-warm is #b45309 there and
     // #f6c453 in dark, so one token reads in both. The dot keeps --yellow: it
     // carries no text, so it is decoration and the 4.5 floor does not apply.
-    claimed: { label: 'WRITING NOW', fg: 'var(--accent-warm)', dot: 'var(--yellow)', bd: 'color-mix(in srgb, var(--yellow) 40%, transparent)', bg: 'color-mix(in srgb, var(--yellow) 10%, transparent)' },
+    claimed: { label: 'IN PROGRESS', fg: 'var(--accent-warm)', dot: 'var(--yellow)', bd: 'color-mix(in srgb, var(--yellow) 40%, transparent)', bg: 'color-mix(in srgb, var(--yellow) 10%, transparent)' },
+    // Approved but not yet picked up. Without this the reader sees QUEUED for the
+    // minute or two between the owner's tap and an agent claiming it, which reads
+    // as "nothing happened".
+    approved: { label: 'APPROVED', fg: 'var(--accent)', dot: 'var(--accent)', bd: 'color-mix(in srgb, var(--accent) 38%, transparent)', bg: 'var(--accent-glow)' },
     queued: { label: 'QUEUED', fg: 'var(--text-muted)', dot: 'var(--text-muted)', bd: 'var(--border-light)', bg: 'var(--surface-soft)' },
     'needs-owner': { label: 'UNDER REVIEW', fg: 'var(--accent-warm)', dot: 'var(--yellow)', bd: 'color-mix(in srgb, var(--yellow) 40%, transparent)', bg: 'color-mix(in srgb, var(--yellow) 10%, transparent)' },
   };
@@ -101,6 +125,14 @@ export default function RequestResearchPage() {
     // than the three-second floor by the time anyone has finished choosing.
     fetchNonce().then(setNonce);
   }, [refreshQueue]);
+
+  // While something is being worked on, the page has to move on its own or the
+  // progress is a snapshot from whenever the reader happened to load it.
+  useEffect(() => {
+    if (!queue?.open?.some((e) => e.status === 'claimed')) return;
+    const id = window.setInterval(refreshQueue, 30000);
+    return () => window.clearInterval(id);
+  }, [queue, refreshQueue]);
 
   const results = useMemo(
     () => (universe && query.trim() ? searchUniverse(universe, query.trim()) : []),
@@ -605,9 +637,11 @@ export default function RequestResearchPage() {
                         </div>
                         <div style={{ marginTop: '2px', fontSize: '0.9rem', fontWeight: 600 }}>{entry.name}</div>
                         <div style={{ marginTop: '5px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px' }}>
-                          <StatusPill status={entry.status} />
+                          <StatusPill status={entry.status === 'queued' && entry.approved_at ? 'approved' : entry.status} />
                           <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                            asked {niceDate(entry.created_at)}
+                            {entry.status === 'claimed' && entry.stage
+                              ? `${STAGE_LABEL[entry.stage] ?? 'Working on it'}${entry.stage_at ? ` · ${niceAgo(entry.stage_at)}` : ''}`
+                              : `asked ${niceDate(entry.created_at)}`}
                           </span>
                         </div>
                       </div>

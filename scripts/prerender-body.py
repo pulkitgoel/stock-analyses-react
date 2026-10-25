@@ -44,10 +44,14 @@ from __future__ import annotations
 
 import argparse
 import functools
+import hashlib
 import http.server
+import json
 import os
 import re
+import shutil
 import socketserver
+import subprocess
 import sys
 import threading
 import time
@@ -159,6 +163,75 @@ def serve(directory: Path) -> tuple[socketserver.TCPServer, int]:
     return httpd, port
 
 
+MANIFEST_NAME = ".prerender-manifest.json"
+
+
+def _digest(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()[:16]
+
+
+def _source_digest(route: str, public_dir: Path) -> str:
+    """The markdown behind an article route, if there is one.
+
+    The shell alone is not enough: a body-only edit (a corrected figure, a new
+    paragraph) leaves the title, description and JSON-LD identical, so the shell
+    hash cannot see it. The .md is the thing that actually changed.
+    """
+    if not route.startswith("/analysis/"):
+        return ""
+    slug = route[len("/analysis/"):].strip("/")
+    md = public_dir / "analyses" / f"{slug}.md"
+    try:
+        return _digest(md.read_bytes())
+    except OSError:
+        return ""
+
+
+def _related_digests(public_dir: Path) -> dict:
+    """"Related research" on an article page is computed from the whole corpus,
+    so a new article can change an old page without touching its .md. The digest
+    is over every slug sharing a ticker or tag - a superset of the six the page
+    actually shows, so a change can never be missed, only rendered once too often.
+    """
+    try:
+        payload = json.loads((public_dir / "analyses.json").read_text())
+    except (OSError, ValueError):
+        return {}
+    items = payload.get("analyses", payload) if isinstance(payload, dict) else payload
+    pools: dict[str, set] = {}
+    for item in items:
+        keys = set(item.get("tags") or [])
+        if item.get("ticker"):
+            keys.add(str(item["ticker"]))
+        for key in keys:
+            pools.setdefault(str(key), set()).add(item.get("slug"))
+    out = {}
+    for item in items:
+        keys = set(item.get("tags") or [])
+        if item.get("ticker"):
+            keys.add(str(item["ticker"]))
+        related = set()
+        for key in keys:
+            related |= pools.get(str(key), set())
+        related.discard(item.get("slug"))
+        out[item.get("slug")] = _digest("|".join(sorted(x for x in related if x)).encode())
+    return out
+
+
+def _load_manifest(previous: Path) -> dict:
+    try:
+        return json.loads((previous / MANIFEST_NAME).read_text()).get("routes", {})
+    except (OSError, ValueError):
+        return {}
+
+
+def _save_manifest(dist: Path, routes: dict) -> None:
+    try:
+        (dist / MANIFEST_NAME).write_text(json.dumps({"version": 1, "routes": routes}))
+    except OSError as exc:
+        print(f"prerender-body: could not write manifest: {exc}", file=sys.stderr)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dist", default="dist", type=Path)
@@ -169,7 +242,46 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true",
                         help="measure rendered size, write nothing")
     parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--reuse-from", type=Path, default=None,
+                        help="copy unchanged routes from this previous build")
+    parser.add_argument("--no-reuse", action="store_true",
+                        help="render every route (full rebuild)")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="parallel browser processes (1 = sequential)")
+    parser.add_argument("--shard", default=None,
+                        help="internal: K/N slice for a worker process")
     args = parser.parse_args()
+
+    # Parent: fan out to N children, each with its own browser, then merge.
+    if not args.shard and args.workers > 1:
+        children = []
+        for index in range(args.workers):
+            cmd = [sys.executable, __file__, "--dist", str(args.dist),
+                   "--shard", f"{index}/{args.workers}", "--workers", "1"]
+            if args.out_dir:
+                cmd += ["--out-dir", str(args.out_dir)]
+            if args.reuse_from:
+                cmd += ["--reuse-from", str(args.reuse_from)]
+            if args.no_reuse:
+                cmd.append("--no-reuse")
+            if args.verbose:
+                cmd.append("--verbose")
+            children.append(subprocess.Popen(cmd))
+
+        codes = [child.wait() for child in children]
+        merged: dict = {}
+        for index in range(args.workers):
+            part = Path(args.dist) / f"{MANIFEST_NAME}.{index}"
+            try:
+                merged.update(json.loads(part.read_text()).get("routes", {}))
+                part.unlink()
+            except (OSError, ValueError):
+                pass
+        if args.out_dir:
+            _save_manifest(args.out_dir, merged)
+        else:
+            _save_manifest(Path(args.dist), merged)
+        return 0 if all(code == 0 for code in codes) else 1
 
     dist = args.dist.resolve()
     if not dist.is_dir():
@@ -200,6 +312,17 @@ def main() -> int:
     if args.limit:
         planned = planned[: args.limit]
 
+    shard_total = 1
+    if args.shard:
+        shard_index, shard_total = (int(x) for x in args.shard.split("/"))
+        planned = planned[shard_index::shard_total]
+
+    previous = args.reuse_from
+    manifest = {} if args.no_reuse else _load_manifest(previous) if previous else {}
+    new_manifest: dict = {}
+    reused = 0
+    related_digests = _related_digests(Path("public"))
+
     if not planned:
         sys.exit("prerender-body: nothing to do")
 
@@ -223,6 +346,31 @@ def main() -> int:
         page = context.new_page()
 
         for index, (route, dest) in enumerate(planned, start=1):
+            shell_digest = _digest(dest.read_bytes()) if dest.exists() else ""
+            source_digest = _source_digest(route, Path("public"))
+            if route.startswith("/analysis/"):
+                slug = route[len("/analysis/"):].strip("/")
+                source_digest += ":" + related_digests.get(slug, "")
+            entry = {"shell": shell_digest, "source": source_digest}
+            new_manifest[route] = entry
+
+            # Reuse only article pages. Listing, company and tag pages are
+            # rendered from data whose changes the shell cannot see (a new article
+            # shifts every page list), so they are always re-rendered.
+            if previous and route.startswith("/analysis/"):
+                prev = manifest.get(route)
+                try:
+                    prev_file = previous / dest.relative_to(args.out_dir or dist)
+                except ValueError:
+                    prev_file = None
+                if (prev and prev.get("shell") == shell_digest
+                        and prev.get("source") == source_digest
+                        and prev_file is not None and prev_file.exists()):
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(prev_file, dest)
+                    reused += 1
+                    continue
+
             try:
                 page.goto(f"{base}{route}", wait_until="networkidle", timeout=45_000)
                 # Wait for the markdown pipeline to actually produce content.
@@ -267,7 +415,19 @@ def main() -> int:
     httpd.shutdown()
 
     elapsed = time.time() - started
-    print(f"\nprerender-body: {len(planned) - len(failures)}/{len(planned)} "
+    if args.shard:
+        index = int(args.shard.split("/")[0])
+        part = Path(args.dist) / f"{MANIFEST_NAME}.{index}"
+        try:
+            part.write_text(json.dumps({"routes": new_manifest}))
+        except OSError:
+            pass
+    elif not args.no_reuse:
+        _save_manifest(args.out_dir or Path(args.dist), new_manifest)
+
+    print(f"\nprerender-body: reused {reused}, rendered {len(planned) - reused}"
+          f" of {len(planned)}")
+    print(f"prerender-body: {len(planned) - len(failures)}/{len(planned)} "
           f"routes in {elapsed:.0f}s")
     if not args.dry_run:
         print(f"  corpus {before_total:,} -> {after_total:,} bytes "

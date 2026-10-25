@@ -31,6 +31,11 @@ export interface QueueEntry {
   created_at: string;
   slug: string | null;
   published_at?: string;
+  /** Where the work has got to while status is 'claimed'. */
+  stage?: string | null;
+  stage_at?: string | null;
+  /** Set when the owner approves, before an agent claims it. */
+  approved_at?: string | null;
 }
 
 export interface QueueView {

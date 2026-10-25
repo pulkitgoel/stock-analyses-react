@@ -66,8 +66,12 @@ npx vite build --outDir "$STAGE" --emptyOutDir
 echo "Step 6/7    per-page head (title, description, canonical, OG, JSON-LD)"
 python3.12 scripts/generate-og-files.py --dist "$STAGE"
 
-echo "Step 7/7    article body prerender (renders every route in headless Chrome)"
-python3.12 scripts/prerender-body.py --dist "$STAGE"
+echo "Step 7/7    article body prerender (incremental, 4 workers, headless Chrome)"
+# Reuse: an /analysis page whose markdown and related-set are unchanged since the
+# live build is copied instead of re-rendered. Everything else re-renders, because
+# its body is built from data the shell cannot see. --workers 4 fans the render
+# across four browser processes; 628 routes sequential took ~7 minutes.
+python3.12 scripts/prerender-body.py --dist "$STAGE" --reuse-from dist --workers 4
 
 echo "Swapping $STAGE into place..."
 if [ -d dist ]; then mv dist dist.previous; fi
