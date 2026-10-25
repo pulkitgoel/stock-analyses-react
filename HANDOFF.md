@@ -73,6 +73,27 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (11) — hermes (queue controls, deploy in 10 seconds)
+
+**The queue now has the controls it was missing, and the deploy time is down from eight minutes to ten seconds.**
+
+**Deploy reuse is finished.** It previously applied only to article pages; company hubs, tag pages and listings re-rendered every publish because their bodies come from data the shell cannot see. Each route now carries a digest of the exact articles it renders — a hub digests its own ticker's articles, a tag page its tag's, listings the ordered corpus — so only pages whose inputs moved are rendered. Measured on a no-change build: **630/630 reused, whole deploy 10.6 seconds** against 442-476 seconds before. A publish will now re-render the changed article plus the pages that list it.
+
+**Single-worker claim.** `claim()` refuses while another request is genuinely in progress (`#N is still in progress; one request at a time`), verified live. Tega and NALCO had overlapped because nothing stopped the second claim.
+
+**Heartbeat and reclaim.** `last_seen_at` is stamped on claim and on every stage report. A dead run is returned to the queue in 15 minutes instead of six hours.
+
+**Reconciler, one-minute no-agent cron `e4175d8183a9`.** Two jobs, both from the Tega failure:
+
+- If a claimed request's article is on disk and its live URL returns 200, the row is published from the artifact rather than from the run's own report. Tega went live at 13:58:44 and the row still said "deploying" at 14:01; that cannot persist now.
+- A stage that overruns twice its budget becomes `needs-owner` with the reason, and the owner is told on Telegram.
+
+**A bug in the reconciler, caught in the first minute of testing.** Tickers exist in two shapes in this corpus — `NSE:NATIONALUM` in the queue, `NATIONALUM:NSE` in analyses.json — and the first version split on the wrong side, matched the literal token "NSE", and published request #12 against a policy-pulse article. Fixed: exchange tokens are stripped from either end, and an article is only accepted when its date is on or after the request's creation date. #12's slug was corrected to `nalco-down-root-cause-jun16`.
+
+**ETA calibrated on reality.** Tega ran 13m39s end to end — researching 3m31s, writing 3m51s, deploying 6m14s including the stalled hand-off — so the stage budgets now total 14 minutes rather than 11. The queue page shows elapsed time, time in the current step, and the remaining estimate, all from the stage clock.
+
+**Published today via the queue:** Sanghvi (update, 9,064 words), Tega (new, 6,922 words), NALCO (update, 6,160 words). Both Tega and NALCO needed manual help at the hand-off — the writing completed and the reporting did not.
+
 ## 2026-10-25 13:43 — watcher
 
 **Ran:** report
