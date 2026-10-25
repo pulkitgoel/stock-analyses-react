@@ -50,6 +50,17 @@ fi
 
 rm -rf "$STAGE"
 
+# --- An update merges; it does not replace ----------------------------------
+# A re-analysis is supposed to layer new numbers onto the existing article. On
+# 2026-10-25 an unattended runner rewrote the Sanghvi deep dive instead: 713
+# lines became 275, the business overview, annual financials, balance sheet,
+# cash flow, shareholding, order book, valuation table and bull/bear case all
+# vanished, and every gate passed because nothing compared the two.
+#
+# This runs before anything is built so a shrinking article costs seconds, not
+# ten minutes. ALLOW_SHRINK=1 overrides it; the commit message must then say why.
+python3.12 scripts/check-article-shrink.py
+
 echo "Step 1-2/7  data + sitemap"
 node scripts/generate-analyses-data.js
 node scripts/generate-sitemap.js
@@ -66,12 +77,17 @@ npx vite build --outDir "$STAGE" --emptyOutDir
 echo "Step 6/7    per-page head (title, description, canonical, OG, JSON-LD)"
 python3.12 scripts/generate-og-files.py --dist "$STAGE"
 
-echo "Step 7/7    article body prerender (incremental, 4 workers, headless Chrome)"
+echo "Step 7/7    article body prerender (incremental, headless Chrome)"
 # Reuse: an /analysis page whose markdown and related-set are unchanged since the
 # live build is copied instead of re-rendered. Everything else re-renders, because
-# its body is built from data the shell cannot see. --workers 4 fans the render
-# across four browser processes; 628 routes sequential took ~7 minutes.
-python3.12 scripts/prerender-body.py --dist "$STAGE" --reuse-from dist --workers 4
+# its body is built from data the shell cannot see.
+#
+# Deliberately SEQUENTIAL. Four workers were tried on 2026-10-25 and each rendered
+# its 157-route shard in 455-466s - the same wall clock as one worker doing all 628,
+# because the box is CPU-bound and four Chromiums simply share it. It also produced
+# two route timeouts (company/hal, company/gold) that the sequential run does not.
+# The win is the reuse, not the parallelism.
+python3.12 scripts/prerender-body.py --dist "$STAGE" --reuse-from dist --workers 1
 
 echo "Swapping $STAGE into place..."
 if [ -d dist ]; then mv dist dist.previous; fi
