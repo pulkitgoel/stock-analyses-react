@@ -73,6 +73,18 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 10:35 — watcher
+
+**Ran:** report
+
+- **OK** `[job: report]` 2026-10-25 - research queue
+
+```
+report only, nothing executed: research request #4 - Rail Vikas Nigam (NSE:RVNL), new deep dive, 1 vote
+```
+- 15 previously reported unmarked item(s), unchanged.
+
+
 ## 2026-10-25 (4) — hermes (7.18 rolled out)
 
 **7.18 is live: the reader research queue is installed, tested and open. One guardrail gap found and fixed.**
