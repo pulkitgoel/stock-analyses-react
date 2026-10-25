@@ -1321,6 +1321,17 @@ font, an opacity-0 hero) were removed together with the character that was never
 
 ---
 
+### 7.18 Reader-requested research queue — IN PROGRESS, Claude Code session, 2026-10-25
+
+A public page where a reader nominates a listed company, the request lands in a
+bounded queue, and Hermes drains it into a published deep dive. Design first:
+`docs/RESEARCH-REQUESTS.md` owns the page, the queue schema, the API, the
+guardrails and the Hermes runbook. Nothing ships until the owner has seen the
+page beside the live site — 7.10-7.16 each reported a green build while the site
+looked wrong, and 7.17 is what that cost.
+
+---
+
 ### 7.6 Remaining items
 
 - **The homepage is the one route with no canonical in its prerendered head.** Found
