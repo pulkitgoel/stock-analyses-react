@@ -686,11 +686,32 @@ The June call was CAUTION at ₹411 and the stock is 22% lower. Being right once
 
 Carried over from the June 2026 analysis for the restored sections: Screener.in annual P&L, balance sheet, cash flow and shareholding; NSE bhavcopy delivery data for 12–25 June 2026; TradingView technical indicators; Tavily search plus CNBC TV18, Business Standard and Livemint for news; the Mangal Keshav research report (December 2025); Alpha Spread for the DCF estimate; and the Q4 FY26 earnings call transcript of 22 May 2026.
 
-**Disclosed as unverified in this update:**
+**Verified against the exchange filings on 25 October 2026:**
+
+- **Independent director exit.** Mr Amitabha Mukhopadhyay resigned as a Non-Executive Independent Director with effect from the close of business on 7 September 2026, "due to other professional commitments and preoccupations". The company stated there were no other material reasons, and filed the intimation and his resignation letter with NSE on 7 September, revised on 8 September.
+- **Statutory auditors.** Shareholders approved M/s M S K A & Associates LLP, Chartered Accountants (FRN 105047W), for a **second five-year term**, from the conclusion of the 37th AGM to the conclusion of the 42nd. Intimated to the exchange on 26 August 2026. This is a re-appointment, not a replacement — there is no auditor dispute in the record.
+- **FY26 audit opinion was unmodified.** The declaration under Regulation 33(3)(d) was filed with the audited results on 20 May 2026.
+- **Promoter group disclosures.** Maithili Rishi Sanghvi filed SAST disclosures under Regulation 10(5) on 1 September and 10(6) on 16 September 2026; a Regulation 10(7) report followed on 6 October. All three are on the exchange.
+
+**Withdrawn on the primary record:**
+
+- The earlier claim of FY26 secretarial-audit lapses is not supported. NSE's filing history for the scrip — 663 announcements back to 2008, checked on 25 October 2026 — contains no secretarial-audit filing for 2026. It came from a secondary aggregator and is removed rather than repeated.
+
+**Still disclosed as unverified:**
 
 - No company-specific catalyst for the October decline has been disclosed. The attribution to small-cap deleveraging is inference from index moves and margin-debt data, not a company statement.
-- The independent director resignation (September 2026) and the FY26 secretarial-audit lapses (May 2026) are reported by secondary aggregators; the underlying exchange filings were not retrieved for this update.
-- The promoter transfer of 1.06 crore shares (12.19% of capital) to a family member in the September quarter is reported as a nil-consideration gift within the promoter group with aggregate holding unchanged; it was not independently confirmed against the SAST filing.
+- The promoter transfer of 1.06 crore shares (12.19% of capital) to a family member in the September quarter: the Regulation 10(7) filing of 6 October 2026 exists, but the consideration and share count were not extracted from the 5.96 MB filing for this update, so the "nil-consideration gift" description remains unreconciled against the source.
 - Q2 FY27 results are not yet published. All FY27 forward figures in this article are derived from the company's July guidance and its Q1 cost run-rate, not from analyst estimates — there are none.
+
+## Exchange filings
+
+The primary documents behind the section above, as filed with NSE:
+
+- [Resignation of Mr Amitabha Mukhopadhyay, Independent Director](https://nsearchives.nseindia.com/corporate/SANGHVIMOV_07092026191415_SE_Intimation_AM_Resignation.pdf) — 7 September 2026, with the resignation letter annexed
+- [Appointment of M/s M S K A & Associates LLP for a second term of five years](https://nsearchives.nseindia.com/corporate/SANGHVIMOV_26082026152644_SEIntimation_Appointment_of_Statutory_Auditor.pdf) — 26 August 2026
+- [Audited results for the year ended 31 March 2026, with unmodified audit opinion](https://nsearchives.nseindia.com/corporate/SANGHVIMOV_20052026154922_SE_Intimation_Outcome_BM_20052026.pdf) — 20 May 2026
+- [Regulation 10(7) SAST report](https://nsearchives.nseindia.com/corporate/SANGHVIMOV_06102026122446_SE_Intimation_Reg_10_7__SAST_MRS.pdf) — 6 October 2026
+- [Regulation 10(6) disclosure by Maithili Rishi Sanghvi](https://nsearchives.nseindia.com/corporate/team_bbodade_16092026163355_SANGHVIMOV.pdf) — 16 September 2026
+- [Q1 FY27 investor presentation](https://nsearchives.nseindia.com/corporate/SANGHVIMOV_31072026183516_investorPPT_SEIntimation.pdf) — 31 July 2026
 
 *This analysis is for educational and research purposes only. It does not constitute investment advice. Please consult a SEBI-registered investment advisor before making investment decisions.*
