@@ -432,20 +432,32 @@ def main() -> int:
                     reused += 1
                     continue
 
-            try:
-                page.goto(f"{base}{route}", wait_until="networkidle", timeout=45_000)
-                # Wait for the markdown pipeline to actually produce content.
-                # The threshold is deliberately low: the static pages are short.
-                page.wait_for_function(
-                    "() => { const r = document.getElementById('root');"
-                    " return r && r.innerText.trim().length > 50; }",
-                    timeout=30_000,
-                )
-                body = page.evaluate(
-                    "() => document.getElementById('root').innerHTML"
-                )
-            except Exception as exc:  # noqa: BLE001 - report and continue
-                failures.append(f"{route}: {type(exc).__name__}: {exc}")
+            # One transient timeout should not cost the whole build. The
+            # four-worker experiment on 2026-10-25 failed at the swap because two
+            # routes timed out under contention and the parent treated a single
+            # route failure as a failed deploy; a retry clears almost all of these.
+            body = None
+            last_exc = None
+            for attempt in range(2):
+                try:
+                    page.goto(f"{base}{route}", wait_until="networkidle", timeout=45_000)
+                    # Wait for the markdown pipeline to actually produce content.
+                    # The threshold is deliberately low: the static pages are short.
+                    page.wait_for_function(
+                        "() => { const r = document.getElementById('root');"
+                        " return r && r.innerText.trim().length > 50; }",
+                        timeout=30_000,
+                    )
+                    body = page.evaluate(
+                        "() => document.getElementById('root').innerHTML"
+                    )
+                    break
+                except Exception as exc:  # noqa: BLE001 - retry once, then report
+                    last_exc = exc
+                    if attempt == 0:
+                        time.sleep(2)
+            if body is None:
+                failures.append(f"{route}: {type(last_exc).__name__}: {last_exc}")
                 print(f"  [{index}/{len(planned)}] FAIL {route} - {exc}")
                 continue
 
