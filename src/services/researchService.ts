@@ -160,6 +160,25 @@ export function fetchQueue(): Promise<QueueView | null> {
   return getJson<QueueView>('/api/research/requests');
 }
 
+/**
+ * The kill switch is `research.enabled = 0`, and the API answers 503 when it is
+ * closed. The page must render that state rather than a live form that fails on
+ * submit: the rollback promise in docs/RESEARCH-REQUESTS.md section 9.1 is that
+ * "the page stays up and says the queue is closed".
+ */
+export type QueueState = { status: 'open' | 'closed' | 'unknown'; view: QueueView | null };
+
+export async function fetchQueueState(): Promise<QueueState> {
+  try {
+    const res = await fetch('/api/research/requests', { headers: { Accept: 'application/json' } });
+    if (res.status === 503) return { status: 'closed', view: null };
+    if (!res.ok) return { status: 'unknown', view: null };
+    return { status: 'open', view: (await res.json()) as QueueView };
+  } catch {
+    return { status: 'unknown', view: null };
+  }
+}
+
 export function fetchVerdict(symbol: string): Promise<Verdict | null> {
   return getJson<Verdict>(`/api/research/resolve?symbol=${encodeURIComponent(symbol)}`);
 }

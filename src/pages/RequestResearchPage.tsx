@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import {
   Company, QueueEntry, QueueView, Verdict,
-  fetchNonce, fetchQueue, fetchVerdict, loadUniverse, searchUniverse,
+  fetchNonce, fetchQueueState, fetchVerdict, loadUniverse, searchUniverse,
   submitRequest, voteFor,
 } from '../services/researchService';
 
@@ -84,11 +84,15 @@ export default function RequestResearchPage() {
   const [sending, setSending] = useState(false);
   const [outcome, setOutcome] = useState<{ ok: boolean; message: string; held?: boolean } | null>(null);
   const [queue, setQueue] = useState<QueueView | null>(null);
+  const [queueClosed, setQueueClosed] = useState(false);
   const [voted, setVoted] = useState<Record<number, string>>({});
   const inputRef = useRef<HTMLInputElement>(null);
 
   const refreshQueue = useCallback(() => {
-    fetchQueue().then((q) => { if (q) setQueue(q); });
+    fetchQueueState().then((state) => {
+      setQueueClosed(state.status === 'closed');
+      if (state.view) setQueue(state.view);
+    });
   }, []);
 
   useEffect(() => {
@@ -184,7 +188,7 @@ export default function RequestResearchPage() {
   };
 
   const canSubmit =
-    !!picked && !!nonce && !sending && !checking &&
+    !!picked && !!nonce && !sending && !checking && !queueClosed &&
     (verdict?.state === 'ready' || verdict?.state === 'stale');
 
   // The label says what the button would do, including when it would do
@@ -192,7 +196,9 @@ export default function RequestResearchPage() {
   // days ago" invites a click that can never work.
   const submitLabel = sending
     ? 'Sending…'
-    : !picked
+    : queueClosed
+      ? 'Queue closed'
+      : !picked
       ? 'Select a company'
       : verdict?.state === 'covered'
         ? 'Already covered'
@@ -490,6 +496,21 @@ export default function RequestResearchPage() {
                   clipPath: 'inset(50%)', whiteSpace: 'nowrap',
                 }}
               />
+
+              {queueClosed && (
+                <div role="status" style={{
+                  marginTop: '1rem', borderRadius: '12px', padding: '0.85rem 0.95rem',
+                  border: '1px solid var(--border-light)', background: 'var(--bg-elevated)',
+                }}>
+                  <div style={{ fontSize: '0.87rem', fontWeight: 700 }}>
+                    The research queue is closed right now.
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
+                    New requests and votes are paused. This page will show the queue again when it
+                    reopens — nothing you have already submitted is lost.
+                  </div>
+                </div>
+              )}
 
               <button type="button" className={canSubmit ? 'btn btn-primary' : 'btn'}
                 onClick={send} disabled={!canSubmit}

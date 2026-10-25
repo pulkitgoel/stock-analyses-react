@@ -73,6 +73,56 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (4) — hermes (7.18 rolled out)
+
+**7.18 is live: the reader research queue is installed, tested and open. One guardrail gap found and fixed.**
+
+**Installed, in the documented order.** Backend copied to `/var/www/stock-analyses/` and
+`vault-notify.service` restarted (old copies kept as `*.bak_20261025_100405`). Settings written with
+the flag off, including a generated `research.ip_salt` (64 hex chars, no fallback). Frontend deployed:
+**628 routes**, `request-research.html` and `universe.json` now in `dist`.
+
+**Tests:** `backend/test_research_queue.py` — **49 passed, 0 failed**. Run from the repo root; run from
+the service directory it fails on `resolve()` because the suite resolves the universe as
+`dirname(dirname(test))/public`, which is not where the service copy lives. Worth knowing before
+someone reports it as a bug.
+
+**The two nginx edits.** The `/api/` block **already carried** `proxy_set_header X-Forwarded-For
+$proxy_add_x_forwarded_for;` — nothing to add there. Only the `location = /request-research` block was
+missing; added by hand after a timestamped backup, `nginx -t` passed before the reload.
+
+**Verified live, not the build:**
+
+- `/request-research` 200, `/request-research/x` **404**, Googlebot fetch 22,551 bytes
+- `/universe.json` 200; `/api/research/requests` returns JSON with limits and no `note` field
+- Flag off → `503 {"error":"closed"}` on submit **and** on the list, so nothing leaks while closed
+- Covered symbol → `409` carrying the existing article; not in the universe → `400`; no nonce → `400`;
+  nonce under 3s old → rejected; fourth submission in 24h → `429`
+- Requester stored as a salted hash only. Public submission hashed to `0128629d…` while direct
+  loopback tests hashed to `808eba0e…` — proof the forwarded header reaches the app. Journal shows
+  **0** loopback warnings since the reload (the one warning is timestamped 10:12, before it)
+
+**E2E:** submitted `NSE:RVNL` through the public URL → id 4, mode `new`. The poller announced it as
+`[job: report] research request #4 - Rail Vikas Nigam (NSE:RVNL), new deep dive, 1 vote`, and
+`handoff-watcher.parse_action_items()` reads that line as `job='report'` — records, executes nothing.
+`announced_at` set. **Rows 1-3 are rejected rollout tests, and #4 is my E2E request** — none of the
+three is reader demand.
+
+**Cron:** `research-queue-poller` (`3db3defc1236`), every 20 minutes, `no_agent`, `deliver: local`,
+model and provider null — zero tokens.
+
+**The gap I found and fixed.** With `research.enabled = 0` the page still rendered a live form; the
+submit failed at the API with 503 and nothing on the page said why. §9.1 promises the opposite: "the
+page stays up and says the queue is closed". Added `fetchQueueState()` in `researchService.ts`, which
+distinguishes 503 from a network error, and on the page a closed banner, a disabled submit and a
+"Queue closed" label. Verified in both states after the deploy.
+
+**Deviations, stated rather than buried.** The §8 acceptance criterion "no element under 12px" is not
+met: the eyebrow is 11.2px and metadata runs 10.56-11.84px. That is the site's own pre-redesign type
+scale — `/about` carries the identical 10.4-10.88px small caps — so it is consistent with the live
+design, not a new regression. `/request-research.html` 301s to `/analysis/request-research` via the
+generic `.html` rule; nobody links to it, and the route itself is correct.
+
 ## 2026-10-25 - research queue
 
 **1 new research request in the queue.** Submitted by readers through /request-research and recorded here by scripts/research-poll.py, which executes nothing.
