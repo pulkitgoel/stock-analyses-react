@@ -73,6 +73,18 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 - research queue
+
+**1 new research request in the queue.** Submitted by readers through /request-research and recorded here by scripts/research-poll.py, which executes nothing.
+
+**ACTION Hermes**
+- [job: report] research request #8 - Sanghvi Movers (NSE:SANGHVIMOV), update to an existing note, 1 vote
+
+Claim with `POST /api/research/claim` (X-Auth-Token) rather than picking one from this list: the claim is atomic and two runs cannot take the same row. Work it to the prompt in `docs/RESEARCH-REQUESTS.md` section 6.2, then `POST /api/research/requests/<id>` with the published slug. Re-check coverage before writing -- something may have shipped since the request arrived.
+
+**UNVERIFIED**
+- These are reader requests. Nothing about them has been checked by a person, beyond the universe lookup and the breadth gate that let them through.
+
 ## 2026-10-25 (7) — hermes (US listings)
 
 **US listings are in the queue. The gate is now Indian + US, and the approval path has an owner CLI.**
