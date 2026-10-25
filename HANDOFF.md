@@ -73,6 +73,33 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (12) — hermes (queue hardened, WABAG through the new path)
+
+**The queue flow is hardened against every failure it produced today, and the first article through the new path passed the standard.**
+
+**WABAG (#13) is the proof:** 11,218 words, published 15:04:55, live at `/analysis/va-tech-wabag-record-order-book-deep-dive` (HTTP 200), and `check-article-sections.py` reports no missing sections and no missing oscillators. The same runner that produced the thin Tega and NALCO articles produced a complete deep dive once it was actually loading the workflow skill.
+
+**What broke today, and the control that now prevents it:**
+
+- **A card approved itself** — request #9 was approved 18 seconds after submission by Telegram's link-preview crawler fetching the URL in the message body. The card is now sent by the backend through the Bot API with inline buttons and previews disabled; `decide()` refuses preview user agents; a button-only card is the sole carrier.
+- **A card had links instead of buttons** — the webhook `deliver_only` path cannot attach a keyboard. `_send_card()` posts directly to the Bot API; the `research-submitted` webhook route is deleted.
+- **No workflow skill was loaded** — the runner referenced `research/complete-stock-analysis-publish-workflow`, `research/25-point-...` and `research/stock-analysis-self-review`, and the loader found none of them because those skills are named without the category prefix. All three failed silently; the runner invented its own structure. Both paths now use bare skill names, and the log is checked for "Skill ... not found".
+- **Two prompts drifted** — the queue runner duplicated a subset of the chat workflow's rules, so improving one never improved the other. The runner prompt is now a thin wrapper: claim, report stage, then "do the analysis and publish exactly as the skill prescribes". The skill carries the 18-section structure, the six-indicator technical panel and the merge rules.
+- **No structural gate existed** — word count was the only check, so a 6,800-word essay passed like a 6,800-word deep dive. `check-article-sections.py` now fails the build on a missing section or a short oscillator panel.
+- **A shrinking update shipped** — 713 lines became 275. `check-article-shrink.py` refuses anything losing more than 10% of its words.
+- **A run died and left a ghost claim** — and later I misdiagnosed a live run as dead because webhook runs have no `cron.scheduler` process. Liveness is now the heartbeat: `last_seen_at` is stamped on claim and on every stage report, and the reconciler only intervenes after twice the stage budget.
+- **A published row stayed "in progress"** — Tega went live at 13:58 and still said "deploying" at 14:01. The reconciler now marks a claimed row published when its article is on disk and the URL returns 200, and reverses a published row whose page 404s.
+- **Nothing retried a requeued request** — the cron only woke on a changed approved-list. `research-dispatch.py` now asks every minute: approved work, nobody on it? then fires the signed event. Deterministic, no model, no tokens.
+- **Two runs worked the same request** — a second claim is refused while a fresh claim exists, and the dispatcher checks the same condition before starting anything.
+- **A service restart killed runs** — `queue_client.py` retries connection failures four times with backoff, so a one-second API blip cannot end a run.
+- **The elapsed clock reset on a re-claim** — `first_claimed_at` is stamped once; the page measures from it.
+- **Deploys took eight minutes** — article, company, tag and listing pages now reuse when the digest of the articles each renders is unchanged. Measured: 630/630 reused, 10.6 seconds.
+- **One route timeout failed a whole build** — each route now retries once before the build is declared failed.
+
+**Cron jobs now guarding the queue:** `research-approval-ping` (2m, cards), `research-approved-runner` (1m, monitor-gated), `research-reconcile` (1m, liveness and truth from the live page), `research-dispatch` (1m, starts approved work nobody holds), `research-queue-poller` (20m, HANDOFF announce).
+
+**Counters:** `requester_quotas` holds one row per device — hashed id, label, used today, lifetime total, window start, first/last seen, IP, user agent, and nullable email/phone/note/blocked for when readers can be identified. `manage_research.py quota list|show|reset|label` reads and resets any of them without touching request history.
+
 ## 2026-10-25 — Hermes (reader request 13, WABAG — duplicate resolved)
 
 **Published reader request #13 (`NSE:WABAG`, mode new). One article is live — after a duplicate was created and removed the same hour.**
