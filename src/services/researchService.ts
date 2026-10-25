@@ -36,6 +36,10 @@ export interface QueueEntry {
   stage_at?: string | null;
   /** Set when the owner approves, before an agent claims it. */
   approved_at?: string | null;
+  /** Seconds the queue estimates are still needed. */
+  claimed_at?: string | null;
+  eta_seconds?: number;
+  eta_at?: string;
 }
 
 export interface QueueView {

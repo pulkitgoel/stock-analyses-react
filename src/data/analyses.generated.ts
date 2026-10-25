@@ -5,6 +5,25 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "NALCO: Record Q1, ₹24,000 Cr Expansion, Stock 32% Off Peak",
+    "ticker": "NATIONALUM:NSE",
+    "file": "nalco-down-root-cause-jun16.md",
+    "slug": "nalco-down-root-cause-jun16",
+    "date": "2026-10-25",
+    "tags": [
+      "nalco",
+      "aluminium",
+      "market-analysis",
+      "deep-dive",
+      "fundamental",
+      "psu"
+    ],
+    "summary": "NALCO fell 32% from its April peak even as Q1 FY27 profit rose 88%. Full update on the LME crash, the 5th Stream slippage, the EGA technology deal, a SEBI board-composition fine, and the 25-point checklist at 11/25.",
+    "market": "india",
+    "model": "deepseek-v4-flash",
+    "updated": "2026-10-25"
+  },
+  {
     "title": "Sanghvi Movers falls 39%: 13.9x is cheap if margins hold",
     "ticker": "SANGHVIMOV",
     "file": "sanghvi-movers-deep-dive-jun28.md",
@@ -5331,21 +5350,6 @@ export const ANALYSES: Analysis[] = [
       "it-sector"
     ],
     "summary": "HCL Tech's ₹1,427 Cr investment in Sarvam AI — strategic rationale, Sarvam's Indic LLM capabilities, and implications for the IT sector.",
-    "market": "india",
-    "model": "deepseek-chat"
-  },
-  {
-    "title": "NALCO — Why the Stock is Down Today",
-    "ticker": "NATIONALUM:NSE",
-    "file": "nalco-down-root-cause-jun16.md",
-    "slug": "nalco-down-root-cause-jun16",
-    "date": "2026-06-16",
-    "tags": [
-      "nalco",
-      "aluminium",
-      "market-analysis"
-    ],
-    "summary": "NALCO root cause analysis — aluminium prices, secondary pressures, and bull case.",
     "market": "india",
     "model": "deepseek-chat"
   }

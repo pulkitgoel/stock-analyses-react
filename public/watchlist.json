@@ -1,6 +1,27 @@
 {
   "watchlist": [
     {
+      "slug": "nalco-down-root-cause-jun16",
+      "ticker": "NATIONALUM:NSE",
+      "title": "NALCO: Record Q1, ₹24,000 Cr Expansion, Stock 32% Off Peak",
+      "date": "2026-10-25",
+      "yahooSymbol": "NATIONALUM.NS",
+      "priceAtAnalysis": 301.75,
+      "support": 293,
+      "resistance": 326,
+      "supports": [
+        288,
+        280,
+        260
+      ],
+      "resistances": [
+        315,
+        326,
+        351
+      ],
+      "verdict": "WAIT FOR BASE"
+    },
+    {
       "slug": "sanghvi-movers-deep-dive-jun28",
       "ticker": "SANGHVIMOV",
       "title": "Sanghvi Movers falls 39%: 13.9x is cheap if margins hold",

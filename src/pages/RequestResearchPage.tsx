@@ -50,6 +50,23 @@ const niceAgo = (iso: string) => {
 };
 
 /** The stages the backend accepts, in the words a reader sees. */
+const minutesSince = (stamp?: string | null) => {
+  if (!stamp) return null;
+  const iso = String(stamp).includes('T') ? String(stamp) : `${String(stamp).replace(' ', 'T')}Z`;
+  const then = new Date(iso).getTime();
+  if (Number.isNaN(then)) return null;
+  return Math.max(0, Math.floor((Date.now() - then) / 60000));
+};
+
+const minsLabel = (minutes: number | null) =>
+  minutes === null ? '' : minutes <= 0 ? 'under a minute' : `${minutes} min`;
+
+const etaLabel = (seconds?: number) => {
+  if (!seconds || seconds < 60) return '';
+  const minutes = Math.round(seconds / 60);
+  return minutes <= 1 ? '~1 min left' : `~${minutes} min left`;
+};
+
 const STAGE_LABEL: Record<string, string> = {
   researching: 'Gathering the data',
   writing: 'Writing the analysis',
@@ -639,11 +656,28 @@ export default function RequestResearchPage() {
                         <div style={{ marginTop: '5px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px' }}>
                           <StatusPill status={entry.status === 'queued' && entry.approved_at ? 'approved' : entry.status} />
                           <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                            {entry.status === 'claimed' && entry.stage
-                              ? `${STAGE_LABEL[entry.stage] ?? 'Working on it'}${entry.stage_at ? ` · ${niceAgo(entry.stage_at)}` : ''}`
+                            {entry.status === 'claimed'
+                              ? (entry.stage ? STAGE_LABEL[entry.stage] ?? 'Working on it' : 'Working on it')
                               : `asked ${niceDate(entry.created_at)}`}
                           </span>
+                          {entry.eta_seconds ? (
+                            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--accent)' }}>
+                              {etaLabel(entry.eta_seconds)}
+                            </span>
+                          ) : null}
                         </div>
+                        {entry.status === 'claimed' && (
+                          <div style={{ marginTop: '3px', fontSize: '0.68rem', color: 'var(--text-muted)', opacity: 0.85 }}>
+                            {[
+                              minutesSince(entry.claimed_at) !== null
+                                ? `${minsLabel(minutesSince(entry.claimed_at))} elapsed`
+                                : '',
+                              entry.stage && minutesSince(entry.stage_at) !== null
+                                ? `${minsLabel(minutesSince(entry.stage_at))} in this step`
+                                : '',
+                            ].filter(Boolean).join(' · ')}
+                          </div>
+                        )}
                       </div>
                       <button type="button"
                         onClick={() => castVote(entry.id)}
