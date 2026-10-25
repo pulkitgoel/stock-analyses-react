@@ -170,6 +170,65 @@ def _digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()[:16]
 
 
+def _corpus_index(public_dir: Path):
+    """Everything needed to decide whether a page's body could have changed.
+
+    A company hub renders the articles for one ticker, a tag page the articles
+    for one tag, and a listing page a slice of the whole ordered corpus. Digesting
+    exactly those inputs means a publish invalidates the pages that actually
+    changed instead of all 630 of them.
+    """
+    try:
+        payload = json.loads((public_dir / "analyses.json").read_text())
+    except (OSError, ValueError):
+        return None
+    items = payload.get("analyses", payload) if isinstance(payload, dict) else payload
+    by_slug, by_ticker, by_tag = {}, {}, {}
+    order = []
+    for item in items:
+        slug = item.get("slug")
+        if not slug:
+            continue
+        order.append((str(item.get("date") or ""), slug))
+        by_slug[slug] = json.dumps(item, sort_keys=True)
+        ticker = str(item.get("ticker") or "").strip().upper()
+        if ticker:
+            by_ticker.setdefault(ticker.lower(), []).append(slug)
+        for tag in item.get("tags") or []:
+            by_tag.setdefault(str(tag).strip().lower(), []).append(slug)
+    order.sort(reverse=True)
+    return {"by_slug": by_slug, "by_ticker": by_ticker, "by_tag": by_tag, "order": order}
+
+
+def _route_source(route: str, index) -> str:
+    """A digest of the data behind a non-article route.
+
+    Articles keep their own markdown + related-set digest computed elsewhere; this
+    covers everything else that renders from analyses.json.
+    """
+    if index is None:
+        return "no-corpus"
+    parts = route.strip("/").split("/")
+    head = parts[0] if parts and parts[0] else ""
+
+    if head == "company" and len(parts) > 1:
+        slugs = index["by_ticker"].get(parts[1], [])
+        return "company:" + _digest("|".join(sorted(index["by_slug"][s] for s in slugs)).encode())
+
+    if head == "tag" and len(parts) > 1:
+        slugs = index["by_tag"].get(parts[1], [])
+        return "tag:" + _digest("|".join(sorted(index["by_slug"][s] for s in slugs)).encode())
+
+    # Listing pages are slices of the same ordered corpus, so any publish can
+    # shift them; digesting the order plus each item is the correct coarse key.
+    listing_heads = ("", "analyses", "india", "global")
+    if head in listing_heads:
+        blob = "|".join(f"{date}:{slug}:{index['by_slug'][slug]}" for date, slug in index["order"])
+        return "listing:" + _digest(blob.encode())
+
+    return "shell-only"
+
+
 def _source_digest(route: str, public_dir: Path) -> str:
     """The markdown behind an article route, if there is one.
 
@@ -322,6 +381,7 @@ def main() -> int:
     new_manifest: dict = {}
     reused = 0
     related_digests = _related_digests(Path("public"))
+    corpus_index = _corpus_index(Path("public"))
 
     if not planned:
         sys.exit("prerender-body: nothing to do")
@@ -347,17 +407,18 @@ def main() -> int:
 
         for index, (route, dest) in enumerate(planned, start=1):
             shell_digest = _digest(dest.read_bytes()) if dest.exists() else ""
-            source_digest = _source_digest(route, Path("public"))
             if route.startswith("/analysis/"):
                 slug = route[len("/analysis/"):].strip("/")
-                source_digest += ":" + related_digests.get(slug, "")
+                source_digest = _source_digest(route, Path("public")) + ":" + related_digests.get(slug, "")
+            else:
+                source_digest = _route_source(route, corpus_index)
             entry = {"shell": shell_digest, "source": source_digest}
             new_manifest[route] = entry
 
             # Reuse only article pages. Listing, company and tag pages are
             # rendered from data whose changes the shell cannot see (a new article
             # shifts every page list), so they are always re-rendered.
-            if previous and route.startswith("/analysis/"):
+            if previous:
                 prev = manifest.get(route)
                 try:
                     prev_file = previous / dest.relative_to(args.out_dir or dist)
