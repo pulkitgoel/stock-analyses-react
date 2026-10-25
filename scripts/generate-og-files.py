@@ -342,6 +342,12 @@ STATIC_PAGES = {
         "Request a deep dive on a specific stock, or get in touch about the research "
         "published on StocksFundamentals.",
     ),
+    "request-research": (
+        "Request research on a company",
+        "Nominate a listed Indian company for the research queue. See what is "
+        "already queued, what has been published from earlier requests, and the "
+        "rules a request has to clear.",
+    ),
     "disclaimer": (
         "Risk Disclaimer — StocksFundamentals",
         "Research published here is for information only and is not investment advice. "

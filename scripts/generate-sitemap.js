@@ -18,6 +18,10 @@ const staticRoutes = [
   '/',
   '/about',
   '/contact',
+  // Readers nominate a company for the research queue here. Indexable on
+  // purpose: the form, the rules and the explanation are stable content, and
+  // the live queue is fetched client-side (docs/RESEARCH-REQUESTS.md 9.2).
+  '/request-research',
   '/disclaimer',
   '/privacy'
 ];
