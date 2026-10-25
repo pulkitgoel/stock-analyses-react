@@ -19,24 +19,35 @@
  *      deletes companies from the picker, and that reads as "the feature is broken"
  *      rather than "the data is stale".
  *
- * BOARDS, AND WHY THEY ARE NOT ALL THE SAME
- * -----------------------------------------
- * NSE's SERIES column separates ordinary trading from restricted trading:
+ * TIERS, AND WHY THEY ARE NOT ALL THE SAME
+ * ----------------------------------------
+ * RESEARCH-REQUESTS section 3.2: a stranger queueing an illiquid microcap and
+ * getting an independent-looking report published under the owner's byline is the
+ * shape of a pump, so only companies that are already widely held and widely
+ * covered take the automatic path. Everything else is held for the owner.
  *
- *   EQ      normal rolling settlement          -> "main"
- *   BE/BZ   trade-to-trade and surveillance    -> "watch"
- *   SME     the EMERGE platform, separate list -> "sme"
+ * The first design gated that on market capitalisation. It was wrong in practice:
+ * the quote backend serves the Yahoo v8 chart endpoint, which returns a price and
+ * no market cap, so the floor would have been enforced against a number that had
+ * to be guessed or scraped from somewhere less reliable than the exchange.
  *
- * Only "main" is eligible for the automatic path. "watch" is the exchange itself
- * saying it has concerns about a scrip, and "sme" names are small and thin — both
- * are held for the owner (RESEARCH-REQUESTS section 3.2). Carrying the board here
- * means the gate is reading the exchange's own classification instead of guessing
- * from a market cap alone.
+ * NSE publishes the answer directly. The tier here is read from two of its own
+ * files, so the gate is an exchange-published fact rather than a magic number:
+ *
+ *   broad   in the NIFTY Total Market index (755 names, ~94% of listed market
+ *           cap) -> eligible for the automatic path
+ *   main    EQ series but outside that index -> held for the owner
+ *   watch   BE/BZ, trade-to-trade and surveillance: the exchange itself saying
+ *           it has concerns about the scrip -> held
+ *   sme     the EMERGE platform -> held
+ *
+ * Membership is auditable, stable, needs no live lookup, and moves when NSE
+ * rebalances rather than when an API changes shape.
  *
  * SHAPE
  * -----
  * Column-oriented, because the browser downloads this. Per-row objects cost about
- * 190 KB for the same data; this is ~140 KB raw and ~45 KB over the wire, and it is
+ * 190 KB for the same data; this is ~150 KB raw and ~50 KB over the wire, and it is
  * fetched lazily on first focus of the input, never on page load.
  *
  * Usage:
@@ -55,7 +66,7 @@ const SOURCES = [
   {
     url: 'https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv',
     label: 'NSE main board',
-    // SERIES -> board. A series not listed here is skipped: debt, government
+    // SERIES -> tier. A series not listed here is skipped: debt, government
     // securities and the rest are not companies anyone should request research on.
     series: { EQ: 'main', BE: 'watch', BZ: 'watch' },
     cols: { sym: 'SYMBOL', name: 'NAME OF COMPANY', series: 'SERIES' },
@@ -69,6 +80,16 @@ const SOURCES = [
     min: 200,
   },
 ];
+
+// The breadth gate. Membership here promotes a row to "broad"; the file also
+// carries the sector, which is the only human-readable context the picker can
+// show under a company name without a live lookup.
+const INDEX = {
+  url: 'https://nsearchives.nseindia.com/content/indices/ind_niftytotalmarket_list.csv',
+  label: 'NIFTY Total Market',
+  cols: { sym: 'SYMBOL', industry: 'INDUSTRY' },
+  min: 500,
+};
 
 // A browser UA is required: nsearchives serves a block page to default agents.
 const HEADERS = {
@@ -110,10 +131,13 @@ async function fetchSource(source) {
   const res = await fetch(source.url, { headers: HEADERS });
   if (!res.ok) throw new Error(`${source.label}: HTTP ${res.status}`);
   const body = await res.text();
-  if (!/^SYMBOL/i.test(body.trim())) {
-    throw new Error(`${source.label}: response is not the CSV (blocked or moved)`);
-  }
   const rows = parseCsv(body);
+  // nsearchives answers a blocked request with an HTML page and a 200, so the
+  // status is not the check. The check is that the column this source is read
+  // for is actually present — which also catches a file whose header moved.
+  if (!rows.length || !(source.cols.sym in rows[0])) {
+    throw new Error(`${source.label}: no ${source.cols.sym} column (blocked, or the file moved)`);
+  }
   if (rows.length < source.min) {
     throw new Error(`${source.label}: ${rows.length} rows, expected at least ${source.min}`);
   }
@@ -129,16 +153,34 @@ async function build() {
     for (const row of rows) {
       const sym = (row[source.cols.sym] || '').trim().toUpperCase();
       const name = tidyName(row[source.cols.name] || '');
-      const board = source.series[(row[source.cols.series] || '').trim().toUpperCase()];
-      if (!sym || !name || !board) continue;
+      const tier = source.series[(row[source.cols.series] || '').trim().toUpperCase()];
+      if (!sym || !name || !tier) continue;
       if (NOT_A_COMPANY.test(sym)) continue;
-      // The main board wins a collision: a symbol listed on both is tradeable
-      // normally, and the stricter board would needlessly hold it.
+      // The main board wins a collision: a symbol on both lists is tradeable
+      // normally, and the stricter tier would needlessly hold it.
       if (seen.has(sym) && seen.get(sym)[2] === 'main') continue;
-      seen.set(sym, [sym, name, board]);
+      seen.set(sym, [sym, name, tier, '']);
     }
     counts[source.label] = rows.length;
   }
+
+  // Promote index members. A symbol in the index that is somehow absent from the
+  // equity list is ignored rather than invented: the equity list is the roll of
+  // what is listed, and a universe row nobody can trade is a bad picker entry.
+  const indexRows = await fetchSource(INDEX);
+  let promoted = 0;
+  for (const row of indexRows) {
+    const sym = (row[INDEX.cols.sym] || '').trim().toUpperCase();
+    const entry = seen.get(sym);
+    if (!entry) continue;
+    entry[3] = (row[INDEX.cols.industry] || '').trim();
+    if (entry[2] === 'main') {
+      entry[2] = 'broad';
+      promoted += 1;
+    }
+  }
+  counts[INDEX.label] = indexRows.length;
+  counts['promoted to broad'] = promoted;
 
   const rows = [...seen.values()].sort((a, b) => a[0].localeCompare(b[0]));
   return { rows, counts };
@@ -178,14 +220,14 @@ if (existing && built.rows.length < existing.rows.length * 0.8) {
   process.exit(1);
 }
 
-const byBoard = built.rows.reduce((acc, r) => {
+const byTier = built.rows.reduce((acc, r) => {
   acc[r[2]] = (acc[r[2]] || 0) + 1;
   return acc;
 }, {});
 
 const summary =
   `universe: ${built.rows.length} companies ` +
-  `(${Object.entries(byBoard).map(([k, v]) => `${v} ${k}`).join(', ')})`;
+  `(${Object.entries(byTier).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${v} ${k}`).join(', ')})`;
 
 if (check) {
   console.log(summary);
@@ -196,8 +238,8 @@ if (check) {
 const payload = {
   v: 1,
   generated: new Date().toISOString().slice(0, 10),
-  source: 'NSE EQUITY_L.csv + EMERGE SME_EQUITY_L.csv',
-  cols: ['sym', 'name', 'board'],
+  source: 'NSE EQUITY_L.csv + EMERGE SME_EQUITY_L.csv + ind_niftytotalmarket_list.csv',
+  cols: ['sym', 'name', 'tier', 'industry'],
   rows: built.rows,
 };
 

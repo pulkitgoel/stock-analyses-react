@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direction A — Boardroom Luxe · StocksFundamentals mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  /* ============ DIRECTION A — "BOARDROOM LUXE" ============
+     The current dark identity, organised. Same navy + mint accent the
+     site already has, but disciplined: one spacing scale, one card
+     language, hairlines instead of heavy boxes, glow reserved for
+     interaction. Newsreader serif only for the masthead headline.     */
+  :root{
+    --bg:#070b12; --panel:#0c121c; --panel2:#101827;
+    --line:rgba(148,170,197,.14); --line-strong:rgba(148,170,197,.26);
+    --ink:#e8edf4; --dim:#9aa8ba; --faint:#6e7a8a;
+    --mint:#63e6be; --mint-ink:#0d3d32;
+    --up:#4ade80; --down:#f87171;
+    --r:14px;
+    --font:'Inter',system-ui,sans-serif; --display:'Newsreader',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font);
+    font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(1100px 480px at 12% -8%, rgba(99,230,190,.07), transparent 60%),
+                     radial-gradient(900px 420px at 95% 8%, rgba(99,115,230,.05), transparent 55%);}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ---------- nav ---------- */
+  header{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.82);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:28px;height:64px}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:16px;letter-spacing:-.01em}
+  .logo .mark{width:27px;height:27px;border-radius:8px;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--mint),#2dd4a7);color:#04110c;font-weight:800;font-size:13px}
+  .nav .links{display:flex;gap:26px;margin-left:12px;color:var(--dim);font-size:14px;font-weight:500}
+  .nav .links a:first-child{color:var(--ink)}
+  .nav .links a:hover{color:var(--ink)}
+  .nav .spacer{flex:1}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;
+    padding:9px 16px;border-radius:10px;border:1px solid var(--line-strong);color:var(--dim)}
+  .btn.primary{background:var(--mint);color:#04110c;border-color:transparent}
+  .btn.ghost:hover{color:var(--ink);border-color:var(--mint)}
+
+  /* masthead */
+  .mast{padding:76px 0 54px;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end}
+  .kicker{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:600;
+    letter-spacing:.2em;color:var(--mint);text-transform:uppercase;margin-bottom:20px}
+  .kicker::before{content:"";width:26px;height:1.5px;background:var(--mint)}
+  h1{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.6vw,52px);
+    line-height:1.12;letter-spacing:-.015em}
+  h1 em{font-style:normal;color:var(--mint)}
+  .mast .sub{color:var(--dim);font-size:16px;max-width:52ch;margin-top:20px}
+  .statline{display:flex;gap:34px;margin-top:32px;color:var(--faint);font-size:13px}
+  .statline b{display:block;color:var(--ink);font-size:21px;font-weight:650;letter-spacing:-.01em}
+  /* live quality panel */
+  .qpanel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-radius:var(--r);padding:22px}
+  .qpanel h4{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:600}
+  .qitem{display:flex;justify-content:space-between;align-items:center;gap:14px;
+    padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .qitem:last-child{border-bottom:none;padding-bottom:2px}
+  .qitem .t{color:var(--dim);font-weight:500}
+  .qitem .v{font-weight:650;display:flex;gap:8px;align-items:baseline}
+  .pill{font-size:11px;font-weight:600;padding:3px 9px;border-radius:99px;letter-spacing:.04em}
+  .pill.watch{background:rgba(99,230,190,.13);color:var(--mint)}
+  .pill.avoid{background:rgba(248,113,113,.12);color:var(--down)}
+
+  /* ---------- section rule ---------- */
+  section{padding:50px 0}
+  .shead{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
+  .shead h2{font-size:19px;font-weight:650;letter-spacing:-.01em}
+  .shead .count{color:var(--faint);font-size:13px}
+  .shead .r{margin-left:auto;display:flex;gap:8px}
+  .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:3px}
+  .seg a{padding:6px 14px;font-size:12.5px;font-weight:600;color:var(--dim);border-radius:7px}
+  .seg a.on{background:rgba(99,230,190,.14);color:var(--mint)}
+
+  /* research cards — one consistent language */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+    padding:24px;display:flex;flex-direction:column;gap:14px;transition:border-color .18s ease, transform .18s ease}
+  .card:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+  .eyebrow{font-size:11px;font-weight:650;letter-spacing:.17em;text-transform:uppercase;color:var(--mint)}
+  .card.eyebrow, .eyebrow .m{color:var(--faint)}
+  .card h3{font-size:17.5px;font-weight:650;line-height:1.38;letter-spacing:-.012em}
+  .card h3:hover{color:var(--mint)}
+  .card p{color:var(--dim);font-size:14px;flex:1}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--faint);font-size:12.5px;font-weight:500}
+  .meta .tk{color:var(--dim);font-weight:600}
+
+  /* pulse timeline */
+  .pulse{display:flex;flex-direction:column}
+  .prow{display:grid;grid-template-columns:130px 14px 1fr;gap:0 18px;position:relative;padding:0 0 30px}
+  .prow .date{color:var(--faint);font-size:12.5px;font-weight:600;text-align:right;padding-top:3px}
+  .prow .rail{position:relative}
+  .prow .rail::before{content:"";position:absolute;top:6px;bottom:-8px;left:5.5px;width:1.5px;background:var(--line-strong)}
+  .prow:last-child .rail::before{bottom:12px}
+  .prow .dot{position:absolute;top:3px;left:0;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:2.5px solid var(--mint)}
+  .pbody{padding-top:1px}
+  .pbody .ed{font-size:11px;font-weight:650;letter-spacing:.16em;text-transform:uppercase;color:var(--mint)}
+  .pbody .ed span{color:var(--faint)}
+  .pbody h3{font-size:16.5px;font-weight:650;margin:7px 0 6px;letter-spacing:-.01em}
+  .pbody h3:hover{color:var(--mint)}
+  .pbody p{color:var(--dim);font-size:14px;max-width:88ch}
+  .ptick{margin-top:10px;color:var(--faint);font-size:12.5px;font-weight:500}
+  .ptick b{color:var(--dim);font-weight:600}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:26px;padding:34px 0 44px;color:var(--faint);font-size:13px}
+  footer .cols{display:flex;gap:44px;flex-wrap:wrap}
+  footer a{color:var(--dim)}
+  footer .brand{font-weight:650;color:var(--ink);margin-bottom:8px}
+
+  .mocknote{position:fixed;left:14px;bottom:14px;z-index:50;font-size:11.5px;font-weight:600;
+    background:rgba(99,230,190,.12);color:var(--mint);border:1px solid rgba(99,230,190,.3);
+    padding:7px 12px;border-radius:99px;letter-spacing:.02em}
+
+  @media(max-width:920px){ .mast{grid-template-columns:1fr;gap:36px} .grid{grid-template-columns:1fr 1fr} }
+  @media(max-width:640px){ .nav .links{display:none} .grid{grid-template-columns:1fr}
+    .prow{grid-template-columns:86px 10px 1fr} .wrap{padding:0 18px} }
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#"><span class="mark">SF</span> StocksFundamentals</a>
+  <nav class="links"><a href="#">Research</a><a href="#">Policy Pulse</a><a href="#">Watchlist</a><a href="#">About</a></nav>
+  <span class="spacer"></span>
+  <a class="btn ghost" href="#">Search</a>
+  <a class="btn primary" href="#">Watchlist</a>
+</div></header>
+
+<div class="wrap">
+  <div class="mast">
+    <div>
+      <div class="kicker">Independent equity research · India &amp; global</div>
+      <h1>Research that shows<br>its <em>work</em>, dates its calls,<br>and hides nothing.</h1>
+      <p class="sub">Long-form deep dives on Indian listed companies, plus daily notes on the policy and macro that move them. Every verdict carries the price it was made at.</p>
+      <div class="statline num">
+        <span><b>294</b> articles</span>
+        <span><b>21</b> live watchlist names</span>
+        <span><b>Daily</b> policy notes</span>
+      </div>
+    </div>
+    <aside class="qpanel">
+      <h4>From the watchlist</h4>
+      <div class="qitem"><span class="t">GVPIL · GE Power India</span><span class="v num">₹608.9 <span class="pill watch">WATCH</span></span></div>
+      <div class="qitem"><span class="t">SWIGGY · Swiggy</span><span class="v num">₹182.75 <span class="pill avoid">AVOID ENTRY</span></span></div>
+      <div class="qitem"><span class="t">ZENTEC · Zen Technologies</span><span class="v num">₹1,466.8 <span class="pill watch">WAIT</span></span></div>
+      <div class="qitem"><span class="t">APOLLO · Apollo Micro</span><span class="v num"><span class="pill watch">HOLD</span></span></div>
+    </aside>
+  </div>
+
+  <section>
+    <div class="shead">
+      <h2>Latest research</h2><span class="count num">294 articles</span>
+      <div class="r"><nav class="seg"><a class="on" href="#">All</a><a href="#">India</a><a href="#">Global</a></nav></div>
+    </div>
+    <div class="grid">
+      <a class="card" href="#">
+        <div class="eyebrow">Deep dive · India</div>
+        <h3>Apollo Micro Systems — Deep Dive Analysis</h3>
+        <p>Q2 FY27 merged into the existing deep dive: the order book, the cash burn behind it, and what the defence capex cycle means for FY28.</p>
+        <div class="meta num"><span class="tk">APOLLO</span><span>24 Oct 2026</span><span>18 min read</span></div>
+      </a>
+      <a class="card" href="#">
+        <div class="eyebrow">Deep dive · India</div>
+        <h3>Netweb Technologies — The AI Surge, and What It Costs in Cash</h3>
+        <p>AI hardware demand is real, but so is working capital. Q2 FY27 results folded into the running thesis.</p>
+        <div class="meta num"><span class="tk">NETWEB</span><span>24 Oct 2026</span><span>15 min read</span></div>
+      </a>
+      <a class="card" href="#">
+        <div class="eyebrow">Deep dive · India</div>
+        <h3>GE Power India — The Turnaround Is Real, the Chart Is Not</h3>
+        <p>The business is fixed; the chart is not. On the watchlist at ₹608.9 with ₹555 support.</p>
+        <div class="meta num"><span class="tk">GVPIL</span><span>23 Oct 2026</span><span>25 min read</span></div>
+      </a>
+      <a class="card" href="#">
+        <div class="eyebrow">Deep dive · India</div>
+        <h3>Swiggy — The Loss Is Contracting, the Stock Is Not</h3>
+        <p>The thesis is real, the timing is not. Support ₹175, resistance ₹211, entry avoided.</p>
+        <div class="meta num"><span class="tk">SWIGGY</span><span>23 Oct 2026</span><span>16 min read</span></div>
+      </a>
+      <a class="card" href="#">
+        <div class="eyebrow">Deep dive · India</div>
+        <h3>Zen Technologies — Capabilities, Order Book and the FY28 Test</h3>
+        <p>A weak quarter against a strong order book. Waiting for Q2 FY27 before the entry.</p>
+        <div class="meta num"><span class="tk">ZENTEC</span><span>23 Oct 2026</span><span>14 min read</span></div>
+      </a>
+      <a class="card" href="#" style="justify-content:center;align-items:flex-start">
+        <div class="eyebrow">Browse</div>
+        <h3 style="color:var(--mint)">All 294 articles →</h3>
+        <p>The full archive, one crawlable page at a time — deep dives, policy notes and everything in between.</p>
+        <div class="meta num"><span>Updated daily</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead">
+      <h2>Today's pulse</h2><span class="count num">23 Oct 2026 · 4 notes</span>
+      <div class="r"><a class="btn ghost" href="#">All policy notes →</a></div>
+    </div>
+    <div class="pulse">
+      <div class="prow">
+        <span class="date num">23 Oct · 09:30</span><span class="rail"><span class="dot"></span></span>
+        <div class="pbody">
+          <div class="ed">Edition · Global <span>· 6 min</span></div>
+          <h3>Brent closes on USD 116 as the attacks reach Saudi Arabia's oil heartland</h3>
+          <p>Attacks moved from Hormuz into the Kingdom's producing belt, lifting XOM and CVX while DAL and UAL absorb USD 6.32 diesel.</p>
+          <div class="ptick num"><b>XOM · CVX · OXY</b></div>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="date num">23 Oct · 10:15</span><span class="rail"><span class="dot"></span></span>
+        <div class="pbody">
+          <div class="ed">Edition · Ministries &amp; Regulators <span>· 7 min</span></div>
+          <h3>RBI lends ₹50,000 crore again against three times that in bids</h3>
+          <p>The system surplus sits at ₹542 crore — a repair of the operating target rather than an easing.</p>
+          <div class="ptick num"><b>HDFCBANK · ICICIBANK · SBIN</b></div>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="date num">23 Oct · 11:02</span><span class="rail"><span class="dot"></span></span>
+        <div class="pbody">
+          <div class="ed">Edition · Modi / India Govt <span>· 6 min</span></div>
+          <h3>Rubio's Mumbai readout narrows the trade deal's last mile</h3>
+          <p>Defence co-production, civil nuclear and US energy purchases sit at the centre of the deal, with a leaders' signature as the gating item.</p>
+          <div class="ptick num"><b>RELIANCE · HAL · BEL</b></div>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="date num">23 Oct · 11:47</span><span class="rail"><span class="dot"></span></span>
+        <div class="pbody">
+          <div class="ed">Edition · Trump / US <span>· 5 min</span></div>
+          <h3>Housing-cost order hits mortgage-insurance persistency and title premiums</h3>
+          <p>A $150m Defense Production Act allocation runs alongside — negatives for RDN, ESNT and FAF.</p>
+          <div class="ptick num"><b>VLO · PSX · MPC</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap cols">
+  <div><div class="brand">StocksFundamentals</div>Independent equity research by Pulkit Goel.</div>
+  <div><a href="#">About</a></div><div><a href="#">Disclaimer</a></div><div><a href="#">Contact</a></div><div><a href="#">Archive</a></div>
+</div></footer>
+
+<div class="mocknote">Mockup A · Boardroom Luxe — design preview, not the live site</div>
+</body>
+</html>

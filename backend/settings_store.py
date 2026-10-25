@@ -40,6 +40,56 @@ CREATE TABLE IF NOT EXISTS audio_files (
     sas        TEXT,
     added_at   TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- Reader-requested research queue (docs/RESEARCH-REQUESTS.md). This is the real
+-- relational need the module docstring above reserves the right to widen for:
+-- rows with a lifecycle, a vote tally and a uniqueness rule that has to hold
+-- under two concurrent writers.
+--
+-- `note` is the reader's optional remark. It is stored for the OWNER and is
+-- never selected by the agent-facing queries in research_queue.py. Keep it that
+-- way: the whole injection argument rests on no reader text reaching a prompt.
+CREATE TABLE IF NOT EXISTS research_requests (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    symbol       TEXT NOT NULL,        -- "NSE:KERNEX", resolved server-side
+    name         TEXT NOT NULL,        -- display name, from the universe file
+    status       TEXT NOT NULL DEFAULT 'queued',
+                                       -- queued | claimed | published
+                                       -- | needs-owner | rejected | expired
+    votes        INTEGER NOT NULL DEFAULT 1,
+    mode         TEXT NOT NULL DEFAULT 'new',   -- new | update
+    prior_slug   TEXT,                 -- the article an update extends
+    note         TEXT,                 -- owner's eyes only
+    requester    TEXT NOT NULL,        -- salted hash of the IP, never the IP
+    created_at   TEXT NOT NULL DEFAULT (datetime('now')),
+    claimed_at   TEXT,
+    announced_at TEXT,                 -- when the poller put it in HANDOFF.md
+    published_at TEXT,
+    slug         TEXT,
+    reason       TEXT
+);
+
+-- The dedup guarantee. The application check in research_queue.submit() is the
+-- friendly path; this index is what actually holds when two readers submit the
+-- same company in the same second.
+CREATE UNIQUE INDEX IF NOT EXISTS research_open_symbol
+    ON research_requests (symbol)
+ WHERE status IN ('queued', 'claimed', 'needs-owner');
+
+CREATE TABLE IF NOT EXISTS research_votes (
+    request_id INTEGER NOT NULL,
+    requester  TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (request_id, requester)
+);
+
+-- Only USED nonces are stored, pruned after two hours. Storing every issued one
+-- would make a page view a write.
+CREATE TABLE IF NOT EXISTS research_nonces (
+    nonce   TEXT PRIMARY KEY,
+    used_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 """
 
 

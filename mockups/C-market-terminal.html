@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direction C — Market Terminal · StocksFundamentals mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============ DIRECTION C — "MARKET TERMINAL" ============
+     Dark, data-first, disciplined. Numbers lead, prose supports.
+     Monospaced tabular figures everywhere, tight panels, a top
+     ticker rail, and the watchtable — the site's falsifiable
+     track record — promoted to the homepage hero. The look of a
+     professional research desk, organised by alignment.          */
+  :root{
+    --bg:#0a0d12; --bg2:#0d1117; --panel:#11161d; --panel-hi:#161d26;
+    --line:#1e2632; --line-hi:#2c3746;
+    --ink:#e6ebf2; --dim:#96a2b3; --faint:#5f6b7c;
+    --green:#3ddc97; --red:#ff7a72; --amber:#f5c26b;
+    --accent:#3ddc97;
+    --r:8px;
+    --font:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .up{color:var(--green)} .down{color:var(--red)} .wa{color:var(--amber)}
+
+  /* ticker rail */
+  .rail{background:var(--bg2);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;font-size:12.5px}
+  .rail-in{display:inline-block;padding:8px 0;animation:tape 38s linear infinite}
+  @keyframes tape{from{transform:translateX(0)}to{transform:translateX(-52%)}}
+  .rail-in b{color:var(--faint);font-family:var(--mono);font-weight:500;margin:0 26px 0 14px}
+  .rail-in span{margin-right:26px;font-family:var(--mono)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:20;background:rgba(10,13,18,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:26px;height:56px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:-.01em}
+  .logo .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#062018;
+    display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:12px}
+  .nav .links{display:flex;gap:22px;color:var(--dim);font-size:13.5px;font-weight:500}
+  .nav .links a.on{color:var(--ink);border-bottom:2px solid var(--accent);padding:17px 0 15px}
+  .nav .spacer{flex:1}
+  .clock{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
+  .cta{font-size:13px;font-weight:600;padding:8px 14px;border-radius:var(--r);
+    background:var(--accent);color:#062018}
+
+  /* layout: terminal grid */
+  .tgrid{display:grid;grid-template-columns:1fr 330px;gap:20px;padding:24px 0}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
+  .ph{display:flex;align-items:baseline;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .ph h2{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .ph .count{font-family:var(--mono);font-size:12px;color:var(--faint)}
+  .ph .r{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--accent)}
+  .ph .seg{margin-left:8px;display:inline-flex} .seg a{font-size:9px;margin:0}
+
+  /* the watchtable hero */
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+    font-weight:600;text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+  tbody td{padding:11px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-variant-numeric:tabular-nums}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:var(--panel-hi)}
+  td.tk{color:var(--ink);font-weight:600}
+  td.name{font-family:var(--font);color:var(--dim);font-size:13px}
+  .price{font-weight:600}
+  .band{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.06em}
+  .band.watch{background:rgba(61,220,151,.13);color:var(--green)}
+  .band.avoid{background:rgba(255,122,114,.12);color:var(--red)}
+  .band.hold{background:rgba(245,194,107,.13);color:var(--amber)}
+  .lvl{color:var(--faint)}
+  .verdict{font-size:11px;letter-spacing:.08em;color:var(--dim)}
+
+  /* research list — dense rows, not boxed cards */
+  .research{display:flex;flex-direction:column}
+  .rrow{display:grid;grid-template-columns:88px 1fr 150px;gap:18px;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .rrow:last-child{border-bottom:none}
+  .rrow:hover{background:var(--panel-hi)}
+  .rrow .stamp{font-family:var(--mono);font-size:11px;color:var(--faint);line-height:1.5;padding-top:2px}
+  .rrow .stamp .id{color:var(--accent);font-weight:600}
+  .rrow h3{font-size:14.5px;font-weight:600;line-height:1.4;letter-spacing:-.005em}
+  .rrow h3:hover{color:var(--accent)}
+  .rrow p{color:var(--dim);font-size:13px;margin-top:4px}
+  .rrow .side{font-family:var(--mono);font-size:11px;color:var(--faint);text-align:right;line-height:1.7;padding-top:3px}
+  .rrow .side .rt{color:var(--ink)}
+
+  /* right column stack */
+  .stack{display:flex;flex-direction:column;gap:20px}
+  .kpi{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+  .kpi div{padding:12px 6px;text-align:center;border-right:1px solid var(--line)}
+  .kpi div:last-child{border-right:none}
+  .kpi b{display:block;font-family:var(--mono);font-size:19px;font-weight:600}
+  .kpi span{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+  /* pulse feed */
+  .pitem{padding:14px 18px;border-bottom:1px solid var(--line)}
+  .pitem:last-child{border-bottom:none}
+  .pitem .ed{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--accent)}
+  .pitem h3{font-size:13px;font-weight:600;margin:5px 0 4px;line-height:1.45}
+  .pitem h3:hover{color:var(--accent)}
+  .pitem p{color:var(--dim);font-size:12.5px}
+  .pitem .ts{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-bottom:4px}
+
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 44px;color:var(--faint);font-size:12.5px}
+  footer .cols{display:flex;gap:40px;flex-wrap:wrap}
+  footer a{color:var(--dim)}
+  footer .brand{font-weight:650;color:var(--ink);margin-bottom:6px}
+
+  .mocknote{position:fixed;left:14px;bottom:14px;z-index:50;font-size:11.5px;font-weight:600;
+    background:var(--accent);color:#062018;padding:7px 12px;border-radius:var(--r);font-family:var(--mono)}
+
+  @media(max-width:1080px){ .tgrid{grid-template-columns:1fr} }
+  @media(max-width:640px){ .nav .links{display:none} .clock{display:none}
+    .rrow{grid-template-columns:1fr} .rrow .side{text-align:left} .wrap{padding:0 14px} }
+</style>
+</head>
+<body>
+<div class="rail">
+  <div class="rail-in" id="tape">
+    <b>XOM</b><span class="up">121.4 +0.9%</span><b>CVX</b><span class="up">158.2 +0.6%</span>
+    <b>BRENT</b><span class="up">115.8 +1.1%</span><b>RELIANCE</b><span class="down">1,284.5 -0.4%</span>
+    <b>HDFCBANK</b><span class="up">1,712.0 +0.2%</span><b>NIFTY</b><span class="up">25,148 +0.3%</span>
+    <b>GVPIL</b><span class="up">608.9 ▲</span><b>SWIGGY</b><span class="down">182.75 ▼</span>
+    <b>ZENTEC</b><span>1,466.8 ·</span><b>APOLLO</b><span class="up">312.6 +2.4%</span>
+    <b>XOM</b><span class="up">121.4 +0.9%</span><b>CVX</b><span class="up">158.2 +0.6%</span>
+    <b>BRENT</b><span class="up">115.8 +1.1%</span><b>RELIANCE</b><span class="down">1,284.5 -0.4%</span>
+    <b>HDFCBANK</b><span class="up">1,712.0 +0.2%</span><b>NIFTY</b><span class="up">25,148 +0.3%</span>
+    <b>GVPIL</b><span class="up">608.9 ▲</span><b>SWIGGY</b><span class="down">182.75 ▼</span>
+    <b>ZENTEC</b><span>1,466.8 ·</span><b>APOLLO</b><span class="up">312.6 +2.4%</span>
+  </div>
+</div>
+
+<header><div class="wrap nav">
+  <a class="logo" href="#"><span class="mark">SF</span> StocksFundamentals</a>
+  <nav class="links"><a class="on" href="#">Research</a><a href="#">Policy Pulse</a><a href="#">Watchlist</a><a href="#">About</a></nav>
+  <span class="spacer"></span>
+  <span class="clock">FRI 24 OCT · 10:42 IST</span>
+  <a class="cta" href="#">Full track record</a>
+</div></header>
+
+<div class="wrap">
+  <div class="tgrid">
+    <div class="panel">
+      <div class="ph">
+        <h2>Latest research</h2><span class="count">294 records</span>
+        <span class="seg"></span>
+        <div class="r" style="font-size:12.5px" >
+          <span style="margin-right:14px;color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:2px">ALL</span>
+          <span style="margin-right:14px">INDIA</span>
+          <span>GLOBAL</span>
+        </div>
+      </div>
+      <div class="research">
+        <a class="rrow" href="#">
+          <div class="stamp"><span class="id">DEEP-DIVE</span><br>24 OCT 2026</div>
+          <div>
+            <h3>Apollo Micro Systems — Deep Dive Analysis</h3>
+            <p>Q2 FY27 merged into the existing deep dive: the order book, the cash burn behind it, and what the defence capex cycle means for FY28.</p>
+          </div>
+          <div class="side"><span class="rt">APOLLO</span><br>INDIA · 18 MIN</div>
+        </a>
+        <a class="rrow" href="#">
+          <div class="stamp"><span class="id">DEEP-DIVE</span><br>24 OCT 2026</div>
+          <div>
+            <h3>Netweb Technologies — The AI Surge, and What It Costs in Cash</h3>
+            <p>AI hardware demand is real, but so is working capital. Q2 FY27 results folded into the running thesis.</p>
+          </div>
+          <div class="side"><span class="rt">NETWEB</span><br>INDIA · 15 MIN</div>
+        </a>
+        <a class="rrow" href="#">
+          <div class="stamp"><span class="id">DEEP-DIVE</span><br>23 OCT 2026</div>
+          <div>
+            <h3>GE Power India — The Turnaround Is Real, the Chart Is Not</h3>
+            <p>The business is fixed; the chart is not. On the watchlist at ₹608.9 with ₹555 support.</p>
+          </div>
+          <div class="side"><span class="rt">GVPIL</span><br>INDIA · 25 MIN</div>
+        </a>
+        <a class="rrow" href="#">
+          <div class="stamp"><span class="id">DEEP-DIVE</span><br>23 OCT 2026</div>
+          <div>
+            <h3>Swiggy — The Loss Is Contracting, the Stock Is Not</h3>
+            <p>The thesis is real, the timing is not. Support ₹175, resistance ₹211, entry avoided.</p>
+          </div>
+          <div class="side"><span class="rt">SWIGGY</span><br>INDIA · 16 MIN</div>
+        </a>
+        <a class="rrow" href="#">
+          <div class="stamp"><span class="id">DEEP-DIVE</span><br>23 OCT 2026</div>
+          <div>
+            <h3>Zen Technologies — Capabilities, Order Book and the FY28 Test</h3>
+            <p>A weak quarter against a strong order book. Waiting for Q2 FY27 before the entry.</p>
+          </div>
+          <div class="side"><span class="rt">ZENTEC</span><br>INDIA · 14 MIN</div>
+        </a>
+        <a class="rrow" href="#" style="border-bottom:1px solid var(--line)">
+          <div class="stamp"><span class="id">INDEX</span></div>
+          <div><h3 style="color:var(--accent)">Browse the full archive — 294 records →</h3></div>
+          <div class="side">UPDATED DAILY</div>
+        </a>
+      </div>
+    </div>
+
+    <aside class="stack">
+      <div class="panel">
+        <div class="ph"><h2>Watchlist · live calls</h2><span class="count">21 names</span><a class="r" href="#">All →</a></div>
+        <div class="kpi mono">
+          <div><b class="up">11</b><span>Watch</span></div>
+          <div><b class="wa">5</b><span>Hold</span></div>
+          <div><b class="down">5</b><span>Avoid</span></div>
+        </div>
+        <table>
+          <thead><tr><th>Sym</th><th>Price</th><th>S/R</th><th>Call</th></tr></thead>
+          <tbody class="mono">
+            <tr><td class="tk">GVPIL</td><td class="price up">608.9</td><td class="lvl">555/630</td><td><span class="band watch">WATCH</span></td></tr>
+            <tr><td class="tk">SWIGGY</td><td class="price down">182.75</td><td class="lvl">175/211</td><td><span class="band avoid">AVOID</span></td></tr>
+            <tr><td class="tk">ZENTEC</td><td class="price">1,466.8</td><td class="lvl">1223/1600</td><td><span class="band watch">WAIT</span></td></tr>
+            <tr><td class="tk">APOLLO</td><td class="price up">312.6</td><td class="lvl">—</td><td><span class="band watch">HOLD</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><h2>Today's pulse</h2><span class="count">23 OCT</span><a class="r" href="#">Feed →</a></div>
+        <div class="pitem mono"><div class="ts">09:30 · GLOBAL · 6 MIN</div></div>
+        <div class="pitem" style="margin-top:-32px;padding-top:0">
+          <h3>Brent closes on USD 116 as the attacks reach Saudi Arabia's oil heartland</h3>
+          <p>XOM · CVX lift; DAL and UAL absorb USD 6.32 diesel.</p>
+        </div>
+        <div class="pitem" style="border-bottom:none;padding-top:14px">
+          <div class="ed" style="font-family:var(--mono);font-size:10.5px;color:var(--accent)">10:15 · MINISTRIES · 7 MIN</div>
+          <h3>RBI lends ₹50,000 crore against three times that in bids</h3>
+          <p>System surplus ₹542 crore — a repair of the target, not an easing.</p>
+          <p class="mono" style="font-size:11px;color:var(--faint);margin-top:4px">HDFCBANK · ICICIBANK · SBIN</p>
+        </div>
+        <div class="pitem mono" style="border-bottom:none;padding-top:6px">
+          <div class="ed">11:02 · GOVT · 6 MIN</div>
+        </div>
+        <div class="pitem" style="margin-top:-32px;padding-top:0;border-bottom:none">
+          <h3>Rubio's Mumbai readout narrows the trade deal's last mile</h3>
+          <p>Defence co-production, civil nuclear, US energy — signature is the gating item.</p>
+          <p class="mono" style="font-size:11px;color:var(--faint);margin-top:4px">RELIANCE · HAL · BEL</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer><div class="wrap cols">
+  <div><div class="brand">StocksFundamentals</div>Independent equity research by Pulkit Goel. Every call dated, every price recorded.</div>
+  <div><a href="#">About</a></div><div><a href="#">Disclaimer</a></div><div><a href="#">Contact</a></div>
+</div></footer>
+
+<div class="mocknote">MOCKUP C · MARKET TERMINAL — design preview, not the live site</div>
+<script>
+  /* duplicate tape content for a seamless loop */
+  const t=document.getElementById('tape'); t.innerHTML+=t.innerHTML;
+</script>
+</body>
+</html>

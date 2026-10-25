@@ -32,8 +32,10 @@ log = logging.getLogger('api')
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import audio_proxy  # noqa: E402
 import settings_store  # noqa: E402
+import research_queue  # noqa: E402
 
 audio_proxy.set_logger(log)
+research_queue.set_logger(log)
 # Refresh the audio index in the background so an article view never waits on the
 # container probe (a read-only SAS cannot list, so the first build costs one HEAD
 # per slug per extension).
@@ -324,6 +326,12 @@ class Handler(BaseHTTPRequestHandler):
         if audio_proxy.try_handle(self, path, parts):
             return
 
+        # GET /api/research/* -- the reader-requested research queue. Kept in its
+        # own module so the column lists that keep a reader's note away from the
+        # agent-facing responses live in one file.
+        if research_queue.try_handle(self, path, parts, 'GET'):
+            return
+
         self._json_response(404, {'error': 'Not found'})
 
     def do_HEAD(self):
@@ -438,6 +446,11 @@ class Handler(BaseHTTPRequestHandler):
                 'expired_removed': len(expired),
                 'total_remaining': len(subs)
             })
+            return
+
+        # POST /api/research/*
+        parts = self._parse_path(path)
+        if research_queue.try_handle(self, path, parts, 'POST', data):
             return
 
         self._json_response(404, {'error': 'Not found'})
