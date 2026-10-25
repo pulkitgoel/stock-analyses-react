@@ -502,13 +502,21 @@ down so that if it is ever needed, nobody improvises it.
 AGENTS.md section 6 says these are not an agent's to settle, and this feature pushes
 directly on two of them.
 
-1. **SEBI Research Analyst status.** The site already publishes verdicts with support and
-   resistance levels. A box that says "ask us to research a company for you" moves it from
-   *publishing research* toward *providing research on request*, which is closer to a
-   service. §1.1's wording ("nominate a company for the queue") is the careful version and
-   §0 is the structural version — you cannot ask a question here, only name a company — but
-   whether the feature engages the regulations at all is a question for a professional. **It
-   should be answered before this is public, not after.**
+1. **SEBI Research Analyst status — OWNER DECISION, 2026-10-25: the queue opens on
+   deploy.** `research.enabled` goes to 1 as the last step of the rollout, and this
+   question is not a gate on that.
+
+   The concern, recorded because it is still live and not because it is unsettled: the
+   site already publishes verdicts with support and resistance levels, and a request box
+   moves it from *publishing research* toward *providing research on request*, which is
+   closer to a service. §1.1's wording ("nominate a company for the queue") is the careful
+   version and §0 is the structural version — you cannot ask a question here, only name a
+   company. Whether any of it engages the regulations is a question for a professional,
+   and it remains open on the owner's list.
+
+   **Do not re-litigate this in a later session.** The owner was told the argument and
+   decided. If the answer changes, `manage_research.py open 0` closes the queue in one
+   settings write, with no deploy and no restart — which is the reason that rollback exists.
 2. **AI disclosure.** Section 6 already calls the current partial disclosure the weakest of
    the three available positions. A reader-commissioned report sharpens it: someone asks for
    research, a model writes it, and the byline is a person. That is the same gap 7.14
@@ -609,8 +617,17 @@ is what makes a half-finished rollout invisible rather than broken.
    Then `nginx -t` while the candidate is in place but **before** reloading, reload, then
    curl `/request-research` (expect 200) **and** `/request-research/nonsense` (expect 404).
    Both of the `try_files` bugs invariant 3.13 records behaved perfectly on the valid URL.
-6. **Flip `research.enabled` to 1.** No deploy, no restart — the setting is read at request
-   time.
+6. **Flip `research.enabled` to 1. This is the rollout, not a separate decision.** The
+   owner settled it on 2026-10-25 (§7.1): the queue opens as soon as it deploys, and the
+   SEBI question is not a gate on that. Do not leave it at 0 "to be safe" — a feature that
+   deploys switched off, with nobody told, is the failure mode this step exists to prevent.
+
+   ```bash
+   python3.12 /var/www/stock-analyses/manage_research.py open 1
+   ```
+
+   No deploy, no restart — the setting is read at request time, which is also why `open 0`
+   is an instant rollback if anything about step 7 looks wrong.
 7. **Verify live, not the build.** AGENTS 9.5: a green build says almost nothing about what
    a visitor receives.
    ```bash

@@ -1358,10 +1358,13 @@ exchange. It is now membership of NSE's own NIFTY Total Market index: 740 of
 3,191 companies auto-queue, everything else is held for the owner. Auditable, no
 live lookup, and it moves when NSE rebalances.
 
-**Still the owner's, and sharper now than before this shipped:** the SEBI
-Research Analyst question in section 6. A request box moves the site from
-publishing research toward providing it on request. It should be settled before
-the queue is opened to the public, not after.
+**Owner decision, 2026-10-25: the queue opens on deploy.** `research.enabled`
+goes to 1 as the last step of the rollout. The SEBI Research Analyst question in
+section 6 stays open on the owner's list but is **not** a gate on opening it —
+the argument was put to the owner and they decided. Do not re-litigate it in a
+later session, and do not deploy this switched off "to be safe". If the answer
+ever changes, `manage_research.py open 0` closes the queue in one settings write
+with no deploy and no restart, which is why that rollback exists.
 
 ---
 

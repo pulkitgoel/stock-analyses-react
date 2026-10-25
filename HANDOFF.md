@@ -73,6 +73,34 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (3) — Claude Code session
+
+**OWNER DECISION: the research queue opens as soon as it deploys.** This supersedes the
+OWNER item in the entry below it, which said the SEBI question should be settled first.
+
+**ACTION Hermes** — one change to the runbook you were handed in the previous entry:
+
+- `research.enabled` goes to **1** at the end of the rollout, not left at 0.
+  `python3.12 /var/www/stock-analyses/manage_research.py open 1`, after step 7's live
+  checks pass. Everything else in that entry is unchanged.
+- It still starts at 0: the flag is off while the backend, the settings and the nginx
+  edits go in, so a half-finished rollout is invisible rather than broken. Opening it is
+  the last step, not the first.
+- **Do not deploy this switched off "to be safe".** A feature that ships dark with nobody
+  told is the failure this step exists to prevent, and the owner has decided.
+
+**OWNER** — unchanged and still yours, just no longer a gate:
+
+- SEBI Research Analyst status. The argument was put and you decided; it stays on the
+  section 6 list. `manage_research.py open 0` closes the queue in one settings write, no
+  deploy and no restart, if that ever changes.
+- AI disclosure, which a reader-commissioned report under a human byline sharpens.
+- The breadth gate still holds 2,451 of 3,191 companies for your review. They show with a
+  `!` in `manage_research.py list`, and nothing writes about them until you release one.
+
+Recorded in `docs/RESEARCH-REQUESTS.md` §7.1 and §9.1 step 6, and in AGENTS.md 7.18, so a
+later session reads the decision rather than the concern and re-opens it.
+
 ## 2026-10-25 09:32 — watcher
 
 **Ran:** report
