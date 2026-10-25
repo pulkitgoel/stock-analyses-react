@@ -1324,11 +1324,26 @@ font, an opacity-0 hero) were removed together with the character that was never
 ### 7.18 Reader-requested research queue — IN PROGRESS, Claude Code session, 2026-10-25
 
 A public page where a reader nominates a listed company, the request lands in a
-bounded queue, and Hermes drains it into a published deep dive. Design first:
-`docs/RESEARCH-REQUESTS.md` owns the page, the queue schema, the API, the
-guardrails and the Hermes runbook. Nothing ships until the owner has seen the
-page beside the live site — 7.10-7.16 each reported a green build while the site
-looked wrong, and 7.17 is what that cost.
+bounded queue, and Hermes drains it into a published deep dive.
+
+**Design complete, nothing implemented.** `docs/RESEARCH-REQUESTS.md` owns the
+page, the universe file, the queue schema, the API, the guardrails, the prompts
+and the Hermes runbook. Claim stays open so nobody starts a second
+implementation; it does not become DONE until the feature ships.
+
+The load-bearing decision is in §0 of that file: **the reader never sends text
+that reaches a prompt.** The form is a picker over a closed universe and the POST
+carries an id the server re-resolves against its own copy, so injection is
+structurally absent rather than filtered. Dedup is 30 days against non-series
+articles plus open queue rows, with a partial unique index as the race guard
+(§3.1). A market-cap floor holds microcap requests for the owner (§3.2) — an
+anonymous stranger getting an independent-looking report published on an
+illiquid name under the owner's byline is the shape of a pump.
+
+Blocked on the owner: the SEBI question sharpens with this feature, the floor's
+number is a proposal, and **the page does not get built until the owner has seen
+the mockup beside the live site** — 7.10-7.16 each reported a green build while
+the site looked wrong, and 7.17 is what that cost.
 
 ---
 

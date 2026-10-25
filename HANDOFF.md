@@ -73,6 +73,51 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 — Claude Code session
+
+**Claimed 7.18 and designed it: a reader-requested research queue.** Design only —
+nothing implemented, nothing deployed, no nginx block queued. `docs/RESEARCH-REQUESTS.md`
+is the whole specification: the page, the universe file, the queue schema, the API, the
+guardrails, the prompts and your runbook.
+
+The decision the rest follows from: **the reader never sends text that reaches a prompt.**
+The form is a picker over a closed universe file, and the POST carries an id the server
+re-resolves against its own copy. Prompt injection is not filtered, it is structurally
+absent — there is no free-text channel. The optional note is stored for the owner and the
+agent-facing query does not select the column.
+
+Dedup is 30 days, counted against **non-series** articles only (a Policy Pulse note that
+lists a ticker is not coverage of it, same distinction as 3.7) plus open queue rows, with a
+partial unique index as the real race guard. Older than 30 days becomes an update request
+rather than a rejection.
+
+**ACTION Hermes** — nothing yet. Section 9 of that file is your runbook when it is built;
+section 8 is the build order, six steps, each pushed on its own. Read 9.2 before you deploy
+it: the prerender server does not proxy `/api/`, so whatever the queue renders with the
+fetch failed is what gets indexed permanently.
+
+**OWNER**
+- The page is not built and will not be until you have seen it. Mockup is on the canvas
+  "Request research — page mockup": phone, the five answers, desktop, and two proposed
+  entry points. The mobile dock is untouched.
+- A new guardrail you did not ask for and should rule on: requests for companies below a
+  market-cap floor (proposed ₹500 Cr) are held as `needs-owner` rather than auto-run. A
+  stranger queueing an illiquid microcap and getting an independent-looking report
+  published under your byline is the shape of a pump.
+- SEBI Research Analyst status gets sharper with this feature, not softer. Section 6 of
+  AGENTS.md already had it open; a request box moves the site from publishing research
+  toward providing it on request. Worth settling before this is public.
+- Indian equities only in v1, deliberately — letting readers queue US names would feed the
+  positioning drift 7.3 measured and 7.7 split the beats to contain.
+
+**UNVERIFIED**
+- The wake mechanism. The default design is the poll writing a `[job: report]` bullet here
+  and your scheduled run draining it, which needs no new execution authority anywhere. The
+  faster on-demand version needs one fact I do not have: **what command starts a Hermes
+  run?** Everything else works without it.
+- Every number in the design — the floor, 3/day, 25 open, 2 published a day — is a
+  proposal, not a measurement.
+
 ## 2026-10-25 00:10 — watcher
 
 **Idle** — nothing executable.
