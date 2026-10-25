@@ -29,7 +29,11 @@ export default function RequestCard() {
       <div style={{ minWidth: 0, flex: '1 1 320px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
           <Sparkles size={16} style={{ color: 'var(--accent)' }} aria-hidden="true" />
-          <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.09em', color: 'var(--accent)' }}>
+          <span style={{
+            fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.09em',
+            // Same darkening as the page's eyebrow; see RequestResearchPage.
+            color: 'color-mix(in srgb, var(--accent) 88%, #000)',
+          }}>
             RESEARCH QUEUE
           </span>
         </div>

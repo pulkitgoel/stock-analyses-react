@@ -1,6 +1,12 @@
 # Reader-requested research — design
 
-**Status: design, nothing implemented.** AGENTS.md backlog item 7.18.
+**Status: built, not deployed.** AGENTS.md backlog item 7.18. Steps 1–6 of §8 are
+committed and verified locally; nothing is live, the nginx block is not applied, and
+`research.enabled` is 0.
+
+Where this file and the code disagree, **the code is right and this file has been
+corrected** — §3.2 (the breadth gate replaced a market-cap floor) and §5.1 (no push
+notification) are the two places the design changed during the build, and both say why.
 
 A reader nominates a listed company. The request lands in a bounded queue. Hermes
 drains the queue into a published deep dive and the reader gets a link.
@@ -117,15 +123,26 @@ the revert; it is not worth re-opening for this.
 
 `public/universe.json`, generated, committed, served static. Roughly 2,100 rows:
 
+**As built:** column-oriented, because the browser downloads it. 3,191 companies in
+149 KB, fetched lazily on first focus of the input rather than on page load.
+
 ```json
-{ "id": "NSE:KERNEX", "name": "Kernex Microsystems", "ex": "NSE",
-  "sym": "KERNEX", "yf": "KERNEX.NS", "mcap_cr": 612, "board": "main" }
+{ "v": 1, "generated": "2026-10-25",
+  "cols": ["sym", "name", "tier", "industry"],
+  "rows": [["KERNEX", "Kernex Microsystems (India)", "main", ""],
+           ["KEC", "KEC International", "broad", "Construction"]] }
 ```
 
-- **Built by `scripts/generate-universe.js`** from the NSE equity list, with `mcap_cr` and
-  `board` filled from the quote backend. Refreshed monthly; a stale row is a wrong
-  autocomplete entry, not a security problem, because the server validates against the same
-  file.
+- **Built by `scripts/generate-universe.js`** from NSE's own published files:
+  `EQUITY_L.csv`, the EMERGE `SME_EQUITY_L.csv`, and `ind_niftytotalmarket_list.csv`
+  for the tier and the sector. Run it with `npm run universe`; it is deliberately **not**
+  part of `npm run build`, so a routine build never depends on nseindia.com being
+  reachable. Refreshed monthly; a stale row is a wrong autocomplete entry, not a security
+  problem, because the server validates against the same file.
+- **It fails closed in both directions.** A blocked fetch or a short response keeps the
+  committed file, and a run that would shrink the list by more than 20% refuses to write.
+  An empty universe opens no hole — nothing would resolve — but a partial one silently
+  deletes companies from the picker.
 - **The server reads the same file**, from the deployed `dist/`. The client's copy is a
   convenience; the server's copy is the authority. A submitted `symbol` is resolved
   server-side or rejected.
@@ -170,15 +187,28 @@ owner's byline.** For a liquid large cap that is a feature. For an illiquid micr
 the exact shape of a pump: nominate, get a favourable-looking independent report published,
 circulate the link.
 
-So acceptance is banded, mechanically, off `mcap_cr` and `board` in the universe file:
+**This was designed as a market-cap floor and built as something better.** The quote
+backend serves the Yahoo v8 chart endpoint, which returns a price and **no market cap**, so
+a ₹500 Cr floor would have been enforced against a number scraped from somewhere less
+reliable than the exchange. NSE publishes the answer itself, so the gate is index
+membership:
 
-| Band | Outcome |
-|---|---|
-| Main board, market cap ≥ `research.min_mcap_cr` (default **₹500 Cr**) | auto-queued |
-| Below the floor, or an SME board listing | `needs-owner` — held, visible as "under review", never worked on until the owner releases it |
+| Tier | What it is | Outcome |
+|---|---|---|
+| `broad` | in the NIFTY Total Market index — 755 names, ~94% of listed market cap | auto-queued |
+| `main` | EQ series, outside that index | `needs-owner` |
+| `watch` | BE/BZ: trade-to-trade and surveillance, the exchange saying it has concerns | `needs-owner` |
+| `sme` | the EMERGE platform | `needs-owner` |
 
-The floor is a setting, not a constant, so the owner can move it without a deploy
-(`manage_settings.py set research.min_mcap_cr 1000`).
+Held requests are visible as "under review" and are **not selectable by the agent's
+claim** — that is the gate, in SQL, not in a convention.
+
+Current split: **740 broad, 1,616 main, 254 watch, 581 sme.** Of the 56 tickers the site's
+own deep dives cover, 31 are `broad`, so the automatic path covers most of what is already
+written about without covering the microcap tail.
+
+The floor is a setting, not a constant: `manage_settings.py set research.min_tier main`
+widens it to every main-board company without a deploy.
 
 This also bounds the YMYL exposure in §7: the automatic path only ever covers companies
 that are already widely covered and widely held.
@@ -198,6 +228,16 @@ is a money hole with a public submit button.
 "Per requester" is a **salted hash of the IP**, never the IP. `sha256(salt + ip)` with the
 salt in the settings store, so the table cannot be turned back into a list of addresses
 even by whoever reads the database. The site has a privacy page; this keeps it true.
+
+`research.ip_salt` has **no fallback**, and the feature stays closed until it is set. A
+constant default would make every hash reversible by anyone who reads the source, which
+would defeat the only reason to hash at all. Rotating it resets every rate-limit bucket,
+because the buckets are keyed by the hash — do that deliberately, not as hygiene.
+
+**This only works if nginx forwards the client address.** Without
+`proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;` on the `/api/` block, every
+request arrives from 127.0.0.1 and the per-requester limit becomes one bucket shared by
+everyone. The server logs a warning once per process when it sees that.
 
 Bot friction, in place of a CAPTCHA: a hidden honeypot input that must stay empty, a
 `nonce` issued with the page that must be at least 3 seconds old and at most 1 hour old at
@@ -252,6 +292,7 @@ CREATE TABLE IF NOT EXISTS research_requests (
     requester   TEXT NOT NULL,              -- salted hash of the IP
     created_at  TEXT NOT NULL DEFAULT (datetime('now')),
     claimed_at  TEXT,
+    announced_at TEXT,                      -- when the poller put it in HANDOFF.md
     published_at TEXT,
     slug        TEXT,                       -- the published article
     reason      TEXT                        -- why rejected / what is under review
@@ -279,9 +320,14 @@ Public:
 ```
 POST /api/research/requests          submit   {symbol, nonce, note?, hp}
 GET  /api/research/requests          the open queue — no notes, no requester hashes
+GET  /api/research/resolve?symbol=   the verdict for one company, creating nothing
 POST /api/research/requests/:id/vote add a vote
 GET  /api/research/nonce             issue a submit nonce
 ```
+
+`/resolve` is what makes section 1.1's live verdict possible: the page can say "covered 5
+days ago" the moment a company is picked, before anything is submitted. It is read-only,
+and the POST re-checks everything it checked, so a client that skips it gains nothing.
 
 Owner / agent, `X-Auth-Token` required — the same header `/api/notify` already uses:
 
@@ -295,17 +341,21 @@ GET  /api/research/requests/:id/full the row including the note
 returns the row only if it changed one:
 
 ```sql
+-- pick the candidate, then:
 UPDATE research_requests
    SET status = 'claimed', claimed_at = datetime('now')
- WHERE id = (SELECT id FROM research_requests
-              WHERE status = 'queued'
-              ORDER BY votes DESC, created_at ASC LIMIT 1)
-   AND status = 'queued';
+ WHERE id = ? AND status = 'queued';
 ```
 
 `rowcount == 0` means somebody else took it, or there was nothing. Two Hermes runs can
 overlap and cannot collide — the same discipline as the `flock` on `deploy.sh`, which
 exists because a second deploy once deleted the staging directory out from under the first.
+
+**The candidate id is carried through the UPDATE, not re-read afterwards**, and that detail
+is load-bearing. The first build selected the claimed row back with
+`ORDER BY claimed_at DESC LIMIT 1`; `claimed_at` has one-second resolution, so two claims in
+the same second tie, the ORDER BY picks arbitrarily, and the test caught it handing the same
+request to two runs.
 
 `needs-owner` rows are **not** selectable by the claim. That is the §3.2 gate, in SQL.
 
@@ -342,8 +392,13 @@ more authority than they have.
 So the poll does exactly two things, neither of which is "run an LLM":
 
 1. appends one ACTION bullet per new request —
-   `- [job: report] research request #42 — Kernex Microsystems (NSE:KERNEX)` — and
-2. sends the owner a push via the existing `/api/notify`.
+   `- [job: report] research request #42 - Kernex Microsystems (NSE:KERNEX), new deep
+   dive, 3 votes`.
+
+**And that is all it does.** The design said it would also push a notification. It does
+not, because `POST /api/notify` sends to **every subscriber**, not to the owner — using it
+here would push "someone requested a stock" to every reader of the site. There is no
+owner-only channel today. The bullet and `manage_research.py list` are the notification.
 
 Hermes's scheduled run already reads `HANDOFF.md` at session start; AGENTS.md section 9
 requires it. It sees the queue, claims through `/api/research/claim`, and works it. The
@@ -351,7 +406,17 @@ wake needs no new execution authority anywhere, and `[job: report]` is already i
 vocabulary — it records and executes nothing, which is precisely right for a bullet whose
 origin is the public internet.
 
-**This is the version to build.** It needs nothing I do not already know.
+**Built as `scripts/research-poll.py`.** It is idempotent through `announced_at`, writes
+through `handoff-note.py` rather than patching the file, and commits only `HANDOFF.md` so a
+poll can never commit anything else that happens to be dirty in the checkout. Verified by
+feeding its output back through `handoff-watcher.parse_action_items()`, which reads the
+bullets as `job='report'` addressed to Hermes.
+
+Cron it on the server at the watcher's cadence:
+
+```
+*/20 * * * * cd /var/www/stock-analyses-react && python3.12 scripts/research-poll.py
+```
 
 ### 5.2 The on-demand version, if the owner has the command
 
@@ -448,7 +513,10 @@ directly on two of them.
    the three available positions. A reader-commissioned report sharpens it: someone asks for
    research, a model writes it, and the byline is a person. That is the same gap 7.14
    recorded, with a reader now standing at the other end of it.
-3. **The liquidity floor's number.** ₹500 Cr is my proposal, not a measurement. Yours to set.
+3. **The breadth gate.** `broad` — the NIFTY Total Market index — is the default, and it
+   holds 2,451 of 3,191 listed companies for review. That is my call, not a measurement.
+   `manage_settings.py set research.min_tier main` widens it to every main-board company
+   and leaves only the restricted series and the SME platform held.
 
 And one product question: **is the queue public?** It is designed public, because a request
 box with no visible queue feels broken and the queue is the reason to return. Making it
@@ -459,6 +527,8 @@ private is a one-flag change.
 ## 8. Build order
 
 Each step verifiable on its own, and pushed on its own (AGENTS 9.3).
+**All six are done and pushed** — one commit each, `bd0bb7a` through `11aa807`.
+What each step actually verified is in its commit message.
 
 1. `generate-universe.js` + `public/universe.json`. Verify: a known SME name carries
    `board: "sme"`, a known large cap clears the floor.
@@ -499,15 +569,23 @@ is what makes a half-finished rollout invisible rather than broken.
    and audio streaming — seconds, and off-market is the polite time to do it.
 2. **Settings, with the flag off.**
    ```bash
-   python3.12 /var/www/stock-analyses/manage_settings.py set research.enabled 0
-   python3.12 /var/www/stock-analyses/manage_settings.py set research.min_mcap_cr 500
-   python3.12 /var/www/stock-analyses/manage_settings.py set research.per_ip_day 3
-   python3.12 /var/www/stock-analyses/manage_settings.py set research.max_open 25
-   python3.12 /var/www/stock-analyses/manage_settings.py set research.max_per_day 2
-   python3.12 /var/www/stock-analyses/manage_settings.py set research.ip_salt '<32 random bytes, hex>'
+   cd /var/www/stock-analyses
+   python3.12 manage_settings.py set research.enabled 0
+   python3.12 manage_settings.py set research.ip_salt "$(openssl rand -hex 32)"
+   python3.12 manage_settings.py set research.min_tier broad
+   python3.12 manage_settings.py set research.per_ip_day 3
+   python3.12 manage_settings.py set research.max_open 25
+   python3.12 manage_settings.py set research.max_per_day 2
+   python3.12 manage_settings.py set research.site_root /var/www/stock-analyses-react/dist
    ```
    The salt is generated once and never rotated casually — rotating it orphans every
-   existing rate-limit bucket, which silently resets everyone's daily allowance.
+   existing rate-limit bucket, which silently resets everyone's daily allowance. Without
+   it the feature stays closed however the flag is set, by design.
+
+   Note `research.site_root` is the **site's** deployed directory
+   (`/var/www/stock-analyses-react/dist`), not the API service directory. That is where
+   `universe.json` and `analyses.json` are read from, and it is swapped by rename during a
+   deploy, which the loader tolerates by keeping its last good copy.
 3. **Prove the API before anything points at it.** With the flag still off, every endpoint
    must answer 503. Then flip it on locally and curl, in this order, the four that matter:
    a valid symbol, a symbol that is not in the universe, the same valid symbol twice, and a
@@ -516,10 +594,21 @@ is what makes a half-finished rollout invisible rather than broken.
 4. **Deploy the frontend with `./deploy.sh`.** Never `npm run build` against the live root —
    `vite build` empties its output directory and would 404 every article for the length of
    step 6.
-5. **Apply the nginx block, gated on both sides.** `nginx -t` while the candidate is in
-   place but **before** reloading, reload, then curl `/request-research` (expect 200) **and**
-   `/request-research/nonsense` (expect 404). The watcher's `apply-nginx` job already does
-   exactly this sequence, including the restore-on-failure; prefer it to doing it by hand.
+5. **Apply the nginx block BY HAND, gated on both sides.** `job_apply_nginx` is
+   replacements-only and refuses the whole run when the doc declares a block the live
+   config does not have — which this is — so the watcher will report it and change nothing.
+   That refusal is correct: inserting a second definition of a route nginx already serves is
+   what produced `duplicate location` here before.
+
+   Two edits to `/etc/nginx/sites-enabled/stocksfundamentals.online`, both written out in
+   `docs/nginx-seo.conf`: the `location = /request-research` block, and
+   `proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;` inside the existing
+   `/api/` block. The second is not optional — without it every requester hashes to the
+   same value and the per-requester limit becomes one bucket shared by everyone (§3.3).
+
+   Then `nginx -t` while the candidate is in place but **before** reloading, reload, then
+   curl `/request-research` (expect 200) **and** `/request-research/nonsense` (expect 404).
+   Both of the `try_files` bugs invariant 3.13 records behaved perfectly on the valid URL.
 6. **Flip `research.enabled` to 1.** No deploy, no restart — the setting is read at request
    time.
 7. **Verify live, not the build.** AGENTS 9.5: a green build says almost nothing about what
@@ -529,7 +618,12 @@ is what makes a half-finished rollout invisible rather than broken.
    curl -s -o /dev/null -w '%{http_code}\n' https://stocksfundamentals.online/request-research/x    # 404
    curl -s -A Googlebot https://stocksfundamentals.online/request-research | wc -c                  # > 20000
    curl -s https://stocksfundamentals.online/api/research/requests | head -c 200                    # JSON, no "note"
+   curl -s -o /dev/null -w '%{http_code}\n' https://stocksfundamentals.online/universe.json         # 200
+   journalctl -u vault-notify --since -10min | grep -ci 'X-Forwarded-For'                           # 0
    ```
+
+   The last line is the §3.3 check: the server logs a warning once per process when every
+   client looks like 127.0.0.1. A zero there means nginx is forwarding the address.
 8. **HANDOFF.md entry**, as always, marking anything unverified.
 
 **The rollback is one line and needs no deploy:**

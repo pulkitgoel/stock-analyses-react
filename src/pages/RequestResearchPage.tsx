@@ -44,10 +44,14 @@ const TIER_NOTE: Record<string, string> = {
 };
 
 function StatusPill({ status }: { status: QueueEntry['status'] }) {
-  const map: Record<string, { label: string; fg: string; bd: string; bg: string }> = {
-    claimed: { label: 'WRITING NOW', fg: 'var(--yellow)', bd: 'color-mix(in srgb, var(--yellow) 40%, transparent)', bg: 'color-mix(in srgb, var(--yellow) 10%, transparent)' },
-    queued: { label: 'QUEUED', fg: 'var(--text-muted)', bd: 'var(--border-light)', bg: 'var(--surface-soft)' },
-    'needs-owner': { label: 'UNDER REVIEW', fg: 'var(--yellow)', bd: 'color-mix(in srgb, var(--yellow) 40%, transparent)', bg: 'color-mix(in srgb, var(--yellow) 10%, transparent)' },
+  const map: Record<string, { label: string; fg: string; dot: string; bd: string; bg: string }> = {
+    // fg is --accent-warm, not --yellow. In the light theme --yellow is #ca8a04
+    // and measured 2.64:1 on its own tint; --accent-warm is #b45309 there and
+    // #f6c453 in dark, so one token reads in both. The dot keeps --yellow: it
+    // carries no text, so it is decoration and the 4.5 floor does not apply.
+    claimed: { label: 'WRITING NOW', fg: 'var(--accent-warm)', dot: 'var(--yellow)', bd: 'color-mix(in srgb, var(--yellow) 40%, transparent)', bg: 'color-mix(in srgb, var(--yellow) 10%, transparent)' },
+    queued: { label: 'QUEUED', fg: 'var(--text-muted)', dot: 'var(--text-muted)', bd: 'var(--border-light)', bg: 'var(--surface-soft)' },
+    'needs-owner': { label: 'UNDER REVIEW', fg: 'var(--accent-warm)', dot: 'var(--yellow)', bd: 'color-mix(in srgb, var(--yellow) 40%, transparent)', bg: 'color-mix(in srgb, var(--yellow) 10%, transparent)' },
   };
   const s = map[status] ?? map.queued;
   return (
@@ -56,7 +60,7 @@ function StatusPill({ status }: { status: QueueEntry['status'] }) {
       padding: '5px 10px', borderRadius: '999px',
       border: `1px solid ${s.bd}`, background: s.bg,
     }}>
-      <span style={{ width: '6px', height: '6px', borderRadius: '999px', background: s.fg }} />
+      <span style={{ width: '6px', height: '6px', borderRadius: '999px', background: s.dot }} />
       <span style={{ fontSize: '0.66rem', fontWeight: 800, letterSpacing: '0.05em', color: s.fg }}>
         {s.label}
       </span>
@@ -222,7 +226,12 @@ export default function RequestResearchPage() {
               background: 'var(--accent-glow)',
             }}>
               <Sparkles size={14} style={{ color: 'var(--accent)' }} aria-hidden="true" />
-              <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.1em', color: 'var(--accent)' }}>
+              <span style={{
+                fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.1em',
+                // Darkened off --accent: the raw token is #0f766e in light, which
+                // measures 4.42:1 once --accent-glow tints the ground behind it.
+                color: 'color-mix(in srgb, var(--accent) 88%, #000)',
+              }}>
                 RESEARCH QUEUE
               </span>
             </div>
