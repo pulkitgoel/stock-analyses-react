@@ -13,6 +13,9 @@ const navGroups = [
       { to: '/india', label: 'India research' },
       { to: '/global', label: 'Global macro' },
       { to: '/analyses/page/1', label: 'All analysis' },
+      // The queue's site-wide entry point. Without it the page is reachable
+      // only by typing the URL, which is the defect /watchlist already has.
+      { to: '/request-research', label: 'Request research' },
       // The only falsifiable public record on the site: 21 calls with the price
       // at the time of each, tracked against live quotes. Nothing linked to it.
       { to: '/watchlist', label: 'Watchlist' },

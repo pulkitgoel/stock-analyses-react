@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import DisclaimerPage from './pages/DisclaimerPage';
 import PrivacyPage from './pages/PrivacyPage';
 import WatchlistPage from './pages/WatchlistPage';
+import RequestResearchPage from './pages/RequestResearchPage';
 import TagPage from './pages/TagPage';
 import ArchivePage from './pages/ArchivePage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -35,6 +36,11 @@ export default function App() {
             <Route path="/global" element={<ArchivePage market="global" />} />
             <Route path="/global/page/:page" element={<ArchivePage market="global" />} />
             <Route path="/analyses" element={<Navigate to="/analyses/page/1" replace />} />
+            {/* Readers nominate a company for the research queue; Hermes drains
+                it. docs/RESEARCH-REQUESTS.md. One URL, prerendered like the
+                static pages, so nginx needs `try_files $uri.html =404` on it
+                and NOT the /index.html fallback (invariant 3.13). */}
+            <Route path="/request-research" element={<RequestResearchPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />

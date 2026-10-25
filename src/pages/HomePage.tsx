@@ -7,6 +7,7 @@ import { useNotification } from '../hooks/useNotification';
 import { getAnalyses } from '../services/analysisService';
 
 import AnalysisGrid from '../components/Dashboard/AnalysisGrid';
+import RequestCard from '../components/Home/RequestCard';
 import SubscribeCard from '../components/Common/SubscribeCard';
 import SearchBar from '../components/Home/SearchBar';
 import CategoryTabs from '../components/Home/CategoryTabs';
@@ -245,6 +246,10 @@ export default function HomePage() {
         </section>
 
         <div className="animate-in animate-in-delay-3" style={{ marginTop: '3rem' }}>
+          <RequestCard />
+        </div>
+
+        <div className="animate-in animate-in-delay-3" style={{ marginTop: '1.5rem' }}>
           <SubscribeCard
             subscribed={subscribed}
             supported={supported}

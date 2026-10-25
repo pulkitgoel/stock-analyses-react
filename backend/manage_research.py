@@ -123,7 +123,7 @@ def cmd_open(argv):
         print(f"queue is {'OPEN' if state == '1' else 'CLOSED'} "
               f"(research.enabled={state}, min_tier={tier})")
         if not settings_store.get("research.ip_salt"):
-            print("research.ip_salt is not set — the queue stays closed until it is")
+            print("research.ip_salt is not set - the queue stays closed until it is")
         return 0
     value = "1" if argv[0] in ("1", "on", "open", "true") else "0"
     settings_store.set_value("research.enabled", value)
