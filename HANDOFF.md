@@ -73,6 +73,16 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 (13) — hermes (exchange filings newest-first)
+
+**Exchange filings now read newest-first, and the build refuses a table that does not.**
+
+WABAG's filings table ran 12 Aug, 19 Aug, 7 Sep, 20 Jul, 1 Jul, 19 Jun, 9 Jun — the most recent filing was the third row, which is the one a reader scanning for "what did they announce last" would miss.
+
+- Reordered WABAG newest-first: 7 Sep, 19 Aug, 12 Aug, 20 Jul, 1 Jul, 19 Jun, 9 Jun. Verified in the shipped HTML, not just the markdown — the build reused every other route and re-rendered this page in an 11.8 second deploy.
+- `check-article-sections.py` now parses the dates in that table and fails the build when they do not descend. Tested against the previous version of the file: it reports "exchange filings are not newest-first".
+- The skill's Phase 2D states the rule with the WABAG example, so the reason survives the next rewrite of the prompt.
+
 ## 2026-10-25 (12) — hermes (queue hardened, WABAG through the new path)
 
 **The queue flow is hardened against every failure it produced today, and the first article through the new path passed the standard.**
