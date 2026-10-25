@@ -113,6 +113,8 @@ export default function RequestResearchPage() {
   const [sending, setSending] = useState(false);
   const [outcome, setOutcome] = useState<{ ok: boolean; message: string; held?: boolean } | null>(null);
   const [queue, setQueue] = useState<QueueView | null>(null);
+  const [queueAt, setQueueAt] = useState<number>(Date.now());
+  const [, setTick] = useState(0);
   const [queueClosed, setQueueClosed] = useState(false);
   const [voted, setVoted] = useState<Record<number, string>>({});
   const inputRef = useRef<HTMLInputElement>(null);
@@ -120,9 +122,24 @@ export default function RequestResearchPage() {
   const refreshQueue = useCallback(() => {
     fetchQueueState().then((state) => {
       setQueueClosed(state.status === 'closed');
-      if (state.view) setQueue(state.view);
+      if (state.view) {
+        setQueue(state.view);
+        setQueueAt(Date.now());
+      }
     });
   }, []);
+
+  // The stream pushes state changes only; the estimate counts down locally
+  // between them so the number does not freeze for minutes at a time.
+  useEffect(() => {
+    const id = window.setInterval(() => setTick((n) => n + 1), 5000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const etaNow = (entry: QueueEntry) =>
+    entry.eta_seconds
+      ? Math.max(0, entry.eta_seconds - (Date.now() - queueAt) / 1000)
+      : undefined;
 
   useEffect(() => {
     refreshQueue();
@@ -131,13 +148,40 @@ export default function RequestResearchPage() {
     fetchNonce().then(setNonce);
   }, [refreshQueue]);
 
-  // While something is being worked on, the page has to move on its own or the
-  // progress is a snapshot from whenever the reader happened to load it.
+  // Progress has to arrive on its own: a stage change that only shows up on a
+  // manual refresh is the same as not showing it. The API holds a server-sent
+  // event stream open and writes the queue state the moment its signature
+  // changes; polling is only the fallback while the stream is down.
   useEffect(() => {
-    if (!queue?.open?.some((e) => e.status === 'claimed')) return;
-    const id = window.setInterval(refreshQueue, 30000);
-    return () => window.clearInterval(id);
-  }, [queue, refreshQueue]);
+    if (typeof EventSource === 'undefined') {
+      const id = window.setInterval(refreshQueue, 5000);
+      return () => window.clearInterval(id);
+    }
+    let fallback: number | undefined;
+    const source = new EventSource('/api/research/stream');
+    source.onmessage = (event) => {
+      try {
+        setQueue(JSON.parse(event.data) as QueueView);
+        setQueueAt(Date.now());
+        setQueueClosed(false);
+      } catch {
+        // a malformed frame is not worth tearing the stream down for
+      }
+    };
+    source.onopen = () => {
+      if (fallback) {
+        window.clearInterval(fallback);
+        fallback = undefined;
+      }
+    };
+    source.onerror = () => {
+      if (!fallback) fallback = window.setInterval(refreshQueue, 5000);
+    };
+    return () => {
+      source.close();
+      if (fallback) window.clearInterval(fallback);
+    };
+  }, [refreshQueue]);
 
   const results = useMemo(
     () => (universe && query.trim() ? searchUniverse(universe, query.trim()) : []),
@@ -648,9 +692,9 @@ export default function RequestResearchPage() {
                               ? (entry.stage ? STAGE_LABEL[entry.stage] ?? 'Working on it' : 'Working on it')
                               : `asked ${niceDate(entry.created_at)}`}
                           </span>
-                          {entry.eta_seconds ? (
+                          {etaNow(entry) ? (
                             <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--accent)' }}>
-                              {etaLabel(entry.eta_seconds)}
+                              {etaLabel(etaNow(entry))}
                             </span>
                           ) : null}
                         </div>
