@@ -697,8 +697,9 @@ Carried over from the June 2026 analysis for the restored sections: Screener.in 
 **Still disclosed as unverified:**
 
 - No company-specific catalyst for the October decline has been disclosed. The attribution to small-cap deleveraging is inference from index moves and margin-debt data, not a company statement.
-- The promoter transfer of 1.06 crore shares (12.19% of capital) to a family member in the September quarter: the Regulation 10(7) filing of 6 October 2026 exists, but the consideration and share count were not extracted from the 5.96 MB filing for this update, so the "nil-consideration gift" description remains unreconciled against the source.
 - Q2 FY27 results are not yet published. All FY27 forward figures in this article are derived from the company's July guidance and its Q1 cost run-rate, not from analyst estimates — there are none.
+
+**Routine filings in the same window, for completeness:** the Reg 74(5) depository-compliance certificate for the September quarter (8 October), the trading-window closure notice ahead of Q2 results (25 September), and analyst-meet intimations on 15 and 17 September. None of them carries information that changes a number in this article, but they are on the exchange and they are part of the record.
 
 ## Exchange filings
 
@@ -707,7 +708,7 @@ Carried over from the June 2026 analysis for the restored sections: Screener.in 
 - **Independent director exit (7 September) — routine, mildly negative.** The stated reason is other professional commitments and the company says there were no other material reasons. SEBI requires that statement, so it is worth reading the annexed resignation letter rather than the covering note; nothing in the intimation points to a disagreement over accounts, related-party dealings or governance. One independent director leaving is noise. A second exit within the year would not be, and there is not one.
 - **Auditor re-appointment (26 August) — non-event, and a positive.** MSKA is being given a second five-year term, which means the board and the audit committee wanted them back. An auditor leaving mid-term is the red flag; staying on is the opposite.
 - **FY26 audit opinion (20 May) — clean.** Unmodified opinion, declared under Regulation 33(3)(d). No qualification, no emphasis of matter disclosed in the declaration.
-- **Promoter-family transfer (1 and 16 September, 6 October) — neutral, but unread.** The 10(5), 10(6) and 10(7) filings are a transfer inside the promoter group, not a sale to the market, and aggregate promoter holding barely moved. The 10(7) report is the one to read for consideration and price; it is 5.96 MB and was not extracted for this update, which is why the "nil-consideration gift" description stays in the unverified list above.
+- **Promoter-family transfer (1 and 16 September, 6 October) — verified, and a non-event.** The Regulation 10(7) report of 6 October is explicit: 1,05,53,614 shares, 12.19% of capital, transferred from Rishi Chandrakant Sanghvi to Maithili Rishi Sanghvi by way of gift, as an off-market inter-se transfer among promoter-group members, "without any consideration". No cash changed hands, no shares reached the market, and aggregate promoter holding was unchanged. It is an estate-planning step, not a sale.
 - **Q1 FY27 presentation (31 July) — the substance.** This is where the order book, the margin bridge and the guidance come from, and it is the only filing here that carries valuation weight.
 
 **The aggregate read:** the filings say the governance is stable and the accounts are clean. They are neutral on the fall — which supports the article's conclusion that the decline is a market and margin story, not a company-disclosure story. Anyone looking for a filing-shaped explanation for October will not find one.
