@@ -59,6 +59,24 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "VA Tech Wabag: Record ₹19,400 Cr Order Book, 9% Margin",
+    "ticker": "WABAG:NSE",
+    "file": "va-tech-wabag-record-order-book-deep-dive.md",
+    "slug": "va-tech-wabag-record-order-book-deep-dive",
+    "date": "2026-10-25",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "water",
+      "desalination",
+      "infrastructure",
+      "order-book"
+    ],
+    "summary": "VA Tech Wabag holds a record ₹19,400 Cr order book and ₹965 Cr net cash, but Q1 core margin fell to 9% and the stock is 26% off its September peak. Verdict: WAIT FOR BASE.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Apollo Micro Systems — Deep Dive Analysis",
     "ticker": "APOLLO",
     "file": "apollo-micro-systems-deep-dive-jun30.md",

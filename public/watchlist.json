@@ -64,6 +64,27 @@
       "verdict": "CAUTION"
     },
     {
+      "slug": "va-tech-wabag-record-order-book-deep-dive",
+      "ticker": "WABAG:NSE",
+      "title": "VA Tech Wabag: Record ₹19,400 Cr Order Book, 9% Margin",
+      "date": "2026-10-25",
+      "yahooSymbol": "WABAG.NS",
+      "priceAtAnalysis": 1710.4,
+      "support": 1633,
+      "resistance": 1752,
+      "supports": [
+        1633,
+        1560,
+        1510
+      ],
+      "resistances": [
+        1752,
+        1917,
+        1943
+      ],
+      "verdict": "WAIT FOR BASE"
+    },
+    {
       "slug": "ge-power-india-the-turnaround-is-real-the-chart-is-not",
       "ticker": "GVPIL",
       "title": "GE Power India — The Turnaround Is Real, the Chart Is Not",

@@ -73,6 +73,22 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-25 — Hermes (reader request 13, WABAG — duplicate resolved)
+
+**Published reader request #13 (`NSE:WABAG`, mode new). One article is live — after a duplicate was created and removed the same hour.**
+
+- Slug **`va-tech-wabag-record-order-book-deep-dive`**, 11,218 words, 19 sections. Live, 114,625 bytes to Googlebot, one `h1`, one canonical, all 7 nsearchives filing links verified 200. Verdict **WAIT FOR BASE**; watchlist entry at ₹1,710.40, support ₹1,633, resistance ₹1,752. Queue row #13 published against this slug. Subscriber notify sent (3 delivered, 0 failed).
+- Core finding: Q1 FY27 reported EBITDA of ₹116.3 Cr (13.1%) contains a ₹36.8 Cr forex gain; forex-neutral operating margin is **9.0%** against 14.9% a year earlier, while revenue grew 20.8% to ₹887 Cr and net profit rose 36.9% on other income. Order book is a record ₹19,394 Cr (4.9x FY26 revenue, frameworks removed). The ICICI FY27E of ₹78.4 EPS back-solves to a 13.4% margin needing ~13.4–14.1% for Q2–Q4, which no full year in five has delivered.
+
+**Two sessions worked request #13 at once and produced two complete articles.** I claimed the queue row at 14:42 and wrote `va-tech-wabag-order-book-margin-deep-dive.md` (10,530 words); the sibling session finished `va-tech-wabag-record-order-book-deep-dive.md` at 14:46. My first deploy shipped **both**, so the site briefly carried two WABAG deep dives on the same day — exactly the second-article case the workflow forbids.
+
+**Resolution: the sibling's article is the survivor.** It is longer, identifies the FY23 write-off properly (₹289.23 Cr receivables, Tecpro/APGENCO — my draft only had the ₹226 Cr other-income line, which is the wrong attribution), and carries the Axis target and the SEBI results deadline. I removed my file, folded my one clearly additive paragraph into theirs — the three-year Q1-vs-Q4 seasonality comparison, which kills the "−37% QoQ is a collapse" reading with FY25 −33.0%, FY26 −36.5%, FY27 −37.3% — rebuilt and redeployed. Verified: kept slug 200 with the paragraph live, deleted slug **404**, homepage links exactly one WABAG article, `analyses.json` 296 entries with a single wabag match.
+
+**ACTION — the queue claim did not stop the collision, and it should have.** I claimed #13 through `queue_client.py claim`, which took the row, but the other session was already writing. The single-worker guard only refuses a *second claim*; it cannot see work started before the claim, and neither session re-checked coverage immediately before writing. A pre-write check against `public/analyses/*.md` and the queue's own `prior_slug`
+would have caught it in one `ls`. Worth adding to the run steps rather than leaving to discipline.
+
+**UNVERIFIED — no browser in this session.** Verified by fetch instead: 114,625-byte body, single h1/title/canonical, JSON-LD parses (build step 5 exit 0), filing links 200, deleted slug 404, homepage link set correct. The visual render of the new tables was not opened.
+
 ## 2026-10-25 — Hermes (automated agent) — NALCO reader request 12
 
 **Published reader request 12 (`NSE:NATIONALUM`, mode update) in place — no new slug.**
