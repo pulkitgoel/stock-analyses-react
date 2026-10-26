@@ -23,6 +23,22 @@ export const ANALYSES: Analysis[] = [
     "model": "deepseek-v4-flash"
   },
   {
+    "title": "Apollo Micro Systems — Deep Dive Analysis",
+    "ticker": "APOLLO",
+    "file": "apollo-micro-systems-deep-dive-jun30.md",
+    "slug": "apollo-micro-systems-deep-dive-jun30",
+    "date": "2026-10-26",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "defence",
+      "aerospace"
+    ],
+    "summary": "Q2 FY27: revenue ₹388 Cr (+72%), PBT +114%, PAT ₹46 Cr held back by a ₹18.5 Cr non-cash deferred tax charge. Order book ₹1,765 Cr. Updated P/E 105x TTM, ~90x forward. Verdict: CAUTION — growth is real, cash flow and valuation still are not fixed.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "NALCO: Record Q1, ₹24,000 Cr Expansion, Stock 32% Off Peak",
     "ticker": "NATIONALUM:NSE",
     "file": "nalco-down-root-cause-jun16.md",
@@ -91,22 +107,6 @@ export const ANALYSES: Analysis[] = [
       "order-book"
     ],
     "summary": "VA Tech Wabag holds a record ₹19,400 Cr order book and ₹965 Cr net cash, but Q1 core margin fell to 9% and the stock is 26% off its September peak. Verdict: WAIT FOR BASE.",
-    "market": "india",
-    "model": "deepseek-v4-flash"
-  },
-  {
-    "title": "Apollo Micro Systems — Deep Dive Analysis",
-    "ticker": "APOLLO",
-    "file": "apollo-micro-systems-deep-dive-jun30.md",
-    "slug": "apollo-micro-systems-deep-dive-jun30",
-    "date": "2026-10-24",
-    "tags": [
-      "deep-dive",
-      "fundamental",
-      "defence",
-      "aerospace"
-    ],
-    "summary": "Q2 FY27: revenue ₹388 Cr (+72%), PBT +114%, PAT ₹46 Cr held back by a ₹18.5 Cr non-cash deferred tax charge. Order book ₹1,765 Cr. Updated P/E 105x TTM, ~90x forward. Verdict: CAUTION — growth is real, cash flow and valuation still are not fixed.",
     "market": "india",
     "model": "deepseek-v4-flash"
   },
