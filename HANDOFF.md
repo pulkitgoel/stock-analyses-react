@@ -73,6 +73,23 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-26 (1) — hermes (approved means published)
+
+**An approved request is now published; disagreement about whether a run is alive no longer sends it back to the owner.**
+
+**Adani Ports (#18) is live** — `/analysis/adani-ports-q1-fy27-deep-dive`, 14,880 words in the served page, 19 sections, both gates passing. The run wrote it at 06:15 and died before publishing; it is published now.
+
+**What changed, because the owner's instruction is that approval is the only gate:**
+
+- The reconciler no longer moves a stalled request to `needs-owner`. It requeues it with `approved_at` intact, clears the claim, and increments an `attempts` counter. The dispatcher then starts another run. The owner is told only on every third attempt, so a single retry is silent.
+- A published row whose page 404s is requeued and republished rather than handed back.
+- Liveness is now the later of the last stage report and the newest write to `public/analyses`. A run producing a file is alive by definition — the Adani Ports run was called dead at 06:13 and wrote its article at 06:15.
+- Stage budgets widened to 25/30/15/5 minutes against the measured run: a deep dive spends twenty minutes in research before it changes stage.
+
+**Tested:** a synthetic claimed row with a stale heartbeat produced `requeued after stall (stalled in writing for 60 min (budget 30), attempt 3)` in dry-run, and no `needs-owner` transition anywhere.
+
+`needs-owner` still exists in the schema for submissions that need the owner before they are queued, but the reconcile path never produces it now.
+
 ## 2026-10-26 00:06 — watcher
 
 **Idle** — nothing executable.
