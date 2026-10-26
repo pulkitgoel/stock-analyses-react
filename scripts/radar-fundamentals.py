@@ -26,6 +26,9 @@ TREND = ROOT / "radar" / "trend.json"
 CACHE = ROOT / "radar" / "fundamentals"
 CACHE_DAYS = 7
 
+import os
+DELAY = float(os.environ.get("RADAR_DELAY", "1.5"))
+
 sys.path.insert(0, "/var/www/stock-analyses")
 import settings_store  # noqa: E402
 
@@ -135,7 +138,7 @@ def main() -> int:
                     try:
                         page.goto(f"https://www.screener.in/company/{code}/consolidated/",
                                   wait_until="domcontentloaded", timeout=30000)
-                        time.sleep(1.5)
+                        time.sleep(DELAY)
                         if "login" in page.url:
                             print("radar-fundamentals: session lost, stopping", file=sys.stderr)
                             raise SystemExit

@@ -3,8 +3,8 @@
  "universe": 655,
  "priced": 632,
  "trend_survivors": 57,
- "scored": 30,
- "rejected": 27,
+ "scored": 35,
+ "rejected": 22,
  "rows": [
   {
    "symbol": "NSE:CUPID",
@@ -39,6 +39,41 @@
     "ret6m": 177.7,
     "rs3m": 47.0,
     "rs6m": 182.5
+   }
+  },
+  {
+   "symbol": "NSE:LOTUSDEV",
+   "code": "LOTUSDEV",
+   "name": "SRI LOTUS DEVELOPERS AND REALTY Ltd.",
+   "band": "micro",
+   "industry": "Realty",
+   "score": 70.3,
+   "momentum": 30.0,
+   "rotation": 15.3,
+   "trend": 25.0,
+   "catalyst": 0,
+   "industry_rs6m": 67.8,
+   "detail": [
+    "sales +21.7% YoY (10/10)",
+    "profit +25.5% YoY (10/10)",
+    "margin +22.0pp over four periods (10/10)",
+    "CFO/PAT -1.07x (0/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 21.67101827676241,
+    "pat_yoy": 25.514403292181065,
+    "de": 0.06437346437346438,
+    "roce": 21.0,
+    "promoter": 79.87,
+    "cfo_pat": -1.0688524590163935
+   },
+   "price": {
+    "close": 236.09,
+    "from_high": -4.1,
+    "ret3m": 25.6,
+    "ret6m": 63.0,
+    "rs3m": 30.8,
+    "rs6m": 67.8
    }
   },
   {
@@ -112,6 +147,41 @@
    }
   },
   {
+   "symbol": "NSE:SKYGOLD",
+   "code": "SKYGOLD",
+   "name": "SKY GOLD AND DIAMONDS Ltd.",
+   "band": "micro",
+   "industry": "Consumer Durables",
+   "score": 65.8,
+   "momentum": 24.0,
+   "rotation": 18.8,
+   "trend": 23.0,
+   "catalyst": 0,
+   "industry_rs6m": 106.85000000000001,
+   "detail": [
+    "sales +14.0% YoY (7/10)",
+    "profit +21.6% YoY (7/10)",
+    "margin +3.8pp over four periods (10/10)",
+    "CFO/PAT -0.13x (0/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 14.049586776859503,
+    "pat_yoy": 21.63120567375887,
+    "de": 0.7290268456375839,
+    "roce": 27.0,
+    "promoter": 51.74,
+    "cfo_pat": -0.13119533527696792
+   },
+   "price": {
+    "close": 938.5,
+    "from_high": -11.5,
+    "ret3m": 39.7,
+    "ret6m": 127.5,
+    "rs3m": 44.9,
+    "rs6m": 132.3
+   }
+  },
+  {
    "symbol": "NSE:PCJEWELLER",
    "code": "PCJEWELLER",
    "name": "PC Jeweller Ltd.",
@@ -179,6 +249,41 @@
     "ret6m": 70.1,
     "rs3m": 13.9,
     "rs6m": 74.9
+   }
+  },
+  {
+   "symbol": "NSE:SHREEJISPG",
+   "code": "SHREEJISPG",
+   "name": "Shreeji Shipping Global Ltd.",
+   "band": "micro",
+   "industry": "Services",
+   "score": 61.6,
+   "momentum": 26.0,
+   "rotation": 10.6,
+   "trend": 25.0,
+   "catalyst": 0,
+   "industry_rs6m": 44.4,
+   "detail": [
+    "sales +6.8% YoY (3/10)",
+    "profit +4.6% YoY (3/10)",
+    "margin +5.0pp over four periods (10/10)",
+    "CFO/PAT 1.19x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 6.7700987306064775,
+    "pat_yoy": 4.575163398692816,
+    "de": 0.36150845253576075,
+    "roce": 28.0,
+    "promoter": 88.0,
+    "cfo_pat": 1.19375
+   },
+   "price": {
+    "close": 811.5,
+    "from_high": -3.4,
+    "ret3m": 28.6,
+    "ret6m": 117.4,
+    "rs3m": 33.7,
+    "rs6m": 122.2
    }
   },
   {
@@ -601,6 +706,41 @@
    }
   },
   {
+   "symbol": "NSE:UNIMECH",
+   "code": "UNIMECH",
+   "name": "Unimech Aerospace and Manufacturing Ltd.",
+   "band": "micro",
+   "industry": "Capital Goods",
+   "score": 50.8,
+   "momentum": 16.0,
+   "rotation": 11.8,
+   "trend": 23.0,
+   "catalyst": 0,
+   "industry_rs6m": 49.05,
+   "detail": [
+    "sales +18.8% YoY (7/10)",
+    "profit +14.3% YoY (3/10)",
+    "margin -4.0pp over four periods (0/10)",
+    "CFO/PAT 0.85x (6/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 18.75,
+    "pat_yoy": 14.28571428571428,
+    "de": 0.1723202170963365,
+    "roce": 11.0,
+    "promoter": 79.75,
+    "cfo_pat": 0.8472222222222222
+   },
+   "price": {
+    "close": 1615.9,
+    "from_high": -13.7,
+    "ret3m": 34.3,
+    "ret6m": 62.4,
+    "rs3m": 39.5,
+    "rs6m": 67.2
+   }
+  },
+  {
    "symbol": "NSE:MRPL",
    "code": "MRPL",
    "name": "Mangalore Refinery & Petrochemicals Ltd.",
@@ -948,6 +1088,41 @@
     "ret6m": 7.6,
     "rs3m": 8.0,
     "rs6m": 12.4
+   }
+  },
+  {
+   "symbol": "NSE:TANLA",
+   "code": "TANLA",
+   "name": "Tanla Platforms Ltd.",
+   "band": "micro",
+   "industry": "Information Technology",
+   "score": 38.9,
+   "momentum": 16.0,
+   "rotation": 5.9,
+   "trend": 17.0,
+   "catalyst": 0,
+   "industry_rs6m": 24.2,
+   "detail": [
+    "sales +4.2% YoY (3/10)",
+    "profit +4.7% YoY (3/10)",
+    "margin -1.0pp over four periods (0/10)",
+    "CFO/PAT 1.08x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 4.187415119963789,
+    "pat_yoy": 4.715127701375255,
+    "de": 0.02130225080385852,
+    "roce": 26.0,
+    "promoter": 46.17,
+    "cfo_pat": 1.0769230769230769
+   },
+   "price": {
+    "close": 567.8,
+    "from_high": -10.2,
+    "ret3m": -3.3,
+    "ret6m": 16.9,
+    "rs3m": 1.9,
+    "rs6m": 21.7
    }
   },
   {
@@ -1400,63 +1575,6 @@
    "reason": "latest annual profit is negative"
   },
   {
-   "symbol": "NSE:SKYGOLD",
-   "code": "SKYGOLD",
-   "name": "SKY GOLD AND DIAMONDS Ltd.",
-   "industry": "Consumer Durables",
-   "isin": "INE01IU01018",
-   "band": "micro",
-   "close": 938.5,
-   "sma50": 847.83,
-   "sma200": 552.09,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -11.5,
-   "ret3m": 39.7,
-   "ret6m": 127.5,
-   "rs3m": 44.9,
-   "rs6m": 132.3,
-   "reason": "fundamentals not fetched"
-  },
-  {
-   "symbol": "NSE:LOTUSDEV",
-   "code": "LOTUSDEV",
-   "name": "SRI LOTUS DEVELOPERS AND REALTY Ltd.",
-   "industry": "Realty",
-   "isin": "INE0V9Q01010",
-   "band": "micro",
-   "close": 236.09,
-   "sma50": 208.33,
-   "sma200": 160.95,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -4.1,
-   "ret3m": 25.6,
-   "ret6m": 63.0,
-   "rs3m": 30.8,
-   "rs6m": 67.8,
-   "reason": "fundamentals not fetched"
-  },
-  {
-   "symbol": "NSE:SHREEJISPG",
-   "code": "SHREEJISPG",
-   "name": "Shreeji Shipping Global Ltd.",
-   "industry": "Services",
-   "isin": "INE1B6101010",
-   "band": "micro",
-   "close": 811.5,
-   "sma50": 719.87,
-   "sma200": 509.89,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -3.4,
-   "ret3m": 28.6,
-   "ret6m": 117.4,
-   "rs3m": 33.7,
-   "rs6m": 122.2,
-   "reason": "fundamentals not fetched"
-  },
-  {
    "symbol": "NSE:SOUTHBANK",
    "code": "SOUTHBANK",
    "name": "South Indian Bank Ltd.",
@@ -1473,7 +1591,7 @@
    "ret6m": 36.4,
    "rs3m": 15.2,
    "rs6m": 41.2,
-   "reason": "fundamentals not fetched"
+   "reason": ""
   },
   {
    "symbol": "NSE:SUNFLAG",
@@ -1492,26 +1610,7 @@
    "ret6m": 35.0,
    "rs3m": 12.2,
    "rs6m": 39.8,
-   "reason": "fundamentals not fetched"
-  },
-  {
-   "symbol": "NSE:TANLA",
-   "code": "TANLA",
-   "name": "Tanla Platforms Ltd.",
-   "industry": "Information Technology",
-   "isin": "INE483C01032",
-   "band": "micro",
-   "close": 567.8,
-   "sma50": 526.64,
-   "sma200": 511.24,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -10.2,
-   "ret3m": -3.3,
-   "ret6m": 16.9,
-   "rs3m": 1.9,
-   "rs6m": 21.7,
-   "reason": "fundamentals not fetched"
+   "reason": "ROCE 4.0% below 10%"
   },
   {
    "symbol": "NSE:TIPSMUSIC",
@@ -1530,26 +1629,7 @@
    "ret6m": 7.8,
    "rs3m": 5.8,
    "rs6m": 12.6,
-   "reason": "fundamentals not fetched"
-  },
-  {
-   "symbol": "NSE:UNIMECH",
-   "code": "UNIMECH",
-   "name": "Unimech Aerospace and Manufacturing Ltd.",
-   "industry": "Capital Goods",
-   "isin": "INE0U3I01011",
-   "band": "micro",
-   "close": 1615.9,
-   "sma50": 1615.01,
-   "sma200": 1156.75,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -13.7,
-   "ret3m": 34.3,
-   "ret6m": 62.4,
-   "rs3m": 39.5,
-   "rs6m": 67.2,
-   "reason": "fundamentals not fetched"
+   "reason": ""
   },
   {
    "symbol": "NSE:WESTLIFE",
@@ -1568,7 +1648,7 @@
    "ret6m": 27.0,
    "rs3m": 31.7,
    "rs6m": 31.8,
-   "reason": "fundamentals not fetched"
+   "reason": "debt/equity 3.14 above 1.0"
   }
  ]
 }
