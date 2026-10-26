@@ -1,0 +1,842 @@
+{
+ "generated": "2026-10-26",
+ "source": "NSE bhavcopy, weekly sampling",
+ "results": [
+  {
+   "date": "2019-07-01",
+   "eligible": 344,
+   "passing": 68,
+   "picks": [
+    {
+     "name": "Centum Electronics Ltd.",
+     "code": "CENTUM",
+     "band": "micro",
+     "rs6m": 54.1,
+     "from_high": -0.4,
+     "fwd1": -45.0,
+     "fwd3": -24.8
+    },
+    {
+     "name": "Info Edge (India) Ltd.",
+     "code": "NAUKRI",
+     "band": "mid",
+     "rs6m": 46.0,
+     "from_high": -2.9,
+     "fwd1": 22.7,
+     "fwd3": 74.4
+    },
+    {
+     "name": "Goldiam International Ltd.",
+     "code": "GOLDIAM",
+     "band": "micro",
+     "rs6m": 45.1,
+     "from_high": -3.9,
+     "fwd1": -19.3,
+     "fwd3": 6.7
+    },
+    {
+     "name": "SRF Ltd.",
+     "code": "SRF",
+     "band": "mid",
+     "rs6m": 43.4,
+     "from_high": 0.0,
+     "fwd1": 18.4,
+     "fwd3": -25.1
+    },
+    {
+     "name": "Justdial Ltd.",
+     "code": "JUSTDIAL",
+     "band": "micro",
+     "rs6m": 42.9,
+     "from_high": -0.6,
+     "fwd1": -48.4,
+     "fwd3": -25.7
+    },
+    {
+     "name": "Godrej Properties Ltd.",
+     "code": "GODREJPROP",
+     "band": "mid",
+     "rs6m": 41.5,
+     "from_high": 0.0,
+     "fwd1": -13.4,
+     "fwd3": 19.7
+    },
+    {
+     "name": "Manappuram Finance Ltd.",
+     "code": "MANAPPURAM",
+     "band": "small",
+     "rs6m": 41.1,
+     "from_high": -2.7,
+     "fwd1": 13.2,
+     "fwd3": -36.6
+    },
+    {
+     "name": "DCB Bank Ltd.",
+     "code": "DCBBANK",
+     "band": "micro",
+     "rs6m": 33.9,
+     "from_high": -1.5,
+     "fwd1": -65.5,
+     "fwd3": -68.0
+    },
+    {
+     "name": "J.K. Cement Ltd.",
+     "code": "JKCEMENT",
+     "band": "mid",
+     "rs6m": 32.9,
+     "from_high": -4.0,
+     "fwd1": 37.0,
+     "fwd3": 105.6
+    },
+    {
+     "name": "H.G. Infra Engineering Ltd.",
+     "code": "HGINFRA",
+     "band": "micro",
+     "rs6m": 28.8,
+     "from_high": -4.1,
+     "fwd1": -29.4,
+     "fwd3": 87.2
+    },
+    {
+     "name": "KEI Industries Ltd.",
+     "code": "KEI",
+     "band": "mid",
+     "rs6m": 28.6,
+     "from_high": -8.7,
+     "fwd1": -27.7,
+     "fwd3": 145.4
+    },
+    {
+     "name": "PI Industries Ltd.",
+     "code": "PIIND",
+     "band": "mid",
+     "rs6m": 28.3,
+     "from_high": -2.0,
+     "fwd1": 32.2,
+     "fwd3": 117.2
+    },
+    {
+     "name": "PNC Infratech Ltd.",
+     "code": "PNCINFRA",
+     "band": "micro",
+     "rs6m": 27.4,
+     "from_high": -3.0,
+     "fwd1": -30.8,
+     "fwd3": 14.6
+    },
+    {
+     "name": "REC Ltd.",
+     "code": "RECLTD",
+     "band": "mid",
+     "rs6m": 26.5,
+     "from_high": 0.0,
+     "fwd1": -31.6,
+     "fwd3": -28.4
+    },
+    {
+     "name": "Oberoi Realty Ltd.",
+     "code": "OBEROIRLTY",
+     "band": "mid",
+     "rs6m": 26.1,
+     "from_high": 0.0,
+     "fwd1": -38.2,
+     "fwd3": 24.9
+    },
+    {
+     "name": "Deepak Nitrite Ltd.",
+     "code": "DEEPAKNTR",
+     "band": "small",
+     "rs6m": 25.2,
+     "from_high": -9.5,
+     "fwd1": 73.8,
+     "fwd3": 521.0
+    },
+    {
+     "name": "Praj Industries Ltd.",
+     "code": "PRAJIND",
+     "band": "micro",
+     "rs6m": 24.0,
+     "from_high": -9.9,
+     "fwd1": -53.9,
+     "fwd3": 154.3
+    },
+    {
+     "name": "KNR Constructions Ltd.",
+     "code": "KNRCON",
+     "band": "micro",
+     "rs6m": 23.3,
+     "from_high": -2.0,
+     "fwd1": -21.2,
+     "fwd3": -19.1
+    },
+    {
+     "name": "Timken India Ltd.",
+     "code": "TIMKEN",
+     "band": "small",
+     "rs6m": 20.8,
+     "from_high": -4.3,
+     "fwd1": 30.2,
+     "fwd3": 216.7
+    },
+    {
+     "name": "Bata India Ltd.",
+     "code": "BATAINDIA",
+     "band": "small",
+     "rs6m": 18.7,
+     "from_high": -0.0,
+     "fwd1": -8.4,
+     "fwd3": 20.3
+    }
+   ],
+   "picks_3y": {
+    "n": 20,
+    "median": 20.0,
+    "double": 30.0,
+    "triple": 10.0,
+    "negative": 35.0
+   },
+   "picks_1y": {
+    "n": 20,
+    "median": -20.2,
+    "double": 0.0,
+    "triple": 0.0,
+    "negative": 65.0
+   },
+   "universe_3y": {
+    "n": 344,
+    "median": 31.9,
+    "double": 25.3,
+    "triple": 10.2,
+    "negative": 29.9
+   },
+   "nifty_3y": 33.2
+  },
+  {
+   "date": "2020-07-01",
+   "eligible": 373,
+   "passing": 122,
+   "picks": [
+    {
+     "name": "Suzlon Energy Ltd.",
+     "code": "SUZLON",
+     "band": "mid",
+     "rs6m": 153.7,
+     "from_high": -6.1,
+     "fwd1": 66.7,
+     "fwd3": 197.8
+    },
+    {
+     "name": "Marksans Pharma Ltd.",
+     "code": "MARKSANS",
+     "band": "micro",
+     "rs6m": 126.6,
+     "from_high": 0.0,
+     "fwd1": 146.9,
+     "fwd3": 162.9
+    },
+    {
+     "name": "Alkyl Amines Chemicals Ltd.",
+     "code": "ALKYLAMINE",
+     "band": "micro",
+     "rs6m": 114.2,
+     "from_high": 0.0,
+     "fwd1": 69.6,
+     "fwd3": 22.5
+    },
+    {
+     "name": "Tata Teleservices (Maharashtra) Ltd.",
+     "code": "TTML",
+     "band": "small",
+     "rs6m": 101.9,
+     "from_high": -14.3,
+     "fwd1": 350.0,
+     "fwd3": 1646.4
+    },
+    {
+     "name": "India Cements Ltd.",
+     "code": "INDIACEM",
+     "band": "small",
+     "rs6m": 94.4,
+     "from_high": -5.1,
+     "fwd1": 52.1,
+     "fwd3": 67.4
+    },
+    {
+     "name": "Ashapura Minechem Ltd.",
+     "code": "ASHAPURMIN",
+     "band": "micro",
+     "rs6m": 90.2,
+     "from_high": 0.0,
+     "fwd1": 230.9,
+     "fwd3": 196.1
+    },
+    {
+     "name": "Aurobindo Pharma Ltd.",
+     "code": "AUROPHARMA",
+     "band": "mid",
+     "rs6m": 83.7,
+     "from_high": -0.4,
+     "fwd1": 21.8,
+     "fwd3": -10.4
+    },
+    {
+     "name": "Shilpa Medicare Ltd.",
+     "code": "SHILPAMED",
+     "band": "micro",
+     "rs6m": 83.0,
+     "from_high": -10.2,
+     "fwd1": 17.6,
+     "fwd3": -48.4
+    },
+    {
+     "name": "Granules India Ltd.",
+     "code": "GRANULES",
+     "band": "small",
+     "rs6m": 81.2,
+     "from_high": -4.2,
+     "fwd1": 52.9,
+     "fwd3": 39.7
+    },
+    {
+     "name": "Escorts Kubota Ltd.",
+     "code": "ESCORTS",
+     "band": "mid",
+     "rs6m": 78.4,
+     "from_high": 0.0,
+     "fwd1": 16.2,
+     "fwd3": 111.9
+    },
+    {
+     "name": "Navin Fluorine International Ltd.",
+     "code": "NAVINFLUOR",
+     "band": "small",
+     "rs6m": 72.2,
+     "from_high": -1.2,
+     "fwd1": 128.1,
+     "fwd3": 178.8
+    },
+    {
+     "name": "Rallis India Ltd.",
+     "code": "RALLIS",
+     "band": "micro",
+     "rs6m": 71.8,
+     "from_high": 0.0,
+     "fwd1": 22.4,
+     "fwd3": -26.2
+    },
+    {
+     "name": "Vaibhav Global Ltd.",
+     "code": "VAIBHAVGBL",
+     "band": "micro",
+     "rs6m": 70.4,
+     "from_high": -1.2,
+     "fwd1": -35.9,
+     "fwd3": -75.5
+    },
+    {
+     "name": "Apollo Micro Systems Ltd.",
+     "code": "APOLLO",
+     "band": "micro",
+     "rs6m": 66.7,
+     "from_high": -6.3,
+     "fwd1": 4.4,
+     "fwd3": -54.3
+    },
+    {
+     "name": "Laurus Labs Ltd.",
+     "code": "LAURUSLABS",
+     "band": "mid",
+     "rs6m": 66.6,
+     "from_high": 0.0,
+     "fwd1": 20.1,
+     "fwd3": -35.3
+    },
+    {
+     "name": "Tata Communications Ltd.",
+     "code": "TATACOMM",
+     "band": "mid",
+     "rs6m": 65.9,
+     "from_high": 0.0,
+     "fwd1": 118.7,
+     "fwd3": 164.8
+    },
+    {
+     "name": "Ipca Laboratories Ltd.",
+     "code": "IPCALAB",
+     "band": "mid",
+     "rs6m": 64.1,
+     "from_high": 0.0,
+     "fwd1": 18.7,
+     "fwd3": -57.2
+    },
+    {
+     "name": "Network18 Media & Investments Ltd.",
+     "code": "NETWORK18",
+     "band": "micro",
+     "rs6m": 61.5,
+     "from_high": -4.7,
+     "fwd1": 21.0,
+     "fwd3": 54.2
+    },
+    {
+     "name": "Balaji Amines Ltd.",
+     "code": "BALAMINES",
+     "band": "micro",
+     "rs6m": 60.3,
+     "from_high": 0.0,
+     "fwd1": 412.4,
+     "fwd3": 335.8
+    },
+    {
+     "name": "Coromandel International Ltd.",
+     "code": "COROMANDEL",
+     "band": "mid",
+     "rs6m": 59.7,
+     "from_high": 0.0,
+     "fwd1": 22.7,
+     "fwd3": 22.6
+    }
+   ],
+   "picks_3y": {
+    "n": 20,
+    "median": 47.0,
+    "double": 40.0,
+    "triple": 10.0,
+    "negative": 35.0
+   },
+   "picks_1y": {
+    "n": 20,
+    "median": 37.4,
+    "double": 30.0,
+    "triple": 15.0,
+    "negative": 5.0
+   },
+   "universe_3y": {
+    "n": 373,
+    "median": 122.0,
+    "double": 55.5,
+    "triple": 32.4,
+    "negative": 13.4
+   },
+   "nifty_3y": 79.8
+  },
+  {
+   "date": "2021-07-01",
+   "eligible": 384,
+   "passing": 248,
+   "picks": [
+    {
+     "name": "Elecon Engineering Co. Ltd.",
+     "code": "ELECON",
+     "band": "small",
+     "rs6m": 251.1,
+     "from_high": -1.8,
+     "fwd1": 96.4,
+     "fwd3": 855.0
+    },
+    {
+     "name": "Jayaswal Neco Industries Ltd.",
+     "code": "JAYNECOIND",
+     "band": "micro",
+     "rs6m": 250.8,
+     "from_high": 0.0,
+     "fwd1": 7.1,
+     "fwd3": 120.0
+    },
+    {
+     "name": "Kirloskar Brothers Ltd.",
+     "code": "KIRLOSBROS",
+     "band": "small",
+     "rs6m": 245.7,
+     "from_high": 0.0,
+     "fwd1": -29.7,
+     "fwd3": 370.9
+    },
+    {
+     "name": "Praj Industries Ltd.",
+     "code": "PRAJIND",
+     "band": "micro",
+     "rs6m": 231.5,
+     "from_high": 0.0,
+     "fwd1": -4.7,
+     "fwd3": 83.6
+    },
+    {
+     "name": "Saregama India Ltd",
+     "code": "SAREGAMA",
+     "band": "micro",
+     "rs6m": 212.2,
+     "from_high": -2.9,
+     "fwd1": -85.0,
+     "fwd3": -77.1
+    },
+    {
+     "name": "Reliance Power Ltd.",
+     "code": "RPOWER",
+     "band": "small",
+     "rs6m": 205.7,
+     "from_high": 0.0,
+     "fwd1": 19.1,
+     "fwd3": 200.2
+    },
+    {
+     "name": "Shakti Pumps (India) Ltd.",
+     "code": "SHAKTIPUMP",
+     "band": "micro",
+     "rs6m": 203.3,
+     "from_high": -10.6,
+     "fwd1": -33.5,
+     "fwd3": 227.0
+    },
+    {
+     "name": "JAI BALAJI INDUSTRIES Ltd.",
+     "code": "JAIBALAJI",
+     "band": "micro",
+     "rs6m": 199.0,
+     "from_high": 0.0,
+     "fwd1": -25.3,
+     "fwd3": 44.7
+    },
+    {
+     "name": "RattanIndia Power Ltd.",
+     "code": "RTNPOWER",
+     "band": "micro",
+     "rs6m": 182.6,
+     "from_high": 0.0,
+     "fwd1": -52.9,
+     "fwd3": 88.6
+    },
+    {
+     "name": "Balaji Amines Ltd.",
+     "code": "BALAMINES",
+     "band": "micro",
+     "rs6m": 175.6,
+     "from_high": -5.4,
+     "fwd1": 6.2,
+     "fwd3": -10.9
+    },
+    {
+     "name": "PG Electroplast Ltd.",
+     "code": "PGEL",
+     "band": "small",
+     "rs6m": 166.7,
+     "from_high": -5.5,
+     "fwd1": 103.0,
+     "fwd3": 663.2
+    },
+    {
+     "name": "Godawari Power & Ispat Ltd.",
+     "code": "GPIL",
+     "band": "small",
+     "rs6m": 162.0,
+     "from_high": 0.0,
+     "fwd1": -80.0,
+     "fwd3": -9.7
+    },
+    {
+     "name": "Anant Raj Ltd.",
+     "code": "ANANTRAJ",
+     "band": "small",
+     "rs6m": 158.5,
+     "from_high": 0.0,
+     "fwd1": -22.8,
+     "fwd3": 565.2
+    },
+    {
+     "name": "Happiest Minds Technologies Ltd.",
+     "code": "HAPPSTMNDS",
+     "band": "micro",
+     "rs6m": 156.0,
+     "from_high": 0.0,
+     "fwd1": -7.7,
+     "fwd3": -3.7
+    },
+    {
+     "name": "Shree Renuka Sugars Ltd.",
+     "code": "RENUKA",
+     "band": "micro",
+     "rs6m": 152.9,
+     "from_high": 0.0,
+     "fwd1": 41.7,
+     "fwd3": 51.6
+    },
+    {
+     "name": "Tata Teleservices (Maharashtra) Ltd.",
+     "code": "TTML",
+     "band": "small",
+     "rs6m": 152.8,
+     "from_high": 0.0,
+     "fwd1": 543.9,
+     "fwd3": 315.2
+    },
+    {
+     "name": "Suzlon Energy Ltd.",
+     "code": "SUZLON",
+     "band": "mid",
+     "rs6m": 147.5,
+     "from_high": 0.0,
+     "fwd1": -7.1,
+     "fwd3": 584.5
+    },
+    {
+     "name": "Deepak Fertilisers & Petrochemicals Corp. Ltd.",
+     "code": "DEEPAKFERT",
+     "band": "small",
+     "rs6m": 141.8,
+     "from_high": 0.0,
+     "fwd1": 53.1,
+     "fwd3": 72.8
+    },
+    {
+     "name": "HFCL Ltd.",
+     "code": "HFCL",
+     "band": "small",
+     "rs6m": 139.5,
+     "from_high": 0.0,
+     "fwd1": -13.1,
+     "fwd3": 87.8
+    },
+    {
+     "name": "Fertilisers and Chemicals Travancore Ltd.",
+     "code": "FACT",
+     "band": "mid",
+     "rs6m": 133.8,
+     "from_high": -6.7,
+     "fwd1": -28.2,
+     "fwd3": 744.4
+    }
+   ],
+   "picks_3y": {
+    "n": 20,
+    "median": 104.3,
+    "double": 50.0,
+    "triple": 45.0,
+    "negative": 20.0
+   },
+   "picks_1y": {
+    "n": 20,
+    "median": -7.4,
+    "double": 10.0,
+    "triple": 5.0,
+    "negative": 60.0
+   },
+   "universe_3y": {
+    "n": 384,
+    "median": 87.8,
+    "double": 45.6,
+    "triple": 29.9,
+    "negative": 18.0
+   },
+   "nifty_3y": 48.2
+  },
+  {
+   "date": "2022-07-01",
+   "eligible": 421,
+   "passing": 47,
+   "picks": [
+    {
+     "name": "Madhya Bharat Agro Products Ltd.",
+     "code": "MBAPL",
+     "band": "micro",
+     "rs6m": 301.9,
+     "from_high": 0.0,
+     "fwd1": -13.9,
+     "fwd3": -37.9
+    },
+    {
+     "name": "Chennai Petroleum Corporation Ltd.",
+     "code": "CHENNPETRO",
+     "band": "small",
+     "rs6m": 198.9,
+     "from_high": -17.9,
+     "fwd1": 30.4,
+     "fwd3": 129.7
+    },
+    {
+     "name": "CreditAccess Grameen Ltd.",
+     "code": "CREDITACC",
+     "band": "small",
+     "rs6m": 79.3,
+     "from_high": -5.9,
+     "fwd1": 22.7,
+     "fwd3": 19.8
+    },
+    {
+     "name": "Chalet Hotels Ltd.",
+     "code": "CHALET",
+     "band": "micro",
+     "rs6m": 61.1,
+     "from_high": 0.0,
+     "fwd1": 31.0,
+     "fwd3": 179.7
+    },
+    {
+     "name": "Voltamp Transformers Ltd",
+     "code": "VOLTAMP",
+     "band": "micro",
+     "rs6m": 58.0,
+     "from_high": 0.0,
+     "fwd1": 36.8,
+     "fwd3": 213.4
+    },
+    {
+     "name": "VALOR ESTATE Ltd.",
+     "code": "DBREALTY",
+     "band": "micro",
+     "rs6m": 57.2,
+     "from_high": 0.0,
+     "fwd1": 9.5,
+     "fwd3": 241.3
+    },
+    {
+     "name": "Elecon Engineering Co. Ltd.",
+     "code": "ELECON",
+     "band": "small",
+     "rs6m": 50.9,
+     "from_high": -3.0,
+     "fwd1": 123.8,
+     "fwd3": 150.2
+    },
+    {
+     "name": "Tata Elxsi Ltd.",
+     "code": "TATAELXSI",
+     "band": "small",
+     "rs6m": 48.2,
+     "from_high": -8.5,
+     "fwd1": -6.9,
+     "fwd3": -22.2
+    },
+    {
+     "name": "Gokul Agro Resources Ltd.",
+     "code": "GOKULAGRO",
+     "band": "micro",
+     "rs6m": 47.5,
+     "from_high": -24.6,
+     "fwd1": 14.4,
+     "fwd3": 218.7
+    },
+    {
+     "name": "Time Technoplast Ltd.",
+     "code": "TIMETECHNO",
+     "band": "micro",
+     "rs6m": 46.8,
+     "from_high": -9.9,
+     "fwd1": 13.7,
+     "fwd3": 324.2
+    },
+    {
+     "name": "Capri Global Capital Ltd.",
+     "code": "CGCL",
+     "band": "small",
+     "rs6m": 40.2,
+     "from_high": -6.5,
+     "fwd1": 11.8,
+     "fwd3": -75.1
+    },
+    {
+     "name": "Linde India Ltd.",
+     "code": "LINDEINDIA",
+     "band": "mid",
+     "rs6m": 39.3,
+     "from_high": -17.9,
+     "fwd1": 33.4,
+     "fwd3": 105.2
+    },
+    {
+     "name": "Coromandel International Ltd.",
+     "code": "COROMANDEL",
+     "band": "mid",
+     "rs6m": 36.9,
+     "from_high": 0.0,
+     "fwd1": -1.8,
+     "fwd3": 152.0
+    },
+    {
+     "name": "Apar Industries Ltd.",
+     "code": "APARINDS",
+     "band": "mid",
+     "rs6m": 33.7,
+     "from_high": -0.2,
+     "fwd1": 257.3,
+     "fwd3": 768.9
+    },
+    {
+     "name": "Timken India Ltd.",
+     "code": "TIMKEN",
+     "band": "small",
+     "rs6m": 33.6,
+     "from_high": -1.8,
+     "fwd1": 38.4,
+     "fwd3": 35.6
+    },
+    {
+     "name": "Jamna Auto Industries Ltd.",
+     "code": "JAMNAAUTO",
+     "band": "micro",
+     "rs6m": 30.3,
+     "from_high": 0.0,
+     "fwd1": -18.4,
+     "fwd3": -23.9
+    },
+    {
+     "name": "Phoenix Mills Ltd.",
+     "code": "PHOENIXLTD",
+     "band": "mid",
+     "rs6m": 29.7,
+     "from_high": 0.0,
+     "fwd1": 31.7,
+     "fwd3": 32.3
+    },
+    {
+     "name": "Welspun Corp Ltd.",
+     "code": "WELCORP",
+     "band": "small",
+     "rs6m": 29.5,
+     "from_high": -12.4,
+     "fwd1": 21.6,
+     "fwd3": 338.1
+    },
+    {
+     "name": "Mahindra & Mahindra Financial Services Ltd.",
+     "code": "M&MFIN",
+     "band": "mid",
+     "rs6m": 29.2,
+     "from_high": -10.0,
+     "fwd1": 88.3,
+     "fwd3": 52.7
+    },
+    {
+     "name": "Techno Electric & Engineering Company Ltd.",
+     "code": "TECHNOE",
+     "band": "small",
+     "rs6m": 29.1,
+     "from_high": -7.4,
+     "fwd1": 26.2,
+     "fwd3": 452.0
+    }
+   ],
+   "picks_3y": {
+    "n": 20,
+    "median": 140.0,
+    "double": 60.0,
+    "triple": 35.0,
+    "negative": 20.0
+   },
+   "picks_1y": {
+    "n": 20,
+    "median": 24.5,
+    "double": 10.0,
+    "triple": 5.0,
+    "negative": 20.0
+   },
+   "universe_3y": {
+    "n": 421,
+    "median": 98.9,
+    "double": 49.4,
+    "triple": 26.1,
+    "negative": 15.0
+   },
+   "nifty_3y": 62.8
+  }
+ ]
+}
