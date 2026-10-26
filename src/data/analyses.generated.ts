@@ -5,6 +5,24 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Adani Ports: 2% Domestic Volume Growth, 27.5x FY27 Earnings",
+    "ticker": "ADANIPORTS",
+    "file": "adani-ports-q1-fy27-deep-dive.md",
+    "slug": "adani-ports-q1-fy27-deep-dive",
+    "date": "2026-10-26",
+    "tags": [
+      "deep-dive",
+      "fundamental",
+      "ports",
+      "logistics",
+      "infrastructure",
+      "adani-group"
+    ],
+    "summary": "Adani Ports grew international revenue 80% in Q1 FY27 while domestic cargo rose 2.1%. At ₹1,703 it trades at 27.5x FY27 guidance earnings. Verdict: accumulate on dips.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "NALCO: Record Q1, ₹24,000 Cr Expansion, Stock 32% Off Peak",
     "ticker": "NATIONALUM:NSE",
     "file": "nalco-down-root-cause-jun16.md",
