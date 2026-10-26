@@ -65,7 +65,7 @@ def fridays(start: str, end: str) -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--from", dest="start", default="2018-06-01")
-    ap.add_argument("--to", dest="end", default="2025-08-01")
+    ap.add_argument("--to", dest="end", default=datetime.utcnow().strftime("%Y-%m-%d"))
     args = ap.parse_args()
 
     CACHE.mkdir(parents=True, exist_ok=True)

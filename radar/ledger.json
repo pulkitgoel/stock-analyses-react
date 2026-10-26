@@ -1,0 +1,79 @@
+{
+ "entries": [
+  {
+   "code": "TANLA",
+   "name": "Tanla Platforms Ltd.",
+   "band": "micro",
+   "industry": "Information Technology",
+   "gates": 6,
+   "added": "2026-10-26",
+   "price_at_add": 557.15,
+   "status": "queued",
+   "thesis": "",
+   "kill_criteria": "",
+   "review_on": "2027-10-26",
+   "slug": null,
+   "outcome": null
+  },
+  {
+   "code": "CHENNPETRO",
+   "name": "Chennai Petroleum Corporation Ltd.",
+   "band": "small",
+   "industry": "Oil Gas & Consumable Fuels",
+   "gates": 5,
+   "added": "2026-10-26",
+   "price_at_add": 1475.6,
+   "status": "queued",
+   "thesis": "",
+   "kill_criteria": "",
+   "review_on": "2027-10-26",
+   "slug": null,
+   "outcome": null
+  },
+  {
+   "code": "LTTS",
+   "name": "L&T Technology Services Ltd.",
+   "band": "mid",
+   "industry": "Information Technology",
+   "gates": 5,
+   "added": "2026-10-26",
+   "price_at_add": 3910.3,
+   "status": "queued",
+   "thesis": "",
+   "kill_criteria": "",
+   "review_on": "2027-10-26",
+   "slug": null,
+   "outcome": null
+  },
+  {
+   "code": "IGIL",
+   "name": "International Gemological Institute Ltd.",
+   "band": "small",
+   "industry": "Services",
+   "gates": 5,
+   "added": "2026-10-26",
+   "price_at_add": 381.15,
+   "status": "queued",
+   "thesis": "",
+   "kill_criteria": "",
+   "review_on": "2027-10-26",
+   "slug": null,
+   "outcome": null
+  },
+  {
+   "code": "MASTEK",
+   "name": "Mastek Ltd.",
+   "band": "micro",
+   "industry": "Information Technology",
+   "gates": 5,
+   "added": "2026-10-26",
+   "price_at_add": 1761.6,
+   "status": "queued",
+   "thesis": "",
+   "kill_criteria": "",
+   "review_on": "2027-10-26",
+   "slug": null,
+   "outcome": null
+  }
+ ]
+}
