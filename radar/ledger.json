@@ -12,10 +12,10 @@
    "thesis": "",
    "kill_criteria": "",
    "review_on": "2027-10-26",
-   "slug": "tanla-platforms-deep-dive",
+   "slug": null,
    "outcome": null,
-   "verdict": "WAIT - cheap at 12.9x FY27E and 7.7x EV/EBITDA with net cash, but EPS is flat since FY22; Q2 results on 27 Oct decide whether 16% margin is a floor.",
-   "analysed_on": "2026-10-26"
+   "analysed_on": "2026-10-26",
+   "note": "full analysis in radar/notes/tanla-platforms.md and gbrain; not published"
   },
   {
    "code": "CHENNPETRO",

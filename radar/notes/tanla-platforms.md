@@ -269,7 +269,7 @@ That is a 12-month base with rising lows, and it is the most constructive struct
 | # | Checklist item | Evidence | Verdict |
 |---|---|---|---|
 | 1 | Price position | 13.5% below the 52-week high of ₹656, 55.2% above the 52-week low | Pass |
-| 2 | Trend | Higher lows since March (₹365.90 to ₹480.80 to ₹548.95), but the October high of ₹597.50 is a lower high against July's ₹656; the 200-day EMA is flat | Caution |
+| 2 | Trend | Higher lows since March (₹365.90 → ₹480.80 → ₹548.95), but the October high of ₹597.50 is a lower high against July's ₹656; the 200-day EMA is flat | Caution |
 | 3 | Volume characteristics | 13, 21 and 22 October volumes of 18.2, 23.9 and 30.0 lakh shares against a 4 lakh baseline — expansion, but on low delivery | Caution |
 | 4 | Clean price action | ₹597.50 to ₹557.15 in one session, 5% intraweek swings, ATR 4.3% of price | Caution |
 | 5 | EMA alignment | EMA9 > EMA20 > EMA50, but EMA50 ₹531.44 sits below EMA100 ₹532.22 and EMA200 ₹536.69; the long end is not stacked and the 200-day is flat | Caution |
@@ -450,7 +450,7 @@ All scenarios use FY26 revenue of ₹4,418 Cr as the base, ₹130 Cr of deprecia
 | Regulated-message risk | Medium | Management puts strictly regulated traffic at a single-digit share of volumes. If UPI notification rules or silent OTP authentication change, that share is at risk; management could not quantify it |
 | SMS pricing | Medium | Pricing pressure from PSU banks and government customers is disclosed, with a reset "on the cards" but undated. Each 50 bps of margin is worth about ₹2 of EPS |
 | ValueFirst integration | Medium | An acquisition of a business with negative net worth whose revenue halved to ₹181.63 Cr while the deal waited three years. ₹136.52 Cr of the "consideration" is liability assumption, much of it payable to Tanla's own group companies |
-| Working capital | Medium | Debtor days 76 to 82 and working capital days 30 to 38 in a year. A ₹100 Cr collection swing is a fifth of annual free cash flow |
+| Working capital | Medium | Debtor days 76 → 82 and working capital days 30 → 38 in a year. A ₹100 Cr collection swing is a fifth of annual free cash flow |
 | Valuation de-rating | Low | 14.1x trailing, 7.7x forward EBITDA, 2.11% yield and net cash cap the downside; a move to 11x implies about ₹440, or 23% lower |
 
 ---
