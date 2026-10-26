@@ -92,10 +92,10 @@ def main() -> int:
                  and r["from_high_pct"] > -25 and r["rs6m"] > 0]
     print(f"trend: {len(rows)} priced as of {date}, {len(survivors)} above the gate")
 
-    # Fundamentals only for the strongest forty, paced. Touching Screener
+    # Fundamentals only for the strongest sixty, paced. Touching Screener
     # for the whole survivor list is what caused the block in the first place.
     fetch = subprocess.run([sys.executable, str(ROOT / "scripts" / "radar-fundamentals.py"),
-                            "--limit", "40"],
+                            "--limit", "60"],
                            capture_output=True, text=True, timeout=3600,
                            env={**__import__("os").environ, "RADAR_DELAY": "9"})
     print((fetch.stdout.strip() or fetch.stderr.strip())[:400])
