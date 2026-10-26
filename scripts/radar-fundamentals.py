@@ -130,13 +130,23 @@ def main() -> int:
         for index, row in enumerate(pending, 1):
             code = row["code"]
             try:
-                page.goto(f"https://www.screener.in/company/{code}/consolidated/",
-                          wait_until="domcontentloaded")
-                time.sleep(1.5)
-                if "login" in page.url:
-                    print("radar-fundamentals: session lost, stopping", file=sys.stderr)
-                    break
-                data = extraction(page)
+                data = None
+                for attempt in range(3):
+                    try:
+                        page.goto(f"https://www.screener.in/company/{code}/consolidated/",
+                                  wait_until="domcontentloaded", timeout=30000)
+                        time.sleep(1.5)
+                        if "login" in page.url:
+                            print("radar-fundamentals: session lost, stopping", file=sys.stderr)
+                            raise SystemExit
+                        data = extraction(page)
+                        break
+                    except SystemExit:
+                        raise
+                    except Exception as exc:
+                        if attempt == 2:
+                            raise
+                        time.sleep(3 * (attempt + 1))
                 data["_meta"] = {"code": code, "name": row["name"],
                                  "band": row["band"], "industry": row["industry"],
                                  "fetched": time.strftime("%Y-%m-%d")}
