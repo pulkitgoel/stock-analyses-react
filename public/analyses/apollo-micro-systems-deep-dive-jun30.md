@@ -1,7 +1,7 @@
 ---
 title: "Apollo Micro Systems — Deep Dive Analysis"
 ticker: "APOLLO"
-date: "2026-10-24"
+date: "2026-10-26"
 tags: ["deep-dive","fundamental","defence","aerospace"]
 summary: "Q2 FY27: revenue ₹388 Cr (+72%), PBT +114%, PAT ₹46 Cr held back by a ₹18.5 Cr non-cash deferred tax charge. Order book ₹1,765 Cr. Updated P/E 105x TTM, ~90x forward. Verdict: CAUTION — growth is real, cash flow and valuation still are not fixed."
 model: "deepseek-v4-flash"
@@ -19,7 +19,7 @@ model: "deepseek-v4-flash"
 
 ---
 
-## Update — Q2 FY27 Results (24 October 2026)
+## Update — Q2 FY27 Results (24 October) and the Earnings Call (26 October 2026)
 
 Apollo Micro filed its September-quarter results on Saturday 24 October, after Friday's close. The stock had already fallen 11.6% in the four sessions before the filing — from ₹423.80 on 20 October to ₹374.75 — so the market's verdict is still to come.
 
@@ -71,6 +71,12 @@ On 37.17 Cr shares that is **TTM EPS of ₹3.58**, so at ₹374.75 the **P/E is 
 If H2 simply repeats H1, FY27 PAT is about ₹151 Cr → EPS ₹4.05 → **92x forward**. If H2 grows 20%, about ₹166 Cr → **84x**.
 
 ---
+
+### What the 26 October call added
+
+The results were filed on Saturday 24 October; management held the earnings call on Monday 26 October. Three things came out of it that the filing does not say: full-year growth guidance of 45–50% was **maintained** (with 35–45% standalone growth in H2), the order book is expected to exceed ₹2,000 Cr by March 2027 **before** any MIGM order, and if MIGM lands between February and March the company expects ₹4,500–5,000 Cr. The MD's line — "what we earned at the operating level a quarter ago, we now delivered at the bottom line" — is the operating-leverage argument in one sentence: Q1 EBITDA of ₹48 Cr became Q2 PAT of ₹48 Cr.
+
+**The stock rose about 10% on the day to roughly ₹400**, recovering most of the fall described below. Every multiple in this article is struck at the 23 October close of ₹374.75, so the post-call price is about 7% higher than the valuation tables assume. Section 8 carries the full commentary and the catalyst calendar.
 
 ## 1. Quick Snapshot
 
@@ -229,22 +235,23 @@ This is the single biggest concern. The company generates record accounting prof
 | **Mar'25** | 55.12% | 0.93% | 0.37% | 43.60% | **2,80,427** |
 | **Mar'26** | **51.98%** | 3.63% | 1.82% | 42.58% | **3,73,806** |
 | **Jun'26** | **50.27%** | **6.21%** | 1.76% | 41.76% | **3,73,814** |
+| **Sep'26** | **49.98%** | **5.95%** | 1.50% | 42.58% | **4,24,721** |
 
 ### Key Trends
 
 ** Promoters — Consistent Dilution**
-- Declined from **63.92% (Mar'18) to 50.27% (Jun'26)** — -13.65% in 8 years
-- **-1.71% in last quarter alone** (Mar'26→Jun'26)
+- Declined from **63.92% (Mar'18) to 49.98% (Sep'26)** — -13.94 percentage points in eight years, and now **below half the company**
+- **-0.29 points in the September quarter alone** (50.27% to 49.98%), after -1.71 points in the June quarter
 - Screener flags this as a CON: *"Promoter holding has decreased over last quarter"*
 - Promoters have **pledged 30.8%** of their holding (another CON flagged)
 
 ** FIIs — Returning Strongly**
 - Mar'24 saw a massive spike to 11.14% (from 0.12% in Mar'23)
-- Dropped to 0.93% in Mar'25, but now **rising back to 6.21% (Jun'26)**
+- Dropped to 0.93% in Mar'25, then **rose to 6.21% in Jun'26 and 5.95% in Sep'26** — still the highest since Mar'24
 - Recent bulk deals by HRTI, Jump Trading in ₹415-423 range confirm FII/prop interest
 
 ** Public — Explosive Retail Interest**
-- Shareholders exploded from 42,134 (Mar'23) to **3,73,814 (Jun'26)** — **8.9x in 3 years**
+- Shareholders exploded from 42,134 (Mar'23) to **4,24,721 (Sep'26)** — **10.1x in three and a half years**
 - Public holding grew from 37% to 42%
 - High retail participation — could add volatility
 
@@ -277,7 +284,27 @@ This is the single biggest concern. The company generates record accounting prof
 
 ---
 
-## 8. Management Commentary (FY26 Earnings PPT)
+## 8. Management Commentary — FY26 Presentation and the Q2 FY27 Call (26 October 2026)
+
+### The Q2 FY27 earnings call — guidance, order book targets, catalysts
+
+Management held its Q2 FY27 call on 26 October 2026, two days after the results. This is the most recent forward-looking statement the company has made, and it is the one that matters:
+
+| Item | What management said |
+|---|---|
+| FY27 revenue growth | 45–50% for the full year, maintained |
+| H2 FY27 standalone growth | 35–45% |
+| Order book, 30 Sep 2026 | ₹1,765 Cr, an all-time high |
+| Order book target, March 2027 | ₹2,000+ Cr, **excluding** MIGM |
+| Order book if MIGM lands | ₹4,500–5,000 Cr |
+
+**The MD's framing:** Baddam Karunakar Reddy called it "our strongest performance in our company's history", and made the operating-leverage point explicitly — *"What we earned at the operating level a quarter ago, we now delivered at the bottom line"*, referring to Q1 EBITDA of ₹48 Cr becoming Q2 PAT of ₹48 Cr.
+
+**The catalyst calendar management put on the record:** Pinaka orders expected before December 2026; a heavyweight torpedo order targeted for November 2026; export orders beginning in the next financial year; Unit 3 at full operation by March 2027; and the MIGM order expected between February and March 2027, with no later than March 2027.
+
+**The market's reaction:** the stock rose roughly 10% on 26 October to about ₹400, recovering most of the 23 October fall described in section 9, and settling near its 63-day moving average of roughly ₹398. Every valuation multiple in this article is struck at the 23 October close of ₹374.75, so the post-results move makes them about 7% more expensive than stated.
+
+### From the FY26 results presentation (May 2026)
 
 ### From MD Mr. Baddam Karunakar Reddy:
 
@@ -457,7 +484,7 @@ Compare with healthy accumulation (40%+ delivery) or strong accumulation (50%+).
 
 - **HRTI Private Limited** (prop desk) has been aggressively buying in ₹415-423 range — over **₹310 Cr+ in early June alone**
 - **Jump Trading** (global prop desk) active with matched buy/sell pairs — likely arbitrage, not directional
-- This explains the **FII holding jump from 0.93% (Mar'25) → 6.21% (Jun'26)** — prop desks accumulating
+- This explains the **FII holding jump from 0.93% (Mar'25) to 6.21% (Jun'26) and 5.95% (Sep'26)** — prop desks accumulating
 - However, HRTI/Jump are **prop desks, not traditional MFs/FIIs** — they trade directionally and can exit quickly
 - **No bulk/block deals in the 29-Jun CSV** — suggests consolidation phase
 
@@ -623,7 +650,16 @@ The Q2 FY27 results strengthen the business case and weaken the trading case at 
 | Momentum trader | Wait for Monday's reaction; a gap-up above ₹404 on volume is the trigger |
 | Value investor | Avoid — 105x earnings and negative operating cash flow |
 
-> **Disclaimer:** For informational purposes only. Not investment advice. Data sourced from Screener.in consolidated view, TradingView, NSE official bhavcopy, BSE filings, and company presentations. The author may hold positions in securities discussed. Independent due diligence recommended before any investment decision.
+## Sources
+
+- **Screener.in, consolidated** — annual and quarterly P&L, balance sheet, cash flow, ratios, shareholding to the September 2026 quarter, pros and cons. Fetched 26 October 2026.
+- **NSE corporate filings (nsearchives)** — Q2 FY27 results filed 24 October 2026, the FY26 results presentation of May 2026, and the material announcements referenced in section 12.
+- **Q2 FY27 earnings call, 26 October 2026** — guidance, order-book targets and the catalyst calendar, as reported in the call transcript coverage; the MD quotations in section 8 are from that call.
+- **NSE bhavcopy, full file** — close, volume and delivery percentage for the October sessions in section 10.
+- **TradingView** — oscillator and moving-average panel in section 9, cross-checked against computed values from the daily series.
+- **Yahoo Finance v8 chart API** — daily OHLC for the 52-week range and the moving averages.
+
+> **Disclaimer:** For informational purposes only. Not investment advice. Data sourced from Screener.in consolidated view (fetched 26 October 2026, shareholding to the September quarter), TradingView, NSE official bhavcopy, BSE filings, and company presentations. The author may hold positions in securities discussed. Independent due diligence recommended before any investment decision.
 
 ---
 
