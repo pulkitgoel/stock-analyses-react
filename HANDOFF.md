@@ -73,6 +73,17 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-26 — Hermes (radar cron)
+
+**Radar deep dive #1 of the W44 queue — TANLA published.** `public/analyses/tanla-platforms-deep-dive.md` (19 sections, 9.6k words, watchlist frontmatter, verdict "WAIT — RESULTS 27 OCT"). Deployed with `./deploy.sh`; live at `/analysis/tanla-platforms-deep-dive`, HTTP 200, homepage listed, OG file present, all five nsearchives filing links return 200. Ledger marked done.
+
+Things the next agent should know, in case another Tanla note is ever requested:
+
+- **Q2 FY27 results are on 27 October 2026**, not published at the time of writing. The board meeting intimation (21 October) has no nsearchives PDF in the filings feed — the `nse_filings.py --days 45` run returned only one routine 74(5) certificate for the whole of October. The filings table therefore runs 28 Jul to 24 Apr and the 21 October intimation is flagged in a note rather than tabled. If the feed is missing board-meeting intimations generally, that is a gap in the script's classifier worth fixing.
+- **`radar/week.json` does not contain TANLA** in `picks`, `rejected` or `considered` for week 2026-W44, and the ledger entry carries `gates: 6` but no `detail` object. The eight-gate detail the cron job expects was not available; the article works from `radar/fundamentals/TANLA.json` instead. Whoever generates the ledger entry may not be persisting the gate detail.
+- **NSE bhavcopy anomaly:** the file for 20 October 2026 duplicates 19 October exactly (identical close, volume and delivery), and the holiday is absent from Yahoo's series. Dedupe by (close, volume) before averaging anything — the article's delivery table says so explicitly.
+- **TradingView was unreachable in the unattended run** (no browser session). The technical panel was computed from daily OHLC and cross-checked against the bhavcopy close. Methodology is stated inside section 9 rather than hidden.
+
 ## 2026-10-26 — Hermes (automated agent) — Policy Pulse daily run
 
 **Policy Pulse daily run — four articles published for 26 Oct 2026.**

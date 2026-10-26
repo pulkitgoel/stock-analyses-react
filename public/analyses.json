@@ -110,6 +110,25 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Tanla Platforms — Deep Dive Analysis",
+      "ticker": "TANLA:NSE",
+      "file": "tanla-platforms-deep-dive.md",
+      "slug": "tanla-platforms-deep-dive",
+      "date": "2026-10-26",
+      "tags": [
+        "deep-dive",
+        "fundamental",
+        "cpaas",
+        "saas",
+        "ai",
+        "digital-platforms",
+        "cloud-communications"
+      ],
+      "summary": "Fifth straight quarter of revenue growth at 17.8%, but EPS has not grown since FY22 (₹39.73 then, ₹38.39 in FY26) while margin fell 22% to 16%. At 14.1x trailing and 7.7x forward EBITDA the stock is cheap on every static measure. Q2 results land 27 October. Verdict: WAIT.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "NALCO: Record Q1, ₹24,000 Cr Expansion, Stock 32% Off Peak",
       "ticker": "NATIONALUM:NSE",
       "file": "nalco-down-root-cause-jun16.md",

@@ -22,6 +22,29 @@
       "verdict": "ACCUMULATE ON DIPS"
     },
     {
+      "slug": "tanla-platforms-deep-dive",
+      "ticker": "TANLA:NSE",
+      "title": "Tanla Platforms — Deep Dive Analysis",
+      "date": "2026-10-26",
+      "yahooSymbol": "TANLA.NS",
+      "priceAtAnalysis": 567.8,
+      "support": 536.93,
+      "resistance": 597.5,
+      "supports": [
+        536.93,
+        531.44,
+        523.07,
+        480.8
+      ],
+      "resistances": [
+        579.82,
+        597.5,
+        601,
+        656
+      ],
+      "verdict": "WAIT — RESULTS 27 OCT"
+    },
+    {
       "slug": "nalco-down-root-cause-jun16",
       "ticker": "NATIONALUM:NSE",
       "title": "NALCO: Record Q1, ₹24,000 Cr Expansion, Stock 32% Off Peak",
