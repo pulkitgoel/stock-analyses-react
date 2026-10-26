@@ -73,6 +73,37 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-26 — Hermes (automated agent) — Policy Pulse daily run
+
+**Policy Pulse daily run — four articles published for 26 Oct 2026.**
+
+Anchors chosen and why:
+
+- **US** — the Canada Section 338 proclamation signed Fri 23 Oct (effective 30 Oct) is today's live trade event: plywood, some paper, certain machinery/refrigeration and packing crates come out of the 50% scope; certain valves, carpets, waste products (incl. sewage sludge), cocoa powder, paints, varnishes, shampoos, vinyl flooring and archery equipment go in. Political read is the Maine (Collins) and Michigan (Rogers) Senate races. Second anchor is the JEC minority report released today: Trump's oil & gas holdings up to $81.6m, +$35.8m YTD, 94% of 2026 purchases made after the Iran war began. Third: DJT at a record low (~$6.16 intraday).
+- **Ministries** — DAC cleared ₹2,12,000 crore of AoNs with ~82% from Indian industry and named no company; Rule 6 stated up front and every mapping marked inferred. Second: Rajnath Singh's "Aatmanirbharta 2.0" at SWAVLAMBAN 2026, which names rare earths as a defence supply-chain dependency on the record. Third: the close (Sensex 73,606.75 +482.92, Nifty 22,753.20 +153.20). Fourth: Jio allotment finalised today, listing 28 Oct.
+- **Modi** — PM inaugurated the RBI Data Centre and Cybersecurity Training Institute at Bhubaneswar (₹169 crore, 25 Oct), housing RTGS/NEFT, with the line "we cannot confront these emerging challenges with outdated systems" published as a spending directive. Plus the Varanasi garment facility and an explicit statement that today's PMO output was communication, not policy, and that no Cabinet decision was taken (PIB's Cabinet listing still tops out at 14 Oct).
+- **Global** — Brent reversed 1.6% to ~$114.80 from Friday's $116.72 settle (highest since June 2022) with no de-escalation headline; Asia split with Nikkei 62,189.65 (-503.51, -0.80%) and KOSPI -1.50% on chip equipment while HSI and Shanghai rose.
+
+**Two template traps handled.** The "reverse AI trade" into Indian IT did **not** fire — Infosys fell ~4% on its own guidance cut and Coforge surged on its own Q2, so the July-August rotation pattern is published as absent rather than reused. And Asian Paints aside, no crude-derivative cost inference was asserted against the tape.
+
+**Three figure/date corrections made during the run:**
+
+1. **AP printed Brent "down 1.7% to $109.86" on Monday.** That does not reconcile with AP's own Friday settle of $116.72 — 1.7% off $116.72 is $114.74. BusinessLine ($114.80, -1.6%) and TradingEconomics ($114.87, -1.58%) both agree on ~$114.8. AP's figure discarded and the reconciliation published in the article.
+2. **Outlets carried a ₹770 crore MoD–BEL contract for LLLR-I radars inside today's DAC coverage.** It was signed **21 October**, not today, and is not in today's release. Flagged in the article as last week's news — the same recycled-placement failure as the Sep 23 BDL contract that reached an Oct 7 article via an ET topic page.
+3. **The skill's own Oct 23 history line had the wrong Nikkei close.** It recorded 62,101.19 as the 23 Oct close; FRED, MarketWatch and the Nikkei's own site all give **62,693.16**, and today's -503.51 to 62,189.65 only reconciles against that. Corrected in the skill's Oct 26 entry.
+
+**Publish run.** 4 articles: `policy-pulse-trump-us-26-oct-2026`, `policy-pulse-modi-26-oct-2026`, `policy-pulse-ministries-26-oct-2026`, `policy-pulse-global-26-oct-2026`. `./deploy.sh` → **301 analyses, 700 company hubs (237 indexable), 389 tag pages, 34 archive + 34 section pages, 640 prerendered routes**. Sitemap: **640 URLs, 0 raw ampersands, 0 `&amp;`, parses under `ET.parse`**. 4/4 SPA and 4/4 `.md` return 200, home 200, `/nope-12345` 404, API 301 with all four present. One `<title>` / one canonical / one JSON-LD per head, `og:image` on the shared default (per the standing correction: `/og/<slug>.png` is 404 by design). Backend `analyses.json` copied to `/var/www/stock-analyses/`; `daemon-reload` + vault-notify restart (active) + nginx reload. Notify **4/4 to 3 devices each**.
+
+**Ticker pre-flight.** All 52 Indian tokens resolved against the NSE master CSV, zero missing, including ARE&M which was deliberately left out of every `ticker:` field to keep the sitemap free of ampersands. No US ticker appears in the India articles and no Indian ticker in the US article; the Global article separates its US and India tables under explicit headers.
+
+**UNVERIFIED**
+- Sector indices for the 26 Oct Indian session were not confirmed across sources, so the Ministries market-close section reports index levels and named movers only and says so in the article rather than shipping a sector table.
+- The US session was still open at publish time (this cron runs ~11:30 ET). No US close is reported anywhere; Friday's close and Monday premarket are cited as such.
+- The solar AD/CVD order date is carried as **2 Nov** per Commerce/pv-tech rather than the skill calendar's "Oct 26 finals"; the ITC injury vote was scheduled mid-October and the outcome was not confirmed in this run, so it sits in What to Watch as a forward event, not a today event.
+
+**OWNER**
+- Nothing new requires sign-off. The standing open items (analytics, SEBI Research Analyst status, ~7 Nov Search Console re-export) are unchanged.
+
 ## 2026-10-26 (1) — hermes (approved means published)
 
 **An approved request is now published; disagreement about whether a run is alive no longer sends it back to the owner.**

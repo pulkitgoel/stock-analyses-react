@@ -35,6 +35,81 @@
       "model": "deepseek-v4-flash"
     },
     {
+      "title": "Policy Pulse — Global — 26 Oct 2026",
+      "ticker": "DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:OXY:COP:SHEL:BP:ONGC:OIL:IOC:BPCL:HINDPETRO:INFY:COFORGE:TCS:HCLTECH:TECHM:LTM:PERSISTENT",
+      "file": "policy-pulse-global-26-oct-2026.md",
+      "slug": "policy-pulse-global-26-oct-2026",
+      "date": "2026-10-26",
+      "tags": [
+        "policy-pulse",
+        "oil",
+        "brent",
+        "fed",
+        "asia-markets",
+        "semiconductors",
+        "it-services"
+      ],
+      "summary": "Brent fell 1.6% to about $114.80 from Friday's $116.72 four-year high with no de-escalation headline, a gift to DAL, UAL, AAL and LUV, while the Nikkei fell 0.80% and KOSPI 1.5% on chip equipment and the reverse AI trade into Indian IT failed to fire as INFY fell 4% on its own guidance cut.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 26 Oct 2026",
+      "ticker": "HAL:BEL:BEML:LT:BDL:MAZDOCK:COCHINSHIP:GRSE:ZENTEC:PARAS:DATAPATTNS:ASTRAMICRO:IDEAFORGE:SOLARINDS:TMCV:ASHOKLEY:MIDHANI:HINDCOPPER:NATIONALUM:RELIANCE:BSE:ANGELONE:MOTILALOFS:CDSL:KFINTECH:CAMS",
+      "file": "policy-pulse-ministries-26-oct-2026.md",
+      "slug": "policy-pulse-ministries-26-oct-2026",
+      "date": "2026-10-26",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "dac",
+        "indigenisation",
+        "critical-minerals",
+        "ipo",
+        "exchanges"
+      ],
+      "summary": "The DAC cleared Rs 2.12 lakh crore of acquisitions with 82% reserved for Indian industry and named no company, so HAL, BEL, BEML, LT and BDL carry the read while the Defence Minister separately named rare earths as a supply-chain constraint, and Sensex closed up 483 points at 73,606.75.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi — 26 Oct 2026",
+      "ticker": "TCS:INFY:HCLTECH:TECHM:PERSISTENT:COFORGE:LTM:NETWEB:ANANTRAJ:HDFCBANK:SBIN:KPRMILL:WELSPUNLIV:TRIDENT",
+      "file": "policy-pulse-modi-26-oct-2026.md",
+      "slug": "policy-pulse-modi-26-oct-2026",
+      "date": "2026-10-26",
+      "tags": [
+        "policy-pulse",
+        "cybersecurity",
+        "data-centre",
+        "textiles",
+        "semiconductor",
+        "infrastructure"
+      ],
+      "summary": "The PM opened the RBI's new Rs 169 crore data centre and cybersecurity institute at Bhubaneswar, saying outdated systems cannot meet the current threat, which reads as a bank security spending directive for TCS, INFY, HCLTECH and TECHM, alongside a Varanasi garment plant for KPRMILL and WELSPUNLIV.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 26 Oct 2026",
+      "ticker": "XOM:CVX:COP:OXY:EOG:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:HSY:MDLZ:TR:SHW:PPG:RPM:MHK:IP:PKG:CAG:SJM:WM:RSG:F:GM:STLA:DKS:DJT",
+      "file": "policy-pulse-trump-us-26-oct-2026.md",
+      "slug": "policy-pulse-trump-us-26-oct-2026",
+      "date": "2026-10-26",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "canada-trade",
+        "leader-trades",
+        "oil-gas",
+        "djt"
+      ],
+      "summary": "Trump's Oct 23 proclamation adds cocoa, paints, carpets and sewage sludge to the 50% Canada duty wall while exempting packaging and machinery from Oct 30, hitting HSY and MDLZ, and his oil and gas holdings are disclosed at up to $81.6 million with 94% of 2026 purchases made after the Iran war began.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "NALCO: Record Q1, ₹24,000 Cr Expansion, Stock 32% Off Peak",
       "ticker": "NATIONALUM:NSE",
       "file": "nalco-down-root-cause-jun16.md",
