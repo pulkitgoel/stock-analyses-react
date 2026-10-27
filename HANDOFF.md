@@ -73,6 +73,33 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-27 — Hermes (automated agent): Policy Pulse 27 Oct
+
+**Policy Pulse 27 Oct 2026 — four articles published, deployed, verified.**
+
+Published (all dated 2026-10-27, all HTTP 200 on both SPA and `.md`):
+
+| Slug | Anchor |
+|---|---|
+| `policy-pulse-trump-us-27-oct-2026` | Trump calls his own Iran ceasefire "a waste of time" at a Mississippi rally, 7 days before the midterms; White House states no strike before Nov 3 while reporting describes prepared post-election strike plans. Plus the Canada Section 338 list being **swapped, not cut** — 22 classifications out, ~100 in, effective Oct 30. |
+| `policy-pulse-modi-27-oct-2026` | ESTIC 2026 inauguration at Bharat Mandapam. Five checkable capability claims: Kalpakkam PFBR first criticality, **first outbound shipments of India-made chips**, indigenous AI model, battery storage from domestic raw materials, space. Plus Goyal at "fine-tuning" stage on the US trade pact. |
+| `policy-pulse-ministries-27-oct-2026` | MoRTH **Concessional Local Pass** (Fifth Amendment Rules, gazette Oct 26, effective Nov 1: Rs 1,500 / Rs 3,000 p.a. against Rs 4,320 for the monthly pass). Plus TRAI September data and the Goa Shipyard NGOPV launch. |
+| `policy-pulse-global-27-oct-2026` | Korea Q3 GDP +1.0% vs 0.7% expected, chips ~half of it; KOSPI +3.09%, buy-side sidecar fired. Nikkei +1.73%, China down. Brent second down session on Tehran diplomacy. |
+
+**Notes for whoever reads this next:**
+
+- **The Green Energy Corridor Phase-III trap.** PIB's release navigation surfaced "Cabinet approves Green Energy Corridor Phase-III" on today's page, but it was cleared **October 1**, 2026 (Rs 1,86,405 crore; Rs 50,000 crore for 50 GWh BESS). Six independent sources agree on the date. It is used in the Modi article only as verified *context* for the PM's battery-storage remark, never as today's news. Same failure class as the ET topic pages and `ipolyst.com`.
+- **No fresh Cabinet decision today.** PIB's Cabinet listing still tops out at the October 14 NSAP approval. The Modi article says so plainly rather than inflating the conclave.
+- **Two index figures discarded after failing arithmetic.** AP printed Shanghai down 0.3% at 3,648.30; against Monday's 3,697.52 that is **-1.33%**, which is what shipped. An aggregator printed Brent **up** 0.5% at $116.34, contradicting Reuters' own "second down session" and three independent quotes in the $114.68-115.15 range — direction published as down, discrepancy noted in the article.
+- **`industrywired.com` printed Sensex 73,497.28 (-109.47)** against a five-source consensus of **73,598.67 (-8.08)**. Outlier discarded.
+- **Jio's subscriber base**: one report said "around 489 million"; that does not reconcile with 39.32% of a 1,300 million market (= 511.2 million). 511.14 million shipped.
+- **Not published, deliberately:** the ₹12,000 crore matched-funding and 1.5-lakh-patent figures attributed to the PM's speech. Both trace to a single aggregator summarising a PIB release I could not read in full. Only the verified ₹1 lakh crore RDI Fund (launched ESTIC 2025, ₹20,000 crore in FY2025-26) is used.
+- **Rule 6** is stated up front in the four India-side sections: no company was named in any of these releases, and every mapping is marked as inference.
+
+**Pre-flight:** 62 unique NSE symbols across the four `ticker:` fields, all resolved against `EQUITY_L.csv`. `CCL` is the documented benign Carnival / CCL Products collision. **Zero ampersands in any ticker field** — `ARE&M` was deliberately excluded for that reason. No Indian ticker in the US article; no US ticker in either India article; the Global article separates US and India tables under explicit headers.
+
+**Deploy:** `./deploy.sh` → 306 analyses, 703 company hubs (241 indexable), 395 tag pages, 34 archive + 35 section pages, **650 prerendered routes** (650/650, 456s). Swapped into place. Sitemap **650 URLs, 0 raw ampersands, parses under `ET.parse`**, all four new URLs present. 4/4 SPA and 4/4 `.md` 200; home 200; `/nope-12345` 404; Googlebot prerender 73,686 bytes; API 306 with the four new at the top. Backend `analyses.json` copied, `daemon-reload` + vault-notify restart (active) + nginx reload. Sampled lowercase `/company/<ticker>` hubs all 200.
+
 ## 2026-10-27 00:17 — watcher
 
 **Idle** — nothing executable.

@@ -5,6 +5,80 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 27 Oct 2026",
+    "ticker": "NVDA:AVGO:AMAT:ASML:TSM:MRVL:ARM:AMD:MU:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:OXY:COP:EOG:SLB:SHEL:BP:TCS:INFY:HCLTECH:TECHM:COFORGE:PERSISTENT:IOC:BPCL:HINDPETRO:ONGC:OIL",
+    "file": "policy-pulse-global-27-oct-2026.md",
+    "slug": "policy-pulse-global-27-oct-2026",
+    "date": "2026-10-27",
+    "tags": [
+      "policy-pulse",
+      "ai",
+      "semiconductors",
+      "korea",
+      "oil",
+      "fed"
+    ],
+    "summary": "Korea's Q3 GDP beat at 1.0% with chips driving about half of it sent the KOSPI up 3.09% and lifted NVDA, AVGO, AMAT and ASML while China fell, Brent slipped a second session to about USD 114.70-115.15 on Tehran diplomacy which helps DAL, UAL, AAL and IOC but hurts ONGC, and the reverse-AI trade failed again with Nifty IT down half a percent and TCS off 1.5%.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 27 Oct 2026",
+    "ticker": "IRB:GRINFRA:PNCINFRA:ASHOKA:NCC:DBL:HGINFRA:BHARTIARTL:INDUSTOWER:IDEA:TATACOMM:TEJASNET:HFCL:STLTECH:RAILTEL:GRSE:BEL:COCHINSHIP:MAZDOCK",
+    "file": "policy-pulse-ministries-27-oct-2026.md",
+    "slug": "policy-pulse-ministries-27-oct-2026",
+    "date": "2026-10-27",
+    "tags": [
+      "policy-pulse",
+      "roads",
+      "tolls",
+      "telecom",
+      "trai",
+      "defence",
+      "shipbuilding"
+    ],
+    "summary": "MoRTH notified a Rs 1,500-3,000 annual Concessional Local Pass effective November 1, a small revenue negative for toll collectors led by IRB but neutral for EPC names like NCC and DBL, while TRAI's September data showed Jio and Airtel splitting the market almost exactly and Goa Shipyard launched an OPV at an unlisted yard that maps to GRSE.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / India Govt — 27 Oct 2026",
+    "ticker": "NTPC:BHEL:LT:POWERGRID:WALCHANNAG:MTARTECH:MIDHANI:DIXON:KAYNES:SYRMA:CGPOWER:MOSCHIP:AMBER:TATAELXSI:UNOMINDA:EXIDEIND:HBLENGINE:HINDCOPPER:NATIONALUM:SUNPHARMA:DRREDDY:CIPLA:LUPIN:AUROPHARMA:TITAN:KALYANKJIL:SENCO:WELSPUNLIV:TRIDENT:KPRMILL:RELIANCE",
+    "file": "policy-pulse-modi-27-oct-2026.md",
+    "slug": "policy-pulse-modi-27-oct-2026",
+    "date": "2026-10-27",
+    "tags": [
+      "policy-pulse",
+      "semiconductors",
+      "nuclear",
+      "ai",
+      "battery-storage",
+      "trade-deal"
+    ],
+    "summary": "At ESTIC 2026 the PM claimed first outbound shipments of India-made chips and cited the Kalpakkam fast breeder reactor, putting DIXON, KAYNES, SYRMA and BHEL on the read, while Goyal said the US trade pact is at the fine-tuning stage with generics, gems and diamonds headed to zero, the line that carries SUNPHARMA, DRREDDY, CIPLA and TITAN.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 27 Oct 2026",
+    "ticker": "LMT:RTX:NOC:LHX:KTOS:HII:GD:BA:PLTR:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:COP:OXY:EOG:SLB:HSY:MDLZ:TR:MHK:SHW:PPG:IP:PKG:CAG:SJM:WM:RSG:F:GM:STLA:DKS",
+    "file": "policy-pulse-trump-us-27-oct-2026.md",
+    "slug": "policy-pulse-trump-us-27-oct-2026",
+    "date": "2026-10-27",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "iran",
+      "midterms",
+      "tariffs",
+      "canada",
+      "defence"
+    ],
+    "summary": "Trump called his own Iran ceasefire a waste of time seven days before the midterms while the White House ruled out a strike until after November 3, holding the crude premium up under DAL, UAL, AAL and LUV, and the Canada Section 338 list was swapped rather than cut, 22 categories out and about 100 in from October 30, hitting HSY, MDLZ and TR on cocoa.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Sky Gold Q2 FY27: What the Earnings Said and What the Guidance Is Worth",
     "ticker": "SKYGOLD",
     "file": "sky-gold-q2-fy27-earnings-guidance.md",
