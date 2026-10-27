@@ -1,6 +1,23 @@
 {
   "analyses": [
     {
+      "title": "Sky Gold Q2 FY27: What the Earnings Said and What the Guidance Is Worth",
+      "ticker": "SKYGOLD",
+      "file": "sky-gold-q2-fy27-earnings-guidance.md",
+      "slug": "sky-gold-q2-fy27-earnings-guidance",
+      "date": "2026-10-27",
+      "tags": [
+        "earnings",
+        "results",
+        "guidance",
+        "jewellery",
+        "small-cap"
+      ],
+      "summary": "Sky Gold reported record Q2 FY27 revenue of 2,391 crore and profit of 129 crore, with margins at 7.9%. The earnings are real; the guidance record is strong; the balance sheet and a 1,800 crore QIP are the open questions. Verdict: wait for the QIP price.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Adani Ports: 2% Domestic Volume Growth, 27.5x FY27 Earnings",
       "ticker": "ADANIPORTS",
       "file": "adani-ports-q1-fy27-deep-dive.md",

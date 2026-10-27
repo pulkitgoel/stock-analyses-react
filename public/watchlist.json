@@ -1,6 +1,27 @@
 {
   "watchlist": [
     {
+      "slug": "sky-gold-q2-fy27-earnings-guidance",
+      "ticker": "SKYGOLD",
+      "title": "Sky Gold Q2 FY27: What the Earnings Said and What the Guidance Is Worth",
+      "date": "2026-10-27",
+      "yahooSymbol": "SKYGOLD.NS",
+      "priceAtAnalysis": 938.5,
+      "support": 885,
+      "resistance": 1046,
+      "supports": [
+        885,
+        820,
+        760
+      ],
+      "resistances": [
+        1046,
+        1060,
+        1120
+      ],
+      "verdict": "WAIT FOR QIP PRICING"
+    },
+    {
       "slug": "adani-ports-q1-fy27-deep-dive",
       "ticker": "ADANIPORTS",
       "title": "Adani Ports: 2% Domestic Volume Growth, 27.5x FY27 Earnings",
