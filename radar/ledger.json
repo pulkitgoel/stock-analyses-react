@@ -25,12 +25,14 @@
    "gates": 5,
    "added": "2026-10-26",
    "price_at_add": 1475.6,
-   "status": "queued",
+   "status": "analysed",
    "thesis": "",
    "kill_criteria": "",
    "review_on": "2027-10-26",
-   "slug": null,
-   "outcome": null
+   "slug": "radar/chennpetro",
+   "outcome": null,
+   "verdict": "WAIT - peak-cycle GRM ($20.41 incl $3.82 inventory gain) at the market normal 4x; H1 CFO 25 Cr on 3,278 Cr PAT; 25-point score 16.5 with critical Fail on breakout",
+   "analysed_on": "2026-10-27"
   },
   {
    "code": "LTTS",
