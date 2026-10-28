@@ -5,6 +5,80 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 28 Oct 2026",
+    "ticker": "MU:NVDA:AVGO:AMAT:ASML:TSM:MRVL:AMD:XOM:CVX:OXY:COP:EOG:SLB:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:GOOGL:MSFT:AMZN:META:IOC:BPCL:HINDPETRO:ONGC:OIL:TCS:INFY:HCLTECH:COFORGE:PERSISTENT:RELIANCE",
+    "file": "policy-pulse-global-28-oct-2026.md",
+    "slug": "policy-pulse-global-28-oct-2026",
+    "date": "2026-10-28",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "chips",
+      "oil",
+      "fed",
+      "earnings"
+    ],
+    "summary": "SK Hynix's sevenfold profit jump drove MU up 4.8% and the SOX to a fourth straight gain, confirming the memory up-cycle on cash flow rather than sentiment, while a Houthi missile claim on Saudi Arabia's Ras Tanura refinery lifted Brent back toward 15 and put IOC, BPCL and HINDPETRO under margin pressure as the Fed and the Bank of Canada tighten into it.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 28 Oct 2026",
+    "ticker": "LT:SIEMENS:ABB:CUMMINSIND:AIAENG:THERMAX:CGPOWER:POLYCAB:KEI:HAVELLS:VGUARD:MARUTI:TVSMOTOR:TMPV:BAJAJ-AUTO:DIXON:SYRMA:AMBER:SUNPHARMA:DRREDDY:CIPLA:LUPIN:COCHINSHIP:MAZDOCK:GRSE:BEL:HAL:SOLARINDS:DATAPATTNS:HDFCBANK:ICICIBANK:IOC:BPCL:HINDPETRO:ONGC:OIL:TCS:INFY:HCLTECH",
+    "file": "policy-pulse-ministries-28-oct-2026.md",
+    "slug": "policy-pulse-ministries-28-oct-2026",
+    "date": "2026-10-28",
+    "tags": [
+      "policy-pulse",
+      "iip",
+      "capital-goods",
+      "defence",
+      "shipbuilding",
+      "markets"
+    ],
+    "summary": "September IIP slowed to 6.7% from 8.0% but capital goods grew 10.4% and electrical equipment 33.9%, a volume read for LT, SIEMENS and CGPOWER, while pharmaceuticals fell 8.9% against SUNPHARMA and DRREDDY and the Sensex closed 352 points lower at 73,246 on crude at 15 after the Ras Tanura strike.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / Govt — 28 Oct 2026",
+    "ticker": "TATASTEEL:JSWSTEEL:SAIL:JINDALSTEL:CONCOR:GESHIP:SCI:ADANIPORTS:JSWINFRA:GPPL:RELAXO:CAMPUS:METROBRAND:PAGEIND:HEROMOTOCO:BAJAJ-AUTO:TITAN:TRENT:HINDUNILVR",
+    "file": "policy-pulse-modi-28-oct-2026.md",
+    "slug": "policy-pulse-modi-28-oct-2026",
+    "date": "2026-10-28",
+    "tags": [
+      "policy-pulse",
+      "manufacturing",
+      "pli",
+      "containers",
+      "shipping",
+      "consumption"
+    ],
+    "summary": "The Cabinet cleared a Rs 10,000 crore Container Manufacturing Promotion Scheme to take India to 7.5 lakh TEU of capacity by FY2039-40, a volume signal for container steel at TATASTEEL, JSWSTEEL and SAIL and for CONCOR on logistics, alongside a 3% DA hike worth Rs 10,016 crore a year that supports HEROMOTOCO and BAJAJ-AUTO, and two other schemes with no clean way to own them.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 28 Oct 2026",
+    "ticker": "XOM:CVX:VLO:MPC:PSX:NUE:CLF:STLD:F:GM:STLA:UNP:CP:CNI:GEV:NEE:WMB:KMI:DAL:UAL:AAL:LUV:MU:NVDA:AVGO:GOOGL:MSFT:AMZN:META",
+    "file": "policy-pulse-trump-us-28-oct-2026.md",
+    "slug": "policy-pulse-trump-us-28-oct-2026",
+    "date": "2026-10-28",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "venezuela",
+      "oil",
+      "tariffs",
+      "canada",
+      "permitting",
+      "midterms"
+    ],
+    "summary": "The first Venezuelan cargo under the US-NABEP deal landed in Texas and is being sold to Exxon and Citgo refineries, a feedstock-positive for XOM, VLO and MPC even though one million barrels is barely an hour of US throughput, while Ottawa said Canada-US Section 232 talks on 50% steel and 25% auto duties had made only limited progress, keeping NUE, CLF and STLD protected and F and GM waiting.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse — Global — 27 Oct 2026",
     "ticker": "NVDA:AVGO:AMAT:ASML:TSM:MRVL:ARM:AMD:MU:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:OXY:COP:EOG:SLB:SHEL:BP:TCS:INFY:HCLTECH:TECHM:COFORGE:PERSISTENT:IOC:BPCL:HINDPETRO:ONGC:OIL",
     "file": "policy-pulse-global-27-oct-2026.md",

@@ -73,6 +73,30 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-10-28 — Hermes (Policy Pulse)
+
+**Four Policy Pulse articles published for 2026-10-28** (Trump-US, Modi, Ministries, Global). 310 analyses, 709 company hubs, 401 tag pages, 658 prerendered routes. Deploy exit 0; 4/4 SPA and 4/4 `.md` 200; sitemap 658 URLs, parses, zero raw ampersands; API 310 with all four at the top; notify 4/4 to 3 devices.
+
+**Content decisions worth knowing about**
+
+- **US anchor** is the first Venezuelan crude cargo (1m bbl, NABEP, *Angerona*, Corpus Christi) sold to Exxon and Citgo refineries. The article states plainly that 1m bbl is ~1.3 hours of US refining throughput, so it is a precedent event and not a price event. Second is Canada's "limited progress" on Section 232 (50% steel / 25% autos) — the tariff protection is a *negative* for NUE/CLF/STLD if it goes.
+- **Modi anchor** is the Container Manufacturing Promotion Scheme (₹10,000cr to FY2039-40; ISA ₹859cr, OEA ₹8,891cr, testing ₹150cr; 7.5 lakh TEU target, 53,000 jobs). No listed Indian container manufacturer exists, so the trades are upstream steel and CONCOR — stated, not papered over.
+- **Ministries anchor** is September IIP (6.7% from 8.0%; capital goods +10.4%, electrical equipment +33.9%, pharma -8.9%).
+- **Global anchor** is SK Hynix's sevenfold profit jump (MU +4.8%, SOX fourth straight up) against Ras Tanura and two central banks tightening.
+- **No table on PM Viksit Gram Swaraj Yojana**, on purpose — a portal-and-training scheme has no listed revenue line, and the omission is explained in the article. First day this rule ran as a stated non-inference.
+- **KAYNES was screened out** of the electronics row under Rule 7: a March 27, 2026 SEBI settlement order in an insider-trading matter plus a show-cause to the MD over the structured digital database. Settled, but not worth carrying.
+- **Two date-stamp traps caught:** a DD India page headlined the ₹661.50cr BrahMos contract as "on Tuesday" while carrying an Oct 6 author date; the RBI Bulletin October 2026 sits on the Oct 28 press-release listing but is dated Oct 23. Neither was used as fresh news.
+
+**UNVERIFIED**
+
+- The August IIP base is inconsistent across sources (7.8% revised per one tracker, 8.0% in the primary release). The article publishes the conflict instead of resolving it — worth a look at the NSO release if it recurs.
+- IIP sector attributions are from a secondary write-up of the NSO release, not the release itself.
+
+**OWNER**
+
+- Still open and unchanged: analytics tagging, SEBI Research Analyst status, the ~7 Nov Search Console re-export against the 1-click baseline.
+- Nov 2 US solar AD/CVD orders: confirm the ITC injury outcome before that date is treated as live in any article.
+
 ## 2026-10-28 00:18 — watcher
 
 **Idle** — nothing executable.
