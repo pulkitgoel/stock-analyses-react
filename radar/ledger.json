@@ -42,12 +42,14 @@
    "gates": 5,
    "added": "2026-10-26",
    "price_at_add": 3910.3,
-   "status": "queued",
+   "status": "analysed",
    "thesis": "",
    "kill_criteria": "",
    "review_on": "2027-10-26",
-   "slug": null,
-   "outcome": null
+   "slug": "radar/ltts",
+   "outcome": null,
+   "verdict": "WAIT - 33.0x on continuing TTM EPS of 126.62 (not the 30x quoted), rupee revenue +12.1% but dollar +3.3%, profit +66.8% headline vs +19.6% continuing ex the 165 Cr Smart World gain, and a 30% month on 8-20% delivery against a 42% baseline; 25-point score 14.0 with critical Fails on volume, price action and delivery",
+   "analysed_on": "2026-10-28"
   },
   {
    "code": "IGIL",
