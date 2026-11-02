@@ -5,6 +5,76 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 02 Nov 2026",
+    "ticker": "XOM:CVX:OXY:COP:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:MRVL:LITE:AVGO:COHR:IOC:BPCL:HINDPETRO:ONGC:OIL",
+    "file": "policy-pulse-global-02-nov-2026.md",
+    "slug": "policy-pulse-global-02-nov-2026",
+    "date": "2026-11-02",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "oil",
+      "ai",
+      "chips",
+      "markets"
+    ],
+    "summary": "Brent fell 6% to $106.65 on Iran-Qatar talks that put a draft proposal into circulation, a de-risking rather than a resolution that favours DAL, UAL and CCL and hits XOM, CVX and OXY, while Marvell's $115bn enterprise-value purchase of LITE leaves both MRVL and LITE lower and puts IOC, BPCL and HINDPETRO on a margin tailwind in India.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 02 Nov 2026",
+    "ticker": "GRSE:MAZDOCK:COCHINSHIP:BEL:HAL:BDL:SOLARINDS:DATAPATTNS:LT:BSE:ANGELONE:MOTILALOFS:HDFCAMC:CAMS:RVNL:TITAGARH:IRCON:RITES",
+    "file": "policy-pulse-ministries-02-nov-2026.md",
+    "slug": "policy-pulse-ministries-02-nov-2026",
+    "date": "2026-11-02",
+    "tags": [
+      "policy-pulse",
+      "defence",
+      "shipbuilding",
+      "sebi",
+      "markets",
+      "pmi"
+    ],
+    "summary": "MoD signed Rs 53,866.50 crore for eight next-generation corvettes with GRSE taking five hulls and Goa Shipyard three in India's first competitively bid DPR-run warship order, a named-stock read for GRSE worth 4/5, alongside SEBI's proposal to scrap LTCG tax for FPIs which lifts BSE, ANGELONE and CAMS, and a PMI of 54.7 that decelerated without deteriorating.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / Govt — 02 Nov 2026",
+    "ticker": "TATAPOWER:NTPC:NTPCGREEN:ADANIGREEN:POWERGRID:KEC:APARINDS:WAAREEENER",
+    "file": "policy-pulse-modi-02-nov-2026.md",
+    "slug": "policy-pulse-modi-02-nov-2026",
+    "date": "2026-11-02",
+    "tags": [
+      "policy-pulse",
+      "renewables",
+      "solar",
+      "green-hydrogen",
+      "power"
+    ],
+    "summary": "Modi opened the Bharat Renewable Energy Summit with 310 GW of non-fossil capacity, 225 GW of module lines and only 45 GW of solar cells, so the trade is POWERGRID and KEC on the Rs 1.86 lakh crore Green Energy Corridor Phase-III rather than module assemblers like WAAREEENER, with SUZLON and INOXWIND excluded on live regulator and governance flags.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 02 Nov 2026",
+    "ticker": "GM:F:STLA:TSLA:APTV:LEA:BWA:UNP:CP:CNI",
+    "file": "policy-pulse-trump-us-02-nov-2026.md",
+    "slug": "policy-pulse-trump-us-02-nov-2026",
+    "date": "2026-11-02",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "tariffs",
+      "autos",
+      "trade"
+    ],
+    "summary": "Trump's Commerce Department is building a tariff-relief programme for automakers that commit to new US plants, the structure that landed Audi's $4bn Georgia factory, which puts GM, F and STLA at a disadvantage for expanding existing sites while APTV and LEA gain whatever gets built.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse — Global — 28 Oct 2026",
     "ticker": "MU:NVDA:AVGO:AMAT:ASML:TSM:MRVL:AMD:XOM:CVX:OXY:COP:EOG:SLB:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:GOOGL:MSFT:AMZN:META:IOC:BPCL:HINDPETRO:ONGC:OIL:TCS:INFY:HCLTECH:COFORGE:PERSISTENT:RELIANCE",
     "file": "policy-pulse-global-28-oct-2026.md",

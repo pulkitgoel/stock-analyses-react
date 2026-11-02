@@ -73,6 +73,20 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-02 — Hermes (cron, policy-pulse)
+
+**Policy Pulse daily run — 2 Nov 2026 (cron, 21:00 IST). Four articles published and verified 200.**
+
+- Trump/US: Commerce is designing a tariff-relief programme for automakers that commit to new US plants — the structure that landed Audi's $4bn Georgia factory (Macon, 4,500 jobs, 200k units/yr, early 2030s, Audi tariff cost €1.2bn last year). Detroit lobby pushback: GM $2bn+ Lansing, Stellantis Belvidere reopening, Ford $1bn Louisville are all expansions of existing sites and Commerce has not said they qualify. Second: Carney moved from "prepared to wait until 2029" to "begin working" on a deal within 48 hours; Keystone XL in scope. Third: first-of-its-kind Section 337 forced-labour complaint against India's Nekkanti Sea Foods — flagged with no ticker because both sides are unlisted. No new presidential disclosure; most recent is the Aug filing released Oct 8 — said so rather than manufacturing an angle.
+- Modi: Bharat Renewable Energy Summit inauguration. The analysis rests on the ratio in Joshi's own numbers — 225 GW module capacity against 45 GW cell capacity, so the constraint has moved upstream from module to cell. PM Surya Sarovar Yojana >₹5,000 cr / 5,000 MW floating solar; Green Energy Corridor Phase-III ₹1.86 lakh cr. Trade read is grid (POWERGRID, KEC, APARINDS) not assembly.
+- Ministries: MoD ₹53,866.50 cr for eight NGCs, GRSE five hulls and GSL three, GSL as L2 at L1 unit cost, CCS cleared Oct 29 at >₹40,000 cr, ~₹6,733 cr per hull, first ship 2030. Stated the caveat that the contract value wraps combat systems so it is not shipyard revenue, and that GSL has no NSE symbol (BSE-only). Plus SEBI's non-binding LTCG-for-FPI proposal (Oct FPI outflow ₹34,843 cr, cumulative 2026 ₹2.95 trillion) and PMI 54.7 from 55.1.
+- Global: Brent -6.0% to $106.65 / WTI -6.1% to $97.75 on Iran-Qatar talks with a draft proposal circulating and the Supreme Leader having granted negotiators authority. Framed as a de-risking, not a resolution, with Goldman's $140 2027 case held against it. Marvell-Lumentum reconciled: ~$80bn equity vs $115bn enterprise value — both correct, not interchangeable; MRVL -3%, LITE -6% (trading below the $1,132 implied price), COHR +2%.
+- Rule 7 screen ran and produced four exclusions, all stated in-article with reasons: SUZLON (SEBI ₹28.95 cr penalty on company and both promoters, under SAT appeal), INOXWIND (promoter pledge 4.58%, SEBI warning letter, group IPO on hold with promoter investigation), BORORENEW (customs adjudication order Oct 17, -36% 12m), TARIL (repeated CFO/CEO exits) — dropped from the corridor table.
+- Ticker pre-flight: union of all four frontmatter fields = 56 unique symbols, zero invalid, zero duplicates, zero ampersands. GSL confirmed absent from EQUITY_L.csv.
+- Gates: check-article-shrink clean, check-article-sections clean (4/4). deploy.sh step 7 prerendered 664/664 routes in 465s. All four /analysis/ URLs 200 with 38-42 KB prerendered bodies; per-head SEO verified (1 title, 1 canonical, 1 JSON-LD, og:image → shared og-default.png). Lowercase company hubs grse/reliance/tatapower/waareerener/ongc/mrvl/hal all 200. vault-notify restarted after daemon-reload; /api/notify returned sent:3 for all four pushes.
+
+UNVERIFIED: whether Commerce's relief programme will cover expansion of existing plants — Politico reports Commerce did not respond. This is the one open variable that decides the relative-value direction between GM/F/STLA and APTV/LEA.
+
 ## 2026-11-02 00:12 — watcher
 
 **Idle** — nothing executable.
