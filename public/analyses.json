@@ -1,6 +1,74 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 03 Nov 2026",
+      "ticker": "DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:OXY:COP:IOC:BPCL:HINDPETRO:RELIANCE:ONGC:OIL:TCS:INFY:HCLTECH:COFORGE",
+      "file": "policy-pulse-global-03-nov-2026.md",
+      "slug": "policy-pulse-global-03-nov-2026",
+      "date": "2026-11-03",
+      "tags": [
+        "policy-pulse",
+        "crude-oil",
+        "iran",
+        "semiconductors",
+        "global"
+      ],
+      "summary": "Brent fell 7.63% and then another 3% to 01.54 because Khamenei authorised negotiators to talk, while the US was striking Iran's Qeshm Island the same week, which lifts DAL, UAL and CCL and hits XOM and CVX while IOC and BPCL gain and ONGC loses in India.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries — 03 Nov 2026",
+      "ticker": "HAL:BEL:BDL:MAZDOCK:GRSE:COCHINSHIP:SOLARINDS:PREMEXPLN:DATAPATTNS:ASTRAMICRO:MTARTECH:APOLLO:PARAS:ZENTEC:BEML:LT",
+      "file": "policy-pulse-ministries-03-nov-2026.md",
+      "slug": "policy-pulse-ministries-03-nov-2026",
+      "date": "2026-11-03",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "shipbuilding",
+        "sebi",
+        "capital-markets"
+      ],
+      "summary": "Rajnath Singh set a Rs 3 lakh crore defence production target for 2029 and a Rs 50,000 crore export target, and the arithmetic says the export target needs only 9.2% annual growth against 19.0% for production, so HAL, BEL and BDL carry the load while the export story is the easy half.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / Govt — 03 Nov 2026",
+      "ticker": "LT:ENGINERSIN:RVNL:IRCON:SIEMENS:ULTRACEMCO:AMBUJACEM:POLYCAB:KEI:GRINFRA:PNCINFRA:NCC",
+      "file": "policy-pulse-modi-03-nov-2026.md",
+      "slug": "policy-pulse-modi-03-nov-2026",
+      "date": "2026-11-03",
+      "tags": [
+        "policy-pulse",
+        "infrastructure",
+        "metros",
+        "urban-infra",
+        "capital-goods"
+      ],
+      "summary": "Modi opened Pune Metro Line 3 and laid foundation stones for four Phase-II corridors worth Rs 21,800 crore, but the number that matters is the 680 km under construction in Maharashtra against 175 km operating, which points to LT, SIEMENS and ENGINERSIN rather than the rolling-stock name, with TITAGARH excluded on a live promoter pledge.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 03 Nov 2026",
+      "ticker": "GM:F:STLA:WMT:TGT:HD:LOW:NKE:NUE:CLF:STLD:DE:CAT:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:OXY:LMT:RTX:GD:BA",
+      "file": "policy-pulse-trump-us-03-nov-2026.md",
+      "slug": "policy-pulse-trump-us-03-nov-2026",
+      "date": "2026-11-03",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "trade",
+        "iran"
+      ],
+      "summary": "Goldman told clients on election day that Trump will raise tariffs after the midterms and add just under 2pp to the effective US tariff rate, which makes WMT, TGT and NKE the losers and NUE and CLF the winners while a 3% crude fall lifts DAL and CCL and hits XOM.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 02 Nov 2026",
       "ticker": "XOM:CVX:OXY:COP:DAL:UAL:AAL:LUV:CCL:RCL:NCLH:MRVL:LITE:AVGO:COHR:IOC:BPCL:HINDPETRO:ONGC:OIL",
       "file": "policy-pulse-global-02-nov-2026.md",
