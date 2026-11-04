@@ -1,6 +1,75 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 04 Nov 2026",
+      "ticker": "FSLR:ENPH:ARRY:TCS:INFY:HCLTECH:WIPRO:IOC:BPCL:HINDPETRO:ONGC:OIL:RELIANCE",
+      "file": "policy-pulse-global-04-nov-2026.md",
+      "slug": "policy-pulse-global-04-nov-2026",
+      "date": "2026-11-04",
+      "tags": [
+        "policy-pulse",
+        "trade",
+        "clean-energy",
+        "crude",
+        "global-spillover"
+      ],
+      "summary": "The US midterms weakened Trump's negotiating position without touching the Section 232 and 301 authorities, which is relief for TCS and INFY only at the margin, while the global clean-energy complex repriced hard — FSLR +15.1%, ENPH +12.1%, ARRY +21.8% — and cheaper crude helped IOC and BPCL.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries — 04 Nov 2026",
+      "ticker": "BSE:ANGELONE:MOTILALOFS:CDSL:CAMS:KFINTECH:HDFCBANK:ICICIBANK:SBIN:TCS:INFY:HCLTECH:BEL:ADANIENT:MAXHEALTH:ITC:TITAN:JIOFIN",
+      "file": "policy-pulse-ministries-04-nov-2026.md",
+      "slug": "policy-pulse-ministries-04-nov-2026",
+      "date": "2026-11-04",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "rbi",
+        "market-structure",
+        "nri",
+        "capital-markets"
+      ],
+      "summary": "SEBI opened digital NRI and OCI onboarding from 3 December and the RBI set up a markets consultative committee, while FPI buying of Rs 7,284 crore carried the Nifty to 23,960.60 — its first close above the 200-day EMA since 13 August — with BEL up 3.9% and TCS down 2.8% as the sole losing sector.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi — 04 Nov 2026",
+      "ticker": "HINDCOPPER:NATIONALUM:VEDL:MOIL:EXIDEIND:ARE&M:PREMIERENE:TATAPOWER:NTPC:ADANIGREEN:TORNTPOWER:JSWENERGY:WAAREEENER",
+      "file": "policy-pulse-modi-04-nov-2026.md",
+      "slug": "policy-pulse-modi-04-nov-2026",
+      "date": "2026-11-04",
+      "tags": [
+        "policy-pulse",
+        "critical-minerals",
+        "energy-storage",
+        "batteries",
+        "pli"
+      ],
+      "summary": "The Cabinet funded both ends of the battery chain in one sitting — Rs 2,814 crore for four lithium and nickel processing plants and Rs 14,500 crore for 92 GWh of grid storage — which puts HINDCOPPER, NATIONALUM and VEDL on the supply side and EXIDEIND, PREMIERENE and NTPC on the demand side.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 04 Nov 2026",
+      "ticker": "FSLR:ENPH:ARRY:AMZN:MSFT:AAPL:GOOGL:META:NVDA:AMD:TSLA:DJT:LMT:NOC:RTX:NUE:CLF:STLD:WMT:TGT:HD:LOW:IREN:CORZ:CVS:UNH:HCA",
+      "file": "policy-pulse-trump-us-04-nov-2026.md",
+      "slug": "policy-pulse-trump-us-04-nov-2026",
+      "date": "2026-11-04",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "midterms",
+        "tariffs",
+        "ai-infrastructure"
+      ],
+      "summary": "Democrats took both chambers but sit roughly 60 seats short of a veto-proof majority, so the tariff schedule stays where it is and FSLR, ENPH and ARRY rallied 12-22% on clean-energy support while NOC, RTX and LMT fell on a harder road for the $1.5 trillion defence request and NVDA slipped 1.5%.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 03 Nov 2026",
       "ticker": "DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:OXY:COP:IOC:BPCL:HINDPETRO:RELIANCE:ONGC:OIL:TCS:INFY:HCLTECH:COFORGE",
       "file": "policy-pulse-global-03-nov-2026.md",
