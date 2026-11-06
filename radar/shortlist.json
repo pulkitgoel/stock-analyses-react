@@ -1,44 +1,254 @@
 {
- "generated": "2026-10-26",
- "universe": 627,
- "priced": 627,
- "trend_survivors": 47,
- "scored": 29,
- "rejected": 18,
+ "generated": "2026-11-02",
+ "universe": 630,
+ "priced": 630,
+ "trend_survivors": 78,
+ "scored": 43,
+ "rejected": 35,
  "rows": [
   {
-   "symbol": "NSE:GRWRHITECH",
-   "code": "GRWRHITECH",
-   "name": "Garware Hi-Tech Films Ltd.",
+   "symbol": "NSE:AEROFLEX",
+   "code": "AEROFLEX",
+   "name": "Aeroflex Industries Ltd.",
    "band": "micro",
    "industry": "Capital Goods",
-   "score": 75.3,
-   "momentum": 33.0,
-   "rotation": 17.3,
+   "score": 72.8,
+   "momentum": 36.0,
+   "rotation": 11.8,
    "trend": 25.0,
    "catalyst": 0,
-   "industry_rs6m": 61.7,
+   "industry_rs6m": 37.7,
    "detail": [
-    "sales +12.5% YoY (7/10)",
-    "profit +26.0% YoY (10/10)",
-    "margin +7.0pp over four periods (10/10)",
-    "CFO/PAT 0.65x (6/10)"
+    "sales +35.5% YoY (10/10)",
+    "profit +58.9% YoY (10/10)",
+    "margin +4.0pp over four periods (10/10)",
+    "CFO/PAT 0.74x (6/10)"
    ],
    "metrics": {
-    "sales_yoy": 12.452830188679243,
-    "pat_yoy": 26.035502958579883,
-    "de": 0.004471964224286206,
-    "roce": 18.0,
-    "promoter": 60.73,
-    "cfo_pat": 0.6455399061032864
+    "sales_yoy": 35.520361990950235,
+    "pat_yoy": 58.928571428571416,
+    "de": 0.0482897384305835,
+    "roce": 19.0,
+    "promoter": 65.47,
+    "cfo_pat": 0.7415730337078652
    },
    "price": {
-    "close": 7034.0,
-    "from_high": -2.636860682400166,
-    "ret3m": 1.9,
-    "ret6m": 74.3,
-    "rs3m": 6.8,
-    "rs6m": 79.7
+    "close": 536.4,
+    "from_high": -4.885184856813563,
+    "ret3m": 23.2,
+    "ret6m": 76.1,
+    "rs3m": 28.6,
+    "rs6m": 79.6
+   }
+  },
+  {
+   "symbol": "NSE:SYRMA",
+   "code": "SYRMA",
+   "name": "Syrma SGS Technology Ltd.",
+   "band": "small",
+   "industry": "Capital Goods",
+   "score": 72.8,
+   "momentum": 36.0,
+   "rotation": 11.8,
+   "trend": 25.0,
+   "catalyst": 0,
+   "industry_rs6m": 37.7,
+   "detail": [
+    "sales +30.9% YoY (10/10)",
+    "profit +32.7% YoY (10/10)",
+    "margin +2.0pp over four periods (10/10)",
+    "CFO/PAT 0.63x (6/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 30.877775472089652,
+    "pat_yoy": 32.65895953757225,
+    "de": 0.26528599605522685,
+    "roce": 17.0,
+    "promoter": 41.62,
+    "cfo_pat": 0.6318082788671024
+   },
+   "price": {
+    "close": 1625.3,
+    "from_high": -6.1930047327715565,
+    "ret3m": 18.9,
+    "ret6m": 69.5,
+    "rs3m": 24.4,
+    "rs6m": 73.0
+   }
+  },
+  {
+   "symbol": "NSE:LUMAXTECH",
+   "code": "LUMAXTECH",
+   "name": "Lumax Auto Technologies Ltd.",
+   "band": "micro",
+   "industry": "Automobile and Auto Components",
+   "score": 72.5,
+   "momentum": 34.0,
+   "rotation": 16.5,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 50.2,
+   "detail": [
+    "sales +15.1% YoY (7/10)",
+    "profit +24.9% YoY (7/10)",
+    "margin +3.0pp over four periods (10/10)",
+    "CFO/PAT 1.09x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 15.133470225872681,
+    "pat_yoy": 24.925816023738868,
+    "de": 0.8113879003558719,
+    "roce": 21.0,
+    "promoter": 55.98,
+    "cfo_pat": 1.0926365795724466
+   },
+   "price": {
+    "close": 2022.7,
+    "from_high": -3.804632139629993,
+    "ret3m": 29.0,
+    "ret6m": 24.8,
+    "rs3m": 34.4,
+    "rs6m": 28.3
+   }
+  },
+  {
+   "symbol": "NSE:KMEW",
+   "code": "KMEW",
+   "name": "Knowledge Marine & Engineering Works Ltd.",
+   "band": "micro",
+   "industry": "Services",
+   "score": 71.1,
+   "momentum": 32.0,
+   "rotation": 14.1,
+   "trend": 25.0,
+   "catalyst": 0,
+   "industry_rs6m": 40.4,
+   "detail": [
+    "sales +26.2% YoY (10/10)",
+    "profit +65.8% YoY (10/10)",
+    "margin +13.0pp over four periods (10/10)",
+    "CFO/PAT 0.56x (2/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 26.171875,
+    "pat_yoy": 65.82278481012658,
+    "de": 0.3894736842105263,
+    "roce": 16.0,
+    "promoter": 50.3,
+    "cfo_pat": 0.5648854961832062
+   },
+   "price": {
+    "close": 3094.8,
+    "from_high": -6.998828019352699,
+    "ret3m": 25.6,
+    "ret6m": 74.9,
+    "rs3m": 31.1,
+    "rs6m": 78.4
+   }
+  },
+  {
+   "symbol": "NSE:SKYGOLD",
+   "code": "SKYGOLD",
+   "name": "SKY GOLD AND DIAMONDS Ltd.",
+   "band": "micro",
+   "industry": "Consumer Durables",
+   "score": 67.0,
+   "momentum": 24.0,
+   "rotation": 20.0,
+   "trend": 23.0,
+   "catalyst": 0,
+   "industry_rs6m": 83.4,
+   "detail": [
+    "sales +14.0% YoY (7/10)",
+    "profit +21.6% YoY (7/10)",
+    "margin +3.8pp over four periods (10/10)",
+    "CFO/PAT -0.13x (0/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 14.049586776859503,
+    "pat_yoy": 21.63120567375887,
+    "de": 0.7290268456375839,
+    "roce": 27.0,
+    "promoter": 51.74,
+    "cfo_pat": -0.13119533527696792
+   },
+   "price": {
+    "close": 883.2,
+    "from_high": -16.726381293607385,
+    "ret3m": 37.2,
+    "ret6m": 94.6,
+    "rs3m": 42.7,
+    "rs6m": 98.1
+   }
+  },
+  {
+   "symbol": "NSE:GESHIP",
+   "code": "GESHIP",
+   "name": "Great Eastern Shipping Co. Ltd.",
+   "band": "small",
+   "industry": "Services",
+   "score": 66.1,
+   "momentum": 33.0,
+   "rotation": 14.1,
+   "trend": 19.0,
+   "catalyst": 0,
+   "industry_rs6m": 40.4,
+   "detail": [
+    "sales +14.9% YoY (7/10)",
+    "profit +27.3% YoY (10/10)",
+    "margin +7.0pp over four periods (10/10)",
+    "CFO/PAT 0.76x (6/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 14.864115363283425,
+    "pat_yoy": 27.319062181447507,
+    "de": 0.0640806461121264,
+    "roce": 16.0,
+    "promoter": 30.08,
+    "cfo_pat": 0.7616760074726447
+   },
+   "price": {
+    "close": 1593.6,
+    "from_high": -4.3514795030310305,
+    "ret3m": 18.0,
+    "ret6m": 1.1,
+    "rs3m": 23.5,
+    "rs6m": 4.6
+   }
+  },
+  {
+   "symbol": "NSE:PCJEWELLER",
+   "code": "PCJEWELLER",
+   "name": "PC Jeweller Ltd.",
+   "band": "micro",
+   "industry": "Consumer Durables",
+   "score": 66.0,
+   "momentum": 23.0,
+   "rotation": 20.0,
+   "trend": 23.0,
+   "catalyst": 0,
+   "industry_rs6m": 83.4,
+   "detail": [
+    "sales +11.4% YoY (3/10)",
+    "profit +25.5% YoY (10/10)",
+    "margin +15.0pp over four periods (10/10)",
+    "CFO/PAT -0.09x (0/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 11.396181384248205,
+    "pat_yoy": 25.49019607843137,
+    "de": 0.03645161290322581,
+    "roce": 10.0,
+    "promoter": 39.11,
+    "cfo_pat": -0.0859375
+   },
+   "price": {
+    "close": 15.48,
+    "from_high": -14.190687361419062,
+    "ret3m": 67.2,
+    "ret6m": 65.2,
+    "rs3m": 72.6,
+    "rs6m": 68.7
    }
   },
   {
@@ -47,12 +257,12 @@
    "name": "Diamond Power Infrastructure Ltd.",
    "band": "micro",
    "industry": "Capital Goods",
-   "score": 71.3,
+   "score": 65.8,
    "momentum": 29.0,
-   "rotation": 17.3,
+   "rotation": 11.8,
    "trend": 25.0,
    "catalyst": 0,
-   "industry_rs6m": 61.7,
+   "industry_rs6m": 37.7,
    "detail": [
     "sales +20.3% YoY (10/10)",
     "profit +22.2% YoY (7/10)",
@@ -70,10 +280,10 @@
    "price": {
     "close": 323.97,
     "from_high": 0.0,
-    "ret3m": 9.8,
-    "ret6m": 100.3,
-    "rs3m": 14.7,
-    "rs6m": 105.8
+    "ret3m": 0.0,
+    "ret6m": 105.3,
+    "rs3m": 5.5,
+    "rs6m": 108.8
    }
   },
   {
@@ -82,12 +292,12 @@
    "name": "Aditya Infotech Ltd.",
    "band": "small",
    "industry": "Capital Goods",
-   "score": 71.3,
+   "score": 65.8,
    "momentum": 29.0,
-   "rotation": 17.3,
+   "rotation": 11.8,
    "trend": 25.0,
    "catalyst": 0,
-   "industry_rs6m": 61.7,
+   "industry_rs6m": 37.7,
    "detail": [
     "sales +15.7% YoY (7/10)",
     "profit +29.6% YoY (10/10)",
@@ -103,152 +313,12 @@
     "cfo_pat": 0.027253668763102725
    },
    "price": {
-    "close": 3798.0,
-    "from_high": -9.251648666730382,
-    "ret3m": 7.2,
-    "ret6m": 67.1,
-    "rs3m": 12.1,
-    "rs6m": 72.5
-   }
-  },
-  {
-   "symbol": "NSE:SKYGOLD",
-   "code": "SKYGOLD",
-   "name": "SKY GOLD AND DIAMONDS Ltd.",
-   "band": "micro",
-   "industry": "Consumer Durables",
-   "score": 69.0,
-   "momentum": 24.0,
-   "rotation": 20.0,
-   "trend": 25.0,
-   "catalyst": 0,
-   "industry_rs6m": 128.8,
-   "detail": [
-    "sales +14.0% YoY (7/10)",
-    "profit +21.6% YoY (7/10)",
-    "margin +3.8pp over four periods (10/10)",
-    "CFO/PAT -0.13x (0/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 14.049586776859503,
-    "pat_yoy": 21.63120567375887,
-    "de": 0.7290268456375839,
-    "roce": 27.0,
-    "promoter": 51.74,
-    "cfo_pat": -0.13119533527696792
-   },
-   "price": {
-    "close": 1046.85,
-    "from_high": -1.2964359796341696,
-    "ret3m": 60.1,
-    "ret6m": 153.8,
-    "rs3m": 65.1,
-    "rs6m": 159.2
-   }
-  },
-  {
-   "symbol": "NSE:KMEW",
-   "code": "KMEW",
-   "name": "Knowledge Marine & Engineering Works Ltd.",
-   "band": "micro",
-   "industry": "Services",
-   "score": 69.0,
-   "momentum": 32.0,
-   "rotation": 12.0,
-   "trend": 25.0,
-   "catalyst": 0,
-   "industry_rs6m": 44.2,
-   "detail": [
-    "sales +26.2% YoY (10/10)",
-    "profit +65.8% YoY (10/10)",
-    "margin +13.0pp over four periods (10/10)",
-    "CFO/PAT 0.56x (2/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 26.171875,
-    "pat_yoy": 65.82278481012658,
-    "de": 0.3894736842105263,
-    "roce": 16.0,
-    "promoter": 50.3,
-    "cfo_pat": 0.5648854961832062
-   },
-   "price": {
-    "close": 3149.7,
-    "from_high": -5.349039877392792,
-    "ret3m": 29.6,
-    "ret6m": 88.0,
-    "rs3m": 34.5,
-    "rs6m": 93.4
-   }
-  },
-  {
-   "symbol": "NSE:PCJEWELLER",
-   "code": "PCJEWELLER",
-   "name": "PC Jeweller Ltd.",
-   "band": "micro",
-   "industry": "Consumer Durables",
-   "score": 68.0,
-   "momentum": 23.0,
-   "rotation": 20.0,
-   "trend": 25.0,
-   "catalyst": 0,
-   "industry_rs6m": 128.8,
-   "detail": [
-    "sales +11.4% YoY (3/10)",
-    "profit +25.5% YoY (10/10)",
-    "margin +15.0pp over four periods (10/10)",
-    "CFO/PAT -0.09x (0/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 11.396181384248205,
-    "pat_yoy": 25.49019607843137,
-    "de": 0.03645161290322581,
-    "roce": 10.0,
-    "promoter": 39.11,
-    "cfo_pat": -0.0859375
-   },
-   "price": {
-    "close": 18.04,
-    "from_high": 0.0,
-    "ret3m": 94.4,
-    "ret6m": 92.9,
-    "rs3m": 99.3,
-    "rs6m": 98.4
-   }
-  },
-  {
-   "symbol": "NSE:IPCALAB",
-   "code": "IPCALAB",
-   "name": "Ipca Laboratories Ltd.",
-   "band": "mid",
-   "industry": "Healthcare",
-   "score": 64.0,
-   "momentum": 26.0,
-   "rotation": 16.0,
-   "trend": 22.0,
-   "catalyst": 0,
-   "industry_rs6m": 56.7,
-   "detail": [
-    "sales +5.5% YoY (3/10)",
-    "profit +16.1% YoY (7/10)",
-    "margin +7.0pp over four periods (10/10)",
-    "CFO/PAT 0.83x (6/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 5.4901552245025576,
-    "pat_yoy": 16.131756756756754,
-    "de": 0.1003348629542354,
-    "roce": 17.0,
-    "promoter": 44.72,
-    "cfo_pat": 0.8305454545454546
-   },
-   "price": {
-    "close": 1953.3,
-    "from_high": -2.8015525477707026,
-    "ret3m": 10.8,
-    "ret6m": 25.5,
-    "rs3m": 15.7,
-    "rs6m": 31.0
+    "close": 3811.5,
+    "from_high": -8.929083436872787,
+    "ret3m": 12.4,
+    "ret6m": 63.9,
+    "rs3m": 17.9,
+    "rs6m": 67.4
    }
   },
   {
@@ -257,12 +327,12 @@
    "name": "Shreeji Shipping Global Ltd.",
    "band": "micro",
    "industry": "Services",
-   "score": 63.0,
+   "score": 65.1,
    "momentum": 26.0,
-   "rotation": 12.0,
+   "rotation": 14.1,
    "trend": 25.0,
    "catalyst": 0,
-   "industry_rs6m": 44.2,
+   "industry_rs6m": 40.4,
    "detail": [
     "sales +6.8% YoY (3/10)",
     "profit +4.6% YoY (3/10)",
@@ -278,82 +348,326 @@
     "cfo_pat": 1.19375
    },
    "price": {
-    "close": 776.6,
-    "from_high": -7.5476190476190474,
-    "ret3m": 24.1,
-    "ret6m": 108.1,
-    "rs3m": 29.0,
-    "rs6m": 113.5
+    "close": 843.3,
+    "from_high": 0.0,
+    "ret3m": 30.7,
+    "ret6m": 108.2,
+    "rs3m": 36.1,
+    "rs6m": 111.8
    }
   },
   {
-   "symbol": "NSE:CHENNPETRO",
-   "code": "CHENNPETRO",
-   "name": "Chennai Petroleum Corporation Ltd.",
-   "band": "small",
-   "industry": "Oil Gas & Consumable Fuels",
-   "score": 62.0,
-   "momentum": 32.0,
-   "rotation": 8.0,
+   "symbol": "NSE:NYKAA",
+   "code": "NYKAA",
+   "name": "FSN E-Commerce Ventures Ltd.",
+   "band": "mid",
+   "industry": "Consumer Services",
+   "score": 62.1,
+   "momentum": 33.0,
+   "rotation": 7.1,
    "trend": 22.0,
    "catalyst": 0,
-   "industry_rs6m": 29.95,
+   "industry_rs6m": 29.75,
    "detail": [
-    "sales +27.4% YoY (10/10)",
-    "profit +83.8% YoY (10/10)",
+    "sales +6.3% YoY (3/10)",
+    "profit +27.0% YoY (10/10)",
     "margin +3.0pp over four periods (10/10)",
-    "CFO/PAT 0.52x (2/10)"
+    "CFO/PAT 2.49x (10/10)"
    ],
    "metrics": {
-    "sales_yoy": 27.36270349021346,
-    "pat_yoy": 83.75765388333872,
-    "de": 0.16199514455969985,
-    "roce": 35.0,
-    "promoter": 67.29,
-    "cfo_pat": 0.5164854437039635
+    "sales_yoy": 6.256236280183591,
+    "pat_yoy": 26.960784313725483,
+    "de": 0.8609179415855355,
+    "roce": 17.0,
+    "promoter": 52.07,
+    "cfo_pat": 2.4864864864864864
    },
    "price": {
-    "close": 1475.6,
-    "from_high": -6.1860258121940515,
-    "ret3m": 21.5,
-    "ret6m": 42.6,
-    "rs3m": 26.4,
-    "rs6m": 48.0
+    "close": 349.35,
+    "from_high": 0.0,
+    "ret3m": 4.8,
+    "ret6m": 31.9,
+    "rs3m": 10.2,
+    "rs6m": 35.5
    }
   },
   {
-   "symbol": "NSE:GESHIP",
-   "code": "GESHIP",
-   "name": "Great Eastern Shipping Co. Ltd.",
-   "band": "small",
-   "industry": "Services",
-   "score": 62.0,
-   "momentum": 33.0,
-   "rotation": 12.0,
-   "trend": 17.0,
+   "symbol": "NSE:AARTIPHARM",
+   "code": "AARTIPHARM",
+   "name": "Aarti Pharmalabs Ltd.",
+   "band": "micro",
+   "industry": "Healthcare",
+   "score": 61.9,
+   "momentum": 37.0,
+   "rotation": 5.9,
+   "trend": 19.0,
    "catalyst": 0,
-   "industry_rs6m": 44.2,
+   "industry_rs6m": 29.5,
    "detail": [
-    "sales +14.9% YoY (7/10)",
-    "profit +27.3% YoY (10/10)",
-    "margin +7.0pp over four periods (10/10)",
-    "CFO/PAT 0.76x (6/10)"
+    "sales +18.8% YoY (7/10)",
+    "profit +46.9% YoY (10/10)",
+    "margin +5.0pp over four periods (10/10)",
+    "CFO/PAT 1.02x (10/10)"
    ],
    "metrics": {
-    "sales_yoy": 14.864115363283425,
-    "pat_yoy": 27.319062181447507,
-    "de": 0.0640806461121264,
-    "roce": 16.0,
-    "promoter": 30.08,
-    "cfo_pat": 0.7616760074726447
+    "sales_yoy": 18.8015393073117,
+    "pat_yoy": 46.85714285714286,
+    "de": 0.3549905838041431,
+    "roce": 11.0,
+    "promoter": 39.66,
+    "cfo_pat": 1.0194552529182879
    },
    "price": {
-    "close": 1496.6,
-    "from_high": -10.173458976051863,
-    "ret3m": 4.1,
-    "ret6m": 6.6,
-    "rs3m": 9.0,
-    "rs6m": 12.0
+    "close": 872.7,
+    "from_high": -9.891584925141972,
+    "ret3m": 30.8,
+    "ret6m": 17.9,
+    "rs3m": 36.3,
+    "rs6m": 21.4
+   }
+  },
+  {
+   "symbol": "NSE:GABRIEL",
+   "code": "GABRIEL",
+   "name": "Gabriel India Ltd.",
+   "band": "small",
+   "industry": "Automobile and Auto Components",
+   "score": 61.5,
+   "momentum": 23.0,
+   "rotation": 16.5,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 50.2,
+   "detail": [
+    "sales +10.7% YoY (3/10)",
+    "profit +39.3% YoY (10/10)",
+    "CFO/PAT 0.98x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 10.670666380972783,
+    "pat_yoy": 39.28571428571428,
+    "de": 0.10818713450292397,
+    "roce": 26.0,
+    "promoter": 66.29,
+    "cfo_pat": 0.9829059829059829
+   },
+   "price": {
+    "close": 1425.0,
+    "from_high": -4.987331644219228,
+    "ret3m": -1.2,
+    "ret6m": 38.9,
+    "rs3m": 4.3,
+    "rs6m": 42.5
+   }
+  },
+  {
+   "symbol": "NSE:SHILPAMED",
+   "code": "SHILPAMED",
+   "name": "Shilpa Medicare Ltd.",
+   "band": "micro",
+   "industry": "Healthcare",
+   "score": 58.9,
+   "momentum": 30.0,
+   "rotation": 5.9,
+   "trend": 23.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +9.6% YoY (3/10)",
+    "profit +22.2% YoY (7/10)",
+    "margin +19.0pp over four periods (10/10)",
+    "CFO/PAT 1.15x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 9.641693811074914,
+    "pat_yoy": 22.222222222222232,
+    "de": 0.25462962962962965,
+    "roce": 11.0,
+    "promoter": 40.13,
+    "cfo_pat": 1.1515151515151516
+   },
+   "price": {
+    "close": 955.6,
+    "from_high": -10.19641011183159,
+    "ret3m": 56.3,
+    "ret6m": 135.0,
+    "rs3m": 61.8,
+    "rs6m": 138.5
+   }
+  },
+  {
+   "symbol": "NSE:APOLLO",
+   "code": "APOLLO",
+   "name": "Apollo Micro Systems Ltd.",
+   "band": "micro",
+   "industry": "Capital Goods",
+   "score": 58.8,
+   "momentum": 27.0,
+   "rotation": 11.8,
+   "trend": 20.0,
+   "catalyst": 0,
+   "industry_rs6m": 37.7,
+   "detail": [
+    "sales +31.1% YoY (10/10)",
+    "profit +22.4% YoY (7/10)",
+    "margin +2.0pp over four periods (10/10)",
+    "CFO/PAT -0.99x (0/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 31.084070796460182,
+    "pat_yoy": 22.429906542056077,
+    "de": 0.43647136273864384,
+    "roce": 15.0,
+    "promoter": 49.98,
+    "cfo_pat": -0.9923664122137404
+   },
+   "price": {
+    "close": 398.75,
+    "from_high": -11.398733474058442,
+    "ret3m": 2.3,
+    "ret6m": 34.2,
+    "rs3m": 7.7,
+    "rs6m": 37.7
+   }
+  },
+  {
+   "symbol": "NSE:SGMART",
+   "code": "SGMART",
+   "name": "SG Mart Ltd.",
+   "band": "micro",
+   "industry": "Metals & Mining",
+   "score": 58.6,
+   "momentum": 16.0,
+   "rotation": 17.6,
+   "trend": 25.0,
+   "catalyst": 0,
+   "industry_rs6m": 53.5,
+   "detail": [
+    "sales +2.6% YoY (3/10)",
+    "profit +11.7% YoY (3/10)",
+    "margin -53.5pp over four periods (0/10)",
+    "CFO/PAT 2.08x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 2.6128266033254244,
+    "pat_yoy": 11.711711711711704,
+    "de": 0.16781465247338762,
+    "roce": 10.0,
+    "promoter": 57.88,
+    "cfo_pat": 2.0806451612903225
+   },
+   "price": {
+    "close": 856.35,
+    "from_high": 0.0,
+    "ret3m": 22.8,
+    "ret6m": 50.0,
+    "rs3m": 28.3,
+    "rs6m": 53.5
+   }
+  },
+  {
+   "symbol": "NSE:SAREGAMA",
+   "code": "SAREGAMA",
+   "name": "Saregama India Ltd",
+   "band": "micro",
+   "industry": "Media Entertainment & Publication",
+   "score": 58.3,
+   "momentum": 18.0,
+   "rotation": 15.3,
+   "trend": 25.0,
+   "catalyst": 0,
+   "industry_rs6m": 43.4,
+   "detail": [
+    "sales +5.7% YoY (3/10)",
+    "profit +7.3% YoY (3/10)",
+    "margin +6.0pp over four periods (10/10)",
+    "CFO/PAT 0.45x (2/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 5.685279187817249,
+    "pat_yoy": 7.281553398058249,
+    "de": 0.04314420803782506,
+    "roce": 17.0,
+    "promoter": 60.84,
+    "cfo_pat": 0.45248868778280543
+   },
+   "price": {
+    "close": 548.65,
+    "from_high": 0.0,
+    "ret3m": 4.9,
+    "ret6m": 59.6,
+    "rs3m": 10.4,
+    "rs6m": 63.1
+   }
+  },
+  {
+   "symbol": "NSE:KPRMILL",
+   "code": "KPRMILL",
+   "name": "K.P.R. Mill Ltd.",
+   "band": "mid",
+   "industry": "Textiles",
+   "score": 57.8,
+   "momentum": 20.0,
+   "rotation": 18.8,
+   "trend": 19.0,
+   "catalyst": 0,
+   "industry_rs6m": 62.9,
+   "detail": [
+    "sales +7.2% YoY (3/10)",
+    "profit +20.0% YoY (7/10)",
+    "margin +0.0pp over four periods (0/10)",
+    "CFO/PAT 1.07x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 7.172932330827075,
+    "pat_yoy": 19.976905311778292,
+    "de": 0.0546975546975547,
+    "roce": 20.0,
+    "promoter": 67.52,
+    "cfo_pat": 1.0664100096246392
+   },
+   "price": {
+    "close": 1114.6,
+    "from_high": -6.4383446654914795,
+    "ret3m": 6.2,
+    "ret6m": 19.0,
+    "rs3m": 11.6,
+    "rs6m": 22.5
+   }
+  },
+  {
+   "symbol": "NSE:FSL",
+   "code": "FSL",
+   "name": "Firstsource Solutions Ltd.",
+   "band": "small",
+   "industry": "Services",
+   "score": 57.1,
+   "momentum": 23.0,
+   "rotation": 14.1,
+   "trend": 20.0,
+   "catalyst": 0,
+   "industry_rs6m": 40.4,
+   "detail": [
+    "sales +5.3% YoY (3/10)",
+    "profit -0.4% YoY (0/10)",
+    "margin +2.0pp over four periods (10/10)",
+    "CFO/PAT 1.81x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 5.316031812473843,
+    "pat_yoy": -0.4451038575667643,
+    "de": 0.6663625997719498,
+    "roce": 17.0,
+    "promoter": 53.66,
+    "cfo_pat": 1.8092399403874813
+   },
+   "price": {
+    "close": 292.9,
+    "from_high": -19.2445547284257,
+    "ret3m": -3.1,
+    "ret6m": 36.9,
+    "rs3m": 2.4,
+    "rs6m": 40.4
    }
   },
   {
@@ -362,12 +676,12 @@
    "name": "Shyam Metalics and Energy Ltd.",
    "band": "small",
    "industry": "Capital Goods",
-   "score": 61.3,
+   "score": 55.8,
    "momentum": 22.0,
-   "rotation": 17.3,
+   "rotation": 11.8,
    "trend": 22.0,
    "catalyst": 0,
-   "industry_rs6m": 61.7,
+   "industry_rs6m": 37.7,
    "detail": [
     "sales +5.6% YoY (3/10)",
     "profit +5.7% YoY (3/10)",
@@ -383,12 +697,397 @@
     "cfo_pat": 1.8071428571428572
    },
    "price": {
-    "close": 1131.3,
-    "from_high": -5.607008760951193,
-    "ret3m": 10.1,
-    "ret6m": 37.8,
-    "rs3m": 15.0,
-    "rs6m": 43.3
+    "close": 1162.9,
+    "from_high": -2.9703796412181793,
+    "ret3m": 12.8,
+    "ret6m": 33.1,
+    "rs3m": 18.2,
+    "rs6m": 36.6
+   }
+  },
+  {
+   "symbol": "NSE:ABDL",
+   "code": "ABDL",
+   "name": "Allied Blenders and Distillers Ltd.",
+   "band": "small",
+   "industry": "Fast Moving Consumer Goods",
+   "score": 55.6,
+   "momentum": 23.0,
+   "rotation": 10.6,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 34.8,
+   "detail": [
+    "sales +1.4% YoY (3/10)",
+    "profit -4.5% YoY (0/10)",
+    "margin +8.0pp over four periods (10/10)",
+    "CFO/PAT 1.72x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 1.4274789701758772,
+    "pat_yoy": -4.545454545454541,
+    "de": 0.6921226698737222,
+    "roce": 18.0,
+    "promoter": 78.95,
+    "cfo_pat": 1.723809523809524
+   },
+   "price": {
+    "close": 698.25,
+    "from_high": -6.732117812061711,
+    "ret3m": 12.7,
+    "ret6m": 31.3,
+    "rs3m": 18.2,
+    "rs6m": 34.8
+   }
+  },
+  {
+   "symbol": "NSE:CHENNPETRO",
+   "code": "CHENNPETRO",
+   "name": "Chennai Petroleum Corporation Ltd.",
+   "band": "small",
+   "industry": "Oil Gas & Consumable Fuels",
+   "score": 55.2,
+   "momentum": 32.0,
+   "rotation": 1.2,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 8.1,
+   "detail": [
+    "sales +27.4% YoY (10/10)",
+    "profit +83.8% YoY (10/10)",
+    "margin +3.0pp over four periods (10/10)",
+    "CFO/PAT 0.52x (2/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 27.36270349021346,
+    "pat_yoy": 83.75765388333872,
+    "de": 0.16199514455969985,
+    "roce": 35.0,
+    "promoter": 67.29,
+    "cfo_pat": 0.5164854437039635
+   },
+   "price": {
+    "close": 1511.5,
+    "from_high": -3.9036175217750713,
+    "ret3m": 19.9,
+    "ret6m": 34.0,
+    "rs3m": 25.4,
+    "rs6m": 37.5
+   }
+  },
+  {
+   "symbol": "NSE:INDHOTEL",
+   "code": "INDHOTEL",
+   "name": "Indian Hotels Co. Ltd.",
+   "band": "mid",
+   "industry": "Consumer Services",
+   "score": 55.1,
+   "momentum": 26.0,
+   "rotation": 7.1,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.75,
+   "detail": [
+    "sales +7.7% YoY (3/10)",
+    "profit +5.5% YoY (3/10)",
+    "margin +2.0pp over four periods (10/10)",
+    "CFO/PAT 1.04x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 7.658169057694297,
+    "pat_yoy": 5.473965287049398,
+    "de": 0.25447214076246333,
+    "roce": 17.0,
+    "promoter": 38.12,
+    "cfo_pat": 1.0426160337552743
+   },
+   "price": {
+    "close": 811.65,
+    "from_high": 0.0,
+    "ret3m": 9.9,
+    "ret6m": 27.6,
+    "rs3m": 15.4,
+    "rs6m": 31.2
+   }
+  },
+  {
+   "symbol": "NSE:SAILIFE",
+   "code": "SAILIFE",
+   "name": "Sai Life Sciences Ltd.",
+   "band": "small",
+   "industry": "Healthcare",
+   "score": 53.9,
+   "momentum": 26.0,
+   "rotation": 5.9,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +2.6% YoY (3/10)",
+    "profit +3.7% YoY (3/10)",
+    "margin +15.0pp over four periods (10/10)",
+    "CFO/PAT 1.41x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 2.6459854014598605,
+    "pat_yoy": 3.72492836676217,
+    "de": 0.11594202898550725,
+    "roce": 20.0,
+    "promoter": 34.5,
+    "cfo_pat": 1.4060773480662982
+   },
+   "price": {
+    "close": 1557.5,
+    "from_high": -2.68666041861918,
+    "ret3m": 18.4,
+    "ret6m": 45.6,
+    "rs3m": 23.9,
+    "rs6m": 49.2
+   }
+  },
+  {
+   "symbol": "NSE:IPCALAB",
+   "code": "IPCALAB",
+   "name": "Ipca Laboratories Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "score": 53.9,
+   "momentum": 26.0,
+   "rotation": 5.9,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +5.5% YoY (3/10)",
+    "profit +16.1% YoY (7/10)",
+    "margin +7.0pp over four periods (10/10)",
+    "CFO/PAT 0.83x (6/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 5.4901552245025576,
+    "pat_yoy": 16.131756756756754,
+    "de": 0.1003348629542354,
+    "roce": 17.0,
+    "promoter": 44.72,
+    "cfo_pat": 0.8305454545454546
+   },
+   "price": {
+    "close": 1927.8,
+    "from_high": -4.070461783439483,
+    "ret3m": 10.3,
+    "ret6m": 25.9,
+    "rs3m": 15.8,
+    "rs6m": 29.5
+   }
+  },
+  {
+   "symbol": "NSE:AJANTPHARM",
+   "code": "AJANTPHARM",
+   "name": "Ajanta Pharmaceuticals Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "score": 53.9,
+   "momentum": 26.0,
+   "rotation": 5.9,
+   "trend": 22.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +14.0% YoY (7/10)",
+    "profit +19.6% YoY (7/10)",
+    "margin +5.0pp over four periods (10/10)",
+    "CFO/PAT 0.42x (2/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 14.010636346964978,
+    "pat_yoy": 19.60227272727273,
+    "de": 0.03170028818443804,
+    "roce": 35.0,
+    "promoter": 63.47,
+    "cfo_pat": 0.41884402216943784
+   },
+   "price": {
+    "close": 3508.8,
+    "from_high": -4.46525811370072,
+    "ret3m": 1.3,
+    "ret6m": 24.3,
+    "rs3m": 6.7,
+    "rs6m": 27.8
+   }
+  },
+  {
+   "symbol": "NSE:ACUTAAS",
+   "code": "ACUTAAS",
+   "name": "Acutaas Chemicals Ltd.",
+   "band": "small",
+   "industry": "Healthcare",
+   "score": 52.9,
+   "momentum": 22.0,
+   "rotation": 5.9,
+   "trend": 25.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +9.2% YoY (3/10)",
+    "profit +8.7% YoY (3/10)",
+    "margin +17.0pp over four periods (10/10)",
+    "CFO/PAT 0.75x (6/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 9.18595967139657,
+    "pat_yoy": 8.70786516853932,
+    "de": 0.02176541717049577,
+    "roce": 32.0,
+    "promoter": 32.66,
+    "cfo_pat": 0.7545219638242894
+   },
+   "price": {
+    "close": 4003.6,
+    "from_high": 0.0,
+    "ret3m": 28.9,
+    "ret6m": 54.3,
+    "rs3m": 34.4,
+    "rs6m": 57.9
+   }
+  },
+  {
+   "symbol": "NSE:CEMPRO",
+   "code": "CEMPRO",
+   "name": "Cemindia Projects Ltd.",
+   "band": "small",
+   "industry": "Construction",
+   "score": 50.9,
+   "momentum": 22.0,
+   "rotation": 12.9,
+   "trend": 16.0,
+   "catalyst": 0,
+   "industry_rs6m": 38.75,
+   "detail": [
+    "sales +1.4% YoY (3/10)",
+    "profit +0.7% YoY (3/10)",
+    "margin +2.0pp over four periods (10/10)",
+    "CFO/PAT 0.83x (6/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 1.4312692575290775,
+    "pat_yoy": 0.6688963210702337,
+    "de": 0.41725719049604004,
+    "roce": 33.0,
+    "promoter": 62.84,
+    "cfo_pat": 0.8305647840531561
+   },
+   "price": {
+    "close": 1265.0,
+    "from_high": -21.67182662538699,
+    "ret3m": -7.5,
+    "ret6m": 55.2,
+    "rs3m": -2.1,
+    "rs6m": 58.7
+   }
+  },
+  {
+   "symbol": "NSE:AUROPHARMA",
+   "code": "AUROPHARMA",
+   "name": "Aurobindo Pharma Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "score": 50.9,
+   "momentum": 26.0,
+   "rotation": 5.9,
+   "trend": 19.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +3.8% YoY (3/10)",
+    "profit +5.9% YoY (3/10)",
+    "margin +5.0pp over four periods (10/10)",
+    "CFO/PAT 1.49x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 3.8094672094612703,
+    "pat_yoy": 5.937767627747648,
+    "de": 0.2130585099363965,
+    "roce": 13.0,
+    "promoter": 51.88,
+    "cfo_pat": 1.4890864995957962
+   },
+   "price": {
+    "close": 1681.4,
+    "from_high": -3.0334486735870803,
+    "ret3m": 6.4,
+    "ret6m": 21.0,
+    "rs3m": 11.9,
+    "rs6m": 24.5
+   }
+  },
+  {
+   "symbol": "NSE:SUNTV",
+   "code": "SUNTV",
+   "name": "Sun TV Network Ltd.",
+   "band": "small",
+   "industry": "Media Entertainment & Publication",
+   "score": 50.3,
+   "momentum": 16.0,
+   "rotation": 15.3,
+   "trend": 19.0,
+   "catalyst": 0,
+   "industry_rs6m": 43.4,
+   "detail": [
+    "sales +3.9% YoY (3/10)",
+    "profit +6.2% YoY (3/10)",
+    "margin -12.0pp over four periods (0/10)",
+    "CFO/PAT 1.18x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 3.8523644752018527,
+    "pat_yoy": 6.176266481609982,
+    "de": 0.008384086055524795,
+    "roce": 16.0,
+    "promoter": 75.0,
+    "cfo_pat": 1.1777777777777778
+   },
+   "price": {
+    "close": 607.55,
+    "from_high": -6.191615841889908,
+    "ret3m": 19.4,
+    "ret6m": 0.3,
+    "rs3m": 24.9,
+    "rs6m": 3.9
+   }
+  },
+  {
+   "symbol": "NSE:MRPL",
+   "code": "MRPL",
+   "name": "Mangalore Refinery & Petrochemicals Ltd.",
+   "band": "small",
+   "industry": "Oil Gas & Consumable Fuels",
+   "score": 50.2,
+   "momentum": 32.0,
+   "rotation": 1.2,
+   "trend": 17.0,
+   "catalyst": 0,
+   "industry_rs6m": 8.1,
+   "detail": [
+    "sales +34.7% YoY (10/10)",
+    "profit +129.3% YoY (10/10)",
+    "margin +2.0pp over four periods (10/10)",
+    "CFO/PAT 0.57x (2/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 34.69723798030835,
+    "pat_yoy": 129.2987012987013,
+    "de": 0.5988614355302542,
+    "roce": 18.0,
+    "promoter": 88.58,
+    "cfo_pat": 0.5734028092433168
+   },
+   "price": {
+    "close": 173.15,
+    "from_high": -16.170418784797867,
+    "ret3m": 1.9,
+    "ret6m": 3.3,
+    "rs3m": 7.3,
+    "rs6m": 6.9
    }
   },
   {
@@ -397,12 +1096,12 @@
    "name": "SRI LOTUS DEVELOPERS AND REALTY Ltd.",
    "band": "micro",
    "industry": "Realty",
-   "score": 59.3,
+   "score": 48.5,
    "momentum": 30.0,
-   "rotation": 9.3,
-   "trend": 20.0,
+   "rotation": 3.5,
+   "trend": 15.0,
    "catalyst": 0,
-   "industry_rs6m": 33.8,
+   "industry_rs6m": 23.9,
    "detail": [
     "sales +21.7% YoY (10/10)",
     "profit +25.5% YoY (10/10)",
@@ -420,185 +1119,45 @@
    "price": {
     "close": 185.83,
     "from_high": -11.412499404109255,
-    "ret3m": 3.0,
-    "ret6m": 28.3,
-    "rs3m": 7.9,
-    "rs6m": 33.8
+    "ret3m": -7.1,
+    "ret6m": 29.8,
+    "rs3m": -1.7,
+    "rs6m": 33.4
    }
   },
   {
-   "symbol": "NSE:INDHOTEL",
-   "code": "INDHOTEL",
-   "name": "Indian Hotels Co. Ltd.",
-   "band": "mid",
-   "industry": "Consumer Services",
-   "score": 58.7,
-   "momentum": 26.0,
-   "rotation": 10.7,
-   "trend": 22.0,
-   "catalyst": 0,
-   "industry_rs6m": 33.9,
-   "detail": [
-    "sales +7.7% YoY (3/10)",
-    "profit +5.5% YoY (3/10)",
-    "margin +2.0pp over four periods (10/10)",
-    "CFO/PAT 1.04x (10/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 7.658169057694297,
-    "pat_yoy": 5.473965287049398,
-    "de": 0.25447214076246333,
-    "roce": 17.0,
-    "promoter": 38.12,
-    "cfo_pat": 1.0426160337552743
-   },
-   "price": {
-    "close": 781.75,
-    "from_high": 0.0,
-    "ret3m": 7.5,
-    "ret6m": 23.0,
-    "rs3m": 12.4,
-    "rs6m": 28.5
-   }
-  },
-  {
-   "symbol": "NSE:SGMART",
-   "code": "SGMART",
-   "name": "SG Mart Ltd.",
-   "band": "micro",
-   "industry": "Metals & Mining",
-   "score": 55.7,
+   "symbol": "NSE:GLAND",
+   "code": "GLAND",
+   "name": "Gland Pharma Ltd.",
+   "band": "small",
+   "industry": "Healthcare",
+   "score": 46.9,
    "momentum": 16.0,
-   "rotation": 14.7,
+   "rotation": 5.9,
    "trend": 25.0,
    "catalyst": 0,
-   "industry_rs6m": 52.1,
+   "industry_rs6m": 29.5,
    "detail": [
-    "sales +2.6% YoY (3/10)",
-    "profit +11.7% YoY (3/10)",
-    "margin -53.5pp over four periods (0/10)",
-    "CFO/PAT 2.08x (10/10)"
+    "sales +4.6% YoY (3/10)",
+    "profit +9.9% YoY (3/10)",
+    "margin -2.0pp over four periods (0/10)",
+    "CFO/PAT 0.91x (10/10)"
    ],
    "metrics": {
-    "sales_yoy": 2.6128266033254244,
-    "pat_yoy": 11.711711711711704,
-    "de": 0.16781465247338762,
-    "roce": 10.0,
-    "promoter": 57.88,
-    "cfo_pat": 2.0806451612903225
+    "sales_yoy": 4.571606282071228,
+    "pat_yoy": 9.931840311587138,
+    "de": 0.0274210678767983,
+    "roce": 15.0,
+    "promoter": 45.75,
+    "cfo_pat": 0.9131975199291408
    },
    "price": {
-    "close": 796.8,
-    "from_high": -3.3889057290087954,
-    "ret3m": 11.7,
-    "ret6m": 46.7,
-    "rs3m": 16.6,
-    "rs6m": 52.1
-   }
-  },
-  {
-   "symbol": "NSE:FSL",
-   "code": "FSL",
-   "name": "Firstsource Solutions Ltd.",
-   "band": "small",
-   "industry": "Services",
-   "score": 55.0,
-   "momentum": 23.0,
-   "rotation": 12.0,
-   "trend": 20.0,
-   "catalyst": 0,
-   "industry_rs6m": 44.2,
-   "detail": [
-    "sales +5.3% YoY (3/10)",
-    "profit -0.4% YoY (0/10)",
-    "margin +2.0pp over four periods (10/10)",
-    "CFO/PAT 1.81x (10/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 5.316031812473843,
-    "pat_yoy": -0.4451038575667643,
-    "de": 0.6663625997719498,
-    "roce": 17.0,
-    "promoter": 53.66,
-    "cfo_pat": 1.8092399403874813
-   },
-   "price": {
-    "close": 290.4,
-    "from_high": -19.933829611248967,
-    "ret3m": 14.5,
-    "ret6m": 38.8,
-    "rs3m": 19.4,
-    "rs6m": 44.2
-   }
-  },
-  {
-   "symbol": "NSE:CRISIL",
-   "code": "CRISIL",
-   "name": "CRISIL Ltd.",
-   "band": "mid",
-   "industry": "Financial Services",
-   "score": 51.7,
-   "momentum": 30.0,
-   "rotation": 2.7,
-   "trend": 19.0,
-   "catalyst": 0,
-   "industry_rs6m": 19.25,
-   "detail": [
-    "sales +18.1% YoY (7/10)",
-    "profit +17.0% YoY (7/10)",
-    "margin +3.0pp over four periods (10/10)",
-    "CFO/PAT 0.84x (6/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 18.11455193203617,
-    "pat_yoy": 16.971279373368155,
-    "de": 0.10241516355854478,
-    "roce": 33.0,
-    "promoter": 66.64,
-    "cfo_pat": 0.84375
-   },
-   "price": {
-    "close": 4751.1,
-    "from_high": -3.6131623792907464,
-    "ret3m": 9.3,
-    "ret6m": 11.3,
-    "rs3m": 14.2,
-    "rs6m": 16.7
-   }
-  },
-  {
-   "symbol": "NSE:ABDL",
-   "code": "ABDL",
-   "name": "Allied Blenders and Distillers Ltd.",
-   "band": "small",
-   "industry": "Fast Moving Consumer Goods",
-   "score": 48.3,
-   "momentum": 23.0,
-   "rotation": 5.3,
-   "trend": 20.0,
-   "catalyst": 0,
-   "industry_rs6m": 25.9,
-   "detail": [
-    "sales +1.4% YoY (3/10)",
-    "profit -4.5% YoY (0/10)",
-    "margin +8.0pp over four periods (10/10)",
-    "CFO/PAT 1.72x (10/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 1.4274789701758772,
-    "pat_yoy": -4.545454545454541,
-    "de": 0.6921226698737222,
-    "roce": 18.0,
-    "promoter": 78.95,
-    "cfo_pat": 1.723809523809524
-   },
-   "price": {
-    "close": 672.65,
-    "from_high": -10.151606224537502,
-    "ret3m": 8.4,
-    "ret6m": 20.5,
-    "rs3m": 13.3,
-    "rs6m": 25.9
+    "close": 3095.9,
+    "from_high": 0.0,
+    "ret3m": 23.7,
+    "ret6m": 76.8,
+    "rs3m": 29.1,
+    "rs6m": 80.4
    }
   },
   {
@@ -607,12 +1166,12 @@
    "name": "GNG Electronics Ltd.",
    "band": "micro",
    "industry": "Information Technology",
-   "score": 45.0,
+   "score": 46.9,
    "momentum": 16.0,
-   "rotation": 4.0,
+   "rotation": 5.9,
    "trend": 25.0,
    "catalyst": 0,
-   "industry_rs6m": 23.6,
+   "industry_rs6m": 29.5,
    "detail": [
     "sales +5.3% YoY (3/10)",
     "profit +7.6% YoY (3/10)",
@@ -628,47 +1187,12 @@
     "cfo_pat": -1.5140845070422535
    },
    "price": {
-    "close": 682.5,
-    "from_high": -3.6085022244191745,
-    "ret3m": 19.2,
-    "ret6m": 77.6,
-    "rs3m": 24.2,
-    "rs6m": 83.0
-   }
-  },
-  {
-   "symbol": "NSE:BBOX",
-   "code": "BBOX",
-   "name": "Black Box Ltd.",
-   "band": "small",
-   "industry": "Information Technology",
-   "score": 43.0,
-   "momentum": 18.0,
-   "rotation": 4.0,
-   "trend": 21.0,
-   "catalyst": 0,
-   "industry_rs6m": 23.6,
-   "detail": [
-    "sales +5.3% YoY (3/10)",
-    "profit +3.7% YoY (3/10)",
-    "margin +4.7pp over four periods (10/10)",
-    "CFO/PAT 0.37x (2/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 5.251502689022458,
-    "pat_yoy": 3.669724770642202,
-    "de": 0.8958818958818959,
-    "roce": 22.0,
-    "promoter": 69.95,
-    "cfo_pat": 0.37168141592920356
-   },
-   "price": {
-    "close": 805.1,
-    "from_high": -24.9603877341784,
-    "ret3m": 3.4,
-    "ret6m": 46.4,
-    "rs3m": 8.3,
-    "rs6m": 51.8
+    "close": 659.45,
+    "from_high": -6.86392203940398,
+    "ret3m": 24.7,
+    "ret6m": 55.3,
+    "rs3m": 30.2,
+    "rs6m": 58.9
    }
   },
   {
@@ -677,12 +1201,12 @@
    "name": "Persistent Systems Ltd.",
    "band": "mid",
    "industry": "Information Technology",
-   "score": 41.0,
+   "score": 44.9,
    "momentum": 17.0,
-   "rotation": 4.0,
-   "trend": 20.0,
+   "rotation": 5.9,
+   "trend": 22.0,
    "catalyst": 0,
-   "industry_rs6m": 23.6,
+   "industry_rs6m": 29.5,
    "detail": [
     "sales +13.9% YoY (7/10)",
     "profit -3.3% YoY (0/10)",
@@ -698,12 +1222,12 @@
     "cfo_pat": 0.9800332778702163
    },
    "price": {
-    "close": 5727.5,
-    "from_high": -12.161644045702014,
-    "ret3m": 10.1,
-    "ret6m": 20.6,
-    "rs3m": 15.0,
-    "rs6m": 26.1
+    "close": 6048.0,
+    "from_high": -7.246376811594201,
+    "ret3m": 9.0,
+    "ret6m": 26.0,
+    "rs3m": 14.4,
+    "rs6m": 29.5
    }
   },
   {
@@ -712,12 +1236,12 @@
    "name": "L&T Technology Services Ltd.",
    "band": "mid",
    "industry": "Information Technology",
-   "score": 41.0,
+   "score": 44.9,
    "momentum": 20.0,
-   "rotation": 4.0,
-   "trend": 17.0,
+   "rotation": 5.9,
+   "trend": 19.0,
    "catalyst": 0,
-   "industry_rs6m": 23.6,
+   "industry_rs6m": 29.5,
    "detail": [
     "sales +5.7% YoY (3/10)",
     "profit +20.4% YoY (7/10)",
@@ -733,187 +1257,12 @@
     "cfo_pat": 0.943579766536965
    },
    "price": {
-    "close": 3910.3,
-    "from_high": -16.375106928999138,
-    "ret3m": 14.4,
-    "ret6m": 15.7,
-    "rs3m": 19.3,
-    "rs6m": 21.1
-   }
-  },
-  {
-   "symbol": "NSE:IGIL",
-   "code": "IGIL",
-   "name": "International Gemological Institute Ltd.",
-   "band": "small",
-   "industry": "Services",
-   "score": 41.0,
-   "momentum": 10.0,
-   "rotation": 12.0,
-   "trend": 19.0,
-   "catalyst": 0,
-   "industry_rs6m": 44.2,
-   "detail": [
-    "sales -8.8% YoY (0/10)",
-    "profit -6.3% YoY (0/10)",
-    "margin -7.0pp over four periods (0/10)",
-    "CFO/PAT 0.94x (10/10)"
-   ],
-   "metrics": {
-    "sales_yoy": -8.823529411764708,
-    "pat_yoy": -6.329113924050633,
-    "de": 0.08566533409480297,
-    "roce": 69.0,
-    "promoter": 76.55,
-    "cfo_pat": 0.9369369369369369
-   },
-   "price": {
-    "close": 381.15,
-    "from_high": 0.0,
-    "ret3m": 12.7,
-    "ret6m": 9.7,
-    "rs3m": 17.6,
-    "rs6m": 15.1
-   }
-  },
-  {
-   "symbol": "NSE:SUNTV",
-   "code": "SUNTV",
-   "name": "Sun TV Network Ltd.",
-   "band": "small",
-   "industry": "Media Entertainment & Publication",
-   "score": 39.7,
-   "momentum": 16.0,
-   "rotation": 6.7,
-   "trend": 17.0,
-   "catalyst": 0,
-   "industry_rs6m": 28.799999999999997,
-   "detail": [
-    "sales +3.9% YoY (3/10)",
-    "profit +6.2% YoY (3/10)",
-    "margin -12.0pp over four periods (0/10)",
-    "CFO/PAT 1.18x (10/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 3.8523644752018527,
-    "pat_yoy": 6.176266481609982,
-    "de": 0.008384086055524795,
-    "roce": 16.0,
-    "promoter": 75.0,
-    "cfo_pat": 1.1777777777777778
-   },
-   "price": {
-    "close": 578.8,
-    "from_high": -10.63074191307033,
-    "ret3m": 18.9,
-    "ret6m": -3.6,
-    "rs3m": 23.8,
-    "rs6m": 1.9
-   }
-  },
-  {
-   "symbol": "NSE:MPHASIS",
-   "code": "MPHASIS",
-   "name": "MphasiS Ltd.",
-   "band": "mid",
-   "industry": "Information Technology",
-   "score": 39.0,
-   "momentum": 18.0,
-   "rotation": 4.0,
-   "trend": 17.0,
-   "catalyst": 0,
-   "industry_rs6m": 23.6,
-   "detail": [
-    "sales +4.1% YoY (3/10)",
-    "profit +2.5% YoY (3/10)",
-    "margin +1.0pp over four periods (6/10)",
-    "CFO/PAT 0.66x (6/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 4.0994962216624575,
-    "pat_yoy": 2.522812667740193,
-    "de": 0.24385703648548027,
-    "roce": 22.0,
-    "promoter": 30.53,
-    "cfo_pat": 0.6560209424083769
-   },
-   "price": {
-    "close": 2480.0,
-    "from_high": -16.03466955579631,
-    "ret3m": 8.4,
-    "ret6m": 14.0,
-    "rs3m": 13.3,
-    "rs6m": 19.4
-   }
-  },
-  {
-   "symbol": "NSE:MASTEK",
-   "code": "MASTEK",
-   "name": "Mastek Ltd.",
-   "band": "micro",
-   "industry": "Information Technology",
-   "score": 35.0,
-   "momentum": 16.0,
-   "rotation": 4.0,
-   "trend": 15.0,
-   "catalyst": 0,
-   "industry_rs6m": 23.6,
-   "detail": [
-    "sales +4.0% YoY (3/10)",
-    "profit +5.4% YoY (3/10)",
-    "margin -2.0pp over four periods (0/10)",
-    "CFO/PAT 1.27x (10/10)"
-   ],
-   "metrics": {
-    "sales_yoy": 4.028115706947832,
-    "pat_yoy": 5.44554455445545,
-    "de": 0.11880877742946709,
-    "roce": 18.0,
-    "promoter": 35.75,
-    "cfo_pat": 1.272300469483568
-   },
-   "price": {
-    "close": 1761.6,
-    "from_high": -22.35543018335685,
-    "ret3m": 4.2,
-    "ret6m": 3.6,
-    "rs3m": 9.1,
-    "rs6m": 9.0
-   }
-  },
-  {
-   "symbol": "NSE:AXISCADES",
-   "code": "AXISCADES",
-   "name": "AXISCADES Technologies Ltd.",
-   "band": "micro",
-   "industry": "Capital Goods",
-   "score": 34.3,
-   "momentum": 0.0,
-   "rotation": 17.3,
-   "trend": 17.0,
-   "catalyst": 0,
-   "industry_rs6m": 61.7,
-   "detail": [
-    "sales -19.4% YoY (0/10)",
-    "profit -50.0% YoY (0/10)",
-    "margin -5.0pp over four periods (0/10)",
-    "CFO/PAT -0.03x (0/10)"
-   ],
-   "metrics": {
-    "sales_yoy": -19.413287316652283,
-    "pat_yoy": -50.0,
-    "de": 0.5337001375515819,
-    "roce": 15.0,
-    "promoter": 44.82,
-    "cfo_pat": -0.027777777777777776
-   },
-   "price": {
-    "close": 1917.4,
-    "from_high": -16.898539418367797,
-    "ret3m": 19.2,
-    "ret6m": -1.2,
-    "rs3m": 24.2,
-    "rs6m": 4.3
+    "close": 4280.2,
+    "from_high": -8.464499572284012,
+    "ret3m": 20.4,
+    "ret6m": 18.0,
+    "rs3m": 25.8,
+    "rs6m": 21.6
    }
   },
   {
@@ -922,12 +1271,12 @@
    "name": "Tanla Platforms Ltd.",
    "band": "micro",
    "industry": "Information Technology",
-   "score": 34.0,
+   "score": 43.9,
    "momentum": 16.0,
-   "rotation": 4.0,
-   "trend": 14.0,
+   "rotation": 5.9,
+   "trend": 22.0,
    "catalyst": 0,
-   "industry_rs6m": 23.6,
+   "industry_rs6m": 29.5,
    "detail": [
     "sales +4.2% YoY (3/10)",
     "profit +4.7% YoY (3/10)",
@@ -943,12 +1292,12 @@
     "cfo_pat": 1.0769230769230769
    },
    "price": {
-    "close": 557.15,
-    "from_high": -9.192404856979863,
-    "ret3m": -7.1,
-    "ret6m": 14.7,
-    "rs3m": -2.2,
-    "rs6m": 20.1
+    "close": 627.15,
+    "from_high": 0.0,
+    "ret3m": 6.9,
+    "ret6m": 22.5,
+    "rs3m": 12.4,
+    "rs6m": 26.0
    }
   },
   {
@@ -957,12 +1306,12 @@
    "name": "Ceigall India Ltd.",
    "band": "micro",
    "industry": "Construction",
-   "score": 32.3,
+   "score": 43.9,
    "momentum": 12.0,
-   "rotation": 1.3,
+   "rotation": 12.9,
    "trend": 19.0,
    "catalyst": 0,
-   "industry_rs6m": 16.7,
+   "industry_rs6m": 38.75,
    "detail": [
     "sales +3.3% YoY (3/10)",
     "profit +3.9% YoY (3/10)",
@@ -978,12 +1327,152 @@
     "cfo_pat": -0.2834890965732087
    },
    "price": {
-    "close": 363.1,
-    "from_high": -7.242304253416776,
-    "ret3m": 7.7,
-    "ret6m": 11.3,
-    "rs3m": 12.6,
-    "rs6m": 16.7
+    "close": 390.2,
+    "from_high": -0.31932558436581493,
+    "ret3m": 13.8,
+    "ret6m": 15.2,
+    "rs3m": 19.3,
+    "rs6m": 18.8
+   }
+  },
+  {
+   "symbol": "NSE:IGIL",
+   "code": "IGIL",
+   "name": "International Gemological Institute Ltd.",
+   "band": "small",
+   "industry": "Services",
+   "score": 43.1,
+   "momentum": 10.0,
+   "rotation": 14.1,
+   "trend": 19.0,
+   "catalyst": 0,
+   "industry_rs6m": 40.4,
+   "detail": [
+    "sales -8.8% YoY (0/10)",
+    "profit -6.3% YoY (0/10)",
+    "margin -7.0pp over four periods (0/10)",
+    "CFO/PAT 0.94x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": -8.823529411764708,
+    "pat_yoy": -6.329113924050633,
+    "de": 0.08566533409480297,
+    "roce": 69.0,
+    "promoter": 76.55,
+    "cfo_pat": 0.9369369369369369
+   },
+   "price": {
+    "close": 397.75,
+    "from_high": 0.0,
+    "ret3m": 12.5,
+    "ret6m": 15.0,
+    "rs3m": 18.0,
+    "rs6m": 18.5
+   }
+  },
+  {
+   "symbol": "NSE:PETRONET",
+   "code": "PETRONET",
+   "name": "Petronet LNG Ltd.",
+   "band": "mid",
+   "industry": "Oil Gas & Consumable Fuels",
+   "score": 41.2,
+   "momentum": 23.0,
+   "rotation": 1.2,
+   "trend": 17.0,
+   "catalyst": 0,
+   "industry_rs6m": 8.1,
+   "detail": [
+    "sales -14.5% YoY (0/10)",
+    "profit +7.5% YoY (3/10)",
+    "margin +7.0pp over four periods (10/10)",
+    "CFO/PAT 1.13x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": -14.53500402345097,
+    "pat_yoy": 7.538972655251719,
+    "de": 0.10504823872560018,
+    "roce": 23.0,
+    "promoter": 50.0,
+    "cfo_pat": 1.1288022813688212
+   },
+   "price": {
+    "close": 289.5,
+    "from_high": -10.482374768089041,
+    "ret3m": 3.1,
+    "ret6m": 4.6,
+    "rs3m": 8.6,
+    "rs6m": 8.1
+   }
+  },
+  {
+   "symbol": "NSE:MPHASIS",
+   "code": "MPHASIS",
+   "name": "MphasiS Ltd.",
+   "band": "mid",
+   "industry": "Information Technology",
+   "score": 40.9,
+   "momentum": 18.0,
+   "rotation": 5.9,
+   "trend": 17.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +4.1% YoY (3/10)",
+    "profit +2.5% YoY (3/10)",
+    "margin +1.0pp over four periods (6/10)",
+    "CFO/PAT 0.66x (6/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 4.0994962216624575,
+    "pat_yoy": 2.522812667740193,
+    "de": 0.24385703648548027,
+    "roce": 22.0,
+    "promoter": 30.53,
+    "cfo_pat": 0.6560209424083769
+   },
+   "price": {
+    "close": 2525.6,
+    "from_high": -14.4907908992416,
+    "ret3m": 7.8,
+    "ret6m": 10.9,
+    "rs3m": 13.3,
+    "rs6m": 14.5
+   }
+  },
+  {
+   "symbol": "NSE:INDGN",
+   "code": "INDGN",
+   "name": "Indegene Ltd.",
+   "band": "micro",
+   "industry": "Healthcare",
+   "score": 37.9,
+   "momentum": 13.0,
+   "rotation": 5.9,
+   "trend": 19.0,
+   "catalyst": 0,
+   "industry_rs6m": 29.5,
+   "detail": [
+    "sales +8.6% YoY (3/10)",
+    "profit +0.0% YoY (0/10)",
+    "margin +0.0pp over four periods (0/10)",
+    "CFO/PAT 1.62x (10/10)"
+   ],
+   "metrics": {
+    "sales_yoy": 8.632478632478623,
+    "pat_yoy": 0.0,
+    "de": 0.04587448231920994,
+    "roce": 19.0,
+    "promoter": null,
+    "cfo_pat": 1.6234413965087282
+   },
+   "price": {
+    "close": 586.8,
+    "from_high": -3.6374086542409256,
+    "ret3m": 13.9,
+    "ret6m": 17.4,
+    "rs3m": 19.4,
+    "rs6m": 21.0
    }
   },
   {
@@ -992,12 +1481,12 @@
    "name": "IIFL Capital Services Ltd.",
    "band": "micro",
    "industry": "Financial Services",
-   "score": 22.7,
+   "score": 24.4,
    "momentum": 3.0,
-   "rotation": 2.7,
-   "trend": 17.0,
+   "rotation": 2.4,
+   "trend": 19.0,
    "catalyst": 0,
-   "industry_rs6m": 19.25,
+   "industry_rs6m": 23.4,
    "detail": [
     "sales -3.0% YoY (0/10)",
     "profit +1.4% YoY (3/10)",
@@ -1013,16 +1502,32 @@
     "cfo_pat": -1.8706293706293706
    },
    "price": {
-    "close": 342.1,
-    "from_high": -10.725469728601244,
-    "ret3m": 0.6,
-    "ret6m": 6.9,
-    "rs3m": 5.5,
-    "rs6m": 12.3
+    "close": 347.85,
+    "from_high": -9.224947807933182,
+    "ret3m": 3.0,
+    "ret6m": 11.4,
+    "rs3m": 8.4,
+    "rs6m": 14.9
    }
   }
  ],
  "excluded": [
+  {
+   "symbol": "NSE:LAURUSLABS",
+   "code": "LAURUSLABS",
+   "name": "Laurus Labs Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "close": 2405.5,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": 0.0,
+   "ret3m": 32.4,
+   "ret6m": 118.5,
+   "rs3m": 37.9,
+   "rs6m": 122.0,
+   "reason": "promoter 27.5% below 30%"
+  },
   {
    "symbol": "NSE:HFCL",
    "code": "HFCL",
@@ -1033,27 +1538,27 @@
    "above_50": true,
    "above_200": true,
    "from_high_pct": 0.0,
-   "ret3m": 27.7,
-   "ret6m": 150.9,
-   "rs3m": 32.7,
-   "rs6m": 156.3,
+   "ret3m": 29.7,
+   "ret6m": 116.7,
+   "rs3m": 35.1,
+   "rs6m": 120.3,
    "reason": "promoter 28.3% below 30%"
   },
   {
-   "symbol": "NSE:LAURUSLABS",
-   "code": "LAURUSLABS",
-   "name": "Laurus Labs Ltd.",
-   "band": "mid",
-   "industry": "Healthcare",
-   "close": 1970.0,
+   "symbol": "NSE:ATHERENERG",
+   "code": "ATHERENERG",
+   "name": "Ather Energy Ltd.",
+   "band": "small",
+   "industry": "Automobile and Auto Components",
+   "close": 1756.0,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -4.373574098344735,
-   "ret3m": 23.0,
-   "ret6m": 76.9,
-   "rs3m": 27.9,
-   "rs6m": 82.4,
-   "reason": "promoter 27.5% below 30%"
+   "from_high_pct": 0.0,
+   "ret3m": 39.3,
+   "ret6m": 87.8,
+   "rs3m": 44.8,
+   "rs6m": 91.4,
+   "reason": "latest annual profit is negative"
   },
   {
    "symbol": "NSE:COFORGE",
@@ -1061,14 +1566,14 @@
    "name": "Coforge Ltd.",
    "band": "mid",
    "industry": "Information Technology",
-   "close": 1900.5,
+   "close": 2045.0,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -5.663655316191796,
-   "ret3m": 28.0,
-   "ret6m": 65.1,
-   "rs3m": 32.9,
-   "rs6m": 70.6,
+   "from_high_pct": 0.0,
+   "ret3m": 18.8,
+   "ret6m": 71.0,
+   "rs3m": 24.3,
+   "rs6m": 74.5,
    "reason": "promoter 0.0% below 30%"
   },
   {
@@ -1077,15 +1582,63 @@
    "name": "Welspun Living Ltd.",
    "band": "small",
    "industry": "Textiles",
-   "close": 209.92,
+   "close": 219.08,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -12.229794706693987,
-   "ret3m": 29.6,
-   "ret6m": 61.3,
-   "rs3m": 34.5,
-   "rs6m": 66.7,
+   "from_high_pct": -8.399882928460922,
+   "ret3m": 40.5,
+   "ret6m": 69.9,
+   "rs3m": 45.9,
+   "rs6m": 73.4,
    "reason": "ROCE 6.0% below 10%"
+  },
+  {
+   "symbol": "NSE:SANSERA",
+   "code": "SANSERA",
+   "name": "Sansera Engineering Ltd.",
+   "band": "small",
+   "industry": "Automobile and Auto Components",
+   "close": 4111.6,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -11.813658201784472,
+   "ret3m": 22.8,
+   "ret6m": 63.6,
+   "rs3m": 28.3,
+   "rs6m": 67.1,
+   "reason": "promoter 29.0% below 30%"
+  },
+  {
+   "symbol": "NSE:ICIL",
+   "code": "ICIL",
+   "name": "Indo Count Industries Ltd.",
+   "band": "micro",
+   "industry": "Textiles",
+   "close": 442.1,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -1.7118719430858187,
+   "ret3m": 10.2,
+   "ret6m": 59.4,
+   "rs3m": 15.6,
+   "rs6m": 62.9,
+   "reason": "ROCE 8.0% below 10%"
+  },
+  {
+   "symbol": "NSE:PAISALO",
+   "code": "PAISALO",
+   "name": "Paisalo Digital Ltd.",
+   "band": "micro",
+   "industry": "Financial Services",
+   "close": 78.63,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -12.155066473019783,
+   "ret3m": 10.4,
+   "ret6m": 57.4,
+   "rs3m": 15.9,
+   "rs6m": 61.0,
+   "reason": ""
   },
   {
    "symbol": "NSE:NAZARA",
@@ -1093,14 +1646,14 @@
    "name": "Nazara Technologies Ltd.",
    "band": "micro",
    "industry": "Media Entertainment & Publication",
-   "close": 402.15,
+   "close": 398.8,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -3.8263780939854164,
-   "ret3m": 33.0,
-   "ret6m": 48.9,
-   "rs3m": 37.9,
-   "rs6m": 54.3,
+   "from_high_pct": -4.627526007413596,
+   "ret3m": 17.6,
+   "ret6m": 51.3,
+   "rs3m": 23.1,
+   "rs6m": 54.8,
    "reason": "latest annual profit is negative"
   },
   {
@@ -1109,15 +1662,127 @@
    "name": "PTC Industries Ltd.",
    "band": "small",
    "industry": "Capital Goods",
-   "close": 23455.0,
+   "close": 23945.0,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -4.9635332252836335,
-   "ret3m": 32.3,
-   "ret6m": 45.5,
-   "rs3m": 37.2,
-   "rs6m": 50.9,
+   "from_high_pct": -2.978119935170176,
+   "ret3m": 35.0,
+   "ret6m": 49.0,
+   "rs3m": 40.5,
+   "rs6m": 52.6,
    "reason": "ROCE 9.0% below 10%"
+  },
+  {
+   "symbol": "NSE:THELEELA",
+   "code": "THELEELA",
+   "name": "Leela Palaces Hotels & Resorts Ltd.",
+   "band": "micro",
+   "industry": "Consumer Services",
+   "close": 634.25,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": 0.0,
+   "ret3m": 28.2,
+   "ret6m": 48.1,
+   "rs3m": 33.7,
+   "rs6m": 51.6,
+   "reason": "ROCE 9.0% below 10%"
+  },
+  {
+   "symbol": "NSE:PPLPHARMA",
+   "code": "PPLPHARMA",
+   "name": "Piramal Pharma Ltd.",
+   "band": "small",
+   "industry": "Healthcare",
+   "close": 238.91,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": 0.0,
+   "ret3m": 22.1,
+   "ret6m": 47.6,
+   "rs3m": 27.6,
+   "rs6m": 51.1,
+   "reason": "latest annual profit is negative"
+  },
+  {
+   "symbol": "NSE:SONACOMS",
+   "code": "SONACOMS",
+   "name": "Sona BLW Precision Forgings Ltd.",
+   "band": "small",
+   "industry": "Automobile and Auto Components",
+   "close": 890.5,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": 0.0,
+   "ret3m": 15.7,
+   "ret6m": 46.6,
+   "rs3m": 21.2,
+   "rs6m": 50.2,
+   "reason": "promoter 27.9% below 30%"
+  },
+  {
+   "symbol": "NSE:SOUTHBANK",
+   "code": "SOUTHBANK",
+   "name": "South Indian Bank Ltd.",
+   "band": "micro",
+   "industry": "Financial Services",
+   "close": 55.49,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": 0.0,
+   "ret3m": 18.8,
+   "ret6m": 40.6,
+   "rs3m": 24.3,
+   "rs6m": 44.2,
+   "reason": ""
+  },
+  {
+   "symbol": "NSE:PVRINOX",
+   "code": "PVRINOX",
+   "name": "PVR INOX Ltd.",
+   "band": "small",
+   "industry": "Media Entertainment & Publication",
+   "close": 1495.1,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": 0.0,
+   "ret3m": 32.2,
+   "ret6m": 39.9,
+   "rs3m": 37.7,
+   "rs6m": 43.4,
+   "reason": "ROCE 7.0% below 10%"
+  },
+  {
+   "symbol": "NSE:SUNFLAG",
+   "code": "SUNFLAG",
+   "name": "Sunflag Iron & Steel Company Ltd.",
+   "band": "micro",
+   "industry": "Capital Goods",
+   "close": 391.95,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -10.8799454297408,
+   "ret3m": 7.3,
+   "ret6m": 33.9,
+   "rs3m": 12.8,
+   "rs6m": 37.5,
+   "reason": "ROCE 4.0% below 10%"
+  },
+  {
+   "symbol": "NSE:LENSKART",
+   "code": "LENSKART",
+   "name": "Lenskart Solutions Ltd.",
+   "band": "mid",
+   "industry": "Consumer Services",
+   "close": 678.2,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -4.100678733031671,
+   "ret3m": 20.8,
+   "ret6m": 31.4,
+   "rs3m": 26.3,
+   "rs6m": 35.0,
+   "reason": "ROCE 8.0% below 10%"
   },
   {
    "symbol": "NSE:CYIENT",
@@ -1125,14 +1790,14 @@
    "name": "Cyient Ltd.",
    "band": "small",
    "industry": "Information Technology",
-   "close": 1233.0,
+   "close": 1134.9,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": 0.0,
-   "ret3m": 46.8,
-   "ret6m": 41.2,
-   "rs3m": 51.7,
-   "rs6m": 46.7,
+   "from_high_pct": -7.956204379562037,
+   "ret3m": 33.9,
+   "ret6m": 30.2,
+   "rs3m": 39.3,
+   "rs6m": 33.7,
    "reason": "promoter 24.8% below 30%"
   },
   {
@@ -1146,105 +1811,57 @@
    "above_200": true,
    "from_high_pct": 0.0,
    "ret3m": 0.0,
-   "ret6m": 41.1,
-   "rs3m": 4.9,
-   "rs6m": 46.5,
+   "ret6m": 27.5,
+   "rs3m": 5.5,
+   "rs6m": 31.1,
    "reason": "ROCE 8.0% below 10%"
   },
   {
-   "symbol": "NSE:PVRINOX",
-   "code": "PVRINOX",
-   "name": "PVR INOX Ltd.",
+   "symbol": "NSE:NAVINFLUOR",
+   "code": "NAVINFLUOR",
+   "name": "Navin Fluorine International Ltd.",
    "band": "small",
-   "industry": "Media Entertainment & Publication",
-   "close": 1395.7,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -0.3783012134189856,
-   "ret3m": 31.2,
-   "ret6m": 39.0,
-   "rs3m": 36.1,
-   "rs6m": 44.4,
-   "reason": "ROCE 7.0% below 10%"
-  },
-  {
-   "symbol": "NSE:SOUTHBANK",
-   "code": "SOUTHBANK",
-   "name": "South Indian Bank Ltd.",
-   "band": "micro",
-   "industry": "Financial Services",
-   "close": 52.57,
+   "industry": "Chemicals",
+   "close": 8680.0,
    "above_50": true,
    "above_200": true,
    "from_high_pct": 0.0,
-   "ret3m": 13.0,
-   "ret6m": 36.1,
-   "rs3m": 17.9,
-   "rs6m": 41.5,
-   "reason": ""
+   "ret3m": 14.7,
+   "ret6m": 27.3,
+   "rs3m": 20.2,
+   "rs6m": 30.8,
+   "reason": "promoter 27.1% below 30%"
   },
   {
-   "symbol": "NSE:THELEELA",
-   "code": "THELEELA",
-   "name": "Leela Palaces Hotels & Resorts Ltd.",
+   "symbol": "NSE:WESTLIFE",
+   "code": "WESTLIFE",
+   "name": "Westlife Foodworld Ltd.",
    "band": "micro",
    "industry": "Consumer Services",
-   "close": 577.95,
+   "close": 593.8,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -6.222618854453987,
-   "ret3m": 21.8,
-   "ret6m": 34.7,
-   "rs3m": 26.7,
-   "rs6m": 40.1,
-   "reason": "ROCE 9.0% below 10%"
+   "from_high_pct": -0.1765150878372812,
+   "ret3m": 17.1,
+   "ret6m": 24.8,
+   "rs3m": 22.6,
+   "rs6m": 28.3,
+   "reason": "debt/equity 3.14 above 1.0"
   },
   {
-   "symbol": "NSE:JUSTDIAL",
-   "code": "JUSTDIAL",
-   "name": "Justdial Ltd.",
-   "band": "micro",
-   "industry": "Consumer Services",
-   "close": 705.95,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -8.856755535472194,
-   "ret3m": -3.2,
-   "ret6m": 33.9,
-   "rs3m": 1.8,
-   "rs6m": 39.3,
-   "reason": "ROCE 5.0% below 10%"
-  },
-  {
-   "symbol": "NSE:MEESHO",
-   "code": "MEESHO",
-   "name": "Meesho Ltd.",
-   "band": "mid",
-   "industry": "Consumer Services",
-   "close": 214.9,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -7.665205809057318,
-   "ret3m": 16.0,
-   "ret6m": 18.9,
-   "rs3m": 20.9,
-   "rs6m": 24.4,
-   "reason": "latest annual profit is negative"
-  },
-  {
-   "symbol": "NSE:FEDERALBNK",
-   "code": "FEDERALBNK",
-   "name": "Federal Bank Ltd.",
-   "band": "mid",
+   "symbol": "NSE:KARURVYSYA",
+   "code": "KARURVYSYA",
+   "name": "Karur Vysya Bank Ltd.",
+   "band": "small",
    "industry": "Financial Services",
-   "close": 340.9,
+   "close": 356.1,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -5.567867036011087,
-   "ret3m": -3.8,
-   "ret6m": 16.3,
-   "rs3m": 1.1,
-   "rs6m": 21.8,
+   "from_high_pct": 0.0,
+   "ret3m": 4.0,
+   "ret6m": 21.3,
+   "rs3m": 9.4,
+   "rs6m": 24.9,
    "reason": ""
   },
   {
@@ -1253,15 +1870,159 @@
    "name": "Tips Music Ltd.",
    "band": "micro",
    "industry": "Media Entertainment & Publication",
-   "close": 717.05,
+   "close": 782.05,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -3.99651894497256,
-   "ret3m": 2.5,
-   "ret6m": 7.8,
-   "rs3m": 7.4,
-   "rs6m": 13.2,
+   "from_high_pct": 0.0,
+   "ret3m": 17.1,
+   "ret6m": 20.4,
+   "rs3m": 22.5,
+   "rs6m": 23.9,
    "reason": ""
+  },
+  {
+   "symbol": "NSE:PWL",
+   "code": "PWL",
+   "name": "Physicswallah Ltd.",
+   "band": "small",
+   "industry": "Consumer Services",
+   "close": 128.99,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -12.50763074001221,
+   "ret3m": 3.3,
+   "ret6m": 18.8,
+   "rs3m": 8.7,
+   "rs6m": 22.3,
+   "reason": "ROCE 4.0% below 10%"
+  },
+  {
+   "symbol": "NSE:FEDERALBNK",
+   "code": "FEDERALBNK",
+   "name": "Federal Bank Ltd.",
+   "band": "mid",
+   "industry": "Financial Services",
+   "close": 339.7,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -5.900277008310251,
+   "ret3m": -5.3,
+   "ret6m": 18.4,
+   "rs3m": 0.1,
+   "rs6m": 21.9,
+   "reason": ""
+  },
+  {
+   "symbol": "NSE:MEESHO",
+   "code": "MEESHO",
+   "name": "Meesho Ltd.",
+   "band": "mid",
+   "industry": "Consumer Services",
+   "close": 223.01,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -4.180630746756043,
+   "ret3m": 22.4,
+   "ret6m": 15.5,
+   "rs3m": 27.9,
+   "rs6m": 19.0,
+   "reason": "latest annual profit is negative"
+  },
+  {
+   "symbol": "NSE:APLAPOLLO",
+   "code": "APLAPOLLO",
+   "name": "APL Apollo Tubes Ltd.",
+   "band": "mid",
+   "industry": "Capital Goods",
+   "close": 2165.1,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -4.625346901017579,
+   "ret3m": 19.0,
+   "ret6m": 13.7,
+   "rs3m": 24.5,
+   "rs6m": 17.2,
+   "reason": "fundamentals not fetched"
+  },
+  {
+   "symbol": "NSE:MANKIND",
+   "code": "MANKIND",
+   "name": "Mankind Pharma Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "close": 2492.8,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -1.6646942800788933,
+   "ret3m": 0.9,
+   "ret6m": 11.0,
+   "rs3m": 6.4,
+   "rs6m": 14.5,
+   "reason": "fundamentals not fetched"
+  },
+  {
+   "symbol": "NSE:PHOENIXLTD",
+   "code": "PHOENIXLTD",
+   "name": "Phoenix Mills Ltd.",
+   "band": "mid",
+   "industry": "Realty",
+   "close": 1957.2,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -8.495020805086728,
+   "ret3m": 3.4,
+   "ret6m": 10.9,
+   "rs3m": 8.8,
+   "rs6m": 14.4,
+   "reason": "fundamentals not fetched"
+  },
+  {
+   "symbol": "NSE:POONAWALLA",
+   "code": "POONAWALLA",
+   "name": "Poonawalla Fincorp Ltd.",
+   "band": "small",
+   "industry": "Financial Services",
+   "close": 461.7,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -7.270536252259485,
+   "ret3m": -0.4,
+   "ret6m": 10.7,
+   "rs3m": 5.1,
+   "rs6m": 14.2,
+   "reason": "fundamentals not fetched"
+  },
+  {
+   "symbol": "NSE:BEML",
+   "code": "BEML",
+   "name": "BEML Ltd.",
+   "band": "small",
+   "industry": "Capital Goods",
+   "close": 1988.6,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -6.857142857142861,
+   "ret3m": 13.6,
+   "ret6m": 10.1,
+   "rs3m": 19.1,
+   "rs6m": 13.6,
+   "reason": "fundamentals not fetched"
+  },
+  {
+   "symbol": "NSE:PGHL",
+   "code": "PGHL",
+   "name": "Procter & Gamble Health Ltd.",
+   "band": "micro",
+   "industry": "Healthcare",
+   "close": 5670.5,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -17.08583126188039,
+   "ret3m": -14.1,
+   "ret6m": 8.7,
+   "rs3m": -8.7,
+   "rs6m": 12.2,
+   "reason": "fundamentals not fetched"
   },
   {
    "symbol": "NSE:BHARTIHEXA",
@@ -1269,47 +2030,47 @@
    "name": "Bharti Hexacom Ltd.",
    "band": "mid",
    "industry": "Telecommunication",
-   "close": 1637.9,
+   "close": 1636.2,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -11.978718830610479,
-   "ret3m": 1.9,
-   "ret6m": 6.8,
-   "rs3m": 6.8,
-   "rs6m": 12.3,
+   "from_high_pct": -10.492341356673961,
+   "ret3m": 1.8,
+   "ret6m": 7.8,
+   "rs3m": 7.2,
+   "rs6m": 11.4,
    "reason": ""
   },
   {
-   "symbol": "NSE:CASTROLIND",
-   "code": "CASTROLIND",
-   "name": "Castrol India Ltd.",
+   "symbol": "NSE:ITCHOTELS",
+   "code": "ITCHOTELS",
+   "name": "ITC Hotels Ltd.",
+   "band": "mid",
+   "industry": "Consumer Services",
+   "close": 167.17,
+   "above_50": true,
+   "above_200": true,
+   "from_high_pct": -20.08318194856106,
+   "ret3m": 3.0,
+   "ret6m": 4.1,
+   "rs3m": 8.4,
+   "rs6m": 7.6,
+   "reason": "fundamentals not fetched"
+  },
+  {
+   "symbol": "NSE:HBLENGINE",
+   "code": "HBLENGINE",
+   "name": "HBL Engineering Ltd.",
    "band": "small",
-   "industry": "Oil Gas & Consumable Fuels",
-   "close": 194.64,
+   "industry": "Capital Goods",
+   "close": 799.35,
    "above_50": true,
    "above_200": true,
-   "from_high_pct": -3.485892795160417,
-   "ret3m": 5.3,
-   "ret6m": 6.5,
-   "rs3m": 10.2,
-   "rs6m": 11.9,
-   "reason": ""
-  },
-  {
-   "symbol": "NSE:CAPILLARY",
-   "code": "CAPILLARY",
-   "name": "Capillary Technologies India Ltd.",
-   "band": "micro",
-   "industry": "Information Technology",
-   "close": 571.45,
-   "above_50": true,
-   "above_200": true,
-   "from_high_pct": -20.560227983596302,
-   "ret3m": 20.0,
-   "ret6m": 1.8,
-   "rs3m": 24.9,
-   "rs6m": 7.3,
-   "reason": "ROCE 3.0% below 10%"
+   "from_high_pct": -23.23537885335638,
+   "ret3m": 11.2,
+   "ret6m": 0.1,
+   "rs3m": 16.7,
+   "rs6m": 3.6,
+   "reason": "fundamentals not fetched"
   }
  ]
 }

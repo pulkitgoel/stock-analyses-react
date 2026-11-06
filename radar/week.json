@@ -1,62 +1,230 @@
 {
- "week": "2026-W44",
- "generated": "2026-10-26",
+ "week": "2026-W45",
+ "generated": "2026-11-02",
  "picks": [
   {
-   "code": "MASTEK",
-   "name": "Mastek Ltd.",
+   "code": "LUMAXTECH",
+   "name": "Lumax Auto Technologies Ltd.",
    "band": "micro",
-   "industry": "Information Technology",
-   "score": 35.0,
-   "gates": 5,
+   "industry": "Automobile and Auto Components",
+   "score": 72.5,
+   "gates": 6,
    "failed": [
-    "reinvestment",
-    "durability"
+    "balance"
    ],
    "detail": {
-    "headroom": "market cap \u20b95,062 Cr",
-    "reinvestment": "ROCE 17.7%",
-    "durability": "5y sales CAGR 12.0%, margin compressing",
-    "quality": "CFO/PAT 1.27x, debtors 57d",
-    "balance": "debt/equity 0.12",
-    "management": "promoter 35.8% (stable)",
-    "valuation": "P/E 12 vs industry 19"
+    "headroom": "market cap \u20b913,786 Cr",
+    "reinvestment": "ROCE 21.2%",
+    "durability": "5y sales CAGR 30.0%, margin stable",
+    "quality": "CFO/PAT 1.09x, debtors 76d",
+    "balance": "debt/equity 0.81",
+    "management": "promoter 56.0% (stable)",
+    "valuation": "P/E 37 vs industry 28"
    },
-   "price": 1761.6,
-   "rs6m": 9.0
+   "price": 2022.7,
+   "rs6m": 28.3
+  },
+  {
+   "code": "CEMPRO",
+   "name": "Cemindia Projects Ltd.",
+   "band": "small",
+   "industry": "Construction",
+   "score": 50.9,
+   "gates": 6,
+   "failed": [
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b923,330 Cr",
+    "reinvestment": "ROCE 32.8%",
+    "durability": "5y sales CAGR 21.8%, margin stable",
+    "quality": "CFO/PAT 0.83x, debtors 47d",
+    "balance": "debt/equity 0.42",
+    "management": "promoter 62.8% (stable)",
+    "valuation": "P/E 39 vs industry 14"
+   },
+   "price": 1265.0,
+   "rs6m": 58.7
+  },
+  {
+   "code": "GABRIEL",
+   "name": "Gabriel India Ltd.",
+   "band": "small",
+   "industry": "Automobile and Auto Components",
+   "score": 61.5,
+   "gates": 5,
+   "failed": [
+    "durability",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b924,717 Cr",
+    "reinvestment": "ROCE 25.6%",
+    "durability": "growth unknown",
+    "quality": "CFO/PAT 0.98x, debtors 53d",
+    "balance": "debt/equity 0.11",
+    "management": "promoter 66.3% (stable)",
+    "valuation": "P/E 69 vs industry 27"
+   },
+   "price": 1425.0,
+   "rs6m": 42.5
   }
  ],
  "rejected": [
   {
-   "code": "GRWRHITECH",
-   "name": "Garware Hi-Tech Films Ltd.",
+   "code": "AEROFLEX",
+   "name": "Aeroflex Industries Ltd.",
    "band": "micro",
    "industry": "Capital Goods",
-   "score": 75.3,
+   "score": 72.8,
    "gates": 4,
    "failed": [
-    "durability",
     "quality",
+    "management",
     "valuation"
    ],
    "detail": {
-    "headroom": "market cap \u20b916,200 Cr",
-    "reinvestment": "ROCE 18.1%",
-    "durability": "5y sales CAGR 12.8%, margin stable",
-    "quality": "CFO/PAT 0.65x, debtors 9d",
-    "balance": "debt/equity 0.00",
-    "management": "promoter 60.7% (stable)",
-    "valuation": "P/E 38 vs industry 19"
+    "headroom": "market cap \u20b97,098 Cr",
+    "reinvestment": "ROCE 18.9%",
+    "durability": "5y sales CAGR 20.0%, margin stable",
+    "quality": "CFO/PAT 0.74x, debtors 107d",
+    "balance": "debt/equity 0.05",
+    "management": "promoter 65.5% (falling)",
+    "valuation": "P/E 79 vs industry 21"
    },
-   "price": 7034.0,
-   "rs6m": 79.7
+   "price": 536.4,
+   "rs6m": 79.6
+  },
+  {
+   "code": "SYRMA",
+   "name": "Syrma SGS Technology Ltd.",
+   "band": "small",
+   "industry": "Capital Goods",
+   "score": 72.8,
+   "gates": 2,
+   "failed": [
+    "headroom",
+    "reinvestment",
+    "quality",
+    "management",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b931,341 Cr",
+    "reinvestment": "ROCE 16.8%",
+    "durability": "5y sales CAGR 37.9%, margin stable",
+    "quality": "CFO/PAT 0.63x, debtors 139d",
+    "balance": "debt/equity 0.27",
+    "management": "promoter 41.6% (falling)",
+    "valuation": "P/E 74 vs industry 31"
+   },
+   "price": 1625.3,
+   "rs6m": 73.0
+  },
+  {
+   "code": "KMEW",
+   "name": "Knowledge Marine & Engineering Works Ltd.",
+   "band": "micro",
+   "industry": "Services",
+   "score": 71.1,
+   "gates": 4,
+   "failed": [
+    "reinvestment",
+    "quality",
+    "management"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b98,332 Cr",
+    "reinvestment": "ROCE 16.3%",
+    "durability": "5y sales CAGR 39.6%, margin stable",
+    "quality": "CFO/PAT 0.56x, debtors 109d",
+    "balance": "debt/equity 0.39",
+    "management": "promoter 50.3% (falling)",
+    "valuation": "P/E 64 vs industry 62"
+   },
+   "price": 3094.8,
+   "rs6m": 78.4
+  },
+  {
+   "code": "SKYGOLD",
+   "name": "SKY GOLD AND DIAMONDS Ltd.",
+   "band": "micro",
+   "industry": "Consumer Durables",
+   "score": 67.0,
+   "gates": 3,
+   "failed": [
+    "quality",
+    "balance",
+    "management",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b914,522 Cr",
+    "reinvestment": "ROCE 26.9%",
+    "durability": "5y sales CAGR 55.6%, margin stable",
+    "quality": "CFO/PAT -0.13x, debtors 33d",
+    "balance": "debt/equity 0.73",
+    "management": "promoter 51.7% (falling)",
+    "valuation": "P/E 43 vs industry 18"
+   },
+   "price": 883.2,
+   "rs6m": 98.1
+  },
+  {
+   "code": "GESHIP",
+   "name": "Great Eastern Shipping Co. Ltd.",
+   "band": "small",
+   "industry": "Services",
+   "score": 66.1,
+   "gates": 3,
+   "failed": [
+    "reinvestment",
+    "durability",
+    "quality",
+    "management"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b921,863 Cr",
+    "reinvestment": "ROCE 15.8%",
+    "durability": "5y sales CAGR 12.1%, margin stable",
+    "quality": "CFO/PAT 0.76x, debtors 43d",
+    "balance": "debt/equity 0.06",
+    "management": "promoter 30.1% (stable)",
+    "valuation": "P/E 6 vs industry 10"
+   },
+   "price": 1593.6,
+   "rs6m": 4.6
+  },
+  {
+   "code": "PCJEWELLER",
+   "name": "PC Jeweller Ltd.",
+   "band": "micro",
+   "industry": "Consumer Durables",
+   "score": 66.0,
+   "gates": 4,
+   "failed": [
+    "reinvestment",
+    "quality",
+    "management"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b916,166 Cr",
+    "reinvestment": "ROCE 9.6%",
+    "durability": "5y sales CAGR 18.4%, margin stable",
+    "quality": "CFO/PAT -0.09x, debtors 69d",
+    "balance": "debt/equity 0.04",
+    "management": "promoter 39.1% (falling)",
+    "valuation": "P/E 18 vs industry 18"
+   },
+   "price": 15.48,
+   "rs6m": 68.7
   },
   {
    "code": "DIACABS",
    "name": "Diamond Power Infrastructure Ltd.",
    "band": "micro",
    "industry": "Capital Goods",
-   "score": 71.3,
+   "score": 65.8,
    "gates": 2,
    "failed": [
     "reinvestment",
@@ -75,14 +243,14 @@
     "valuation": "P/E 98 vs industry 24"
    },
    "price": 323.97,
-   "rs6m": 105.8
+   "rs6m": 108.8
   },
   {
    "code": "CPPLUS",
    "name": "Aditya Infotech Ltd.",
    "band": "small",
    "industry": "Capital Goods",
-   "score": 71.3,
+   "score": 65.8,
    "gates": 3,
    "failed": [
     "headroom",
@@ -99,113 +267,15 @@
     "management": "promoter 71.8% (falling)",
     "valuation": "P/E 99 vs industry 33"
    },
-   "price": 3798.0,
-   "rs6m": 72.5
-  },
-  {
-   "code": "SKYGOLD",
-   "name": "SKY GOLD AND DIAMONDS Ltd.",
-   "band": "micro",
-   "industry": "Consumer Durables",
-   "score": 69.0,
-   "gates": 3,
-   "failed": [
-    "quality",
-    "balance",
-    "management",
-    "valuation"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b914,522 Cr",
-    "reinvestment": "ROCE 26.9%",
-    "durability": "5y sales CAGR 55.6%, margin stable",
-    "quality": "CFO/PAT -0.13x, debtors 33d",
-    "balance": "debt/equity 0.73",
-    "management": "promoter 51.7% (falling)",
-    "valuation": "P/E 43 vs industry 18"
-   },
-   "price": 1046.85,
-   "rs6m": 159.2
-  },
-  {
-   "code": "KMEW",
-   "name": "Knowledge Marine & Engineering Works Ltd.",
-   "band": "micro",
-   "industry": "Services",
-   "score": 69.0,
-   "gates": 4,
-   "failed": [
-    "reinvestment",
-    "quality",
-    "management"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b98,332 Cr",
-    "reinvestment": "ROCE 16.3%",
-    "durability": "5y sales CAGR 39.6%, margin stable",
-    "quality": "CFO/PAT 0.56x, debtors 109d",
-    "balance": "debt/equity 0.39",
-    "management": "promoter 50.3% (falling)",
-    "valuation": "P/E 64 vs industry 62"
-   },
-   "price": 3149.7,
-   "rs6m": 93.4
-  },
-  {
-   "code": "PCJEWELLER",
-   "name": "PC Jeweller Ltd.",
-   "band": "micro",
-   "industry": "Consumer Durables",
-   "score": 68.0,
-   "gates": 4,
-   "failed": [
-    "reinvestment",
-    "quality",
-    "management"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b916,166 Cr",
-    "reinvestment": "ROCE 9.6%",
-    "durability": "5y sales CAGR 18.4%, margin stable",
-    "quality": "CFO/PAT -0.09x, debtors 69d",
-    "balance": "debt/equity 0.04",
-    "management": "promoter 39.1% (falling)",
-    "valuation": "P/E 18 vs industry 18"
-   },
-   "price": 18.04,
-   "rs6m": 98.4
-  },
-  {
-   "code": "IPCALAB",
-   "name": "Ipca Laboratories Ltd.",
-   "band": "mid",
-   "industry": "Healthcare",
-   "score": 64.0,
-   "gates": 3,
-   "failed": [
-    "headroom",
-    "reinvestment",
-    "durability",
-    "management"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b949,235 Cr",
-    "reinvestment": "ROCE 17.0%",
-    "durability": "5y sales CAGR 11.8%, margin stable",
-    "quality": "CFO/PAT 0.83x, debtors 77d",
-    "balance": "debt/equity 0.10",
-    "management": "promoter 44.7% (falling)",
-    "valuation": "P/E 36 vs industry 33"
-   },
-   "price": 1953.3,
-   "rs6m": 31.0
+   "price": 3811.5,
+   "rs6m": 67.4
   },
   {
    "code": "SHREEJISPG",
    "name": "Shreeji Shipping Global Ltd.",
    "band": "micro",
    "industry": "Services",
-   "score": 63.0,
+   "score": 65.1,
    "gates": 3,
    "failed": [
     "durability",
@@ -222,15 +292,40 @@
     "management": "promoter 88.0% (falling)",
     "valuation": "P/E 83 vs industry 10"
    },
-   "price": 776.6,
-   "rs6m": 113.5
+   "price": 843.3,
+   "rs6m": 111.8
   },
   {
-   "code": "GESHIP",
-   "name": "Great Eastern Shipping Co. Ltd.",
-   "band": "small",
-   "industry": "Services",
-   "score": 62.0,
+   "code": "NYKAA",
+   "name": "FSN E-Commerce Ventures Ltd.",
+   "band": "mid",
+   "industry": "Consumer Services",
+   "score": 62.1,
+   "gates": 3,
+   "failed": [
+    "headroom",
+    "reinvestment",
+    "balance",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b9100,078 Cr",
+    "reinvestment": "ROCE 17.2%",
+    "durability": "5y sales CAGR 23.1%, margin stable",
+    "quality": "CFO/PAT 2.49x, debtors 10d",
+    "balance": "debt/equity 0.86",
+    "management": "promoter 52.1% (stable)",
+    "valuation": "P/E 376 vs industry 45"
+   },
+   "price": 349.35,
+   "rs6m": 35.5
+  },
+  {
+   "code": "AARTIPHARM",
+   "name": "Aarti Pharmalabs Ltd.",
+   "band": "micro",
+   "industry": "Healthcare",
+   "score": 61.9,
    "gates": 3,
    "failed": [
     "reinvestment",
@@ -239,96 +334,74 @@
     "management"
    ],
    "detail": {
-    "headroom": "market cap \u20b921,863 Cr",
-    "reinvestment": "ROCE 15.8%",
-    "durability": "5y sales CAGR 12.1%, margin stable",
-    "quality": "CFO/PAT 0.76x, debtors 43d",
-    "balance": "debt/equity 0.06",
-    "management": "promoter 30.1% (stable)",
-    "valuation": "P/E 6 vs industry 10"
+    "headroom": "market cap \u20b97,914 Cr",
+    "reinvestment": "ROCE 10.7%",
+    "durability": "5y sales CAGR 12.5%, margin stable",
+    "quality": "CFO/PAT 1.02x, debtors 117d",
+    "balance": "debt/equity 0.36",
+    "management": "promoter 39.7% (falling)",
+    "valuation": "P/E 30 vs industry 34"
    },
-   "price": 1496.6,
-   "rs6m": 12.0
+   "price": 872.7,
+   "rs6m": 21.4
   },
   {
-   "code": "SHYAMMETL",
-   "name": "Shyam Metalics and Energy Ltd.",
-   "band": "small",
-   "industry": "Capital Goods",
-   "score": 61.3,
-   "gates": 3,
+   "code": "SHILPAMED",
+   "name": "Shilpa Medicare Ltd.",
+   "band": "micro",
+   "industry": "Healthcare",
+   "score": 58.9,
+   "gates": 2,
    "failed": [
-    "headroom",
     "reinvestment",
     "durability",
-    "management"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b931,412 Cr",
-    "reinvestment": "ROCE 13.0%",
-    "durability": "5y sales CAGR 13.5%, margin stable",
-    "quality": "CFO/PAT 1.81x, debtors 18d",
-    "balance": "debt/equity 0.09",
-    "management": "promoter 74.6% (falling)",
-    "valuation": "P/E 28 vs industry 21"
-   },
-   "price": 1131.3,
-   "rs6m": 43.3
-  },
-  {
-   "code": "LOTUSDEV",
-   "name": "SRI LOTUS DEVELOPERS AND REALTY Ltd.",
-   "band": "micro",
-   "industry": "Realty",
-   "score": 59.3,
-   "gates": 4,
-   "failed": [
     "quality",
     "management",
     "valuation"
    ],
    "detail": {
-    "headroom": "market cap \u20b911,603 Cr",
-    "reinvestment": "ROCE 21.2%",
-    "durability": "5y sales CAGR 60.3%, margin stable",
-    "quality": "CFO/PAT -1.07x, debtors 157d",
-    "balance": "debt/equity 0.06",
-    "management": "promoter 79.9% (falling)",
-    "valuation": "P/E 40 vs industry 22"
+    "headroom": "market cap \u20b918,690 Cr",
+    "reinvestment": "ROCE 10.9%",
+    "durability": "5y sales CAGR 8.1%, margin stable",
+    "quality": "CFO/PAT 1.15x, debtors 123d",
+    "balance": "debt/equity 0.25",
+    "management": "promoter 40.1% (falling)",
+    "valuation": "P/E 66 vs industry 34"
    },
-   "price": 185.83,
-   "rs6m": 33.8
+   "price": 955.6,
+   "rs6m": 138.5
   },
   {
-   "code": "INDHOTEL",
-   "name": "Indian Hotels Co. Ltd.",
-   "band": "mid",
-   "industry": "Consumer Services",
-   "score": 58.7,
-   "gates": 4,
+   "code": "APOLLO",
+   "name": "Apollo Micro Systems Ltd.",
+   "band": "micro",
+   "industry": "Capital Goods",
+   "score": 58.8,
+   "gates": 3,
    "failed": [
-    "headroom",
     "reinvestment",
+    "quality",
+    "management",
     "valuation"
    ],
    "detail": {
-    "headroom": "market cap \u20b9112,909 Cr",
-    "reinvestment": "ROCE 17.1%",
-    "durability": "5y sales CAGR 27.8%, margin stable",
-    "quality": "CFO/PAT 1.04x, debtors 27d",
-    "balance": "debt/equity 0.25",
-    "management": "promoter 38.1% (stable)",
-    "valuation": "P/E 56 vs industry 27"
+    "headroom": "market cap \u20b915,304 Cr",
+    "reinvestment": "ROCE 14.5%",
+    "durability": "5y sales CAGR 37.3%, margin stable",
+    "quality": "CFO/PAT -0.99x, debtors 194d",
+    "balance": "debt/equity 0.44",
+    "management": "promoter 50.0% (falling)",
+    "valuation": "P/E 110 vs industry 73"
    },
-   "price": 781.75,
-   "rs6m": 28.5
+   "price": 398.75,
+   "rs6m": 37.7
   },
   {
    "code": "SGMART",
    "name": "SG Mart Ltd.",
    "band": "micro",
    "industry": "Metals & Mining",
-   "score": 55.7,
+   "score": 58.6,
    "gates": 3,
    "failed": [
     "reinvestment",
@@ -345,15 +418,64 @@
     "management": "promoter 57.9% (falling)",
     "valuation": "P/E 81 vs industry 41"
    },
-   "price": 796.8,
-   "rs6m": 52.1
+   "price": 856.35,
+   "rs6m": 53.5
+  },
+  {
+   "code": "SAREGAMA",
+   "name": "Saregama India Ltd",
+   "band": "micro",
+   "industry": "Media Entertainment & Publication",
+   "score": 58.3,
+   "gates": 4,
+   "failed": [
+    "reinvestment",
+    "durability",
+    "quality"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b910,578 Cr",
+    "reinvestment": "ROCE 17.3%",
+    "durability": "5y sales CAGR 12.6%, margin stable",
+    "quality": "CFO/PAT 0.45x, debtors 66d",
+    "balance": "debt/equity 0.04",
+    "management": "promoter 60.8% (stable)",
+    "valuation": "P/E 46 vs industry 46"
+   },
+   "price": 548.65,
+   "rs6m": 63.1
+  },
+  {
+   "code": "KPRMILL",
+   "name": "K.P.R. Mill Ltd.",
+   "band": "mid",
+   "industry": "Textiles",
+   "score": 57.8,
+   "gates": 3,
+   "failed": [
+    "headroom",
+    "durability",
+    "management",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b938,099 Cr",
+    "reinvestment": "ROCE 19.6%",
+    "durability": "5y sales CAGR 8.1%, margin stable",
+    "quality": "CFO/PAT 1.07x, debtors 35d",
+    "balance": "debt/equity 0.05",
+    "management": "promoter 67.5% (falling)",
+    "valuation": "P/E 37 vs industry 19"
+   },
+   "price": 1114.6,
+   "rs6m": 22.5
   },
   {
    "code": "FSL",
    "name": "Firstsource Solutions Ltd.",
    "band": "small",
    "industry": "Services",
-   "score": 55.0,
+   "score": 57.1,
    "gates": 4,
    "failed": [
     "reinvestment",
@@ -369,39 +491,40 @@
     "management": "promoter 53.7% (stable)",
     "valuation": "P/E 26 vs industry 24"
    },
-   "price": 290.4,
-   "rs6m": 44.2
+   "price": 292.9,
+   "rs6m": 40.4
   },
   {
-   "code": "CRISIL",
-   "name": "CRISIL Ltd.",
-   "band": "mid",
-   "industry": "Financial Services",
-   "score": 51.7,
-   "gates": 4,
+   "code": "SHYAMMETL",
+   "name": "Shyam Metalics and Energy Ltd.",
+   "band": "small",
+   "industry": "Capital Goods",
+   "score": 55.8,
+   "gates": 3,
    "failed": [
     "headroom",
+    "reinvestment",
     "durability",
-    "valuation"
+    "management"
    ],
    "detail": {
-    "headroom": "market cap \u20b934,962 Cr",
-    "reinvestment": "ROCE 32.6%",
-    "durability": "5y sales CAGR 13.4%, margin stable",
-    "quality": "CFO/PAT 0.84x, debtors 69d",
-    "balance": "debt/equity 0.10",
-    "management": "promoter 66.6% (stable)",
-    "valuation": "P/E 39 vs industry 23"
+    "headroom": "market cap \u20b931,412 Cr",
+    "reinvestment": "ROCE 13.0%",
+    "durability": "5y sales CAGR 13.5%, margin stable",
+    "quality": "CFO/PAT 1.81x, debtors 18d",
+    "balance": "debt/equity 0.09",
+    "management": "promoter 74.6% (falling)",
+    "valuation": "P/E 28 vs industry 21"
    },
-   "price": 4751.1,
-   "rs6m": 16.7
+   "price": 1162.9,
+   "rs6m": 36.6
   },
   {
    "code": "ABDL",
    "name": "Allied Blenders and Distillers Ltd.",
    "band": "small",
    "industry": "Fast Moving Consumer Goods",
-   "score": 48.3,
+   "score": 55.6,
    "gates": 2,
    "failed": [
     "durability",
@@ -419,15 +542,261 @@
     "management": "promoter 79.0% (falling)",
     "valuation": "P/E 84 vs industry 49"
    },
-   "price": 672.65,
-   "rs6m": 25.9
+   "price": 698.25,
+   "rs6m": 34.8
+  },
+  {
+   "code": "INDHOTEL",
+   "name": "Indian Hotels Co. Ltd.",
+   "band": "mid",
+   "industry": "Consumer Services",
+   "score": 55.1,
+   "gates": 4,
+   "failed": [
+    "headroom",
+    "reinvestment",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b9112,909 Cr",
+    "reinvestment": "ROCE 17.1%",
+    "durability": "5y sales CAGR 27.8%, margin stable",
+    "quality": "CFO/PAT 1.04x, debtors 27d",
+    "balance": "debt/equity 0.25",
+    "management": "promoter 38.1% (stable)",
+    "valuation": "P/E 56 vs industry 27"
+   },
+   "price": 811.65,
+   "rs6m": 31.2
+  },
+  {
+   "code": "SAILIFE",
+   "name": "Sai Life Sciences Ltd.",
+   "band": "small",
+   "industry": "Healthcare",
+   "score": 53.9,
+   "gates": 4,
+   "failed": [
+    "headroom",
+    "management",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b933,093 Cr",
+    "reinvestment": "ROCE 19.6%",
+    "durability": "5y sales CAGR 20.9%, margin stable",
+    "quality": "CFO/PAT 1.41x, debtors 62d",
+    "balance": "debt/equity 0.12",
+    "management": "promoter 34.5% (falling)",
+    "valuation": "P/E 90 vs industry 34"
+   },
+   "price": 1557.5,
+   "rs6m": 49.2
+  },
+  {
+   "code": "IPCALAB",
+   "name": "Ipca Laboratories Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "score": 53.9,
+   "gates": 3,
+   "failed": [
+    "headroom",
+    "reinvestment",
+    "durability",
+    "management"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b949,235 Cr",
+    "reinvestment": "ROCE 17.0%",
+    "durability": "5y sales CAGR 11.8%, margin stable",
+    "quality": "CFO/PAT 0.83x, debtors 77d",
+    "balance": "debt/equity 0.10",
+    "management": "promoter 44.7% (falling)",
+    "valuation": "P/E 36 vs industry 33"
+   },
+   "price": 1927.8,
+   "rs6m": 29.5
+  },
+  {
+   "code": "AJANTPHARM",
+   "name": "Ajanta Pharmaceuticals Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "score": 53.9,
+   "gates": 3,
+   "failed": [
+    "headroom",
+    "durability",
+    "quality",
+    "management"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b943,846 Cr",
+    "reinvestment": "ROCE 34.5%",
+    "durability": "5y sales CAGR 13.2%, margin stable",
+    "quality": "CFO/PAT 0.42x, debtors 124d",
+    "balance": "debt/equity 0.03",
+    "management": "promoter 63.5% (falling)",
+    "valuation": "P/E 35 vs industry 34"
+   },
+   "price": 3508.8,
+   "rs6m": 27.8
+  },
+  {
+   "code": "ACUTAAS",
+   "name": "Acutaas Chemicals Ltd.",
+   "band": "small",
+   "industry": "Healthcare",
+   "score": 52.9,
+   "gates": 3,
+   "failed": [
+    "headroom",
+    "quality",
+    "management",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b927,410 Cr",
+    "reinvestment": "ROCE 31.6%",
+    "durability": "5y sales CAGR 23.0%, margin stable",
+    "quality": "CFO/PAT 0.75x, debtors 99d",
+    "balance": "debt/equity 0.02",
+    "management": "promoter 32.7% (falling)",
+    "valuation": "P/E 71 vs industry 33"
+   },
+   "price": 4003.6,
+   "rs6m": 57.9
+  },
+  {
+   "code": "AUROPHARMA",
+   "name": "Aurobindo Pharma Ltd.",
+   "band": "mid",
+   "industry": "Healthcare",
+   "score": 50.9,
+   "gates": 4,
+   "failed": [
+    "headroom",
+    "reinvestment",
+    "durability"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b996,744 Cr",
+    "reinvestment": "ROCE 12.9%",
+    "durability": "5y sales CAGR 8.3%, margin stable",
+    "quality": "CFO/PAT 1.49x, debtors 77d",
+    "balance": "debt/equity 0.21",
+    "management": "promoter 51.9% (stable)",
+    "valuation": "P/E 26 vs industry 34"
+   },
+   "price": 1681.4,
+   "rs6m": 24.5
+  },
+  {
+   "code": "SUNTV",
+   "name": "Sun TV Network Ltd.",
+   "band": "small",
+   "industry": "Media Entertainment & Publication",
+   "score": 50.3,
+   "gates": 4,
+   "failed": [
+    "reinvestment",
+    "durability",
+    "quality"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b922,553 Cr",
+    "reinvestment": "ROCE 16.4%",
+    "durability": "5y sales CAGR 4.7%, margin compressing",
+    "quality": "CFO/PAT 1.18x, debtors 121d",
+    "balance": "debt/equity 0.01",
+    "management": "promoter 75.0% (stable)",
+    "valuation": "P/E 14 vs industry 23"
+   },
+   "price": 607.55,
+   "rs6m": 3.9
+  },
+  {
+   "code": "MRPL",
+   "name": "Mangalore Refinery & Petrochemicals Ltd.",
+   "band": "small",
+   "industry": "Oil Gas & Consumable Fuels",
+   "score": 50.2,
+   "gates": 3,
+   "failed": [
+    "headroom",
+    "durability",
+    "quality",
+    "balance"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b931,984 Cr",
+    "reinvestment": "ROCE 18.0%",
+    "durability": "5y sales CAGR 11.4%, margin stable",
+    "quality": "CFO/PAT 0.57x, debtors 25d",
+    "balance": "debt/equity 0.60",
+    "management": "promoter 88.6% (stable)",
+    "valuation": "P/E 8 vs industry 8"
+   },
+   "price": 173.15,
+   "rs6m": 6.9
+  },
+  {
+   "code": "LOTUSDEV",
+   "name": "SRI LOTUS DEVELOPERS AND REALTY Ltd.",
+   "band": "micro",
+   "industry": "Realty",
+   "score": 48.5,
+   "gates": 4,
+   "failed": [
+    "quality",
+    "management",
+    "valuation"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b911,603 Cr",
+    "reinvestment": "ROCE 21.2%",
+    "durability": "5y sales CAGR 60.3%, margin stable",
+    "quality": "CFO/PAT -1.07x, debtors 157d",
+    "balance": "debt/equity 0.06",
+    "management": "promoter 79.9% (falling)",
+    "valuation": "P/E 40 vs industry 22"
+   },
+   "price": 185.83,
+   "rs6m": 33.4
+  },
+  {
+   "code": "GLAND",
+   "name": "Gland Pharma Ltd.",
+   "band": "small",
+   "industry": "Healthcare",
+   "score": 46.9,
+   "gates": 2,
+   "failed": [
+    "headroom",
+    "reinvestment",
+    "durability",
+    "quality",
+    "management"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b951,086 Cr",
+    "reinvestment": "ROCE 15.1%",
+    "durability": "5y sales CAGR 8.8%, margin compressing",
+    "quality": "CFO/PAT 0.91x, debtors 107d",
+    "balance": "debt/equity 0.03",
+    "management": "promoter 45.8% (falling)",
+    "valuation": "P/E 45 vs industry 34"
+   },
+   "price": 3095.9,
+   "rs6m": 80.4
   },
   {
    "code": "EBGNG",
    "name": "GNG Electronics Ltd.",
    "band": "micro",
    "industry": "Information Technology",
-   "score": 45.0,
+   "score": 46.9,
    "gates": 3,
    "failed": [
     "quality",
@@ -444,41 +813,15 @@
     "management": "promoter 71.8% (falling)",
     "valuation": "P/E 57 vs industry 23"
    },
-   "price": 682.5,
-   "rs6m": 83.0
-  },
-  {
-   "code": "BBOX",
-   "name": "Black Box Ltd.",
-   "band": "small",
-   "industry": "Information Technology",
-   "score": 43.0,
-   "gates": 2,
-   "failed": [
-    "durability",
-    "quality",
-    "balance",
-    "management",
-    "valuation"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b914,112 Cr",
-    "reinvestment": "ROCE 21.6%",
-    "durability": "5y sales CAGR 4.4%, margin stable",
-    "quality": "CFO/PAT 0.37x, debtors 67d",
-    "balance": "debt/equity 0.90",
-    "management": "promoter 70.0% (falling)",
-    "valuation": "P/E 49 vs industry 20"
-   },
-   "price": 805.1,
-   "rs6m": 51.8
+   "price": 659.45,
+   "rs6m": 58.9
   },
   {
    "code": "PERSISTENT",
    "name": "Persistent Systems Ltd.",
    "band": "mid",
    "industry": "Information Technology",
-   "score": 41.0,
+   "score": 44.9,
    "gates": 4,
    "failed": [
     "headroom",
@@ -494,91 +837,15 @@
     "management": "promoter 30.3% (stable)",
     "valuation": "P/E 50 vs industry 19"
    },
-   "price": 5727.5,
-   "rs6m": 26.1
-  },
-  {
-   "code": "SUNTV",
-   "name": "Sun TV Network Ltd.",
-   "band": "small",
-   "industry": "Media Entertainment & Publication",
-   "score": 39.7,
-   "gates": 4,
-   "failed": [
-    "reinvestment",
-    "durability",
-    "quality"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b922,553 Cr",
-    "reinvestment": "ROCE 16.4%",
-    "durability": "5y sales CAGR 4.7%, margin compressing",
-    "quality": "CFO/PAT 1.18x, debtors 121d",
-    "balance": "debt/equity 0.01",
-    "management": "promoter 75.0% (stable)",
-    "valuation": "P/E 14 vs industry 23"
-   },
-   "price": 578.8,
-   "rs6m": 1.9
-  },
-  {
-   "code": "MPHASIS",
-   "name": "MphasiS Ltd.",
-   "band": "mid",
-   "industry": "Information Technology",
-   "score": 39.0,
-   "gates": 3,
-   "failed": [
-    "headroom",
-    "durability",
-    "quality",
-    "management"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b948,546 Cr",
-    "reinvestment": "ROCE 22.1%",
-    "durability": "5y sales CAGR 6.7%, margin stable",
-    "quality": "CFO/PAT 0.66x, debtors 96d",
-    "balance": "debt/equity 0.24",
-    "management": "promoter 30.5% (falling)",
-    "valuation": "P/E 25 vs industry 19"
-   },
-   "price": 2480.0,
-   "rs6m": 19.4
-  },
-  {
-   "code": "AXISCADES",
-   "name": "AXISCADES Technologies Ltd.",
-   "band": "micro",
-   "industry": "Capital Goods",
-   "score": 34.3,
-   "gates": 1,
-   "failed": [
-    "reinvestment",
-    "durability",
-    "quality",
-    "balance",
-    "management",
-    "valuation"
-   ],
-   "detail": {
-    "headroom": "market cap \u20b98,182 Cr",
-    "reinvestment": "ROCE 15.4%",
-    "durability": "5y sales CAGR 8.9%, margin compressing",
-    "quality": "CFO/PAT -0.03x, debtors 130d",
-    "balance": "debt/equity 0.53",
-    "management": "promoter 44.8% (falling)",
-    "valuation": "P/E 249 vs industry 73"
-   },
-   "price": 1917.4,
-   "rs6m": 4.3
+   "price": 6048.0,
+   "rs6m": 29.5
   },
   {
    "code": "CEIGALL",
    "name": "Ceigall India Ltd.",
    "band": "micro",
    "industry": "Construction",
-   "score": 32.3,
+   "score": 43.9,
    "gates": 3,
    "failed": [
     "reinvestment",
@@ -595,15 +862,40 @@
     "management": "promoter 82.0% (falling)",
     "valuation": "P/E 20 vs industry 15"
    },
-   "price": 363.1,
-   "rs6m": 16.7
+   "price": 390.2,
+   "rs6m": 18.8
+  },
+  {
+   "code": "MPHASIS",
+   "name": "MphasiS Ltd.",
+   "band": "mid",
+   "industry": "Information Technology",
+   "score": 40.9,
+   "gates": 3,
+   "failed": [
+    "headroom",
+    "durability",
+    "quality",
+    "management"
+   ],
+   "detail": {
+    "headroom": "market cap \u20b948,546 Cr",
+    "reinvestment": "ROCE 22.1%",
+    "durability": "5y sales CAGR 6.7%, margin stable",
+    "quality": "CFO/PAT 0.66x, debtors 96d",
+    "balance": "debt/equity 0.24",
+    "management": "promoter 30.5% (falling)",
+    "valuation": "P/E 25 vs industry 19"
+   },
+   "price": 2525.6,
+   "rs6m": 14.5
   },
   {
    "code": "IIFLCAPS",
    "name": "IIFL Capital Services Ltd.",
    "band": "micro",
    "industry": "Financial Services",
-   "score": 22.7,
+   "score": 24.4,
    "gates": 3,
    "failed": [
     "durability",
@@ -620,9 +912,9 @@
     "management": "promoter 30.5% (stable)",
     "valuation": "P/E 19 vs industry 18"
    },
-   "price": 342.1,
-   "rs6m": 12.3
+   "price": 347.85,
+   "rs6m": 14.9
   }
  ],
- "considered": 29
+ "considered": 43
 }

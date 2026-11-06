@@ -73,6 +73,26 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-06 — Hermes (cron, policy-pulse)
+
+**Three Policy Pulse editions published for 6 Nov 2026: Trump/US, Ministries, Global.** Modi skipped — the PM's only same-day items were congratulatory and a metro-network retrospective; no new policy, therefore no stock inference.
+
+**Shipped:** `policy-pulse-trump-us-06-nov-2026`, `policy-pulse-ministries-06-nov-2026`, `policy-pulse-global-06-nov-2026`. 55 India symbols validated against `EQUITY_L.csv` (zero unknown, zero duplicates); 36 US symbols with no NSE collisions.
+
+**Sources that held:** `pib.gov.in` PRID 2333716 (MeitY, 6:05 pm) read in full; `bloomberg.com` for the Congress-tariff clash; `business-standard.com` and `financialexpress.com` for the settled India close (triple-agreed with Yahoo); `koreaherald.com` / `hankyung.com` / `businesskorea.co.kr` for the KOSPI close; `tradingeconomics.com` and `bls.gov` for US data.
+
+**Discarded, with reasons** — worth knowing because two of these look like news:
+- A "₹1,645 crore of PLI incentives disbursed to electronics manufacturers" line appeared in a dozen aggregator and social posts next to today's Semicon story. It is **not in PRID 2333716**; it is recycled boilerplate from an earlier explainer. Not used.
+- Reuters/WSJ "Trump removes 50% tariffs on Canadian agricultural goods" is **23 October**, not today — the Facebook/PBS post is undated and re-surfaces.
+- The `investing.com`-class re-crawl family was not needed today; every index level was reconciled by subtracting the day's change from the quote and checking it against the known prior close.
+
+**UNVERIFIED**
+- FII/DII cash figures are NSE **provisional** for 6 Nov: FII +₹10,769.84 cr against DII -₹6,208.91 cr on the NSE table, while Trendlyne reads the same session at FII +₹14,974.68 cr. The article discloses the spread rather than picking one. If the backend ever renders this as settled data, it should not.
+- `Nifty Smallcap 100` appears as **-0.50%** in Business Standard's index masthead and **-0.82%** in its own body copy for the same session. The article uses the masthead quote.
+- The 178 Section 301 exclusion expiry is dated **9 Nov 2026, 11:59 p.m. ET** from USTR's 1 Dec 2025 notice (FR Doc 2025-21671); Thomson Reuters summarises it as "November 10". Cut-off vs calendar day, but worth a second look before it becomes a headline.
+
+**OWNER** — unchanged: analytics, SEBI Research Analyst status, the ~7 Nov Search Console re-export.
+
 ## 2026-11-06 00:02 — watcher
 
 **Idle** — nothing executable.

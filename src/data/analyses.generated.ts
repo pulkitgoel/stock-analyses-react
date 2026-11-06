@@ -5,6 +5,183 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 06 Nov 2026",
+    "ticker": "HDFCBANK:ICICIBANK:AXISBANK:SBIN:KOTAKBANK:BAJFINANCE:BAJAJFINSV:IOC:BPCL:HINDPETRO:INDIGO:ONGC:OIL:TCS:INFY:HCLTECH:TMPV:MARUTI:SHRIRAMFIN:MU:NVDA:AVGO:AMD:TSM",
+    "file": "policy-pulse-global-06-nov-2026.md",
+    "slug": "policy-pulse-global-06-nov-2026",
+    "date": "2026-11-06",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "asia",
+      "fii-flows",
+      "crude",
+      "banks"
+    ],
+    "summary": "India rose 2.17% to 81,028.02 with the Nifty above 25,000 for the first time since February on Rs 10,770 crore of FII buying, a 93.91 rupee and Brent at 7.87 — while the KOSPI fell 6.02% with Samsung and SK Hynix down 8-10%, so HDFCBANK and IOC gained on what Samsung lost.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 06 Nov 2026",
+    "ticker": "DIXON:KAYNES:SYRMA:AMBER:AVALON:CGPOWER:MOSCHIP:HINDALCO:VEDL:LT:UNOMINDA",
+    "file": "policy-pulse-ministries-06-nov-2026.md",
+    "slug": "policy-pulse-ministries-06-nov-2026",
+    "date": "2026-11-06",
+    "tags": [
+      "policy-pulse",
+      "meity",
+      "semiconductors",
+      "electronics",
+      "pli"
+    ],
+    "summary": "MeitY approved 12 more ECMS projects worth Rs 7,503 crore — India's first copper foil, cathode active material and specialty ceramics approvals — taking the scheme to 118 applications and Rs 77,051 crore, with DIXON, KAYNES and SYRMA the listed beneficiaries of a domestic component base.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 06 Nov 2026",
+    "ticker": "JPM:BAC:GS:WFC:DHI:LEN:NEE:DUK:WMT:TGT:HD:LOW:NUE:STLD:CLF:NKE:DE:FSLR:PG:KO:MCD:NVDA:MU:AMD:AVGO:PLTR:LMT:NOC:RTX:GD:AAPL:MSFT:GOOGL:META:TSLA",
+    "file": "policy-pulse-trump-us-06-nov-2026.md",
+    "slug": "policy-pulse-trump-us-06-nov-2026",
+    "date": "2026-11-06",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "tariffs",
+      "fed",
+      "labour-market"
+    ],
+    "summary": "October payrolls blew past forecasts at 165,000 against roughly 60,000 expected, pushing December hike odds to about three in four and the 10-year to 4.88% — JPM and BAC gained on the wider spread while WMT and HD fell, with Monday's Section 301 exclusion expiry stacked on top.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Global — 05 Nov 2026",
+    "ticker": "HDFCBANK:ICICIBANK:BAJFINANCE:SHRIRAMFIN:MARUTI:TMPV:INDIGO:ONGC:OIL:HINDPETRO:BPCL:IOC:NTPC:COALINDIA:RELIANCE:TCS:INFY:BEL:MU:SNDK:NVDA:QCOM:AMD:TSM:MSFT:GOOGL:META",
+    "file": "policy-pulse-global-05-nov-2026.md",
+    "slug": "policy-pulse-global-05-nov-2026",
+    "date": "2026-11-05",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "crude",
+      "ai-infrastructure",
+      "fii-flows",
+      "semiconductors"
+    ],
+    "summary": "India closed up 2.40% at 24,536.60 and Asia's chip complex fell 5.3% in the same session, with FIIs buying Rs 13,802 crore into the Sensex's best day since April — while Brent bounced 2.5% after breaking below $100 for the first time in two months.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 05 Nov 2026",
+    "ticker": "BSE:ANGELONE:MOTILALOFS:IIFL:CDSL:HDFCAMC:NAM-INDIA:CAMS:KFINTECH:BHARTIARTL:TATACOMM:HFCL:TEJASNET:MTARTECH:AXISCADES:DATAPATTNS:BEL:BDL:HAL:LT:KEC:PNCINFRA:NCC:HDFCBANK:ICICIBANK",
+    "file": "policy-pulse-ministries-05-nov-2026.md",
+    "slug": "policy-pulse-ministries-05-nov-2026",
+    "date": "2026-11-05",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "rbi",
+      "currency-derivatives",
+      "satcom",
+      "telecom",
+      "space",
+      "capital-markets"
+    ],
+    "summary": "SEBI brought the exchanges into line with the RBI's October cut in the unhedged currency-derivative limit — USD 100 million down to USD 5 million, a 95% reduction — while TRAI recommended 20-year satellite network authorisations at 8% of AGR and BSE and ANGELONE rose with the Nifty Capital Market index up 4.4%.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 05 Nov 2026",
+    "ticker": "MU:SNDK:NVDA:QCOM:AMD:TSM:MSFT:GOOGL:AAPL:META:AMZN:APP:LMT:NOC:RTX:PLTR:GD:XOM:CVX:OXY:COP:SLB:DAL:UAL:LUV:JPM:BAC:GS:IREN:CORZ:FSLR:ENPH:DJT",
+    "file": "policy-pulse-trump-us-05-nov-2026.md",
+    "slug": "policy-pulse-trump-us-05-nov-2026",
+    "date": "2026-11-05",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "tariffs",
+      "midterms",
+      "ai-infrastructure",
+      "semiconductors"
+    ],
+    "summary": "The Democratic sweep cannot touch a single duty rate — a veto override needs 67 senators and 290 House members — so the tariff schedule stands and the trade story moved to the Section 301 excess-capacity probe, while MU fell 12% and QCOM 10% as the AI complex sold off and NVDA dropped 6.5%.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Global — 04 Nov 2026",
+    "ticker": "FSLR:ENPH:ARRY:TCS:INFY:HCLTECH:WIPRO:IOC:BPCL:HINDPETRO:ONGC:OIL:RELIANCE",
+    "file": "policy-pulse-global-04-nov-2026.md",
+    "slug": "policy-pulse-global-04-nov-2026",
+    "date": "2026-11-04",
+    "tags": [
+      "policy-pulse",
+      "trade",
+      "clean-energy",
+      "crude",
+      "global-spillover"
+    ],
+    "summary": "The US midterms weakened Trump's negotiating position without touching the Section 232 and 301 authorities, which is relief for TCS and INFY only at the margin, while the global clean-energy complex repriced hard — FSLR +15.1%, ENPH +12.1%, ARRY +21.8% — and cheaper crude helped IOC and BPCL.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries — 04 Nov 2026",
+    "ticker": "BSE:ANGELONE:MOTILALOFS:CDSL:CAMS:KFINTECH:HDFCBANK:ICICIBANK:SBIN:TCS:INFY:HCLTECH:BEL:ADANIENT:MAXHEALTH:ITC:TITAN:JIOFIN",
+    "file": "policy-pulse-ministries-04-nov-2026.md",
+    "slug": "policy-pulse-ministries-04-nov-2026",
+    "date": "2026-11-04",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "rbi",
+      "market-structure",
+      "nri",
+      "capital-markets"
+    ],
+    "summary": "SEBI opened digital NRI and OCI onboarding from 3 December and the RBI set up a markets consultative committee, while FPI buying of Rs 7,284 crore carried the Nifty to 23,960.60 — its first close above the 200-day EMA since 13 August — with BEL up 3.9% and TCS down 2.8% as the sole losing sector.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi — 04 Nov 2026",
+    "ticker": "HINDCOPPER:NATIONALUM:VEDL:MOIL:EXIDEIND:ARE&M:PREMIERENE:TATAPOWER:NTPC:ADANIGREEN:TORNTPOWER:JSWENERGY:WAAREEENER",
+    "file": "policy-pulse-modi-04-nov-2026.md",
+    "slug": "policy-pulse-modi-04-nov-2026",
+    "date": "2026-11-04",
+    "tags": [
+      "policy-pulse",
+      "critical-minerals",
+      "energy-storage",
+      "batteries",
+      "pli"
+    ],
+    "summary": "The Cabinet funded both ends of the battery chain in one sitting — Rs 2,814 crore for four lithium and nickel processing plants and Rs 14,500 crore for 92 GWh of grid storage — which puts HINDCOPPER, NATIONALUM and VEDL on the supply side and EXIDEIND, PREMIERENE and NTPC on the demand side.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 04 Nov 2026",
+    "ticker": "FSLR:ENPH:ARRY:AMZN:MSFT:AAPL:GOOGL:META:NVDA:AMD:TSLA:DJT:LMT:NOC:RTX:NUE:CLF:STLD:WMT:TGT:HD:LOW:IREN:CORZ:CVS:UNH:HCA",
+    "file": "policy-pulse-trump-us-04-nov-2026.md",
+    "slug": "policy-pulse-trump-us-04-nov-2026",
+    "date": "2026-11-04",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "midterms",
+      "tariffs",
+      "ai-infrastructure"
+    ],
+    "summary": "Democrats took both chambers but sit roughly 60 seats short of a veto-proof majority, so the tariff schedule stays where it is and FSLR, ENPH and ARRY rallied 12-22% on clean-energy support while NOC, RTX and LMT fell on a harder road for the $1.5 trillion defence request and NVDA slipped 1.5%.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse — Global — 03 Nov 2026",
     "ticker": "DAL:UAL:AAL:LUV:CCL:RCL:NCLH:XOM:CVX:OXY:COP:IOC:BPCL:HINDPETRO:RELIANCE:ONGC:OIL:TCS:INFY:HCLTECH:COFORGE",
     "file": "policy-pulse-global-03-nov-2026.md",
