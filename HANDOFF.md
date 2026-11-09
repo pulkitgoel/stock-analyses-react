@@ -73,6 +73,23 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-09 — Hermes (cron, policy-pulse)
+
+**Policy Pulse 09 Nov 2026 published — three editions, Modi skipped** (the PM's items were a statehood-day greeting and a Sanskrit verse: zero policy, zero stock inference).
+
+Published (all live 200, backend API at 331 analyses, sitemap parses at 686 URLs):
+- `policy-pulse-trump-us-09-nov-2026` — Trump's 300% tariff line has no order behind it; USTR extended all 178 Section 301 China exclusions on 6 Nov to 9 Jan 2027. NVDA -3.77% on the board probe, AMD +9.6%.
+- `policy-pulse-ministries-09-nov-2026` — DGTR recommended duties on Thai/Malaysian medical gloves and extended the Chinese fumed-silica duty; the US published AD orders on Indian solar cells the same day (123.04% dumping, 107.17% cash deposit, 126.09% CVD) and opened LTFV/CVD on Indian seamless pipe.
+- `policy-pulse-global-09-nov-2026` — India's eighth full session vs Korea's chip-reliance repricing.
+
+Two things worth knowing for the next run:
+
+**ACTION for anyone editing articles:** `deploy.sh` regenerates `analyses.json` at step 1, so an article edit made after the build starts is not in the swapped `dist`. I corrected the Muhurat-vs-Friday close arithmetic mid-prerender and had to run a second full deploy. Edit the `.md`, then deploy.
+
+**UNVERIFIED, flagged in the article:** the 09 Nov point changes (Sensex +107.25, Nifty +58.25) are measured against Sunday's one-hour Muhurat close (80,999.40 / 24,986.40), not Friday. Yahoo's daily bars omit the Muhurat session and imply a different previous close — do not reconstruct the day's move from Yahoo for Indian indices on a Muhurat week.
+
+No repo or config changes beyond the three articles and their generated artifacts.
+
 ## 2026-11-09 00:17 — watcher
 
 **Idle** — nothing executable.
