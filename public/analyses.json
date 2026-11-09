@@ -1,6 +1,56 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 09 Nov 2026",
+      "ticker": "SBIN:HDFCBANK:ICICIBANK:DIVISLAB:LAURUSLABS:HCLTECH:INFY:TCS:IOC:BPCL:HINDPETRO:ONGC:NVDA:AMD:AVGO:MRVL:ARM:TSM:MU:XOM:CVX:DAL:UAL",
+      "file": "policy-pulse-global-09-nov-2026.md",
+      "slug": "policy-pulse-global-09-nov-2026",
+      "date": "2026-11-09",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "asia",
+        "semiconductors",
+        "fii-flows"
+      ],
+      "summary": "India rose for an eighth straight session on cheaper crude and Rs 7,212 crore of FII buying while Korea chip-reliant growth got repriced against possible US data-centre curbs — SBIN and DIVISLAB led, HCLTECH lagged, NVDA fell 3.8% and AMD rose 9.6%.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries — 09 Nov 2026",
+      "ticker": "WAAREEENER:PREMIERENE:VIKRAMSOLR:WEBELSOLAR:ADANIENT:JINDALSAW:MAHSEAMLES:RATNAMANI:TATAPOWER:ADANIGREEN:NTPC:POLYMED",
+      "file": "policy-pulse-ministries-09-nov-2026.md",
+      "slug": "policy-pulse-ministries-09-nov-2026",
+      "date": "2026-11-09",
+      "tags": [
+        "policy-pulse",
+        "anti-dumping",
+        "solar",
+        "steel"
+      ],
+      "summary": "DGTR recommended duties on Thai and Malaysian medical gloves as Washington published 123.04% dumping and 126.09% countervailing duties on Indian solar cells — WAAREEENER and PREMIERENE face a roughly 249% wall, and JINDALSAW faces a fresh seamless-pipe investigation.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 09 Nov 2026",
+      "ticker": "NVDA:AMD:AVGO:MRVL:ARM:TSM:MU:WMT:TGT:FSLR:XOM:CVX:DAL:UAL",
+      "file": "policy-pulse-trump-us-09-nov-2026.md",
+      "slug": "policy-pulse-trump-us-09-nov-2026",
+      "date": "2026-11-09",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "export-controls",
+        "semiconductors"
+      ],
+      "summary": "Trump called for tariffs of up to 300% on companies that do not build in America while USTR quietly extended 178 China exclusions to 9 January — NVDA fell 3.8% on the board probe as AMD rose 9.6%, and FSLR slipped 4.35% on the day the solar orders published.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 06 Nov 2026",
       "ticker": "HDFCBANK:ICICIBANK:AXISBANK:SBIN:KOTAKBANK:BAJFINANCE:BAJAJFINSV:IOC:BPCL:HINDPETRO:INDIGO:ONGC:OIL:TCS:INFY:HCLTECH:TMPV:MARUTI:SHRIRAMFIN:MU:NVDA:AVGO:AMD:TSM",
       "file": "policy-pulse-global-06-nov-2026.md",
