@@ -1,13 +1,20 @@
 ---
 title: "Indo-MIM Ltd — IPO Analysis"
 ticker: "INDO-MIM"
-date: "2026-07-22"
+date: "2026-11-16"
 tags: ["ipo","deep-dive","manufacturing","precision-engineering"]
-summary: "Indo-MIM — world's largest MIM manufacturer — opens IPO at ₹485. 45x P/E, 21% ROE, accelerating growth, but 86% OFS and US export concentration warrant caution. Detailed analysis inside."
-model: "deepseek-chat"
+summary: "Updated November 2026: Indo-MIM is up 156% from its ₹485 issue price to ₹1,243 and now trades at 100x earnings. Q2 FY27 revenue grew 14% with margin easing to 30%, and profit fell sequentially. The business is delivering; the price has outrun it. Verdict: take partial profit, wait for new money."
+watchlist: true
+priceAtAnalysis: 1243.2
+support: 1100
+resistance: 1374
+supports: [1100, 1000, 900]
+resistances: [1374, 1450, 1550]
+verdict: "PARTIAL PROFIT / WAIT FOR NEW MONEY"
+model: "deepseek-v4-flash"
 ---
 
-## 📊 Quick Snapshot
+## Quick Snapshot
 
 | Metric | Value |
 |--------|-------|
@@ -31,6 +38,81 @@ model: "deepseek-chat"
 | **Model Used** | deepseek-chat |
 
 ---
+
+## What Changed Since Listing — November 2026
+
+*This section updates the July 2026 IPO note. The original analysis below is left intact so the record of what was argued at issue price stays visible.*
+
+### The price first
+
+The stock was issued at ₹485. It closed at **₹1,276 on 13 November 2026** and traded at **₹1,243** on 16 November — a gain of roughly **156-163% from the issue price** in under four months. Market capitalisation is now **₹63,116 crore** against a business that earned ₹534 crore in FY26.
+
+The July note argued the business was excellent and the 45x multiple left a thin margin of safety. At **100x trailing earnings** that objection has not aged — it has doubled. The peer median on Screener is **31.9x**; the closest comparables are Aditya Infotech at 82x, Jyoti CNC at 79x, Syrma at 68x and Kaynes at 66x. Indo-MIM now trades above all of them.
+
+### The two quarters since listing
+
+| ₹ crore | Q1 FY27 (Jun 26) | Q2 FY27 (Sep 26) | Q2 FY26 | YoY |
+|---|---|---|---|---|
+| Revenue | 1,219 | 1,272 | 1,113 | +14% |
+| Operating profit | 407 | 380 | 309 | +23% |
+| OPM | 33% | 30% | 28% | +200 bps |
+| Interest | 27 | 27 | 44 | −39% |
+| Depreciation | 58 | 57 | 49 | +16% |
+| PBT | 325 | 309 | 149 | +107% |
+| Net profit | 240 | 215 | 108 | +99% |
+| EPS (₹) | 4.96 | 4.35 | 2.23 | +95% |
+
+Three things stand out.
+
+**Growth is real but modest.** Revenue grew 9% in the June quarter and 14% in September. Against a company priced at 100x earnings, mid-teens revenue growth is the number that matters, and it is below the 26% delivered in FY26.
+
+**The margin has peaked and turned.** Operating margin was 33% in June and 30% in September, against 29% a year earlier. Sequential profit fell 10.4% on 4.3% higher revenue — the first sequential profit decline in the series. Part of that is a higher tax rate (30% against 26%) and part is the margin.
+
+**Interest costs halved**, from ₹44 crore to ₹27 crore, because IPO proceeds repaid debt. That is the one clear financial benefit of listing and it is worth roughly ₹17 crore a quarter pre-tax.
+
+### The balance sheet after the IPO
+
+| ₹ crore | Mar 2026 | Sep 2026 |
+|---|---|---|
+| Equity capital | 48 | 49 |
+| Reserves | 2,771 | 3,407 |
+| Net worth | 2,819 | 3,456 |
+| Borrowings | 1,368 | 1,381 |
+| Total assets | 4,897 | 5,694 |
+
+Net worth rose ₹637 crore on the fresh issue; borrowings were broadly flat rather than falling, which suggests the debt repaid was replaced by new working-capital borrowing as the business grew. Debt to equity is now about 0.40, comfortably low.
+
+The cash conversion record remains the strongest part of the story: FY26 operating cash flow of **₹1,077 crore was 122% of operating profit**, with free cash flow of ₹662 crore. Few manufacturers in this market convert at that rate.
+
+Working capital is the structural oddity: **cash conversion cycle of 356 days** in FY26, down from 586 but still enormous, driven by **inventory days of 373**. That is the price of holding tooling and feedstock for a high-mix, low-volume precision business — it has improved sharply, and it remains the largest single risk in the model.
+
+### Shareholding and use of proceeds
+
+Post-issue, September 2026: **promoters 77.65%**, DIIs 11.78%, FIIs 2.46%, public 8.11%, with 1.73 lakh shareholders. The free float is small — about 22% — which explains part of the price behaviour: a thin float on a 100x multiple moves violently in both directions.
+
+The monitoring agency report for the September quarter records **₹475.9 crore of the ₹499 crore fresh issue utilised, ₹24.1 crore unutilised, and no deviation** from stated objects. That is a clean utilisation record, which is not universal among recent issues.
+
+### New since the note
+
+- The board approved an investment of up to **₹9.75 crore in Meena Solar Power Park**, a captive renewable power arrangement — small in money, consistent with controlling energy costs in an energy-intensive sintering process
+- The company bought back no shares and issued no further equity
+
+### Revised stance
+
+**The business has done what the note said it would do. The price has done far more.**
+
+- Revenue growth of 9% and 14% does not support 100x earnings
+- The margin, which was the core of the investment case, has turned down sequentially
+- The interest saving from the IPO is real but one-off in nature
+- Cash conversion and ROCE of 25% remain genuinely high quality
+
+**For anyone who applied at ₹485: the trade has worked, and taking partial profit here is defensible.** A 156% gain in four months on a 100x multiple is a valuation event, not an earnings event, and the earnings are decelerating.
+
+**For new money: wait.** The entry the July note wanted — a business this good at a price with a margin of safety — no longer exists. A re-rating back to 60x trailing, roughly ₹760-800, would still price the company as a premium manufacturer and would be the first level worth revisiting.
+
+**What would change this view:** two consecutive quarters of revenue growth back above 20% with the operating margin recovering above 33%. That would justify a premium multiple on growth rather than on scarcity alone.
+
+## 1. Business Overview
 
 ## 1. Business Overview
 
@@ -340,6 +422,8 @@ The **margin compression from 28.0% to 25.5%** despite revenue growing 28% is th
 ---
 
 ## 12. Final Verdict
+
+*Dated note, 16 November 2026: the verdict below was written at the ₹485 issue price. The stock now trades at ₹1,243 and the stance has changed — see "What Changed Since Listing" above for the current view.*
 
 ### 🟢 **APPLY (Listing Gains) / CAUTION (Long Term)**
 
