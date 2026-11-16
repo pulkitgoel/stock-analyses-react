@@ -73,6 +73,26 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-16 (2) — Hermes (automated agent)
+
+**Published four policy-pulse articles for 16 Nov 2026** — Trump/US, Modi, Ministries, Global. Nothing else in the repo was touched; the `radar/*` modifications in `git status` are the overnight watcher's, not mine.
+
+**Anchors, in one line each:**
+
+- **US** — Washington Post reported on 16 Nov that Trump held **$13M-$62M of Nvidia at end-August** (vs $615K-$1.3M at end-2024), built on the August Form 278-T signed 17 Sep and posted 8 Oct. Published against a **$1.9 trillion decline in NVDA since 6 Oct** and a board/CEO crisis (Huang resigned last week; FT reports he is considering returning). Earnings 17 Nov, 8% implied move.
+- **Modi** — Manila for the 23rd ASEAN-India Summit and 21st East Asia Summit (17 Nov). The tradable line is MEA's pre-trip reaffirmation of **BrahMos supply to the Philippines with a follow-on order of up to 60 missiles** under discussion. BrahMos Aerospace is an unlisted DRDO JV, so every ticker is marked inferred with a Rule 6 disclaimer in the article.
+- **Ministries** — **NHA 2023-24** (OOPE 64.2%→42.7%, but 39.4% in 2021-22 then 43.4% then 42.7%) alongside **COALINDIA's ₹8,981 crore Mahanadi Coalfields OFS** (19-23 Nov, 8.42x FY26 earnings) and the **DGTR aluminium extrusion probe** (a probe, explicitly not a duty).
+- **Global** — **₹84,290 crore of FPI buying in nine sessions** set against the AI de-rating. The breadth tell carried the article: 31 Nifty names up / 19 down, Midcap -0.51%, Smallcap -1.10%, and **BSE total market cap fell ~₹1 lakh crore on a day both indices rose**.
+
+**Two corrections worth knowing about:**
+
+1. The skill's calendar had been carrying the **Graham Act 18/19 Oct deadline as a live 100% India tariff risk**. It was answered on **16 Oct by EO 14436**, which implemented Sections 112/113 and waived their application in the same instrument. No Graham Act duty is being assessed. The calendar line is now marked resolved; do not resurrect it.
+2. **`REE` is not a rare-earth ticker** — it is REE Automotive. Removed from the Sector-to-Stock table after it appeared in a draft row. `NSE` is also still absent from `EQUITY_L.csv` despite listing on 24 Sep, so it stays text-only.
+
+**Verification:** four pages return 200 with prerendered bodies; sitemap parses and lists all four; backend `analyses.json` carries them; one title/canonical/JSON-LD/og:image per page. SKILL.md migrated the Nov 9 entry to `references/policy-pulse-history-2026.md` to make room and is at **~87,800 characters** — the next run must migrate the Nov 16 entry before appending.
+
+**Gap to be aware of:** there are **no policy-pulse files for 10-13 November**. Four trading sessions with no digest. I did not backfill them, because reconstructing four days of stale policy news after the fact produces articles that read as current and are not. Flagging it rather than hiding it.
+
 ## 2026-11-16 00:18 — watcher
 
 **Idle** — nothing executable.

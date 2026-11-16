@@ -5,6 +5,72 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 16 Nov 2026",
+    "ticker": "HDFCBANK:ICICIBANK:ITC:TATACONSUM:MAXHEALTH:APOLLOHOSP:INFY:TCS:TMPV:MARUTI:HINDALCO:NESTLEIND:NVDA:AMD:MU:TSM:AVGO:GOOGL:MSFT",
+    "file": "policy-pulse-global-16-nov-2026.md",
+    "slug": "policy-pulse-global-16-nov-2026",
+    "date": "2026-11-16",
+    "tags": [
+      "policy-pulse",
+      "flows",
+      "ai",
+      "semiconductors"
+    ],
+    "summary": "Foreign investors bought Rs 84,290 crore of Indian equities in nine sessions while $1.9 trillion left Nvidia — HDFCBANK and ITC rose as TMPV fell 8.70%, and the median stock fell with the smallcap index down 1.10% even as the Nifty gained 0.58%.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 16 Nov 2026",
+    "ticker": "MAXHEALTH:APOLLOHOSP:KIMS:STARHEALTH:ICICIGI:HDFCLIFE:SBILIFE:COALINDIA:HINDALCO:NATIONALUM:KFINTECH:ANGELONE",
+    "file": "policy-pulse-ministries-16-nov-2026.md",
+    "slug": "policy-pulse-ministries-16-nov-2026",
+    "date": "2026-11-16",
+    "tags": [
+      "policy-pulse",
+      "health",
+      "disinvestment",
+      "dgtr",
+      "psu"
+    ],
+    "summary": "Out-of-pocket health spending fell to 42.7% but rose in the two years before it, while COALINDIA sells Rs 8,981 crore of Mahanadi Coalfields at 8.4x earnings and DGTR opened an aluminium extrusion probe — MAXHEALTH and APOLLOHOSP gain from the payer shift, HINDALCO only on a duty that does not exist yet.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / India Govt — 16 Nov 2026",
+    "ticker": "BDL:BEL:SOLARINDS:HAL:DATAPATTNS:PARAS:MAZDOCK:GRSE",
+    "file": "policy-pulse-modi-16-nov-2026.md",
+    "slug": "policy-pulse-modi-16-nov-2026",
+    "date": "2026-11-16",
+    "tags": [
+      "policy-pulse",
+      "defence",
+      "asean",
+      "exports"
+    ],
+    "summary": "India reaffirmed BrahMos supply to the Philippines ahead of the Manila summits with a follow-on order of up to 60 missiles under discussion — BDL and BEL are the inferred listed read, HAL separately guided to an AMCA winner within a month.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 16 Nov 2026",
+    "ticker": "NVDA:AMD:AVGO:MU:TSM:MP:USAR:AREC:FEAM:XOM:CVX:DAL:UAL:GOOGL:MSFT",
+    "file": "policy-pulse-trump-us-16-nov-2026.md",
+    "slug": "policy-pulse-trump-us-16-nov-2026",
+    "date": "2026-11-16",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "leader-trades",
+      "semiconductors",
+      "critical-minerals"
+    ],
+    "summary": "Trump held up to $62M of Nvidia at end-August, disclosed as NVDA opens down 2.10% at $159.43 with $1.9 trillion gone since October — AMD fell 5.15%, MP 4.41% and USAR 8.95% as the whole complex de-rates into the 17 November print.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse — Global — 09 Nov 2026",
     "ticker": "SBIN:HDFCBANK:ICICIBANK:DIVISLAB:LAURUSLABS:HCLTECH:INFY:TCS:IOC:BPCL:HINDPETRO:ONGC:NVDA:AMD:AVGO:MRVL:ARM:TSM:MU:XOM:CVX:DAL:UAL",
     "file": "policy-pulse-global-09-nov-2026.md",
