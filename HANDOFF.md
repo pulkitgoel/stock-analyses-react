@@ -73,6 +73,51 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-17 — Hermes (automated agent) — Policy Pulse, 17 Nov
+
+**Four policy-pulse articles for Tue 17 Nov 2026, published from one build.** Verify before trusting
+the numbers here — they are the same ones the articles carry.
+
+**DONE**
+- Slugs `policy-pulse-{trump-us,modi,ministries,global}-17-nov-2026`.
+  Anchors: (US) the BIS interim rule of 16 Nov closing the remote-access loophole + the US–Thailand ART
+  joint statement signed in Manila + DJT's $1bn convert put on 30 Nov; (Modi) seven cooperation
+  proposals at the 23rd ASEAN-India Summit, none signed — the maritime plan, the critical-minerals
+  mechanism, nuclear exchanges and free e-visas, with a Rule 6 inference disclaimer; (Ministries) the
+  RBI's 16 Nov letter telling Tata Sons to comply with NBFC-UL rules "including the requirement of
+  listing", plus the Reuters report that SEBI is weighing free-float-linked caps on new margin-funded
+  purchases against a record ₹1.53 lakh crore MTF book, plus the 44% electronics export print;
+  (Global) Anthropic pricing on 18 Nov at $70-78 for a $1.405tn mark, set against ₹84,166 crore of
+  November FPI inflows into India.
+- Ticker pre-flight: 65 unique symbols, 41 India. All 41 resolved against `EQUITY_L.csv`, zero unknown,
+  zero duplicates, no ampersand in any `ticker:` field. New symbol learned: **`JPL` is Jio Platforms**
+  (listed 28 Oct; there is no `JIOPLAT`). `NSE` remains absent from the master file and stays in text
+  only. `REE` kept out — it is REE Automotive, not a rare-earth play.
+- SKILL.md housekeeping: the Nov 16 history entry moved to `references/policy-pulse-history-2026.md`
+  and replaced with a pointer; the Nov 17 entry appended in its place. SKILL.md 87,973 → 85,200 chars.
+- Verified after the swap: four pages 200 with prerendered bodies (38-40KB each), sitemap parses at 697
+  URLs and lists all four, API count 339, one title / one canonical / one JSON-LD per page, lowercase
+  hubs 200 including the new `/company/jpl`, Googlebot fetch 72,883 bytes, push delivered to 3.
+
+**UNVERIFIED**
+- The $2.6bn of Thai agricultural purchases and the non-tariff-barrier list (vehicles, medical devices,
+  pharmaceuticals, ethanol, poultry) come from Trump's remarks at the signing, **not** from the White
+  House joint statement, which carries no annexe or rate table and only records "substantial
+  conclusion". The articles attribute them to the remarks. Bangkok still needs public consultation and
+  legal steps before the ART is signed, so no duty has changed yet.
+- The SEBI margin-trading item is a Reuters report citing two unnamed sources. No circular, no draft,
+  no finalised threshold (5-10% is under discussion). The article says so in the table rows.
+- ZEEL is named in that Reuters report and was deliberately kept out of the impact table under Rule 7
+  (standing promoter restraint), appearing in body text only. If anyone re-uses the ticker, re-screen it
+  first.
+
+**OWNER**
+- Unchanged and still open: analytics (no tag installed anywhere), SEBI Research Analyst status, and the
+  ~7 Nov Search Console re-export against the 1-click baseline.
+- Today's search-engine inversion is worth knowing: DuckDuckGo returned zero results on four broad
+  queries while Tavily returned ten per query at `search_depth: advanced`. Recorded in the skill as a
+  one-day observation, not a new baseline.
+
 ## 2026-11-17 00:04 — watcher
 
 **Idle** — nothing executable.

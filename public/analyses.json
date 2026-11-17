@@ -1,6 +1,89 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 17 Nov 2026",
+      "ticker": "NVDA:AMD:AVGO:MU:TSM:MSFT:GOOGL:AMZN:HOOD:GS:MS:INFY:TCS:HCLTECH:HDFCBANK:ICICIBANK:DLF:PRESTIGE",
+      "file": "policy-pulse-global-17-nov-2026.md",
+      "slug": "policy-pulse-global-17-nov-2026",
+      "date": "2026-11-17",
+      "tags": [
+        "policy-pulse",
+        "ai",
+        "ipo",
+        "fpi-flows"
+      ],
+      "summary": "Anthropic prices tomorrow at $70-78 a share for a $1.4 trillion mark, with a book six to seven times covered — while foreign investors put ₹84,166 crore into India in November, the largest inflow in six years, and Indian IT fell 0.9% on the rotation.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 17 Nov 2026",
+      "ticker": "TATACHEM:TATAINVEST:TMPV:TMCV:TCS:TITAN:TATAPOWER:ANGELONE:MOTILALOFS:IIFL:BSE:NAZARA:JPL:DIXON:KAYNES:SYRMA:AMBER:CGPOWER",
+      "file": "policy-pulse-ministries-17-nov-2026.md",
+      "slug": "policy-pulse-ministries-17-nov-2026",
+      "date": "2026-11-17",
+      "tags": [
+        "policy-pulse",
+        "rbi",
+        "sebi",
+        "tata-sons",
+        "electronics"
+      ],
+      "summary": "The RBI put in writing that Tata Sons must list — Tata Chemicals rose 9% to ₹669.05 and Tata Investment 3% — while SEBI weighs curbs on margin-funded buying against a record ₹1.53 lakh crore book, and electronics exports grew 44% to $31.97 billion.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / India Govt — 17 Nov 2026",
+      "ticker": "MAZDOCK:COCHINSHIP:GRSE:HAL:DATAPATTNS:MTARTECH:AXISCADES:BHEL:LT:WALCHANNAG:NTPC:HINDCOPPER:NATIONALUM:MIDHANI:INDIGO:INDHOTEL:IRCTC:DIXON:KAYNES",
+      "file": "policy-pulse-modi-17-nov-2026.md",
+      "slug": "policy-pulse-modi-17-nov-2026",
+      "date": "2026-11-17",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "maritime",
+        "critical-minerals",
+        "tourism"
+      ],
+      "summary": "Modi used the 23rd ASEAN-India Summit in Manila to propose seven new cooperation mechanisms — a maritime plan, a critical-minerals joint mechanism, nuclear exchanges, e-visas — none of them signed, with shipbuilders GRSE and Mazagon Dock, nuclear suppliers BHEL and L&T, and IndiGo the inferred beneficiaries.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 17 Nov 2026",
+      "ticker": "NVDA:AMD:MU:AVGO:ORCL:MSFT:AMZN:ADM:BG:DE:TSN:F:GM:MDT:ABT:LLY:MRK:DJT:COIN",
+      "file": "policy-pulse-trump-us-17-nov-2026.md",
+      "slug": "policy-pulse-trump-us-17-nov-2026",
+      "date": "2026-11-17",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "semiconductors",
+        "tariffs",
+        "leader-trades"
+      ],
+      "summary": "The Commerce Department closed the remote-access loophole a day before Nvidia's print, Trump signed a Thailand trade statement in Manila worth $2.6 billion of farm purchases, and DJT sits at $4.16 nine days before noteholders can demand $1 billion in cash.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Indo-MIM Ltd — IPO Analysis",
+      "ticker": "INDO-MIM",
+      "file": "indo-mim-ltd-ipo-analysis.md",
+      "slug": "indo-mim-ltd-ipo-analysis",
+      "date": "2026-11-16",
+      "tags": [
+        "ipo",
+        "deep-dive",
+        "manufacturing",
+        "precision-engineering"
+      ],
+      "summary": "Updated November 2026: Indo-MIM is up 156% from its ₹485 issue price to ₹1,243 and now trades at 100x earnings. Q2 FY27 revenue grew 14% with margin easing to 30%, and profit fell sequentially. The business is delivering; the price has outrun it. Verdict: take partial profit, wait for new money.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 16 Nov 2026",
       "ticker": "HDFCBANK:ICICIBANK:ITC:TATACONSUM:MAXHEALTH:APOLLOHOSP:INFY:TCS:TMPV:MARUTI:HINDALCO:NESTLEIND:NVDA:AMD:MU:TSM:AVGO:GOOGL:MSFT",
       "file": "policy-pulse-global-16-nov-2026.md",
@@ -4494,22 +4577,6 @@
         "update"
       ],
       "summary": "Game changer: Ideaforge raised ₹500 Cr via QIP at ₹795. Working capital solved, debt cleared, HDFC MF & others invested. Promoter dilution to 25.3% is the sticking point. Full analysis.",
-      "market": "india",
-      "model": "deepseek-chat"
-    },
-    {
-      "title": "Indo-MIM Ltd — IPO Analysis",
-      "ticker": "INDO-MIM",
-      "file": "indo-mim-ltd-ipo-analysis.md",
-      "slug": "indo-mim-ltd-ipo-analysis",
-      "date": "2026-07-22",
-      "tags": [
-        "ipo",
-        "deep-dive",
-        "manufacturing",
-        "precision-engineering"
-      ],
-      "summary": "Indo-MIM — world's largest MIM manufacturer — opens IPO at ₹485. 45x P/E, 21% ROE, accelerating growth, but 86% OFS and US export concentration warrant caution. Detailed analysis inside.",
       "market": "india",
       "model": "deepseek-chat"
     },
