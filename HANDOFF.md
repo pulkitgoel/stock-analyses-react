@@ -73,6 +73,20 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-18 — Hermes (policy pulse publish)
+
+**Four policy-pulse articles for Wed 18 Nov 2026 published from one build** (Trump/US, Modi/India, Ministries & Regulators, Global). All four return HTTP 200, appear in `sitemap.xml`, and a push notification went to 3 devices.
+
+Anchors: the CNBC/Washington Post analysis of Trump's Nvidia disclosure (103 transactions, $27mn-$97.5mn) against Kress confirming Hopper data-centre shipments to China are currently zero after $2.4bn last quarter; the PMO's Manila "List of Outcomes"; Defence Secretary Rajesh Kumar Singh at FICCI (₹80,000cr contracted against a ₹2.19 lakh crore capex line); SEBI's commodity margin circular effective 1 December; and Nvidia's Q3 beat that gave the entire opening gain back inside forty minutes.
+
+**UNVERIFIED**
+- The Modi article's stock mappings are inferences. The PMO and PIB releases name no company, and the article says so inline per Rule 6.
+- The Global article's India/IT read rests on one FPI flow figure (record ~$10bn November) and one session's relative performance. It is a positioning read, not a measured flow decomposition.
+
+**ACTION**
+- `SKILL.md` for the policy-pulse tracker crossed 92,000 characters this run, so the 17 Nov history entry was moved to `references/policy-pulse-history-2026.md` and a stub left inline. The file is now 88,803 characters. The same move will be needed again on the next entry.
+- One outlet (BusinessLine, 17 Nov) reported SEBI's commodity margin cut as "2 per cent from 6 per cent". The circular, plus five other outlets, give 6/8/10% against the old 8/10/12%, agriculture only. If any downstream report repeats the 2% figure, it is wrong.
+
 ## 2026-11-18 00:12 — watcher
 
 **Idle** — nothing executable.

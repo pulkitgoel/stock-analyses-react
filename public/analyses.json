@@ -1,6 +1,72 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 18 Nov 2026",
+      "ticker": "NVDA:AMD:AVGO:TSM:MU:CRWV:NBIS:GOOGL:MSFT:AMZN:MS:GS:INFY:TCS:HCLTECH:WIPRO:SBIN:BSE:ANGELONE",
+      "file": "policy-pulse-global-18-nov-2026.md",
+      "slug": "policy-pulse-global-18-nov-2026",
+      "date": "2026-11-18",
+      "tags": [
+        "policy-pulse",
+        "ai",
+        "semiconductors",
+        "apec"
+      ],
+      "summary": "Nvidia beat by $6.7 billion, guided FY28 to 75% growth, and gave the whole gain back in forty minutes as Kress confirmed Hopper shipments to China are at zero — INFY and HCLTECH now fall when chips rally, SBIN is where the record $10 billion FPI inflow is going.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 18 Nov 2026",
+      "ticker": "HAL:BEL:BDL:MAZDOCK:COCHINSHIP:DATAPATTNS:SOLARINDS:MTARTECH:ASTRAMICRO:BSE:ANGELONE:MOTILALOFS:MCX:CDSL:IIFL:YESBANK:SBIN:TITAN:KALYANKJIL",
+      "file": "policy-pulse-ministries-18-nov-2026.md",
+      "slug": "policy-pulse-ministries-18-nov-2026",
+      "date": "2026-11-18",
+      "tags": [
+        "policy-pulse",
+        "defence",
+        "capital-markets",
+        "sebi",
+        "rbi"
+      ],
+      "summary": "Defence asked for 20% more capex after a 22% rise but has signed only ₹80,000 crore against a ₹2.19 lakh crore line — HAL and BEL carry the order book, BSE and ANGELONE fell 2% on a SEBI non-decision, MCX gains from the 1 December margin cut.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / India — 18 Nov 2026",
+      "ticker": "MIDHANI:HINDCOPPER:NMDC:MOIL:GMDCLTD:COCHINSHIP:MAZDOCK:GRSE:SCI:GESHIP:HAL:BEL",
+      "file": "policy-pulse-modi-18-nov-2026.md",
+      "slug": "policy-pulse-modi-18-nov-2026",
+      "date": "2026-11-18",
+      "tags": [
+        "policy-pulse",
+        "critical-minerals",
+        "defence",
+        "shipbuilding"
+      ],
+      "summary": "Two critical-minerals frameworks in forty-eight hours and not one tonne of offtake — HINDCOPPER and MIDHANI are the listed upstream read, COCHINSHIP and MAZDOCK the maritime one, and Indian metals fell 2.5% anyway.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 18 Nov 2026",
+      "ticker": "NVDA:AMD:AVGO:TSM:MU:CRWV:NBIS:PLTR:LMT:GD:HWM:LHX:USAR:MP:AREC:FEAM:AAPL:MSFT:GOOGL:AMZN:DJT",
+      "file": "policy-pulse-trump-us-18-nov-2026.md",
+      "slug": "policy-pulse-trump-us-18-nov-2026",
+      "date": "2026-11-18",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "semiconductors",
+        "leader-trades",
+        "critical-minerals"
+      ],
+      "summary": "Trump's account traded Nvidia 103 times for up to $97.5 million while the company stopped shipping licensed Hopper chips to China — NVDA and USAR carry the read, DJT has 12 days to its $1 billion put.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 17 Nov 2026",
       "ticker": "NVDA:AMD:AVGO:MU:TSM:MSFT:GOOGL:AMZN:HOOD:GS:MS:INFY:TCS:HCLTECH:HDFCBANK:ICICIBANK:DLF:PRESTIGE",
       "file": "policy-pulse-global-17-nov-2026.md",
