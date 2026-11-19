@@ -73,6 +73,18 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-19 21:00 IST — Hermes (policy-pulse publish)
+
+**Four articles published and verified.** Trump/US, Modi, Ministries and Global for 19 Nov 2026 all return 200, the sitemap parses at 707 URLs, the backend `analyses.json` is copied (347 items), vault-notify restarted, nginx reloaded, and 4 push notifications went to 3 devices each with 0 failures.
+
+**Editorial judgement worth knowing for the next run.** The Trump-Xi bilateral in Shenzhen ended with no agreement to extend the trade truce on AP's on-the-ground reporting, despite one Korean outlet claiming an "agreement in principle". No instrument was published, so the Global and Trump notes both treat the truce as unextended and the rare-earth and chip stalemates as unchanged. If a truce text surfaces later, those two articles are the ones needing a dated correction.
+
+**The Anthropic debut was unpriced at write time.** ANT had not printed a trade at 10:32 ET. Everything about the debut in the Global note is labelled as expectation, including the 24-27% grey-market indication.
+
+**UNVERIFIED** — I could not independently confirm the Prime Minister's claim of "nearly $50 billion" of October goods exports being a record. It is attributed to his FICCI speech in the Modi article and flagged in that article's watch list for verification against the Commerce Ministry release.
+
+No repo code changed; this was content only.
+
 ## 2026-11-19 00:17 — watcher
 
 **Idle** — nothing executable.

@@ -5,6 +5,72 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 19 Nov 2026",
+    "ticker": "ANT:NVDA:GOOGL:AMD:AVGO:MSFT:MU:TSM:CRWV:MP:USAR:MUTHOOTFIN:MANAPPURAM:IIFL:BAJFINANCE:PAYTM:INFY:TCS:HCLTECH",
+    "file": "policy-pulse-global-19-nov-2026.md",
+    "slug": "policy-pulse-global-19-nov-2026",
+    "date": "2026-11-19",
+    "tags": [
+      "policy-pulse",
+      "ai",
+      "ipo",
+      "gold",
+      "apec"
+    ],
+    "summary": "Anthropic priced at USD 83 for USD 107.3 bn and had not printed a trade at 10:32 ET; Shenzhen produced a communiqué and no truce extension; and gold near USD 3,700 is what is moving Indian balance sheets - MUTHOOTFIN and MANAPPURAM face 31-180 day delinquencies up to 1.6%, PAYTM fell 7% on MDR delay reports.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 19 Nov 2026",
+    "ticker": "HFCL:STLTECH:TEJASNET:ITI:DIXON:KAYNES:SYRMA:CGPOWER:BEL:MAZDOCK:COCHINSHIP:COALINDIA:NLCINDIA:ADANIENSOL:MARUTI",
+    "file": "policy-pulse-ministries-19-nov-2026.md",
+    "slug": "policy-pulse-ministries-19-nov-2026",
+    "date": "2026-11-19",
+    "tags": [
+      "policy-pulse",
+      "telecom",
+      "defence",
+      "disinvestment"
+    ],
+    "summary": "Twenty-five letters of intent for telecom manufacturing in Gwalior landed the same day the defence ministry paid Israel Aerospace Rs 1,976 crore to upgrade Barak missiles - HFCL and STLTECH gain from the zone, BEL does not gain from the missile, and COALINDIA collects all of the Rs 8,981 crore Mahanadi offer.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / India — 19 Nov 2026",
+    "ticker": "TATASTEEL:JSWSTEEL:SAIL:HINDALCO:NATIONALUM:VEDL:SUNPHARMA:DRREDDY:CIPLA:LUPIN:KPRMILL:WELSPUNLIV:MARUTI:DIXON:KAYNES:SYRMA:CGPOWER:TITAN:MARICO:DABUR",
+    "file": "policy-pulse-modi-19-nov-2026.md",
+    "slug": "policy-pulse-modi-19-nov-2026",
+    "date": "2026-11-19",
+    "tags": [
+      "policy-pulse",
+      "exports",
+      "manufacturing",
+      "fta"
+    ],
+    "summary": "Modi told India Inc not to treat 140 crore Indians as an assured market and named steel, aluminium and pharma as export openings, but the tape rewarded the buyers of metals not the makers - MARUTI rose 7.6% on cheaper copper while TATASTEEL and HINDALCO barely moved.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 19 Nov 2026",
+    "ticker": "SPCX:CRWV:NVDA:MSFT:GOOGL:AAPL:AMZN:TSLA:BA:OXY:LLY:CMCSA:MCD:HD:NKE:JPM:SCHW:STT:MS:MP:USAR",
+    "file": "policy-pulse-trump-us-19-nov-2026.md",
+    "slug": "policy-pulse-trump-us-19-nov-2026",
+    "date": "2026-11-19",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "leader-trades",
+      "critical-minerals",
+      "trade"
+    ],
+    "summary": "The September disclosure sold Comcast, McDonald's and Home Depot while buying CoreWeave, NVDA and a SpaceX note that is now the listed SPCX; Shenzhen produced a communiqué and no truce extension, leaving MP and USAR where they were on Wednesday.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse — Global — 18 Nov 2026",
     "ticker": "NVDA:AMD:AVGO:TSM:MU:CRWV:NBIS:GOOGL:MSFT:AMZN:MS:GS:INFY:TCS:HCLTECH:WIPRO:SBIN:BSE:ANGELONE",
     "file": "policy-pulse-global-18-nov-2026.md",
