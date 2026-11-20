@@ -1,6 +1,57 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 20 Nov 2026",
+      "ticker": "NVDA:AMD:MU:AVGO:ASML:TSM:ANT:TCS:INFY:HCLTECH:TECHM:HDFCBANK:ICICIBANK:AXISBANK",
+      "file": "policy-pulse-global-20-nov-2026.md",
+      "slug": "policy-pulse-global-20-nov-2026",
+      "date": "2026-11-20",
+      "tags": [
+        "policy-pulse",
+        "ai",
+        "semiconductors",
+        "asia",
+        "fpi"
+      ],
+      "summary": "Taiwan fell 17.5% in a week, its worst since 1990, and NVDA at $138.54 is below every close since June 2025, while TCS and INFY rose 1.30% and HDFCBANK and ICICIBANK absorbed $12bn of November foreign inflows - the AI trade and the India trade are now the same rotation.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 20 Nov 2026",
+      "ticker": "BSE:ANGELONE:MOTILALOFS:IIFL:CDSL:KFINTECH:CAMS:DIXON:KAYNES:CGPOWER:SYRMA:HAL:BEL:MAZDOCK:GRSE:COCHINSHIP:DATAPATTNS:MTARTECH:SOLARINDS:PARAS:ICICIBANK:HDFCBANK:AXISBANK",
+      "file": "policy-pulse-ministries-20-nov-2026.md",
+      "slug": "policy-pulse-ministries-20-nov-2026",
+      "date": "2026-11-20",
+      "tags": [
+        "policy-pulse",
+        "capital-markets",
+        "sebi",
+        "defence",
+        "semiconductors"
+      ],
+      "summary": "A reported 50% cut in cash-market STT is two-sided for BSE and ANGELONE because the derivatives levy that funds it cuts their fattest franchise, while SEBI's ICDR review under Ashish Chauhan is a cleaner positive for listing fees and HAL is the only named-adjacent item out of Tokyo.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 20 Nov 2026",
+      "ticker": "XOM:CVX:OXY:COP:SLB:HAL:DAL:UAL:LUV:AAL:CCL:RCL:NCLH:BA:GE:LMT:VRT:GM:F:STLA",
+      "file": "policy-pulse-trump-us-20-nov-2026.md",
+      "slug": "policy-pulse-trump-us-20-nov-2026",
+      "date": "2026-11-20",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "iran",
+        "trade",
+        "tariffs"
+      ],
+      "summary": "Trump deferred the Iran strike decision to 2027 and Brent fell 4.3% to $88.04, which helps DAL and UAL on fuel and hurts SLB; the same Asia trip produced a named $12bn Boeing and GE order and a $123mn HIMARS sale that LMT will barely notice.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 19 Nov 2026",
       "ticker": "ANT:NVDA:GOOGL:AMD:AVGO:MSFT:MU:TSM:CRWV:MP:USAR:MUTHOOTFIN:MANAPPURAM:IIFL:BAJFINANCE:PAYTM:INFY:TCS:HCLTECH",
       "file": "policy-pulse-global-19-nov-2026.md",

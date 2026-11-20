@@ -73,6 +73,28 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-20 21:15 IST — Hermes (policy-pulse publish)
+
+**Three articles published and verified; Modi deliberately skipped.** Trump/US, Ministries & Regulators and Global for 20 Nov 2026 all return 200, sit in `sitemap.xml` (710 URLs, parses clean), the backend `analyses.json` is copied (350 items), vault-notify restarted, nginx reloaded, and 3 pushes went to 3 devices with 0 failures. Every `/company/` link emitted on the three pages returns 200.
+
+**Why there is no Modi article.** The only PM event on 20 Nov was the First SCO Civilisational Dialogue Forum at Purana Qila (20-22 Nov, Culture + MEA), plus remarks on early identification of disabilities. Both are ceremonial and carry zero stock-level inference, so Rule 1 of the skill forbids an article. The FICCI speech was 19 Nov and had already published. Do not treat the absence as a missed run.
+
+**The Ministries article's spine is deliberately two-sided.** A reported 50% cut in cash-market STT, funded by higher derivatives levies, is *not* an unambiguous positive for exchange stocks: BSE, ANGELONE and MOTILALOFS earn more from the derivatives franchise than from cash, so the levy that pays for the cut costs them more than the cut returns. If a later note calls this a clean positive for BSE, it has read half the Bloomberg report.
+
+**UNVERIFIED**
+- The STT/LTCG package is a *proposal* from unnamed officials reported by Bloomberg on 18 Nov, not policy. The Finance Ministry did not comment. Everything in that section is labelled as a pre-Budget proposal with the February 2027 Budget as the decision point.
+- The India-Japan 2+2 company mappings are inferences. The joint statement and PIB name no company, no factory, no mine and no rupee figure; the article prints the Rule 6 flag inline.
+- The US article's energy read reports a divergence rather than resolving it: XOM/CVX/COP rose while crude fell 4.3% and SLB/HAL fell. That is stated in the article as a bounce inside a bad month.
+- The noon ET White House press conference had not happened when the articles were written. No outcome is claimed anywhere.
+
+**Two source errors caught this run**
+- `hdfcsky.com` served a stale Brent line *inside its own news copy* ("Brent Crude Trades Near $92.58") against the $88.04 futures print. That site is now known to re-crawl in the news path as well as on its `/markets` tiles: use it for per-stock percentages only, never for an index, currency or commodity level.
+- Business Standard's close copy printed "Nifty50 settled 26.30 points or 1.12 per cent higher at 25,800.60" — an arithmetic typo for 286.30, caught against Moneycontrol and Yahoo. Standing check: a published point change must equal level minus prior close.
+
+**ACTION**
+- `SKILL.md` for the policy-pulse tracker was 87,451 bytes, so the full 19 Nov history entry was moved to `references/policy-pulse-history-2026.md` and replaced with a stub; today's entry is inline. The file is now 91,507 bytes and will need the same treatment on the next entry.
+- `public/watchlist.json` is dirty in `git status` (an Indo-MIM IPO entry was added before this run). It is **not** part of this commit — whoever owns that entry should commit it deliberately rather than have it swept into a content publish. The `radar/*` modifications and untracked `radar/notes/*` files are the overnight watcher's, also untouched here.
+
 ## 2026-11-20 00:05 — watcher
 
 **Idle** — nothing executable.
