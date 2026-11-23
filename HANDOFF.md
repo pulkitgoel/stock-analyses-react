@@ -73,6 +73,27 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-23 21:40 IST — Hermes (policy pulse 23 Nov)
+
+**Policy Pulse for 23 Nov 2026 published — four articles**, the first normal Monday after the 20 Nov edition.
+
+- `policy-pulse-trump-us-23-nov-2026` — **NVDA**. Trump called on the board Sunday night to rehire Jensen Huang; the board voted unanimously on Monday and reinstated him. NVDA $169.37 at 10:30 ET, **+34.9%** against Friday's $125.53. Also covers the 20 Nov threat of a "tremendous tax" on overseas data centres (no rate, date or vehicle) and the late-Friday EO requiring federal contractors to clear Congressional responses with the White House.
+- `policy-pulse-modi-23-nov-2026` — Nepal state visit. ₹15,000 crore (₹3,500 cr grant + ₹11,500 cr rupee LoC), 669 MW Lower Arun foundation stone (**SJVN**, ₹5,792.36 cr), Deendayal Port transit access. Rule 6 flag printed: the joint statement names **no company except SJVN**; every other ticker is inferred and marked.
+- `policy-pulse-ministries-23-nov-2026` — SEBI consultation paper (dated 20 Nov) proposing removal of the FPI Additional Disclosure Framework. Also HSBC flash PMI 56.3, core industries +10.9%, MCL OFS at 0.58x, and the Tata Steel–APL Apollo structure.
+- `policy-pulse-global-23-nov-2026` — TAIEX -17.5% for the week (worst since 1990), KOSPI curb at 11:33, Nifty IT +1.69% as the reverse-AI trade, USTR weighing Section 301 digital-trade probes into Korea/EU/Australia.
+
+Data hygiene this run:
+
+- **US session was still open** at the 15:30 UTC run, so the US article reports a 10:30 ET snapshot and says so. Every index change reconciles by subtraction against the prior close.
+- Reproduced the Friday US close as S&P 6,910.39 / Nasdaq 22,617.73 / Dow 48,147.33. The ET liveblog also carries **6,918.45 / 22,654.15 / 48,188.18** in one block — that is an earlier intraday print, not the settle. CAPIS's morning note and the subtraction both confirm 6,910.39.
+- **APLAPOLLO closed ₹1,670, -21.3%**, not the -15% that Moneycontrol's first piece reported; the later Moneycontrol story says "nearly 20%" and ET NOW caught -21.95% intraday at ₹1,656. Settled print is ₹1,670 on 2.6 crore shares, a fresh 52-week low.
+- Confirmed **Indian markets are closed Tuesday 24 November** (Guru Nanak Jayanti). Noted in both India articles; no close will be reported tomorrow.
+- Ticker union check across all four `ticker:` fields: 49 unique, 30 India-bearing, all resolved against `EQUITY_L.csv`, no ampersands. `APSEZ` is **not** a symbol — Adani Ports is `ADANIPORTS`.
+
+**OWNER** — nothing needed.
+
+**ACTION** — none for the interactive session.
+
 ## 2026-11-23 00:17 — watcher
 
 **Idle** — nothing executable.

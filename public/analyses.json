@@ -1,6 +1,79 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 23 Nov 2026",
+      "ticker": "TSM:TCS:INFY:HCLTECH:TECHM:COFORGE:GOOGL:META",
+      "file": "policy-pulse-global-23-nov-2026.md",
+      "slug": "policy-pulse-global-23-nov-2026",
+      "date": "2026-11-23",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "asia",
+        "ai",
+        "korea",
+        "taiwan",
+        "trade"
+      ],
+      "summary": "The TAIEX lost 17.5% in a week, its worst since 1990, and Seoul halted program selling for five minutes on Monday, while Nifty IT rose 1.69% as TCS, INFY, HCLTECH, TECHM and COFORGE took the reverse AI trade and USTR weighed Section 301 digital-trade probes into Korea, the EU and Australia.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 23 Nov 2026",
+      "ticker": "BSE:ANGELONE:MOTILALOFS:IIFL:HDFCBANK:ICICIBANK:AXISBANK:CDSL:KFINTECH:CAMS:COALINDIA:NTPC:POWERGRID:JSWSTEEL:COROMANDEL:APLAPOLLO:TATASTEEL",
+      "file": "policy-pulse-ministries-23-nov-2026.md",
+      "slug": "policy-pulse-ministries-23-nov-2026",
+      "date": "2026-11-23",
+      "tags": [
+        "policy-pulse",
+        "capital-markets",
+        "sebi",
+        "fpi",
+        "steel",
+        "coal"
+      ],
+      "summary": "SEBI's 20 November consultation paper would scrap the FPI Additional Disclosure Framework after ₹5.61 lakh crore of outflows, a flow-positive for BSE, ANGELONE, MOTILALOFS and IIFL, while the Mahanadi Coalfields OFS closed at 0.58 times and APLAPOLLO fell 21.3% on the Tata Steel structure.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / India Govt — 23 Nov 2026",
+      "ticker": "SJVN:POWERGRID:NHPC:IRCON:RITES:LT:ADANIPORTS:CONCOR:ULTRACEMCO",
+      "file": "policy-pulse-modi-23-nov-2026.md",
+      "slug": "policy-pulse-modi-23-nov-2026",
+      "date": "2026-11-23",
+      "tags": [
+        "policy-pulse",
+        "india",
+        "nepal",
+        "hydropower",
+        "connectivity",
+        "infrastructure"
+      ],
+      "summary": "The Nepal state visit produced a ₹15,000 crore assistance package and a named ₹5,792 crore 669 MW Lower Arun project for SJVN, with Nepal's transit trade given a new exit through Deendayal Port at Kandla; every other Indian ticker here is an inference because the joint statement names no company.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 23 Nov 2026",
+      "ticker": "NVDA:AMD:MU:AVGO:TSM:GOOGL:MSFT:AMZN:META:ORCL:EQIX:DLR:LMT:RTX:GD:NOC:HII:BA:GE",
+      "file": "policy-pulse-trump-us-23-nov-2026.md",
+      "slug": "policy-pulse-trump-us-23-nov-2026",
+      "date": "2026-11-23",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "ai",
+        "chips",
+        "data-centers",
+        "trade"
+      ],
+      "summary": "Trump's Sunday night call for Nvidia to rehire Jensen Huang produced a unanimous board vote and a 34.9% surge in NVDA to $169.37, while his unlegislated threat of a 'tremendous tax' on overseas data centres still hangs over GOOGL, MSFT, AMZN, META, ORCL, EQIX and DLR.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 20 Nov 2026",
       "ticker": "NVDA:AMD:MU:AVGO:ASML:TSM:ANT:TCS:INFY:HCLTECH:TECHM:HDFCBANK:ICICIBANK:AXISBANK",
       "file": "policy-pulse-global-20-nov-2026.md",
