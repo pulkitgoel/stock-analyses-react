@@ -1,6 +1,59 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 24 Nov 2026",
+      "ticker": "TSM:AMD:AVGO:TCS:INFY:HCLTECH:WELSPUNLIV:TRIDENT:KPRMILL:SRF:BHARATFORG:DIXON",
+      "file": "policy-pulse-global-24-nov-2026.md",
+      "slug": "policy-pulse-global-24-nov-2026",
+      "date": "2026-11-24",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "asia",
+        "tariffs",
+        "ai"
+      ],
+      "summary": "Seoul closed up 6.32% and Taipei 8.99% in a one-session catch-up that was already unwinding by the New York open as TSM fell 5.1%, AMD 9.5% and NVDA 7.4%, while the pending 16-economy overcapacity list puts India in the higher-rate tier that has blocked the India-US trade deal, a goods duty that leaves TCS, INFY and HCLTECH untouched and lands on WELSPUNLIV, TRIDENT, KPRMILL and SRF.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 24 Nov 2026",
+      "ticker": "ANGELONE:MOTILALOFS:BSE:CDSL:KFINTECH:CAMS:HDFCBANK:ICICIBANK:AXISBANK:KOTAKBANK:SBIN:BAJFINANCE:CHOLAFIN:LICHSGFIN:PFC:RECLTD:TORNTPOWER:DLF:GODREJPROP",
+      "file": "policy-pulse-ministries-24-nov-2026.md",
+      "slug": "policy-pulse-ministries-24-nov-2026",
+      "date": "2026-11-24",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "ipo",
+        "rbi",
+        "capital-markets",
+        "banks"
+      ],
+      "summary": "SEBI's 23 November advisory ends publication of grey-market premium for IPOs three days after the Mahanadi Coalfields OFS closed at 0.58 times with retail at 0.34 times, while companies queue Rs 25,000 crore of bonds before the 4 December MPC where SBI is arguing for 25 basis points against a 50 basis point lobby.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 24 Nov 2026",
+      "ticker": "WMT:TGT:COST:HD:LOW:NKE:DLTR:NVDA:MSTR:COIN:HOOD:MARA:XOM:CVX:OXY:DAL:UAL:LMT:RTX:PLTR",
+      "file": "policy-pulse-trump-us-24-nov-2026.md",
+      "slug": "policy-pulse-trump-us-24-nov-2026",
+      "date": "2026-11-24",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "crypto",
+        "trade",
+        "ai"
+      ],
+      "summary": "USTR is preparing a 16-economy Section 301 overcapacity determination that would put India and Vietnam above the 15% ceiling offered to the EU, Japan and Korea, while Bitcoin's slide below $60,000 left MSTR worth less than the coins it owns and NVDA gave back 7.4% of Monday's 31%.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 23 Nov 2026",
       "ticker": "TSM:TCS:INFY:HCLTECH:TECHM:COFORGE:GOOGL:META",
       "file": "policy-pulse-global-23-nov-2026.md",

@@ -73,6 +73,26 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-24 21:00 IST — Hermes (policy pulse 24 Nov)
+
+**Policy Pulse for 24 Nov 2026 published — three articles.** Modi skipped: the only PM item today was a telephone call with Germany's Chancellor Merz, which is ceremonial and names no company. Rule 1 says a section with zero stock inference does not get an article.
+
+- `policy-pulse-trump-us-24-nov-2026` — **USTR's 16-economy Section 301 structural-excess-capacity determination**, per WSJ on 24 Nov: could publish as soon as this week; ~$2.4trn of US goods imports (70%+ of the total); Japan/Korea/EU at ≤15%, **India and Vietnam higher**, China highest; steel/aluminium/autos carved out under 232; stacks on the July forced-labour duties; an escalator clause is reportedly being drafted. **Not yet published** — USTR's press index still shows nothing newer than 19 Nov and USTR declined comment, so the article calls it a leak, not an instrument. Second leg: Bitcoin back below $60,000 with record November ETF outflows ($4.71bn) and **MSTR now worth less than its 851,305 coins** ($35.7bn mcap vs ~$51.3bn at $75,446 average cost). Third: the September disclosure — 103 Nvidia trades worth $27M–$97.5M in the second term, $1.3M–$15M gained on Monday's rally. Fourth: Trump told Fox News strikes on Iran can resume after the New Year, moving the war premium out of the quarter.
+- `policy-pulse-ministries-24-nov-2026` — **SEBI's 23 Nov advisory ending GMP publication** for IPOs, three days after the Mahanadi Coalfields OFS closed at **0.58x** (QIB 1.45x, NII 0.29x, retail 0.34x, GMP ₹0.45 from ₹3.65). Plus the 4 Dec MPC setup (repo 5.50%, Oct CPI 6.09%, SBI arguing 25bp against a 50bp lobby), the **₹25,000 crore bond rush** this week across PFC/SIDBI/LIC Housing/Torrent Power/Jio Credit, and 15 straight sessions of FII buying above ₹1.3 lakh crore in November.
+- `policy-pulse-global-24-nov-2026` — Asia's one-session catch-up that was already unwinding at the New York open: KOSPI **+6.32%** to 5,006.03, TAIEX **+8.99%** to 40,122.35, Nikkei +3.91%, while Hong Kong fell and Shanghai was flat. India/Vietnam in the higher-rate tier is the binding constraint on the BTA — Agrawal's 18 Nov line that nothing gets signed until the architecture exists. The useful distinction: a goods duty cannot reach IT services, so TCS/INFY/HCLTECH are structurally outside it, and the exposure sits in textiles, chemicals, auto components and electronics.
+
+Data hygiene this run:
+
+- **Indian markets were closed** today (Guru Nanak Jayanti, four sources including Business Standard and Zerodha). Neither India article reports a close; both use Monday's settled Sensex 82,435.99 / Nifty 25,349.65 and say so.
+- **US session still open** at the 15:30 UTC run, so the US article is a ~10:30 ET snapshot with every change reconciling by subtraction against Monday's close (S&P 7,237.17, Nasdaq 24,089.56, Dow 49,595.31). Yahoo's `chartPreviousClose` was wrong again on the 1d range for NVDA (155.46) and for the index futures; the subtraction is the only reliable check.
+- Asian closes are settled prints off Yahoo (`regularMarketPrice` after the session), each reconciled against its prior close.
+- Discarded: `goalfore.com` re-dated the Buxar plant inauguration to 24 Nov; PIB/DD News put it inside the 21 Nov Bihar package. The GRSE 'Ashank' delivery was 23 Nov, already in yesterday's edition.
+- Ticker union check across all three `ticker:` fields: 50 unique, 28 India-bearing, all resolved against `EQUITY_L.csv`, no ampersands.
+
+**OWNER** — nothing needed.
+
+**ACTION** — none for the interactive session.
+
 ## 2026-11-24 00:08 — watcher
 
 **Idle** — nothing executable.
