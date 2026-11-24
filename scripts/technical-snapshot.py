@@ -60,13 +60,19 @@ def ema(values: list[float], span: int) -> list[float]:
 
 
 def rsi(values: list[float], period: int = 14) -> float:
+    """Wilder-smoothed RSI, the same method TradingView and NSE use."""
     gains, losses = [], []
     for i in range(1, len(values)):
         change = values[i] - values[i - 1]
         gains.append(max(change, 0))
         losses.append(max(-change, 0))
-    avg_gain = sum(gains[-period:]) / period
-    avg_loss = sum(losses[-period:]) / period
+    if len(gains) < period:
+        return 50.0
+    avg_gain = sum(gains[:period]) / period
+    avg_loss = sum(losses[:period]) / period
+    for i in range(period, len(gains)):
+        avg_gain = (avg_gain * (period - 1) + gains[i]) / period
+        avg_loss = (avg_loss * (period - 1) + losses[i]) / period
     if avg_loss == 0:
         return 100.0
     return 100 - (100 / (1 + avg_gain / avg_loss))
@@ -106,16 +112,65 @@ def adx(closes: list[float], period: int = 14) -> float:
     return 100 * abs(plus - minus) / total if total else 0.0
 
 
+MCP_URL = "https://mcp.nseindia.in/bhavcopy/cm/mcp"
+MCP_HEADERS = {"Content-Type": "application/json",
+               "Accept": "application/json, text/event-stream"}
+
+
+def mcp_call(tool: str, arguments: dict) -> dict:
+    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                       "params": {"name": tool, "arguments": arguments}}).encode()
+    request = urllib.request.Request(MCP_URL, data=body, headers=MCP_HEADERS)
+    with urllib.request.urlopen(request, timeout=45) as response:
+        payload = json.loads(response.read())
+    text = (payload.get("result", {}).get("content") or [{}])[0].get("text", "")
+    return json.loads(text)
+
+
+def mcp_sessions(symbol: str, days: int) -> list[tuple[str, float, float]]:
+    """Daily closes straight from the exchange MCP, paginated 3 months at a time."""
+    months = max(3, int(days / 21) + 2)
+    collected: list[dict] = []
+    end_date, remaining = "today", months
+    while remaining > 0:
+        chunk = min(3, remaining)
+        payload = mcp_call("get_stock_history",
+                           {"symbol": symbol.upper(), "months": chunk, "endDate": end_date})
+        collected.extend(payload.get("data", []))
+        next_end = payload.get("next_end_date")
+        if not next_end:
+            break
+        end_date = next_end
+        remaining -= chunk
+
+    seen, out = set(), []
+    for bar in sorted(collected, key=lambda b: b["date"]):
+        if bar["date"] in seen:
+            continue
+        seen.add(bar["date"])
+        out.append((bar["date"], float(bar["close"]), float(bar["volume"])))
+    return out[-days:]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("symbol")
     ap.add_argument("--days", type=int, default=260)
     args = ap.parse_args()
 
-    today = datetime.utcnow()
-    dates = [(today - timedelta(days=d)).strftime("%Y-%m-%d") for d in range(args.days + 40)]
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        hits = [r for r in pool.map(lambda d: close_for(d, args.symbol), dates) if r]
+    hits: list[tuple[str, float, float]] = []
+    try:
+        hits = mcp_sessions(args.symbol, args.days)
+        print(f"technical: {len(hits)} sessions from NSE MCP", file=sys.stderr)
+    except Exception as exc:
+        print(f"technical: MCP unavailable ({exc}); using bhavcopy archives", file=sys.stderr)
+
+    if len(hits) < 60:
+        hits = []
+        today = datetime.utcnow()
+        dates = [(today - timedelta(days=d)).strftime("%Y-%m-%d") for d in range(args.days + 40)]
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            hits = [r for r in pool.map(lambda d: close_for(d, args.symbol), dates) if r]
     hits.sort()
     if len(hits) < 60:
         sys.exit(f"technical: only {len(hits)} sessions found")
