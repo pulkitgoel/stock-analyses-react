@@ -1,6 +1,80 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 25 Nov 2026",
+      "ticker": "TSM:AVGO:ANT:SUNPHARMA:TATASTEEL:JSWSTEEL:WAAREEENER:PREMIERENE:DIXON:TCS:INFY:TATAPOWER",
+      "file": "policy-pulse-global-25-nov-2026.md",
+      "slug": "policy-pulse-global-25-nov-2026",
+      "date": "2026-11-25",
+      "tags": [
+        "policy-pulse",
+        "global",
+        "asia",
+        "semiconductors",
+        "tariffs",
+        "ai",
+        "india"
+      ],
+      "summary": "KOSPI fell 6.16% to 4,697.51 and gave back all of Monday's 7.5% rally while TSM dropped 6.8% and Anthropic closed at $79.58 below its $83 IPO price, and India's 25% tariff band landed three hours after the Sensex had already closed 1.82% higher.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 25 Nov 2026",
+      "ticker": "HDFCLIFE:POLICYBZR:SBILIFE:STARHEALTH:LICI:ICICIGI:BSE:ANGELONE:MCX:CAMS:KFINTECH:CDSL:HDFCAMC:NAM-INDIA",
+      "file": "policy-pulse-ministries-25-nov-2026.md",
+      "slug": "policy-pulse-ministries-25-nov-2026",
+      "date": "2026-11-25",
+      "tags": [
+        "policy-pulse",
+        "irdai",
+        "sebi",
+        "insurance",
+        "capital-markets",
+        "regulation"
+      ],
+      "summary": "IRDAI's expert committee on commission caps met its first trading session with HDFC Life up 4.58% and PB Fintech 3.19% against intraday gains of 6.5% and 8%, while SEBI kept BSE 200 and Nifty CPSE on its significant-indices list despite both failing the Rs 20,000 crore AUM test.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / Cabinet — 25 Nov 2026",
+      "ticker": "ACE:BEML:ESCORTS:CUMMINSIND:ELECON:SANGHVIMOV",
+      "file": "policy-pulse-modi-25-nov-2026.md",
+      "slug": "policy-pulse-modi-25-nov-2026",
+      "date": "2026-11-25",
+      "tags": [
+        "policy-pulse",
+        "pli",
+        "capital-goods",
+        "manufacturing",
+        "cabinet",
+        "infrastructure"
+      ],
+      "summary": "The Cabinet approved Rs 11,000 crore for construction equipment manufacturing, but the incentive window opens only in FY29, so ACE ended up 0.24% and BEML 1.65% while the Sensex rose 1.82% — the scheme is a capacity signal, not an FY27 earnings event.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 25 Nov 2026",
+      "ticker": "NVDA:AMD:MU:AVGO:TSM:ORCL:ANT:PLTR:CAT:WMT:TGT:COST:HD:LOW:NKE:DLTR:XOM:CVX:MRK:LLY:DAL:UAL:CCL:COIN:MSTR:HOOD:JPM:AMBA",
+      "file": "policy-pulse-trump-us-25-nov-2026.md",
+      "slug": "policy-pulse-trump-us-25-nov-2026",
+      "date": "2026-11-25",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "trade",
+        "pce",
+        "fed",
+        "ai"
+      ],
+      "summary": "USTR published Section 301 determinations against 14 economies with rates up to 40% on China and 25% on India, but the market sold NVDA to $143.35 and the S&P 500 to 7,012 after core PCE printed 3.3% against 3.2% expected with a December hike almost fully priced.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 24 Nov 2026",
       "ticker": "TSM:AMD:AVGO:TCS:INFY:HCLTECH:WELSPUNLIV:TRIDENT:KPRMILL:SRF:BHARATFORG:DIXON",
       "file": "policy-pulse-global-24-nov-2026.md",

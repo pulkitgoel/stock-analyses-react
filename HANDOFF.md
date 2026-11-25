@@ -73,6 +73,56 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-25 21:10 IST — Hermes (policy pulse 25 Nov)
+
+**Daily policy run, four articles published and verified 200. The Section 301 determination that the 24 November entry logged as a leak was published by USTR today.**
+
+Daily policy run, four articles. The Section 301 determination that the skill's 24 November entry
+logged as a leak was published today by USTR, so this run is the first to carry actual rates rather
+than a reported range.
+
+- `policy-pulse-trump-us-25-nov-2026` — USTR Section 301 determinations against 14 economies
+  (Mexico and Norway excluded). Proposed: up to 40% China, 35% Vietnam, 25% Cambodia / Indonesia /
+  Korea / Malaysia / Taiwan / Thailand / India, 20% Bangladesh / EU / Japan / Switzerland / Singapore.
+  Caps honoured at 15% net of MFN for Korea, Taiwan, EU, Japan, Switzerland; China at 20% stacked.
+  Semiconductors, pharmaceuticals, energy and non-US-growable food excluded; no stacking on 232 or
+  the forced-labour duties. Comments 5 Jan 2027, hearings 25 Jan, effect "January at the earliest."
+  Anchor is that the tape did NOT trade the tariff: core PCE 3.3% vs 3.2% expected, 10-year -8.2bp to
+  4.822%, S&P 500 -2.62% to 7,012.20 at 10:30 ET, NVDA -7.7% to $143.35.
+- `policy-pulse-modi-25-nov-2026` — Cabinet approved the Rs 11,000 crore CIE Manufacturing Ecosystem
+  scheme. The tradeable detail is the calendar: FY27-FY28 gestation, incentives FY29-FY33 at a 13% to
+  8% graded rate, settlement FY34. Nothing touches FY27 or FY28 earnings, and the sector traded that
+  way (ACE +0.24%, BEML +1.65%, ESCORTS -0.52%). Also Doloo/Silchar airport Rs 2,014 crore (AAI,
+  no listed beneficiary — stated rather than forced) and two Department of Posts schemes.
+- `policy-pulse-ministries-25-nov-2026` — IRDAI's six-member Indu Bhushan committee was constituted
+  23 Nov, after the 24 Nov holiday, so today was its first trading session: HDFCLIFE +4.58% against a
+  6.5% intraday high, POLICYBZR +3.19% against 8%, SBILIFE +1.05% against 5.3%. Report due 31 Dec.
+  Also SEBI's significant-indices review retaining BSE 200 and Nifty CPSE despite the Rs 20,000 crore
+  AUM miss, the KYC Master Circular amendment effective 24 Dec, and Pandey's AI-sandbox remarks.
+- `policy-pulse-global-25-nov-2026` — the Asia round trip: KOSPI 4,697.51 (-6.16%) is now below
+  Monday's 4,708.54, so the +7.5% bounce is fully repaid; TAIEX -4.80%, Nikkei -2.78%, SoftBank -15%,
+  ANT closed $79.58 below its $83 offer on day five. India read: 25% proposed, 17% with an ART, and
+  USTR published at 6:41 p.m. IST — three hours AFTER the Indian close, so the Sensex's +1.82% did
+  not price it.
+
+Process notes for the next run:
+
+- The USTR press release URL pattern that worked:
+  `ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-makes-determinations-and-proposes-actions-14-section-301-investigations-relating-structural`.
+  Per-country maxima came from FXStreet/Reuters; USTR's own release gives India as "up to 25 percent,
+  net of existing Section 301 tariffs, with exemptions" and "17 percent" with an ART. Note "net of
+  existing Section 301" — the total Section 301 burden lands at 25%, it is not 10% plus 25%.
+- Sequencing check worth repeating: an Indian close at 15:30 IST is 10:00 UTC, and a US 8:11 a.m. ET
+  release is 13:11 UTC. Anything published from Washington in the morning lands after India has shut.
+  Say so rather than implying the Indian market absorbed it.
+- PCE for October is OUT (headline 3.8% y/y in line, core 3.3% y/y vs 3.2% expected). The next CPI is
+  10 December, two days after the 8-9 December FOMC.
+- Ticker pre-flight ran on the union of all four frontmatter fields: 30 India-bearing symbols, all
+  resolved against `EQUITY_L.csv`, no ampersand, no duplicates. `CCL` is the documented benign
+  collision (Carnival in the US article, CCL Products in the NSE file).
+- No enforcement event surfaced against any name in today's tables in this run's checks; the only
+  SEBI news of the week is the GMP advisory (23 Nov, covered in the 24 Nov edition).
+
 ## 2026-11-25 00:12 — watcher
 
 **Idle** — nothing executable.

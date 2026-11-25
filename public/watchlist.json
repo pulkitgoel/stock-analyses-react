@@ -1,6 +1,27 @@
 {
   "watchlist": [
     {
+      "slug": "indo-mim-ltd-ipo-analysis",
+      "ticker": "INDO-MIM",
+      "title": "Indo-MIM Ltd — IPO Analysis",
+      "date": "2026-11-16",
+      "yahooSymbol": "INDO-MIM.NS",
+      "priceAtAnalysis": 1243.2,
+      "support": 1100,
+      "resistance": 1374,
+      "supports": [
+        1100,
+        1000,
+        900
+      ],
+      "resistances": [
+        1374,
+        1450,
+        1550
+      ],
+      "verdict": "PARTIAL PROFIT / WAIT FOR NEW MONEY"
+    },
+    {
       "slug": "sky-gold-q2-fy27-earnings-guidance",
       "ticker": "SKYGOLD",
       "title": "Sky Gold Q2 FY27: What the Earnings Said and What the Guidance Is Worth",

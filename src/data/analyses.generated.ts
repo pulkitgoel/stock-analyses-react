@@ -5,6 +5,206 @@ import type { Analysis } from '../types/analysis';
 
 export const ANALYSES: Analysis[] = [
   {
+    "title": "Policy Pulse — Global — 25 Nov 2026",
+    "ticker": "TSM:AVGO:ANT:SUNPHARMA:TATASTEEL:JSWSTEEL:WAAREEENER:PREMIERENE:DIXON:TCS:INFY:TATAPOWER",
+    "file": "policy-pulse-global-25-nov-2026.md",
+    "slug": "policy-pulse-global-25-nov-2026",
+    "date": "2026-11-25",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "asia",
+      "semiconductors",
+      "tariffs",
+      "ai",
+      "india"
+    ],
+    "summary": "KOSPI fell 6.16% to 4,697.51 and gave back all of Monday's 7.5% rally while TSM dropped 6.8% and Anthropic closed at $79.58 below its $83 IPO price, and India's 25% tariff band landed three hours after the Sensex had already closed 1.82% higher.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 25 Nov 2026",
+    "ticker": "HDFCLIFE:POLICYBZR:SBILIFE:STARHEALTH:LICI:ICICIGI:BSE:ANGELONE:MCX:CAMS:KFINTECH:CDSL:HDFCAMC:NAM-INDIA",
+    "file": "policy-pulse-ministries-25-nov-2026.md",
+    "slug": "policy-pulse-ministries-25-nov-2026",
+    "date": "2026-11-25",
+    "tags": [
+      "policy-pulse",
+      "irdai",
+      "sebi",
+      "insurance",
+      "capital-markets",
+      "regulation"
+    ],
+    "summary": "IRDAI's expert committee on commission caps met its first trading session with HDFC Life up 4.58% and PB Fintech 3.19% against intraday gains of 6.5% and 8%, while SEBI kept BSE 200 and Nifty CPSE on its significant-indices list despite both failing the Rs 20,000 crore AUM test.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / Cabinet — 25 Nov 2026",
+    "ticker": "ACE:BEML:ESCORTS:CUMMINSIND:ELECON:SANGHVIMOV",
+    "file": "policy-pulse-modi-25-nov-2026.md",
+    "slug": "policy-pulse-modi-25-nov-2026",
+    "date": "2026-11-25",
+    "tags": [
+      "policy-pulse",
+      "pli",
+      "capital-goods",
+      "manufacturing",
+      "cabinet",
+      "infrastructure"
+    ],
+    "summary": "The Cabinet approved Rs 11,000 crore for construction equipment manufacturing, but the incentive window opens only in FY29, so ACE ended up 0.24% and BEML 1.65% while the Sensex rose 1.82% — the scheme is a capacity signal, not an FY27 earnings event.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 25 Nov 2026",
+    "ticker": "NVDA:AMD:MU:AVGO:TSM:ORCL:ANT:PLTR:CAT:WMT:TGT:COST:HD:LOW:NKE:DLTR:XOM:CVX:MRK:LLY:DAL:UAL:CCL:COIN:MSTR:HOOD:JPM:AMBA",
+    "file": "policy-pulse-trump-us-25-nov-2026.md",
+    "slug": "policy-pulse-trump-us-25-nov-2026",
+    "date": "2026-11-25",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "tariffs",
+      "trade",
+      "pce",
+      "fed",
+      "ai"
+    ],
+    "summary": "USTR published Section 301 determinations against 14 economies with rates up to 40% on China and 25% on India, but the market sold NVDA to $143.35 and the S&P 500 to 7,012 after core PCE printed 3.3% against 3.2% expected with a December hike almost fully priced.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Global — 24 Nov 2026",
+    "ticker": "TSM:AMD:AVGO:TCS:INFY:HCLTECH:WELSPUNLIV:TRIDENT:KPRMILL:SRF:BHARATFORG:DIXON",
+    "file": "policy-pulse-global-24-nov-2026.md",
+    "slug": "policy-pulse-global-24-nov-2026",
+    "date": "2026-11-24",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "asia",
+      "tariffs",
+      "ai"
+    ],
+    "summary": "Seoul closed up 6.32% and Taipei 8.99% in a one-session catch-up that was already unwinding by the New York open as TSM fell 5.1%, AMD 9.5% and NVDA 7.4%, while the pending 16-economy overcapacity list puts India in the higher-rate tier that has blocked the India-US trade deal, a goods duty that leaves TCS, INFY and HCLTECH untouched and lands on WELSPUNLIV, TRIDENT, KPRMILL and SRF.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 24 Nov 2026",
+    "ticker": "ANGELONE:MOTILALOFS:BSE:CDSL:KFINTECH:CAMS:HDFCBANK:ICICIBANK:AXISBANK:KOTAKBANK:SBIN:BAJFINANCE:CHOLAFIN:LICHSGFIN:PFC:RECLTD:TORNTPOWER:DLF:GODREJPROP",
+    "file": "policy-pulse-ministries-24-nov-2026.md",
+    "slug": "policy-pulse-ministries-24-nov-2026",
+    "date": "2026-11-24",
+    "tags": [
+      "policy-pulse",
+      "sebi",
+      "ipo",
+      "rbi",
+      "capital-markets",
+      "banks"
+    ],
+    "summary": "SEBI's 23 November advisory ends publication of grey-market premium for IPOs three days after the Mahanadi Coalfields OFS closed at 0.58 times with retail at 0.34 times, while companies queue Rs 25,000 crore of bonds before the 4 December MPC where SBI is arguing for 25 basis points against a 50 basis point lobby.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 24 Nov 2026",
+    "ticker": "WMT:TGT:COST:HD:LOW:NKE:DLTR:NVDA:MSTR:COIN:HOOD:MARA:XOM:CVX:OXY:DAL:UAL:LMT:RTX:PLTR",
+    "file": "policy-pulse-trump-us-24-nov-2026.md",
+    "slug": "policy-pulse-trump-us-24-nov-2026",
+    "date": "2026-11-24",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "tariffs",
+      "crypto",
+      "trade",
+      "ai"
+    ],
+    "summary": "USTR is preparing a 16-economy Section 301 overcapacity determination that would put India and Vietnam above the 15% ceiling offered to the EU, Japan and Korea, while Bitcoin's slide below $60,000 left MSTR worth less than the coins it owns and NVDA gave back 7.4% of Monday's 31%.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Global — 23 Nov 2026",
+    "ticker": "TSM:TCS:INFY:HCLTECH:TECHM:COFORGE:GOOGL:META",
+    "file": "policy-pulse-global-23-nov-2026.md",
+    "slug": "policy-pulse-global-23-nov-2026",
+    "date": "2026-11-23",
+    "tags": [
+      "policy-pulse",
+      "global",
+      "asia",
+      "ai",
+      "korea",
+      "taiwan",
+      "trade"
+    ],
+    "summary": "The TAIEX lost 17.5% in a week, its worst since 1990, and Seoul halted program selling for five minutes on Monday, while Nifty IT rose 1.69% as TCS, INFY, HCLTECH, TECHM and COFORGE took the reverse AI trade and USTR weighed Section 301 digital-trade probes into Korea, the EU and Australia.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Ministries & Regulators — 23 Nov 2026",
+    "ticker": "BSE:ANGELONE:MOTILALOFS:IIFL:HDFCBANK:ICICIBANK:AXISBANK:CDSL:KFINTECH:CAMS:COALINDIA:NTPC:POWERGRID:JSWSTEEL:COROMANDEL:APLAPOLLO:TATASTEEL",
+    "file": "policy-pulse-ministries-23-nov-2026.md",
+    "slug": "policy-pulse-ministries-23-nov-2026",
+    "date": "2026-11-23",
+    "tags": [
+      "policy-pulse",
+      "capital-markets",
+      "sebi",
+      "fpi",
+      "steel",
+      "coal"
+    ],
+    "summary": "SEBI's 20 November consultation paper would scrap the FPI Additional Disclosure Framework after ₹5.61 lakh crore of outflows, a flow-positive for BSE, ANGELONE, MOTILALOFS and IIFL, while the Mahanadi Coalfields OFS closed at 0.58 times and APLAPOLLO fell 21.3% on the Tata Steel structure.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Modi / India Govt — 23 Nov 2026",
+    "ticker": "SJVN:POWERGRID:NHPC:IRCON:RITES:LT:ADANIPORTS:CONCOR:ULTRACEMCO",
+    "file": "policy-pulse-modi-23-nov-2026.md",
+    "slug": "policy-pulse-modi-23-nov-2026",
+    "date": "2026-11-23",
+    "tags": [
+      "policy-pulse",
+      "india",
+      "nepal",
+      "hydropower",
+      "connectivity",
+      "infrastructure"
+    ],
+    "summary": "The Nepal state visit produced a ₹15,000 crore assistance package and a named ₹5,792 crore 669 MW Lower Arun project for SJVN, with Nepal's transit trade given a new exit through Deendayal Port at Kandla; every other Indian ticker here is an inference because the joint statement names no company.",
+    "market": "india",
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "title": "Policy Pulse — Trump / US — 23 Nov 2026",
+    "ticker": "NVDA:AMD:MU:AVGO:TSM:GOOGL:MSFT:AMZN:META:ORCL:EQIX:DLR:LMT:RTX:GD:NOC:HII:BA:GE",
+    "file": "policy-pulse-trump-us-23-nov-2026.md",
+    "slug": "policy-pulse-trump-us-23-nov-2026",
+    "date": "2026-11-23",
+    "tags": [
+      "policy-pulse",
+      "us-only",
+      "ai",
+      "chips",
+      "data-centers",
+      "trade"
+    ],
+    "summary": "Trump's Sunday night call for Nvidia to rehire Jensen Huang produced a unanimous board vote and a 34.9% surge in NVDA to $169.37, while his unlegislated threat of a 'tremendous tax' on overseas data centres still hangs over GOOGL, MSFT, AMZN, META, ORCL, EQIX and DLR.",
+    "market": "global",
+    "model": "deepseek-v4-flash"
+  },
+  {
     "title": "Policy Pulse — Global — 20 Nov 2026",
     "ticker": "NVDA:AMD:MU:AVGO:ASML:TSM:ANT:TCS:INFY:HCLTECH:TECHM:HDFCBANK:ICICIBANK:AXISBANK",
     "file": "policy-pulse-global-20-nov-2026.md",
