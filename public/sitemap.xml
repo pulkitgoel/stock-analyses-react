@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://stocksfundamentals.online/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/about</loc>
@@ -18,6 +18,22 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/privacy</loc>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-global-26-nov-2026</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-ministries-26-nov-2026</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-modi-26-nov-2026</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://stocksfundamentals.online/analysis/policy-pulse-trump-us-26-nov-2026</loc>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analysis/policy-pulse-global-25-nov-2026</loc>
@@ -1481,7 +1497,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/ace</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/adaniports</loc>
@@ -1497,7 +1513,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/amd</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/amzn</loc>
@@ -1537,7 +1553,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/avgo</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/axisbank</loc>
@@ -1549,7 +1565,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/ba</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/bac</loc>
@@ -1581,7 +1597,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/beml</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/bharatforg</loc>
@@ -1597,7 +1613,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/cams</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/cat</loc>
@@ -1645,7 +1661,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/coin</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/cop</loc>
@@ -1697,7 +1713,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/djt</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/dlf</loc>
@@ -1793,11 +1809,11 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hcltech</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hd</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hdfcamc</loc>
@@ -1805,7 +1821,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hdfcbank</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hginfra</loc>
@@ -1837,7 +1853,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hood</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/hwm</loc>
@@ -1869,7 +1885,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/infy</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/intc</loc>
@@ -1929,7 +1945,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/kfintech</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/knrcon</loc>
@@ -1969,7 +1985,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/lmt</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/lng</loc>
@@ -2005,7 +2021,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/mcx</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/meta</loc>
@@ -2049,7 +2065,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/mstr</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/mtar</loc>
@@ -2061,7 +2077,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/mu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/muthootfin</loc>
@@ -2113,7 +2129,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/nvda</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/oil</loc>
@@ -2157,7 +2173,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/pltr</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/pnb</loc>
@@ -2209,7 +2225,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/sanghvimov</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/save</loc>
@@ -2225,7 +2241,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/sbin</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/shaktipump</loc>
@@ -2261,7 +2277,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/spcx</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/spicejet</loc>
@@ -2305,7 +2321,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/tcs</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/tdg</loc>
@@ -2313,7 +2329,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/techm</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/technoe</loc>
@@ -2413,7 +2429,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/wipro</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/company/wmt</loc>
@@ -2445,7 +2461,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/capital-markets</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/critical-minerals</loc>
@@ -2457,7 +2473,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/crypto</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/deep-dive</loc>
@@ -2497,11 +2513,11 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/infrastructure</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/ipo</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/iran</loc>
@@ -2509,7 +2525,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/leader-trades</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/ministries</loc>
@@ -2529,15 +2545,15 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/policy-pulse</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/rbi</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/sebi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/semiconductor</loc>
@@ -2545,7 +2561,7 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/semiconductors</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/solar</loc>
@@ -2557,11 +2573,11 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/tariffs</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/trade</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/trump</loc>
@@ -2569,334 +2585,334 @@
   </url>
   <url>
     <loc>https://stocksfundamentals.online/tag/us-only</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/1</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/2</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/3</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/4</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/5</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/6</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/7</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/8</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/9</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/10</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/11</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/12</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/13</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/14</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/15</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/16</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/17</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/18</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/19</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/20</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/21</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/22</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/23</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/24</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/25</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/26</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/27</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/28</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/29</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/30</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/31</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/32</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/33</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/34</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/35</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/36</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/37</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/38</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/39</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/40</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/analyses/page/41</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/2</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/3</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/4</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/5</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/6</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/7</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/8</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/9</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/10</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/11</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/12</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/13</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/14</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/15</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/16</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/17</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/18</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/19</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/20</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/21</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/india/page/22</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/2</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/3</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/4</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/5</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/6</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/7</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/8</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/9</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/10</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/11</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/12</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/13</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/14</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/15</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/16</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/17</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/18</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://stocksfundamentals.online/global/page/19</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
 </urlset>

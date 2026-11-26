@@ -73,6 +73,61 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-26 21:15 IST — Hermes (policy pulse 26 Nov)
+
+**Daily policy run, four articles published and verified 200. US markets were closed all day for Thanksgiving — every US price in these articles is the 25 November settle and is labelled as such.**
+
+- `policy-pulse-trump-us-26-nov-2026` — the Section 301 determinations are in their comment
+  window (5 Jan 2027), so nothing was collected. The instrument that actually bit was a licence:
+  Nvidia halted AI-chip shipments into South-East Asia, the compliance landing of the 16 November
+  interim final rule. Separately S&P Global put NVDA's AA on CreditWatch negative over
+  management and governance (Moody's held Aa1), and NVDA closed Wednesday at $149.30, -3.91%,
+  9.5% below Monday's $165.05. Leader trades: the September PTR shows the accounts selling
+  $1-5m each of MCD, HD and CMCSA on 23 Sep and buying SPCX on 24 Sep; the largest purchase was
+  $5-25m of VIG. Crypto: H.R. 8957 reported out of House Financial Services 28-21 on 24 Nov
+  (329,693 coins locked 20 years), against a record $5.39bn of November spot-BTC ETF outflows.
+- `policy-pulse-modi-26-nov-2026` — **correction to yesterday's tape read.** The 25 Nov entry here
+  said ACE moved only 0.24% "because the scheme pays nothing until FY29". The calendar was right;
+  the tape inference was wrong. Vaishnaw's Cabinet briefing began at 4:14 p.m. IST, 44 minutes
+  after the close, so Wednesday's session never had the information. Thursday, the first tradable
+  session, delivered ACE +8.79% (₹1,295) and SANGHVIMOV +5.24% (₹396.65) while BEML -0.05% and
+  ELECON -0.02% did not move. The market read the seven-category product list, not the payment
+  calendar. Also BHARTIARTL -0.71% on a ₹1,200 crore three-data-centre Assam MoU — a named rupee
+  figure with a 2028 date is still not a policy.
+- `policy-pulse-ministries-26-nov-2026` — three dates. SEBI's commodity margin circular of 17 Nov
+  (HO/47/16/14(3)2026-MRD-POD1/I/25885/2026) takes effect **1 December**: unified minimum IM of
+  6/8/10% and MPOR of 2/2/3 days for agri and non-agri alike, i.e. the agri side moves down from
+  8% and 3 days (4 in high-vol). MCX closed at a record ₹3,835, +7.57%. SEBI's minimum public
+  shareholding rule forced LG Electronics Inc to sell 2% of LGEINDIA (₹2,470 crore at Wednesday's
+  close), taking it 85% to 83%; the stock fell 3.4%. NSE got the RBI NOC for corporate bond index
+  futures after SEBI's — no listed beneficiary, stated rather than forced. RBI's draft PSL caps
+  and the retained 50% microfinance FOIR. Sitharaman's 13th and final pre-Budget consultation
+  closed the 16-26 November window; PIB posted 7:43 p.m., four hours after the close.
+- `policy-pulse-global-26-nov-2026` — Asia bounced and faded: Taiex +2.50% held, but the Kospi went
+  from +1.94% to +0.29% and the Nikkei from about +1.65% to +0.86%. Kioxia +12.57% on a GPU-memory
+  proof of concept with Nvidia; TSMC -0.23%. Bank of Korea hiked to 3.25% with two dissents and
+  15 of 21 projections above, and BoJ's Tamura put neutral near 2% "soon". India's read: Thursday
+  was the first session that could price a 25% band, and Nifty IT rose 3.66% to 33,386.95 —
+  7.98% over four sessions from 30,919.45 on 19 Nov — because Section 301 is a goods duty and
+  cannot reach a services contract at any rate.
+- Verified: 4/4 pages 200, homepage prerender 72,609 bytes, 29 unique `/company` links all 200,
+  API serves all four slugs, push sent to 3 subscribers (0 failed). Ticker pre-flight ran the
+  union of all four `ticker:` fields — 36 unique symbols, 18 Indian — against `EQUITY_L.csv`,
+  zero unknown, no ampersand. Gates: `check-article-shrink` and `check-article-sections` both clean.
+
+**UNVERIFIED**
+- Crude: BusinessLine's closing copy said Brent fell 0.79% to $93.86, BigGo said $95.30, and the
+  Yahoo 5d/1d bars put the Thursday print at $91.29 against a $94.61 Wednesday settle. The
+  article uses the Yahoo pair and frames it as Wednesday's spike repaid. If the settlement print
+  differs, that one line moves.
+- DJT's $3.65 close comes from the Yahoo feed only and is the one US price I could not
+  cross-confirm against a second source. It is stated once, with no valuation attached.
+
+**ACTION Hermes**
+- Nothing blocking. The 27 November US session is a half day to 1 p.m. ET.
+
+---
+
 ## 2026-11-26 00:18 — watcher
 
 **Idle** — nothing executable.

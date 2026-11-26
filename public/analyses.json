@@ -1,6 +1,79 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global — 26 Nov 2026",
+      "ticker": "TCS:INFY:HCLTECH:WIPRO:TECHM:NVDA:MU:AMD",
+      "file": "policy-pulse-global-26-nov-2026.md",
+      "slug": "policy-pulse-global-26-nov-2026",
+      "date": "2026-11-26",
+      "tags": [
+        "policy-pulse",
+        "asia",
+        "semiconductors",
+        "it-services",
+        "tariffs",
+        "central-banks"
+      ],
+      "summary": "Taiex rose 2.50% on a Kioxia-Nvidia memory proof of concept and the Kospi faded from +1.94% to +0.29% as the Bank of Korea hiked to 3.25%, while India's first session with a 25% Section 301 band bought TCS (+4.89%) and HCL Tech (+6.42%) because a goods duty cannot reach a services contract.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 26 Nov 2026",
+      "ticker": "MCX:BSE:KFINTECH:CAMS:LGEINDIA:HDFCBANK:SBIN",
+      "file": "policy-pulse-ministries-26-nov-2026.md",
+      "slug": "policy-pulse-ministries-26-nov-2026",
+      "date": "2026-11-26",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "rbi",
+        "commodity-derivatives",
+        "capital-markets",
+        "ipo"
+      ],
+      "summary": "SEBI's commodity margin cut takes effect on 1 December and MCX closed at a record Rs 3,835 (+7.57%), while the minimum-public-shareholding rule pushed LG Electronics India's parent to sell 2% for about Rs 2,470 crore and LGEINDIA fell 3.4%.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / Cabinet — 26 Nov 2026",
+      "ticker": "ACE:SANGHVIMOV:CUMMINSIND:BEML:ELECON:BHARTIARTL",
+      "file": "policy-pulse-modi-26-nov-2026.md",
+      "slug": "policy-pulse-modi-26-nov-2026",
+      "date": "2026-11-26",
+      "tags": [
+        "policy-pulse",
+        "pli",
+        "capital-goods",
+        "manufacturing",
+        "cabinet",
+        "infrastructure"
+      ],
+      "summary": "Thursday was the first session that could price the Rs 11,000 crore construction equipment scheme, and the market bought ACE (+8.79%) and Sanghvi Movers (+5.24%) while BEML and Elecon did not move at all.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 26 Nov 2026",
+      "ticker": "NVDA:MU:AMD:AVGO:AMBA:ANT:LMT:PLTR:BA:MCD:HD:CMCSA:SPCX:VIG:COIN:MSTR:HOOD:DJT",
+      "file": "policy-pulse-trump-us-26-nov-2026.md",
+      "slug": "policy-pulse-trump-us-26-nov-2026",
+      "date": "2026-11-26",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "tariffs",
+        "trade",
+        "leader-trades",
+        "crypto",
+        "export-controls"
+      ],
+      "summary": "Nvidia halted AI-chip shipments into South-East Asia and S&P put its AA rating on CreditWatch negative, taking NVDA to $149.30 and -9.5% in two sessions, while the September disclosure showed Trump's accounts selling MCD, HD and CMCSA and buying SpaceX and a dividend ETF.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 25 Nov 2026",
       "ticker": "TSM:AVGO:ANT:SUNPHARMA:TATASTEEL:JSWSTEEL:WAAREEENER:PREMIERENE:DIXON:TCS:INFY:TATAPOWER",
       "file": "policy-pulse-global-25-nov-2026.md",
