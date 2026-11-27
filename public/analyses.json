@@ -1,6 +1,80 @@
 {
   "analyses": [
     {
+      "title": "Policy Pulse — Global Spillover — 27 Nov 2026",
+      "ticker": "TCS:INFY:HCLTECH:WIPRO:TECHM:COFORGE:MPHASIS:BABA:JD:BIDU:TSM:MU:AMD:NVDA:ONGC:OIL:HINDPETRO:BPCL:IOC:RELIANCE:INDIGO:ASIANPAINT",
+      "file": "policy-pulse-global-27-nov-2026.md",
+      "slug": "policy-pulse-global-27-nov-2026",
+      "date": "2026-11-27",
+      "tags": [
+        "policy-pulse",
+        "china",
+        "capital-markets",
+        "semiconductors",
+        "it-services",
+        "crude"
+      ],
+      "summary": "Beijing's midday State Council statement lifted the STAR 50 by 15.1% and the CSI 300 by 4.2%, and the moment semiconductors bounced India's IT hedge unwound — TCS and INFY fell 2.6-2.7% a day after leading, which is the whole risk in the November IT trade.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Ministries & Regulators — 27 Nov 2026",
+      "ticker": "BSE:ANGELONE:MOTILALOFS:CAMS:KFINTECH:CDSL:NAM-INDIA:HDFCAMC:IIFL:BRITANNIA:NESTLEIND:ITC:HINDUNILVR:VBL:DABUR:MARICO:TATACONSUM:BIKAJI:GOPAL:UFLEX:EPL:COALINDIA",
+      "file": "policy-pulse-ministries-27-nov-2026.md",
+      "slug": "policy-pulse-ministries-27-nov-2026",
+      "date": "2026-11-27",
+      "tags": [
+        "policy-pulse",
+        "sebi",
+        "fpi",
+        "capital-markets",
+        "fmcg",
+        "regulation",
+        "ipo"
+      ],
+      "summary": "SEBI's chairman put five-day FPI onboarding and three-day REIT listing on the table on Friday morning, while the Supreme Court's 131-page order forced separate red hexagons on packaged food and took Nifty FMCG down 0.93% — BSE and ANGELONE are the regulatory winners, BRITANNIA the clearest loser.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Modi / Cabinet — 27 Nov 2026",
+      "ticker": "TATASTEEL:JSWSTEEL:SAIL:JSL:WELCORP:WAAREEENER:PREMIERENE:KPRMILL:WELSPUNLIV:TRIDENT:VTL:DIXON:KAYNES:SYRMA:CGPOWER:UNOMINDA:SUNPHARMA:DRREDDY:CIPLA:LUPIN:AUROPHARMA:DIVISLAB:PIIND:SRF:DEEPAKNTR:AARTIIND:THERMAX:CUMMINSIND:NCC:IRCON:GRINFRA:PNCINFRA:KNRCON:JSWINFRA:CONCOR:ADANIPORTS:BEML:BDL:HAL:DATAPATTNS:SOLARINDS:MAZDOCK:OMNI",
+      "file": "policy-pulse-modi-27-nov-2026.md",
+      "slug": "policy-pulse-modi-27-nov-2026",
+      "date": "2026-11-27",
+      "tags": [
+        "policy-pulse",
+        "tariffs",
+        "trade",
+        "pli",
+        "manufacturing",
+        "exports",
+        "infrastructure"
+      ],
+      "summary": "USTR's 189-page finding names Make in India, PLI and Atmanirbhar Bharat as the excess capacity it wants to tax at up to 25%, and the fork to 17% runs through a trade deal — TATASTEEL, KPRMILL and WAAREEENER carry the most direct exposure while the Cabinet's port and airport approvals fund the same thesis.",
+      "market": "india",
+      "model": "deepseek-v4-flash"
+    },
+    {
+      "title": "Policy Pulse — Trump / US — 27 Nov 2026",
+      "ticker": "NVDA:AMD:MU:MRVL:TSM:DELL:SMCI:PLTR:LMT:GD:LHX:HON:BA:MCD:HD:CMCSA:NKE:STZ:FIS:MO:HPQ:AMZN:WMT:TGT:TJX:AAPL:ANT",
+      "file": "policy-pulse-trump-us-27-nov-2026.md",
+      "slug": "policy-pulse-trump-us-27-nov-2026",
+      "date": "2026-11-27",
+      "tags": [
+        "policy-pulse",
+        "us-only",
+        "leader-trades",
+        "export-controls",
+        "semiconductors",
+        "tariffs"
+      ],
+      "summary": "Nvidia fell 1.71% to $146.74 while the S&P rose 0.91% in the half session, because a licence regime rather than a tariff stopped its South-East Asian server shipments, and BBC Verify counted 44 Nvidia trades in the president's accounts through September.",
+      "market": "global",
+      "model": "deepseek-v4-flash"
+    },
+    {
       "title": "Policy Pulse — Global — 26 Nov 2026",
       "ticker": "TCS:INFY:HCLTECH:WIPRO:TECHM:NVDA:MU:AMD",
       "file": "policy-pulse-global-26-nov-2026.md",

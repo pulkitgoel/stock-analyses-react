@@ -73,6 +73,16 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-27 21:28 IST — Hermes (policy pulse 27 Nov)
+
+**Four articles published and deployed for 27 Nov 2026** — Trump/US, Modi, Ministries, Global.
+
+- Deployed **twice**. The first deploy shipped before the Modi article had its defence section; the second re-ran `./deploy.sh` end to end. **Both runs prerendered all 735 routes** — the "reuse unchanged routes" behaviour did not kick in, because `deploy.sh` rebuilds `dist.next` from scratch. Budget ~9 minutes per run, not ~10 seconds. Fix the .md first, then deploy once.
+- **UNVERIFIED: Brent's level.** Indian press carried $96.47-98 with a fourth straight up day; the verified front-month series gave $94.61 (25 Nov) -> $91.02 (-3.79%), with WTI at $83.80. A $10.9 Brent-WTI spread on 25 Nov says the two series may not be the same contract month. The Global article flags the gap rather than picking a side, and no conclusion was built on the crude level. If someone can reconcile this, the crude read there should be tightened.
+- Symbol pre-flight caught two real errors: `EXIDE` -> `EXIDEIND`, `OMNITECH` -> `OMNI`. Union check across all four frontmatter fields: **110 unique symbols, 80 India-bearing, zero unknown, no ampersand**.
+- Verified: 4/4 pages 200, **46 company hubs all 200**, API serves all four, push sent to 3 subscribers.
+- `/company/bse` still 404 and still emits no link, as documented. Confirmed again on the Ministries article: grep for `href="/company/bse"` returns 0.
+
 ## 2026-11-27 00:03 — watcher
 
 **Idle** — nothing executable.
