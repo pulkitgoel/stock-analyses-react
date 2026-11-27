@@ -1,6 +1,6 @@
 ---
 title: "Policy Pulse — Modi / Cabinet — 27 Nov 2026"
-ticker: "TATASTEEL:JSWSTEEL:SAIL:JSL:WELCORP:WAAREEENER:PREMIERENE:KPRMILL:WELSPUNLIV:TRIDENT:VTL:DIXON:KAYNES:SYRMA:CGPOWER:UNOMINDA:SUNPHARMA:DRREDDY:CIPLA:LUPIN:AUROPHARMA:DIVISLAB:PIIND:SRF:DEEPAKNTR:AARTIIND:THERMAX:CUMMINSIND:NCC:IRCON:GRINFRA:PNCINFRA:KNRCON:JSWINFRA:CONCOR:ADANIPORTS"
+ticker: "TATASTEEL:JSWSTEEL:SAIL:JSL:WELCORP:WAAREEENER:PREMIERENE:KPRMILL:WELSPUNLIV:TRIDENT:VTL:DIXON:KAYNES:SYRMA:CGPOWER:UNOMINDA:SUNPHARMA:DRREDDY:CIPLA:LUPIN:AUROPHARMA:DIVISLAB:PIIND:SRF:DEEPAKNTR:AARTIIND:THERMAX:CUMMINSIND:NCC:IRCON:GRINFRA:PNCINFRA:KNRCON:JSWINFRA:CONCOR:ADANIPORTS:BEML:BDL:HAL:DATAPATTNS:SOLARINDS:MAZDOCK:OMNI"
 date: "2026-11-27"
 tags: ["policy-pulse","tariffs","trade","pli","manufacturing","exports","infrastructure"]
 summary: "USTR's 189-page finding names Make in India, PLI and Atmanirbhar Bharat as the excess capacity it wants to tax at up to 25%, and the fork to 17% runs through a trade deal — TATASTEEL, KPRMILL and WAAREEENER carry the most direct exposure while the Cabinet's port and airport approvals fund the same thesis."
@@ -64,6 +64,32 @@ It is also, from Washington's vantage, more capacity.
 
 Metal was the best sector on a day the benchmark fell 1.17%, which is the opposite of what a 25% tariff on Indian steel should produce. The explanation is that the duty is proposed, not levied, and that the domestic steel trade is being set by something else entirely this week. Do not read Friday's metal strength as a verdict on the tariff file; read it as evidence the file is not yet priced.
 
+## The one group that did not care
+
+The Nifty India Defence index rose 4% to 9,301.05 with 21 of its 22 constituents in the green, on a day the benchmark fell 1.17%.
+
+The trigger was not a policy. It was a guidance raise.
+
+BEML closed at ₹2,346.10, up 14.99%, its biggest single-day gain since June 2024, after lifting FY27 revenue growth guidance to over 35% from a range of 25-30%. The supporting numbers: Q2 revenue up 42% to ₹1,191.61 crore against ₹839.09 crore, profit down 31% to ₹33.34 crore, order inflow up 130% year on year to ₹6,230 crore including ₹5,400 crore of trainsets for the high-speed rail project, and an order book of ₹21,388 crore — of which only ₹3,421 crore is executable this year. The market chose the top line over the profit line, and it chose the ₹17,967 crore of work that sits beyond FY27.
+
+| Stock | Close | Change |
+|---|---|---|
+| BEML | ₹2,346.10 | +14.99% |
+| Solar Industries | ₹19,450.00 | +6.58% |
+| Data Patterns | ₹4,336.90 | +4.39% |
+| Bharat Dynamics | ₹1,077.50 | +4.13% |
+| Mazagon Dock | ₹1,890.00 | +4.02% |
+| Hindustan Aeronautics | ₹5,074.00 | +3.35% |
+| Bharat Electronics | ₹411.45 | +1.72% |
+| Omnitech Engineering | ₹544.55 | +4.99% (upper circuit) |
+| Nifty India Defence | 9,301.05 | +4.00% |
+
+The ordering inside that table is the useful part. The two smallest and most ammunition-linked names led — Solar Industries at +6.58% and Data Patterns at +4.39% — while Bharat Electronics, the largest defence PSU by revenue and the one with the deepest order book, rose least at +1.72%. A guidance raise at a rail-and-earthmoving PSU lifted the whole complex, and it lifted the highest-beta names hardest. That is a risk-appetite signal, not an order-flow signal.
+
+Omnitech Engineering is the extreme version. It hit its 5% upper circuit at ₹544.55 on a BrahMos Aerospace development order for metallic airframe components and canister subsystems — and a development order is not a contract. The parts are made so the customer can evaluate them, a production order is a separate event quarters later, and Omnitech disclosed no value and said the order falls below its formal disclosure threshold. The stock is up more than 150% this year and down almost 25% in the last month, which is what happens when order flow is the entire thesis.
+
+That divergence is the honest read on Friday: an earnings and guidance event worked, on a day when the policy file — a proposed 25% duty with a January decision — was weighing on everything else.
+
 ## Stock impact
 
 | Stock | Impact | Reason |
@@ -76,8 +102,12 @@ Metal was the best sector on a day the benchmark fell 1.17%, which is the opposi
 | **SUNPHARMA, DRREDDY, CIPLA, LUPIN, AUROPHARMA, DIVISLAB** | Watch | Pharmaceuticals appear in the sector list of the finding and in press coverage of the exposure, but these duties are expressly not applied to pharmaceuticals, and the generics exemption from the Section 232 pharmaceutical measures has held. Named and not dutied — a distinction worth holding onto. 2/5. |
 | **NCC, IRCON, GRINFRA, PNCINFRA, KNRCON** | Positive, speculative | Inferred only. The Kamarajar Port terminal at ₹4,288.26 crore and the Doloo airport at ₹2,014 crore are civil works that these contractors bid for, but none is named in either approval. Treat this as a tender pipeline, not an order book. 2/5. |
 | **JSWINFRA, CONCOR, ADANIPORTS** | Watch | Two million TEU of new handling capacity at Kamarajar is a competitive addition to a corridor that CONCOR feeds and that the private port operators compete for. Over a multi-year horizon it is volume-positive for the logistics chain and share-negative for adjacent terminals. 2/5. |
+| **BEML** | Positive, earnings | ₹2,346.10, +14.99%, on a FY27 revenue-growth guidance raise to over 35% and a ₹21,388 crore order book. This is the one name in the group with new information rather than a re-rating of old information. 3/5. |
+| **SOLARINDS, DATAPATTNS, BDL, MAZDOCK, HAL** | Watch | +6.58%, +4.39%, +4.13%, +4.02% and +3.35% on a day the Sensex fell 1.17%. The moves are a beta response to BEML's guidance, not an order event for any of them, and the highest-beta names rose most. 2/5. |
+| **BEL** | Positive, relative | ₹411.45, +1.72% — the largest defence PSU rose least in a 4% sector. An unchanged order book doing nothing is the correct behaviour on a day like this, and it is the cleaner way to own the theme. 2/5. |
+| **OMNI** | Watch | ₹544.55, +4.99% upper circuit, on a BrahMos development order with no disclosed value that the company said fell below its disclosure threshold. Up over 150% this year and down nearly 25% in a month. A development order is not a contract. 2/5. |
 
-All 36 tickers in this article were validated against the NSE master file and screened for active regulator orders, promoter restraint, auditor events and governance-plus-collapse before rating. No exclusions apply.
+All 44 tickers in this article were validated against the NSE master file and screened for active regulator orders, promoter restraint, auditor events and governance-plus-collapse before rating. No exclusions apply.
 
 Rule 6 applies throughout: USTR named no Indian company. Every company mapping above is an inference drawn from the sector list in the finding and from historical exposure, not from the document.
 
