@@ -73,6 +73,14 @@ live site) and `CONTENT-PLAYBOOK.md` (titles, headings, keyword targeting).
 ---
 
 
+## 2026-11-27 00:03 — watcher
+
+**Idle** — nothing executable.
+
+17 unmarked and 0 owner-blocked item(s).
+- 17 previously reported, unchanged; not repeated here.
+
+
 ## 2026-11-26 21:15 IST — Hermes (policy pulse 26 Nov)
 
 **Daily policy run, four articles published and verified 200. US markets were closed all day for Thanksgiving — every US price in these articles is the 25 November settle and is labelled as such.**
